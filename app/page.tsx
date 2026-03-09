@@ -124,9 +124,12 @@ export default function Home() {
                 Naples, Italy.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <button className="rounded-2xl bg-zinc-900 px-5 py-3 text-sm font-semibold text-white shadow-sm">
-                  Featured Naples Walk
-                </button>
+                <a
+  href="/videos/naples-daytime-walk-2023"
+  className="rounded-2xl bg-zinc-900 px-5 py-3 text-sm font-semibold text-white shadow-sm"
+>
+  Featured Naples Walk
+</a>
                 <button className="rounded-2xl border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-900">
                   Browse Naples Videos
                 </button>
@@ -290,9 +293,12 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
-                <button className="mt-5 rounded-2xl bg-zinc-900 px-4 py-3 text-sm font-semibold text-white">
-                  Open video page
-                </button>
+                <a
+  href="/videos/naples-daytime-walk-2023"
+  className="mt-5 inline-block rounded-2xl bg-zinc-900 px-4 py-3 text-sm font-semibold text-white"
+>
+  Open video page
+</a>
               </div>
             ))}
           </div>
