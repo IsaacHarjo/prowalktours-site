@@ -6,10 +6,13 @@ import { useRef, useState } from "react";
 export default function NaplesDaytimeWalk2023Page() {
   const [currentStart, setCurrentStart] = useState(0);
 
+const overviewSectionRef = useRef<HTMLElement | null>(null);
 const videoSectionRef = useRef<HTMLDivElement | null>(null);
+const highlightsSectionRef = useRef<HTMLElement | null>(null);
 const highlightsRef = useRef<HTMLDivElement | null>(null);
 const routeMapRef = useRef<HTMLElement | null>(null);
 const licensingHubRef = useRef<HTMLElement | null>(null);
+const relatedToursRef = useRef<HTMLElement | null>(null);
 
   const highlights = [
     {
@@ -157,6 +160,13 @@ const licensingHubRef = useRef<HTMLElement | null>(null);
     }, 50);
   };
 
+  const scrollToOverview = () => {
+  overviewSectionRef.current?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
   const scrollHighlights = (direction: "left" | "right") => {
     if (!highlightsRef.current) return;
 
@@ -166,13 +176,33 @@ const licensingHubRef = useRef<HTMLElement | null>(null);
       behavior: "smooth",
     });
   };
+  const scrollToHighlights = () => {
+  highlightsSectionRef.current?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
 
-  const scrollToRouteMap = () => {
-    routeMapRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
+const scrollToRouteMap = () => {
+  routeMapRef.current?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
+const scrollToLicensing = () => {
+  licensingHubRef.current?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
+const scrollToRelatedTours = () => {
+  relatedToursRef.current?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
   const scrollToLicensingHub = () => {
   licensingHubRef.current?.scrollIntoView({
     behavior: "smooth",
@@ -184,7 +214,7 @@ const licensingHubRef = useRef<HTMLElement | null>(null);
 
   const techBadges = [
     "4K UHD",
-    "59.94p",
+    "59.94fps",
     "2-Channel LPCM16",
     "Sony A7S III",
     "Sony 16–35mm PZ",
@@ -194,59 +224,114 @@ const licensingHubRef = useRef<HTMLElement | null>(null);
 
   return (
     <div className="min-h-screen bg-[#fcfaf6] text-[#3d3327]">
-      <section className="border-b border-[#d8c7b5] bg-gradient-to-br from-[#f4e6bc] via-[#fcfaf6] to-[#e7f1f8]">
-        <div className="mx-auto max-w-5xl px-6 py-12 lg:px-10 lg:py-16">
-          <div className="mb-8">
-            <a
-              href="/destinations/italy/campania/naples"
-              className="inline-flex items-center rounded-full border border-[#cdb7a0] bg-white px-3 py-1 text-sm font-medium text-[#5c4c33] shadow-sm transition hover:bg-[#fff8ef]"
-            >
-              ← Back to Naples
-            </a>
-          </div>
+       <section className="sticky top-16 z-40 border-y border-[#7f5f49] bg-[#3d3327]/95 text-white backdrop-blur">
+  <nav className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center px-6 py-3 lg:px-10">
+    <div className="justify-self-start">
+      <a
+        href="/destinations/italy/campania/naples"
+        className="inline-flex items-center gap-2 rounded-full border border-[#8f735c] bg-[#4a3c2f] px-3 py-1.5 text-sm font-semibold text-white/90 transition hover:bg-[#5a4838] hover:text-white"
+      >
+        <span aria-hidden="true">←</span>
+        <span>Back to Naples</span>
+      </a>
+    </div>
 
-          <div className="flex items-start justify-between gap-6">
-            <div className="min-w-0">
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
-                Featured Naples Walk
-              </p>
+    <div className="justify-self-center">
+      <div className="flex min-w-max items-center gap-6 text-sm font-semibold text-white/90">
+        <button
+          onClick={scrollToOverview}
+          className="transition hover:text-white"
+          type="button"
+        >
+          Overview
+        </button>
 
-              <h1 className="mt-3 text-4xl font-bold tracking-tight text-[#3d3327] sm:text-5xl">
-                Naples, Italy Daytime Walking Tour
-              </h1>
+        <button
+          onClick={scrollToHighlights}
+          className="transition hover:text-white"
+          type="button"
+        >
+          Highlights
+        </button>
 
-              <p className="mt-3 text-xl text-[#6e5a45]">
-                Historic Center, Sanità & Waterfront
-              </p>
+        <button
+          onClick={scrollToRouteMap}
+          className="transition hover:text-white"
+          type="button"
+        >
+          Route Map
+        </button>
 
-              <p className="mt-6 max-w-3xl text-base leading-8 text-[#56493a]">
-                Explore Naples from Montesanto through the historic center,
-                Sanità, the Spanish Quarter, and the waterfront in this immersive
-                long-form walking tour filmed over two days in July 2023. Along
-                the route, you’ll pass markets, churches, piazzas, narrow
-                historic streets, panoramic viewpoints, and the bay near Castel
-                dell’Ovo.
-              </p>
-            </div>
+        <button
+          onClick={scrollToLicensing}
+          className="transition hover:text-white"
+          type="button"
+        >
+          Licensing
+        </button>
 
-            <div className="hidden shrink-0 items-center gap-3 rounded-2xl border border-[#d8c7b5] bg-white/90 px-4 py-3 shadow-sm backdrop-blur sm:flex">
-              <div className="h-6 w-9 overflow-hidden rounded-sm border border-[#d8c7b5] shadow-sm">
-                <div className="grid h-full grid-cols-3">
-                  <div className="bg-green-600" />
-                  <div className="bg-white" />
-                  <div className="bg-red-600" />
-                </div>
-              </div>
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#8a7a68]">
-                  Country
-                </p>
-                <p className="text-sm font-semibold text-[#3d3327]">Italy</p>
-              </div>
-            </div>
-          </div>
+        <button
+          onClick={scrollToRelatedTours}
+          className="transition hover:text-white"
+          type="button"
+        >
+          Related Tours
+        </button>
 
-          <div className="mt-6 space-y-2 text-base font-semibold text-[#3d3327]">
+        <a
+          href="https://youtu.be/990AqbKb18c"
+          target="_blank"
+          rel="noreferrer"
+          className="transition hover:text-white"
+        >
+          Watch on YouTube
+        </a>
+      </div>
+    </div>
+
+    <div className="hidden justify-self-end md:flex shrink-0 items-center gap-2 rounded-full border border-[#8f735c] bg-[#4a3c2f] px-3 py-1.5 text-sm font-semibold text-white/90">
+      <div className="h-4 w-6 overflow-hidden rounded-[2px] border border-white/20">
+        <div className="grid h-full grid-cols-3">
+          <div className="bg-green-600" />
+          <div className="bg-white" />
+          <div className="bg-red-600" />
+        </div>
+      </div>
+      <span>Italy</span>
+    </div>
+  </nav>
+</section>
+      <section
+  id="overview"
+  ref={overviewSectionRef}
+  className="scroll-mt-32 border-b border-[#d8c7b5] bg-gradient-to-br from-[#f4e6bc] via-[#fcfaf6] to-[#e7f1f8]"
+>
+        <div className="mx-auto max-w-6xl px-6 py-12 lg:px-10 lg:py-16">
+        
+
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+  <div className="min-w-0">
+    <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
+      Featured Naples Walk
+    </p>
+
+    <h1 className="mt-3 text-4xl font-bold tracking-tight text-[#3d3327] sm:text-5xl">
+      Naples, Italy — July 2023
+    </h1>
+
+    <p className="mt-3 text-xl text-[#6e5a45]">
+      Historic Center, Sanità & Waterfront
+    </p>
+
+    <p className="mt-6 max-w-3xl text-base leading-8 text-[#56493a]">
+      Explore Naples from Montesanto through the historic center,
+      Sanità, the Spanish Quarter, and the waterfront in this immersive
+      long-form walking tour filmed over two days in July 2023. Along
+      the route, you’ll pass markets, churches, piazzas, narrow
+      historic streets, panoramic viewpoints, and the bay near Castel
+      dell’Ovo.
+    </p>
+    <div className="mt-6 space-y-2 text-base font-semibold text-[#3d3327]">
             <div className="flex items-center gap-2">
               <span aria-hidden="true">📅</span>
               <span>Filmed July 2023</span>
@@ -260,35 +345,23 @@ const licensingHubRef = useRef<HTMLElement | null>(null);
               <span>Approx. runtime: 5h 45m</span>
             </div>
           </div>
+  </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="https://youtu.be/990AqbKb18c"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-2xl bg-[#167fd5] px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#09679e]"
-            >
-              Watch on YouTube
-            </a>
-            <button
-              onClick={scrollToRouteMap}
-              className="rounded-2xl bg-[#9a735a] px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#7f5f49]"
-            >
-              View Route Map
-            </button>
-            <a
-              href="/destinations/italy/campania/naples"
-              className="rounded-2xl border border-[#167fd5] bg-white px-5 py-3 text-sm font-semibold text-[#167fd5] shadow-sm transition hover:bg-[#edf6fd]"
-            >
-              Camera & Gear
-            </a>
-            <button
-  onClick={scrollToLicensingHub}
-  className="rounded-2xl border border-[#9a735a] bg-white px-5 py-3 text-sm font-semibold text-[#9a735a] shadow-sm transition hover:bg-[#fbf4ef]"
->
-  License This Footage
-</button>
-          </div>
+  <div className="relative overflow-hidden rounded-[2rem] border border-[#d8c7b5] bg-white shadow-sm">
+    <div className="relative aspect-[4/3] w-full">
+      <Image
+        src="/naples/naples-iconic-view.jpg"
+        alt="The Iconic View of Naples Italy"
+        fill
+        className="object-cover"
+        priority
+      />
+    </div>
+  </div>
+</div>
+
+          
+
         </div>
       </section>
 
@@ -311,7 +384,11 @@ const licensingHubRef = useRef<HTMLElement | null>(null);
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl rounded-[2rem] border border-[#e4d3b2] bg-gradient-to-br from-[#f4e6bc] via-[#fbf3dc] to-[#f7ede3] px-6 py-6 lg:px-10">
+      <section
+  id="highlights"
+  ref={highlightsSectionRef}
+  className="scroll-mt-32 mx-auto max-w-6xl rounded-[2rem] border border-[#e4d3b2] bg-gradient-to-br from-[#f4e6bc] via-[#fbf3dc] to-[#f7ede3] px-6 py-6 lg:px-10"
+>
         <div className="flex items-end justify-between gap-4">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
@@ -373,10 +450,10 @@ const licensingHubRef = useRef<HTMLElement | null>(null);
       </section>
 
       <section
-        id="route-map"
-        ref={routeMapRef}
-        className="mx-auto max-w-6xl px-6 py-8 lg:px-10 lg:py-10"
-      >
+  id="route-map"
+  ref={routeMapRef}
+  className="scroll-mt-32 mx-auto max-w-6xl px-6 py-8 lg:px-10 lg:py-10"
+>
         <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
           Route map
         </p>
@@ -412,8 +489,9 @@ const licensingHubRef = useRef<HTMLElement | null>(null);
       </section>
 
       <section
+  id="licensing"
   ref={licensingHubRef}
-  className="mx-auto max-w-6xl px-6 pb-14 lg:px-10"
+  className="scroll-mt-32 mx-auto max-w-6xl px-6 pb-14 lg:px-10"
 >
         <div className="rounded-[2rem] border border-[#d8c7b5] bg-[#f7efe4] p-8 shadow-xl lg:p-10">
           <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
@@ -468,7 +546,11 @@ const licensingHubRef = useRef<HTMLElement | null>(null);
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 pb-16 lg:px-10">
+      <section
+  id="related-tours"
+  ref={relatedToursRef}
+  className="scroll-mt-32 mx-auto max-w-6xl px-6 pb-16 lg:px-10"
+>
         <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
           Related Naples Tours
         </p>
