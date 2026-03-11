@@ -2,80 +2,28 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 
-type DropdownItem = {
-  label: string;
-  href?: string;
-};
-
 type NavItem = {
   label: string;
-  href?: string;
-  items?: DropdownItem[];
+  href: string;
 };
 
 const navItems: NavItem[] = [
-  {
-    label: "Destinations",
-    items: [
-      { label: "Naples, Italy", href: "/destinations/italy/campania/naples" },
-      { label: "Campania", href: "/destinations/italy/campania/naples" },
-      { label: "Italy", href: "/destinations/italy/campania/naples" },
-      { label: "All Destinations" },
-    ],
-  },
-  {
-    label: "Tours",
-    items: [
-      {
-        label: "Naples Daytime Walk — July 2023",
-        href: "/videos/naples-daytime-walk-2023",
-      },
-      { label: "Day Walks" },
-      { label: "Night Walks" },
-      { label: "Long Walks" },
-    ],
-  },
-  {
-    label: "360 / VR",
-    items: [
-      { label: "360 Walking Tours" },
-      { label: "VR Headset-Friendly Videos" },
-      { label: "Featured 360 Cities" },
-    ],
-  },
-  {
-    label: "Drone",
-    items: [
-      { label: "City Aerials" },
-      { label: "Waterfronts & Coastlines" },
-      { label: "Historic Landmarks" },
-    ],
-  },
-  {
-    label: "Licensing",
-    items: [
-      { label: "License Footage", href: "/licensing" },
-      { label: "Request a Quote", href: "/licensing" },
-      { label: "Licensing FAQ" },
-    ],
-  },
-  {
-    label: "Gear",
-    items: [
-      { label: "My Camera Kit" },
-      { label: "Walking Tour Setup" },
-      { label: "360 & VR Gear" },
-    ],
-  },
-  {
-    label: "About",
-    items: [
-      { label: "About Prowalk Tours" },
-      { label: "Contact" },
-      { label: "Support the Channel" },
-    ],
-  },
+  { label: "Countries", href: "/countries" },
+  { label: "Map", href: "/" },
+  { label: "Search", href: "/" },
+  { label: "Store", href: "/" },
+  { label: "Licensing", href: "/licensing" },
+  { label: "About", href: "/" },
 ];
+
+const socialLinks = {
+  facebook: "https://facebook.com/prowalktours",
+  instagram: "https://instagram.com/prowalktours",
+  linkedin: "https://www.linkedin.com/in/isaac-harjo-87374b71/",
+  x: "https://x.com/ProwalkTours",
+  tiktok: "https://www.tiktok.com/@prowalktours",
+  youtube: "https://www.youtube.com/@ProwalkTours",
+};
 
 export const metadata: Metadata = {
   title: "Prowalk Tours",
@@ -87,75 +35,145 @@ function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-[#d8c7b5] bg-white/95 backdrop-blur">
       <div className="mx-auto grid h-16 max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-6 lg:px-10">
         <div className="justify-self-start">
-  <Link
-    href="/"
-    className="shrink-0 text-xl font-bold tracking-[0.2em] text-[#3d3327] sm:text-2xl"
-  >
-    PROWALK TOURS
-  </Link>
-</div>
+          <Link
+            href="/"
+            className="shrink-0 text-xl font-bold tracking-[0.2em] text-[#3d3327] sm:text-2xl"
+          >
+            PROWALK TOURS
+          </Link>
+        </div>
 
         <nav className="hidden justify-self-center lg:block">
-          <ul className="flex items-center gap-8 text-sm font-medium text-[#5c4c33]">
+          <ul className="flex items-center gap-8 text-[17px] font-semibold tracking-[0.04em] text-[#5c4c33]">
             {navItems.map((item) => (
-              <li key={item.label} className="group relative">
-                {item.items ? (
-                  <>
-                    <span className="cursor-default transition hover:text-[#167fd5]">
-                      {item.label}
-                    </span>
-
-                    <div className="invisible absolute left-0 top-full z-50 mt-4 w-64 rounded-2xl border border-[#d8c7b5] bg-white p-3 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                      <div className="space-y-1">
-                        {item.items.map((subItem) =>
-                          subItem.href ? (
-                            <Link
-                              key={subItem.label}
-                              href={subItem.href}
-                              className="block rounded-xl px-3 py-2 text-sm text-[#5c4c33] transition hover:bg-[#fff7ee] hover:text-[#167fd5]"
-                            >
-                              {subItem.label}
-                            </Link>
-                          ) : (
-                            <span
-                              key={subItem.label}
-                              className="block rounded-xl px-3 py-2 text-sm text-[#a08f7e]"
-                            >
-                              {subItem.label}
-                            </span>
-                          )
-                        )}
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <Link
-                    href={item.href || "/"}
-                    className="transition hover:text-[#167fd5]"
-                  >
-                    {item.label}
-                  </Link>
-                )}
+              <li key={item.label}>
+                <Link
+                  href={item.href}
+                  className="transition hover:text-[#167fd5]"
+                >
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
-        <div className="hidden lg:block" />
+
+        <div className="hidden items-center justify-self-end gap-3 text-[#5c4c33] lg:flex">
+          <a
+            href={socialLinks.facebook}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Facebook"
+            className="transition hover:text-[#167fd5]"
+          >
+            <svg
+              className="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6H16.7V4.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4V11H7.3v3H10v8h3.5z" />
+            </svg>
+          </a>
+
+          <a
+            href={socialLinks.instagram}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram"
+            className="transition hover:text-[#167fd5]"
+          >
+            <svg
+              className="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              aria-hidden="true"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+
+          <a
+            href={socialLinks.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            className="transition hover:text-[#167fd5]"
+          >
+            <svg
+              className="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M6.94 8.5a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44ZM5.5 9.75h2.88V19H5.5V9.75Zm4.69 0h2.76v1.26h.04c.38-.73 1.32-1.5 2.72-1.5 2.91 0 3.45 1.91 3.45 4.4V19h-2.88v-4.5c0-1.07-.02-2.45-1.49-2.45-1.5 0-1.73 1.17-1.73 2.38V19h-2.87V9.75Z" />
+            </svg>
+          </a>
+
+          <a
+            href={socialLinks.x}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="X"
+            className="transition hover:text-[#167fd5]"
+          >
+            <svg
+              className="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M18.9 3H21l-6.8 7.8L22.2 21h-6.3l-4.9-6.4L5.4 21H3.3l7.2-8.2L2 3h6.4l4.4 5.8L18.9 3Zm-2.2 16h1.7L7.2 4.9H5.4L16.7 19Z" />
+            </svg>
+          </a>
+
+          <a
+            href={socialLinks.tiktok}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="TikTok"
+            className="transition hover:text-[#167fd5]"
+          >
+            <svg
+              className="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M14 3c.2 1.7 1.2 3.1 2.8 3.9 1 .5 2 .8 3.2.8v3c-1.7 0-3.4-.5-4.8-1.5v5.2c0 3.2-2.5 5.6-5.7 5.6S4 17.6 4 14.4c0-3.1 2.4-5.5 5.4-5.6v3c-1.3.1-2.4 1.2-2.4 2.6 0 1.5 1.2 2.6 2.6 2.6 1.5 0 2.5-1.1 2.5-2.6V3h1.9Z" />
+            </svg>
+          </a>
+
+          <a
+            href={socialLinks.youtube}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="YouTube"
+            className="transition hover:text-[#167fd5]"
+          >
+            <svg
+              className="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M21.6 7.2a2.9 2.9 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.9 2.9 0 0 0-2 2C2 9 2 12 2 12s0 3 .4 4.8a2.9 2.9 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.9 2.9 0 0 0 2-2c.4-1.8.4-4.8.4-4.8s0-3-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z" />
+            </svg>
+          </a>
+        </div>
       </div>
 
       <div className="border-t border-[#efe3d3] lg:hidden">
-        <div className="mx-auto flex max-w-7xl gap-5 overflow-x-auto px-6 py-3 text-sm font-medium text-[#5c4c33]">
-          {navItems.map((item) =>
-            item.href ? (
-              <Link key={item.label} href={item.href} className="whitespace-nowrap">
-                {item.label}
-              </Link>
-            ) : (
-              <span key={item.label} className="whitespace-nowrap">
-                {item.label}
-              </span>
-            )
-          )}
+        <div className="mx-auto flex max-w-7xl gap-5 overflow-x-auto px-6 py-3 text-[17px] font-semibold tracking-[0.04em] text-[#5c4c33]">
+          {navItems.map((item) => (
+            <Link key={item.label} href={item.href} className="whitespace-nowrap">
+              {item.label}
+            </Link>
+          ))}
         </div>
       </div>
     </header>

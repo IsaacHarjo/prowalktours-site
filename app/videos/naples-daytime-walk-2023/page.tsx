@@ -629,6 +629,66 @@ const scrollToRelatedTours = () => {
           </a>
         </div>
       </section>
+      <section className="mx-auto max-w-6xl px-6 pb-20 lg:px-10">
+  <div className="rounded-[2rem] border border-[#d8c7b5] bg-gradient-to-br from-[#f4e6bc] via-[#fcfaf6] to-[#e7f1f8] p-8 shadow-sm lg:p-10">
+    <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div>
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
+          Stay Connected
+        </p>
+        <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#3d3327]">
+          Don’t miss the next walk
+        </h2>
+        <p className="mt-4 max-w-2xl text-base leading-8 text-[#56493a]">
+          Get updates when new walks, night tours, 360 videos, and destination
+          pages go live on Prowalk Tours.
+        </p>
+        <p className="mt-3 text-sm text-[#8a7a68]">
+          Occasional updates only. Unsubscribe anytime.
+        </p>
+      </div>
+
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          alert(
+            "This sign-up box is just the layout for now. It still needs to be connected to an email service."
+          );
+        }}
+        className="rounded-[1.75rem] border border-[#d8c7b5] bg-white p-6 shadow-sm"
+      >
+        <div className="grid gap-4">
+          <div>
+            <label className="mb-1.5 block text-sm font-semibold text-[#5c4c33]">
+              First Name
+            </label>
+            <input
+              type="text"
+              className="w-full rounded-xl border border-[#d8c7b5] bg-[#fcfaf6] px-4 py-2.5 text-sm outline-none transition focus:border-[#167fd5]"
+            />
+          </div>
+
+          <div>
+            <label className="mb-1.5 block text-sm font-semibold text-[#5c4c33]">
+              Email
+            </label>
+            <input
+              type="email"
+              className="w-full rounded-xl border border-[#d8c7b5] bg-[#fcfaf6] px-4 py-2.5 text-sm outline-none transition focus:border-[#167fd5]"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="mt-2 rounded-2xl bg-[#167fd5] px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#09679e]"
+          >
+            Notify Me
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
     </div>
   );
 }
