@@ -429,11 +429,12 @@ const scrollToRelatedTours = () => {
             >
               <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
-                  src={highlight.imageSrc}
-                  alt={highlight.alt}
-                  fill
-                  className="object-cover transition duration-300 group-hover:scale-105"
-                />
+  src={highlight.imageSrc}
+  alt={highlight.alt}
+  fill
+  sizes="280px"
+  className="object-cover transition duration-300 group-hover:scale-105"
+/>
               </div>
 
               <div className="p-4">
