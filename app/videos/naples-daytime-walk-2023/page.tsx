@@ -51,6 +51,10 @@ const ratingsPopoverRef = useRef<HTMLDivElement | null>(null);
       seconds: 441,
       imageSrc: "/naples-day-july-2023/highlights/pignasecca.jpg",
       alt: "Pignasecca Market in Naples",
+      proTip: {
+        label: "Eat Local",
+        text: "Grab a cuoppo di pesce fritto (fried fish cone) here. It's the most authentic street food experience in the city.",
+      },
     },
     {
       title: "Spaccanapoli",
@@ -253,7 +257,14 @@ const scrollToRelatedTours = () => {
     "Raw Footage Available",
   ];
 
-  
+  const gearBadges = ["Sony A7S III", "Sony 16-35mm PZ"];
+  const formatBadges = [
+    "4K UHD",
+    "59.94fps",
+    "2-Channel LPCM16",
+    "HLG / Rec.2020",
+    "Raw Footage Available",
+  ];
 
   const inlineWalkStats = [
     { icon: "📅", label: "Date", value: "Filmed on July 6, 2023 � July 22, 2023 � July 23, 2023" },
@@ -642,30 +653,45 @@ const scrollToRelatedTours = () => {
           className="mt-8 flex gap-4 overflow-x-auto scroll-smooth pb-2"
         >
           {highlights.map((highlight) => (
-            <button
+            <div
               key={`${highlight.title}-${highlight.seconds}`}
-              onClick={() => handleHighlightClick(highlight.seconds)}
-              className="group w-[280px] shrink-0 overflow-hidden rounded-[1.5rem] border border-[#d8c7b5] bg-white text-left shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg"
+              className="w-[280px] shrink-0"
             >
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <Image
-  src={highlight.imageSrc}
-  alt={highlight.alt}
-  fill
-  sizes="280px"
-  className="object-cover transition duration-300 group-hover:scale-105"
-/>
-              </div>
+              <button
+                onClick={() => handleHighlightClick(highlight.seconds)}
+                className="w-full overflow-hidden rounded-[1.5rem] border border-[#d8c7b5] bg-white text-left shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={highlight.imageSrc}
+                    alt={highlight.alt}
+                    fill
+                    sizes="280px"
+                    className="object-cover transition duration-300 hover:scale-105"
+                  />
+                </div>
 
-              <div className="p-4">
-                <p className="text-sm font-semibold text-[#3d3327]">
-                  {highlight.title}
-                </p>
-                <p className="mt-1 text-sm text-[#8a7a68]">
-                  {highlight.timeLabel}
-                </p>
-              </div>
-            </button>
+                <div className="p-4">
+                  <div className="flex items-start justify-between gap-3">
+                    <p className="text-sm font-semibold text-[#3d3327]">
+                      {highlight.title}
+                    </p>
+                    <p className="shrink-0 text-sm text-[#8a7a68]">
+                      {highlight.timeLabel}
+                    </p>
+                  </div>
+
+                  {highlight.proTip ? (
+                    <p className="mt-3 text-sm leading-6 text-[#56493a]">
+                      <span className="font-semibold text-[#3d3327]">
+                        {highlight.proTip.label}:
+                      </span>{" "}
+                      {highlight.proTip.text}
+                    </p>
+                  ) : null}
+                </div>
+              </button>
+            </div>
           ))}
         </div>
       </section>
@@ -705,7 +731,7 @@ const scrollToRelatedTours = () => {
               </p>
               <p className="mt-3 text-[15px] leading-7 text-[#56493a]">
                 Scan to open the Naples walking route on your phone using
-                Google My Maps.
+                Google Maps.
               </p>
               <a
                 href={fullMapUrl}
@@ -713,7 +739,7 @@ const scrollToRelatedTours = () => {
                 rel="noreferrer"
                 className="mt-4 inline-flex items-center justify-center rounded-full border border-[#167fd5] bg-white px-4 py-2 text-sm font-semibold text-[#167fd5] shadow-sm transition hover:bg-[#edf6fd]"
               >
-                Open the route in Google My Maps
+                Open the route in Google Maps
               </a>
             </div>
 
@@ -741,8 +767,8 @@ const scrollToRelatedTours = () => {
   ref={licensingHubRef}
   className="scroll-mt-32 mx-auto max-w-6xl px-6 pb-14 lg:px-10"
 >
-        <div className="rounded-[2rem] border border-[#d8c7b5] bg-[#f7efe4] p-8 shadow-xl lg:p-10">
-          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="rounded-[2rem] border border-[#d8c7b5] bg-[#f7efe4] p-7 shadow-xl lg:p-8">
+          <div className="grid gap-7 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
                 Licensing Hub
@@ -765,30 +791,74 @@ const scrollToRelatedTours = () => {
               </p>
             </div>
 
-            <div className="rounded-[1.75rem] border border-[#d8c7b5] bg-white p-6 shadow-sm">
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#8a7a68]">
-                Technical Specs
-              </p>
+            <div className="rounded-[1.75rem] border border-[#d8c7b5] bg-white p-5 shadow-sm sm:p-6">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-[1.25rem] border border-[#eadfce] bg-[#fcfaf6] p-4">
+                  <div className="space-y-3">
+                    <div className="border-b border-[#efe3d3] pb-3">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">
+                        Camera
+                      </p>
+                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33] underline-offset-4 transition hover:text-[#167fd5]">
+                        Sony A7S III
+                      </span>
+                    </div>
+                    <div className="border-b border-[#efe3d3] pb-3">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">
+                        Lens
+                      </p>
+                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33] underline-offset-4 transition hover:text-[#167fd5]">
+                        Sony FE PZ 16-35mm G
+                      </span>
+                    </div>
+                    <div>
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">
+                        Microphone
+                      </p>
+                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33] underline-offset-4 transition hover:text-[#167fd5]">
+                        Sony ECM-M1
+                      </span>
+                    </div>
+                  </div>
+                </div>
 
-              <div className="mt-5 flex flex-wrap gap-2">
-                {techBadges.map((badge) => (
-                  <span
-                    key={badge}
-                    className="rounded-full border border-[#d8c7b5] bg-[#fcfaf6] px-4 py-2 text-sm font-semibold text-[#5c4c33]"
-                  >
-                    {badge}
-                  </span>
-                ))}
+                <div className="rounded-[1.25rem] border border-[#eadfce] bg-[#fcfaf6] p-4">
+                  <div className="space-y-3">
+                    <div className="border-b border-[#efe3d3] pb-3">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">
+                        Resolution
+                      </p>
+                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">
+                        4K UHD
+                      </span>
+                    </div>
+                    <div className="border-b border-[#efe3d3] pb-3">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">
+                        Frame Rate
+                      </p>
+                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">
+                        59.94 fps
+                      </span>
+                    </div>
+                    <div>
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">
+                        Color
+                      </p>
+                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">
+                        HLG / Rec.2020 HDR
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
-
-              <div className="mt-8">
-  <a
-    href="/licensing"
-    className="block w-full rounded-2xl bg-[#167fd5] px-6 py-5 text-center text-base font-semibold text-white shadow-sm transition hover:bg-[#09679e]"
-  >
-    Request License Quote
-  </a>
-</div>
+              <div className="mt-5 flex justify-center">
+                <a
+                  href="/licensing"
+                  className="inline-flex min-w-[220px] items-center justify-center rounded-2xl bg-[#167fd5] px-8 py-4 text-center text-base font-semibold text-white shadow-sm transition hover:bg-[#09679e]"
+                >
+                  Request License Quote
+                </a>
+              </div>
             </div>
           </div>
         </div>
