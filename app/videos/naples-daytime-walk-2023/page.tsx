@@ -12,6 +12,14 @@ export default function NaplesDaytimeWalk2023Page() {
   const initialYoutubeEmbedUrl = buildYoutubeEmbedUrl(0, false);
   const [iframeSrc, setIframeSrc] = useState(initialYoutubeEmbedUrl);
   const [iframeKey, setIframeKey] = useState(0);
+  const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Countries", href: "/countries" },
+    { label: "Italy", href: "/destinations/italy" },
+    { label: "Campania", href: "/destinations/italy/campania" },
+    { label: "Naples", href: "/destinations/italy/campania/naples" },
+    { label: "Naples Day Walk (July 2023)" },
+  ];
 
 const overviewSectionRef = useRef<HTMLElement | null>(null);
 const videoSectionRef = useRef<HTMLDivElement | null>(null);
@@ -445,7 +453,35 @@ const scrollToRelatedTours = () => {
   className="scroll-mt-32 border-b border-[#d8c7b5] bg-gradient-to-br from-[#f4e6bc] via-[#fcfaf6] to-[#e7f1f8]"
 >
         <div className="mx-auto max-w-6xl px-6 py-12 lg:px-10 lg:py-16">
-        
+          <nav
+            aria-label="Breadcrumb"
+            className="mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-[#8a7a68]"
+          >
+            {breadcrumbs.map((item, index) => (
+              <div
+                key={item.label}
+                className="inline-flex items-center gap-2"
+              >
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    className="transition hover:text-[#167fd5]"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <span className="font-medium text-[#5c4c33]">
+                    {item.label}
+                  </span>
+                )}
+                {index < breadcrumbs.length - 1 ? (
+                  <span aria-hidden="true" className="text-[#bba893]">
+                    /
+                  </span>
+                ) : null}
+              </div>
+            ))}
+          </nav>
 
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
   <div className="min-w-0">
