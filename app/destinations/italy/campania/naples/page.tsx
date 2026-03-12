@@ -40,7 +40,7 @@ export default function Home() {
       title: "Markets & Street Life",
       description:
         "Explore the color, noise, movement, and local character of Naples markets and busy streets.",
-      imageSrc: "/naples/markets.jpg",
+      imageSrc: "/naples/markets.JPG",
       alt: "Market scene in Naples",
     },
     {
@@ -87,11 +87,11 @@ export default function Home() {
       alt: "Boats and water in Naples",
     },
     {
-      src: "/naples/castle.jpg",
+      src: "/naples/castle.JPG",
       alt: "Castel Nuovo in Naples",
     },
     {
-      src: "/naples/markets.jpg",
+      src: "/naples/markets.JPG",
       alt: "Naples market scene",
     },
     {
