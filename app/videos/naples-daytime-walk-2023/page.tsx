@@ -215,7 +215,7 @@ const scrollToRelatedTours = () => {
   });
 };
 
-  const youtubeVideoUrl = "https://www.youtube.com/watch?v=990AqbKb18c";
+  const youtubeVideoUrl = `https://www.youtube.com/watch?v=990AqbKb18c&start=${currentStart}&rel=0&autoplay=${isPlaying ? 1 : 0}`;
 
   const techBadges = [
     "4K UHD",
@@ -470,15 +470,6 @@ const scrollToRelatedTours = () => {
               }}
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
-              config={{
-                youtube: {
-                  playerVars: {
-                    autoplay: isPlaying ? 1 : 0,
-                    rel: 0,
-                    start: currentStart,
-                  },
-                },
-              }}
             />
           </div>
         </div>
