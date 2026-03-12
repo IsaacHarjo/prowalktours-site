@@ -332,22 +332,22 @@ const scrollToRelatedTours = () => {
   return (
     <div className="min-h-screen bg-[#fcfaf6] text-[#3d3327]">
        <section className="sticky top-16 z-40 border-y border-[#7f5f49] bg-[#3d3327]/95 text-white backdrop-blur">
-  <nav className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center px-6 py-3 lg:px-10">
+  <nav className="mx-auto grid max-w-6xl grid-cols-[1fr_auto] items-center px-6 py-2 sm:grid-cols-[1fr_auto_1fr] sm:py-3 lg:px-10">
     <div className="justify-self-start">
       <a
         href="/destinations/italy/campania/naples"
-        className="inline-flex items-center gap-2 rounded-full border border-[#8f735c] bg-[#4a3c2f] px-3 py-1.5 text-sm font-semibold text-white/90 transition hover:bg-[#5a4838] hover:text-white"
+        className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-[#8f735c] bg-[#4a3c2f] px-3 py-1.5 text-sm font-semibold text-white/90 transition hover:bg-[#5a4838] hover:text-white"
       >
         <span aria-hidden="true">←</span>
         <span>Back to Naples</span>
       </a>
     </div>
 
-    <div className="justify-self-center">
-      <div className="flex min-w-max items-center gap-6 text-sm font-semibold text-white/90">
+    <div className="justify-self-end sm:justify-self-center">
+      <div className="flex min-w-max items-center gap-4 text-xs font-semibold text-white/90 sm:gap-6 sm:text-sm">
         <button
           onClick={scrollToOverview}
-          className="transition hover:text-white"
+          className="hidden transition hover:text-white sm:inline-flex"
           type="button"
         >
           Overview
@@ -355,7 +355,7 @@ const scrollToRelatedTours = () => {
 
         <button
           onClick={scrollToHighlights}
-          className="transition hover:text-white"
+          className="hidden transition hover:text-white sm:inline-flex"
           type="button"
         >
           Highlights
@@ -363,7 +363,7 @@ const scrollToRelatedTours = () => {
 
         <button
           onClick={scrollToRouteMap}
-          className="transition hover:text-white"
+          className="hidden transition hover:text-white sm:inline-flex"
           type="button"
         >
           Route Map
@@ -371,7 +371,7 @@ const scrollToRelatedTours = () => {
 
         <button
           onClick={scrollToLicensing}
-          className="transition hover:text-white"
+          className="hidden transition hover:text-white sm:inline-flex"
           type="button"
         >
           Licensing
@@ -379,7 +379,7 @@ const scrollToRelatedTours = () => {
 
         <button
           onClick={scrollToRelatedTours}
-          className="transition hover:text-white"
+          className="hidden transition hover:text-white sm:inline-flex"
           type="button"
         >
           Related Tours
@@ -389,7 +389,7 @@ const scrollToRelatedTours = () => {
           href="https://youtu.be/990AqbKb18c"
           target="_blank"
           rel="noreferrer"
-          className="transition hover:text-white"
+          className="whitespace-nowrap transition hover:text-white"
         >
           Watch on YouTube
         </a>
@@ -540,7 +540,7 @@ const scrollToRelatedTours = () => {
     
   </div>
 
-  <div className="relative overflow-hidden rounded-[2rem] border border-[#d8c7b5] bg-white shadow-sm">
+  <div className="relative hidden overflow-hidden rounded-[2rem] border border-[#d8c7b5] bg-white shadow-sm lg:block">
     <div className="relative aspect-[4/3] w-full">
       <Image
         src="/naples-day-july-2023/naples-iconic-view.jpg"
@@ -560,7 +560,7 @@ const scrollToRelatedTours = () => {
 
       <section
         ref={videoSectionRef}
-        className="mx-auto max-w-6xl px-6 pt-12 pb-6 lg:px-10 lg:pt-14 lg:pb-6"
+        className="mx-auto max-w-6xl px-6 pt-6 pb-6 lg:px-10 lg:pt-14 lg:pb-6"
       >
         <div className="overflow-hidden rounded-[2rem] border border-[#d8c7b5] shadow-lg">
           <div className="aspect-video w-full bg-black">

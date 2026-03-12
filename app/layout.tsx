@@ -198,7 +198,7 @@ function SiteHeader() {
       </div>
 
       <div className="border-t border-[#efe3d3] lg:hidden">
-        <div className="mx-auto flex max-w-7xl gap-5 overflow-x-auto px-6 py-3 text-[17px] font-semibold tracking-[0.04em] text-[#5c4c33]">
+        <div className="mx-auto flex max-w-7xl flex-wrap gap-x-5 gap-y-2 px-6 py-3 text-[16px] font-semibold tracking-[0.04em] text-[#5c4c33]">
           {navItems.map((item) => (
             <Link key={item.label} href={item.href} className="whitespace-nowrap">
               {item.label}
