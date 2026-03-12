@@ -4,13 +4,17 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export default function NaplesDaytimeWalk2023Page() {
-  const [currentStart, setCurrentStart] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
   const [isRatingsOpen, setIsRatingsOpen] = useState(false);
+  const buildYoutubeEmbedUrl = (start: number, autoplay: boolean) =>
+    `https://www.youtube.com/embed/990AqbKb18c?start=${start}&autoplay=${
+      autoplay ? 1 : 0
+    }&rel=0`;
+  const initialYoutubeEmbedUrl = buildYoutubeEmbedUrl(0, false);
+  const [iframeSrc, setIframeSrc] = useState(initialYoutubeEmbedUrl);
+  const [iframeKey, setIframeKey] = useState(0);
 
 const overviewSectionRef = useRef<HTMLElement | null>(null);
 const videoSectionRef = useRef<HTMLDivElement | null>(null);
-const videoIframeRef = useRef<HTMLIFrameElement | null>(null);
 const highlightsSectionRef = useRef<HTMLElement | null>(null);
 const highlightsRef = useRef<HTMLDivElement | null>(null);
 const routeMapRef = useRef<HTMLElement | null>(null);
@@ -186,13 +190,8 @@ const ratingsPopoverRef = useRef<HTMLDivElement | null>(null);
   ];
 
   const handleHighlightClick = (seconds: number) => {
-    const nextUrl = buildYoutubeEmbedUrl(seconds, true);
-
-    setCurrentStart(seconds);
-    setIsPlaying(true);
-    if (videoIframeRef.current) {
-      videoIframeRef.current.src = nextUrl;
-    }
+    setIframeSrc(buildYoutubeEmbedUrl(seconds, true));
+    setIframeKey((currentKey) => currentKey + 1);
     setTimeout(() => {
       videoSectionRef.current?.scrollIntoView({
         behavior: "smooth",
@@ -250,13 +249,6 @@ const scrollToRelatedTours = () => {
     block: "start",
   });
 };
-
-  const buildYoutubeEmbedUrl = (start: number, autoplay: boolean) =>
-    `https://www.youtube.com/embed/990AqbKb18c?start=${start}&autoplay=${
-      autoplay ? 1 : 0
-    }&rel=0`;
-
-  const youtubeEmbedUrl = buildYoutubeEmbedUrl(currentStart, isPlaying);
 
   const techBadges = [
     "4K UHD",
@@ -603,10 +595,9 @@ const scrollToRelatedTours = () => {
         <div className="overflow-hidden rounded-[2rem] border border-[#d8c7b5] shadow-lg">
           <div className="aspect-video w-full bg-black">
             <iframe
-              key={`${currentStart}-${isPlaying ? "play" : "pause"}`}
-              ref={videoIframeRef}
+              key={iframeKey}
               className="h-full w-full"
-              src={youtubeEmbedUrl}
+              src={iframeSrc}
               title="Naples Italy ASMR walking tour"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
