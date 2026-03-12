@@ -10,6 +10,7 @@ export default function NaplesDaytimeWalk2023Page() {
 
 const overviewSectionRef = useRef<HTMLElement | null>(null);
 const videoSectionRef = useRef<HTMLDivElement | null>(null);
+const videoIframeRef = useRef<HTMLIFrameElement | null>(null);
 const highlightsSectionRef = useRef<HTMLElement | null>(null);
 const highlightsRef = useRef<HTMLDivElement | null>(null);
 const routeMapRef = useRef<HTMLElement | null>(null);
@@ -185,8 +186,13 @@ const ratingsPopoverRef = useRef<HTMLDivElement | null>(null);
   ];
 
   const handleHighlightClick = (seconds: number) => {
+    const nextUrl = buildYoutubeEmbedUrl(seconds, true);
+
     setCurrentStart(seconds);
     setIsPlaying(true);
+    if (videoIframeRef.current) {
+      videoIframeRef.current.src = nextUrl;
+    }
     setTimeout(() => {
       videoSectionRef.current?.scrollIntoView({
         behavior: "smooth",
@@ -245,7 +251,12 @@ const scrollToRelatedTours = () => {
   });
 };
 
-  const youtubeEmbedUrl = `https://www.youtube.com/embed/990AqbKb18c?start=${currentStart}&autoplay=${isPlaying ? 1 : 0}&rel=0`;
+  const buildYoutubeEmbedUrl = (start: number, autoplay: boolean) =>
+    `https://www.youtube.com/embed/990AqbKb18c?start=${start}&autoplay=${
+      autoplay ? 1 : 0
+    }&rel=0`;
+
+  const youtubeEmbedUrl = buildYoutubeEmbedUrl(currentStart, isPlaying);
 
   const techBadges = [
     "4K UHD",
@@ -593,6 +604,7 @@ const scrollToRelatedTours = () => {
           <div className="aspect-video w-full bg-black">
             <iframe
               key={`${currentStart}-${isPlaying ? "play" : "pause"}`}
+              ref={videoIframeRef}
               className="h-full w-full"
               src={youtubeEmbedUrl}
               title="Naples Italy ASMR walking tour"
