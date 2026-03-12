@@ -25,6 +25,27 @@ const socialLinks = {
   youtube: "https://www.youtube.com/@ProwalkTours",
 };
 
+const footerSections = {
+  explore: [
+    { label: "Countries", href: "/countries" },
+    { label: "Italy", href: "/destinations/italy" },
+    { label: "Campania", href: "/destinations/italy/campania" },
+    { label: "Naples", href: "/destinations/italy/campania/naples" },
+  ],
+  resources: [
+    { label: "Licensing", href: "/licensing" },
+    { label: "Featured Walk", href: "/videos/naples-daytime-walk-2023" },
+    { label: "YouTube Channel", href: socialLinks.youtube },
+    { label: "Travel Videos", href: "/" },
+  ],
+  social: [
+    { label: "Instagram", href: socialLinks.instagram },
+    { label: "YouTube", href: socialLinks.youtube },
+    { label: "TikTok", href: socialLinks.tiktok },
+    { label: "Facebook", href: socialLinks.facebook },
+  ],
+};
+
 export const metadata: Metadata = {
   title: "Prowalk Tours",
   description: "Immersive walking tours, 360 videos, drone footage, and licensing.",
@@ -180,6 +201,94 @@ function SiteHeader() {
   );
 }
 
+function SiteFooter() {
+  return (
+    <footer className="border-t border-[#d8c7b5] bg-[#f7f1e8] text-[#3d3327]">
+      <div className="mx-auto max-w-7xl px-6 py-14 lg:px-10">
+        <div className="mt-10 grid gap-10 md:grid-cols-2 xl:grid-cols-4">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
+              Prowalk Tours
+            </p>
+            <p className="mt-4 text-2xl font-bold tracking-[0.16em] text-[#3d3327]">
+              PROWALK TOURS
+            </p>
+            <p className="mt-4 max-w-sm text-[15px] leading-7 text-[#6e5a45]">
+              Immersive walking tours, city atmosphere, drone footage, and
+              destination storytelling from around the world.
+            </p>
+          </div>
+
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
+              Explore
+            </p>
+            <ul className="mt-4 space-y-3 text-[15px] leading-7 text-[#5c4c33]">
+              {footerSections.explore.map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="transition hover:text-[#167fd5]">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
+              Resources
+            </p>
+            <ul className="mt-4 space-y-3 text-[15px] leading-7 text-[#5c4c33]">
+              {footerSections.resources.map((item) => (
+                <li key={item.label}>
+                  {item.href.startsWith("http") ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="transition hover:text-[#167fd5]"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link href={item.href} className="transition hover:text-[#167fd5]">
+                      {item.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
+              Social
+            </p>
+            <ul className="mt-4 space-y-3 text-[15px] leading-7 text-[#5c4c33]">
+              {footerSections.social.map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="transition hover:text-[#167fd5]"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-10 border-t border-[#dccbb7] pt-5 text-sm text-[#7c6b59]">
+          <p>© 2026 Prowalk Tours. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -190,6 +299,7 @@ export default function RootLayout({
       <body>
         <SiteHeader />
         <main>{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );

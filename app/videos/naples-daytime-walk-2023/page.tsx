@@ -1,10 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import ReactPlayer from "react-player";
 import { useRef, useState } from "react";
 
 export default function NaplesDaytimeWalk2023Page() {
   const [currentStart, setCurrentStart] = useState(0);
+  const [hasStartedPlayback, setHasStartedPlayback] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
 const overviewSectionRef = useRef<HTMLElement | null>(null);
 const videoSectionRef = useRef<HTMLDivElement | null>(null);
@@ -152,6 +155,8 @@ const relatedToursRef = useRef<HTMLElement | null>(null);
 
   const handleHighlightClick = (seconds: number) => {
     setCurrentStart(seconds);
+    setHasStartedPlayback(true);
+    setIsPlaying(true);
     setTimeout(() => {
       videoSectionRef.current?.scrollIntoView({
         behavior: "smooth",
@@ -210,7 +215,7 @@ const scrollToRelatedTours = () => {
   });
 };
 
-  const youtubeEmbedUrl = `https://www.youtube.com/embed/990AqbKb18c?start=${currentStart}&autoplay=1`;
+  const youtubeVideoUrl = "https://www.youtube.com/watch?v=990AqbKb18c";
 
   const techBadges = [
     "4K UHD",
@@ -221,6 +226,74 @@ const scrollToRelatedTours = () => {
     "HLG / Rec.2020",
     "Raw Footage Available",
   ];
+
+  
+
+  const inlineWalkStats = [
+    { icon: "📅", label: "Date", value: "July 2023" },
+    { icon: "📏", label: "Distance", value: "8.3 mi / 13.3 km" },
+    { icon: "🕒", label: "Duration", value: "5h 45m" },
+    { icon: "🚶", label: "Pace", value: "Leisurely" },
+    { icon: "☀️", label: "Vibe", value: "Vibrant / Sunny" },
+  ];
+
+  const proRatings = [
+    {
+      category: "Intensity",
+      score: 2,
+      icon: "◦",
+      iconClassName: "text-[#8a7a68]",
+      activeBarClassName: "bg-[#8a7a68]",
+      description: "A steady, long-form walk but lacks major climbs.",
+    },
+    {
+      category: "Scenery",
+      score: 5,
+      icon: "✦",
+      iconClassName: "text-[#167fd5]",
+      activeBarClassName: "bg-[#167fd5]",
+      description:
+        "Sweeping bay views and the dense, textured streets of the Old Town.",
+    },
+    {
+      category: "Crowds",
+      score: 4,
+      icon: "◌",
+      iconClassName: "text-[#b7791f]",
+      activeBarClassName: "bg-[#d08a2f]",
+      description: "High energy; expect heavy foot traffic in the markets.",
+    },
+    {
+      category: "History",
+      score: 5,
+      icon: "▦",
+      iconClassName: "text-[#167fd5]",
+      activeBarClassName: "bg-[#167fd5]",
+      description:
+        "Passes through the UNESCO World Heritage heart of Naples.",
+    },
+    {
+      category: "Variation",
+      score: 4,
+      icon: "✳",
+      iconClassName: "text-[#167fd5]",
+      activeBarClassName: "bg-[#167fd5]",
+      description: "Endless side alleys to explore if you go off-script.",
+    },
+  ];
+
+  const topInlineStats = [
+    { icon: "📅", label: "Date", value: "July 2023" },
+    { icon: "📏", label: "Distance", value: "8.3 mi / 13.3 km" },
+    { icon: "🕒", label: "Duration", value: "5h 45m" },
+    { icon: "🚶", label: "Pace", value: "Leisurely" },
+    { icon: "☀️", label: "Vibe", value: "Vibrant / Sunny" },
+    { icon: "⭐", label: "Overall Score", value: "4.0 / 5" },
+  ];
+
+  const fullMapUrl =
+    "https://www.google.com/maps/d/edit?mid=1E_nqyiPSRDss1zSiWuRzH2bBrAm3tBU&usp=sharing";
+  const fullMapQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(fullMapUrl)}`;
 
   return (
     <div className="min-h-screen bg-[#fcfaf6] text-[#3d3327]">
@@ -331,20 +404,27 @@ const scrollToRelatedTours = () => {
       historic streets, panoramic viewpoints, and the bay near Castel
       dell’Ovo.
     </p>
-    <div className="mt-6 space-y-2 text-base font-semibold text-[#3d3327]">
-            <div className="flex items-center gap-2">
-              <span aria-hidden="true">📅</span>
-              <span>Filmed July 2023</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span aria-hidden="true">☀️</span>
-              <span>Sunny • 89°F</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span aria-hidden="true">🕒</span>
-              <span>Approx. runtime: 5h 45m</span>
-            </div>
+    <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-y border-[#d8c7b5]/80 py-4 text-[#3d3327]">
+      {topInlineStats.map((stat) => (
+        <div
+          key={stat.label}
+          className="inline-flex min-w-0 items-center gap-3"
+        >
+          <span aria-hidden="true" className="text-base leading-none">
+            {stat.icon}
+          </span>
+          <div className="flex min-w-0 items-baseline gap-2">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">
+              {stat.label}
+            </p>
+            <p className="text-sm font-bold leading-6 text-[#3d3327] sm:text-[15px]">
+              {stat.value}
+            </p>
           </div>
+        </div>
+      ))}
+    </div>
+    
   </div>
 
   <div className="relative overflow-hidden rounded-[2rem] border border-[#d8c7b5] bg-white shadow-sm">
@@ -371,15 +451,90 @@ const scrollToRelatedTours = () => {
       >
         <div className="overflow-hidden rounded-[2rem] border border-[#d8c7b5] shadow-lg">
           <div className="aspect-video w-full bg-black">
-            <iframe
+            <ReactPlayer
               key={currentStart}
               className="h-full w-full"
-              src={youtubeEmbedUrl}
-              title="Naples Italy ASMR walking tour"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
+              src={youtubeVideoUrl}
+              width="100%"
+              height="100%"
+              controls
+              playing={isPlaying}
+              light={
+                hasStartedPlayback
+                  ? false
+                  : "/naples-day-july-2023/video-poster.jpg"
+              }
+              onClickPreview={() => {
+                setHasStartedPlayback(true);
+                setIsPlaying(true);
+              }}
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
+              config={{
+                youtube: {
+                  playerVars: {
+                    autoplay: isPlaying ? 1 : 0,
+                    rel: 0,
+                    start: currentStart,
+                  },
+                },
+              }}
             />
+          </div>
+        </div>
+
+        <div className="hidden">
+          <a
+            href="https://www.youtube.com/@ProWalkTours?sub_confirmation=1"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex w-full items-center justify-center rounded-2xl bg-[#d52b1e] px-6 py-4 text-center text-base font-bold text-white shadow-lg transition hover:bg-[#b82217] sm:w-auto"
+          >
+            Join the Journey — Subscribe to ProWalk Tours
+          </a>
+        </div>
+
+        <div className="mt-6 rounded-[1.5rem] border border-[#eadfce] bg-white/85 px-4 py-4 shadow-sm backdrop-blur-sm sm:px-5">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#9a735a]">
+              ProWalk Ratings
+            </p>
+            {proRatings.map((rating) => (
+              <div
+                key={rating.category}
+                className="inline-flex items-center gap-2.5"
+              >
+                <div className="inline-flex items-center gap-1.5">
+                  <span
+                    aria-hidden="true"
+                    className={`text-[11px] leading-none ${rating.iconClassName}`}
+                  >
+                    {rating.icon}
+                  </span>
+                  <span className="text-sm font-semibold text-[#3d3327]">
+                    {rating.category}
+                  </span>
+                </div>
+                <div
+                  className="flex items-center gap-1"
+                  aria-label={`${rating.category} rating ${rating.score} out of 5`}
+                >
+                  {[1, 2, 3, 4, 5].map((segment) => (
+                    <span
+                      key={segment}
+                      className={`h-1.5 w-4 rounded-full ${
+                        segment <= rating.score
+                          ? rating.activeBarClassName
+                          : "bg-[#d9c9b5]"
+                      }`}
+                    />
+                  ))}
+                </div>
+                <span className="text-sm font-bold text-[#3d3327]">
+                  {rating.score}/5
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -477,15 +632,34 @@ const scrollToRelatedTours = () => {
           </div>
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-3">
-          <a
-            href="https://www.google.com/maps/d/edit?mid=1E_nqyiPSRDss1zSiWuRzH2bBrAm3tBU&usp=sharing"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-2xl border border-[#167fd5] bg-white px-5 py-3 text-sm font-semibold text-[#167fd5] shadow-sm transition hover:bg-[#edf6fd]"
-          >
-            Open Full Interactive Map
-          </a>
+        <div className="mt-6 rounded-[1.75rem] border border-[#d8c7b5] bg-[#fcfaf6] p-5 shadow-sm">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+            <div className="max-w-xl">
+              <p className="text-lg font-semibold tracking-tight text-[#3d3327] sm:text-xl">
+                📱 Take this route with you
+              </p>
+              <p className="mt-3 text-[15px] leading-7 text-[#56493a]">
+                Scan to open the Naples walking route on your phone using
+                Google My Maps.
+              </p>
+            </div>
+
+            <a
+              href={fullMapUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="self-start rounded-[1.5rem] border border-[#e5d7c6] bg-white p-3 shadow-sm transition hover:border-[#cdb7a0]"
+              aria-label="Open the Naples route map on your phone"
+            >
+              <img
+                src={fullMapQrUrl}
+                alt="QR code linking to the Naples Google My Map"
+                width="132"
+                height="132"
+                className="h-[132px] w-[132px] rounded-xl"
+              />
+            </a>
+          </div>
         </div>
       </section>
 
@@ -647,6 +821,14 @@ const scrollToRelatedTours = () => {
         <p className="mt-3 text-sm text-[#8a7a68]">
           Occasional updates only. Unsubscribe anytime.
         </p>
+        <a
+          href="https://www.youtube.com/@ProWalkTours?sub_confirmation=1"
+          target="_blank"
+          rel="noreferrer"
+          className="mt-6 inline-flex items-center justify-center rounded-full bg-[#d52b1e] px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#b82217]"
+        >
+          Join the Journey — Subscribe to ProWalk Tours
+        </a>
       </div>
 
       <form
