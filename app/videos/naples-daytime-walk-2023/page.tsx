@@ -256,7 +256,7 @@ const scrollToRelatedTours = () => {
   
 
   const inlineWalkStats = [
-    { icon: "📅", label: "Date", value: "July 2023" },
+    { icon: "📅", label: "Date", value: "Filmed on July 6, 2023 � July 22, 2023 � July 23, 2023" },
     { icon: "📏", label: "Distance", value: "8.3 mi / 13.3 km" },
     { icon: "🕒", label: "Duration", value: "5h 45m" },
     { icon: "🚶", label: "Pace", value: "Leisurely" },
@@ -309,7 +309,7 @@ const scrollToRelatedTours = () => {
   ];
 
   const topInlineStats = [
-    { icon: "📅", label: "Date", value: "July 2023" },
+    { icon: "📅", label: "Date", value: "Filmed on July 6, 2023 � July 22, 2023 � July 23, 2023" },
     { icon: "📏", label: "Distance", value: "8.3 mi / 13.3 km" },
     { icon: "🕒", label: "Duration", value: "5h 45m" },
     { icon: "🚶", label: "Pace", value: "Leisurely" },
@@ -321,13 +321,30 @@ const scrollToRelatedTours = () => {
     "https://www.google.com/maps/d/edit?mid=1E_nqyiPSRDss1zSiWuRzH2bBrAm3tBU&usp=sharing";
   const fullMapQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(fullMapUrl)}`;
   const visibleTopInlineStats = [
-    { icon: "📅", label: "Date", value: "July 2023" },
+    { icon: "📅", label: "Date", value: "Filmed on July 6, 2023 � July 22, 2023 � July 23, 2023" },
     { icon: "📏", label: "Distance", value: "8.3 mi / 13.3 km" },
     { icon: "🕒", label: "Duration", value: "5h 45m" },
     { icon: "🚶", label: "Pace", value: "Leisurely" },
     { icon: "☀️", label: "Vibe", value: "Vibrant / Sunny" },
     { icon: "⭐", label: "Overall Score", value: "4.2 / 5" },
   ];
+
+  const topRowStats = [
+    {
+      icon: "📅",
+      label: "Date",
+      value: "July 6, 2023 / July 22, 2023 / July 23, 2023",
+    },
+    { icon: "📏", label: "Distance", value: "8.3 mi / 13.3 km" },
+    { icon: "🕒", label: "Duration", value: "5h 45m" },
+    { icon: "☀️", label: "Vibe", value: "Vibrant / Sunny" },
+    { icon: "🚶", label: "Pace", value: "Leisurely" },
+  ];
+  const overallScoreStat = {
+    icon: "⭐",
+    label: "Overall Score",
+    value: "4.2 / 5",
+  };
 
   return (
     <div className="min-h-screen bg-[#fcfaf6] text-[#3d3327]">
@@ -438,86 +455,9 @@ const scrollToRelatedTours = () => {
       historic streets, panoramic viewpoints, and the bay near Castel
       dell’Ovo.
     </p>
-    <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-y border-[#d8c7b5]/80 py-4 text-[#3d3327]">
-      {visibleTopInlineStats.map((stat) =>
-        stat.label === "Overall Score" ? (
-          <div
-            key={stat.label}
-            ref={ratingsPopoverRef}
-            className="relative inline-flex min-w-0 items-center gap-3"
-            onMouseEnter={() => setIsRatingsOpen(true)}
-            onMouseLeave={() => setIsRatingsOpen(false)}
-          >
-            <button
-              type="button"
-              className="inline-flex min-w-0 items-center gap-3 rounded-full transition hover:text-[#167fd5]"
-              onClick={() => setIsRatingsOpen((open) => !open)}
-              onFocus={() => setIsRatingsOpen(true)}
-              aria-expanded={isRatingsOpen}
-              aria-haspopup="dialog"
-            >
-              <span aria-hidden="true" className="text-base leading-none">
-                {stat.icon}
-              </span>
-              <span className="flex min-w-0 items-baseline gap-2">
-                <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">
-                  {stat.label}
-                </span>
-                <span className="text-sm font-bold leading-6 text-[#3d3327] sm:text-[15px]">
-                  {stat.value}
-                </span>
-              </span>
-            </button>
-
-            {isRatingsOpen ? (
-              <div className="absolute left-0 top-full z-20 mt-3 w-[min(22rem,calc(100vw-3rem))] rounded-[1.5rem] border border-[#d8c7b5] bg-white/95 p-4 shadow-xl backdrop-blur-sm">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#9a735a]">
-                  ProWalk Rating
-                </p>
-                <div className="mt-3 space-y-3">
-                  {proRatings.map((rating) => (
-                    <div
-                      key={rating.category}
-                      className="flex items-center justify-between gap-4"
-                    >
-                      <div className="inline-flex min-w-0 items-center gap-2">
-                        <span
-                          aria-hidden="true"
-                          className={`text-[11px] leading-none ${rating.iconClassName}`}
-                        >
-                          {rating.icon}
-                        </span>
-                        <span className="text-sm font-semibold text-[#3d3327]">
-                          {rating.category}
-                        </span>
-                      </div>
-                      <div className="inline-flex items-center gap-2">
-                        <div
-                          className="flex items-center gap-1"
-                          aria-label={`${rating.category} rating ${rating.score} out of 5`}
-                        >
-                          {[1, 2, 3, 4, 5].map((segment) => (
-                            <span
-                              key={segment}
-                              className={`h-1.5 w-4 rounded-full ${
-                                segment <= rating.score
-                                  ? rating.activeBarClassName
-                                  : "bg-[#d9c9b5]"
-                              }`}
-                            />
-                          ))}
-                        </div>
-                        <span className="text-sm font-bold text-[#3d3327]">
-                          {rating.score}/5
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ) : null}
-          </div>
-        ) : (
+    <div className="mt-8 space-y-4 border-y border-[#d8c7b5]/80 py-4 text-[#3d3327]">
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+        {topRowStats.map((stat) => (
           <div
             key={stat.label}
             className="inline-flex min-w-0 items-center gap-3"
@@ -534,8 +474,84 @@ const scrollToRelatedTours = () => {
               </p>
             </div>
           </div>
-        )
-      )}
+        ))}
+      </div>
+
+      <div
+        ref={ratingsPopoverRef}
+        className="relative inline-flex min-w-0 items-center gap-3"
+        onMouseEnter={() => setIsRatingsOpen(true)}
+        onMouseLeave={() => setIsRatingsOpen(false)}
+      >
+        <button
+          type="button"
+          className="inline-flex min-w-0 items-center gap-3 rounded-full transition hover:text-[#167fd5]"
+          onClick={() => setIsRatingsOpen((open) => !open)}
+          onFocus={() => setIsRatingsOpen(true)}
+          aria-expanded={isRatingsOpen}
+          aria-haspopup="dialog"
+        >
+          <span aria-hidden="true" className="text-base leading-none">
+            {overallScoreStat.icon}
+          </span>
+          <span className="flex min-w-0 items-baseline gap-2">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">
+              {overallScoreStat.label}
+            </span>
+            <span className="text-base font-bold leading-6 text-[#3d3327] sm:text-lg">
+              {overallScoreStat.value}
+            </span>
+          </span>
+        </button>
+
+        {isRatingsOpen ? (
+          <div className="absolute left-0 top-full z-20 mt-3 w-[min(22rem,calc(100vw-3rem))] rounded-[1.5rem] border border-[#d8c7b5] bg-white/95 p-4 shadow-xl backdrop-blur-sm">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#9a735a]">
+              ProWalk Rating
+            </p>
+            <div className="mt-3 space-y-3">
+              {proRatings.map((rating) => (
+                <div
+                  key={rating.category}
+                  className="flex items-center justify-between gap-4"
+                >
+                  <div className="inline-flex min-w-0 items-center gap-2">
+                    <span
+                      aria-hidden="true"
+                      className={`text-[11px] leading-none ${rating.iconClassName}`}
+                    >
+                      {rating.icon}
+                    </span>
+                    <span className="text-sm font-semibold text-[#3d3327]">
+                      {rating.category}
+                    </span>
+                  </div>
+                  <div className="inline-flex items-center gap-2">
+                    <div
+                      className="flex items-center gap-1"
+                      aria-label={`${rating.category} rating ${rating.score} out of 5`}
+                    >
+                      {[1, 2, 3, 4, 5].map((segment) => (
+                        <span
+                          key={segment}
+                          className={`h-1.5 w-4 rounded-full ${
+                            segment <= rating.score
+                              ? rating.activeBarClassName
+                              : "bg-[#d9c9b5]"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <span className="text-sm font-bold text-[#3d3327]">
+                      {rating.score}/5
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : null}
+      </div>
     </div>
     
   </div>
@@ -932,3 +948,4 @@ const scrollToRelatedTours = () => {
     </div>
   );
 }
+
