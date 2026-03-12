@@ -1,13 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import ReactPlayer from "react-player";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function NaplesDaytimeWalk2023Page() {
   const [currentStart, setCurrentStart] = useState(0);
-  const [hasStartedPlayback, setHasStartedPlayback] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isRatingsOpen, setIsRatingsOpen] = useState(false);
 
 const overviewSectionRef = useRef<HTMLElement | null>(null);
 const videoSectionRef = useRef<HTMLDivElement | null>(null);
@@ -16,6 +15,34 @@ const highlightsRef = useRef<HTMLDivElement | null>(null);
 const routeMapRef = useRef<HTMLElement | null>(null);
 const licensingHubRef = useRef<HTMLElement | null>(null);
 const relatedToursRef = useRef<HTMLElement | null>(null);
+const ratingsPopoverRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handlePointerDown = (event: MouseEvent | TouchEvent) => {
+      if (
+        ratingsPopoverRef.current &&
+        !ratingsPopoverRef.current.contains(event.target as Node)
+      ) {
+        setIsRatingsOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsRatingsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("touchstart", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("touchstart", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   const highlights = [
     {
@@ -155,7 +182,6 @@ const relatedToursRef = useRef<HTMLElement | null>(null);
 
   const handleHighlightClick = (seconds: number) => {
     setCurrentStart(seconds);
-    setHasStartedPlayback(true);
     setIsPlaying(true);
     setTimeout(() => {
       videoSectionRef.current?.scrollIntoView({
@@ -215,7 +241,7 @@ const scrollToRelatedTours = () => {
   });
 };
 
-  const youtubeVideoUrl = `https://www.youtube.com/watch?v=990AqbKb18c&start=${currentStart}&rel=0&autoplay=${isPlaying ? 1 : 0}`;
+  const youtubeEmbedUrl = `https://www.youtube.com/embed/990AqbKb18c?start=${currentStart}&autoplay=${isPlaying ? 1 : 0}&rel=0`;
 
   const techBadges = [
     "4K UHD",
@@ -294,6 +320,14 @@ const scrollToRelatedTours = () => {
   const fullMapUrl =
     "https://www.google.com/maps/d/edit?mid=1E_nqyiPSRDss1zSiWuRzH2bBrAm3tBU&usp=sharing";
   const fullMapQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(fullMapUrl)}`;
+  const visibleTopInlineStats = [
+    { icon: "📅", label: "Date", value: "July 2023" },
+    { icon: "📏", label: "Distance", value: "8.3 mi / 13.3 km" },
+    { icon: "🕒", label: "Duration", value: "5h 45m" },
+    { icon: "🚶", label: "Pace", value: "Leisurely" },
+    { icon: "☀️", label: "Vibe", value: "Vibrant / Sunny" },
+    { icon: "⭐", label: "Overall Score", value: "4.2 / 5" },
+  ];
 
   return (
     <div className="min-h-screen bg-[#fcfaf6] text-[#3d3327]">
@@ -405,24 +439,103 @@ const scrollToRelatedTours = () => {
       dell’Ovo.
     </p>
     <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-y border-[#d8c7b5]/80 py-4 text-[#3d3327]">
-      {topInlineStats.map((stat) => (
-        <div
-          key={stat.label}
-          className="inline-flex min-w-0 items-center gap-3"
-        >
-          <span aria-hidden="true" className="text-base leading-none">
-            {stat.icon}
-          </span>
-          <div className="flex min-w-0 items-baseline gap-2">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">
-              {stat.label}
-            </p>
-            <p className="text-sm font-bold leading-6 text-[#3d3327] sm:text-[15px]">
-              {stat.value}
-            </p>
+      {visibleTopInlineStats.map((stat) =>
+        stat.label === "Overall Score" ? (
+          <div
+            key={stat.label}
+            ref={ratingsPopoverRef}
+            className="relative inline-flex min-w-0 items-center gap-3"
+            onMouseEnter={() => setIsRatingsOpen(true)}
+            onMouseLeave={() => setIsRatingsOpen(false)}
+          >
+            <button
+              type="button"
+              className="inline-flex min-w-0 items-center gap-3 rounded-full transition hover:text-[#167fd5]"
+              onClick={() => setIsRatingsOpen((open) => !open)}
+              onFocus={() => setIsRatingsOpen(true)}
+              aria-expanded={isRatingsOpen}
+              aria-haspopup="dialog"
+            >
+              <span aria-hidden="true" className="text-base leading-none">
+                {stat.icon}
+              </span>
+              <span className="flex min-w-0 items-baseline gap-2">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">
+                  {stat.label}
+                </span>
+                <span className="text-sm font-bold leading-6 text-[#3d3327] sm:text-[15px]">
+                  {stat.value}
+                </span>
+              </span>
+            </button>
+
+            {isRatingsOpen ? (
+              <div className="absolute left-0 top-full z-20 mt-3 w-[min(22rem,calc(100vw-3rem))] rounded-[1.5rem] border border-[#d8c7b5] bg-white/95 p-4 shadow-xl backdrop-blur-sm">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#9a735a]">
+                  ProWalk Rating
+                </p>
+                <div className="mt-3 space-y-3">
+                  {proRatings.map((rating) => (
+                    <div
+                      key={rating.category}
+                      className="flex items-center justify-between gap-4"
+                    >
+                      <div className="inline-flex min-w-0 items-center gap-2">
+                        <span
+                          aria-hidden="true"
+                          className={`text-[11px] leading-none ${rating.iconClassName}`}
+                        >
+                          {rating.icon}
+                        </span>
+                        <span className="text-sm font-semibold text-[#3d3327]">
+                          {rating.category}
+                        </span>
+                      </div>
+                      <div className="inline-flex items-center gap-2">
+                        <div
+                          className="flex items-center gap-1"
+                          aria-label={`${rating.category} rating ${rating.score} out of 5`}
+                        >
+                          {[1, 2, 3, 4, 5].map((segment) => (
+                            <span
+                              key={segment}
+                              className={`h-1.5 w-4 rounded-full ${
+                                segment <= rating.score
+                                  ? rating.activeBarClassName
+                                  : "bg-[#d9c9b5]"
+                              }`}
+                            />
+                          ))}
+                        </div>
+                        <span className="text-sm font-bold text-[#3d3327]">
+                          {rating.score}/5
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : null}
           </div>
-        </div>
-      ))}
+        ) : (
+          <div
+            key={stat.label}
+            className="inline-flex min-w-0 items-center gap-3"
+          >
+            <span aria-hidden="true" className="text-base leading-none">
+              {stat.icon}
+            </span>
+            <div className="flex min-w-0 items-baseline gap-2">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">
+                {stat.label}
+              </p>
+              <p className="text-sm font-bold leading-6 text-[#3d3327] sm:text-[15px]">
+                {stat.value}
+              </p>
+            </div>
+          </div>
+        )
+      )}
     </div>
     
   </div>
@@ -451,25 +564,14 @@ const scrollToRelatedTours = () => {
       >
         <div className="overflow-hidden rounded-[2rem] border border-[#d8c7b5] shadow-lg">
           <div className="aspect-video w-full bg-black">
-            <ReactPlayer
-              key={currentStart}
+            <iframe
+              key={`${currentStart}-${isPlaying ? "play" : "pause"}`}
               className="h-full w-full"
-              src={youtubeVideoUrl}
-              width="100%"
-              height="100%"
-              controls
-              playing={isPlaying}
-              light={
-                hasStartedPlayback
-                  ? false
-                  : "/naples-day-july-2023/video-poster.jpg"
-              }
-              onClickPreview={() => {
-                setHasStartedPlayback(true);
-                setIsPlaying(true);
-              }}
-              onPlay={() => setIsPlaying(true)}
-              onPause={() => setIsPlaying(false)}
+              src={youtubeEmbedUrl}
+              title="Naples Italy ASMR walking tour"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             />
           </div>
         </div>
@@ -483,50 +585,6 @@ const scrollToRelatedTours = () => {
           >
             Join the Journey — Subscribe to ProWalk Tours
           </a>
-        </div>
-
-        <div className="mt-6 rounded-[1.5rem] border border-[#eadfce] bg-white/85 px-4 py-4 shadow-sm backdrop-blur-sm sm:px-5">
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#9a735a]">
-              ProWalk Ratings
-            </p>
-            {proRatings.map((rating) => (
-              <div
-                key={rating.category}
-                className="inline-flex items-center gap-2.5"
-              >
-                <div className="inline-flex items-center gap-1.5">
-                  <span
-                    aria-hidden="true"
-                    className={`text-[11px] leading-none ${rating.iconClassName}`}
-                  >
-                    {rating.icon}
-                  </span>
-                  <span className="text-sm font-semibold text-[#3d3327]">
-                    {rating.category}
-                  </span>
-                </div>
-                <div
-                  className="flex items-center gap-1"
-                  aria-label={`${rating.category} rating ${rating.score} out of 5`}
-                >
-                  {[1, 2, 3, 4, 5].map((segment) => (
-                    <span
-                      key={segment}
-                      className={`h-1.5 w-4 rounded-full ${
-                        segment <= rating.score
-                          ? rating.activeBarClassName
-                          : "bg-[#d9c9b5]"
-                      }`}
-                    />
-                  ))}
-                </div>
-                <span className="text-sm font-bold text-[#3d3327]">
-                  {rating.score}/5
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -633,6 +691,14 @@ const scrollToRelatedTours = () => {
                 Scan to open the Naples walking route on your phone using
                 Google My Maps.
               </p>
+              <a
+                href={fullMapUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-4 inline-flex items-center justify-center rounded-full border border-[#167fd5] bg-white px-4 py-2 text-sm font-semibold text-[#167fd5] shadow-sm transition hover:bg-[#edf6fd]"
+              >
+                Open the route in Google My Maps
+              </a>
             </div>
 
             <a

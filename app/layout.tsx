@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import "./globals.css";
 
@@ -54,13 +55,21 @@ export const metadata: Metadata = {
 function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-[#d8c7b5] bg-white/95 backdrop-blur">
-      <div className="mx-auto grid h-16 max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-6 lg:px-10">
+      <div className="mx-auto grid h-16 max-w-7xl grid-cols-[1.22fr_auto_1fr] items-center pl-2 pr-6 lg:pl-4 lg:pr-10">
         <div className="justify-self-start">
           <Link
             href="/"
-            className="shrink-0 text-xl font-bold tracking-[0.2em] text-[#3d3327] sm:text-2xl"
+            className="inline-flex items-center"
+            aria-label="Prowalk Tours homepage"
           >
-            PROWALK TOURS
+            <Image
+              src="/logo/prowalk-logo-horizontal.png"
+              alt="Prowalk Tours"
+              width={220}
+              height={48}
+              className="h-7 w-auto sm:h-[1.875rem] md:h-8"
+              priority
+            />
           </Link>
         </div>
 
@@ -204,16 +213,13 @@ function SiteHeader() {
 function SiteFooter() {
   return (
     <footer className="border-t border-[#d8c7b5] bg-[#f7f1e8] text-[#3d3327]">
-      <div className="mx-auto max-w-7xl px-6 py-14 lg:px-10">
-        <div className="mt-10 grid gap-10 md:grid-cols-2 xl:grid-cols-4">
+      <div className="mx-auto max-w-7xl px-6 py-12 lg:px-10">
+        <div className="mt-8 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
-              Prowalk Tours
-            </p>
-            <p className="mt-4 text-2xl font-bold tracking-[0.16em] text-[#3d3327]">
+            <p className="text-2xl font-bold tracking-[0.16em] text-[#3d3327]">
               PROWALK TOURS
             </p>
-            <p className="mt-4 max-w-sm text-[15px] leading-7 text-[#6e5a45]">
+            <p className="mt-3 max-w-sm text-[15px] leading-7 text-[#6e5a45]">
               Immersive walking tours, city atmosphere, drone footage, and
               destination storytelling from around the world.
             </p>
@@ -223,7 +229,7 @@ function SiteFooter() {
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
               Explore
             </p>
-            <ul className="mt-4 space-y-3 text-[15px] leading-7 text-[#5c4c33]">
+            <ul className="mt-3 space-y-2 text-[15px] leading-7 text-[#5c4c33]">
               {footerSections.explore.map((item) => (
                 <li key={item.label}>
                   <Link href={item.href} className="transition hover:text-[#167fd5]">
@@ -238,7 +244,7 @@ function SiteFooter() {
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
               Resources
             </p>
-            <ul className="mt-4 space-y-3 text-[15px] leading-7 text-[#5c4c33]">
+            <ul className="mt-3 space-y-2 text-[15px] leading-7 text-[#5c4c33]">
               {footerSections.resources.map((item) => (
                 <li key={item.label}>
                   {item.href.startsWith("http") ? (
@@ -264,7 +270,7 @@ function SiteFooter() {
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
               Social
             </p>
-            <ul className="mt-4 space-y-3 text-[15px] leading-7 text-[#5c4c33]">
+            <ul className="mt-3 space-y-2 text-[15px] leading-7 text-[#5c4c33]">
               {footerSections.social.map((item) => (
                 <li key={item.label}>
                   <a
@@ -281,7 +287,7 @@ function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-[#dccbb7] pt-5 text-sm text-[#7c6b59]">
+        <div className="mt-8 border-t border-[#dccbb7] pt-4 text-sm text-[#7c6b59]">
           <p>© 2026 Prowalk Tours. All rights reserved.</p>
         </div>
       </div>
