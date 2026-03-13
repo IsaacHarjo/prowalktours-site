@@ -567,7 +567,7 @@ const scrollToRelatedTours = () => {
               Video Highlights
             </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#3d3327]">
-              Jump to highlights
+              Jump to major landmarks
             </h2>
           </div>
 
@@ -622,9 +622,16 @@ const scrollToRelatedTours = () => {
                     </p>
                   </div>
 
-                  {highlight.description ? (
-                    <p className="mt-2 text-sm leading-6 text-[#56493a]">
-                      {highlight.description}
+                  <p className="mt-2 text-sm leading-6 text-[#6e5a45]">
+                    {highlight.caption}
+                  </p>
+
+                  {highlight.proTip ? (
+                    <p className="mt-3 text-sm leading-6 text-[#56493a]">
+                      <span className="font-semibold text-[#3d3327]">
+                        {highlight.proTip.label}:
+                      </span>{" "}
+                      {highlight.proTip.text}
                     </p>
                   ) : null}
                 </div>
