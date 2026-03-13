@@ -3,17 +3,25 @@ import type { VideoDetailRecord } from "../video-types";
 export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
   slug: "naples-daytime-walk-2023",
   heroEyebrow: "Featured Naples Walk",
-  heroTitle: "Naples, Italy — July 2023",
-  heroSubtitle: "Historic Center, Sanità & Waterfront",
+  heroTitle: "Naples, Italy Ã¢â‚¬â€ July 2023",
+  heroSubtitle: "Historic Center, SanitÃƒÂ  & Waterfront",
   heroDescription:
-    "Explore Naples from Montesanto through the historic center, Sanità, the Spanish Quarter, and the waterfront in this immersive long-form walking tour filmed over three days in July 2023. Along the route, you’ll pass markets, churches, piazzas, narrow historic streets, panoramic viewpoints, and the bay near Castel dell’Ovo.",
+    "Explore Naples from Montesanto through the historic center, SanitÃƒÂ , the Spanish Quarter, and the waterfront in this immersive long-form walking tour filmed over three days in July 2023. Along the route, youÃ¢â‚¬â„¢ll pass markets, churches, piazzas, narrow historic streets, panoramic viewpoints, and the bay near Castel dellÃ¢â‚¬â„¢Ovo.",
   routeMapDescription:
-    "This walk begins near Montesanto and crosses the historic center, Sanità, the Spanish Quarter, and the waterfront.",
+    "This walk begins near Montesanto and crosses the historic center, SanitÃƒÂ , the Spanish Quarter, and the waterfront.",
   licensingDescription: [
-    "Interested in licensing footage from this Naples walk for documentaries, television, travel programming, websites, editorial, or commercial projects? This page features long-form city footage from the historic center, Sanità, markets, churches, waterfront scenes, and views near Castel dell’Ovo.",
+    "Interested in licensing footage from this Naples walk for documentaries, television, travel programming, websites, editorial, or commercial projects? This page features long-form city footage from the historic center, SanitÃƒÂ , markets, churches, waterfront scenes, and views near Castel dellÃ¢â‚¬â„¢Ovo.",
     "Additional Naples material, including supporting visuals and other Naples walks, may also be available on request.",
   ],
   highlights: [
+    {
+      title: "Montesanto Station",
+      timeLabel: "1:08",
+      seconds: 68,
+      imageSrc: "/naples-day-july-2023/highlights/naples-montesanto-train-station.jpg",
+      alt: "Montesanto Station in Naples, Italy",
+      description: "The walk begins outside Montesanto Station, a busy local transit hub in Naples.",
+    },
     {
       title: "Pignasecca Market",
       timeLabel: "7:21",
@@ -21,10 +29,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/pignasecca.jpg",
       alt: "Fruit stall at Pignasecca Market in Naples, Italy",
       caption: "Fruit stall at Pignasecca Market",
-      proTip: {
-        label: "Eat Local",
-        text: "Grab a cuoppo di pesce fritto (fried fish cone) here. It's the most authentic street food experience in the city.",
-      },
+      description: "Produce stalls and market traffic create one of Naples' liveliest everyday street scenes.",
     },
     {
       title: "Spaccanapoli",
@@ -33,6 +38,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/spaccanapoli.jpg",
       alt: "Crowded Spaccanapoli street in Naples, Italy",
       caption: "Street scene on Spaccanapoli",
+      description: "This narrow old-town artery slices straight through the dense historic center.",
     },
     {
       title: "Leather Shop",
@@ -41,6 +47,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/leather-shop.jpg",
       alt: "Leather craftsman working in a small shop in Naples, Italy",
       caption: "Local leather workshop in Naples",
+      description: "A traditional workshop reveals small-scale craftsmanship still active in central Naples.",
     },
     {
       title: "Piazza del Gesu Nuovo",
@@ -49,6 +56,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-piazza-gesu-nuovo.jpg",
       alt: "Piazza del Gesu Nuovo with cafes and street decorations in Naples, Italy",
       caption: "Piazza del Gesu Nuovo",
+      description: "A busy civic square gathers churches, cafes, monuments, and constant pedestrian flow.",
     },
     {
       title: "Church of Gesu Nuovo",
@@ -57,6 +65,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-church-of-gesu-nuovo.jpg",
       alt: "Interior of Gesu Nuovo Church in Naples, Italy",
       caption: "Inside Gesu Nuovo Church",
+      description: "The church interior glows with elaborate Baroque decoration and dramatic architectural detail.",
     },
     {
       title: "Basilica di Santa Chiara",
@@ -65,6 +74,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-basilica-di-santa-chiara-church.jpg",
       alt: "Facade of the Basilica di Santa Chiara in Naples, Italy",
       caption: "Facade of Santa Chiara",
+      description: "Its grand facade marks one of Naples' most important religious and historic complexes.",
     },
     {
       title: "Palazzo Venezia",
@@ -73,6 +83,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/palazzo-venezia.jpg",
       alt: "Courtyard entrance of Palazzo Venezia in Naples, Italy",
       caption: "Palazzo Venezia courtyard",
+      description: "A hidden courtyard opens onto a quieter, aristocratic layer of old Naples.",
     },
     {
       title: "Piazza San Domenico Maggiore",
@@ -81,6 +92,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/piazza-san-domenico-maggiore.jpg",
       alt: "Piazza San Domenico Maggiore in Naples, Italy",
       caption: "Piazza San Domenico Maggiore",
+      description: "This landmark square connects major streets with monuments, students, and heavy foot traffic.",
     },
     {
       title: "Piazzetta Nilo",
@@ -89,6 +101,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-piazzetta-nilo-town-square.jpg",
       alt: "Piazzetta Nilo with cafes and flags in Naples, Italy",
       caption: "Piazzetta Nilo",
+      description: "A small historic square centers on one of Naples' oldest and strangest symbols.",
     },
     {
       title: "Doll Hospital",
@@ -97,6 +110,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/doll-hospital.jpg",
       alt: "Vintage doll display inside the Doll Hospital in Naples, Italy",
       caption: "Inside Naples' Doll Hospital",
+      description: "This unusual storefront preserves a long local tradition of repairing treasured dolls.",
     },
     {
       title: "San Gennaro Mural",
@@ -105,6 +119,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-san-gennaro-mural-painting.jpg",
       alt: "San Gennaro mural on a narrow street in Naples, Italy",
       caption: "San Gennaro mural",
+      description: "A striking mural honors Naples' patron saint along a tightly built neighborhood street.",
     },
     {
       title: "Via dei Tribunali",
@@ -113,6 +128,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/via-dei-tribunali.jpg",
       alt: "Busy Via dei Tribunali in Naples, Italy",
       caption: "Street life on Via dei Tribunali",
+      description: "One of Naples' busiest streets combines food shops, traffic, and nonstop local movement.",
     },
     {
       title: "Duomo di Napoli",
@@ -121,6 +137,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/duomo.jpg",
       alt: "Facade of Naples Cathedral in Naples, Italy",
       caption: "Naples Cathedral facade",
+      description: "The cathedral facade rises above the street as one of Naples' major sacred landmarks.",
     },
     {
       title: "San Lorenzo Maggiore",
@@ -129,6 +146,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/san-lorenzo-maggiore.jpg",
       alt: "Interior of San Lorenzo Maggiore in Naples, Italy",
       caption: "Inside San Lorenzo Maggiore",
+      description: "This major church stands beside ancient streets at the heart of historic Naples.",
     },
     {
       title: "San Gregorio Armeno",
@@ -137,6 +155,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/san-gregorio-armeno.jpg",
       alt: "Crowded San Gregorio Armeno street in Naples, Italy",
       caption: "San Gregorio Armeno",
+      description: "Famous for nativity workshops, this lane is Naples' celebrated Christmas Alley.",
     },
     {
       title: "Bust of Pulcinella",
@@ -145,6 +164,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/bust-of-pulcinella.jpg",
       alt: "Bust of Pulcinella in Naples, Italy",
       caption: "Bust of Pulcinella",
+      description: "A small bronze tribute celebrates Naples' beloved comic figure and folk identity.",
     },
     {
       title: "Piazza Vincenzo Bellini",
@@ -153,6 +173,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/piazza-vincenzo-bellini.jpg",
       alt: "Piazza Vincenzo Bellini in Naples, Italy",
       caption: "Piazza Vincenzo Bellini",
+      description: "Students, bars, and cafes give this square a youthful social atmosphere.",
     },
     {
       title: "Via Port'Alba",
@@ -161,6 +182,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/via-portalba.jpg",
       alt: "Archway entrance on Via Port'Alba in Naples, Italy",
       caption: "Via Port'Alba archway",
+      description: "This historic gate opens onto a classic Naples street lined with bookshops.",
     },
     {
       title: "Piazza Dante",
@@ -169,6 +191,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/piazza-dante.jpg",
       alt: "Piazza Dante with curved facade and clock tower in Naples, Italy",
       caption: "Piazza Dante",
+      description: "A broad square framed by a curved facade offers a spacious break from alleys.",
     },
     {
       title: "Galleria Principe di Napoli",
@@ -177,6 +200,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-galleria-principe-di-napoli.jpg",
       alt: "Entrance to Galleria Principe di Napoli in Naples, Italy",
       caption: "Galleria Principe di Napoli",
+      description: "The gallery sits beside museums and universities in an important cultural district.",
     },
     {
       title: "National Archaeological Museum",
@@ -185,6 +209,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/archaeological-museum.jpg",
       alt: "National Archaeological Museum of Naples in Naples, Italy",
       caption: "National Archaeological Museum",
+      description: "One of Italy's top museums anchors this prominent cultural stop in Naples.",
     },
     {
       title: "Piazza Cavour",
@@ -193,6 +218,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-piazza-cavour.jpg",
       alt: "Fountain and buildings at Piazza Cavour in Naples, Italy",
       caption: "Piazza Cavour",
+      description: "Transit, traffic, and open public space meet at this busy northern square.",
     },
     {
       title: "Via Vergini (Outdoor Market)",
@@ -201,6 +227,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-via-vergini-market.jpg",
       alt: "Outdoor market on Via Vergini in Naples, Italy",
       caption: "Outdoor market on Via Vergini",
+      description: "Neighborhood stalls and shoppers fill this market street with dense daily activity.",
     },
     {
       title: "Palazzo dello Spagnolo",
@@ -209,6 +236,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-palazzo-dello-spagnolo.jpg",
       alt: "Interior courtyard of Palazzo dello Spagnolo in Naples, Italy",
       caption: "Palazzo dello Spagnolo",
+      description: "Its celebrated staircase courtyard showcases one of Naples' most theatrical palace interiors.",
     },
     {
       title: "San Felice Palace",
@@ -217,6 +245,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-san-felice-palace.jpg",
       alt: "Courtyard facade of Palazzo San Felice in Naples, Italy",
       caption: "Palazzo San Felice",
+      description: "Another grand palace displays the layered stair architecture famous in the Sanit?.",
     },
     {
       title: "Basilica di Santa Maria della Sanita",
@@ -226,6 +255,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
         "/naples-day-july-2023/highlights/naples-basilica-di-santa-maria-della-sanita-church.jpg",
       alt: "Basilica di Santa Maria della Sanita in Naples, Italy",
       caption: "Basilica di Santa Maria della Sanita",
+      description: "This monumental church dominates the neighborhood center with scale and ornament.",
     },
     {
       title: "Ponte Maddalena Cerasuolo",
@@ -234,6 +264,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-ponte-maddalena-cerasuolo.jpg",
       alt: "Ponte Maddalena Cerasuolo arch in Naples, Italy",
       caption: "Ponte Maddalena Cerasuolo",
+      description: "An elevated arch and layered streets create a memorable transitional neighborhood view.",
     },
     {
       title: "Piazza Dante",
@@ -242,6 +273,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-piazza-dante-2.jpg",
       alt: "People relaxing in Piazza Dante in Naples, Italy",
       caption: "Street life in Piazza Dante",
+      description: "Locals rest and cross the square beneath one of Naples' most recognizable facades.",
     },
     {
       title: "Via Toledo",
@@ -250,6 +282,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-via-toledo-2-street.jpg",
       alt: "Pedestrians on Via Toledo in Naples, Italy",
       caption: "Walking along Via Toledo",
+      description: "A major shopping corridor channels crowds through one of central Naples' busiest streets.",
     },
     {
       title: "Quartieri Spagnoli",
@@ -258,6 +291,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-spanish-quarter-2.jpg",
       alt: "Decorated street in Quartieri Spagnoli in Naples, Italy",
       caption: "Street in Quartieri Spagnoli",
+      description: "Decorated lanes and dense housing capture the Spanish Quarter's distinctive atmosphere.",
     },
     {
       title: "Largo Maradona",
@@ -266,6 +300,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/largo-maradona.jpg",
       alt: "Diego Maradona mural at Largo Maradona in Naples, Italy",
       caption: "Maradona mural at Largo Maradona",
+      description: "Murals and tributes have turned this spot into a shrine for Diego Maradona.",
     },
     {
       title: "Galleria Umberto I",
@@ -274,6 +309,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-galleria-umberto-i.jpg",
       alt: "Interior of Galleria Umberto I in Naples, Italy",
       caption: "Inside Galleria Umberto I",
+      description: "The soaring glass arcade reveals one of Naples' grandest nineteenth-century interiors.",
     },
     {
       title: "Gran Caffe Gambrinus",
@@ -282,6 +318,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-gambrinus-cafe.jpg",
       alt: "Exterior of Gran Caffe Gambrinus in Naples, Italy",
       caption: "Gran Caffe Gambrinus",
+      description: "This historic cafe marks the elegant edge of Naples' ceremonial center.",
     },
     {
       title: "Piazza del Plebiscito",
@@ -290,6 +327,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/piazza-del-plebiscito.jpg",
       alt: "Piazza del Plebiscito and Basilica of San Francesco di Paola in Naples, Italy",
       caption: "Piazza del Plebiscito",
+      description: "Naples' monumental central square opens wide before royal and civic landmarks.",
     },
     {
       title: "Waterfront Lungomare",
@@ -298,6 +336,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-waterfront-1.jpg",
       alt: "Lungomare waterfront promenade in Naples, Italy",
       caption: "Naples Lungomare waterfront",
+      description: "The seafront promenade opens the city toward broad water and volcanic views.",
     },
     {
       title: "Rotonda Swimming Hole",
@@ -306,6 +345,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-rotonda-via-nazario-sauro-2.jpg",
       alt: "People swimming near Via Nazario Sauro on the Naples waterfront, Italy",
       caption: "Swimming spot on the waterfront",
+      description: "Swimmers gather beside the seawall with open bay views behind them.",
     },
     {
       title: "Fontana del Gigante",
@@ -314,6 +354,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-fontana-del-gigante-fountain.jpg",
       alt: "Fontana del Gigante near the waterfront in Naples, Italy",
       caption: "Fontana del Gigante",
+      description: "An ornate historic fountain stands beside the harbor and waterfront promenade.",
     },
     {
       title: "Castel dell'Ovo",
@@ -322,6 +363,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/castel-dellovo.jpg",
       alt: "Walkway leading to Castel dell'Ovo in Naples, Italy",
       caption: "Approaching Castel dell'Ovo",
+      description: "Naples' seaside castle projects dramatically into the bay on a rocky islet.",
     },
     {
       title: "Via Partenope",
@@ -330,6 +372,7 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
       imageSrc: "/naples-day-july-2023/highlights/naples-waterfront2.jpg",
       alt: "Via Partenope waterfront road in Naples, Italy",
       caption: "Via Partenope waterfront",
+      description: "The route finishes along an elegant waterfront lined with hotels and sea views.",
     },
   ],
 };
