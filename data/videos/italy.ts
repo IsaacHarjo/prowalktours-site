@@ -1,35 +1,6 @@
-export type VideoRecord = {
-  id: string;
-  slug: string;
-  siteTitle: string;
-  youtubeTitle: string;
-  youtubeUrl: string;
-  thumbnail: string;
-  country: string;
-  region: string;
-  city: string;
-  filmingDates: string[];
-  filmingMonthYear: string;
-  durationLabel: string;
-  durationSeconds: number;
-  weather: string;
-  shortDescription: string;
-  keywords: string[];
-  landmarks: string[];
-  themes: string[];
-  timeOfDay: string;
-  videoType: string;
-  visibility: string;
-  highlights: Array<{
-    title: string;
-    timeLabel: string;
-    seconds: number;
-    imageSrc: string;
-    alt: string;
-  }>;
-};
+import type { VideoCatalogRecord } from "../video-types";
 
-export const videos: VideoRecord[] = [
+export const italyVideos: VideoCatalogRecord[] = [
   {
     id: "naples-daytime-walk-2023",
     slug: "naples-daytime-walk-2023",

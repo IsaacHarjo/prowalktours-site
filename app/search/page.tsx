@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { videos } from "../../data/videos";
+import { videos } from "../../data/videos/index";
 
 type SearchParams = {
   q?: string | string[];
@@ -179,3 +179,4 @@ export default async function SearchPage({
     </main>
   );
 }
+
