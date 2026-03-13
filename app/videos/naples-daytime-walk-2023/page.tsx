@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { videos } from "../../../data/videos";
 
 type YouTubePlayer = {
   seekTo: (seconds: number, allowSeekAhead?: boolean) => void;
@@ -133,7 +134,7 @@ const pendingSeekRef = useRef<number | null>(null);
     };
   }, []);
 
-  const highlights = [
+  const fallbackHighlights = [
     {
       title: "Pignasecca Market",
       timeLabel: "7:21",
@@ -586,6 +587,29 @@ const scrollToRelatedTours = () => {
   const fullMapUrl =
     "https://www.google.com/maps/d/edit?mid=1E_nqyiPSRDss1zSiWuRzH2bBrAm3tBU&usp=sharing";
   const fullMapQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(fullMapUrl)}`;
+  const naplesVideo = videos.find(
+    (video) => video.slug === "naples-daytime-walk-2023"
+  );
+  const pageTitle = naplesVideo?.siteTitle ?? "Naples, Italy — July 2023";
+  const pageShortDescription =
+    naplesVideo?.shortDescription ??
+    "Explore Naples from Montesanto through the historic center, Sanità, the Spanish Quarter, and the waterfront in this immersive long-form walking tour filmed over three days in July 2023.";
+  const highlights =
+    naplesVideo?.highlights?.length
+      ? naplesVideo.highlights.map((highlight) => {
+          const fallbackHighlight = fallbackHighlights.find(
+            (item) =>
+              item.title === highlight.title && item.seconds === highlight.seconds
+          );
+
+          return {
+            ...(fallbackHighlight ?? {}),
+            ...highlight,
+            caption: fallbackHighlight?.caption ?? highlight.title,
+            proTip: fallbackHighlight?.proTip,
+          };
+        })
+      : fallbackHighlights;
   const topRowStats = [
     {
       icon: "📅",
@@ -594,7 +618,7 @@ const scrollToRelatedTours = () => {
     },
     { icon: "📏", label: "Distance", value: "8.3 mi / 13.3 km" },
     { icon: "🕒", label: "Duration", value: "5h 45m" },
-    { icon: "☀️", label: "Weather", value: "Sunny, 90°F / 32°C" },
+    { icon: "☀️", label: "Weather", value: naplesVideo?.weather ?? "Sunny, 90°F / 32°C" },
   ];
   const overallScoreStat = {
     icon: "⭐",
@@ -707,7 +731,7 @@ const scrollToRelatedTours = () => {
     </p>
 
     <h1 className="mt-3 text-4xl font-bold tracking-tight text-[#3d3327] sm:text-5xl">
-      Naples, Italy — July 2023
+      {pageTitle}
     </h1>
 
     <p className="mt-3 text-xl text-[#6e5a45]">
@@ -715,12 +739,7 @@ const scrollToRelatedTours = () => {
     </p>
 
     <p className="mt-6 max-w-3xl text-base leading-8 text-[#56493a]">
-      Explore Naples from Montesanto through the historic center,
-      Sanità, the Spanish Quarter, and the waterfront in this immersive
-      long-form walking tour filmed over three days in July 2023. Along
-      the route, you’ll pass markets, churches, piazzas, narrow
-      historic streets, panoramic viewpoints, and the bay near Castel
-      dell’Ovo.
+      {pageShortDescription}
     </p>
     <div className="mt-8 space-y-4 border-y border-[#d8c7b5]/80 py-4 text-[#3d3327]">
       <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
