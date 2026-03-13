@@ -4,6 +4,7 @@ export type HighlightRecord = {
   seconds: number;
   imageSrc: string;
   alt: string;
+  description?: string;
 };
 
 export type VideoCatalogRecord = {

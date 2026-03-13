@@ -14,14 +14,15 @@ export const naplesDaytimeWalk2023Detail: VideoDetailRecord = {
     "Additional Naples material, including supporting visuals and other Naples walks, may also be available on request.",
   ],
   highlights: [
-    {
-      title: "Montesanto Station",
-      timeLabel: "1:08",
-      seconds: 68,
-      imageSrc: "/naples-day-july-2023/highlights/naples-montesanto-train-station.jpg",
-      alt: "Montesanto Station in Naples, Italy",
-      description: "The walk begins outside Montesanto Station, a busy local transit hub in Naples.",
-    },
+  {
+  title: "Montesanto Station",
+  timeLabel: "1:08",
+  seconds: 68,
+  imageSrc: "/naples-day-july-2023/highlights/naples-montesanto-train-station.jpg",
+  alt: "Montesanto Station in Naples, Italy",
+  caption: "Montesanto Station",
+  description: "The walk begins outside Montesanto Station, a busy local transit hub in Naples.",
+},
     {
       title: "Pignasecca Market",
       timeLabel: "7:21",
