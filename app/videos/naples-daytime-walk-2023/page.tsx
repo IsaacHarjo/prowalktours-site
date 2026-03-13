@@ -63,7 +63,7 @@ const ratingsPopoverRef = useRef<HTMLDivElement | null>(null);
       timeLabel: "7:21",
       seconds: 441,
       imageSrc: "/naples-day-july-2023/highlights/pignasecca.jpg",
-      alt: "Pignasecca Market in Naples",
+      alt: "Fruit vendor serving shoppers beneath striped awnings at Pignasecca Market in Naples",
       proTip: {
         label: "Eat Local",
         text: "Grab a cuoppo di pesce fritto (fried fish cone) here. It's the most authentic street food experience in the city.",
@@ -74,126 +74,267 @@ const ratingsPopoverRef = useRef<HTMLDivElement | null>(null);
       timeLabel: "28:05",
       seconds: 1685,
       imageSrc: "/naples-day-july-2023/highlights/spaccanapoli.jpg",
-      alt: "Spaccanapoli in Naples",
+      alt: "Crowded Spaccanapoli street lined with balconies, shops, and a welcome banner in Naples",
     },
     {
       title: "Leather Shop",
       timeLabel: "30:44",
       seconds: 1844,
       imageSrc: "/naples-day-july-2023/highlights/leather-shop.jpg",
-      alt: "Leather shop in Naples",
+      alt: "Leather craftsman and assistant working at a bench inside a small leather shop in Naples",
     },
     {
-      title: "Gesù Nuovo",
+      title: "Piazza del Gesu Nuovo",
+      timeLabel: "33:48",
+      seconds: 2028,
+      imageSrc: "/naples-day-july-2023/highlights/naples-piazza-gesu-nuovo.jpg",
+      alt: "Piazza del Gesu Nuovo in Naples",
+    },
+    {
+      title: "Church of Gesu Nuovo",
       timeLabel: "35:48",
       seconds: 2148,
-      imageSrc: "/naples-day-july-2023/highlights/gesu-nuovo.jpg",
-      alt: "Gesù Nuovo in Naples",
+      imageSrc: "/naples-day-july-2023/highlights/naples-church-of-gesu-nuovo.jpg",
+      alt: "Church of Gesu Nuovo in Naples",
+    },
+    {
+      title: "Basilica di Santa Chiara",
+      timeLabel: "48:23",
+      seconds: 2903,
+      imageSrc: "/naples-day-july-2023/highlights/naples-basilica-di-santa-chiara-church.jpg",
+      alt: "Basilica di Santa Chiara in Naples",
     },
     {
       title: "Palazzo Venezia",
       timeLabel: "59:20",
       seconds: 3560,
       imageSrc: "/naples-day-july-2023/highlights/palazzo-venezia.jpg",
-      alt: "Palazzo Venezia in Naples",
+      alt: "Entrance courtyard of Palazzo Venezia with arches, greenery, and gallery signage in Naples",
     },
     {
       title: "Piazza San Domenico Maggiore",
       timeLabel: "1:09:47",
       seconds: 4187,
       imageSrc: "/naples-day-july-2023/highlights/piazza-san-domenico-maggiore.jpg",
-      alt: "Piazza San Domenico Maggiore in Naples",
+      alt: "Piazza San Domenico Maggiore with its obelisk, cafe umbrellas, and church facade in Naples",
+    },
+    {
+      title: "Piazzetta Nilo",
+      timeLabel: "1:13:37",
+      seconds: 4417,
+      imageSrc: "/naples-day-july-2023/highlights/naples-piazzetta-nilo-town-square.jpg",
+      alt: "Piazzetta Nilo town square in Naples",
     },
     {
       title: "Doll Hospital",
       timeLabel: "1:29:17",
       seconds: 5357,
       imageSrc: "/naples-day-july-2023/highlights/doll-hospital.jpg",
-      alt: "Doll Hospital in Naples",
+      alt: "Shelves of doll heads and a vintage doll inside Naples' Doll Hospital",
+    },
+    {
+      title: "San Gennaro Mural",
+      timeLabel: "1:42:14",
+      seconds: 6134,
+      imageSrc: "/naples-day-july-2023/highlights/naples-san-gennaro-mural-painting.jpg",
+      alt: "San Gennaro mural in Naples",
     },
     {
       title: "Via dei Tribunali",
       timeLabel: "1:48:40",
       seconds: 6520,
       imageSrc: "/naples-day-july-2023/highlights/via-dei-tribunali.jpg",
-      alt: "Via dei Tribunali in Naples",
+      alt: "Busy Via dei Tribunali with Napoli banners, storefronts, and pedestrians in Naples",
     },
     {
       title: "Duomo di Napoli",
       timeLabel: "1:50:18",
       seconds: 6618,
       imageSrc: "/naples-day-july-2023/highlights/duomo.jpg",
-      alt: "Duomo di Napoli",
+      alt: "Upward view of the ornate marble facade of the Naples Cathedral",
     },
     {
       title: "San Lorenzo Maggiore",
       timeLabel: "2:14:59",
       seconds: 8099,
       imageSrc: "/naples-day-july-2023/highlights/san-lorenzo-maggiore.jpg",
-      alt: "San Lorenzo Maggiore in Naples",
+      alt: "Interior of San Lorenzo Maggiore with tall stone arches, pews, and the altar",
     },
     {
       title: "San Gregorio Armeno",
       timeLabel: "2:22:39",
       seconds: 8559,
       imageSrc: "/naples-day-july-2023/highlights/san-gregorio-armeno.jpg",
-      alt: "San Gregorio Armeno in Naples",
+      alt: "Crowded San Gregorio Armeno lined with nativity shops and displays in Naples",
     },
     {
       title: "Bust of Pulcinella",
       timeLabel: "2:48:56",
       seconds: 10136,
       imageSrc: "/naples-day-july-2023/highlights/bust-of-pulcinella.jpg",
-      alt: "Bust of Pulcinella in Naples",
+      alt: "Bronze bust of Pulcinella set against a weathered stone wall covered in stickers",
     },
     {
       title: "Piazza Vincenzo Bellini",
       timeLabel: "2:57:33",
       seconds: 10653,
       imageSrc: "/naples-day-july-2023/highlights/piazza-vincenzo-bellini.jpg",
-      alt: "Piazza Vincenzo Bellini in Naples",
+      alt: "View over Piazza Vincenzo Bellini with shaded terraces and colorful historic buildings",
     },
     {
-      title: "Via Port’Alba",
+      title: "Via Port'Alba",
       timeLabel: "3:03:09",
       seconds: 10989,
       imageSrc: "/naples-day-july-2023/highlights/via-portalba.jpg",
-      alt: "Via Port'Alba in Naples",
+      alt: "Pedestrians passing under the archway at Via Port'Alba beside market stalls and umbrellas",
     },
     {
       title: "Piazza Dante",
       timeLabel: "3:06:24",
       seconds: 11184,
       imageSrc: "/naples-day-july-2023/highlights/piazza-dante.jpg",
-      alt: "Piazza Dante in Naples",
+      alt: "Curved facade and clock tower of Piazza Dante with cafe tables in the foreground",
+    },
+    {
+      title: "Galleria Principe di Napoli",
+      timeLabel: "3:13:42",
+      seconds: 11622,
+      imageSrc: "/naples-day-july-2023/highlights/naples-galleria-principe-di-napoli.jpg",
+      alt: "Galleria Principe di Napoli in Naples",
     },
     {
       title: "National Archaeological Museum",
       timeLabel: "3:16:09",
       seconds: 11769,
       imageSrc: "/naples-day-july-2023/highlights/archaeological-museum.jpg",
-      alt: "National Archaeological Museum of Naples",
+      alt: "Front facade of the National Archaeological Museum of Naples with flags and palm trees",
+    },
+    {
+      title: "Piazza Cavour",
+      timeLabel: "3:18:26",
+      seconds: 11906,
+      imageSrc: "/naples-day-july-2023/highlights/naples-piazza-cavour.jpg",
+      alt: "Piazza Cavour in Naples",
+    },
+    {
+      title: "Via Vergini (Outdoor Market)",
+      timeLabel: "3:26:12",
+      seconds: 12372,
+      imageSrc: "/naples-day-july-2023/highlights/naples-via-vergini-market.jpg",
+      alt: "Outdoor market on Via Vergini in Naples",
+    },
+    {
+      title: "Palazzo dello Spagnolo",
+      timeLabel: "3:31:06",
+      seconds: 12666,
+      imageSrc: "/naples-day-july-2023/highlights/naples-palazzo-dello-spagnolo.jpg",
+      alt: "Palazzo dello Spagnolo in Naples",
+    },
+    {
+      title: "San Felice Palace",
+      timeLabel: "3:39:18",
+      seconds: 13158,
+      imageSrc: "/naples-day-july-2023/highlights/naples-san-felice-palace.jpg",
+      alt: "San Felice Palace in Naples",
+    },
+    {
+      title: "Basilica di Santa Maria della Sanita",
+      timeLabel: "3:44:21",
+      seconds: 13461,
+      imageSrc:
+        "/naples-day-july-2023/highlights/naples-basilica-di-santa-maria-della-sanit\u00E0-church.jpg",
+      alt: "Basilica di Santa Maria della Sanita in Naples",
+    },
+    {
+      title: "Ponte Maddalena Cerasuolo",
+      timeLabel: "3:47:25",
+      seconds: 13645,
+      imageSrc: "/naples-day-july-2023/highlights/naples-ponte-maddalena-cerasuolo.jpg",
+      alt: "Ponte Maddalena Cerasuolo in Naples",
+    },
+    {
+      title: "Piazza Dante",
+      timeLabel: "3:55:46",
+      seconds: 14146,
+      imageSrc: "/naples-day-july-2023/highlights/naples-piazza-dante-2.jpg",
+      alt: "Piazza Dante in Naples",
+    },
+    {
+      title: "Via Toledo",
+      timeLabel: "3:58:55",
+      seconds: 14335,
+      imageSrc: "/naples-day-july-2023/highlights/naples-via-toledo-2-street.jpg",
+      alt: "Via Toledo in Naples",
+    },
+    {
+      title: "Spanish Quarter",
+      timeLabel: "4:09:16",
+      seconds: 14956,
+      imageSrc: "/naples-day-july-2023/highlights/naples-spanish-quarter-2.jpg",
+      alt: "Spanish Quarter street in Naples",
     },
     {
       title: "Largo Maradona",
       timeLabel: "4:18:41",
       seconds: 15521,
       imageSrc: "/naples-day-july-2023/highlights/largo-maradona.jpg",
-      alt: "Largo Maradona in Naples",
+      alt: "Large Diego Maradona mural surrounded by memorial posters and flags in the Spanish Quarter",
+    },
+    {
+      title: "Galleria Umberto I",
+      timeLabel: "4:42:01",
+      seconds: 16921,
+      imageSrc: "/naples-day-july-2023/highlights/naples-galleria-umberto-i.jpg",
+      alt: "Galleria Umberto I in Naples",
+    },
+    {
+      title: "Gran Caffe Gambrinus",
+      timeLabel: "4:50:58",
+      seconds: 17458,
+      imageSrc: "/naples-day-july-2023/highlights/naples-gambrinus-cafe.jpg",
+      alt: "Gran Caffe Gambrinus in Naples",
     },
     {
       title: "Piazza del Plebiscito",
       timeLabel: "4:53:22",
       seconds: 17602,
       imageSrc: "/naples-day-july-2023/highlights/piazza-del-plebiscito.jpg",
-      alt: "Piazza del Plebiscito in Naples",
+      alt: "Wide view across Piazza del Plebiscito toward the Basilica of San Francesco di Paola",
     },
     {
-      title: "Castel dell’Ovo",
+      title: "Waterfront Lungomare",
+      timeLabel: "5:00:45",
+      seconds: 18045,
+      imageSrc: "/naples-day-july-2023/highlights/naples-waterfront-1.jpg",
+      alt: "Naples waterfront along the Lungomare",
+    },
+    {
+      title: "Rotonda Swimming Hole",
+      timeLabel: "5:04:52",
+      seconds: 18292,
+      imageSrc: "/naples-day-july-2023/highlights/naples-rotonda-via-nazario-sauro-2.jpg",
+      alt: "Rotonda swimming hole on the Naples waterfront",
+    },
+    {
+      title: "Fontana del Gigante",
+      timeLabel: "5:15:57",
+      seconds: 18957,
+      imageSrc: "/naples-day-july-2023/highlights/naples-fontana-del-gigante-fountain.jpg",
+      alt: "Fontana del Gigante in Naples",
+    },
+    {
+      title: "Castel dell'Ovo",
       timeLabel: "5:18:53",
       seconds: 19133,
       imageSrc: "/naples-day-july-2023/highlights/castel-dellovo.jpg",
-      alt: "Castel dell'Ovo in Naples",
+      alt: "Pedestrian walkway leading toward Castel dell'Ovo on the Naples waterfront",
+    },
+    {
+      title: "Via Partenope",
+      timeLabel: "5:33:05",
+      seconds: 19985,
+      imageSrc: "/naples-day-july-2023/highlights/naples-waterfront2.jpg",
+      alt: "Via Partenope on the Naples waterfront",
     },
   ];
 
@@ -415,14 +556,6 @@ const scrollToRelatedTours = () => {
           Related Tours
         </button>
 
-        <a
-          href="https://youtu.be/990AqbKb18c"
-          target="_blank"
-          rel="noreferrer"
-          className="whitespace-nowrap transition hover:text-white"
-        >
-          Watch on YouTube
-        </a>
       </div>
     </div>
 
@@ -601,7 +734,7 @@ const scrollToRelatedTours = () => {
     <div className="relative aspect-[4/3] w-full">
       <Image
         src="/naples-day-july-2023/naples-iconic-view.jpg"
-        alt="The Iconic View of Naples Italy"
+        alt="Panoramic view of Naples, the bay, and Mount Vesuvius from above the waterfront"
         fill
         className="object-cover"
         priority
@@ -782,7 +915,7 @@ const scrollToRelatedTours = () => {
             >
               <img
                 src={fullMapQrUrl}
-                alt="QR code linking to the Naples Google My Map"
+                alt="QR code for opening the Naples walking route in Google Maps"
                 width="132"
                 height="132"
                 className="h-[132px] w-[132px] rounded-xl"
@@ -1048,4 +1181,5 @@ const scrollToRelatedTours = () => {
     </div>
   );
 }
+
 
