@@ -594,8 +594,7 @@ const scrollToRelatedTours = () => {
     },
     { icon: "📏", label: "Distance", value: "8.3 mi / 13.3 km" },
     { icon: "🕒", label: "Duration", value: "5h 45m" },
-    { icon: "☀️", label: "Vibe", value: "Vibrant / Sunny" },
-    { icon: "🚶", label: "Pace", value: "Leisurely" },
+    { icon: "☀️", label: "Weather", value: "Sunny, 90°F / 32°C" },
   ];
   const overallScoreStat = {
     icon: "⭐",
@@ -718,7 +717,7 @@ const scrollToRelatedTours = () => {
     <p className="mt-6 max-w-3xl text-base leading-8 text-[#56493a]">
       Explore Naples from Montesanto through the historic center,
       Sanità, the Spanish Quarter, and the waterfront in this immersive
-      long-form walking tour filmed over two days in July 2023. Along
+      long-form walking tour filmed over three days in July 2023. Along
       the route, you’ll pass markets, churches, piazzas, narrow
       historic streets, panoramic viewpoints, and the bay near Castel
       dell’Ovo.
