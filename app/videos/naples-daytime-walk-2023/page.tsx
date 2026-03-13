@@ -3,15 +3,37 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
+type YouTubePlayer = {
+  seekTo: (seconds: number, allowSeekAhead?: boolean) => void;
+  playVideo: () => void;
+  destroy: () => void;
+};
+
+type YouTubePlayerNamespace = {
+  Player: new (
+    element: HTMLIFrameElement,
+    options?: {
+      events?: {
+        onReady?: () => void;
+      };
+    }
+  ) => YouTubePlayer;
+};
+
+declare global {
+  interface Window {
+    YT?: YouTubePlayerNamespace;
+    onYouTubeIframeAPIReady?: () => void;
+  }
+}
+
 export default function NaplesDaytimeWalk2023Page() {
   const [isRatingsOpen, setIsRatingsOpen] = useState(false);
   const buildYoutubeEmbedUrl = (start: number, autoplay: boolean) =>
     `https://www.youtube.com/embed/990AqbKb18c?start=${start}&autoplay=${
       autoplay ? 1 : 0
-    }&rel=0`;
+    }&rel=0&enablejsapi=1&playsinline=1`;
   const initialYoutubeEmbedUrl = buildYoutubeEmbedUrl(0, false);
-  const [iframeSrc, setIframeSrc] = useState(initialYoutubeEmbedUrl);
-  const [iframeKey, setIframeKey] = useState(0);
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Countries", href: "/countries" },
@@ -29,6 +51,9 @@ const routeMapRef = useRef<HTMLElement | null>(null);
 const licensingHubRef = useRef<HTMLElement | null>(null);
 const relatedToursRef = useRef<HTMLElement | null>(null);
 const ratingsPopoverRef = useRef<HTMLDivElement | null>(null);
+const playerIframeRef = useRef<HTMLIFrameElement | null>(null);
+const playerRef = useRef<YouTubePlayer | null>(null);
+const pendingSeekRef = useRef<number | null>(null);
 
   useEffect(() => {
     const handlePointerDown = (event: MouseEvent | TouchEvent) => {
@@ -57,13 +82,65 @@ const ratingsPopoverRef = useRef<HTMLDivElement | null>(null);
     };
   }, []);
 
+  useEffect(() => {
+    let isUnmounting = false;
+
+    const initializePlayer = () => {
+      if (
+        isUnmounting ||
+        playerRef.current ||
+        !playerIframeRef.current ||
+        !window.YT?.Player
+      ) {
+        return;
+      }
+
+      playerRef.current = new window.YT.Player(playerIframeRef.current, {
+        events: {
+          onReady: () => {
+            if (pendingSeekRef.current === null) return;
+
+            const seconds = pendingSeekRef.current;
+            pendingSeekRef.current = null;
+            playerRef.current?.seekTo(seconds, true);
+            playerRef.current?.playVideo();
+          },
+        },
+      });
+    };
+
+    const previousReadyHandler = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = () => {
+      previousReadyHandler?.();
+      initializePlayer();
+    };
+
+    if (window.YT?.Player) {
+      initializePlayer();
+    } else if (
+      !document.querySelector('script[src="https://www.youtube.com/iframe_api"]')
+    ) {
+      const script = document.createElement("script");
+      script.src = "https://www.youtube.com/iframe_api";
+      document.head.appendChild(script);
+    }
+
+    return () => {
+      isUnmounting = true;
+      window.onYouTubeIframeAPIReady = previousReadyHandler;
+      playerRef.current?.destroy();
+      playerRef.current = null;
+    };
+  }, []);
+
   const highlights = [
     {
       title: "Pignasecca Market",
       timeLabel: "7:21",
       seconds: 441,
       imageSrc: "/naples-day-july-2023/highlights/pignasecca.jpg",
-      alt: "Fruit vendor serving shoppers beneath striped awnings at Pignasecca Market in Naples",
+      alt: "Fruit stall at Pignasecca Market in Naples, Italy",
+      caption: "Fruit stall at Pignasecca Market",
       proTip: {
         label: "Eat Local",
         text: "Grab a cuoppo di pesce fritto (fried fish cone) here. It's the most authentic street food experience in the city.",
@@ -74,273 +151,316 @@ const ratingsPopoverRef = useRef<HTMLDivElement | null>(null);
       timeLabel: "28:05",
       seconds: 1685,
       imageSrc: "/naples-day-july-2023/highlights/spaccanapoli.jpg",
-      alt: "Crowded Spaccanapoli street lined with balconies, shops, and a welcome banner in Naples",
+      alt: "Crowded Spaccanapoli street in Naples, Italy",
+      caption: "Street scene on Spaccanapoli",
     },
     {
       title: "Leather Shop",
       timeLabel: "30:44",
       seconds: 1844,
       imageSrc: "/naples-day-july-2023/highlights/leather-shop.jpg",
-      alt: "Leather craftsman and assistant working at a bench inside a small leather shop in Naples",
+      alt: "Leather craftsman working in a small shop in Naples, Italy",
+      caption: "Local leather workshop in Naples",
     },
     {
       title: "Piazza del Gesu Nuovo",
       timeLabel: "33:48",
       seconds: 2028,
       imageSrc: "/naples-day-july-2023/highlights/naples-piazza-gesu-nuovo.jpg",
-      alt: "Piazza del Gesu Nuovo in Naples",
+      alt: "Piazza del Gesu Nuovo with cafes and street decorations in Naples, Italy",
+      caption: "Piazza del Gesu Nuovo",
     },
     {
       title: "Church of Gesu Nuovo",
       timeLabel: "35:48",
       seconds: 2148,
       imageSrc: "/naples-day-july-2023/highlights/naples-church-of-gesu-nuovo.jpg",
-      alt: "Church of Gesu Nuovo in Naples",
+      alt: "Interior of Gesu Nuovo Church in Naples, Italy",
+      caption: "Inside Gesu Nuovo Church",
     },
     {
       title: "Basilica di Santa Chiara",
       timeLabel: "48:23",
       seconds: 2903,
       imageSrc: "/naples-day-july-2023/highlights/naples-basilica-di-santa-chiara-church.jpg",
-      alt: "Basilica di Santa Chiara in Naples",
+      alt: "Facade of the Basilica di Santa Chiara in Naples, Italy",
+      caption: "Facade of Santa Chiara",
     },
     {
       title: "Palazzo Venezia",
       timeLabel: "59:20",
       seconds: 3560,
       imageSrc: "/naples-day-july-2023/highlights/palazzo-venezia.jpg",
-      alt: "Entrance courtyard of Palazzo Venezia with arches, greenery, and gallery signage in Naples",
+      alt: "Courtyard entrance of Palazzo Venezia in Naples, Italy",
+      caption: "Palazzo Venezia courtyard",
     },
     {
       title: "Piazza San Domenico Maggiore",
       timeLabel: "1:09:47",
       seconds: 4187,
       imageSrc: "/naples-day-july-2023/highlights/piazza-san-domenico-maggiore.jpg",
-      alt: "Piazza San Domenico Maggiore with its obelisk, cafe umbrellas, and church facade in Naples",
+      alt: "Piazza San Domenico Maggiore in Naples, Italy",
+      caption: "Piazza San Domenico Maggiore",
     },
     {
       title: "Piazzetta Nilo",
       timeLabel: "1:13:37",
       seconds: 4417,
       imageSrc: "/naples-day-july-2023/highlights/naples-piazzetta-nilo-town-square.jpg",
-      alt: "Piazzetta Nilo town square in Naples",
+      alt: "Piazzetta Nilo with cafes and flags in Naples, Italy",
+      caption: "Piazzetta Nilo",
     },
     {
       title: "Doll Hospital",
       timeLabel: "1:29:17",
       seconds: 5357,
       imageSrc: "/naples-day-july-2023/highlights/doll-hospital.jpg",
-      alt: "Shelves of doll heads and a vintage doll inside Naples' Doll Hospital",
+      alt: "Vintage doll display inside the Doll Hospital in Naples, Italy",
+      caption: "Inside Naples' Doll Hospital",
     },
     {
       title: "San Gennaro Mural",
       timeLabel: "1:42:14",
       seconds: 6134,
       imageSrc: "/naples-day-july-2023/highlights/naples-san-gennaro-mural-painting.jpg",
-      alt: "San Gennaro mural in Naples",
+      alt: "San Gennaro mural on a narrow street in Naples, Italy",
+      caption: "San Gennaro mural",
     },
     {
       title: "Via dei Tribunali",
       timeLabel: "1:48:40",
       seconds: 6520,
       imageSrc: "/naples-day-july-2023/highlights/via-dei-tribunali.jpg",
-      alt: "Busy Via dei Tribunali with Napoli banners, storefronts, and pedestrians in Naples",
+      alt: "Busy Via dei Tribunali in Naples, Italy",
+      caption: "Street life on Via dei Tribunali",
     },
     {
       title: "Duomo di Napoli",
       timeLabel: "1:50:18",
       seconds: 6618,
       imageSrc: "/naples-day-july-2023/highlights/duomo.jpg",
-      alt: "Upward view of the ornate marble facade of the Naples Cathedral",
+      alt: "Facade of Naples Cathedral in Naples, Italy",
+      caption: "Naples Cathedral facade",
     },
     {
       title: "San Lorenzo Maggiore",
       timeLabel: "2:14:59",
       seconds: 8099,
       imageSrc: "/naples-day-july-2023/highlights/san-lorenzo-maggiore.jpg",
-      alt: "Interior of San Lorenzo Maggiore with tall stone arches, pews, and the altar",
+      alt: "Interior of San Lorenzo Maggiore in Naples, Italy",
+      caption: "Inside San Lorenzo Maggiore",
     },
     {
       title: "San Gregorio Armeno",
       timeLabel: "2:22:39",
       seconds: 8559,
       imageSrc: "/naples-day-july-2023/highlights/san-gregorio-armeno.jpg",
-      alt: "Crowded San Gregorio Armeno lined with nativity shops and displays in Naples",
+      alt: "Crowded San Gregorio Armeno street in Naples, Italy",
+      caption: "San Gregorio Armeno",
     },
     {
       title: "Bust of Pulcinella",
       timeLabel: "2:48:56",
       seconds: 10136,
       imageSrc: "/naples-day-july-2023/highlights/bust-of-pulcinella.jpg",
-      alt: "Bronze bust of Pulcinella set against a weathered stone wall covered in stickers",
+      alt: "Bust of Pulcinella in Naples, Italy",
+      caption: "Bust of Pulcinella",
     },
     {
       title: "Piazza Vincenzo Bellini",
       timeLabel: "2:57:33",
       seconds: 10653,
       imageSrc: "/naples-day-july-2023/highlights/piazza-vincenzo-bellini.jpg",
-      alt: "View over Piazza Vincenzo Bellini with shaded terraces and colorful historic buildings",
+      alt: "Piazza Vincenzo Bellini in Naples, Italy",
+      caption: "Piazza Vincenzo Bellini",
     },
     {
       title: "Via Port'Alba",
       timeLabel: "3:03:09",
       seconds: 10989,
       imageSrc: "/naples-day-july-2023/highlights/via-portalba.jpg",
-      alt: "Pedestrians passing under the archway at Via Port'Alba beside market stalls and umbrellas",
+      alt: "Archway entrance on Via Port'Alba in Naples, Italy",
+      caption: "Via Port'Alba archway",
     },
     {
       title: "Piazza Dante",
       timeLabel: "3:06:24",
       seconds: 11184,
       imageSrc: "/naples-day-july-2023/highlights/piazza-dante.jpg",
-      alt: "Curved facade and clock tower of Piazza Dante with cafe tables in the foreground",
+      alt: "Piazza Dante with curved facade and clock tower in Naples, Italy",
+      caption: "Piazza Dante",
     },
     {
       title: "Galleria Principe di Napoli",
       timeLabel: "3:13:42",
       seconds: 11622,
       imageSrc: "/naples-day-july-2023/highlights/naples-galleria-principe-di-napoli.jpg",
-      alt: "Galleria Principe di Napoli in Naples",
+      alt: "Entrance to Galleria Principe di Napoli in Naples, Italy",
+      caption: "Galleria Principe di Napoli",
     },
     {
       title: "National Archaeological Museum",
       timeLabel: "3:16:09",
       seconds: 11769,
       imageSrc: "/naples-day-july-2023/highlights/archaeological-museum.jpg",
-      alt: "Front facade of the National Archaeological Museum of Naples with flags and palm trees",
+      alt: "National Archaeological Museum of Naples in Naples, Italy",
+      caption: "National Archaeological Museum",
     },
     {
       title: "Piazza Cavour",
       timeLabel: "3:18:26",
       seconds: 11906,
       imageSrc: "/naples-day-july-2023/highlights/naples-piazza-cavour.jpg",
-      alt: "Piazza Cavour in Naples",
+      alt: "Fountain and buildings at Piazza Cavour in Naples, Italy",
+      caption: "Piazza Cavour",
     },
     {
       title: "Via Vergini (Outdoor Market)",
       timeLabel: "3:26:12",
       seconds: 12372,
       imageSrc: "/naples-day-july-2023/highlights/naples-via-vergini-market.jpg",
-      alt: "Outdoor market on Via Vergini in Naples",
+      alt: "Outdoor market on Via Vergini in Naples, Italy",
+      caption: "Outdoor market on Via Vergini",
     },
     {
       title: "Palazzo dello Spagnolo",
       timeLabel: "3:31:06",
       seconds: 12666,
       imageSrc: "/naples-day-july-2023/highlights/naples-palazzo-dello-spagnolo.jpg",
-      alt: "Palazzo dello Spagnolo in Naples",
+      alt: "Interior courtyard of Palazzo dello Spagnolo in Naples, Italy",
+      caption: "Palazzo dello Spagnolo",
     },
     {
       title: "San Felice Palace",
       timeLabel: "3:39:18",
       seconds: 13158,
       imageSrc: "/naples-day-july-2023/highlights/naples-san-felice-palace.jpg",
-      alt: "San Felice Palace in Naples",
+      alt: "Courtyard facade of Palazzo San Felice in Naples, Italy",
+      caption: "Palazzo San Felice",
     },
     {
       title: "Basilica di Santa Maria della Sanita",
       timeLabel: "3:44:21",
       seconds: 13461,
       imageSrc:
-        "/naples-day-july-2023/highlights/naples-basilica-di-santa-maria-della-sanit\u00E0-church.jpg",
-      alt: "Basilica di Santa Maria della Sanita in Naples",
+        "/naples-day-july-2023/highlights/naples-basilica-di-santa-maria-della-sanita-church.jpg",
+      alt: "Basilica di Santa Maria della Sanita in Naples, Italy",
+      caption: "Basilica di Santa Maria della Sanita",
     },
     {
       title: "Ponte Maddalena Cerasuolo",
       timeLabel: "3:47:25",
       seconds: 13645,
       imageSrc: "/naples-day-july-2023/highlights/naples-ponte-maddalena-cerasuolo.jpg",
-      alt: "Ponte Maddalena Cerasuolo in Naples",
+      alt: "Ponte Maddalena Cerasuolo arch in Naples, Italy",
+      caption: "Ponte Maddalena Cerasuolo",
     },
     {
       title: "Piazza Dante",
       timeLabel: "3:55:46",
       seconds: 14146,
       imageSrc: "/naples-day-july-2023/highlights/naples-piazza-dante-2.jpg",
-      alt: "Piazza Dante in Naples",
+      alt: "People relaxing in Piazza Dante in Naples, Italy",
+      caption: "Street life in Piazza Dante",
     },
     {
       title: "Via Toledo",
       timeLabel: "3:58:55",
       seconds: 14335,
       imageSrc: "/naples-day-july-2023/highlights/naples-via-toledo-2-street.jpg",
-      alt: "Via Toledo in Naples",
+      alt: "Pedestrians on Via Toledo in Naples, Italy",
+      caption: "Walking along Via Toledo",
     },
     {
-      title: "Spanish Quarter",
+      title: "Quartieri Spagnoli",
       timeLabel: "4:09:16",
       seconds: 14956,
       imageSrc: "/naples-day-july-2023/highlights/naples-spanish-quarter-2.jpg",
-      alt: "Spanish Quarter street in Naples",
+      alt: "Decorated street in Quartieri Spagnoli in Naples, Italy",
+      caption: "Street in Quartieri Spagnoli",
     },
     {
       title: "Largo Maradona",
       timeLabel: "4:18:41",
       seconds: 15521,
       imageSrc: "/naples-day-july-2023/highlights/largo-maradona.jpg",
-      alt: "Large Diego Maradona mural surrounded by memorial posters and flags in the Spanish Quarter",
+      alt: "Diego Maradona mural at Largo Maradona in Naples, Italy",
+      caption: "Maradona mural at Largo Maradona",
     },
     {
       title: "Galleria Umberto I",
       timeLabel: "4:42:01",
       seconds: 16921,
       imageSrc: "/naples-day-july-2023/highlights/naples-galleria-umberto-i.jpg",
-      alt: "Galleria Umberto I in Naples",
+      alt: "Interior of Galleria Umberto I in Naples, Italy",
+      caption: "Inside Galleria Umberto I",
     },
     {
       title: "Gran Caffe Gambrinus",
       timeLabel: "4:50:58",
       seconds: 17458,
       imageSrc: "/naples-day-july-2023/highlights/naples-gambrinus-cafe.jpg",
-      alt: "Gran Caffe Gambrinus in Naples",
+      alt: "Exterior of Gran Caffe Gambrinus in Naples, Italy",
+      caption: "Gran Caffe Gambrinus",
     },
     {
       title: "Piazza del Plebiscito",
       timeLabel: "4:53:22",
       seconds: 17602,
       imageSrc: "/naples-day-july-2023/highlights/piazza-del-plebiscito.jpg",
-      alt: "Wide view across Piazza del Plebiscito toward the Basilica of San Francesco di Paola",
+      alt: "Piazza del Plebiscito and Basilica of San Francesco di Paola in Naples, Italy",
+      caption: "Piazza del Plebiscito",
     },
     {
       title: "Waterfront Lungomare",
       timeLabel: "5:00:45",
       seconds: 18045,
       imageSrc: "/naples-day-july-2023/highlights/naples-waterfront-1.jpg",
-      alt: "Naples waterfront along the Lungomare",
+      alt: "Lungomare waterfront promenade in Naples, Italy",
+      caption: "Naples Lungomare waterfront",
     },
     {
       title: "Rotonda Swimming Hole",
       timeLabel: "5:04:52",
       seconds: 18292,
       imageSrc: "/naples-day-july-2023/highlights/naples-rotonda-via-nazario-sauro-2.jpg",
-      alt: "Rotonda swimming hole on the Naples waterfront",
+      alt: "People swimming near Via Nazario Sauro on the Naples waterfront, Italy",
+      caption: "Swimming spot on the waterfront",
     },
     {
       title: "Fontana del Gigante",
       timeLabel: "5:15:57",
       seconds: 18957,
       imageSrc: "/naples-day-july-2023/highlights/naples-fontana-del-gigante-fountain.jpg",
-      alt: "Fontana del Gigante in Naples",
+      alt: "Fontana del Gigante near the waterfront in Naples, Italy",
+      caption: "Fontana del Gigante",
     },
     {
       title: "Castel dell'Ovo",
       timeLabel: "5:18:53",
       seconds: 19133,
       imageSrc: "/naples-day-july-2023/highlights/castel-dellovo.jpg",
-      alt: "Pedestrian walkway leading toward Castel dell'Ovo on the Naples waterfront",
+      alt: "Walkway leading to Castel dell'Ovo in Naples, Italy",
+      caption: "Approaching Castel dell'Ovo",
     },
     {
       title: "Via Partenope",
       timeLabel: "5:33:05",
       seconds: 19985,
       imageSrc: "/naples-day-july-2023/highlights/naples-waterfront2.jpg",
-      alt: "Via Partenope on the Naples waterfront",
+      alt: "Via Partenope waterfront road in Naples, Italy",
+      caption: "Via Partenope waterfront",
     },
   ];
 
   const handleHighlightClick = (seconds: number) => {
-    setIframeSrc(buildYoutubeEmbedUrl(seconds, true));
-    setIframeKey((currentKey) => currentKey + 1);
+    pendingSeekRef.current = seconds;
+    playerRef.current?.seekTo(seconds, true);
+    playerRef.current?.playVideo();
+    if (playerRef.current) {
+      pendingSeekRef.current = null;
+    }
+
     setTimeout(() => {
       videoSectionRef.current?.scrollIntoView({
         behavior: "smooth",
@@ -418,14 +538,6 @@ const scrollToRelatedTours = () => {
     "Raw Footage Available",
   ];
 
-  const inlineWalkStats = [
-    { icon: "📅", label: "Date", value: "Filmed on July 6, 2023 � July 22, 2023 � July 23, 2023" },
-    { icon: "📏", label: "Distance", value: "8.3 mi / 13.3 km" },
-    { icon: "🕒", label: "Duration", value: "5h 45m" },
-    { icon: "🚶", label: "Pace", value: "Leisurely" },
-    { icon: "☀️", label: "Vibe", value: "Vibrant / Sunny" },
-  ];
-
   const proRatings = [
     {
       category: "Intensity",
@@ -471,27 +583,9 @@ const scrollToRelatedTours = () => {
     },
   ];
 
-  const topInlineStats = [
-    { icon: "📅", label: "Date", value: "Filmed on July 6, 2023 � July 22, 2023 � July 23, 2023" },
-    { icon: "📏", label: "Distance", value: "8.3 mi / 13.3 km" },
-    { icon: "🕒", label: "Duration", value: "5h 45m" },
-    { icon: "🚶", label: "Pace", value: "Leisurely" },
-    { icon: "☀️", label: "Vibe", value: "Vibrant / Sunny" },
-    { icon: "⭐", label: "Overall Score", value: "4.0 / 5" },
-  ];
-
   const fullMapUrl =
     "https://www.google.com/maps/d/edit?mid=1E_nqyiPSRDss1zSiWuRzH2bBrAm3tBU&usp=sharing";
   const fullMapQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(fullMapUrl)}`;
-  const visibleTopInlineStats = [
-    { icon: "📅", label: "Date", value: "Filmed on July 6, 2023 � July 22, 2023 � July 23, 2023" },
-    { icon: "📏", label: "Distance", value: "8.3 mi / 13.3 km" },
-    { icon: "🕒", label: "Duration", value: "5h 45m" },
-    { icon: "🚶", label: "Pace", value: "Leisurely" },
-    { icon: "☀️", label: "Vibe", value: "Vibrant / Sunny" },
-    { icon: "⭐", label: "Overall Score", value: "4.2 / 5" },
-  ];
-
   const topRowStats = [
     {
       icon: "📅",
@@ -755,9 +849,9 @@ const scrollToRelatedTours = () => {
         <div className="overflow-hidden rounded-[2rem] border border-[#d8c7b5] shadow-lg">
           <div className="aspect-video w-full bg-black">
             <iframe
-              key={iframeKey}
+              ref={playerIframeRef}
               className="h-full w-full"
-              src={iframeSrc}
+              src={initialYoutubeEmbedUrl}
               title="Naples Italy ASMR walking tour"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
@@ -843,6 +937,10 @@ const scrollToRelatedTours = () => {
                       {highlight.timeLabel}
                     </p>
                   </div>
+
+                  <p className="mt-2 text-sm leading-6 text-[#6e5a45]">
+                    {highlight.caption}
+                  </p>
 
                   {highlight.proTip ? (
                     <p className="mt-3 text-sm leading-6 text-[#56493a]">
@@ -1049,6 +1147,19 @@ const scrollToRelatedTours = () => {
             href="/destinations/italy/campania/naples"
             className="group rounded-[1.5rem] border border-[#d8c7b5] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg"
           >
+            <div className="mb-4 overflow-hidden rounded-[1rem] border border-[#eadfce]">
+              <img
+                src="https://i.ytimg.com/vi/Cv1zIRhxvHU/maxresdefault.jpg"
+                alt="Naples Night Walk video thumbnail"
+                className="aspect-video w-full object-cover"
+                loading="lazy"
+                onError={(event) => {
+                  const image = event.currentTarget;
+                  image.onerror = null;
+                  image.src = "https://i.ytimg.com/vi/Cv1zIRhxvHU/hqdefault.jpg";
+                }}
+              />
+            </div>
             <p className="text-sm font-semibold text-[#3d3327]">
               Naples Night Walk
             </p>
@@ -1065,6 +1176,14 @@ const scrollToRelatedTours = () => {
             href="/destinations/italy/campania/naples"
             className="group rounded-[1.5rem] border border-[#d8c7b5] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg"
           >
+            <div className="mb-4 overflow-hidden rounded-[1rem] border border-[#eadfce]">
+              <img
+                src="/naples-day-july-2023/naples-360-tour-thumbnail.jpg"
+                alt="Naples 360 Tour video thumbnail"
+                className="aspect-video w-full object-cover"
+                loading="lazy"
+              />
+            </div>
             <p className="text-sm font-semibold text-[#3d3327]">
               Naples 360 Tour
             </p>
@@ -1097,12 +1216,25 @@ const scrollToRelatedTours = () => {
             href="/destinations/italy/campania/naples"
             className="group rounded-[1.5rem] border border-[#d8c7b5] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg"
           >
+            <div className="mb-4 overflow-hidden rounded-[1rem] border border-[#eadfce]">
+              <img
+                src="https://i.ytimg.com/vi/IHXZnU2bmc8/maxresdefault.jpg"
+                alt="Naples Biking Tour video thumbnail"
+                className="aspect-video w-full object-cover"
+                loading="lazy"
+                onError={(event) => {
+                  const image = event.currentTarget;
+                  image.onerror = null;
+                  image.src = "https://i.ytimg.com/vi/IHXZnU2bmc8/hqdefault.jpg";
+                }}
+              />
+            </div>
             <p className="text-sm font-semibold text-[#3d3327]">
-              Naples Churches Walk
+              Naples Biking Tour
             </p>
             <p className="mt-2 text-sm leading-7 text-[#6e5a45]">
-              Focus on Naples churches, sacred spaces, and religious landmarks
-              in the historic center.
+              Ride through Naples with fast-moving street scenes, neighborhood
+              energy, and waterfront views across the city.
             </p>
             <p className="mt-4 text-sm font-semibold text-[#167fd5]">
               View tour →
