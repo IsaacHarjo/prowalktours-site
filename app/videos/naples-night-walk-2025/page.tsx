@@ -196,7 +196,7 @@ export default function NaplesNightWalk2025Page() {
     {
       icon: "☀️",
       label: "Weather",
-      value: naplesVideo?.weather ?? "Sunny, 83F / 28C",
+      value: naplesVideo?.weather ?? "Sunny, 83\u00B0F / 28\u00B0C",
     },
   ];
 

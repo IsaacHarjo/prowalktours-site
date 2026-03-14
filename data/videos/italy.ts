@@ -401,7 +401,7 @@ export const italyVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "June 2025",
     durationLabel: "2h 12m",
     durationSeconds: 7920,
-    weather: "Sunny, 83F / 28C",
+    weather: "Sunny, 83\u00B0F / 28\u00B0C",
     shortDescription:
       "Naples Night Walk follows Via Toledo, the Spanish Quarter, Galleria Umberto I, Piazza del Plebiscito, and the waterfront in an immersive evening walking tour filmed in June 2025.",
     keywords: [

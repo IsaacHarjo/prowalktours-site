@@ -133,14 +133,18 @@ export default async function SearchPage({
                   key={video.id}
                   className="overflow-hidden rounded-[2rem] border border-[#d8c7b5] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
                 >
-                  <div className="overflow-hidden border-b border-[#eadfce]">
+                  <Link
+                    href={`/videos/${video.slug}`}
+                    className="block overflow-hidden border-b border-[#eadfce]"
+                    aria-label={`View ${video.siteTitle}`}
+                  >
                     <img
                       src={video.thumbnail}
                       alt={video.siteTitle}
                       className="aspect-[16/9] w-full object-cover"
                       loading="lazy"
                     />
-                  </div>
+                  </Link>
 
                   <div className="p-6">
                     <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a735a]">
