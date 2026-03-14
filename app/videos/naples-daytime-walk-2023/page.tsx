@@ -816,7 +816,7 @@ const scrollToRelatedTours = () => {
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <a
-            href="/destinations/italy/campania/naples"
+            href="/videos/naples-night-walk-2025"
             className="group rounded-[1.5rem] border border-[#d8c7b5] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg"
           >
             <div className="mb-4 overflow-hidden rounded-[1rem] border border-[#eadfce]">
