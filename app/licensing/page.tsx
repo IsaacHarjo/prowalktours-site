@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function LicensingPage() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -14,12 +15,12 @@ export default function LicensingPage() {
     <div className="min-h-screen bg-[#fcfaf6] text-[#3d3327]">
       <section className="border-b border-[#d8c7b5] bg-gradient-to-br from-[#f4e6bc] via-[#fcfaf6] to-[#e7f1f8]">
         <div className="mx-auto max-w-6xl px-6 py-14 lg:px-10 lg:py-16">
-          <a
+          <Link
             href="/"
             className="inline-flex items-center rounded-full border border-[#cdb7a0] bg-white px-3 py-1 text-sm font-medium text-[#5c4c33] shadow-sm transition hover:bg-[#fff8ef]"
           >
             ← Back to Prowalk Tours
-          </a>
+          </Link>
 
           <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>

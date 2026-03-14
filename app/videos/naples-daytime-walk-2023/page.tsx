@@ -407,6 +407,7 @@ const scrollToRelatedTours = () => {
     <p className="mt-6 max-w-3xl text-base leading-8 text-[#56493a]">
       {pageShortDescription}
     </p>
+
     <div className="mt-8 space-y-4 border-y border-[#d8c7b5]/80 py-4 text-[#3d3327]">
       <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
         {topRowStats.map((stat) => (
