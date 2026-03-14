@@ -46,7 +46,7 @@ export default function HomePage() {
             </div>
 
             <form
-              action="/"
+              action="/search"
               method="get"
               className="mt-8 max-w-2xl rounded-2xl border border-white/20 bg-white/95 p-2 shadow-2xl"
             >
