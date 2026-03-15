@@ -24,10 +24,10 @@ const countries = [
   },
   {
     name: "France",
-    href: "#",
+    href: "/destinations/france",
     emoji: "🇫🇷",
-    status: "Coming soon",
-    description: "Future landing page for France walks and destinations.",
+    status: "Available now",
+    description: "Regions, cities, and walks across France.",
   },
   {
     name: "Norway",
