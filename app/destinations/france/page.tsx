@@ -31,11 +31,44 @@ const destinations = [
   },
 ];
 
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Countries", href: "/countries" },
+  { label: "France" },
+];
+
 export default function FrancePage() {
   return (
     <main className="bg-[#fcfaf7] text-[#2f261d]">
       <section className="border-b border-[#eadfce] bg-white">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+          <nav
+            aria-label="Breadcrumb"
+            className="mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-[#8a7a68]"
+          >
+            {breadcrumbs.map((item, index) => (
+              <div key={item.label} className="inline-flex items-center gap-2">
+                {item.href ? (
+                  <Link
+                    href={item.href}
+                    className="transition hover:text-[#167fd5]"
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <span className="font-medium text-[#5c4c33]">
+                    {item.label}
+                  </span>
+                )}
+                {index < breadcrumbs.length - 1 ? (
+                  <span aria-hidden="true" className="text-[#bba893]">
+                    /
+                  </span>
+                ) : null}
+              </div>
+            ))}
+          </nav>
+
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
             Country
           </p>

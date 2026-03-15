@@ -1,4 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
+
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Countries", href: "/countries" },
+  { label: "Italy", href: "/destinations/italy" },
+  { label: "Campania", href: "/destinations/italy/campania" },
+  { label: "Naples" },
+];
 
 export default function Home() {
   const quickFacts = [
@@ -110,11 +119,32 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-sky-100 via-cyan-50 to-zinc-100" />
         <div className="absolute inset-0 opacity-60 bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.18),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(20,184,166,0.16),transparent_28%)]" />
         <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+          <nav
+            aria-label="Breadcrumb"
+            className="mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-zinc-600"
+          >
+            {breadcrumbs.map((item, index) => (
+              <div key={item.label} className="inline-flex items-center gap-2">
+                {item.href ? (
+                  <Link
+                    href={item.href}
+                    className="transition hover:text-sky-700"
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <span className="font-medium text-zinc-800">{item.label}</span>
+                )}
+                {index < breadcrumbs.length - 1 ? (
+                  <span aria-hidden="true" className="text-zinc-400">
+                    /
+                  </span>
+                ) : null}
+              </div>
+            ))}
+          </nav>
           <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center rounded-full border border-zinc-300 bg-white/80 px-3 py-1 text-sm font-medium backdrop-blur">
-                Italy → Campania → Naples
-              </div>
               <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                 Explore Naples
               </h1>

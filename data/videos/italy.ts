@@ -403,8 +403,10 @@ export const italyVideos: VideoCatalogRecord[] = [
     durationSeconds: 7920,
     weather: "Sunny, 83\u00B0F / 28\u00B0C",
     shortDescription:
-      "Naples Night Walk follows Via Toledo, the Spanish Quarter, Galleria Umberto I, Piazza del Plebiscito, and the waterfront in an immersive evening walking tour filmed in June 2025.",
+      "Explore Naples at night in this 4K walking tour through Via Toledo, the Spanish Quarter, Galleria Umberto I, Piazza del Plebiscito, Via Chiaia, and the waterfront to Castel dell'Ovo.",
     keywords: [
+      "Naples night walk",
+      "Naples Italy",
       "Naples",
       "Napoli",
       "Campania",
@@ -433,6 +435,7 @@ export const italyVideos: VideoCatalogRecord[] = [
       "Via Nazario Sauro",
       "Rotonda",
       "4K 60fps",
+      "4K walking tour",
       "ambient city sound",
     ],
     landmarks: [
