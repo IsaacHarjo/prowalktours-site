@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+const fullMapUrl =
+  "https://www.google.com/maps/d/edit?mid=1t4YBAzo7z1iLvAR8SePE8GG0fXCh03M&usp=sharing";
+const embeddedMapUrl =
+  "https://www.google.com/maps/d/u/0/embed?mid=1t4YBAzo7z1iLvAR8SePE8GG0fXCh03M";
+
 const regions = [
   {
   name: "Campania",
@@ -155,18 +160,36 @@ export default function ItalyPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 lg:px-10">
-        <div className="mb-8 rounded-3xl border border-dashed border-[#d8c7b5] bg-[#fffaf3] p-8">
+        <div className="mb-8 rounded-3xl border border-[#d8c7b5] bg-[#fffaf3] p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
-            Future Feature
+            Interactive Italy Map
           </p>
           <h2 className="mt-3 text-3xl font-bold text-[#2f261d]">
-            Interactive Italy Map
+            Explore Italy on the map
           </h2>
           <p className="mt-3 max-w-3xl text-[17px] leading-8 text-[#6c5b49]">
-            This section can later become a visual map of Italy with clickable
-            regions. For now, use the region cards below as the main entry
-            points.
+            Browse walking tours by region, starting with Campania and
+            expanding to more Italian regions over time.
           </p>
+          <div className="mt-6 overflow-hidden rounded-[2rem] border border-[#d8c7b5] bg-white shadow-sm">
+            <div className="aspect-[16/9] w-full bg-[#f8f3ec]">
+              <iframe
+                className="h-full w-full"
+                src={embeddedMapUrl}
+                title="Interactive Italy map"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+          <a
+            href={fullMapUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-6 inline-flex items-center justify-center rounded-full border border-[#167fd5] bg-white px-6 py-3 text-base font-semibold text-[#167fd5] transition hover:bg-[#edf6fd]"
+          >
+            Open the full Italy map
+          </a>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">

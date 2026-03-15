@@ -1,48 +1,26 @@
 import Link from "next/link";
 
 const fullMapUrl =
-  "https://www.google.com/maps/d/edit?mid=10grORN8XYRpuIVzrAcB04cKvxA4-BTU&usp=sharing";
+  "https://www.google.com/maps/d/edit?mid=1a5hdtdDOzWQdZBbRJ0_4r7YQyZG31s8&usp=sharing";
 const embeddedMapUrl =
-  "https://www.google.com/maps/d/u/0/embed?mid=10grORN8XYRpuIVzrAcB04cKvxA4-BTU";
+  "https://www.google.com/maps/d/u/0/embed?mid=1a5hdtdDOzWQdZBbRJ0_4r7YQyZG31s8";
 
-const destinations = [
+const provinces = [
   {
-    name: "Paris",
-    href: null,
+    name: "British Columbia",
     status: "Coming soon",
     description:
-      "City walks, landmarks, neighborhoods, and future destination guides across Paris.",
-  },
-  {
-    name: "French Riviera",
-    href: "/destinations/france/french-riviera",
-    status: "Available now",
-    description:
-      "Explore Riviera destinations, coastal towns, scenic walks, and travel-focused pages.",
-  },
-  {
-    name: "Provence",
-    href: null,
-    status: "Coming soon",
-    description:
-      "Villages, markets, countryside routes, and future destination pages across Provence.",
-  },
-  {
-    name: "Christmas Markets",
-    href: null,
-    status: "Coming soon",
-    description:
-      "Seasonal market destinations, festive town centers, and holiday walking pages coming later.",
+      "Future walking tours, cities, and destination pages across British Columbia.",
   },
 ];
 
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Countries", href: "/countries" },
-  { label: "France" },
+  { label: "Canada" },
 ];
 
-export default function FrancePage() {
+export default function CanadaPage() {
   return (
     <main className="bg-[#fcfaf7] text-[#2f261d]">
       <section className="border-b border-[#eadfce] bg-white">
@@ -78,20 +56,20 @@ export default function FrancePage() {
             Country
           </p>
           <h1 className="mt-3 text-4xl font-bold tracking-tight text-[#2f261d] sm:text-5xl">
-            France
+            Canada
           </h1>
           <p className="mt-5 max-w-3xl text-[18px] leading-8 text-[#6c5b49]">
-            Browse France by destination hub, then expand into cities, regions,
-            seasonal travel pages, and individual walking tours as they go live.
+            Browse Canada by province, then expand into cities, destinations,
+            and individual walking tours as this growing collection develops.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/destinations/france/french-riviera"
+            <a
+              href="#provinces"
               className="inline-flex items-center justify-center rounded-full bg-[#167fd5] px-6 py-3 text-base font-semibold text-white transition hover:bg-[#0f6db9]"
             >
-              Explore French Riviera
-            </Link>
+              Explore Provinces
+            </a>
 
             <Link
               href="/countries"
@@ -106,21 +84,21 @@ export default function FrancePage() {
       <section className="mx-auto max-w-7xl px-6 py-14 lg:px-10">
         <div className="mb-8 rounded-3xl border border-[#d8c7b5] bg-[#fffaf3] p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
-            Interactive France Map
+            Interactive Canada Map
           </p>
           <h2 className="mt-3 text-3xl font-bold text-[#2f261d]">
-            Explore France on the map
+            Explore Canada on the map
           </h2>
           <p className="mt-3 max-w-3xl text-[17px] leading-8 text-[#6c5b49]">
-            Browse Paris, French Riviera, Provence, and Christmas Markets on
-            the interactive map below.
+            Browse tours in British Columbia, with more Canadian provinces to
+            be added over time.
           </p>
           <div className="mt-6 overflow-hidden rounded-[2rem] border border-[#d8c7b5] bg-white shadow-sm">
             <div className="aspect-[16/9] w-full bg-[#f8f3ec]">
               <iframe
                 className="h-full w-full"
                 src={embeddedMapUrl}
-                title="Interactive France map"
+                title="Interactive Canada map"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
@@ -132,48 +110,30 @@ export default function FrancePage() {
             rel="noreferrer"
             className="mt-6 inline-flex items-center justify-center rounded-full border border-[#167fd5] bg-white px-6 py-3 text-base font-semibold text-[#167fd5] transition hover:bg-[#edf6fd]"
           >
-            Open the full France map
+            Open the full Canada map
           </a>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-          {destinations.map((destination) =>
-            destination.href ? (
-              <Link
-                key={destination.name}
-                href={destination.href}
-                className="group rounded-3xl border border-[#eadfce] bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-[#d7c3ad] hover:shadow-md"
-              >
-                <h2 className="text-2xl font-bold text-[#2f261d] transition group-hover:text-[#167fd5]">
-                  {destination.name}
-                </h2>
-                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-[#9a7a52]">
-                  {destination.status}
-                </p>
-                <p className="mt-4 text-[16px] leading-7 text-[#6c5b49]">
-                  {destination.description}
-                </p>
-                <div className="mt-6 text-[16px] font-semibold text-[#167fd5]">
-                  View destination page →
-                </div>
-              </Link>
-            ) : (
-              <div
-                key={destination.name}
-                className="rounded-3xl border border-[#eadfce] bg-[#f8f3ec] p-7 opacity-90"
-              >
-                <h2 className="text-2xl font-bold text-[#2f261d]">
-                  {destination.name}
-                </h2>
-                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-[#9a7a52]">
-                  {destination.status}
-                </p>
-                <p className="mt-4 text-[16px] leading-7 text-[#6c5b49]">
-                  {destination.description}
-                </p>
-              </div>
-            )
-          )}
+        <div
+          id="provinces"
+          className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3"
+        >
+          {provinces.map((province) => (
+            <div
+              key={province.name}
+              className="rounded-3xl border border-[#eadfce] bg-[#f8f3ec] p-7 opacity-90"
+            >
+              <h2 className="text-2xl font-bold text-[#2f261d]">
+                {province.name}
+              </h2>
+              <p className="mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-[#9a7a52]">
+                {province.status}
+              </p>
+              <p className="mt-4 text-[16px] leading-7 text-[#6c5b49]">
+                {province.description}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
     </main>

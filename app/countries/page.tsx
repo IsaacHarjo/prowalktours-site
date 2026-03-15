@@ -10,17 +10,17 @@ const countries = [
   },
   {
     name: "United States",
-    href: "#",
-    emoji: "🇺🇸",
-    status: "Coming soon",
-    description: "Future landing page for United States walks and destinations.",
+    href: "/destinations/usa",
+    emoji: "\uD83C\uDDFA\uD83C\uDDF8",
+    status: "Available now",
+    description: "States, cities, and walks across the United States.",
   },
   {
     name: "Canada",
-    href: "#",
+    href: "/destinations/canada",
     emoji: "🇨🇦",
-    status: "Coming soon",
-    description: "Future landing page for Canada walks and destinations.",
+    status: "Available now",
+    description: "Provinces, cities, and walks across Canada.",
   },
   {
     name: "France",
@@ -49,6 +49,13 @@ const countries = [
     emoji: "🇩🇪",
     status: "Coming soon",
     description: "Future landing page for Germany walks and destinations.",
+  },
+  {
+    name: "Greece",
+    href: "/destinations/greece",
+    emoji: "🇬🇷",
+    status: "Available now",
+    description: "Cities, islands, and walks across Greece.",
   },
   {
     name: "Croatia",
