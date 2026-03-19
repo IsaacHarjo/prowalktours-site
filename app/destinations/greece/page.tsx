@@ -112,8 +112,8 @@ export default function GreecePage() {
             Browse tours in Athens, Mykonos, Paros, and Santorini, with more
             Greece destinations added over time.
           </p>
-          <div className="mt-6 overflow-hidden rounded-[2rem] border border-[#d8c7b5] bg-white shadow-sm">
-            <div className="aspect-[16/9] w-full bg-[#f8f3ec]">
+          <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-[#d8c7b5] bg-white shadow-sm sm:rounded-[2rem]">
+            <div className="h-[420px] w-full bg-[#f8f3ec] sm:h-[480px] lg:h-auto lg:aspect-[16/9]">
               <iframe
                 className="h-full w-full"
                 src={embeddedMapUrl}
