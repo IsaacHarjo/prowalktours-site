@@ -468,8 +468,8 @@ export default function NaplesNightWalk2025Page() {
           {naplesNightWalk2025Detail.routeMapDescription}
         </p>
 
-        <div className="mt-8 overflow-hidden rounded-[2rem] border border-[#d8c7b5] shadow-lg">
-          <div className="aspect-[16/9] w-full bg-zinc-100">
+        <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-[#d8c7b5] shadow-lg sm:rounded-[2rem]">
+          <div className="h-[420px] w-full bg-zinc-100 sm:h-[480px] lg:h-auto lg:aspect-[16/9]">
             <iframe
               className="h-full w-full"
               src={fullMapEmbedUrl}
