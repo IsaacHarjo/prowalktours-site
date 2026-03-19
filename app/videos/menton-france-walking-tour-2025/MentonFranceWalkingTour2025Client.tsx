@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import MapSection from "../../../components/MapSection";
 
 type Highlight = {
   title: string;
@@ -828,67 +829,63 @@ export default function MentonFranceWalkingTour2025Page() {
         ref={routeMapRef}
         className="scroll-mt-32 mx-auto max-w-6xl px-6 py-8 lg:px-10 lg:py-10"
       >
-        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
-          Route map
-        </p>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#3d3327]">
-          Explore the route
-        </h2>
-
-        <p className="mt-4 max-w-3xl text-base leading-8 text-[#56493a]">
-          This route starts beside the beach and blue Menton sign, climbs through
-          the old donkey steps and colorful lanes of Old Town, reaches sweeping
-          sea views near Cimetiere du Vieux Chateau, and then works back through
-          town to finish at the beach.
-        </p>
-
-        <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-[#d8c7b5] shadow-lg sm:rounded-[2rem]">
-          <div className="h-[420px] w-full bg-zinc-100 sm:h-[480px] lg:h-auto lg:aspect-[16/9]">
-            <iframe
-              className="h-full w-full"
-              src={fullMapEmbedUrl}
-              title="Menton walking route map"
-            />
-          </div>
-        </div>
-
-        <div className="mt-6 rounded-[1.75rem] border border-[#d8c7b5] bg-[#fcfaf6] p-5 shadow-sm">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <div className="max-w-xl">
-              <p className="text-lg font-semibold tracking-tight text-[#3d3327] sm:text-xl">
-                Take this route with you
-              </p>
-              <p className="mt-3 text-[15px] leading-7 text-[#56493a]">
-                Scan to open the Menton walking route on your phone using Google
-                Maps.
-              </p>
+        <MapSection
+          eyebrow="Route map"
+          heading="Explore the route"
+          description={
+            <>
+              This route starts beside the beach and blue Menton sign, climbs through
+              the old donkey steps and colorful lanes of Old Town, reaches sweeping
+              sea views near Cimetiere du Vieux Chateau, and then works back through
+              town to finish at the beach.
+            </>
+          }
+          iframeSrc={fullMapEmbedUrl}
+          iframeTitle="Menton walking route map"
+          eyebrowClassName="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]"
+          headingClassName="mt-3 text-3xl font-bold tracking-tight text-[#3d3327]"
+          descriptionClassName="mt-4 max-w-3xl text-base leading-8 text-[#56493a]"
+          mapCardClassName="mt-8 overflow-hidden rounded-[1.5rem] border border-[#d8c7b5] shadow-lg sm:rounded-[2rem]"
+          mapBackgroundClassName="h-[420px] w-full bg-zinc-100 sm:h-[480px] lg:h-auto lg:aspect-[16/9]"
+        >
+          <div className="mt-6 rounded-[1.75rem] border border-[#d8c7b5] bg-[#fcfaf6] p-5 shadow-sm">
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="max-w-xl">
+                <p className="text-lg font-semibold tracking-tight text-[#3d3327] sm:text-xl">
+                  Take this route with you
+                </p>
+                <p className="mt-3 text-[15px] leading-7 text-[#56493a]">
+                  Scan to open the Menton walking route on your phone using Google
+                  Maps.
+                </p>
+                <a
+                  href={fullMapUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 inline-flex items-center justify-center rounded-full border border-[#167fd5] bg-white px-4 py-2 text-sm font-semibold text-[#167fd5] shadow-sm transition hover:bg-[#edf6fd]"
+                >
+                  Open the route in Google Maps
+                </a>
+              </div>
+  
               <a
                 href={fullMapUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-4 inline-flex items-center justify-center rounded-full border border-[#167fd5] bg-white px-4 py-2 text-sm font-semibold text-[#167fd5] shadow-sm transition hover:bg-[#edf6fd]"
+                className="self-start rounded-[1.5rem] border border-[#e5d7c6] bg-white p-3 shadow-sm transition hover:border-[#cdb7a0]"
+                aria-label="Open the Menton route map on your phone"
               >
-                Open the route in Google Maps
+                <img
+                  src={fullMapQrUrl}
+                  alt="QR code for opening the Menton walking route in Google Maps"
+                  width="132"
+                  height="132"
+                  className="h-[132px] w-[132px] rounded-xl"
+                />
               </a>
             </div>
-
-            <a
-              href={fullMapUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="self-start rounded-[1.5rem] border border-[#e5d7c6] bg-white p-3 shadow-sm transition hover:border-[#cdb7a0]"
-              aria-label="Open the Menton route map on your phone"
-            >
-              <img
-                src={fullMapQrUrl}
-                alt="QR code for opening the Menton walking route in Google Maps"
-                width="132"
-                height="132"
-                className="h-[132px] w-[132px] rounded-xl"
-              />
-            </a>
           </div>
-        </div>
+        </MapSection>
       </section>
 
       <section
@@ -1117,3 +1114,4 @@ export default function MentonFranceWalkingTour2025Page() {
     </div>
   );
 }
+

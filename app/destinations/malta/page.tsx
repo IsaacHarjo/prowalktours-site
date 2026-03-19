@@ -1,4 +1,5 @@
 import Link from "next/link";
+import MapSection from "../../../components/MapSection";
 
 const fullMapUrl =
   "https://www.google.com/maps/d/edit?mid=1QmHpQjPAXOFxNvnR8I5GSJEixZgzx2s&usp=sharing";
@@ -83,36 +84,22 @@ export default function MaltaPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 lg:px-10">
-        <div className="mb-8 rounded-3xl border border-[#d8c7b5] bg-[#fffaf3] p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
-            Interactive Malta Map
-          </p>
-          <h2 className="mt-3 text-3xl font-bold text-[#2f261d]">
-            Explore Malta on the map
-          </h2>
-          <p className="mt-3 max-w-3xl text-[17px] leading-8 text-[#6c5b49]">
-            Browse tours across Malta, with more destinations added over time.
-          </p>
-          <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-[#d8c7b5] bg-white shadow-sm sm:rounded-[2rem]">
-            <div className="h-[420px] w-full bg-[#f8f3ec] sm:h-[480px] lg:h-auto lg:aspect-[16/9]">
-              <iframe
-                className="h-full w-full"
-                src={embeddedMapUrl}
-                title="Interactive Malta map"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-          </div>
-          <a
-            href={fullMapUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-6 inline-flex items-center justify-center rounded-full border border-[#167fd5] bg-white px-6 py-3 text-base font-semibold text-[#167fd5] transition hover:bg-[#edf6fd]"
-          >
-            Open the full Malta map
-          </a>
-        </div>
+        <MapSection
+          className="mb-8 rounded-3xl border border-[#d8c7b5] bg-[#fffaf3] p-8"
+          eyebrow="Interactive Malta Map"
+          heading="Explore Malta on the map"
+          description={
+            <>
+              Browse tours across Malta, with more destinations added over time.
+            </>
+          }
+          iframeSrc={embeddedMapUrl}
+          iframeTitle="Interactive Malta map"
+          iframeLoading="lazy"
+          iframeReferrerPolicy="no-referrer-when-downgrade"
+          fullMapButtonHref={fullMapUrl}
+          fullMapButtonLabel="Open the full Malta map"
+        />
 
         <div
           id="destinations"
@@ -139,3 +126,4 @@ export default function MaltaPage() {
     </main>
   );
 }
+
