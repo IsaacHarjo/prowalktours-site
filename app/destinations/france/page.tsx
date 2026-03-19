@@ -23,10 +23,10 @@ const destinations = [
   },
   {
     name: "Provence",
-    href: null,
-    status: "Coming soon",
+    href: "/destinations/france/provence",
+    status: "Available now",
     description:
-      "Villages, markets, countryside routes, and future destination pages across Provence.",
+      "Explore Provence destinations beginning with Avignon and expanding into more historic cities over time.",
   },
   {
     name: "Christmas Markets",
@@ -85,22 +85,6 @@ export default function FrancePage() {
             Browse France by destination hub, then expand into cities, regions,
             seasonal travel pages, and individual walking tours as they go live.
           </p>
-
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/destinations/france/french-riviera"
-              className="inline-flex items-center justify-center rounded-full bg-[#167fd5] px-6 py-3 text-base font-semibold text-white transition hover:bg-[#0f6db9]"
-            >
-              Explore French Riviera
-            </Link>
-
-            <Link
-              href="/countries"
-              className="inline-flex items-center justify-center rounded-full border border-[#d8c7b5] bg-white px-6 py-3 text-base font-semibold text-[#3d3327] transition hover:bg-[#f8f3ec]"
-            >
-              Back to Countries
-            </Link>
-          </div>
         </div>
       </section>
 
