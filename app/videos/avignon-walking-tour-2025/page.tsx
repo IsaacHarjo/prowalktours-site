@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import MapSection from "../../../components/MapSection";
+import { avignonWalkingTour2025Detail } from "../../../data/video-details/avignon-walking-tour-2025";
 
 const siteUrl = "https://www.prowalktours.com";
 const youtubeVideoId = "2iQh_R4t2Uw";
@@ -31,69 +32,7 @@ const topRowStats = [
   { icon: "🕒", label: "Duration", value: "2h 21m" },
   { icon: "☀️", label: "Weather", value: "29°C / 85°F" },
 ];
-
-const highlights = [
-  {
-    timeLabel: "0:53",
-    seconds: 53,
-    title: "Pont Edouard Daladier Viewpoint",
-    description: "Opening river views across the Rhone toward the papal skyline.",
-  },
-  {
-    timeLabel: "6:11",
-    seconds: 371,
-    title: "Porte de l'Oulle",
-    description: "Entering the historic core through one of Avignon's gates.",
-  },
-  {
-    timeLabel: "18:01",
-    seconds: 1081,
-    title: "Place de l'Horloge",
-    description: "One of the city's major squares, full of movement and civic history.",
-  },
-  {
-    timeLabel: "23:07",
-    seconds: 1387,
-    title: "Place du Palais",
-    description: "The monumental heart of Avignon and the papal precinct.",
-  },
-  {
-    timeLabel: "30:13",
-    seconds: 1813,
-    title: "Cathedrale Notre-Dame des Doms",
-    description: "Religious landmark above the city beside the palace complex.",
-  },
-  {
-    timeLabel: "42:05",
-    seconds: 2525,
-    title: "Pont Saint-Benezet",
-    description: "The famous Pont d'Avignon and one of the route's signature views.",
-  },
-  {
-    timeLabel: "54:51",
-    seconds: 3291,
-    title: "Walking the City Ramparts",
-    description: "Long elevated stretches tracing the defensive edge of Avignon.",
-  },
-  {
-    timeLabel: "1:23:49",
-    seconds: 5029,
-    title: "Les Halles d'Avignon",
-    description: "Market energy and everyday city life in the historic center.",
-  },
-  {
-    timeLabel: "1:35:04",
-    seconds: 5704,
-    title: "Rue des Teinturiers",
-    description: "One of Avignon's most atmospheric streets with water and shade.",
-  },
-  {
-    timeLabel: "2:21:46",
-    seconds: 8506,
-    title: "Avignon Centre",
-    description: "The walk closes back near the station after a full circuit.",
-  },
-];
+const highlights = avignonWalkingTour2025Detail.highlights;
 
 const relatedTours = [
   {
@@ -296,17 +235,16 @@ export default function AvignonWalkingTour2025Page() {
             <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
               <div className="min-w-0">
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
-                  France Walk
+                  {avignonWalkingTour2025Detail.heroEyebrow}
                 </p>
                 <h1 className="mt-3 text-4xl font-bold tracking-tight text-[#3d3327] sm:text-5xl">
-                  Avignon, France - September 2025 
+                  {avignonWalkingTour2025Detail.heroTitle}
                 </h1>
                 <p className="mt-3 text-xl text-[#6e5a45]">
-                  Historic Center, Papal Landmarks &amp; City Ramparts
+                  {avignonWalkingTour2025Detail.heroSubtitle}
                 </p>
                 <p className="mt-6 max-w-3xl text-base leading-8 text-[#56493a]">
-                  Explore the city and learn its incredible history in this tour
-                  of Avignon, France, the historic City of the Popes.
+                  {avignonWalkingTour2025Detail.heroDescription}
                 </p>
 
                 <div className="mt-8 space-y-4 border-y border-[#d8c7b5]/80 py-4 text-[#3d3327]">
@@ -425,15 +363,7 @@ export default function AvignonWalkingTour2025Page() {
           <MapSection
             eyebrow="Route map"
             heading="Explore the route"
-            description={
-              <>
-                Follow the Avignon route from riverside viewpoints and gateways
-                into the papal core, through medieval streets and squares, past
-                the cathedral and Papal Palace area, down to Pont Saint-Benezet,
-                along the city ramparts, and back through Les Halles and Rue des
-                Teinturiers.
-              </>
-            }
+            description={avignonWalkingTour2025Detail.routeMapDescription}
             iframeSrc={fullMapEmbedUrl}
             iframeTitle="Avignon walking route map"
             eyebrowClassName="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]"
@@ -497,17 +427,11 @@ export default function AvignonWalkingTour2025Page() {
                 </h2>
 
                 <p className="mt-5 max-w-2xl text-base leading-8 text-[#56493a]">
-                  This Avignon walk covers the historic City of the Popes in a
-                  long-form format, including the Papal Palace area, cathedral,
-                  city ramparts, Pont Saint-Benezet, Les Halles, and Rue des
-                  Teinturiers.
+                  {avignonWalkingTour2025Detail.licensingDescription[0]}
                 </p>
 
                 <p className="mt-5 max-w-2xl text-base leading-8 text-[#56493a]">
-                  The footage is suitable for editorial, documentary, travel,
-                  educational, and destination-focused licensing inquiries when
-                  you need atmospheric coverage of Avignon's streets, squares,
-                  landmarks, and urban character.
+                  {avignonWalkingTour2025Detail.licensingDescription[1]}
                 </p>
               </div>
 
