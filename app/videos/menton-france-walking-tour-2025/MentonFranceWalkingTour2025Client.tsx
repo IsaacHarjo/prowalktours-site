@@ -4,15 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import MapSection from "../../../components/MapSection";
-
-type Highlight = {
-  title: string;
-  timeLabel: string;
-  seconds: number;
-  imageSrc: string;
-  alt: string;
-  description: string;
-};
+import { mentonFranceWalkingTour2025Detail } from "../../../data/video-details/menton-france-walking-tour-2025";
 
 type RelatedVideo = {
   title: string;
@@ -61,215 +53,7 @@ const breadcrumbs = [
   { label: "Menton, France Walking Tour" },
 ];
 
-const highlights: Highlight[] = [
-  {
-    title: "Sablettes Beach (West)",
-    timeLabel: "1:10",
-    seconds: 70,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-plage-des-sablettes-ouest-beach.jpg",
-    alt: "Sablettes Beach in Menton",
-    description: "The walk starts beside the blue Menton sign at the beach.",
-  },
-  {
-    title: "Les Rampes Saint-Michel",
-    timeLabel: "8:08",
-    seconds: 488,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-les-rampes-saint-michel-stairs.jpg",
-    alt: "Les Rampes Saint-Michel stairs in Menton",
-    description: "Historic donkey steps lead uphill toward the old quarter.",
-  },
-  {
-    title: "Rue Longue",
-    timeLabel: "11:17",
-    seconds: 677,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-rue-longue.jpg",
-    alt: "Rue Longue in Menton",
-    description: "A narrow Old Town street with color, texture, and shade.",
-  },
-  {
-    title: "Place Logettes",
-    timeLabel: "12:25",
-    seconds: 745,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-place-logettes-town-square.jpg",
-    alt: "Place Logettes in Menton",
-    description: "A compact square surrounded by old buildings and local life.",
-  },
-  {
-    title: "Place du Cap",
-    timeLabel: "15:02",
-    seconds: 902,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-place-du-cap-town-square.jpg",
-    alt: "Place du Cap in Menton",
-    description: "A bright stopping point on the climb through Old Town.",
-  },
-  {
-    title: "Rue Saint-Michel",
-    timeLabel: "18:35",
-    seconds: 1115,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-rue-saint-michel-street.jpg",
-    alt: "Rue Saint-Michel in Menton",
-    description: "Stone streets and warm facades define this central stretch.",
-  },
-  {
-    title: "Place aux Herbes",
-    timeLabel: "19:48",
-    seconds: 1188,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-place-aux-herbes-town-square.jpg",
-    alt: "Place aux Herbes in Menton",
-    description: "An atmospheric square tucked into the historic center.",
-  },
-  {
-    title: "Place Clemenceau",
-    timeLabel: "25:09",
-    seconds: 1509,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-place-clemenceau-town-square.jpg",
-    alt: "Place Clemenceau in Menton",
-    description: "The route opens into a wider civic space before heading on.",
-  },
-  {
-    title: "Mairie de Menton",
-    timeLabel: "31:32",
-    seconds: 1892,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-mairie-de-menton-town-hall-building.jpg",
-    alt: "Mairie de Menton building",
-    description: "The town hall anchors a quieter moment in the walk.",
-  },
-  {
-    title: "Place Ardoino",
-    timeLabel: "32:10",
-    seconds: 1930,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-place-ardoono-park.jpg",
-    alt: "Place Ardoino in Menton",
-    description: "A green pause between the beach edge and the town streets.",
-  },
-  {
-    title: "Plage du Fossan",
-    timeLabel: "36:41",
-    seconds: 2201,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-plage-du-fossan-beach.jpg",
-    alt: "Plage du Fossan in Menton",
-    description: "The shoreline returns with bright light and open sea views.",
-  },
-  {
-    title: "Promenade du Soleil",
-    timeLabel: "38:20",
-    seconds: 2300,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-promenade-du-soleil-street.jpg",
-    alt: "Promenade du Soleil in Menton",
-    description: "A classic Riviera promenade line with beach and road together.",
-  },
-  {
-    title: "Parc Plage de Fossan",
-    timeLabel: "43:37",
-    seconds: 2617,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-parc-plage-de-fossan-park.jpg",
-    alt: "Parc Plage de Fossan in Menton",
-    description: "Palm-lined open space near the waterfront and town center.",
-  },
-  {
-    title: "Quai Napoleon III",
-    timeLabel: "48:33",
-    seconds: 2913,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-quai-napoleon-iii.jpg",
-    alt: "Quai Napoleon III in Menton",
-    description: "The walk follows the harbor side with boats and sea light.",
-  },
-  {
-    title: "Esplanade des Sablettes",
-    timeLabel: "59:40",
-    seconds: 3580,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-esplanadee-des-sablettes-street.jpg",
-    alt: "Esplanade des Sablettes in Menton",
-    description: "Back along the broad waterfront esplanade facing the beach.",
-  },
-  {
-    title: "Quai Imperatrice Eugenie",
-    timeLabel: "1:03:05",
-    seconds: 3785,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-quai-imperatrice-eugenie-pier.jpg",
-    alt: "Quai Imperatrice Eugenie in Menton",
-    description: "The route continues along the water with marina views.",
-  },
-  {
-    title: "Sablettes Beach (West)",
-    timeLabel: "1:08:12",
-    seconds: 4092,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-plage-des-sablettes-ouest-beach-2.jpg",
-    alt: "Sablettes Beach west section in Menton",
-    description: "The beach returns before the second climb into Old Town.",
-  },
-  {
-    title: "Place du Cap",
-    timeLabel: "1:11:31",
-    seconds: 4291,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-place-du-cap-town-square.jpg",
-    alt: "Place du Cap on the return climb in Menton",
-    description: "A second pass through a key square above the seafront.",
-  },
-  {
-    title: "Parvis de la Basilique Saint-Michel",
-    timeLabel: "1:15:27",
-    seconds: 4527,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-parvis-de-la-basilique-saint-michel-church.jpg",
-    alt: "Parvis de la Basilique Saint-Michel in Menton",
-    description: "One of the best viewpoints in town beside the basilica.",
-  },
-  {
-    title: "Rue du Vieux Chateau",
-    timeLabel: "1:17:42",
-    seconds: 4662,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-rue-du-vieux-chateau-alley.jpg",
-    alt: "Rue du Vieux Chateau in Menton",
-    description: "A steeper lane leads up toward the castle ruins overlook.",
-  },
-  {
-    title: "Cimetiere du Vieux Chateau",
-    timeLabel: "1:24:46",
-    seconds: 5086,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-cimetiere-du-vieux-chateau-cemetery.jpg",
-    alt: "Cimetiere du Vieux Chateau in Menton",
-    description: "The high point of the route with broad sea and town views.",
-  },
-  {
-    title: "Rue Longue",
-    timeLabel: "1:42:19",
-    seconds: 6139,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-rue-longue-2-street.jpg",
-    alt: "Rue Longue later in the walk in Menton",
-    description: "The route drops back through the same lively old lanes.",
-  },
-  {
-    title: "Back to the Beach",
-    timeLabel: "1:47:44",
-    seconds: 6464,
-    imageSrc:
-      "/menton-france-walking-tour-2025/highlights/menton-blue-sign-buildings.jpg",
-    alt: "Back at the beach in Menton",
-    description: "The walk finishes where it began beside the sea.",
-  },
-];
+const highlights = mentonFranceWalkingTour2025Detail.highlights;
 
 const relatedFranceVideos: RelatedVideo[] = [
   {
@@ -588,20 +372,16 @@ export default function MentonFranceWalkingTour2025Page() {
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
             <div className="min-w-0">
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
-                France Walk
+                {mentonFranceWalkingTour2025Detail.heroEyebrow}
               </p>
               <h1 className="mt-3 text-4xl font-bold tracking-tight text-[#3d3327] sm:text-5xl">
-                Menton, France Walking Tour
+                {mentonFranceWalkingTour2025Detail.heroTitle}
               </h1>
               <p className="mt-3 text-xl text-[#6e5a45]">
-                Old Town, Seafront, and Castle Views
+                {mentonFranceWalkingTour2025Detail.heroSubtitle}
               </p>
               <p className="mt-6 max-w-3xl text-base leading-8 text-[#56493a]">
-                This walk begins on the beach beside the iconic blue Menton sign,
-                then climbs the historic donkey steps, winds through the colorful
-                alleys of Old Town, and rises to stunning sea views from the castle
-                ruins at Cimetiere du Vieux Chateau. The walk then returns through
-                town and ends back at the beach.
+                {mentonFranceWalkingTour2025Detail.heroDescription}
               </p>
               <p className="mt-4 max-w-3xl text-base leading-8 text-[#56493a]">
                 If you are dreaming of the French Riviera, or just need a little
@@ -832,14 +612,7 @@ export default function MentonFranceWalkingTour2025Page() {
         <MapSection
           eyebrow="Route map"
           heading="Explore the route"
-          description={
-            <>
-              This route starts beside the beach and blue Menton sign, climbs through
-              the old donkey steps and colorful lanes of Old Town, reaches sweeping
-              sea views near Cimetiere du Vieux Chateau, and then works back through
-              town to finish at the beach.
-            </>
-          }
+          description={mentonFranceWalkingTour2025Detail.routeMapDescription}
           iframeSrc={fullMapEmbedUrl}
           iframeTitle="Menton walking route map"
           eyebrowClassName="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]"
@@ -904,16 +677,11 @@ export default function MentonFranceWalkingTour2025Page() {
               </h2>
 
               <p className="mt-5 max-w-2xl text-base leading-8 text-[#56493a]">
-                This Menton walk was filmed as a clean, long-form street and
-                seafront record of the French Riviera. It is well suited for travel
-                editorial, background plates, tourism storytelling, location
-                research, and atmosphere-driven video use.
+                {mentonFranceWalkingTour2025Detail.licensingDescription[0]}
               </p>
 
               <p className="mt-5 max-w-2xl text-base leading-8 text-[#56493a]">
-                If you need licensed access to this footage for commercial,
-                documentary, or creative use, use the licensing page to request a
-                quote and describe the exact shots or time ranges you need.
+                {mentonFranceWalkingTour2025Detail.licensingDescription[1]}
               </p>
             </div>
 
@@ -1114,4 +882,5 @@ export default function MentonFranceWalkingTour2025Page() {
     </div>
   );
 }
+
 
