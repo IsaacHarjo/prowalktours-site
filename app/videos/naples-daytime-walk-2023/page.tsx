@@ -2,6 +2,9 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import LongFormWalkPage, {
+  LongFormWalkStatsRow,
+} from "../../../components/LongFormWalkPage";
 import { naplesDaytimeWalk2023Detail } from "../../../data/video-details/naples-daytime-walk-2023";
 import { videos } from "../../../data/videos/index";
 import MapSection from "../../../components/MapSection";
@@ -294,7 +297,8 @@ const scrollToRelatedTours = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fcfaf6] text-[#3d3327]">
+    <LongFormWalkPage
+      stickyNav={
        <section className="sticky top-16 z-40 border-y border-[#7f5f49] bg-[#3d3327]/95 text-white backdrop-blur">
   <nav className="mx-auto grid max-w-6xl grid-cols-[1fr_auto] items-center px-6 py-2 sm:py-3 lg:px-10">
 
@@ -355,6 +359,8 @@ const scrollToRelatedTours = () => {
     </div>
   </nav>
 </section>
+      }
+    >
       <section
   id="overview"
   ref={overviewSectionRef}
@@ -410,26 +416,7 @@ const scrollToRelatedTours = () => {
     </p>
 
     <div className="mt-8 space-y-4 border-y border-[#d8c7b5]/80 py-4 text-[#3d3327]">
-      <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-        {topRowStats.map((stat) => (
-          <div
-            key={stat.label}
-            className="inline-flex min-w-0 items-center gap-3"
-          >
-            <span aria-hidden="true" className="text-base leading-none">
-              {stat.icon}
-            </span>
-            <div className="flex min-w-0 items-baseline gap-2">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">
-                {stat.label}
-              </p>
-              <p className="text-sm font-bold leading-6 text-[#3d3327] sm:text-[15px]">
-                {stat.value}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
+      <LongFormWalkStatsRow stats={topRowStats} />
 
       <div
         ref={ratingsPopoverRef}
@@ -975,6 +962,6 @@ const scrollToRelatedTours = () => {
     </div>
   </div>
 </section>
-    </div>
+    </LongFormWalkPage>
   );
 }

@@ -1,4 +1,4 @@
-﻿import type { VideoCatalogRecord } from "../video-types";
+import type { VideoCatalogRecord } from "../video-types";
 
 export const franceVideos: VideoCatalogRecord[] = [
   {
@@ -70,7 +70,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "September 2025",
     durationLabel: "1h 47m",
     durationSeconds: 6464,
-    weather: "79F / 26C",
+    weather: "79°F / 26°C",
     shortDescription:
       "A relaxing walk through Menton from the beach and Old Town to the castle ruins and back to the waterfront.",
     keywords: [
@@ -108,3 +108,4 @@ export const franceVideos: VideoCatalogRecord[] = [
     highlights: [],
   },
 ];
+

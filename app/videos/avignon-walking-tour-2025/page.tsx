@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
+import LongFormWalkPage, {
+  LongFormWalkStatsRow,
+} from "../../../components/LongFormWalkPage";
 import MapSection from "../../../components/MapSection";
 import { franceVideos } from "../../../data/videos/france";
 import { avignonWalkingTour2025Detail } from "../../../data/video-details/avignon-walking-tour-2025";
@@ -175,8 +178,9 @@ export default function AvignonWalkingTour2025Page() {
         }}
       />
 
-      <div className="min-h-screen bg-[#fcfaf6] text-[#3d3327]">
-        <section className="sticky top-16 z-40 border-y border-[#7f5f49] bg-[#3d3327]/95 text-white backdrop-blur">
+      <LongFormWalkPage
+        stickyNav={
+          <section className="sticky top-16 z-40 border-y border-[#7f5f49] bg-[#3d3327]/95 text-white backdrop-blur">
           <nav className="mx-auto grid max-w-6xl grid-cols-[1fr_auto] items-center px-6 py-2 sm:py-3 lg:px-10">
             <div className="justify-self-end sm:justify-self-start">
               <div className="flex min-w-max items-center gap-4 text-xs font-semibold text-white/90 sm:gap-6 sm:text-sm">
@@ -224,7 +228,9 @@ export default function AvignonWalkingTour2025Page() {
               <span>France</span>
             </div>
           </nav>
-        </section>
+          </section>
+        }
+      >
 
         <section
           id="overview"
@@ -274,26 +280,7 @@ export default function AvignonWalkingTour2025Page() {
                 </p>
 
                 <div className="mt-8 space-y-4 border-y border-[#d8c7b5]/80 py-4 text-[#3d3327]">
-                  <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-                    {topRowStats.map((stat) => (
-                      <div
-                        key={stat.label}
-                        className="inline-flex min-w-0 items-center gap-3"
-                      >
-                        <span aria-hidden="true" className="text-base leading-none">
-                          {stat.icon}
-                        </span>
-                        <div className="flex min-w-0 items-baseline gap-2">
-                          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">
-                            {stat.label}
-                          </p>
-                          <p className="text-sm font-bold leading-6 text-[#3d3327] sm:text-[15px]">
-                            {stat.value}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                  <LongFormWalkStatsRow stats={topRowStats} />
                 </div>
               </div>
 
@@ -639,7 +626,7 @@ export default function AvignonWalkingTour2025Page() {
             </div>
           </div>
         </section>
-      </div>
+      </LongFormWalkPage>
     </>
   );
 }
