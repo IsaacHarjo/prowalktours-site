@@ -141,22 +141,6 @@ export default function ItalyPage() {
   individual walks. Some regions already have filmed videos, while
   dedicated region pages are still being built.
 </p>
-
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/destinations/italy/campania"
-              className="inline-flex items-center justify-center rounded-full bg-[#167fd5] px-6 py-3 text-base font-semibold text-white transition hover:bg-[#0f6db9]"
-            >
-              Explore Campania
-            </Link>
-
-            <Link
-              href="/countries"
-              className="inline-flex items-center justify-center rounded-full border border-[#d8c7b5] bg-white px-6 py-3 text-base font-semibold text-[#3d3327] transition hover:bg-[#f8f3ec]"
-            >
-              Back to Countries
-            </Link>
-          </div>
         </div>
       </section>
 
