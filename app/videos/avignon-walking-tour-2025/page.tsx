@@ -2,20 +2,27 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import MapSection from "../../../components/MapSection";
+import { franceVideos } from "../../../data/videos/france";
 import { avignonWalkingTour2025Detail } from "../../../data/video-details/avignon-walking-tour-2025";
 
 const siteUrl = "https://www.prowalktours.com";
-const youtubeVideoId = "2iQh_R4t2Uw";
+const avignonVideo = franceVideos.find(
+  (video) => video.slug === "avignon-walking-tour-2025"
+);
+const youtubeVideoId = avignonVideo?.youtubeUrl.split("/").pop() ?? "2iQh_R4t2Uw";
 const pageUrl = `${siteUrl}/videos/avignon-walking-tour-2025`;
 const fullMapUrl =
   "https://www.google.com/maps/d/edit?mid=1_oLp6WjK3xM6gcGq2TYxER83Vzo788w&usp=sharing";
 const fullMapEmbedUrl =
   "https://www.google.com/maps/d/u/0/embed?mid=1_oLp6WjK3xM6gcGq2TYxER83Vzo788w";
 const fullMapQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(fullMapUrl)}`;
-const ogImageUrl = `https://i.ytimg.com/vi/${youtubeVideoId}/maxresdefault.jpg`;
+const ogImageUrl =
+  avignonVideo?.thumbnail ??
+  `https://i.ytimg.com/vi/${youtubeVideoId}/maxresdefault.jpg`;
 const metadataTitle =
   "Avignon, France Walking Tour 2025 | Papal Palace, Pont d'Avignon & Ramparts";
 const metadataDescription =
+  avignonVideo?.shortDescription ??
   "Explore Avignon, France in this 4K walking tour through the historic City of the Popes, with the Papal Palace area, cathedral, Pont Saint-Benezet, city ramparts, Les Halles, and Rue des Teinturiers.";
 
 const breadcrumbs = [
@@ -26,12 +33,6 @@ const breadcrumbs = [
   { label: "Avignon" },
 ];
 
-const topRowStats = [
-  { icon: "📅", label: "Date", value: "Thursday, September 18, 2025" },
-  { icon: "📏", label: "Distance", value: "4.5 miles" },
-  { icon: "🕒", label: "Duration", value: "2h 21m" },
-  { icon: "☀️", label: "Weather", value: "29°C / 85°F" },
-];
 const highlights = avignonWalkingTour2025Detail.highlights;
 
 const relatedTours = [
@@ -83,6 +84,31 @@ export const metadata: Metadata = {
 };
 
 export default function AvignonWalkingTour2025Page() {
+  const formattedFilmingDate = avignonVideo?.filmingDates[0]
+    ? new Date(`${avignonVideo.filmingDates[0]}T12:00:00`).toLocaleDateString(
+        "en-US",
+        {
+          weekday: "long",
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        }
+      )
+    : "Thursday, September 18, 2025";
+  const topRowStats = [
+    { icon: "📅", label: "Date", value: formattedFilmingDate },
+    { icon: "📏", label: "Distance", value: "4.5 miles" },
+    {
+      icon: "🕒",
+      label: "Duration",
+      value: avignonVideo?.durationLabel ?? "2h 21m",
+    },
+    {
+      icon: "☀️",
+      label: "Weather",
+      value: avignonVideo?.weather ?? "29°C / 85°F",
+    },
+  ];
   const breadcrumbStructuredData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
