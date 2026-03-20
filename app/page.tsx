@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+import SearchFilterBar from "../components/SearchFilterBar";
+import { videos } from "../data/videos/index";
+
 export default function HomePage() {
   return (
     <main className="bg-[#fcfaf7] text-[#2f261d]">
@@ -15,7 +18,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#1f1812]/75 via-[#1f1812]/45 to-transparent" />
 
         <div className="relative mx-auto flex min-h-[78vh] max-w-7xl items-center px-6 py-20 lg:px-10">
-          <div className="max-w-3xl">
+          <div className="max-w-5xl">
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#f3dfc4]">
               Immersive Travel Videos
             </p>
@@ -29,42 +32,33 @@ export default function HomePage() {
               through immersive videos filmed around the world.
             </p>
 
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Link
-                href="/countries"
-                className="inline-flex items-center justify-center rounded-full bg-[#167fd5] px-6 py-3 text-base font-semibold text-white transition hover:bg-[#0f6db9]"
-              >
-                Browse Countries
-              </Link>
-
-              <Link
-                href="#map"
-                className="inline-flex items-center justify-center rounded-full border border-white/70 bg-white/10 px-6 py-3 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
-              >
-                Explore the Map
-              </Link>
-            </div>
-
-            <form
-              action="/search"
-              method="get"
-              className="mt-8 max-w-2xl rounded-2xl border border-white/20 bg-white/95 p-2 shadow-2xl"
-            >
-              <div className="flex flex-col gap-2 sm:flex-row">
-                <input
-                  type="text"
-                  name="q"
-                  placeholder="Search countries, cities, or walks"
-                  className="h-14 flex-1 rounded-xl border border-transparent bg-transparent px-5 text-[17px] text-[#2f261d] outline-none placeholder:text-[#8a7a68]"
+            <div className="mt-8 flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start lg:gap-6">
+              <div className="min-w-0">
+                <SearchFilterBar
+                  videos={videos}
+                  action="/search"
+                  placeholder="Search by keyword"
+                  submitLabel="Search"
+                  variant="hero"
                 />
-                <button
-                  type="submit"
-                  className="inline-flex h-14 items-center justify-center rounded-xl bg-[#3d3327] px-6 text-base font-semibold text-white transition hover:bg-[#2f261d]"
-                >
-                  Search
-                </button>
               </div>
-            </form>
+
+              <div className="flex flex-col gap-4 lg:pt-8">
+                <Link
+                  href="/countries"
+                  className="inline-flex items-center justify-center rounded-full bg-[#167fd5] px-6 py-3 text-base font-semibold text-white transition hover:bg-[#0f6db9]"
+                >
+                  Browse Countries
+                </Link>
+
+                <Link
+                  href="#map"
+                  className="inline-flex items-center justify-center rounded-full border border-white/70 bg-white/10 px-6 py-3 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
+                >
+                  Explore the Map
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

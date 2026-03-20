@@ -1,9 +1,14 @@
 import Link from "next/link";
 
+import SearchFilterBar from "../../components/SearchFilterBar";
 import { videos } from "../../data/videos/index";
 
 type SearchParams = {
   q?: string | string[];
+  country?: string | string[];
+  region?: string | string[];
+  city?: string | string[];
+  type?: string | string[];
 };
 
 const normalizeQueryValue = (value: string | string[] | undefined) => {
@@ -37,6 +42,17 @@ const matchesQuery = (query: string, video: (typeof videos)[number]) => {
   );
 };
 
+const matchesFilterValue = (
+  videoValue: string | undefined,
+  selectedValue: string
+) => {
+  if (!selectedValue) {
+    return true;
+  }
+
+  return (videoValue ?? "") === selectedValue;
+};
+
 export default async function SearchPage({
   searchParams,
 }: {
@@ -44,8 +60,31 @@ export default async function SearchPage({
 }) {
   const resolvedSearchParams = await Promise.resolve(searchParams);
   const query = normalizeQueryValue(resolvedSearchParams?.q).trim();
-  const results = query
-    ? videos.filter((video) => matchesQuery(query, video))
+  const selectedCountry = normalizeQueryValue(
+    resolvedSearchParams?.country
+  ).trim();
+  const selectedRegion = normalizeQueryValue(resolvedSearchParams?.region).trim();
+  const selectedCity = normalizeQueryValue(resolvedSearchParams?.city).trim();
+  const selectedType = normalizeQueryValue(resolvedSearchParams?.type).trim();
+
+  const hasActiveFilters = Boolean(
+    query || selectedCountry || selectedRegion || selectedCity || selectedType
+  );
+
+  const results = hasActiveFilters
+    ? videos.filter((video) => {
+        const matchesSelectedFilters =
+          matchesFilterValue(video.country, selectedCountry) &&
+          matchesFilterValue(video.region, selectedRegion) &&
+          matchesFilterValue(video.city, selectedCity) &&
+          matchesFilterValue(video.videoType, selectedType);
+
+        if (!matchesSelectedFilters) {
+          return false;
+        }
+
+        return query ? matchesQuery(query, video) : true;
+      })
     : [];
 
   return (
@@ -63,32 +102,23 @@ export default async function SearchPage({
             the right walk faster.
           </p>
 
-          <form
+          <SearchFilterBar
+            videos={videos}
+            initialQuery={query}
+            initialCountry={selectedCountry}
+            initialRegion={selectedRegion}
+            initialCity={selectedCity}
+            initialType={selectedType}
             action="/search"
-            method="get"
-            className="mt-8 max-w-3xl rounded-[2rem] border border-[#d8c7b5] bg-white p-3 shadow-sm"
-          >
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <input
-                type="text"
-                name="q"
-                defaultValue={query}
-                placeholder="Search Naples, Italy, Spaccanapoli, waterfront, markets..."
-                className="h-14 flex-1 rounded-[1.25rem] border border-[#d8c7b5] bg-[#fcfaf6] px-5 text-[17px] text-[#3d3327] outline-none transition placeholder:text-[#8a7a68] focus:border-[#167fd5]"
-              />
-              <button
-                type="submit"
-                className="inline-flex h-14 items-center justify-center rounded-[1.25rem] bg-[#167fd5] px-6 text-base font-semibold text-white transition hover:bg-[#09679e]"
-              >
-                Search
-              </button>
-            </div>
-          </form>
+            placeholder="Search by keyword"
+            submitLabel="Search"
+            variant="page"
+          />
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-12 lg:px-10 lg:py-14">
-        {!query ? (
+        {!hasActiveFilters ? (
           <div className="rounded-[2rem] border border-[#d8c7b5] bg-white p-8 shadow-sm">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
               Start Searching
@@ -108,10 +138,13 @@ export default async function SearchPage({
               No Matches
             </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#3d3327]">
-              No results for &ldquo;{query}&rdquo;
+              {query
+                ? `No results for \"${query}\"`
+                : "No videos match the current filters"}
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-8 text-[#56493a]">
-              Try a broader search using a city, country, landmark, or theme.
+              Try a broader search or relax one or more filters to see more
+              videos.
             </p>
           </div>
         ) : (
@@ -121,9 +154,9 @@ export default async function SearchPage({
                 Search Results
               </p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#3d3327]">
-                {results.length} result{results.length === 1 ? "" : "s"} for
-                {" "}
-                &ldquo;{query}&rdquo;
+                {query
+                  ? `${results.length} result${results.length === 1 ? "" : "s"} for \"${query}\"`
+                  : `${results.length} matching video${results.length === 1 ? "" : "s"}`}
               </h2>
             </div>
 
@@ -160,6 +193,9 @@ export default async function SearchPage({
                       </span>
                       <span className="rounded-full border border-[#e5d7c6] bg-[#fcfaf6] px-3 py-1.5 font-medium">
                         {video.durationLabel}
+                      </span>
+                      <span className="rounded-full border border-[#e5d7c6] bg-[#fcfaf6] px-3 py-1.5 font-medium">
+                        {video.videoType}
                       </span>
                     </div>
 
