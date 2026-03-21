@@ -23,6 +23,7 @@ export default function Home() {
         "Explore Naples in daylight through historic streets, markets, churches, and daily city life.",
       imageSrc: "/naples/day-walks.jpg",
       alt: "Street scene in Naples during the day",
+      href: "/search?country=Italy&region=Campania&city=Naples&type=walking%20tour",
     },
     {
       title: "Evening & Night Walks",
@@ -32,25 +33,12 @@ export default function Home() {
       alt: "Atmospheric Naples evening alley",
     },
     {
-      title: "Waterfront & Bay Views",
+      title: "Biking Naples",
       description:
-        "Discover the Lungomare, Castel dell’Ovo, Santa Lucia, and sweeping views of the bay.",
-      imageSrc: "/naples/waterfront.jpg",
-      alt: "Naples waterfront with boats and bay views",
-    },
-    {
-      title: "Historic Center",
-      description:
-        "Browse walks through Spaccanapoli, Via dei Tribunali, piazzas, churches, and old city streets.",
-      imageSrc: "/naples/historic-center.jpg",
-      alt: "Historic center street in Naples",
-    },
-    {
-      title: "Markets & Street Life",
-      description:
-        "Explore the color, noise, movement, and local character of Naples markets and busy streets.",
-      imageSrc: "/naples/markets.JPG",
-      alt: "Market scene in Naples",
+        "Ride across Naples with panoramic hilltop views, waterfront stretches, historic center streets, and the Spanish Quarter.",
+      imageSrc: "/naples/day-walks.jpg",
+      alt: "Cycling through Naples with sweeping city views",
+      href: "/videos/naples-bike-tour-2020",
     },
     {
       title: "360 & Drone Views",
@@ -249,31 +237,47 @@ export default function Home() {
         </div>
 
         <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-          {categories.map((category) => (
-            <div
-              key={category.title}
-              className="group overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-            >
-              <div className="relative aspect-[16/10] overflow-hidden border-b border-zinc-200">
-                <Image
-                  src={category.imageSrc}
-                  alt={category.alt}
-                  fill
-                  className="object-cover transition duration-300 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold">{category.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-zinc-600">
-                  {category.description}
-                </p>
-                <div className="mt-5 inline-flex items-center text-sm font-semibold text-zinc-900">
-                  View category
-                  <span className="ml-2">→</span>
+          {categories.map((category) => {
+            const cardContent = (
+              <>
+                <div className="relative aspect-[16/10] overflow-hidden border-b border-zinc-200">
+                  <Image
+                    src={category.imageSrc}
+                    alt={category.alt}
+                    fill
+                    className="object-cover transition duration-300 group-hover:scale-105"
+                  />
                 </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold">{category.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-zinc-600">
+                    {category.description}
+                  </p>
+                  <div className="mt-5 inline-flex items-center text-sm font-semibold text-zinc-900">
+                    View category
+                    <span className="ml-2">→</span>
+                  </div>
+                </div>
+              </>
+            );
+
+            return category.href ? (
+              <Link
+                key={category.title}
+                href={category.href}
+                className="group overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+              >
+                {cardContent}
+              </Link>
+            ) : (
+              <div
+                key={category.title}
+                className="group overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+              >
+                {cardContent}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -398,3 +402,4 @@ export default function Home() {
     </div>
   );
 }
+
