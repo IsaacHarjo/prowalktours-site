@@ -97,15 +97,15 @@ export default function AntibesDaytimeWalk2025Page() {
     : "Friday, September 12, 2025";
 
   const topRowStats = [
-    { icon: "ðŸ“…", label: "Date", value: formattedFilmingDate },
-    { icon: "ðŸ“", label: "Distance", value: "4.25 miles" },
+    { icon: "\u{1F4C5}", label: "Date", value: formattedFilmingDate },
+    { icon: "\u{1F4CF}", label: "Distance", value: "4.25 miles" },
     {
-      icon: "ðŸ•’",
+      icon: "\u{1F552}",
       label: "Duration",
       value: antibesVideo?.durationLabel ?? "2h 16m",
     },
     {
-      icon: "â˜€ï¸",
+      icon: "\u{2600}\uFE0F",
       label: "Weather",
       value: antibesVideo?.weather ?? "29 C / 85 F",
     },
