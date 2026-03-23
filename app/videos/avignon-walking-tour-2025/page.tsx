@@ -19,9 +19,8 @@ const fullMapUrl =
 const fullMapEmbedUrl =
   "https://www.google.com/maps/d/u/0/embed?mid=1_oLp6WjK3xM6gcGq2TYxER83Vzo788w";
 const fullMapQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(fullMapUrl)}`;
-const ogImageUrl =
-  avignonVideo?.thumbnail ??
-  `https://i.ytimg.com/vi/${youtubeVideoId}/maxresdefault.jpg`;
+const heroImagePath = "/avignon-walking-tour-2025/avignon-hero-image.png";
+const ogImageUrl = `${siteUrl}${heroImagePath}`;
 const metadataTitle =
   "Avignon, France Walking Tour 2025 | Papal Palace, Pont d'Avignon & Ramparts";
 const metadataDescription =
@@ -44,7 +43,7 @@ const relatedTours = [
     href: "/destinations/france/provence",
     description:
       "Return to the Provence hub to browse Avignon and follow future regional walking tours.",
-    imageSrc: ogImageUrl,
+    imageSrc: heroImagePath,
     imageAlt: "Avignon and Provence walking tour map preview",
   },
   {
@@ -287,8 +286,8 @@ export default function AvignonWalkingTour2025Page() {
               <div className="relative hidden overflow-hidden rounded-[2rem] border border-[#d8c7b5] bg-white shadow-sm lg:block">
                 <div className="relative aspect-[4/3] w-full">
                   <img
-                    src={ogImageUrl}
-                    alt="Avignon walking tour video thumbnail"
+                    src={heroImagePath}
+                    alt="Avignon walking tour hero image"
                     className="h-full w-full object-cover"
                     loading="eager"
                   />
@@ -343,8 +342,15 @@ export default function AvignonWalkingTour2025Page() {
                   rel="noreferrer"
                   className="block w-full overflow-hidden rounded-[1.5rem] border border-[#d8c7b5] bg-white text-left shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg"
                 >
-                  <div className="flex aspect-[16/10] items-end bg-gradient-to-br from-[#d7e6f0] via-[#f8efe2] to-[#e5d3b8] p-4">
-                    <span className="rounded-full bg-white/90 px-3 py-1 text-sm font-semibold text-[#3d3327] shadow-sm">
+                  <div className="relative flex aspect-[16/10] items-end overflow-hidden bg-gradient-to-br from-[#d7e6f0] via-[#f8efe2] to-[#e5d3b8] p-4">
+                    <img
+                      src={highlight.imageSrc}
+                      alt={highlight.alt}
+                      className="absolute inset-0 h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
+                    <span className="relative rounded-full bg-white/90 px-3 py-1 text-sm font-semibold text-[#3d3327] shadow-sm">
                       {highlight.timeLabel}
                     </span>
                   </div>
