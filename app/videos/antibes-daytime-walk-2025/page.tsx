@@ -6,62 +6,61 @@ import LongFormWalkPage, {
 } from "../../../components/LongFormWalkPage";
 import MapSection from "../../../components/MapSection";
 import { franceVideos } from "../../../data/videos/france";
-import { avignonWalkingTour2025Detail } from "../../../data/video-details/avignon-walking-tour-2025";
+import { antibesDaytimeWalk2025Detail } from "../../../data/video-details/antibes-daytime-walk-2025";
 
 const siteUrl = "https://www.prowalktours.com";
-const avignonVideo = franceVideos.find(
-  (video) => video.slug === "avignon-walking-tour-2025"
-);
-const youtubeVideoId = avignonVideo?.youtubeUrl.split("/").pop() ?? "2iQh_R4t2Uw";
-const pageUrl = `${siteUrl}/videos/avignon-walking-tour-2025`;
-const fullMapUrl =
-  "https://www.google.com/maps/d/edit?mid=1_oLp6WjK3xM6gcGq2TYxER83Vzo788w&usp=sharing";
-const fullMapEmbedUrl =
-  "https://www.google.com/maps/d/u/0/embed?mid=1_oLp6WjK3xM6gcGq2TYxER83Vzo788w";
-const fullMapQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(fullMapUrl)}`;
-const heroImagePath = "/avignon-walking-tour-2025/avignon-hero-image.png";
+const pageUrl = `${siteUrl}/videos/antibes-daytime-walk-2025`;
+const heroImagePath = "/antibes-daytime-walk-2025/antibes-hero-image.jpg";
 const ogImageUrl = `${siteUrl}${heroImagePath}`;
+const fullMapUrl =
+  "https://www.google.com/maps/d/edit?mid=1rLDFZIOJ2kURpaQjtsitNb-0lpfOT2w&usp=sharing";
+const fullMapEmbedUrl =
+  "https://www.google.com/maps/d/u/0/embed?mid=1rLDFZIOJ2kURpaQjtsitNb-0lpfOT2w";
+const fullMapQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(fullMapUrl)}`;
 const metadataTitle =
-  "Avignon, France Walking Tour | Palace of the Popes, Old Town, Pont d'Avignon";
+  "Antibes, France Walking Tour | Old Town, Picasso Museum, Market and Seafront";
 const metadataDescription =
-  "Explore Avignon, France in this 4K walking tour through Place du Palais, the Palace of the Popes area, Pont Saint-Benezet, the city ramparts, Les Halles, and the historic streets of Old Town.";
+  "Explore Antibes, France in this 4K daytime walking tour through the historic Old Town, waterfront promenades, local market streets, marina, beaches, and public squares.";
+
+const antibesVideo = franceVideos.find(
+  (video) => video.slug === "antibes-daytime-walk-2025"
+);
+const youtubeVideoId = antibesVideo?.youtubeUrl.split("/").pop() ?? "LECdWNv2kzA";
 
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Countries", href: "/countries" },
   { label: "France", href: "/destinations/france" },
-  { label: "Provence", href: "/destinations/france/provence" },
-  { label: "Avignon" },
+  { label: "French Riviera", href: "/destinations/france/french-riviera" },
+  { label: "Antibes, France Walking Tour" },
 ];
 
-const highlights = avignonWalkingTour2025Detail.highlights;
+const highlights = antibesDaytimeWalk2025Detail.highlights;
 
 const relatedTours = [
   {
-    title: "Explore Provence",
-    href: "/destinations/france/provence",
+    title: "Menton Walking Tour",
+    href: "/videos/menton-france-walking-tour-2025",
     description:
-      "Return to the Provence hub to browse Avignon and follow future regional walking tours.",
+      "Continue along the French Riviera with another long-form walk through Menton.",
+    imageSrc: "https://i.ytimg.com/vi/ulReotWQvO0/maxresdefault.jpg",
+    imageAlt: "Menton France walking tour thumbnail",
+  },
+  {
+    title: "French Riviera Hub",
+    href: "/destinations/france/french-riviera",
+    description:
+      "Browse the growing French Riviera collection, including Antibes and Menton.",
     imageSrc: heroImagePath,
-    imageAlt: "Avignon and Provence walking tour map preview",
+    imageAlt: "Antibes French Riviera page preview",
   },
   {
     title: "France Destination Hub",
     href: "/destinations/france",
     description:
-      "Browse France by major destination hub, including Provence and the French Riviera.",
+      "Explore France by region, from the French Riviera to Provence and beyond.",
     imageSrc: "https://i.ytimg.com/vi/naBkJ0bLzD0/maxresdefault.jpg",
-    fallbackSrc: "https://i.ytimg.com/vi/naBkJ0bLzD0/hqdefault.jpg",
     imageAlt: "France destination page preview",
-  },
-  {
-    title: "Menton Walking Tour",
-    href: "/videos/menton-france-walking-tour-2025",
-    description:
-      "Continue exploring France with another long-form walk on the French Riviera.",
-    imageSrc: "https://i.ytimg.com/vi/naBkJ0bLzD0/maxresdefault.jpg",
-    fallbackSrc: "https://i.ytimg.com/vi/naBkJ0bLzD0/hqdefault.jpg",
-    imageAlt: "Menton France walking tour thumbnail",
   },
 ];
 
@@ -78,15 +77,15 @@ export const metadata: Metadata = {
     images: [
       {
         url: ogImageUrl,
-        alt: "Avignon historic center and papal landmarks",
+        alt: "Antibes Old Town and French Riviera seafront",
       },
     ],
   },
 };
 
-export default function AvignonWalkingTour2025Page() {
-  const formattedFilmingDate = avignonVideo?.filmingDates[0]
-    ? new Date(`${avignonVideo.filmingDates[0]}T12:00:00`).toLocaleDateString(
+export default function AntibesDaytimeWalk2025Page() {
+  const formattedFilmingDate = antibesVideo?.filmingDates[0]
+    ? new Date(`${antibesVideo.filmingDates[0]}T12:00:00`).toLocaleDateString(
         "en-US",
         {
           weekday: "long",
@@ -95,21 +94,23 @@ export default function AvignonWalkingTour2025Page() {
           year: "numeric",
         }
       )
-    : "Thursday, September 18, 2025";
+    : "Friday, September 12, 2025";
+
   const topRowStats = [
-    { icon: "📅", label: "Date", value: formattedFilmingDate },
-    { icon: "📏", label: "Distance", value: "4.5 miles" },
+    { icon: "ðŸ“…", label: "Date", value: formattedFilmingDate },
+    { icon: "ðŸ“", label: "Distance", value: "4.25 miles" },
     {
-      icon: "🕒",
+      icon: "ðŸ•’",
       label: "Duration",
-      value: avignonVideo?.durationLabel ?? "2h 21m",
+      value: antibesVideo?.durationLabel ?? "2h 16m",
     },
     {
-      icon: "☀️",
+      icon: "â˜€ï¸",
       label: "Weather",
-      value: avignonVideo?.weather ?? "29°C / 85°F",
+      value: antibesVideo?.weather ?? "29 C / 85 F",
     },
   ];
+
   const breadcrumbStructuredData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -135,13 +136,13 @@ export default function AvignonWalkingTour2025Page() {
       {
         "@type": "ListItem",
         position: 4,
-        name: "Provence",
-        item: `${siteUrl}/destinations/france/provence`,
+        name: "French Riviera",
+        item: `${siteUrl}/destinations/france/french-riviera`,
       },
       {
         "@type": "ListItem",
         position: 5,
-        name: "Avignon, France Walking Tour",
+        name: "Antibes, France Walking Tour",
         item: pageUrl,
       },
     ],
@@ -150,26 +151,26 @@ export default function AvignonWalkingTour2025Page() {
   const videoStructuredData = {
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    name: "Avignon, France Walking Tour",
+    name: "Antibes, France Walking Tour",
     description: metadataDescription,
     thumbnailUrl: [ogImageUrl],
-    embedUrl: "https://www.youtube.com/embed/2iQh_R4t2Uw",
-    contentUrl: "https://www.youtube.com/watch?v=2iQh_R4t2Uw",
-    uploadDate: "2025-09-18",
+    embedUrl: "https://www.youtube.com/embed/LECdWNv2kzA",
+    contentUrl: "https://www.youtube.com/watch?v=LECdWNv2kzA",
+    uploadDate: "2025-09-12",
     url: pageUrl,
   };
 
   return (
     <>
       <Script
-        id="avignon-breadcrumb-jsonld"
+        id="antibes-breadcrumb-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumbStructuredData),
         }}
       />
       <Script
-        id="avignon-video-jsonld"
+        id="antibes-video-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(videoStructuredData),
@@ -179,57 +180,41 @@ export default function AvignonWalkingTour2025Page() {
       <LongFormWalkPage
         stickyNav={
           <section className="sticky top-16 z-40 border-y border-[#7f5f49] bg-[#3d3327]/95 text-white backdrop-blur">
-          <nav className="mx-auto grid max-w-6xl grid-cols-[1fr_auto] items-center px-6 py-2 sm:py-3 lg:px-10">
-            <div className="justify-self-end sm:justify-self-start">
-              <div className="flex min-w-max items-center gap-4 text-xs font-semibold text-white/90 sm:gap-6 sm:text-sm">
-                <a
-                  href="#overview"
-                  className="hidden transition hover:text-white sm:inline-flex"
-                >
-                  Overview
-                </a>
-                <a
-                  href="#highlights"
-                  className="hidden transition hover:text-white sm:inline-flex"
-                >
-                  Highlights
-                </a>
-                <a
-                  href="#route-map"
-                  className="hidden transition hover:text-white sm:inline-flex"
-                >
-                  Route Map
-                </a>
-                <a
-                  href="#licensing"
-                  className="hidden transition hover:text-white sm:inline-flex"
-                >
-                  Licensing
-                </a>
-                <a
-                  href="#related-tours"
-                  className="hidden transition hover:text-white sm:inline-flex"
-                >
-                  Related Tours
-                </a>
-              </div>
-            </div>
-
-            <div className="hidden justify-self-end shrink-0 items-center gap-2 rounded-full border border-[#8f735c] bg-[#4a3c2f] px-3 py-1.5 text-sm font-semibold text-white/90 md:flex">
-              <div className="h-4 w-6 overflow-hidden rounded-[2px] border border-white/20">
-                <div className="grid h-full grid-cols-3">
-                  <div className="bg-[#0055a4]" />
-                  <div className="bg-white" />
-                  <div className="bg-[#ef4135]" />
+            <nav className="mx-auto grid max-w-6xl grid-cols-[1fr_auto] items-center px-6 py-2 sm:py-3 lg:px-10">
+              <div className="justify-self-end sm:justify-self-start">
+                <div className="flex min-w-max items-center gap-4 text-xs font-semibold text-white/90 sm:gap-6 sm:text-sm">
+                  <a href="#overview" className="hidden transition hover:text-white sm:inline-flex">
+                    Overview
+                  </a>
+                  <a href="#highlights" className="hidden transition hover:text-white sm:inline-flex">
+                    Highlights
+                  </a>
+                  <a href="#route-map" className="hidden transition hover:text-white sm:inline-flex">
+                    Route Map
+                  </a>
+                  <a href="#licensing" className="hidden transition hover:text-white sm:inline-flex">
+                    Licensing
+                  </a>
+                  <a href="#related-tours" className="hidden transition hover:text-white sm:inline-flex">
+                    Related Tours
+                  </a>
                 </div>
               </div>
-              <span>France</span>
-            </div>
-          </nav>
+
+              <div className="hidden justify-self-end shrink-0 items-center gap-2 rounded-full border border-[#8f735c] bg-[#4a3c2f] px-3 py-1.5 text-sm font-semibold text-white/90 md:flex">
+                <div className="h-4 w-6 overflow-hidden rounded-[2px] border border-white/20">
+                  <div className="grid h-full grid-cols-3">
+                    <div className="bg-[#0055a4]" />
+                    <div className="bg-white" />
+                    <div className="bg-[#ef4135]" />
+                  </div>
+                </div>
+                <span>France</span>
+              </div>
+            </nav>
           </section>
         }
       >
-
         <section
           id="overview"
           className="scroll-mt-32 border-b border-[#d8c7b5] bg-gradient-to-br from-[#f4e6bc] via-[#fcfaf6] to-[#e7f1f8]"
@@ -242,16 +227,11 @@ export default function AvignonWalkingTour2025Page() {
               {breadcrumbs.map((item, index) => (
                 <div key={item.label} className="inline-flex items-center gap-2">
                   {item.href ? (
-                    <Link
-                      href={item.href}
-                      className="transition hover:text-[#167fd5]"
-                    >
+                    <Link href={item.href} className="transition hover:text-[#167fd5]">
                       {item.label}
                     </Link>
                   ) : (
-                    <span className="font-medium text-[#5c4c33]">
-                      {item.label}
-                    </span>
+                    <span className="font-medium text-[#5c4c33]">{item.label}</span>
                   )}
                   {index < breadcrumbs.length - 1 ? (
                     <span aria-hidden="true" className="text-[#bba893]">
@@ -265,16 +245,16 @@ export default function AvignonWalkingTour2025Page() {
             <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
               <div className="min-w-0">
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
-                  {avignonWalkingTour2025Detail.heroEyebrow}
+                  {antibesDaytimeWalk2025Detail.heroEyebrow}
                 </p>
                 <h1 className="mt-3 text-4xl font-bold tracking-tight text-[#3d3327] sm:text-5xl">
-                  {avignonWalkingTour2025Detail.heroTitle}
+                  {antibesDaytimeWalk2025Detail.heroTitle}
                 </h1>
                 <p className="mt-3 text-xl text-[#6e5a45]">
-                  {avignonWalkingTour2025Detail.heroSubtitle}
+                  {antibesDaytimeWalk2025Detail.heroSubtitle}
                 </p>
                 <p className="mt-6 max-w-3xl text-base leading-8 text-[#56493a]">
-                  {avignonWalkingTour2025Detail.heroDescription}
+                  {antibesDaytimeWalk2025Detail.heroDescription}
                 </p>
 
                 <div className="mt-8 space-y-4 border-y border-[#d8c7b5]/80 py-4 text-[#3d3327]">
@@ -286,7 +266,7 @@ export default function AvignonWalkingTour2025Page() {
                 <div className="relative aspect-[4/3] w-full">
                   <img
                     src={heroImagePath}
-                    alt="Avignon walking tour hero image"
+                    alt="Antibes walking tour hero image"
                     className="h-full w-full object-cover"
                     loading="eager"
                   />
@@ -305,7 +285,7 @@ export default function AvignonWalkingTour2025Page() {
               <iframe
                 className="h-full w-full"
                 src={`https://www.youtube.com/embed/${youtubeVideoId}?rel=0&playsinline=1`}
-                title="Avignon France walking tour"
+                title="Antibes France walking tour"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
@@ -331,10 +311,7 @@ export default function AvignonWalkingTour2025Page() {
 
           <div className="mt-8 flex gap-4 overflow-x-auto scroll-smooth pb-2">
             {highlights.map((highlight) => (
-              <div
-                key={`${highlight.title}-${highlight.seconds}`}
-                className="w-[280px] shrink-0"
-              >
+              <div key={`${highlight.title}-${highlight.seconds}`} className="w-[280px] shrink-0">
                 <a
                   href={`https://youtu.be/${youtubeVideoId}?t=${highlight.seconds}`}
                   target="_blank"
@@ -381,9 +358,9 @@ export default function AvignonWalkingTour2025Page() {
           <MapSection
             eyebrow="Route map"
             heading="Explore the route"
-            description={avignonWalkingTour2025Detail.routeMapDescription}
+            description={antibesDaytimeWalk2025Detail.routeMapDescription}
             iframeSrc={fullMapEmbedUrl}
-            iframeTitle="Avignon walking route map"
+            iframeTitle="Antibes walking route map"
             eyebrowClassName="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]"
             headingClassName="mt-3 text-3xl font-bold tracking-tight text-[#3d3327]"
             descriptionClassName="mt-4 max-w-3xl text-base leading-8 text-[#56493a]"
@@ -397,8 +374,7 @@ export default function AvignonWalkingTour2025Page() {
                     Take this route with you
                   </p>
                   <p className="mt-3 text-[15px] leading-7 text-[#56493a]">
-                    Scan to open the Avignon walking route on your phone using
-                    Google Maps.
+                    Scan to open the Antibes walking route on your phone using Google Maps.
                   </p>
                   <a
                     href={fullMapUrl}
@@ -415,11 +391,11 @@ export default function AvignonWalkingTour2025Page() {
                   target="_blank"
                   rel="noreferrer"
                   className="self-start rounded-[1.5rem] border border-[#e5d7c6] bg-white p-3 shadow-sm transition hover:border-[#cdb7a0]"
-                  aria-label="Open the Avignon route map on your phone"
+                  aria-label="Open the Antibes route map on your phone"
                 >
                   <img
                     src={fullMapQrUrl}
-                    alt="QR code for opening the Avignon walking route in Google Maps"
+                    alt="QR code for opening the Antibes walking route in Google Maps"
                     width="132"
                     height="132"
                     className="h-[132px] w-[132px] rounded-xl"
@@ -441,15 +417,15 @@ export default function AvignonWalkingTour2025Page() {
                   Licensing Hub
                 </p>
                 <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#3d3327]">
-                  License this Avignon footage
+                  License this Antibes footage
                 </h2>
 
                 <p className="mt-5 max-w-2xl text-base leading-8 text-[#56493a]">
-                  {avignonWalkingTour2025Detail.licensingDescription[0]}
+                  {antibesDaytimeWalk2025Detail.licensingDescription[0]}
                 </p>
 
                 <p className="mt-5 max-w-2xl text-base leading-8 text-[#56493a]">
-                  {avignonWalkingTour2025Detail.licensingDescription[1]}
+                  {antibesDaytimeWalk2025Detail.licensingDescription[1]}
                 </p>
               </div>
 
@@ -534,12 +510,11 @@ export default function AvignonWalkingTour2025Page() {
             Related France Tours
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#3d3327]">
-            Explore more from France
+            Explore more from the French Riviera
           </h2>
 
           <p className="mt-4 max-w-3xl text-base leading-8 text-[#56493a]">
-            Continue through Provence, revisit the France destination hub, or
-            queue up another long-form walk from the French Riviera.
+            Continue through the French Riviera, revisit the regional hub, or explore more France destination pages.
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -557,15 +532,9 @@ export default function AvignonWalkingTour2025Page() {
                     loading="lazy"
                   />
                 </div>
-                <p className="text-sm font-semibold text-[#3d3327]">
-                  {tour.title}
-                </p>
-                <p className="mt-2 text-sm leading-7 text-[#6e5a45]">
-                  {tour.description}
-                </p>
-                <p className="mt-4 text-sm font-semibold text-[#167fd5]">
-                  View tour -&gt;
-                </p>
+                <p className="text-sm font-semibold text-[#3d3327]">{tour.title}</p>
+                <p className="mt-2 text-sm leading-7 text-[#6e5a45]">{tour.description}</p>
+                <p className="mt-4 text-sm font-semibold text-[#167fd5]">View tour -&gt;</p>
               </a>
             ))}
           </div>
@@ -582,8 +551,7 @@ export default function AvignonWalkingTour2025Page() {
                   Don&apos;t miss the next walk
                 </h2>
                 <p className="mt-4 max-w-2xl text-base leading-8 text-[#56493a]">
-                  Get updates when new walks, regional pages, and long-form
-                  France videos go live on Prowalk Tours.
+                  Get updates when new walks, French Riviera pages, and long-form France videos go live on ProWalk Tours.
                 </p>
                 <p className="mt-3 text-sm text-[#8a7a68]">
                   Occasional updates only. Unsubscribe anytime.

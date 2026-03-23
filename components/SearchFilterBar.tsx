@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 
 import type { VideoCatalogRecord } from "../data/video-types";
 
@@ -48,57 +48,65 @@ export default function SearchFilterBar({
   const [selectedCity, setSelectedCity] = useState(initialCity);
   const [selectedType, setSelectedType] = useState(initialType);
 
-  const countries = uniqueSorted(videos.map((video) => video.country));
-  const regionOptions = selectedCountry
-    ? uniqueSorted(
-        videos
-          .filter((video) => matchesValue(video.country, selectedCountry))
-          .map((video) => video.region)
-      )
-    : [];
-  const cityOptions = selectedRegion
-    ? uniqueSorted(
+  const countries = useMemo(
+    () => uniqueSorted(videos.map((video) => video.country)),
+    [videos]
+  );
+
+  const regionOptions = useMemo(
+    () =>
+      selectedCountry
+        ? uniqueSorted(
+            videos
+              .filter((video) => matchesValue(video.country, selectedCountry))
+              .map((video) => video.region)
+          )
+        : [],
+    [selectedCountry, videos]
+  );
+
+  const safeSelectedRegion = regionOptions.includes(selectedRegion)
+    ? selectedRegion
+    : "";
+
+  const cityOptions = useMemo(
+    () =>
+      safeSelectedRegion
+        ? uniqueSorted(
+            videos
+              .filter(
+                (video) =>
+                  matchesValue(video.country, selectedCountry) &&
+                  matchesValue(video.region, safeSelectedRegion)
+              )
+              .map((video) => video.city)
+          )
+        : [],
+    [safeSelectedRegion, selectedCountry, videos]
+  );
+
+  const safeSelectedCity = cityOptions.includes(selectedCity)
+    ? selectedCity
+    : "";
+
+  const videoTypeOptions = useMemo(
+    () =>
+      uniqueSorted(
         videos
           .filter(
             (video) =>
               matchesValue(video.country, selectedCountry) &&
-              matchesValue(video.region, selectedRegion)
+              matchesValue(video.region, safeSelectedRegion) &&
+              matchesValue(video.city, safeSelectedCity)
           )
-          .map((video) => video.city)
-      )
-    : [];
-  const videoTypeOptions = uniqueSorted(
-    videos
-      .filter(
-        (video) =>
-          matchesValue(video.country, selectedCountry) &&
-          matchesValue(video.region, selectedRegion) &&
-          matchesValue(video.city, selectedCity)
-      )
-      .map((video) => video.videoType)
+          .map((video) => video.videoType)
+      ),
+    [safeSelectedCity, safeSelectedRegion, selectedCountry, videos]
   );
 
-  const regionOptionsKey = regionOptions.join("|");
-  const cityOptionsKey = cityOptions.join("|");
-  const videoTypeOptionsKey = videoTypeOptions.join("|");
-
-  useEffect(() => {
-    if (selectedRegion && !regionOptions.includes(selectedRegion)) {
-      setSelectedRegion("");
-    }
-  }, [selectedRegion, regionOptions, regionOptionsKey]);
-
-  useEffect(() => {
-    if (selectedCity && !cityOptions.includes(selectedCity)) {
-      setSelectedCity("");
-    }
-  }, [selectedCity, cityOptions, cityOptionsKey]);
-
-  useEffect(() => {
-    if (selectedType && !videoTypeOptions.includes(selectedType)) {
-      setSelectedType("");
-    }
-  }, [selectedType, videoTypeOptions, videoTypeOptionsKey]);
+  const safeSelectedType = videoTypeOptions.includes(selectedType)
+    ? selectedType
+    : "";
 
   const isHero = variant === "hero";
   const formClassName = isHero
@@ -166,7 +174,7 @@ export default function SearchFilterBar({
 
         <select
           name="region"
-          value={selectedRegion}
+          value={safeSelectedRegion}
           onChange={(event) => setSelectedRegion(event.target.value)}
           disabled={!selectedCountry || regionOptions.length === 0}
           className={selectClassName}
@@ -183,13 +191,13 @@ export default function SearchFilterBar({
 
         <select
           name="city"
-          value={selectedCity}
+          value={safeSelectedCity}
           onChange={(event) => setSelectedCity(event.target.value)}
-          disabled={!selectedRegion || cityOptions.length === 0}
+          disabled={!safeSelectedRegion || cityOptions.length === 0}
           className={selectClassName}
         >
           <option value="">
-            {selectedRegion ? "All cities" : "Select region first"}
+            {safeSelectedRegion ? "All cities" : "Select region first"}
           </option>
           {cityOptions.map((city) => (
             <option key={city} value={city}>
@@ -200,7 +208,7 @@ export default function SearchFilterBar({
 
         <select
           name="type"
-          value={selectedType}
+          value={safeSelectedType}
           onChange={(event) => setSelectedType(event.target.value)}
           disabled={videoTypeOptions.length === 0}
           className={selectClassName}

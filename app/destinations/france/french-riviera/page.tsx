@@ -16,11 +16,11 @@ const featuredDestinations = [
       "Future walks and destination coverage for promenades, neighborhoods, and city highlights in Nice.",
   },
   {
-    name: "Cannes",
-    href: null,
-    status: "Coming soon",
+    name: "Antibes",
+    href: "/videos/antibes-daytime-walk-2025",
+    status: "Available now",
     description:
-      "Future Riviera walks focused on waterfront areas, boulevards, and destination highlights in Cannes.",
+      "Explore Antibes through a full daytime walking tour with Old Town lanes, market streets, waterfront paths, and marina views.",
   },
   {
     name: "Monaco",
@@ -129,8 +129,9 @@ export default function FrenchRivieraPage() {
             Start with the Riviera destinations below
           </h2>
           <p className="mt-3 max-w-3xl text-[17px] leading-8 text-[#6c5b49]">
-            Menton is live now, with additional French Riviera destinations to
-            be added as more walks and regional pages are published.
+            Menton and Antibes are live now, with additional French Riviera
+            destinations to be added as more walks and regional pages are
+            published.
           </p>
         </div>
 
