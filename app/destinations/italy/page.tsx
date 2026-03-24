@@ -151,8 +151,7 @@ export default function ItalyPage() {
           heading="Explore Italy on the map"
           description={
             <>
-              Browse walking tours by region, starting with Campania and
-            expanding to more Italian regions over time.
+              Browse walking tours by region. Each color represents a different region.
             </>
           }
           iframeSrc={embeddedMapUrl}

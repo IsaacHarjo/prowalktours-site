@@ -91,16 +91,18 @@ export default function SearchFilterBar({
 
   const videoTypeOptions = useMemo(
     () =>
-      uniqueSorted(
-        videos
-          .filter(
-            (video) =>
-              matchesValue(video.country, selectedCountry) &&
-              matchesValue(video.region, safeSelectedRegion) &&
-              matchesValue(video.city, safeSelectedCity)
+      selectedCountry
+        ? uniqueSorted(
+            videos
+              .filter(
+                (video) =>
+                  matchesValue(video.country, selectedCountry) &&
+                  matchesValue(video.region, safeSelectedRegion) &&
+                  matchesValue(video.city, safeSelectedCity)
+              )
+              .map((video) => video.videoType)
           )
-          .map((video) => video.videoType)
-      ),
+        : [],
     [safeSelectedCity, safeSelectedRegion, selectedCountry, videos]
   );
 
@@ -161,7 +163,15 @@ export default function SearchFilterBar({
         <select
           name="country"
           value={selectedCountry}
-          onChange={(event) => setSelectedCountry(event.target.value)}
+          onChange={(event) => {
+            const nextCountry = event.target.value;
+
+            setSelectedCountry(nextCountry);
+
+            if (!nextCountry) {
+              setSelectedType("");
+            }
+          }}
           className={selectClassName}
         >
           <option value="">All countries</option>
@@ -210,11 +220,15 @@ export default function SearchFilterBar({
           name="type"
           value={safeSelectedType}
           onChange={(event) => setSelectedType(event.target.value)}
-          disabled={videoTypeOptions.length === 0}
+          disabled={!selectedCountry || videoTypeOptions.length === 0}
           className={selectClassName}
         >
           <option value="">
-            {videoTypeOptions.length === 0 ? "No video types" : "All video types"}
+            {!selectedCountry
+              ? "Select country first"
+              : videoTypeOptions.length === 0
+                ? "No video types"
+                : "All video types"}
           </option>
           {videoTypeOptions.map((videoType) => (
             <option key={videoType} value={videoType}>

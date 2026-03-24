@@ -3,6 +3,52 @@ import Link from "next/link";
 import SearchFilterBar from "../components/SearchFilterBar";
 import { videos } from "../data/videos/index";
 
+const startHereCards = [
+  {
+    title: "Licensing & Contact",
+    href: "/licensing",
+    description:
+      "Need footage, have a question, or want to reach out about licensing or travel-related inquiries? Start here.",
+  },
+];
+
+const popularDestinations = [
+  {
+    title: "Naples & Campania",
+    href: "/destinations/italy/campania",
+    description:
+      "Historic streets, waterfront walks, local neighborhoods, and nearby day trips in southern Italy.",
+  },
+  {
+    title: "Amalfi Coast",
+    description:
+      "Scenic coastal towns, cliffside paths, seaside views, and unforgettable walks along the coast.",
+  },
+  {
+    title: "French Riviera",
+    href: "/destinations/france/french-riviera",
+    description:
+      "Old towns, marinas, beaches, promenades, and Mediterranean atmosphere in southern France.",
+  },
+  {
+    title: "Provence",
+    href: "/destinations/france/provence",
+    description:
+      "Historic cities, markets, Roman landmarks, and beautiful walkable town centers.",
+  },
+  {
+    title: "Venice",
+    description:
+      "Canals, hidden lanes, bridges, piazzas, and one of the world's most unique walking experiences.",
+  },
+  {
+    title: "Croatia",
+    href: "/destinations/croatia",
+    description:
+      "Coastal towns, Adriatic views, old stone streets, and scenic seaside walks.",
+  },
+];
+
 export default function HomePage() {
   return (
     <main className="bg-[#fcfaf7] text-[#2f261d]">
@@ -10,8 +56,7 @@ export default function HomePage() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('/images/homepage/hero.jpg')",
+            backgroundImage: "url('/images/homepage/hero.jpg')",
           }}
         />
         <div className="absolute inset-0 bg-[#1f1812]/55" />
@@ -28,8 +73,7 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">
-              Experience real walks, natural sound, and unforgettable places
-              through immersive videos filmed around the world.
+              Search walking tours by country, city, landmark, or video type &mdash; or start planning your next trip.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start lg:gap-6">
@@ -63,38 +107,91 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section
-        id="countries"
-        className="mx-auto max-w-7xl px-6 py-16 lg:px-10"
-      >
-        <div className="rounded-3xl border border-[#eadfce] bg-white p-8 shadow-sm">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
-            Next Section
-          </p>
-          <h2 className="mt-3 text-3xl font-bold text-[#2f261d]">
-            Browse by Country
-          </h2>
-          <p className="mt-3 max-w-2xl text-[17px] leading-8 text-[#6c5b49]">
-            This is where your country section will go next.
-          </p>
+      <section className="mx-auto max-w-7xl px-6 py-10 lg:px-10 lg:py-12">
+        <div className="rounded-3xl border border-[#eadfce] bg-white p-6 shadow-sm lg:p-8">
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
+                Start Here
+              </p>
+              <h2 className="mt-3 text-3xl font-bold text-[#2f261d]">
+                Choose your next step
+              </h2>
+            </div>
+          </div>
+
+          <div className="mt-6 max-w-xl">
+            {startHereCards.map((card) => (
+              <Link
+                key={card.title}
+                href={card.href}
+                className="block rounded-2xl border border-[#eadfce] bg-[#fcfaf7] p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#d7c3ad] hover:shadow-md"
+              >
+                <p className="text-lg font-semibold text-[#2f261d]">{card.title}</p>
+                <p className="mt-3 text-[15px] leading-7 text-[#6c5b49]">
+                  {card.description}
+                </p>
+                <p className="mt-4 text-sm font-semibold text-[#167fd5]">
+                  Open -&gt;
+                </p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section
-        id="map"
-        className="mx-auto max-w-7xl px-6 pb-20 lg:px-10"
-      >
-        <div className="rounded-3xl border border-[#eadfce] bg-white p-8 shadow-sm">
+      <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-10 lg:pb-24">
+        <div className="rounded-3xl border border-[#eadfce] bg-white p-6 shadow-sm lg:p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
-            Future Feature
+            Most Popular Travel Destinations
           </p>
           <h2 className="mt-3 text-3xl font-bold text-[#2f261d]">
-            Interactive World Map
+            Most Popular Travel Destinations
           </h2>
-          <p className="mt-3 max-w-2xl text-[17px] leading-8 text-[#6c5b49]">
-            This is where the clickable map section can go after the country
-            section is built.
+          <p className="mt-3 max-w-3xl text-[17px] leading-8 text-[#6c5b49]">
+            Start with some of the most popular places on Prowalk Tours.
           </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {popularDestinations.map((destination) => {
+              const cardClassName =
+                "rounded-2xl border border-[#eadfce] bg-[#fcfaf7] p-5 shadow-sm transition";
+
+              if (destination.href) {
+                return (
+                  <Link
+                    key={destination.title}
+                    href={destination.href}
+                    className={`${cardClassName} hover:-translate-y-0.5 hover:border-[#d7c3ad] hover:shadow-md`}
+                  >
+                    <p className="text-lg font-semibold text-[#2f261d]">
+                      {destination.title}
+                    </p>
+                    <p className="mt-3 text-[15px] leading-7 text-[#6c5b49]">
+                      {destination.description}
+                    </p>
+                    <p className="mt-4 text-sm font-semibold text-[#167fd5]">
+                      Explore Destination -&gt;
+                    </p>
+                  </Link>
+                );
+              }
+
+              return (
+                <div key={destination.title} className={cardClassName}>
+                  <p className="text-lg font-semibold text-[#2f261d]">
+                    {destination.title}
+                  </p>
+                  <p className="mt-3 text-[15px] leading-7 text-[#6c5b49]">
+                    {destination.description}
+                  </p>
+                  <p className="mt-4 text-sm font-semibold text-[#8a7a68]">
+                    Route coming soon
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
     </main>
