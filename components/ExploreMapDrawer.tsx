@@ -1,7 +1,12 @@
 "use client";
 
 import type { ExploreMapFeature } from "../data/maps/types";
-import { formatVideoTypeLabel } from "../data/maps/filters";
+import {
+  formatVideoTypeLabel,
+  getMapDisplayTitle,
+  getMapWatchDestinationType,
+  getMapWatchHref,
+} from "../data/maps/filters";
 
 type ExploreMapDrawerProps = {
   feature: ExploreMapFeature | null;
@@ -75,23 +80,39 @@ export default function ExploreMapDrawer({
                     </div>
                     <div className="mt-3">
                       <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#9a7a52]">
-                        {item.city}, {item.location || item.region}
+                        {item.region}
                       </p>
                       <h4 className="mt-2 text-base font-bold text-[#2f261d]">
-                        {item.title}
+                        {getMapDisplayTitle(item.title)}
                       </h4>
                       <div className="mt-2 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#9a7a52]">
                         <span className="rounded-full border border-[#eadfce] bg-white px-3 py-1">
                           {formatVideoTypeLabel(item.videoType)}
                         </span>
                       </div>
+                      <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-[#8a7a68]">
+                        {item.filmedYear ? (
+                          <span>Filmed {item.filmedYear}</span>
+                        ) : null}
+                        <span>{item.durationLabel}</span>
+                      </div>
                       <div className="mt-3 flex flex-col gap-2">
                         <a
-                                href={item.youtubeUrl} target="_blank" rel="noreferrer"
+                          href={getMapWatchHref(item)}
+                          target={
+                            getMapWatchDestinationType(item) === "youtube"
+                              ? "_blank"
+                              : undefined
+                          }
+                          rel={
+                            getMapWatchDestinationType(item) === "youtube"
+                              ? "noreferrer"
+                              : undefined
+                          }
                           className="inline-flex items-center justify-center rounded-full bg-[#167fd5] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0f6db9]"
                         >
-                                Watch 4K Walk
-                              </a>
+                          Watch 4K Walk
+                        </a>
                         {item.mapUrl ? (
                           <a
                             href={item.mapUrl}
@@ -113,10 +134,10 @@ export default function ExploreMapDrawer({
               <div className="mb-4 flex items-start justify-between gap-4">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#9a7a52]">
-                    {feature.city}, {feature.region}
+                    {feature.region}
                   </p>
                   <h3 className="mt-2 text-lg font-bold text-[#2f261d]">
-                    {feature.title}
+                    {getMapDisplayTitle(feature.title)}
                   </h3>
                   <p className="mt-2 text-sm leading-6 text-[#6c5b49]">
                     {feature.descriptionShort}
@@ -144,14 +165,28 @@ export default function ExploreMapDrawer({
                 <span className="rounded-full border border-[#eadfce] bg-[#fcfaf7] px-3 py-1">
                   {formatVideoTypeLabel(feature.videoType)}
                 </span>
-                <span className="rounded-full border border-[#eadfce] bg-[#fcfaf7] px-3 py-1">
-                  {feature.durationLabel}
-                </span>
+              </div>
+
+              <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-[#8a7a68]">
+                {feature.filmedYear ? (
+                  <span>Filmed {feature.filmedYear}</span>
+                ) : null}
+                <span>{feature.durationLabel}</span>
               </div>
 
               <div className="mt-4 flex flex-col gap-3">
                 <a
-                  href={feature.youtubeUrl} target="_blank" rel="noreferrer"
+                  href={getMapWatchHref(feature)}
+                  target={
+                    getMapWatchDestinationType(feature) === "youtube"
+                      ? "_blank"
+                      : undefined
+                  }
+                  rel={
+                    getMapWatchDestinationType(feature) === "youtube"
+                      ? "noreferrer"
+                      : undefined
+                  }
                   className="inline-flex items-center justify-center rounded-full bg-[#167fd5] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0f6db9]"
                 >
                   Watch 4K Walk

@@ -20,6 +20,10 @@ import type { ExploreMapFeature } from "../data/maps/types";
 import {
   filterExploreMapFeatures,
   formatVideoTypeLabel,
+  getFilmedYearFilterOptions,
+  getMapDisplayTitle,
+  getMapWatchDestinationType,
+  getMapWatchHref,
   getVideoTypeFilterOptions,
 } from "../data/maps/filters";
 import ExploreMapDrawer from "./ExploreMapDrawer";
@@ -122,15 +126,23 @@ export default function ExploreVideoMap({
   const [selectedCluster, setSelectedCluster] =
     useState<ClusterSelection | null>(null);
   const [selectedVideoTypes, setSelectedVideoTypes] = useState<string[]>([]);
+  const [selectedFilmedYears, setSelectedFilmedYears] = useState<string[]>([]);
 
   const videoTypeOptions = useMemo(
     () => getVideoTypeFilterOptions(features),
     [features]
   );
 
+  const filmedYearOptions = useMemo(() => getFilmedYearFilterOptions(), []);
+
   const visibleFeatures = useMemo(
-    () => filterExploreMapFeatures(features, selectedVideoTypes),
-    [features, selectedVideoTypes]
+    () =>
+      filterExploreMapFeatures(
+        features,
+        selectedVideoTypes,
+        selectedFilmedYears
+      ),
+    [features, selectedFilmedYears, selectedVideoTypes]
   );
 
   const featureLookup = useMemo(
@@ -187,6 +199,14 @@ export default function ExploreVideoMap({
       current.includes(videoType)
         ? current.filter((item) => item !== videoType)
         : [...current, videoType]
+    );
+  };
+
+  const toggleFilmedYear = (filmedYear: string) => {
+    setSelectedFilmedYears((current) =>
+      current.includes(filmedYear)
+        ? current.filter((item) => item !== filmedYear)
+        : [...current, filmedYear]
     );
   };
 
@@ -306,26 +326,58 @@ export default function ExploreVideoMap({
 
   return (
     <div>
-      <div className="mb-6 flex flex-wrap gap-3">
-        {videoTypeOptions.map((option) => {
-          const selected = selectedVideoTypes.includes(option.value);
+      <div className="mb-3">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#9a7a52]">
+          Video Type
+        </p>
+        <div className="flex flex-wrap gap-3">
+          {videoTypeOptions.map((option) => {
+            const selected = selectedVideoTypes.includes(option.value);
 
-          return (
-            <button
-              key={option.value}
-              type="button"
-              onClick={() => toggleVideoType(option.value)}
-              aria-pressed={selected}
-              className={
-                selected
-                  ? "rounded-full border border-[#167fd5] bg-[#167fd5] px-4 py-2 text-sm font-semibold text-white transition"
-                  : "rounded-full border border-[#d8c7b5] bg-white px-4 py-2 text-sm font-semibold text-[#3d3327] transition hover:bg-[#f8f3ec]"
-              }
-            >
-              {option.label}
-            </button>
-          );
-        })}
+            return (
+              <button
+                key={option.value}
+                type="button"
+                onClick={() => toggleVideoType(option.value)}
+                aria-pressed={selected}
+                className={
+                  selected
+                    ? "rounded-full border border-[#167fd5] bg-[#167fd5] px-4 py-2 text-sm font-semibold text-white transition"
+                    : "rounded-full border border-[#d8c7b5] bg-white px-4 py-2 text-sm font-semibold text-[#3d3327] transition hover:bg-[#f8f3ec]"
+                }
+              >
+                {option.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="mb-6">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#9a7a52]">
+          Filmed Year
+        </p>
+        <div className="flex flex-wrap gap-3">
+          {filmedYearOptions.map((option) => {
+            const selected = selectedFilmedYears.includes(option.value);
+
+            return (
+              <button
+                key={option.value}
+                type="button"
+                onClick={() => toggleFilmedYear(option.value)}
+                aria-pressed={selected}
+                className={
+                  selected
+                    ? "rounded-full border border-[#8b6a3f] bg-[#f4e6bc] px-4 py-2 text-sm font-semibold text-[#3d3327] transition"
+                    : "rounded-full border border-[#d8c7b5] bg-[#fcfaf7] px-4 py-2 text-sm font-semibold text-[#6c5b49] transition hover:bg-[#f8f3ec]"
+                }
+              >
+                {option.label}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       <div className="overflow-hidden rounded-[1.5rem] border border-[#d8c7b5] bg-white shadow-sm sm:rounded-[2rem]">
@@ -379,10 +431,10 @@ export default function ExploreVideoMap({
                     />
                     <div className="p-4">
                       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#9a7a52]">
-                        {selectedFeature.city}, {selectedFeature.region}
+                        {selectedFeature.region}
                       </p>
                       <h3 className="mt-2 text-lg font-bold text-[#2f261d]">
-                        {selectedFeature.title}
+                        {getMapDisplayTitle(selectedFeature.title)}
                       </h3>
                       <p className="mt-2 text-sm leading-6 text-[#6c5b49]">
                         {selectedFeature.descriptionShort}
@@ -391,13 +443,26 @@ export default function ExploreVideoMap({
                         <span className="rounded-full border border-[#eadfce] bg-[#fcfaf7] px-3 py-1">
                           {formatVideoTypeLabel(selectedFeature.videoType)}
                         </span>
-                        <span className="rounded-full border border-[#eadfce] bg-[#fcfaf7] px-3 py-1">
-                          {selectedFeature.durationLabel}
-                        </span>
+                      </div>
+                      <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-[#8a7a68]">
+                        {selectedFeature.filmedYear ? (
+                          <span>Filmed {selectedFeature.filmedYear}</span>
+                        ) : null}
+                        <span>{selectedFeature.durationLabel}</span>
                       </div>
                       <div className="mt-4 flex flex-col gap-3">
                         <a
-                          href={selectedFeature.youtubeUrl} target="_blank" rel="noreferrer"
+                          href={getMapWatchHref(selectedFeature)}
+                          target={
+                            getMapWatchDestinationType(selectedFeature) === "youtube"
+                              ? "_blank"
+                              : undefined
+                          }
+                          rel={
+                            getMapWatchDestinationType(selectedFeature) === "youtube"
+                              ? "noreferrer"
+                              : undefined
+                          }
                           className="inline-flex items-center justify-center rounded-full bg-[#167fd5] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0f6db9]"
                         >
                           Watch 4K Walk
@@ -472,19 +537,35 @@ export default function ExploreVideoMap({
                           </div>
                           <div className="mt-3">
                             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#9a7a52]">
-                              {item.city}, {item.location || item.region}
+                              {item.region}
                             </p>
                             <h4 className="mt-2 text-base font-bold text-[#2f261d]">
-                              {item.title}
+                              {getMapDisplayTitle(item.title)}
                             </h4>
                             <div className="mt-2 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#9a7a52]">
                               <span className="rounded-full border border-[#eadfce] bg-white px-3 py-1">
                                 {formatVideoTypeLabel(item.videoType)}
                               </span>
                             </div>
+                            <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-[#8a7a68]">
+                              {item.filmedYear ? (
+                                <span>Filmed {item.filmedYear}</span>
+                              ) : null}
+                              <span>{item.durationLabel}</span>
+                            </div>
                             <div className="mt-3 flex flex-col gap-2">
                               <a
-                                href={item.youtubeUrl} target="_blank" rel="noreferrer"
+                                href={getMapWatchHref(item)}
+                                target={
+                                  getMapWatchDestinationType(item) === "youtube"
+                                    ? "_blank"
+                                    : undefined
+                                }
+                                rel={
+                                  getMapWatchDestinationType(item) === "youtube"
+                                    ? "noreferrer"
+                                    : undefined
+                                }
                                 className="inline-flex items-center justify-center rounded-full bg-[#167fd5] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0f6db9]"
                               >
                                 Watch 4K Walk

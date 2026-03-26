@@ -1,3 +1,14 @@
+export type ExploreMapVideoType =
+  | "day-walk"
+  | "evening-walk"
+  | "bike-tour"
+  | "boat-tour"
+  | "hike"
+  | "360-tour"
+  | "drone-tour"
+  | "drive-tour"
+  | "scooter-tour";
+
 export type ExploreMapFeature = {
   tourId: string;
   country: string;
@@ -24,6 +35,8 @@ export type ExploreMapFeature = {
   href: string;
   thumbnailSrc: string;
 };
+
+export type ExploreMapWatchDestinationType = "internal-page" | "youtube";
 
 export type ExploreMapFilterOption = {
   value: string;
