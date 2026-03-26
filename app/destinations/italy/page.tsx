@@ -1,18 +1,15 @@
 import Link from "next/link";
-import MapSection from "../../../components/MapSection";
 
-const fullMapUrl =
-  "https://www.google.com/maps/d/edit?mid=1t4YBAzo7z1iLvAR8SePE8GG0fXCh03M&usp=sharing";
-const embeddedMapUrl =
-  "https://www.google.com/maps/d/u/0/embed?mid=1t4YBAzo7z1iLvAR8SePE8GG0fXCh03M";
+import ExploreVideoMap from "../../../components/ExploreVideoMap";
+import { italyMapFeatures } from "../../../data/maps/italy";
 
 const regions = [
   {
-  name: "Campania",
-  href: "/destinations/italy/campania",
-  status: "Available now",
-  description: "Explore destinations, videos, and travel planning across Campania.",
-},
+    name: "Campania",
+    href: "/destinations/italy/campania",
+    status: "Available now",
+    description: "Explore destinations, videos, and travel planning across Campania.",
+  },
   {
     name: "Basilicata",
     href: "#",
@@ -137,30 +134,37 @@ export default function ItalyPage() {
             Italy
           </h1>
           <p className="mt-5 max-w-3xl text-[18px] leading-8 text-[#6c5b49]">
-  Browse Italy by region, then explore cities, destinations, and
-  individual walks. Some regions already have filmed videos, while
-  dedicated region pages are still being built.
-</p>
+            Browse Italy by region, then explore cities, destinations, and
+            individual walks. Some regions already have filmed videos, while
+            dedicated region pages are still being built.
+          </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 lg:px-10">
-        <MapSection
-          className="mb-8 rounded-3xl border border-[#d8c7b5] bg-[#fffaf3] p-8"
-          eyebrow="Interactive Italy Map"
-          heading="Explore Italy on the map"
-          description={
-            <>
-              Browse walking tours by region. Each color represents a different region.
-            </>
-          }
-          iframeSrc={embeddedMapUrl}
-          iframeTitle="Interactive Italy map"
-          iframeLoading="lazy"
-          iframeReferrerPolicy="no-referrer-when-downgrade"
-          fullMapButtonHref={fullMapUrl}
-          fullMapButtonLabel="Open the full Italy map"
-        />
+        <div className="mb-8 rounded-3xl border border-[#d8c7b5] bg-[#fffaf3] p-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
+            Interactive Italy Map
+          </p>
+          <h2 className="mt-3 text-3xl font-bold text-[#2f261d]">
+            Explore Italy on the map
+          </h2>
+          <p className="mt-3 max-w-3xl text-[17px] leading-8 text-[#6c5b49]">
+            Browse walking tours by region. Each marker represents a mapped
+            video, and you can filter by video type to explore the library.
+          </p>
+
+          <div className="mt-6">
+            <ExploreVideoMap
+              features={italyMapFeatures}
+              initialViewState={{
+                longitude: 12.5674,
+                latitude: 41.8719,
+                zoom: 5,
+              }}
+            />
+          </div>
+        </div>
 
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {regions.map((region) =>
@@ -180,7 +184,7 @@ export default function ItalyPage() {
                   {region.description}
                 </p>
                 <div className="mt-6 text-[16px] font-semibold text-[#167fd5]">
-                  View region page →
+                  View region page -&gt;
                 </div>
               </Link>
             ) : (
@@ -205,4 +209,3 @@ export default function ItalyPage() {
     </main>
   );
 }
-
