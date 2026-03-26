@@ -35,16 +35,26 @@ export default function ExploreMapDrawer({
     : feature?.descriptionShort ?? "";
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-30 md:hidden">
-      <div className="mx-auto max-w-7xl px-4 pb-[calc(env(safe-area-inset-bottom)+1rem)]">
+    <div className="fixed inset-0 z-30 md:hidden">
+      <button
+        type="button"
+        aria-label="Close selected map result"
+        onClick={onClose}
+        className="absolute inset-0 bg-black/20 backdrop-blur-[1px]"
+      />
+
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 top-16 flex items-end px-4 pb-[calc(env(safe-area-inset-bottom)+1rem)]">
         <div
-          className="overflow-hidden rounded-[1.75rem] border border-[#d8c7b5] bg-white shadow-2xl"
-          style={{ maxHeight: "calc(100vh - 6rem)" }}
+          className="pointer-events-auto w-full overflow-hidden rounded-[1.75rem] border border-[#d8c7b5] bg-white shadow-2xl"
+          style={{ maxHeight: "calc(100dvh - 5.5rem)" }}
         >
-          <div
-            className="sticky top-0 z-10 border-b border-[#eadfce] bg-white/95 backdrop-blur"
-            style={{ paddingTop: "max(0.75rem, env(safe-area-inset-top))" }}
-          >
+          <div className="sticky top-0 z-10 border-b border-[#eadfce] bg-white/95 backdrop-blur">
+            <div className="flex justify-center px-4 pt-3">
+              <span
+                aria-hidden="true"
+                className="h-1.5 w-14 rounded-full bg-[#d8c7b5]"
+              />
+            </div>
             <div className="flex items-start justify-between gap-4 px-4 pb-4 pt-3">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#9a7a52]">
@@ -68,7 +78,7 @@ export default function ExploreMapDrawer({
             </div>
           </div>
 
-          <div className="max-h-[calc(100vh-13rem)] overflow-y-auto px-4 pb-4 pt-4">
+          <div className="max-h-[calc(100dvh-13rem)] overflow-y-auto px-4 pb-4 pt-4">
             {isCluster ? (
               <>
                 {onZoomIn ? (
