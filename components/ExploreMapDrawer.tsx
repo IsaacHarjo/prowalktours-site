@@ -63,9 +63,11 @@ export default function ExploreMapDrawer({
                 <h3 className="mt-2 text-lg font-bold text-[#2f261d]">
                   {headerTitle}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-[#6c5b49]">
-                  {headerDescription}
-                </p>
+                {!isCluster ? (
+                  <p className="mt-2 text-sm leading-6 text-[#6c5b49]">
+                    {headerDescription}
+                  </p>
+                ) : null}
               </div>
               <button
                 type="button"
