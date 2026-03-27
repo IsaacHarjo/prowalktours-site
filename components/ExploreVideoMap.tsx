@@ -24,6 +24,7 @@ import {
   getMapDisplayTitle,
   getMapWatchDestinationType,
   getMapWatchHref,
+  getThemeFilterOptions,
   getVideoTypeFilterOptions,
 } from "../data/maps/filters";
 import ExploreMapDrawer from "./ExploreMapDrawer";
@@ -127,6 +128,7 @@ export default function ExploreVideoMap({
     useState<ClusterSelection | null>(null);
   const [selectedVideoTypes, setSelectedVideoTypes] = useState<string[]>([]);
   const [selectedFilmedYears, setSelectedFilmedYears] = useState<string[]>([]);
+  const [selectedThemes, setSelectedThemes] = useState<string[]>([]);
 
   const videoTypeOptions = useMemo(
     () => getVideoTypeFilterOptions(features),
@@ -134,15 +136,17 @@ export default function ExploreVideoMap({
   );
 
   const filmedYearOptions = useMemo(() => getFilmedYearFilterOptions(), []);
+  const themeOptions = useMemo(() => getThemeFilterOptions(features), [features]);
 
   const visibleFeatures = useMemo(
     () =>
       filterExploreMapFeatures(
         features,
         selectedVideoTypes,
-        selectedFilmedYears
+        selectedFilmedYears,
+        selectedThemes
       ),
-    [features, selectedFilmedYears, selectedVideoTypes]
+    [features, selectedFilmedYears, selectedThemes, selectedVideoTypes]
   );
 
   const featureLookup = useMemo(
@@ -207,6 +211,14 @@ export default function ExploreVideoMap({
       current.includes(filmedYear)
         ? current.filter((item) => item !== filmedYear)
         : [...current, filmedYear]
+    );
+  };
+
+  const toggleTheme = (theme: string) => {
+    setSelectedThemes((current) =>
+      current.includes(theme)
+        ? current.filter((item) => item !== theme)
+        : [...current, theme]
     );
   };
 
@@ -371,6 +383,33 @@ export default function ExploreVideoMap({
                   selected
                     ? "rounded-full border border-[#8b6a3f] bg-[#f4e6bc] px-4 py-2 text-sm font-semibold text-[#3d3327] transition"
                     : "rounded-full border border-[#d8c7b5] bg-[#fcfaf7] px-4 py-2 text-sm font-semibold text-[#6c5b49] transition hover:bg-[#f8f3ec]"
+                }
+              >
+                {option.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="mb-6">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#9a7a52]">
+          Themes
+        </p>
+        <div className="flex flex-wrap gap-3">
+          {themeOptions.map((option) => {
+            const selected = selectedThemes.includes(option.value);
+
+            return (
+              <button
+                key={option.value}
+                type="button"
+                onClick={() => toggleTheme(option.value)}
+                aria-pressed={selected}
+                className={
+                  selected
+                    ? "rounded-full border border-[#4d7c57] bg-[#dbe9dc] px-4 py-2 text-sm font-semibold text-[#2f4b35] transition"
+                    : "rounded-full border border-[#d8c7b5] bg-[#f6fbf6] px-4 py-2 text-sm font-semibold text-[#5f6f61] transition hover:bg-[#edf6ee]"
                 }
               >
                 {option.label}

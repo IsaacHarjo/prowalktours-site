@@ -10,6 +10,13 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Agropoli, Italy 4K Walking Tour (2020)",
         "slug":  "agropoli-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+                       "waterfront",
+                       "historic-center",
+                       "beach",
+                       "coastal",
+                       "old-town"
+                   ],
         "filmedDateIso":  "2020-07-11",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/NJFZtpqdtE0",
@@ -19,12 +26,34 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "durationLabel":  "1:35:20",
         "durationSeconds":  5720,
         "descriptionShort":  "A daytime walk in Agropoli, Italy.",
-        "descriptionLong":  "",
+        "descriptionLong":  "A 4K daytime walking tour of Agropoli on Italy’s Cilento Coast, filmed July 11, 2020. Starts in Piazza Vittorio Veneto below the historic center, explores the old town, Angioino Aragonese Castle (built over an ancient Greek temple site), the harbor, waterfront beaches, and Viale Risorgimento.",
         "landmarks":  [
-
+                          "Piazza Vittorio Veneto",
+                          "Chiesa Santa Maria di Constantinopoli",
+                          "Chiesa dei Santi Pietro e Paolo",
+                          "Angioino Aragonese Castle",
+                          "Port of Agropoli",
+                          "Piazza della Repubblica",
+                          "Beach",
+                          "Artificial reef",
+                          "Viale Risorgimento"
                       ],
         "keywords":  [
-
+                         "Agropoli",
+                         "Cilento Coast",
+                         "Campania",
+                         "walking tour",
+                         "4K",
+                         "historic center",
+                         "Angioino Aragonese Castle",
+                         "port",
+                         "beach",
+                         "Piazza Vittorio Veneto",
+                         "Chiesa Santa Maria di Constantinopoli",
+                         "Chiesa dei Santi Pietro e Paolo",
+                         "Viale Risorgimento",
+                         "drone intro",
+                         "waterfront"
                      ],
         "status":  "ready",
         "thumbnailPath":  null,
@@ -40,6 +69,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Amalfi Coast, Italy 4K Bike Tour (2022)",
         "slug":  "amalfi-coast-bike-tour-2022",
         "videoType":  "bike-tour",
+        "themes":  [
+                       "waterfront",
+                       "coastal"
+                   ],
         "filmedDateIso":  "2022-05-04",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/1UxoHtG2qas",
@@ -49,12 +82,34 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "durationLabel":  "4:44:26",
         "durationSeconds":  17066,
         "descriptionShort":  "A bike tour in Amalfi, Italy.",
-        "descriptionLong":  "",
+        "descriptionLong":  "A 4K bike tour of the entire Amalfi Coast, filmed May 4, 2022. 72 km (45 miles) ride starting above Positano and passing through Positano, Praiano, Marina di Praia, Fiordo di Furore, Amalfi, Atrani, Minori, Maiori, Cetara, and Ravello with stunning coastal views.",
         "landmarks":  [
-
+                          "Positano",
+                          "Praiano",
+                          "Marina di Praia",
+                          "Fiordo di Furore",
+                          "Amalfi",
+                          "Atrani",
+                          "Minori",
+                          "Maiori",
+                          "Cetara",
+                          "Ravello"
                       ],
         "keywords":  [
-
+                         "Amalfi Coast",
+                         "bike tour",
+                         "4K",
+                         "Positano",
+                         "Praiano",
+                         "Amalfi",
+                         "Atrani",
+                         "Ravello",
+                         "Minori",
+                         "Maiori",
+                         "Cetara",
+                         "coastal drive",
+                         "Amalfi Drive",
+                         "72km ride"
                      ],
         "status":  "ready",
         "thumbnailPath":  null,
@@ -70,6 +125,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Amalfi Coast, Italy 4K Scooter Tour (2019)",
         "slug":  "amalfi-scooter-tour-2019",
         "videoType":  "scooter-tour",
+        "themes":  [
+                       "waterfront",
+                       "coastal"
+                   ],
         "filmedDateIso":  "2019-09-07",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/vL3tziOxNC8",
@@ -79,12 +138,32 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "durationLabel":  "1:54:07",
         "durationSeconds":  6847,
         "descriptionShort":  "A scooter tour in Amalfi, Italy.",
-        "descriptionLong":  "",
+        "descriptionLong":  "A 4K scooter tour along the full 80 km (50 miles) Amalfi Coast Drive (SS 163), filmed September 7, 2019 from Sorrento through Positano, Praiano, Amalfi, Atrani, Minori, Maiori, and ending in Vietri sul Mare.",
         "landmarks":  [
-
+                          "Amalfi Coast Drive",
+                          "Positano (Chiesa Nuova \u0026 Sponda bus stops)",
+                          "Praiano",
+                          "Marina di Praia",
+                          "Amalfi",
+                          "Atrani",
+                          "Minori",
+                          "Maiori",
+                          "Vietri sul Mare"
                       ],
         "keywords":  [
-
+                         "Amalfi Coast",
+                         "scooter tour",
+                         "4K",
+                         "Amalfi Drive",
+                         "Positano",
+                         "Praiano",
+                         "Marina di Praia",
+                         "Amalfi",
+                         "Atrani",
+                         "Minori",
+                         "Maiori",
+                         "Vietri sul Mare",
+                         "coastal road"
                      ],
         "status":  "ready",
         "thumbnailPath":  null,
@@ -100,6 +179,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Amalfi Coast, Italy 4K Drone Tour",
         "slug":  "amalfi-coast-drone-tour",
         "videoType":  "drone-tour",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/O2UnQoKJkC8",
@@ -109,12 +191,20 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "durationLabel":  "0:08:56",
         "durationSeconds":  536,
         "descriptionShort":  "A drone tour in Amalfi, Italy.",
-        "descriptionLong":  "",
+        "descriptionLong":  "A short 4K drone tour flying over the Path of the Gods (Sentiero degli Dei) along the dramatic Amalfi Coast cliffs and sea views. Landmarks: Path of the Gods, Amalfi Coast",
         "landmarks":  [
-
+                          "Path of the Gods",
+                          "Amalfi Coast"
                       ],
         "keywords":  [
-
+                         "Amalfi Coast",
+                         "drone tour",
+                         "Path of the Gods",
+                         "Sentiero degli Dei",
+                         "4K",
+                         "aerial views",
+                         "cliffs",
+                         "Mediterranean Sea"
                      ],
         "status":  "ready",
         "thumbnailPath":  null,
@@ -130,6 +220,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Amalfi Coast, Italy 4K Boat Tour (2021)",
         "slug":  "positano-boat-tour-2021",
         "videoType":  "boat-tour",
+        "themes":  [
+                       "beach",
+                       "coastal"
+                   ],
         "filmedDateIso":  "2021-07-22",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/j4WmTagG3Ss",
@@ -139,12 +233,28 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "durationLabel":  "2:27:53",
         "durationSeconds":  8873,
         "descriptionShort":  "A boat tour in Positano, Italy.",
-        "descriptionLong":  "",
+        "descriptionLong":  "A 4K boat tour of the Amalfi Coast, filmed July 22, 2021 starting west of Positano. Cruises past Fornillo Beach, Positano, Grand Hotel Tritone, Amalfi, Atrani, Minori, and Maiori.",
         "landmarks":  [
-
+                          "Fornillo Beach",
+                          "Positano",
+                          "Grand Hotel Tritone",
+                          "Amalfi",
+                          "Atrani",
+                          "Minori",
+                          "Maiori"
                       ],
         "keywords":  [
-
+                         "Amalfi Coast",
+                         "boat tour",
+                         "4K",
+                         "Positano",
+                         "Fornillo Beach",
+                         "Grand Hotel Tritone",
+                         "Amalfi",
+                         "Atrani",
+                         "Minori",
+                         "Maiori",
+                         "coastal cruise"
                      ],
         "status":  "ready",
         "thumbnailPath":  null,
@@ -160,6 +270,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Amalfi Coast, Italy 4K 360 Tour (2019)",
         "slug":  "amalfi-coast-360-tour",
         "videoType":  "360-tour",
+        "themes":  [
+                       "waterfront",
+                       "coastal",
+                       "scenic-viewpoint"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/dDuBgKFyQEA",
@@ -169,12 +284,34 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "durationLabel":  "1:54:10",
         "durationSeconds":  6850,
         "descriptionShort":  "A 360° tour in Positano, Italy.",
-        "descriptionLong":  "",
+        "descriptionLong":  "A 360° immersive scooter tour of the Amalfi Coast, filmed September 7, 2019 starting 9 km west of Positano. Drag to look around in every direction while passing Positano, Praiano, Conca dei Marini, Amalfi, Atrani, Minori, and Maiori.",
         "landmarks":  [
-
+                          "Positano (Bus Stop #1 \u0026 Sponda Bus Stop #2)",
+                          "Scenic Lookout",
+                          "Laurito",
+                          "Grand Hotel Tritone",
+                          "Vettica Maggiore",
+                          "Praiano",
+                          "Conca dei Marini",
+                          "Amalfi",
+                          "Tunnel to Amalfi Port",
+                          "Atrani",
+                          "Minori",
+                          "Maiori"
                       ],
         "keywords":  [
-
+                         "Amalfi Coast",
+                         "360 tour",
+                         "scooter",
+                         "VR",
+                         "Positano",
+                         "Praiano",
+                         "Conca dei Marini",
+                         "Amalfi",
+                         "Atrani",
+                         "Minori",
+                         "Maiori",
+                         "coastal road"
                      ],
         "status":  "ready",
         "thumbnailPath":  null,
@@ -190,6 +327,13 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Amalfi Coast, Italy 4K Path of the Lemons Walking Tour (2025)",
         "slug":  "maiori-hike-2025",
         "videoType":  "hike",
+        "themes":  [
+                       "waterfront",
+                       "beach",
+                       "coastal",
+                       "scenic-viewpoint",
+                       "mountain"
+                   ],
         "filmedDateIso":  "2025-06-15",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/shgLRsSw7q0",
@@ -199,12 +343,34 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "durationLabel":  "2:18:05",
         "durationSeconds":  8285,
         "descriptionShort":  "A hike in Maiori, Italy.",
-        "descriptionLong":  "",
+        "descriptionLong":  "A 4K hike along the Path of the Lemons (Sentiero dei Limoni) on the Amalfi Coast, filmed June 15, 2025. Starts in Maiori, follows the lemon-grove trail to Minori, then returns via the Amalfi Drive with beach and pier views.",
         "landmarks":  [
-
+                          "Maiori Beach",
+                          "Lungomare Boardwalk",
+                          "Corso Reginna",
+                          "Palazzo Mezzacapo Gardens",
+                          "Collegiate Church of St Maria a Mare",
+                          "Path of the Lemons",
+                          "Golden Dream Farm",
+                          "Belvedere Mortella",
+                          "Minori",
+                          "Basilica of Saint Trofimena",
+                          "Piazza Ettore e Gaetano Cantilena",
+                          "Piazza Umberto I",
+                          "Amalfi Drive"
                       ],
         "keywords":  [
-
+                         "Amalfi Coast",
+                         "hike",
+                         "Path of the Lemons",
+                         "Sentiero dei Limoni",
+                         "Maiori",
+                         "Minori",
+                         "lemon groves",
+                         "4K",
+                         "2025",
+                         "Lungomare",
+                         "beach walk"
                      ],
         "status":  "ready",
         "thumbnailPath":  null,
@@ -220,6 +386,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Amalfi, Italy 4K Walking Tour (2018) - No Captions",
         "slug":  "amalfi-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "waterfront",
+                       "beach",
+                       "coastal",
+                       "scenic-viewpoint"
+                   ],
         "filmedDateIso":  "2018-06-09",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/Wu_Vg86LMYw",
@@ -229,12 +401,27 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "durationLabel":  "1:30:52",
         "durationSeconds":  5452,
         "descriptionShort":  "A daytime walk in Amalfi, Italy.",
-        "descriptionLong":  "",
+        "descriptionLong":  "A caption-free 4K daytime walking tour of Amalfi, Italy, filmed June 9, 2018. Same route as the captioned version — explores the pier, harbor, cathedral, streets, and scenic viewpoints toward Atrani.",
         "landmarks":  [
-
+                          "Amalfi Pier",
+                          "Harbor",
+                          "Beach",
+                          "Piazza Flavio Giola",
+                          "Piazza del Duomo",
+                          "Amalfi Cathedral",
+                          "Atrani"
                       ],
         "keywords":  [
-
+                         "Amalfi",
+                         "walking tour",
+                         "4K",
+                         "no captions",
+                         "pier",
+                         "harbor",
+                         "Amalfi Cathedral",
+                         "Atrani",
+                         "2018",
+                         "coastal town"
                      ],
         "status":  "ready",
         "thumbnailPath":  null,
@@ -250,6 +437,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Amalfi, Italy 4K Walking Tour (2018)",
         "slug":  "amalfi-day-walk-with-captions-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "waterfront",
+                       "beach",
+                       "coastal",
+                       "scenic-viewpoint"
+                   ],
         "filmedDateIso":  "2018-06-09",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/ougQYMEic3k",
@@ -259,12 +452,36 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "durationLabel":  "1:38:39",
         "durationSeconds":  5919,
         "descriptionShort":  "A daytime walk in Amalfi, Italy.",
-        "descriptionLong":  "",
+        "descriptionLong":  "A 4K daytime walking tour of Amalfi, Italy, filmed June 9, 2018 starting at the pier. Full route with captions: jetty, harbor, Piazza del Duomo, Amalfi Cathedral (interior \u0026 bronze door), scenic viewpoints, steps to Atrani, and return via the coast road.",
         "landmarks":  [
-
+                          "Amalfi Pier",
+                          "Harbor",
+                          "Ferry ticket office",
+                          "Beach",
+                          "Piazza Flavio Giola",
+                          "Piazza del Duomo",
+                          "Fountain of St. Andrew",
+                          "Amalfi Cathedral",
+                          "Cloister of Paradise",
+                          "Church of the Crucifix",
+                          "Crypt of Saint Andrew",
+                          "Atrani",
+                          "Cimitero Monumentale",
+                          "Piazza Umberto I",
+                          "Collegiate Santa Maria Maddalena"
                       ],
         "keywords":  [
-
+                         "Amalfi",
+                         "walking tour",
+                         "4K",
+                         "2018",
+                         "Amalfi Cathedral",
+                         "Piazza del Duomo",
+                         "Atrani",
+                         "pier",
+                         "harbor",
+                         "scenic viewpoints",
+                         "Cloister of Paradise"
                      ],
         "status":  "ready",
         "thumbnailPath":  null,
@@ -280,6 +497,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Amalfi, Italy 4K 360 Tour (2019)",
         "slug":  "amalfi-360-tour-2019",
         "videoType":  "360-tour",
+        "themes":  [
+                       "waterfront",
+                       "beach",
+                       "coastal"
+                   ],
         "filmedDateIso":  "2019-09-07",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/G4BrczBZAXY",
@@ -289,12 +511,28 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "durationLabel":  "0:33:36",
         "durationSeconds":  2016,
         "descriptionShort":  "A 360° tour in Amalfi, Italy.",
-        "descriptionLong":  "",
+        "descriptionLong":  "A 360° VR walking tour of Amalfi, filmed September 7, 2019 at 2:30 PM. Look in every direction while exploring the port (Porto Nuovo), beach views, bus stop, Piazza Duomo, Amalfi Cathedral, and the main street through the city center.",
         "landmarks":  [
-
+                          "Amalfi Pier (Porto Nuovo)",
+                          "Beach",
+                          "Amalfi Bus Stop",
+                          "Piazza Duomo",
+                          "Cathedral of Saint Andrew",
+                          "Via Lorenzo D’Amalfi",
+                          "Piazza dello Spirito Santo Fountain (Nativity Scene)",
+                          "Saint Andrew’s Fountain"
                       ],
         "keywords":  [
-
+                         "Amalfi",
+                         "360 tour",
+                         "VR",
+                         "walking tour",
+                         "4K",
+                         "port",
+                         "Piazza Duomo",
+                         "Amalfi Cathedral",
+                         "2019",
+                         "city center"
                      ],
         "status":  "ready",
         "thumbnailPath":  null,
@@ -310,6 +548,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Amalfi, Italy 4K Walking Tour (2020)",
         "slug":  "amalfi-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+                       "waterfront",
+                       "coastal"
+                   ],
         "filmedDateIso":  "2020-06-27",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/EJ5Ju8-t3jk",
@@ -319,12 +561,31 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "durationLabel":  "1:43:56",
         "durationSeconds":  6236,
         "descriptionShort":  "A daytime walk in Amalfi, Italy.",
-        "descriptionLong":  "",
+        "descriptionLong":  "An evening walking tour of Amalfi, Italy filmed on June 16, 2022 starting at 9:55 pm along the Amalfi Drive. The walk passes Marina Grande harbor, Piazza Flavio Gioia, Piazza Duomo, Amalfi Cathedral, Via Lorenzo, Piazza dei Dogi, the fountain La Fontana De Cape E Ciucci, and ends at the Ferry Terminal.",
         "landmarks":  [
-
+                          "Amalfi Drive",
+                          "Marina Grande",
+                          "Piazza Flavio Gioia",
+                          "Piazza Duomo",
+                          "Amalfi Cathedral",
+                          "Via Lorenzo",
+                          "Piazza dei Dogi",
+                          "La Fontana De Cape E Ciucci",
+                          "Ferry Terminal"
                       ],
         "keywords":  [
-
+                         "Amalfi",
+                         "evening walk",
+                         "summer nights",
+                         "4K60fps",
+                         "Amalfi Drive",
+                         "Marina Grande",
+                         "Piazza Duomo",
+                         "Amalfi Cathedral",
+                         "Piazza Flavio Gioia",
+                         "Via Lorenzo",
+                         "ferry terminal",
+                         "coastal town"
                      ],
         "status":  "ready",
         "thumbnailPath":  null,
@@ -340,6 +601,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Amalfi, Italy 4K Valle dell Ferreire Hike (2022)",
         "slug":  "amalfi-hike-2022",
         "videoType":  "hike",
+        "themes":  [
+                       "coastal",
+                       "mountain"
+                   ],
         "filmedDateIso":  "2022-01-16",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/BzI4brnBuM8",
@@ -349,12 +614,24 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "durationLabel":  "2:54:31",
         "durationSeconds":  10471,
         "descriptionShort":  "A hike in Amalfi, Italy.",
-        "descriptionLong":  "",
+        "descriptionLong":  "A 4K hike along Valle delle Ferriere (Valley of the Mills) near Amalfi, filmed January 16, 2022. The trail follows the river through lush vegetation, past historic paper mills and waterfalls in the mountainous hinterland of the Amalfi Coast.",
         "landmarks":  [
-
+                          "Valle delle Ferriere",
+                          "Valley of the Mills",
+                          "historic paper mills",
+                          "waterfalls",
+                          "Amalfi hinterland"
                       ],
         "keywords":  [
-
+                         "Amalfi",
+                         "hike",
+                         "Valle delle Ferriere",
+                         "Valley of the Mills",
+                         "4K",
+                         "waterfall",
+                         "paper mills",
+                         "nature trail",
+                         "Amalfi Coast hinterland"
                      ],
         "status":  "ready",
         "thumbnailPath":  null,
@@ -370,6 +647,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Amalfi, Italy 4K Evening Tour (2022)",
         "slug":  "amalfi-evening-walk-2022",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2022-06-16",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/JoRjptaKCIA",
@@ -400,6 +680,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Amalfi, Italy 4K Walking Tour (2022)",
         "slug":  "amalfi-day-walk-2022",
         "videoType":  "day-walk",
+        "themes":  [
+                       "waterfront",
+                       "coastal",
+                       "scenic-viewpoint"
+                   ],
         "filmedDateIso":  "2022-07-30",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/U-Q27n2zzKY",
@@ -409,12 +694,24 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "durationLabel":  "2:40:10",
         "durationSeconds":  9610,
         "descriptionShort":  "A daytime walk in Amalfi, Italy.",
-        "descriptionLong":  "",
+        "descriptionLong":  "A full daytime walking tour of Amalfi, Italy filmed July 30, 2022. The route covers the main streets, squares, cathedral area, harbor views, and scenic coastal spots in the heart of the Amalfi Coast.",
         "landmarks":  [
-
+                          "Amalfi Cathedral area",
+                          "Piazza Duomo",
+                          "harbor",
+                          "main streets",
+                          "coastal viewpoints"
                       ],
         "keywords":  [
-
+                         "Amalfi",
+                         "walking tour",
+                         "4K",
+                         "daytime",
+                         "Amalfi Coast",
+                         "Piazza Duomo",
+                         "cathedral",
+                         "harbor",
+                         "coastal town"
                      ],
         "status":  "ready",
         "thumbnailPath":  null,
@@ -430,6 +727,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Amalfi, Italy 4K Walking Tour (2025)",
         "slug":  "amalfi-day-walk-2025",
         "videoType":  "day-walk",
+        "themes":  [
+                       "historic-center",
+                       "coastal"
+                   ],
         "filmedDateIso":  "2025-06-13",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/oQWeQbw8taw",
@@ -439,12 +740,20 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "durationLabel":  "1:58:45",
         "durationSeconds":  7125,
         "descriptionShort":  "A daytime walk in Amalfi, Italy.",
-        "descriptionLong":  "",
+        "descriptionLong":  "A 4K daytime walking tour of Amalfi filmed on June 13, 2025. The walk explores the historic center, streets, squares, and coastal views of this iconic Amalfi Coast town.",
         "landmarks":  [
-
+                          "Amalfi historic center",
+                          "main squares",
+                          "coastal streets"
                       ],
         "keywords":  [
-
+                         "Amalfi",
+                         "walking tour",
+                         "4K",
+                         "2025",
+                         "Amalfi Coast",
+                         "historic center",
+                         "daytime walk"
                      ],
         "status":  "ready",
         "thumbnailPath":  null,
@@ -460,6 +769,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Amalfi, Italy 4K Driving to Amalfi Timelapse",
         "slug":  "amalfi-drive-tour-timelapse-2022",
         "videoType":  "drive-tour",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2022-01-16",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/mQMJc3evtZ8",
@@ -469,12 +781,18 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "durationLabel":  "0:06:24",
         "durationSeconds":  384,
         "descriptionShort":  "A driving tour in Amalfi, Italy.",
-        "descriptionLong":  "",
+        "descriptionLong":  "A short 4K timelapse driving tour approaching Amalfi, filmed January 16, 2022. The video shows the scenic road descent with coastal and town views.",
         "landmarks":  [
-
+                          "Approach road to Amalfi",
+                          "Amalfi town views"
                       ],
         "keywords":  [
-
+                         "Amalfi",
+                         "driving tour",
+                         "timelapse",
+                         "4K",
+                         "coastal road",
+                         "approach to Amalfi"
                      ],
         "status":  "ready",
         "thumbnailPath":  null,
@@ -490,6 +808,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Amalfi, Italy 4K Bike Tour",
         "slug":  "amalfi-bike-tour-2022",
         "videoType":  "bike-tour",
+        "themes":  [
+                       "historic-center",
+                       "coastal"
+                   ],
         "filmedDateIso":  "2022-01-16",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/UCxXQkTDbTc",
@@ -499,12 +821,19 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "durationLabel":  "0:49:43",
         "durationSeconds":  2983,
         "descriptionShort":  "A bike tour in Amalfi, Italy.",
-        "descriptionLong":  "",
+        "descriptionLong":  "A 4K bike tour starting in Amalfi and ending high up in the hills in the town of Pontone, filmed January 16, 2022. The ride explores the compact historic center and surrounding roads.",
         "landmarks":  [
-
+                          "Amalfi streets",
+                          "historic center",
+                          "Pontone"
                       ],
         "keywords":  [
-
+                         "Amalfi",
+                         "bike tour",
+                         "4K",
+                         "cycling",
+                         "Amalfi Coast",
+                         "town streets"
                      ],
         "status":  "ready",
         "thumbnailPath":  null,
@@ -520,6 +849,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Amalfi, Italy 4K Valle delle Ferriere HIke",
         "slug":  "amalfi-hike-2021",
         "videoType":  "hike",
+        "themes":  [
+                       "coastal",
+                       "mountain"
+                   ],
         "filmedDateIso":  "2021-11-20",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/ujv7m11ooMY",
@@ -529,12 +862,21 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "durationLabel":  "2:28:36",
         "durationSeconds":  8916,
         "descriptionShort":  "A hike in Amalfi, Italy.",
-        "descriptionLong":  "",
+        "descriptionLong":  "A 4K hike in Valle delle Ferriere near Amalfi, filmed November 20, 2021. The trail winds through the green valley with historic mills, river, and waterfalls.",
         "landmarks":  [
-
+                          "Valle delle Ferriere",
+                          "historic paper mills",
+                          "river",
+                          "waterfalls"
                       ],
         "keywords":  [
-
+                         "Amalfi",
+                         "hike",
+                         "Valle delle Ferriere",
+                         "Valley of the Mills",
+                         "waterfalls",
+                         "nature",
+                         "4K"
                      ],
         "status":  "ready",
         "thumbnailPath":  null,
@@ -550,6 +892,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Amalfi, Italy 4K Driving to Amalfi",
         "slug":  "amalfi-drive-tour-2022",
         "videoType":  "drive-tour",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2022-03-13",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/HS1nT5OHLls",
@@ -580,6 +925,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Aqueduct of Vanvitelli, Italy Drone Tour",
         "slug":  "aqueduct-of-vanvitelli-drone-tour",
         "videoType":  "drone-tour",
+        "themes":  [
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2019-10-08",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/CyiMlcRKE9w",
@@ -610,6 +958,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Atrani, Italy 4K Walking Tour (2025)",
         "slug":  "atrani-day-walk-2025",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2025-06-13",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/zuS2SjuxlDI",
@@ -640,6 +991,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Aversa, Italy 4K Walking Tour (2018)",
         "slug":  "aversa-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2018-01-28",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/C99feskJLS8",
@@ -670,6 +1024,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Aversa, Italy 4K Night Tour (2018)",
         "slug":  "aversa-evening-walk-2018",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2018-01-27",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/DXVgSjUVIwE",
@@ -700,6 +1057,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Aversa, Italy 4K Night Walk (2022)",
         "slug":  "aversa-evening-walk-2022",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2022-04-23",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/pCTfjxZaPk0",
@@ -730,6 +1090,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Aversa, Italy 4K Bike Tour with Osmo Pocket",
         "slug":  "aversa-bike-tour-osmo-pocket-2020",
         "videoType":  "bike-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-05-09",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/87SemGdN7jA",
@@ -760,6 +1123,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Aversa, Italy 4K Bike Tour with Gopro",
         "slug":  "aversa-bike-tour-gopro-2020",
         "videoType":  "bike-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-05-09",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/JrQ4npcERM4",
@@ -790,6 +1156,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Baia, Italy 4K Roman Baths Walking Tour (2018)",
         "slug":  "baia-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site"
+                   ],
         "filmedDateIso":  "2018-09-01",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/DsXUObRRMKg",
@@ -820,6 +1191,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Baia, Italy 4K Roman Baths Walking Tour (2022) with Sony",
         "slug":  "baia-day-walk-sony-2022",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site"
+                   ],
         "filmedDateIso":  "2022-04-28",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/qYU5-1nz6O0",
@@ -850,6 +1226,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Baia, Italy 4K Roman Baths Walking Tour (2022) with Gopro",
         "slug":  "baia-day-walk-gopro-2022",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site"
+                   ],
         "filmedDateIso":  "2022-04-28",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/IOKgsM83RPQ",
@@ -880,6 +1261,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Baia, Italy 4K Family Video Walking Tour",
         "slug":  "baia-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2017-01-01",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/ZRGB7Udliz4",
@@ -910,6 +1294,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Bocca della Selva, Italy 4K Drone Tour",
         "slug":  "bocca-della-selva-drone-tour",
         "videoType":  "drone-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/ZzXvCixymFQ",
@@ -940,6 +1327,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Bike Tour (2020)",
         "slug":  "capri-bike-tour-2020",
         "videoType":  "bike-tour",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2020-06-11",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/qzYx6vcs-2o",
@@ -970,6 +1360,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Night Tour (2021)",
         "slug":  "capri-evening-walk-2021",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2021-06-26",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/Mtdo0QGj_N0",
@@ -1000,6 +1393,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Walking Tour (2021)",
         "slug":  "capri-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2021-06-26",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/32yElDRWJPQ",
@@ -1030,6 +1426,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Walking Tour (2022)",
         "slug":  "capri-day-walk-2022",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2022-06-18",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/fk8qFVgslAM",
@@ -1060,6 +1459,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Monte Solaro Hike",
         "slug":  "capri-hike-2018",
         "videoType":  "hike",
+        "themes":  [
+                       "island",
+                       "mountain"
+                   ],
         "filmedDateIso":  "2018-10-14",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/u1DXzDTkysg",
@@ -1090,6 +1493,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Certosa di San Giacomo Drone Tour",
         "slug":  "capri-certosa-di-san-giacomo-drone-tour",
         "videoType":  "drone-tour",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/UjOn44iHhQc",
@@ -1120,6 +1526,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Drone Tour",
         "slug":  "capri-drone-tour",
         "videoType":  "drone-tour",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/_yq9REtm9TQ",
@@ -1150,6 +1559,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Pizzolungo Trail \u0026 Natural Arch Walking Tour (2018)",
         "slug":  "capri-pizzolungo-trail-natural-arch-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island",
+                       "mountain"
+                   ],
         "filmedDateIso":  "2018-10-12",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/kv0CwdSGb_A",
@@ -1180,6 +1593,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Marina Grande Walking Tour (2018)",
         "slug":  "capri-marina-grande-walk-captions-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "waterfront",
+                       "island"
+                   ],
         "filmedDateIso":  "2018-10-13",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/T0XVmsd7Z7A",
@@ -1210,6 +1627,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Marina Grande (No Captions) Walking Tour",
         "slug":  "capri-marina-grande-walk-no-captions-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "waterfront",
+                       "island"
+                   ],
         "filmedDateIso":  "2018-10-13",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/4iw1noVQMsE",
@@ -1240,6 +1661,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K La Piazzetta \u0026 Capri Town Walking Tour (2018)",
         "slug":  "capri-la-piazzetta-town-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-10-13",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/0HQTXioQkfU",
@@ -1270,6 +1694,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K La Piazzetta \u0026 Capri Town (No Captions) Walking Tour",
         "slug":  "capri-la-piazzetta-town-no-captions-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-10-13",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/QDmID2VT9ZA",
@@ -1300,6 +1727,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Faraglioni Rocks \u0026 Pizzolungo Trail Walking Tour",
         "slug":  "capri-faraglioni-rocks-pizzolungo-trail-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island",
+                       "mountain"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/c6O0DAE3NMo",
@@ -1330,6 +1761,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Belvedere Tragara Walking Tour",
         "slug":  "capri-belvedere-tragara-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island",
+                       "scenic-viewpoint"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/tS1_DsVeGxU",
@@ -1360,6 +1795,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Gardens of Augustus Drone Tour",
         "slug":  "capri-gardens-of-augustus-drone-tour",
         "videoType":  "drone-tour",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/PWV7smXgqK0",
@@ -1390,6 +1828,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Gardens of Augustus \u0026 Via Krupp Views Walking Tour (2018)",
         "slug":  "capri-gardens-of-augustus-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-10-14",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/hJG9aZuAkNU",
@@ -1420,6 +1861,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Villa Jovis Tour Walking Tour (2018)",
         "slug":  "capri-villa-jovis-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-10-12",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/JMGL5yRDXp4",
@@ -1450,6 +1894,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Villa Jovis Drone Tour",
         "slug":  "capri-villa-jovis-drone-tour",
         "videoType":  "drone-tour",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/HYye0qukHHE",
@@ -1480,6 +1927,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Via Tiberio Walking Tour (2018)",
         "slug":  "capri-via-tiberio-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-10-13",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/t9STwl3BuZk",
@@ -1510,6 +1960,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Anacapri\u0027s Historic Center Walking Tour (2019)",
         "slug":  "capri-anacapri-historic-center-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+                       "historic-center",
+                       "island"
+                   ],
         "filmedDateIso":  "2019-06-08",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/zaEpFAcjkxo",
@@ -1540,6 +1994,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Phoenician Steps Walking Tour (2018)",
         "slug":  "capri-phoenician-steps-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-06-08",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/Qc-5lXbeEqs",
@@ -1570,6 +2027,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Phoenician Steps Drone Tour",
         "slug":  "capri-phoenician-steps-drone-tour",
         "videoType":  "drone-tour",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/iebbkMSJVe4",
@@ -1600,6 +2060,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Villa San Michele Walking Tour (2019)",
         "slug":  "capri-villa-san-michele-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2019-06-08",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/pmgDn7s6oDQ",
@@ -1630,6 +2093,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Monte Solaro Chairlift Ride \u0026 Summit Walking Tour (2018)",
         "slug":  "capri-monte-solaro-chairlift-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island",
+                       "mountain"
+                   ],
         "filmedDateIso":  "2018-10-14",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/o4W6s9XJlDQ",
@@ -1660,6 +2127,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Monte Solaro Hike to Capri Town (2018)",
         "slug":  "capri-monte-solaro-hike-2018",
         "videoType":  "hike",
+        "themes":  [
+                       "island",
+                       "mountain"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/iLBzilHVNxo",
@@ -1690,6 +2161,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Midnight Walking Tour (2022)",
         "slug":  "capri-evening-walk-2022",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2022-06-19",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/PFPX2p4CmyY",
@@ -1720,6 +2194,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Evening Walk (2023)",
         "slug":  "capri-evening-walk-2023",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2023-07-19",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/wCbICbPupj8",
@@ -1750,6 +2227,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Via Krupp Walking Tour (2023)",
         "slug":  "capri-via-krupp-walk-2023",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2023-07-20",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/cpLi3T62zfs",
@@ -1780,6 +2260,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K City Walking Tour (2023)",
         "slug":  "capri-day-walk-2023",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2023-07-20",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/hb_AiaCL1a8",
@@ -1810,6 +2293,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Anacapri Walking Tour (2024)",
         "slug":  "capri-anacapri-day-walk-2024",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2024-09-20",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/Qr75PFnVOak",
@@ -1840,6 +2326,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K Evening Walk (2024)",
         "slug":  "capri-evening-walk-2024",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2024-09-21",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/ACtxlA0az8A",
@@ -1870,6 +2359,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capri, Italy 4K 360 Tour",
         "slug":  "capri-360-tour-2024",
         "videoType":  "360-tour",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2024-09-22",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/yl_TLAXgT9c",
@@ -1900,6 +2392,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capua, Italy 4K Roman Amphitheater Walking Tour (2017)",
         "slug":  "capua-amphitheater-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "amphitheater",
+                       "archaeological-site"
+                   ],
         "filmedDateIso":  "2017-09-26",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/5HvLJmV-Dw4",
@@ -1930,6 +2428,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capua, Italy 4K Roman Amphitheater Walking Tour (2025)",
         "slug":  "capua-amphitheater-day-walk-2025",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "amphitheater",
+                       "archaeological-site"
+                   ],
         "filmedDateIso":  "2025-06-06",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/TS8QJG2TqNE",
@@ -1960,6 +2464,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Capua, Italy 4K Driving Tour",
         "slug":  "capri-drive-tour",
         "videoType":  "drive-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/I6k7XVLzwA8",
@@ -1990,6 +2497,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Caserta, Italy 4K Royal Palace Tour Walking Tour (2017)",
         "slug":  "caserta-royal-palace-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/IyVkAcwZ8fE",
@@ -2020,6 +2530,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Caserta Vecchia, Italy 4K Walking Tour (2021)",
         "slug":  "caserta-vecchia-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2021-05-16",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/4UutcBV7TK4",
@@ -2050,6 +2563,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Comola Grande, Drone Tour (2019)",
         "slug":  "comola-grande-drone-tour",
         "videoType":  "drone-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/YWRIV5dqx-Q",
@@ -2080,6 +2596,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ercolano, Italy 4K Outdoor Market Walking Tour (2019)",
         "slug":  "ercolano-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2019-11-23",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/AiCtaSNuzxw",
@@ -2110,6 +2629,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Herculaneum, Italy 4K 360 Tour (2020)",
         "slug":  "herculaneum-360-tour-2020",
         "videoType":  "360-tour",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2020-02-22",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/_Y277FddmD4",
@@ -2140,6 +2665,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Herculaneum, Italy 4K Roman Ruins Walking Tour (2018)",
         "slug":  "herculaneum-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2018-01-06",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/eXkpFnF7ovY",
@@ -2170,6 +2701,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Herculaneum, Italy 4K Roman Ruins Walking Tour (2025)",
         "slug":  "herculaneum-day-walk-2025",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2025-06-06",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/Y__fRvziRko",
@@ -2200,6 +2737,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ischia, Italy 4K Ischia Porto Walking Tour (2018)",
         "slug":  "ischia-porto-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-09-15",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/6Cym0DxM2xM",
@@ -2230,6 +2770,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ischia, Italy 4K Beaches and Historic Center Walking Tour (2018)",
         "slug":  "ischia-beaches-historic-center-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "historic-center",
+                       "beach",
+                       "island"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/WGnrP5QctkI",
@@ -2260,6 +2805,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ischia, Italy 4K Aragonese Castle Walking Tour",
         "slug":  "ischia-aragonese-castle-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-09-15",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/16T6Do7XXsQ",
@@ -2290,6 +2838,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ischia, Italy 4K Bike Tour",
         "slug":  "ischia-bike-tour-2025",
         "videoType":  "bike-tour",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2025-06-11",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/oxKTL_SOP_w",
@@ -2320,6 +2871,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ischia, Italy 4K Ischia Ponte Walking Tour",
         "slug":  "ischia-ponte-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-09-15",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/haUtQc2yPdk",
@@ -2350,6 +2904,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ischia, Italy 4K Ischia Ponte \u0026 Aragonese Castle Walking Tour (2025)",
         "slug":  "ischia-ponte-aragonese-castle-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2025-06-10",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/wysqLhRlxK4",
@@ -2380,6 +2937,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ischia, Italy 4K Corso Vittoria Colonna Walking Tour",
         "slug":  "ischia-corso-vittoria-colonna-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-09-15",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/t4Ootyavh0A",
@@ -2410,6 +2970,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ischia, Italy 4K Sant\u0027Angelo Walking Tour (2018)",
         "slug":  "ischia-sant-angelo-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-09-29",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/J4ZGR3FfH2c",
@@ -2440,6 +3003,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ischia, Italy 4K Lacco Ameno Walking Tour (2025)",
         "slug":  "ischia-lacco-ameno-day-walk-2025",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2025-06-14",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/0JfcqwOHtIY",
@@ -2470,6 +3036,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ischia, Italy 4K Evening Walk (2025)",
         "slug":  "ischia-evening-walk-2025",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2025-06-10",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/B33mdu8CFB4",
@@ -2500,6 +3069,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Limatola Castle, Italy 4K Christmas Walking Tour (2019)",
         "slug":  "limatola-castle-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+                       "christmas"
+                   ],
         "filmedDateIso":  "2019-12-08",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/3bL2f6NRbYA",
@@ -2530,6 +3102,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Maiori, Italy 4K Walking Tour (2018)",
         "slug":  "maiori-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2018-06-09",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/riHh_OKdekU",
@@ -2560,6 +3135,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Mt. Vesuvius, Italy 4K Summit Hike (2017)",
         "slug":  "mt-vesuvius-hike-2017",
         "videoType":  "hike",
+        "themes":  [
+                       "mountain"
+                   ],
         "filmedDateIso":  "2017-08-14",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/SQO2ATOPDZc",
@@ -2590,6 +3168,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Mt. Vesuvius, Italy 4K Summit Hike (2022)",
         "slug":  "mt-vesuvius-hike-2022",
         "videoType":  "hike",
+        "themes":  [
+                       "mountain"
+                   ],
         "filmedDateIso":  "2022-08-01",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/AvIYmRzwujw",
@@ -2620,6 +3201,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Patron Walking Tour (2019)",
         "slug":  "naples-patron-via-chiaia-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2019-11-09",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/20OZX0owxjU",
@@ -2650,6 +3234,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Walking Tour (2017)",
         "slug":  "naples-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2017-02-11",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/ljudH28fomA",
@@ -2680,6 +3267,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Spanish Quarter Walking Tour (2017)",
         "slug":  "naples-quartieri-spagnoli-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2017-07-02",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/iY4xoXlrTc8",
@@ -2710,6 +3300,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Evening Walk (2025)",
         "slug":  "naples-evening-walk-2025",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2025-06-07",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/Cv1zIRhxvHU",
@@ -2740,6 +3333,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K City Walking Tour (2023)",
         "slug":  "naples-day-walk-2023",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2023-07-30",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/990AqbKb18c",
@@ -2770,6 +3366,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Christmas Alley \u0026 Historic Center Walking Tour (2020)",
         "slug":  "naples-historic-center-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+                       "historic-center",
+                       "christmas"
+                   ],
         "filmedDateIso":  "2020-12-22",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/5nuZ-0s21Ho",
@@ -2800,6 +3400,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Christmas Markets Walking Tour (2018)",
         "slug":  "naples-christmas-market-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "food-market",
+                       "christmas",
+                       "christmas-market"
+                   ],
         "filmedDateIso":  "2018-12-08",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/DFV7o07zsGQ",
@@ -2830,6 +3435,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Evening Walk (2020)",
         "slug":  "naples-evening-walk-2020",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-12-20",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/iQ-8iiJaM0Y",
@@ -2860,6 +3468,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Christmas Markets Walking Tour (2021)",
         "slug":  "naples-christmas-market-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+                       "food-market",
+                       "christmas",
+                       "christmas-market"
+                   ],
         "filmedDateIso":  "2021-12-19",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/QjjBNU88jtk",
@@ -2890,6 +3503,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Evening Walk (2019)",
         "slug":  "naples-evening-walk-2019",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2019-12-14",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/ekvwB-pMzV4",
@@ -2920,6 +3536,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Still Scenes Tour (2021)",
         "slug":  "naples-still-scenes-2021",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2021-02-06",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/SQGnqAysGpk",
@@ -2950,6 +3569,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Castel dell\u0027Ovo Tour Walking Tour (2019)",
         "slug":  "naples-castel-dell-ovo-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2019-07-01",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/Af8lGDOR7FU",
@@ -2980,6 +3602,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Night Tour (2022)",
         "slug":  "naples-evening-walk-2022",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2022-06-03",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/UYO3nLa2zU8",
@@ -3010,6 +3635,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Pignasecca Market Walking Tour (2019)",
         "slug":  "naples-pignasecca-market-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+                       "food-market"
+                   ],
         "filmedDateIso":  "2019-10-12",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/J2U9qbk1l8M",
@@ -3040,6 +3668,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Waterfront Walking Tour (2020)",
         "slug":  "naples-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+                       "waterfront"
+                   ],
         "filmedDateIso":  "2020-02-16",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/GK8VQPRnA1s",
@@ -3070,6 +3701,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Fontanelle Cemetery Walking Tour (2019)",
         "slug":  "naples-fontanelle-cemetery-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2019-10-29",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/xYmaWdxi_Zs",
@@ -3100,6 +3734,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Historic Center Walking Tour (2019)",
         "slug":  "naples-historic-center-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+                       "historic-center"
+                   ],
         "filmedDateIso":  "2019-09-21",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/c5Ha5LUiNZY",
@@ -3130,6 +3767,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K 360 VR Tour (2019)",
         "slug":  "naples-360-tour-2019",
         "videoType":  "360-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2019-09-21",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/jJk5e2Gsyy4",
@@ -3160,6 +3800,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Fish Market 360 VR Tour (2019)",
         "slug":  "naples-fish-market-360-tour-2019",
         "videoType":  "360-tour",
+        "themes":  [
+                       "food-market"
+                   ],
         "filmedDateIso":  "2019-09-07",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/RRPY-2AXHlI",
@@ -3190,6 +3833,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Fish Market Tour Walking Tour (2019)",
         "slug":  "naples-fish-market-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+                       "food-market"
+                   ],
         "filmedDateIso":  "2019-09-21",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/eaet6G10FDo",
@@ -3220,6 +3866,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Bike Tour (2020)",
         "slug":  "naples-bike-tour-2020",
         "videoType":  "bike-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-05-23",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/IHXZnU2bmc8",
@@ -3250,6 +3899,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Evening Walk (2023)",
         "slug":  "naples-evening-walk-2023",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2023-07-21",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/n3WsdCCjiNo",
@@ -3280,6 +3932,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Waterfront Walking Tour (2019)",
         "slug":  "naples-waterfront-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+                       "waterfront"
+                   ],
         "filmedDateIso":  "2019-12-12",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/qPZ2zFErzdE",
@@ -3310,6 +3965,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Castel Nuovo Walking Tour (2019)",
         "slug":  "naples-castel-nuovo-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2019-10-27",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/o-LJamTt1kQ",
@@ -3340,6 +3998,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K My Favorite Spot Walking Tour",
         "slug":  "naples-favorite-spot-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2019-07-01",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/a7xQwwG0Tnk",
@@ -3370,6 +4031,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Via Vergini Walking Tour",
         "slug":  "naples-via-vergini-day-walk-2022",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2022-04-16",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/mF1NTzDIfAI",
@@ -3400,6 +4064,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Naples, Italy 4K Via dei Tribunali Walking Tour",
         "slug":  "naples-via-dei-tribunali-day-walk-2022",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2022-04-16",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/FmdDmwEoG50",
@@ -3430,6 +4097,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Paestum, Italy 4K Greek Ruins Walking Tour (2019)",
         "slug":  "paestum-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2019-03-23",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/D9Fod_S9Ruo",
@@ -3460,6 +4132,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Paestum, Italy 4K Greek Ruins Walking Tour (2017)",
         "slug":  "paestum-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2017-08-29",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/-jfLIQa2IYI",
@@ -3490,6 +4167,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Path of the Gods, Italy 4K East to West Hike (2017)",
         "slug":  "path-of-the-gods-hike-east-to-west-hike-2017",
         "videoType":  "hike",
+        "themes":  [
+                       "mountain"
+                   ],
         "filmedDateIso":  "2017-07-01",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/Ka0sobyX2nA",
@@ -3520,6 +4200,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Path of the Gods, Italy 4K West to East Hike (2017)",
         "slug":  "path-of-the-gods-hike-west-to-east-hike-2017",
         "videoType":  "hike",
+        "themes":  [
+                       "mountain"
+                   ],
         "filmedDateIso":  "2017-07-01",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/ZkLXPYrgGtg",
@@ -3550,6 +4233,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Path of the Gods, Italy 4K Hike (2019)",
         "slug":  "path-of-the-gods-hike-2019",
         "videoType":  "hike",
+        "themes":  [
+                       "mountain"
+                   ],
         "filmedDateIso":  "2019-06-27",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/b0zbifs2gRM",
@@ -3580,6 +4266,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Pompeii, Italy 4K Walking Tour (2017)",
         "slug":  "pompeii-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/WibCDj_H2xY",
@@ -3610,6 +4302,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Pompeii, Italy 4K 360 VR Tour (2020)",
         "slug":  "pompeii-360-tour-2020",
         "videoType":  "360-tour",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2020-02-08",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/d4flx14q5OE",
@@ -3640,6 +4338,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Pompeii, Italy 4K Bread Oven 360 (2020)",
         "slug":  "pompeii-bread-oven-360-tour-2020",
         "videoType":  "360-tour",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/8xpRFpdznvk",
@@ -3670,6 +4374,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Pompeii, Italy 4K Walking Tour (Part 1) (2017)",
         "slug":  "pompeii-part-1-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2017-11-04",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/gaJPcKLyXLQ",
@@ -3700,6 +4410,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Pompeii, Italy 4K Walking Tour (Part 2)",
         "slug":  "pompeii-part-2-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/SoXIbF4etSw",
@@ -3730,6 +4446,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Pompeii, Italy 4K Walking Tour (Part 3) (2017)",
         "slug":  "pompeii-part-3-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2017-11-04",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/tMvnWHvHLrs",
@@ -3760,6 +4482,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Pompeii, Italy 4K Walking Tour (Part 4)",
         "slug":  "pompeii-part-4-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/9gfhCXa7E30",
@@ -3790,6 +4518,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Pompeii, Italy 4K Walking Tour (Part 5) (2017)",
         "slug":  "pompeii-part-5-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2017-11-04",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/KJF_0-ihALs",
@@ -3820,6 +4554,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Pompeii, Italy 4K Walking Tour (Part 6) (2017)",
         "slug":  "pompeii-part-6-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2017-11-04",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/91kdMglbv78",
@@ -3850,6 +4590,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Pompeii, Italy 4K Walking Tour (2020)",
         "slug":  "pompeii-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2020-02-08",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/sUYJ8LbF1Ys",
@@ -3880,6 +4626,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Pompeii, Italy 4K Walking Tour (2021)",
         "slug":  "pompeii-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2021-02-19",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/9L1jrC2-BTE",
@@ -3910,6 +4662,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Positano, Italy 4K Walking Tour (2018)",
         "slug":  "positano-day-walk-may-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2018-05-12",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/uj2OCe-4XC0",
@@ -3940,6 +4695,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Positano, Italy 4K Walking Tour (2018)",
         "slug":  "positano-day-walk-september-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2018-09-22",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/lpo62RjldVA",
@@ -3970,6 +4728,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Positano, Italy 4K Walking Tour (2019)",
         "slug":  "positano-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2019-09-14",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/lPtzAPFsdls",
@@ -4000,6 +4761,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Positano, Italy 4K 360 Tour (2019)",
         "slug":  "positano-360-tour-2019",
         "videoType":  "360-tour",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2019-09-14",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/FZL0ynym3DI",
@@ -4030,6 +4794,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Positano, Italy 4K Walking Tour (2020)",
         "slug":  "positano-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2020-09-12",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/5WICzbKzc-8",
@@ -4060,6 +4827,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Positano, Italy 4K Night Tour (2021)",
         "slug":  "positano-evening-walk-2021",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2021-06-13",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/gao2K_RfK8E",
@@ -4090,6 +4860,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Positano, Italy 4K Walking Tour (2022)",
         "slug":  "positano-day-walk-2022",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2022-06-17",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/7EqByO1NDBE",
@@ -4120,6 +4893,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Positano, Italy 4K Evening Walk (2022)",
         "slug":  "positano-evening-walk-2022",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2022-06-25",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/KcYDl5mB9rs",
@@ -4150,6 +4926,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Positano, Italy 4K Morning Walk Walking Tour (2023)",
         "slug":  "positano-day-walk-2023",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2023-07-03",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/TZVDBq_UAr0",
@@ -4180,6 +4959,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Positano, Italy 4K Evening Walk (2023)",
         "slug":  "positano-evening-walk-july-1-2023",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2023-07-01",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/aQN3cwxhtpg",
@@ -4210,6 +4992,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Positano, Italy 4K Evening Walk (2023)",
         "slug":  "positano-evening-walk-july-2-2023",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2023-07-02",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/flDVOPfrVjE",
@@ -4240,6 +5025,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Positano, Italy 4K Drone Tour",
         "slug":  "positano-drone-tour",
         "videoType":  "drone-tour",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/-9WtKS_FRUg",
@@ -4270,6 +5058,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Pozzuoli, Italy 4K Walking Tour (2017)",
         "slug":  "pozzuoli-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2017-09-30",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/yb1a5bXSlTo",
@@ -4300,6 +5091,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Pozzuoli, Italy 4K Roman Amphitheater Walking Tour (2017)",
         "slug":  "pozzuoli-anfiteatro-flavio-neroniano-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "amphitheater",
+                       "archaeological-site"
+                   ],
         "filmedDateIso":  "2017-09-09",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/JUjvzHBUoGc",
@@ -4330,6 +5127,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Pozzuoli, Italy 4K Lago d\u0027Averno (Lake Avernus) Walking Tour (2020)",
         "slug":  "pozzuoli-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2020-05-22",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/_58yvUyiYxc",
@@ -4360,6 +5160,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Pozzuoli, Italy 4K Driving Tour",
         "slug":  "pozzuoli-drive-tour-2021",
         "videoType":  "drive-tour",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2021-03-30",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/yiexGt3P-XM",
@@ -4390,6 +5193,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Pozzuoli, Italy 4K Drone Tour",
         "slug":  "pozzuoli-drone-tour",
         "videoType":  "drone-tour",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/vxkaEEUV1xI",
@@ -4420,6 +5226,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Procida, Italy 4K Bike Tour (2020)",
         "slug":  "procida-bike-tour-2020",
         "videoType":  "bike-tour",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2020-05-31",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/_gcrpo8qBx8",
@@ -4450,6 +5259,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Procida, Italy 4K Island Walking Tour (2017)",
         "slug":  "procida-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2017-08-17",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/YklUi-ux6IA",
@@ -4480,6 +5292,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Procida, Italy 4K Island Walking Tour (2019)",
         "slug":  "procida-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2019-06-23",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/3ewiolpn-JQ",
@@ -4510,6 +5325,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Procida, Italy 4K Walking Tour (2023)",
         "slug":  "procida-day-walk-2023",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2023-07-18",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/6_QA7lBJhiE",
@@ -4540,6 +5358,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ravello, Italy 4K Walking Tour (2019)",
         "slug":  "ravello-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2019-10-19",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/EGugufam8p4",
@@ -4570,6 +5391,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ravello, Italy 4K Walking Tour (2025)",
         "slug":  "ravello-day-walk-2025",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2025-06-09",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/c4LaDLiPb6c",
@@ -4600,6 +5424,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Sant\u0027Agata de Goti, Italy 4K Walking Tour (2017)",
         "slug":  "sant-agata-de-goti-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2017-06-10",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/ba7riTFW8d8",
@@ -4630,6 +5457,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Sorrento, Italy 4K Walking Tour (2018)",
         "slug":  "sorrento-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2018-05-19",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/7iwc-T0ZR0k",
@@ -4660,6 +5490,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Sorrento, Italy 4K Walking Tour (2018) with Captions",
         "slug":  "sorrento-day-walk-with-captions-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2018-05-19",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/TzjxFCqT-40",
@@ -4690,6 +5523,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Sorrento, Italy 4K Walking Tour (2020)",
         "slug":  "sorrento-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2020-07-12",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/WPIuF0-evxo",
@@ -4720,6 +5556,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Sorrento, Italy 4K Evening Walk (July 2020)",
         "slug":  "sorrento-evening-walk-july-2020",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2020-07-12",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/jd5xjDJHsI8",
@@ -4750,6 +5589,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Sorrento, Italy 4K Evening Walk (September 2020)",
         "slug":  "sorrento-evening-walk-september-2020",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2020-09-19",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/DbEtuqqgWLA",
@@ -4780,6 +5622,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Sorrento, Italy 4K Christmas Walking Tour (2021)",
         "slug":  "sorrento-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+                       "christmas"
+                   ],
         "filmedDateIso":  "2021-12-11",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/rbULD4pmlQs",
@@ -4810,6 +5655,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Sorrento, Italy 4K Evening Walk (2022)",
         "slug":  "sorrento-evening-walk-2022",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2022-06-15",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/IuvFL_ycAvM",
@@ -4840,6 +5688,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Sorrento, Italy 4K Walking Tour (2022)",
         "slug":  "sorrento-day-walk-2022",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2022-07-31",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/H3g_m2yNL4k",
@@ -4870,6 +5721,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Sorrento, Italy 4K Evening Walk (2025)",
         "slug":  "sorrento-evening-walk-2025",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2025-06-09",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/NNQ-Iecknjw",
@@ -4900,6 +5754,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Sorrento, Italy 4K Driving to Sorrento",
         "slug":  "sorrento-drive-tour",
         "videoType":  "drive-tour",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/mYf6HC1HOOc",
@@ -4930,6 +5787,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Teatro Romano Antica Cales, Italy 4K Drone tour",
         "slug":  "teatro-romano-antica-cales-drone-tour",
         "videoType":  "drone-tour",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/mGvtNC0UK3Y",
@@ -4960,6 +5822,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Assisi, Italy 4K Walking Tour (2019)",
         "slug":  "assisi-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2019-07-02",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/KvtrEO3mKow",
@@ -4990,6 +5855,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Assisi, Italy 4K Morning Walk Walking Tour (2019)",
         "slug":  "assisi-morning-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2019-07-04",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/hSJ-6ZvHA6M",
@@ -5020,6 +5888,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Orvieto, Italy 4K Bike Tour",
         "slug":  "orvieto-bike-tour-2020",
         "videoType":  "bike-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-07-25",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/fxPNhInN1Lk",
@@ -5050,6 +5921,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Orvieto, Italy 4K Walking Tour (2020)",
         "slug":  "orvieto-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-07-25",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/is7fJVLo9Js",
@@ -5080,6 +5954,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Perugia, Italy 4K Corso Pietro Vannucci Walking Tour",
         "slug":  "perugia-corso-pietro-vannucci-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-07-26",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/RcJxiA2lONE",
@@ -5110,6 +5987,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Perugia, Italy 4K 360 Tour (2020)",
         "slug":  "perugia-360-tour-2020",
         "videoType":  "360-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-07-26",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/IQnWwTrGzX0",
@@ -5140,6 +6020,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Perugia, Italy 4K Walking Tour (2020)",
         "slug":  "perugia-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-07-26",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/oKTQDkNG8NM",
@@ -5170,6 +6053,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Florence, Italy 4K Walking Tour (long) (2019)",
         "slug":  "florence-day-walk-long-2019",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2019-07-03",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/AqFLqzHAgzA",
@@ -5200,6 +6086,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Florence, Italy 4K Walking Tour (short) (2019)",
         "slug":  "florence-day-walk-short-2019",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2019-07-03",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/0vwcddEiRQs",
@@ -5230,6 +6119,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Florence, Italy 4K Walking Tour (2023)",
         "slug":  "florence-day-walk-2023",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2023-05-19",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/2aZlTVnq2eQ",
@@ -5260,6 +6152,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Florence, Italy 4K Evening Walk (2022)",
         "slug":  "florence-evening-walk-2022",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2022-05-14",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/ed1Z7pPSep0",
@@ -5290,6 +6185,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Florence, Italy 4K Evening Walk (2018)",
         "slug":  "florence-evening-walk-2018",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2018-12-29",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/5fAr9Oc9xh8",
@@ -5320,6 +6218,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Lucca, Italy 4K Walking Tour (2020)",
         "slug":  "lucca-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-08-01",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/4tS18rOsyMM",
@@ -5350,6 +6251,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Lucca, Italy 4K Bike Tour (Evening) (2020)",
         "slug":  "lucca-evening-bike-tour-2020",
         "videoType":  "bike-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-08-01",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/OMgbNxCB5dU",
@@ -5380,6 +6284,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Lucca, Italy 4K Bike Tour (Walls) (2020)",
         "slug":  "lucca-le-murra-di-lucca-bike-tour-2020",
         "videoType":  "bike-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-08-01",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/jIKNueYoUh0",
@@ -5410,6 +6317,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Lucca, Italy 4K Bike Tour (City) (2020)",
         "slug":  "lucca-bike-tour-2020",
         "videoType":  "bike-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-08-01",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/nSTpNsBFRPM",
@@ -5440,6 +6350,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Lucca, Italy 4K Drone Tour (2020)",
         "slug":  "lucca-drone-tour-2020",
         "videoType":  "drone-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-08-01",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/amROuiz7xCQ",
@@ -5470,6 +6383,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Montepulciano, Italy 4K Walking Tour (2020)",
         "slug":  "montepulciano-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-07-31",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/gvcKh443vVk",
@@ -5500,6 +6416,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Montepulciano, Italy 4K Evening Walk (2021)",
         "slug":  "montepulciano-evening-walk-2021",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2021-12-29",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/ZIzKFNETsX0",
@@ -5530,6 +6449,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Montepulciano, Italy 4K Re\u0027Ricci Wine Tour",
         "slug":  "montepulciano-de-ricci-wine-tour-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-07-30",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/bPGipGVMkrk",
@@ -5560,6 +6482,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Monteriggioni, Italy 4K Walking Tour (2021)",
         "slug":  "monteriggioni-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2021-08-03",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/50Y2SDBqi0c",
@@ -5590,6 +6515,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Pisa, Italy 4K Walking Tour (2018)",
         "slug":  "pisa-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2018-12-28",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/9Hqzz84U0-M",
@@ -5620,6 +6548,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Pitigliano, Italy 4K Walking Tour (2019)",
         "slug":  "pitigliano-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2019-07-04",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/lV-Wu4hBqEg",
@@ -5650,6 +6581,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Pitigliano, Italy 4K Drone Tour",
         "slug":  "pitigliano-drone-tour",
         "videoType":  "drone-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/i75q5pGA8uE",
@@ -5680,6 +6614,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "San Gimignano, Italy 4K Walking Tour (2021)",
         "slug":  "san-gimignano-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2021-08-03",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/cRR35KGuWJI",
@@ -5710,6 +6647,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Saturnia, Italy 4K Hot Springs Walking Tour (2020)",
         "slug":  "saturnia-hot-springs-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-07-29",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/cT1HekU2vho",
@@ -5740,6 +6680,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Siena, Italy 4K Walking Tour (2023)",
         "slug":  "siena-day-walk-2023",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2023-07-15",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/SDTIreuH0-A",
@@ -5770,6 +6713,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Siena, Italy 4K Evening Walk (2023)",
         "slug":  "siena-evening-walk-2023",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2023-07-15",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/7bppV1K87zs",
@@ -5800,6 +6746,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Sorano, Italy 4K Walking Tour (2020)",
         "slug":  "sorano-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-07-27",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/R6t5GiWPaMk",
@@ -5830,6 +6779,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Sovana, Italy 4K Walking Tour (2020)",
         "slug":  "sovana-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-07-29",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/S9_piQ_k0YE",
@@ -5860,6 +6812,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Tuscany, Italy 4K Bike Tour",
         "slug":  "tuscany-bike-tour",
         "videoType":  "bike-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/Ml4oznHgjlA",
@@ -5890,6 +6845,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Volterra, Italy 4K Walking Tour (2021)",
         "slug":  "volterra-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2021-08-04",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/l4nG1eZBtV4",
@@ -5920,6 +6878,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Burano, Italy 4K Walking Tour (2018)",
         "slug":  "burano-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-12-17",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/E6_JLRwoTqw",
@@ -5950,6 +6911,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Burano, Italy 4K Walking Tour (2020)",
         "slug":  "burano-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2020-08-09",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/0U3Aea9awAQ",
@@ -5980,6 +6944,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Burano, Italy 4K Walking Tour (Members) (2020)",
         "slug":  "burano-members-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2020-08-09",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/ujOrTmi-lCY",
@@ -6010,6 +6977,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Burano, Italy 4K 360 Tour (2020)",
         "slug":  "burano-360-tour-2020",
         "videoType":  "360-tour",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2020-08-09",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/Zp3zczCgqaE",
@@ -6040,6 +7010,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Burano, Italy 4K Walking Tour (2025)",
         "slug":  "burano-day-walk-2025",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2025-03-06",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/wCJA5S7KO34",
@@ -6070,6 +7043,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Ca’ Del Sol Mask Shop Tour",
         "slug":  "venice-ca-del-sol-mask-shop-day-walk-2025",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2025-02-22",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/y6s_aoNeNBo",
@@ -6100,6 +7076,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Casa di Carlo Goldoni Venetian Theatre Museum Tour",
         "slug":  "venice-casa-di-carlo-goldoni-museum-tour-2025",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2025-02-24",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/Uq-4WndVxLs",
@@ -6130,6 +7109,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Contrada San Giovanni Medieval Drum Performance Tour",
         "slug":  "venice-contrada-san-giovanni-drum-2025",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2025-02-22",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/p4cIiXQ0gl4",
@@ -6160,6 +7142,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Murano, Italy 4K Walking Tour (2018)",
         "slug":  "murano-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-12-17",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/h9ovlrJ6ba8",
@@ -6190,6 +7175,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Museo di Palazzo Mocenigo Venetian Fashion, Costumes \u0026 Perfume Museum Tour",
         "slug":  "venice-museo-di-palazzo-mocenigo-day-tour-2025",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2025-02-22",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/7-TysrfJUfY",
@@ -6220,6 +7208,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Verona, Italy 4K Walking Tour (2022)",
         "slug":  "verona-day-walk-2022",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2022-07-07",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/kGiZ9HsCh9Q",
@@ -6250,6 +7241,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Verona, Italy 4K Evening Walk (2022)",
         "slug":  "verona-evening-walk-2022",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2022-07-07",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/fW1v-SIpnkU",
@@ -6280,6 +7274,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Canal Tour Tour (2020)",
         "slug":  "venice-grand-canal-boat-tour-2020",
         "videoType":  "day-walk",
+        "themes":  [
+                       "waterfront",
+                       "island"
+                   ],
         "filmedDateIso":  "2020-08-08",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/riZWEoGKyuU",
@@ -6310,6 +7308,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Walking Tour (Part 1) (2022)",
         "slug":  "venice-day-walk-part-1-2022",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2022-07-02",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/2BfHMnDOteA",
@@ -6340,6 +7341,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Walking Tour (Part 2) (2022)",
         "slug":  "venice-day-walk-part-2-2022",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2022-07-02",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/cLOuH5El-NU",
@@ -6370,6 +7374,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Evening Walk (2024)",
         "slug":  "venice-evening-walk-canal-tour-2024",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2024-09-19",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/-eD-JIsKJ50",
@@ -6400,6 +7407,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Canal Tour Italy (2022)",
         "slug":  "venice-day-walk-2022",
         "videoType":  "day-walk",
+        "themes":  [
+                       "waterfront",
+                       "island"
+                   ],
         "filmedDateIso":  "2022-07-03",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/WXloPY8ZelY",
@@ -6430,6 +7441,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Walking Tour (2020)",
         "slug":  "venice-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2020-08-07",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/sW0EENhO07g",
@@ -6460,6 +7474,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Canal Tour (Evening) (2022)",
         "slug":  "venice-evening-canal-tour-2022",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "waterfront",
+                       "island"
+                   ],
         "filmedDateIso":  "2022-07-03",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/TJLjnp39GBg",
@@ -6490,6 +7508,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Walking Tour (Part 1) (2018)",
         "slug":  "venice-day-walk-part-1-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-12-16",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/hjVl6yutTPk",
@@ -6520,6 +7541,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Walking Tour (Part 2) (2018)",
         "slug":  "venice-day-walk-part-2-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-12-16",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/84NASdlG7JY",
@@ -6550,6 +7574,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Walking Tour (Part 3) (2019)",
         "slug":  "venice-day-walk-part-3-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2019-02-09",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/n0_SXJ4eQ_o",
@@ -6580,6 +7607,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Walking Tour (Part 4) (2018)",
         "slug":  "venice-day-walk-part-4-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-12-16",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/ihICikqCJ7Q",
@@ -6610,6 +7640,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Walking Tour (Part 5) (2018)",
         "slug":  "venice-day-walk-part-5-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-12-15",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/PGvkZOfp-Cw",
@@ -6640,6 +7673,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Walking Tour (Part 6) (2019)",
         "slug":  "venice-day-walk-part-6-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2019-02-09",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/7QMD4A9vaUQ",
@@ -6670,6 +7706,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Grand Canal \u0026 Rialto Bridge Walking Tour (2018)",
         "slug":  "venice-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2019-02-09",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/SamL3P-3eWE",
@@ -6700,6 +7739,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Christmas Lights Walking Tour (2018)",
         "slug":  "venice-christmas-lights-evening-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "christmas",
+                       "holiday-lights"
+                   ],
         "filmedDateIso":  "2018-12-16",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/EwIigsXdjfs",
@@ -6730,6 +7773,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Evening Tour (2022)",
         "slug":  "venice-evening-walk-2022",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2022-07-02",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/kccv6YJZ0P4",
@@ -6760,6 +7806,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Evening Walk (2024)",
         "slug":  "venice-evening-walk-2024",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2024-09-17",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/AK6dYrJpa-s",
@@ -6790,6 +7839,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Carnival (Morning) Walking Tour (2025)",
         "slug":  "venice-carnival-morning-walk-2025",
         "videoType":  "day-walk",
+        "themes":  [
+                       "carnival"
+                   ],
         "filmedDateIso":  "2025-02-27",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/wb2LPV6k1zE",
@@ -6820,6 +7872,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Carnival Short Walking Tour (2025)",
         "slug":  "venice-carnival-short-day-walk-2025",
         "videoType":  "day-walk",
+        "themes":  [
+                       "carnival"
+                   ],
         "filmedDateIso":  "2025-02-24",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/K9IdcDzZnao",
@@ -6850,6 +7905,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Gondola Tour Walking Tour (2025)",
         "slug":  "venice-gondola-boat-tour-2025",
         "videoType":  "day-walk",
+        "themes":  [
+                       "waterfront",
+                       "island"
+                   ],
         "filmedDateIso":  "2025-02-24",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/y9C0FpPkOtg",
@@ -6880,6 +7939,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Carnival Evening Tour (2025)",
         "slug":  "venice-evening-walk-2025",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "carnival"
+                   ],
         "filmedDateIso":  "2025-02-22",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/0OnjDaJR1z8",
@@ -6910,6 +7972,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Early Morning Walking Tour (2025)",
         "slug":  "venice-early-morning-walk-2025",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2025-02-25",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/GDaa84xtdmc",
@@ -6940,6 +8005,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Carnival Long Walking Tour (2025)",
         "slug":  "venice-carnival-long-day-walk-2025",
         "videoType":  "day-walk",
+        "themes":  [
+                       "carnival"
+                   ],
         "filmedDateIso":  "2025-02-22",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/tljYEocVcvM",
@@ -6970,6 +8038,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Live Walking Tour (2018)",
         "slug":  "venice-live-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-12-01",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtube.com/live/8oTB_6nGqWg",
@@ -7000,6 +8071,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K Live Walking Tour (2019)",
         "slug":  "venice-live-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2019-02-09",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtube.com/live/UHJ0SEIdA2o",
@@ -7030,6 +8104,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Venice, Italy 4K 360 VR Tour",
         "slug":  "venice-360-tour-2024",
         "videoType":  "360-tour",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2024-09-17",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/RXx8n9IZDl4",
@@ -7060,6 +8137,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Saepinum, Italy 4K Roman Ruins Walking Tour (2022)",
         "slug":  "saepinum-day-walk-2022",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site"
+                   ],
         "filmedDateIso":  "2022-07-21",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/Ac7Ykww2uSo",
@@ -7090,6 +8172,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Alghero, Italy 4K Evening Walk (2021)",
         "slug":  "alghero-evening-walk-2021",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2021-08-06",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/bn7pzk7J5vA",
@@ -7120,6 +8205,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Alghero, Italy 4K Bike Tour (2021)",
         "slug":  "alghero-bike-tour-2021",
         "videoType":  "bike-tour",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2021-08-06",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/UUZhT6o6l68",
@@ -7150,6 +8238,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Alghero, Italy 4K Walking Tour (2021)",
         "slug":  "alghero-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2021-08-06",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/k79zvrEYm_g",
@@ -7180,6 +8271,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Cagliari, Italy 4K Evening Walk (2021)",
         "slug":  "cagliari-evening-walk-2021",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2021-08-08",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/j_RkDWhWeds",
@@ -7210,6 +8304,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Cagliari, Italy 4K Walking Tour (2021)",
         "slug":  "cagliari-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2021-08-09",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/lMbCJA-svYM",
@@ -7240,6 +8337,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Civita di Bagnoregio, Italy 4K Walking Tour (2018)",
         "slug":  "civita-di-bagnoregio-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2018-11-10",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/oEB3BBiIe3c",
@@ -7270,6 +8370,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Civita di Bagnoregio, Italy 4K Walking Tour (2021)",
         "slug":  "civita-di-bagnoregio-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2021-08-02",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/vQBaN2kBrbk",
@@ -7300,6 +8403,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Civita di Bagnoregio, Italy 4K Drone Tour",
         "slug":  "civita-di-bagnoregio-drone-tour",
         "videoType":  "drone-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/Jy1_kcaZ2OY",
@@ -7330,6 +8436,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Garden of Ninfa, Italy 4K Walking Tour (2019)",
         "slug":  "garden-of-ninfa-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2019-04-07",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/gr6NflJhcJo",
@@ -7360,6 +8469,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Garden of Ninfa, Italy 4K Drone Tour",
         "slug":  "garden-of-ninfa-drone-tour-2019",
         "videoType":  "drone-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2019-04-07",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/7nzu9k78jWU",
@@ -7390,6 +8502,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Hadrian\u0027s Villa, Italy 4K Roman Ruins Walking Tour (2021)",
         "slug":  "hadrian-s-villa-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2021-05-22",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/8IzED5n3uZs",
@@ -7420,6 +8538,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ostia Antica, Italy 4K Roman Ruins Walking Tour (2021)",
         "slug":  "ostia-antica-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site"
+                   ],
         "filmedDateIso":  "2021-07-02",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/l7vuIzECnak",
@@ -7450,6 +8573,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ponza, Italy 4K 7am Island Tour Walking Tour (2018)",
         "slug":  "ponza-morning-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-06-23",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/UMVJxk98lzI",
@@ -7480,6 +8606,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ponza, Italy 4K 10am Island Tour Walking Tour (2018)",
         "slug":  "ponza-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-06-23",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/TGgTcCfNHww",
@@ -7510,6 +8639,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ponza, Italy 4K 7pm Island Tour Walking Tour (2018)",
         "slug":  "ponza-evening-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-06-22",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/3FrvtihiLJk",
@@ -7540,6 +8672,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ponza, Italy 4K 10pm Island Tour Walking Tour (2018)",
         "slug":  "ponza-night-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2018-06-22",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/8wYWSz_azdM",
@@ -7570,6 +8705,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ponza, Italy 4K Boat Tour",
         "slug":  "ponza-boat-tour",
         "videoType":  "boat-tour",
+        "themes":  [
+                       "island",
+                       "waterfront"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/Mh-MCn-keZE",
@@ -7600,6 +8739,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Walking Tour (No Captions) (2017)",
         "slug":  "rome-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2017-10-21",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/b-1GGWLJMNM",
@@ -7630,6 +8772,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Walking Tour (2017)",
         "slug":  "rome-day-walk-with-captions-2017",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2017-10-21",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/vK928kqYUPI",
@@ -7660,6 +8805,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Castel Sant\u0027Angelo Tour Walking Tour (2021)",
         "slug":  "rome-castel-sant-angelo-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2021-07-03",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/idVpTd_QWpQ",
@@ -7690,6 +8838,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Circus Maximus Bike Tour (2020)",
         "slug":  "rome-circus-maximus-bike-tour-2020",
         "videoType":  "bike-tour",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site"
+                   ],
         "filmedDateIso":  "2020-06-03",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/0yoFn9d_lmo",
@@ -7720,6 +8873,13 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Colosseum Walking Tour (2017)",
         "slug":  "rome-colosseum-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "amphitheater",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2017-09-23",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/eJeF7hDB0UA",
@@ -7750,6 +8910,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Walking Tour (Part 1) (2017)",
         "slug":  "rome-day-walk-part-1-2017",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2017-10-21",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/Qi6IjV1EyUM",
@@ -7780,6 +8943,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Walking Tour (Part 2) (2017)",
         "slug":  "rome-day-walk-part-2-2017",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2017-10-21",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/8JwhEk8RqMA",
@@ -7810,6 +8976,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Walking Tour (Part 3) (2017)",
         "slug":  "rome-day-walk-part-3-2017",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2017-10-21",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/YpnSAhs4hUY",
@@ -7840,6 +9009,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Walking Tour (Part 4) (2017)",
         "slug":  "rome-day-walk-part-4-2017",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2017-10-21",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/f8gCtF5J6RA",
@@ -7870,6 +9042,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Walking Tour (Part 5) (2017)",
         "slug":  "rome-day-walk-part-5-2017",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2017-10-21",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/xmC4B69Wh74",
@@ -7900,6 +9075,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Appian Way Bike Tour (2020)",
         "slug":  "rome-appian-way-bike-tour-2020",
         "videoType":  "bike-tour",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site"
+                   ],
         "filmedDateIso":  "2020-06-07",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/6n5Fq24C5D0",
@@ -7930,6 +9110,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Appian Way Bike Tour (2021)",
         "slug":  "rome-appian-way-bike-tour-2021",
         "videoType":  "bike-tour",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site"
+                   ],
         "filmedDateIso":  "2021-05-08",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/ogWKnHSTEN0",
@@ -7960,6 +9145,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Appian Way Bike Fail",
         "slug":  "rome-appian-way-bike-fail",
         "videoType":  "bike-tour",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/hffiybSPmEg",
@@ -7990,6 +9180,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Roman Forum \u0026 Palatine Hill Walking Tour (2022)",
         "slug":  "rome-roman-forum-palatine-hill-day-walk-2022",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2022-05-13",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/SkCV7czZq6U",
@@ -8020,6 +9216,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Roman Forum Narrated Walking Tour (2017)",
         "slug":  "rome-roman-forum-narrated-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2017-09-23",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/k4P5W1DKTBI",
@@ -8050,6 +9252,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Roman Forum Walking Tour (2017)",
         "slug":  "rome-roman-forum-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2017-09-23",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/hWHr-RlJqWU",
@@ -8080,6 +9288,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Mouth of Truth Tour Walking Tour",
         "slug":  "rome-mouth-of-truth-day-walk",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2021-07-04",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/juymjYFvrHE",
@@ -8110,6 +9321,12 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Palatine Hill Walking Tour",
         "slug":  "rome-palatine-hill-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/JeApHXIiLbo",
@@ -8140,6 +9357,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Pantheon Morning Walking Tour (2024)",
         "slug":  "rome-pantheon-morning-walk-2024",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2024-05-20",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/hF6H5B-uCiQ",
@@ -8170,6 +9392,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Pantheon at Night (2024)",
         "slug":  "rome-pantheon-evening-walk-2024",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2024-05-17",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/q_Qv2y_CZk8",
@@ -8200,6 +9427,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Piazza Navona Morning Walking Tour (2024)",
         "slug":  "rome-piazza-navona-morning-walk-2024",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2024-05-17",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/62bQ8idpEPw",
@@ -8230,6 +9460,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Piazza Navona Market Walking Tour (2019)",
         "slug":  "rome-piazza-navona-market-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2019-01-06",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/8VoZDct2OwI",
@@ -8260,6 +9493,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Piazza Navona Evening Walk (2024)",
         "slug":  "rome-piazza-navona-evening-walk-2024",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2024-05-17",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/iqc8-eAmn-8",
@@ -8290,6 +9526,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Piazza Navona Bike Tour (2020)",
         "slug":  "rome-piazza-navona-bike-tour-2020",
         "videoType":  "bike-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-06-03",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/w2NDmdP5KZc",
@@ -8320,6 +9559,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Walking Tour (2022)",
         "slug":  "rome-day-walk-2022",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2021-05-14",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/uOJkVLwnCNI",
@@ -8350,6 +9592,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Walking Tour (2024)",
         "slug":  "rome-day-walk-2024",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2024-05-17",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/--v8TDp92Q0",
@@ -8380,6 +9625,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Bike Tour (2020)",
         "slug":  "rome-bike-tour-2020",
         "videoType":  "bike-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-10-10",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/bdjUv2ctBQ4",
@@ -8410,6 +9658,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Tiber River Bike Tour (2020)",
         "slug":  "rome-tiber-river-bike-tour-2020",
         "videoType":  "bike-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-06-06",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/GXTW_mIC2po",
@@ -8440,6 +9691,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Aqueduct Park Bike Tour (2020)",
         "slug":  "rome-aqueduct-park-bike-tour-2020",
         "videoType":  "bike-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-06-07",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/CDRwAU-Nz9o",
@@ -8470,6 +9724,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Morning Walking Tour (2019)",
         "slug":  "rome-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2019-01-06",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/x-Cgkgj5KR0",
@@ -8500,6 +9757,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Evening Walk (2020)",
         "slug":  "rome-evening-walk-2020",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-10-10",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/Gy6fDx9L-zk",
@@ -8530,6 +9790,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Evening Walk (2021)",
         "slug":  "rome-evening-walk-2021",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2021-07-03",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/PrkU8ECRxZ8",
@@ -8560,6 +9823,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Evening Walk (2022)",
         "slug":  "rome-evening-walk-2022",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2022-05-13",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/ZEFUaNTUa6g",
@@ -8590,6 +9856,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Evening Walk (2024)",
         "slug":  "rome-evening-walk-2024",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2024-05-17",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/ew3skC_9FZI",
@@ -8620,6 +9889,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Spanish Steps Morning Walking Tour (2024)",
         "slug":  "rome-spanish-steps-morning-walk-2024",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2024-05-17",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/95F8FE9pWr0",
@@ -8650,6 +9922,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Trastevere Evening Walk (2021)",
         "slug":  "rome-trastevere-evening-walk-2021",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2021-07-04",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/ZIiOwKETKA8",
@@ -8680,6 +9955,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Trevi Fountain Morning Walking Tour (2024)",
         "slug":  "rome-trevi-fountain-morning-walk-2024",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2024-05-20",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/ijlCQwlvPpw",
@@ -8710,6 +9988,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Trevi Fountain at Night (2024)",
         "slug":  "rome-trevi-fountain-evening-walk-2024",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2024-05-17",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/QF4oUSToWKw",
@@ -8740,6 +10021,13 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Colosseum 360 VR Tour",
         "slug":  "rome-colosseum-360-tour-2024",
         "videoType":  "360-tour",
+        "themes":  [
+                       "ancient-site",
+                       "roman-ruins",
+                       "amphitheater",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2024-05-20",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/4IRFPVRM7_Y",
@@ -8770,6 +10058,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Live Tour Walking Tour",
         "slug":  "rome-live-day-walk-2024",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2024-05-19",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtube.com/live/RnIe3w1ExHU",
@@ -8800,6 +10091,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K 360 VR Bike Tour",
         "slug":  "rome-bike-tour-2024",
         "videoType":  "bike-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2024-06-04",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/jEWKbIRZG1A",
@@ -8830,6 +10124,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Ara Pacis Museum Walking Tour",
         "slug":  "rome-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2018-03-24",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/pFq2TOq18dQ",
@@ -8860,6 +10157,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rome, Italy 4K Fincato The House of Habano Tobacco Shop Tour",
         "slug":  "rome-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2021-07-03",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/IKBCbG6b2CU",
@@ -8890,6 +10190,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Sasseto Forest, Italy 4K Nature Walking Tour (2017)",
         "slug":  "sasseto-forest-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2017-12-03",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/PgKiEheXoqA",
@@ -8920,6 +10223,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Sermoneta, Italy 4K Walking Tour (2018)",
         "slug":  "sermoneta-day-walk-2018",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2018-05-27",
         "filmedYear":  2018,
         "youtubeUrl":  "https://youtu.be/HPAAtxin4kI",
@@ -8950,6 +10256,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Sperlonga, Italy 4K Walking Tour (2022)",
         "slug":  "sperlonga-day-walk-2022",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2022-06-26",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/SguYGKfAvgs",
@@ -8980,6 +10289,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Sperlonga, Italy 4K Walking Tour (2025)",
         "slug":  "sperlonga-day-walk-2025",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2025-06-07",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/xG5RihPULIc",
@@ -9010,6 +10322,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "The Vatican, Italy 4K St. Peter\u0027s Basilica Walking Tour (2021)",
         "slug":  "the-vatican-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2021-07-05",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/NvjtzKUaq-s",
@@ -9040,6 +10355,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "The Vatican, Italy 4K St. Peter\u0027s Basilica Walking Tour (2017)",
         "slug":  "the-vatican-day-walk-2017",
         "videoType":  "day-walk",
+        "themes":  [
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2017-10-21",
         "filmedYear":  2017,
         "youtubeUrl":  "https://youtu.be/0B54PR2kvWE",
@@ -9070,6 +10388,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Villa Farnese, Italy 4K Palace Walking Tour (2020)",
         "slug":  "villa-farnese-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-07-28",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/sfV0A-esgq4",
@@ -9100,6 +10421,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Villa Farnese, Italy 4K Narrated Walking Tour (2020)",
         "slug":  "villa-farnese-narrated-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-07-28",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/p0s0j2jQ5NM",
@@ -9130,6 +10454,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Agrigento, Italy 4K Greek Ruins Walking Tour (2020)",
         "slug":  "agrigento-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+                       "ancient-site",
+                       "archaeological-site",
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2020-06-17",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/ddwST22X7Cc",
@@ -9160,6 +10489,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Catania, Italy 4K Evening Walk (2020)",
         "slug":  "catania-evening-walk-2020",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2020-06-13",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/Y6X0okAoWwM",
@@ -9190,6 +10522,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Catania, Italy 4K Walking Tour (2020)",
         "slug":  "catania-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2020-06-13",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/_Q-RLQnZOHM",
@@ -9220,6 +10555,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Catania, Italy 4K Fish Market Walking Tour (2020)",
         "slug":  "catania-fish-market-day-tour-2020",
         "videoType":  "day-walk",
+        "themes":  [
+                       "food-market"
+                   ],
         "filmedDateIso":  "2020-06-13",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/33SKzgaqrk4",
@@ -9250,6 +10588,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Catania, Italy 4K Extra Footage Walking Tour",
         "slug":  "catania-extra-footage-day-walk",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/tfdwl9XM_98",
@@ -9280,6 +10621,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Catania, Italy 4K Evening Walk (2024)",
         "slug":  "catania-evening-walk-2024",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2024-05-25",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/sMacK6qOH7k",
@@ -9310,6 +10654,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Catania, Italy 4K Walking Tour (2024)",
         "slug":  "catania-day-walk-2024",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2024-05-31",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/HmstT-5dOfk",
@@ -9340,6 +10687,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Cefalu, Italy 4K Walking Tour (2024)",
         "slug":  "cefalu-day-walk-2024",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2024-05-23",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/SYwnibfhOm8",
@@ -9370,6 +10720,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Cefalu, Italy 4K Drone Tour 2020",
         "slug":  "cefalu-drone-tour",
         "videoType":  "drone-tour",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/4Xc7cCFcuSs",
@@ -9400,6 +10753,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Cefalu, Italy 4K Walking Tour (2020)",
         "slug":  "cefalu-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2020-06-24",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/szfG8qVQEys",
@@ -9430,6 +10786,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Erice, Italy 4K Walking Tour (2020)",
         "slug":  "erice-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-06-22",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/_dsYp7akVIc",
@@ -9460,6 +10819,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ortigia, Italy 4K Walking Tour (2020)",
         "slug":  "ortigia-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2020-06-15",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/0BkAHkXf1zc",
@@ -9490,6 +10852,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ortigia, Italy 4K Evening Walk (2020)",
         "slug":  "ortigia-evening-walk-2020",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "island"
+                   ],
         "filmedDateIso":  "2020-06-15",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/8AooyfiG-d0",
@@ -9520,6 +10885,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Palermo, Italy 4K Walking Tour (2020)",
         "slug":  "palermo-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2020-06-21",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/MTG3VA-m6qk",
@@ -9550,6 +10918,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Palermo, Italy 4K Evening Walk (2020)",
         "slug":  "palermo-saturday-evening-walk-2020",
         "videoType":  "evening-walk",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2020-06-20",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/osGVjQzUb-8",
@@ -9580,6 +10951,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Palermo, Italy 4K Bike Tour (2020)",
         "slug":  "palermo-bike-tour-2020",
         "videoType":  "bike-tour",
+        "themes":  [
+                       "coastal"
+                   ],
         "filmedDateIso":  "2020-06-21",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/Qkc5Xxy4L2g",
@@ -9610,6 +10984,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Palermo, Italy 4K Ballarò Market Tour (2020)",
         "slug":  "palermo-ballaro-market-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+                       "food-market"
+                   ],
         "filmedDateIso":  "2020-07-14",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/LlYmFMR_yKo",
@@ -9640,6 +11017,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Palermo, Italy 4K Evening Walk (2020)",
         "slug":  "palermo-sunday-evening-walk-2020",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-06-21",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/2Xn0NCwLF2k",
@@ -9670,6 +11050,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Palermo, Italy 4K Walking Tour (2024)",
         "slug":  "palermo-day-walk-2024",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2024-06-02",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/ANmTIth9fT8",
@@ -9700,6 +11083,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Palermo, Italy 4K Evening Tour (2024)",
         "slug":  "palermo-evening-walk-2024",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2024-05-31",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/Td0ybB2cXeM",
@@ -9730,6 +11116,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Ragusa, Italy 4K Walking Tour (2020)",
         "slug":  "ragusa-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-06-17",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/GVE9W1vr5k0",
@@ -9760,6 +11149,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "San Vito to Erice, Italy 4K Driving Timelapse (2020)",
         "slug":  "san-vito-to-erice-drive-tour-2020",
         "videoType":  "drive-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-06-22",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/C_l3rnXppXw",
@@ -9790,6 +11182,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Taormina, Italy 4K Walking Tour (2024)",
         "slug":  "taormina-day-walk-2024",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2024-05-22",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/4CqfiWuEOzM",
@@ -9820,6 +11215,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Taormina, Italy 4K Street Performance (2020)",
         "slug":  "taormina-street-performance-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-06-14",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/g211nAbiRWA",
@@ -9850,6 +11248,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Taormina, Italy 4K Walking Tour (2020)",
         "slug":  "taormina-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-06-14",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/hM-jmDHNMfI",
@@ -9880,6 +11281,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Taormina, Italy 4K Evening Walk (2024)",
         "slug":  "taormina-evening-walk-2024",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2024-05-23",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/_zVJO65AXlo",
@@ -9910,6 +11314,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Taormina, Italy 4K 360 VR Tour",
         "slug":  "taormina-360-tour-2024",
         "videoType":  "360-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2024-05-22",
         "filmedYear":  2024,
         "youtubeUrl":  "https://youtu.be/oeJLc19ICGY",
@@ -9940,6 +11347,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Trapani, Italy 4K Walking Tour (2020)",
         "slug":  "trapani-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-06-18",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/quj_Vz4JeLQ",
@@ -9970,6 +11380,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Trapani, Italy 4K Bike Tour (2020)",
         "slug":  "trapani-bike-tour-2020",
         "videoType":  "bike-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-06-18",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/s5cURt4OpAg",
@@ -10000,6 +11413,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Tripi, Italy 4K Walking Tour (2020)",
         "slug":  "tripi-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-06-25",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/Cf0Xg5ff0Ow",
@@ -10030,6 +11446,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Alberobello, Italy 4K Walking Tour (2021)",
         "slug":  "alberobello-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2021-07-29",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/xqGIgebjBgs",
@@ -10060,6 +11479,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Gallipoli, Italy 4K Walking Tour (2021)",
         "slug":  "gallipoli-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2021-07-30",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/3iNd4e0j4mE",
@@ -10090,6 +11512,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Lecce, Italy 4K Evening Walk (2021)",
         "slug":  "lecce-evening-walk-2021",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2021-07-31",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/f0sA1xhKAEQ",
@@ -10120,6 +11545,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Otranto, Italy 4K Walking Tour (2021)",
         "slug":  "otranto-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2021-07-31",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/SWDsHlHmnY4",
@@ -10150,6 +11578,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Polignano a Mare, Italy 4K Walking Tour (2019)",
         "slug":  "polignano-a-mare-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2019-06-29",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/EBxw4VkKwjw",
@@ -10180,6 +11611,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Polignano a Mare, Italy 4K Walking Tour (2021)",
         "slug":  "polignano-a-mare-day-walk-2021",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2021-08-14",
         "filmedYear":  2021,
         "youtubeUrl":  "https://youtu.be/4kp8DqgmejI",
@@ -10210,6 +11644,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Bellagio, Italy 4K Walking Tour (2022)",
         "slug":  "bellagio-day-walk-2022",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2022-07-09",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/o7XgU4ut6jQ",
@@ -10240,6 +11677,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Bellagio, Italy 4K Evening Walk (2022)",
         "slug":  "bellagio-evening-walk-2022",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2022-07-09",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/PTYY0n-aJjA",
@@ -10270,6 +11710,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Como, Italy 4K Evening Walk (2022)",
         "slug":  "como-evening-walk-2022",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2022-07-10",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/foWAGOt7vqQ",
@@ -10300,6 +11743,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Menaggio, Italy 4K Walking Tour (2022)",
         "slug":  "menaggio-day-walk-2022",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2022-07-09",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/CIdovxOot_w",
@@ -10330,6 +11776,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Milan, Italy 4K Walking Tour (2023)",
         "slug":  "milan-day-walk-2023",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2023-07-10",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/npbU7nex0HM",
@@ -10360,6 +11809,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Milan, Italy 4K Evening Walk (2023)",
         "slug":  "milan-evening-walk-2023",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2023-07-10",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/eE65MVsnI4Y",
@@ -10390,6 +11842,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Milan, Italy 4K Grand Canal Evening Walk (2023)",
         "slug":  "milan-grand-canal-evening-walk-2023",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2023-07-09",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/T-QDHkW4hQw",
@@ -10420,6 +11875,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Lake Como, Italy 4K Bike Tour (2022)",
         "slug":  "lake-como-bike-tour-2022",
         "videoType":  "bike-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2022-07-11",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/J_IqUBVf9sQ",
@@ -10450,6 +11908,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Varenna, Italy 4K Walking Tour (2022)",
         "slug":  "varenna-day-walk-2022",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2022-07-10",
         "filmedYear":  2022,
         "youtubeUrl":  "https://youtu.be/aHbUxcfT9_M",
@@ -10480,6 +11941,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Camogli, Italy 4K Walking Tour (2023)",
         "slug":  "camogli-day-walk-2023",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2023-07-13",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/mTIT6AQqolg",
@@ -10510,6 +11974,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Corniglia, Italy 4K Walking Tour (2020)",
         "slug":  "corniglia-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-08-05",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/sUFIQzXu7S8",
@@ -10540,6 +12007,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Genoa, Italy 4K Walking Tour (2025)",
         "slug":  "genoa-day-walk-2025",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2025-09-06",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/YkXYzf9gWok",
@@ -10570,6 +12040,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Genoa, Italy 4K Evening Walk (2025)",
         "slug":  "genoa-evening-walk-2025",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2025-09-05",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/tIhKTBYKZZc",
@@ -10600,6 +12073,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Genoa, Italy 4K Street Performance",
         "slug":  "genoa-street-performance-2025",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2025-09-06",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/BfIgvh4JX48",
@@ -10630,6 +12106,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Genoa, Italy 4K Drone Tour (2025)",
         "slug":  "genoa-drone-tour-2025",
         "videoType":  "drone-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  null,
         "filmedYear":  null,
         "youtubeUrl":  "https://youtu.be/O3IuN8BH8uk",
@@ -10660,6 +12139,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Manarola, Italy 4K Walking Tour (2020)",
         "slug":  "manarola-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-08-04",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/QNdkI8BRats",
@@ -10690,6 +12172,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Monterosso al Mare, Italy 4K Walking Tour (2020)",
         "slug":  "monterosso-al-mare-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-08-06",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/L-CIQchiiv4",
@@ -10720,6 +12205,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Nervi, Italy 4K Walking Tour (2025)",
         "slug":  "nervi-day-walk-2025",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2025-09-06",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/tfHjrhOQWpY",
@@ -10750,6 +12238,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Portofino, Italy 4K Walking Tour (2020)",
         "slug":  "portofino-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-08-02",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/AhYBDeW9CKE",
@@ -10780,6 +12271,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Portofino, Italy 4K Walking Tour (2023)",
         "slug":  "portofino-day-walk-2023",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2023-07-12",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/5AmywWunHGo",
@@ -10810,6 +12304,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Portofino, Italy 4K Morning Walking Tour (2023)",
         "slug":  "portofino-morning-walk-2023",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2023-07-14",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/T1VIKKBqsjw",
@@ -10840,6 +12337,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Portofino, Italy 4K Evening Walk (2020)",
         "slug":  "portofino-evening-walk-2020",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-08-02",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/uYN6tPAaXwE",
@@ -10870,6 +12370,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Portofino, Italy 4K Evening Walk (2023)",
         "slug":  "portofino-evening-walk-2023",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2023-07-13",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/XTJjSwwVTio",
@@ -10900,6 +12403,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Portofino, Italy 4K 360 Tour (2020)",
         "slug":  "portofino-360-tour-2020",
         "videoType":  "360-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-08-02",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/3zK7p4J2R-c",
@@ -10930,6 +12436,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rapallo to Portofino, Italy 4K Bike Tour (2020)",
         "slug":  "rapallo-to-portofino-bike-tour-2020",
         "videoType":  "bike-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-08-02",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/sekm3BovZXA",
@@ -10960,6 +12469,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Rapallo to Portofino, Italy 4K Bike Tour (2025)",
         "slug":  "rapallo-to-portofino-bike-tour-2025",
         "videoType":  "bike-tour",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2025-09-07",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/HrPQrMX_A8E",
@@ -10990,6 +12502,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Riomaggiore, Italy 4K Walking Tour (2020)",
         "slug":  "riomaggiore-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-08-04",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/MIzp8Wrj44s",
@@ -11020,6 +12535,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Santa Margherita, Italy 4K Walking Tour (2025)",
         "slug":  "santa-margherita-day-walk-2025",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2025-09-07",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/P5ppDvz_sBI",
@@ -11050,6 +12568,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Vernazza, Italy 4K Walking Tour",
         "slug":  "vernazza-day-walk-2020",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2020-08-05",
         "filmedYear":  2020,
         "youtubeUrl":  "https://youtu.be/qwxEyy_CwUo",
@@ -11080,6 +12601,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Bologna, Italy 4K Walking Tour (2023)",
         "slug":  "bologna-day-walk-2023",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2023-07-08",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/-l3ZLLemjvk",
@@ -11110,6 +12634,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Bologna, Italy 4K Evening Walk (2023)",
         "slug":  "bologna-evening-walk-2023",
         "videoType":  "evening-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2023-07-08",
         "filmedYear":  2023,
         "youtubeUrl":  "https://youtu.be/zYl5WJWoFMA",
@@ -11140,6 +12667,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Trieste, Italy 4K Walking Tour (2025)",
         "slug":  "trieste-day-walk-2025",
         "videoType":  "day-walk",
+        "themes":  [
+
+                   ],
         "filmedDateIso":  "2025-03-02",
         "filmedYear":  2025,
         "youtubeUrl":  "https://youtu.be/WW0WAo6SXKY",
@@ -11170,6 +12700,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "title":  "Matera, Italy 4K Walking Tour (2019)",
         "slug":  "matera-day-walk-2019",
         "videoType":  "day-walk",
+        "themes":  [
+                       "world-heritage-site"
+                   ],
         "filmedDateIso":  "2019-06-28",
         "filmedYear":  2019,
         "youtubeUrl":  "https://youtu.be/CvnroN73Le8",
@@ -11192,4 +12725,3 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "thumbnailSrc":  "https://i.ytimg.com/vi/CvnroN73Le8/maxresdefault.jpg"
     }
 ];
-

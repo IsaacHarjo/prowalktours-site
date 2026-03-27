@@ -36,6 +36,19 @@ const INTERNAL_WALK_PAGE_BY_TOUR_ID: Record<string, string> = {
   "it-0092": "/videos/naples-daytime-walk-2023",
 };
 
+const SUPPORTED_THEME_FILTERS = [
+  { value: "christmas-market", label: "Christmas Markets" },
+  { value: "world-heritage-site", label: "World Heritage Sites" },
+  { value: "ancient-site", label: "Ancient Sites" },
+  { value: "roman-ruins", label: "Roman Ruins" },
+  { value: "coastal", label: "Coastal" },
+  { value: "waterfront", label: "Waterfront" },
+  { value: "island", label: "Island" },
+  { value: "beach", label: "Beach" },
+  { value: "historic-center", label: "Historic Center" },
+  { value: "scenic-viewpoint", label: "Scenic Viewpoint" },
+] as const;
+
 function titleCase(value: string) {
   return value.replace(/\b\w/g, (char) => char.toUpperCase());
 }
@@ -111,6 +124,21 @@ export function getFilmedYearFilterOptions(): ExploreMapFilterOption[] {
   }));
 }
 
+export function getThemeFilterOptions(
+  features: ExploreMapFeature[]
+): ExploreMapFilterOption[] {
+  const availableThemes = new Set(
+    features.flatMap((feature) => feature.themes ?? [])
+  );
+
+  return SUPPORTED_THEME_FILTERS.filter((theme) =>
+    availableThemes.has(theme.value)
+  ).map((theme) => ({
+    value: theme.value,
+    label: theme.label,
+  }));
+}
+
 export function getMapDisplayTitle(title: string) {
   return title
     .replace(/\b4K\b/gi, "")
@@ -136,14 +164,20 @@ export function getMapWatchHref(feature: ExploreMapFeature) {
 export function filterExploreMapFeatures(
   features: ExploreMapFeature[],
   selectedVideoTypes: string[],
-  selectedFilmedYears: string[]
+  selectedFilmedYears: string[],
+  selectedThemes: string[]
 ) {
-  if (selectedVideoTypes.length === 0 && selectedFilmedYears.length === 0) {
+  if (
+    selectedVideoTypes.length === 0 &&
+    selectedFilmedYears.length === 0 &&
+    selectedThemes.length === 0
+  ) {
     return features;
   }
 
   const selectedTypes = new Set(selectedVideoTypes);
   const selectedYears = new Set(selectedFilmedYears);
+  const selectedThemeSet = new Set(selectedThemes);
 
   return features.filter((feature) => {
     const matchesType =
@@ -152,7 +186,10 @@ export function filterExploreMapFeatures(
       selectedYears.size === 0 ||
       (feature.filmedYear !== null &&
         selectedYears.has(String(feature.filmedYear)));
+    const matchesTheme =
+      selectedThemeSet.size === 0 ||
+      feature.themes.some((theme) => selectedThemeSet.has(theme));
 
-    return matchesType && matchesYear;
+    return matchesType && matchesYear && matchesTheme;
   });
 }

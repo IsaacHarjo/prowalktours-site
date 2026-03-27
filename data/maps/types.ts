@@ -18,6 +18,7 @@ export type ExploreMapFeature = {
   title: string;
   slug: string;
   videoType: string;
+  themes: string[];
   filmedDateIso: string | null;
   filmedYear: number | null;
   youtubeUrl: string;
