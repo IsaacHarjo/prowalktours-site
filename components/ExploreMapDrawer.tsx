@@ -45,7 +45,7 @@ export default function ExploreMapDrawer({
 
       <div className="pointer-events-none absolute inset-x-0 bottom-0 top-16 flex items-end px-4 pb-[calc(env(safe-area-inset-bottom)+1rem)]">
         <div
-          className="pointer-events-auto w-full overflow-hidden rounded-[1.75rem] border border-[#d8c7b5] bg-white shadow-2xl"
+          className="pointer-events-auto flex w-full max-h-[calc(100dvh-5.5rem)] flex-col overflow-hidden rounded-[1.75rem] border border-[#d8c7b5] bg-white shadow-2xl"
           style={{ maxHeight: "calc(100dvh - 5.5rem)" }}
         >
           <div className="sticky top-0 z-10 border-b border-[#eadfce] bg-white/95 backdrop-blur">
@@ -78,7 +78,7 @@ export default function ExploreMapDrawer({
             </div>
           </div>
 
-          <div className="max-h-[calc(100dvh-13rem)] overflow-y-auto px-4 pb-4 pt-4">
+          <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-4 pt-4">
             {isCluster ? (
               <>
                 {onZoomIn ? (
