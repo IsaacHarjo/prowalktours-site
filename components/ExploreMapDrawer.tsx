@@ -81,16 +81,6 @@ export default function ExploreMapDrawer({
           <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-4 pt-4">
             {isCluster ? (
               <>
-                {onZoomIn ? (
-                  <button
-                    type="button"
-                    onClick={onZoomIn}
-                    className="mb-4 inline-flex items-center justify-center rounded-full border border-[#167fd5] bg-white px-4 py-2 text-sm font-semibold text-[#167fd5] transition hover:bg-[#edf6fd]"
-                  >
-                    Zoom in
-                  </button>
-                ) : null}
-
                 <div className="space-y-4 pr-1">
                   {clusterFeatures.map((item) => (
                     <div
