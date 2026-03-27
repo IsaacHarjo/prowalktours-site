@@ -43,10 +43,10 @@ export default function ExploreMapDrawer({
         className="absolute inset-0 bg-black/20 backdrop-blur-[1px]"
       />
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 top-32 flex items-end px-4 pb-[calc(env(safe-area-inset-bottom)+1rem)]">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 top-36 flex items-end px-4 pb-[calc(env(safe-area-inset-bottom)+1rem)]">
         <div
-          className="pointer-events-auto flex w-full max-h-[calc(100dvh-8rem)] flex-col overflow-hidden rounded-[1.75rem] border border-[#d8c7b5] bg-white shadow-2xl"
-          style={{ maxHeight: "calc(100dvh - 8rem)" }}
+          className="pointer-events-auto flex w-full max-h-[calc(100dvh-9rem)] flex-col overflow-hidden rounded-[1.75rem] border border-[#d8c7b5] bg-white shadow-2xl"
+          style={{ maxHeight: "calc(100dvh - 9rem)" }}
         >
           <div className="sticky top-0 z-10 border-b border-[#eadfce] bg-white/95 backdrop-blur">
             <div className="flex justify-center px-4 pt-3">
