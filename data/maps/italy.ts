@@ -11,10 +11,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "agropoli-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-                       "waterfront",
-                       "historic-center",
-                       "beach",
                        "coastal",
+                       "historic-center",
                        "old-town"
                    ],
         "filmedDateIso":  "2020-07-11",
@@ -70,8 +68,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "amalfi-coast-bike-tour-2022",
         "videoType":  "bike-tour",
         "themes":  [
-                       "waterfront",
-                       "coastal"
+                       "coastal",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-05-04",
         "filmedYear":  2022,
@@ -126,8 +125,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "amalfi-scooter-tour-2019",
         "videoType":  "scooter-tour",
         "themes":  [
-                       "waterfront",
-                       "coastal"
+                       "coastal",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-09-07",
         "filmedYear":  2019,
@@ -180,7 +179,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "amalfi-coast-drone-tour",
         "videoType":  "drone-tour",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  null,
         "filmedYear":  2019,
@@ -221,8 +221,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "positano-boat-tour-2021",
         "videoType":  "boat-tour",
         "themes":  [
-                       "beach",
-                       "coastal"
+                       "coastal",
+                       "waterfront",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2021-07-22",
         "filmedYear":  2021,
@@ -271,9 +272,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "amalfi-coast-360-tour",
         "videoType":  "360-tour",
         "themes":  [
-                       "waterfront",
                        "coastal",
-                       "scenic-viewpoint"
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  null,
         "filmedYear":  null,
@@ -328,11 +329,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "maiori-hike-2025",
         "videoType":  "hike",
         "themes":  [
-                       "waterfront",
-                       "beach",
                        "coastal",
-                       "scenic-viewpoint",
-                       "mountain"
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2025-06-15",
         "filmedYear":  2025,
@@ -387,10 +386,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "amalfi-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "waterfront",
-                       "beach",
                        "coastal",
-                       "scenic-viewpoint"
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2018-06-09",
         "filmedYear":  2018,
@@ -438,10 +436,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "amalfi-day-walk-with-captions-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "waterfront",
-                       "beach",
                        "coastal",
-                       "scenic-viewpoint"
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2018-06-09",
         "filmedYear":  2018,
@@ -498,9 +495,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "amalfi-360-tour-2019",
         "videoType":  "360-tour",
         "themes":  [
-                       "waterfront",
-                       "beach",
-                       "coastal"
+                       "coastal",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-09-07",
         "filmedYear":  2019,
@@ -549,8 +546,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "amalfi-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-                       "waterfront",
-                       "coastal"
+                       "coastal",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-06-27",
         "filmedYear":  2020,
@@ -603,7 +601,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "hike",
         "themes":  [
                        "coastal",
-                       "mountain"
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-01-16",
         "filmedYear":  2022,
@@ -648,7 +646,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "amalfi-evening-walk-2022",
         "videoType":  "evening-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-06-16",
         "filmedYear":  2022,
@@ -681,9 +681,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "amalfi-day-walk-2022",
         "videoType":  "day-walk",
         "themes":  [
-                       "waterfront",
                        "coastal",
-                       "scenic-viewpoint"
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-07-30",
         "filmedYear":  2022,
@@ -728,8 +728,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "amalfi-day-walk-2025",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "historic-center",
-                       "coastal"
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2025-06-13",
         "filmedYear":  2025,
@@ -770,7 +771,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "amalfi-drive-tour-timelapse-2022",
         "videoType":  "drive-tour",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-01-16",
         "filmedYear":  2022,
@@ -809,8 +811,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "amalfi-bike-tour-2022",
         "videoType":  "bike-tour",
         "themes":  [
+                       "coastal",
                        "historic-center",
-                       "coastal"
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-01-16",
         "filmedYear":  2022,
@@ -851,7 +854,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "hike",
         "themes":  [
                        "coastal",
-                       "mountain"
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2021-11-20",
         "filmedYear":  2021,
@@ -893,7 +896,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "amalfi-drive-tour-2022",
         "videoType":  "drive-tour",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-03-13",
         "filmedYear":  2022,
@@ -926,7 +930,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "aqueduct-of-vanvitelli-drone-tour",
         "videoType":  "drone-tour",
         "themes":  [
-                       "world-heritage-site"
+
                    ],
         "filmedDateIso":  "2019-10-08",
         "filmedYear":  2019,
@@ -959,7 +963,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "atrani-day-walk-2025",
         "videoType":  "day-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2025-06-13",
         "filmedYear":  2025,
@@ -992,7 +997,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "aversa-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center"
                    ],
         "filmedDateIso":  "2018-01-28",
         "filmedYear":  2018,
@@ -1025,7 +1030,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "aversa-evening-walk-2018",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center"
                    ],
         "filmedDateIso":  "2018-01-27",
         "filmedYear":  2018,
@@ -1058,7 +1063,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "aversa-evening-walk-2022",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center"
                    ],
         "filmedDateIso":  "2022-04-23",
         "filmedYear":  2022,
@@ -1091,7 +1096,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "aversa-bike-tour-osmo-pocket-2020",
         "videoType":  "bike-tour",
         "themes":  [
-
+                       "historic-center"
                    ],
         "filmedDateIso":  "2020-05-09",
         "filmedYear":  2020,
@@ -1124,7 +1129,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "aversa-bike-tour-gopro-2020",
         "videoType":  "bike-tour",
         "themes":  [
-
+                       "historic-center"
                    ],
         "filmedDateIso":  "2020-05-09",
         "filmedYear":  2020,
@@ -1157,6 +1162,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "baia-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "ancient-site",
                        "roman-ruins",
                        "archaeological-site"
@@ -1192,6 +1198,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "baia-day-walk-sony-2022",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "ancient-site",
                        "roman-ruins",
                        "archaeological-site"
@@ -1227,6 +1234,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "baia-day-walk-gopro-2022",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "ancient-site",
                        "roman-ruins",
                        "archaeological-site"
@@ -1262,7 +1270,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "baia-day-walk-2017",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal",
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site"
                    ],
         "filmedDateIso":  "2017-01-01",
         "filmedYear":  2017,
@@ -1328,6 +1339,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-bike-tour-2020",
         "videoType":  "bike-tour",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2020-06-11",
@@ -1361,6 +1373,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-evening-walk-2021",
         "videoType":  "evening-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2021-06-26",
@@ -1394,6 +1407,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-day-walk-2021",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2021-06-26",
@@ -1427,6 +1441,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-day-walk-2022",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2022-06-18",
@@ -1460,8 +1475,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-hike-2018",
         "videoType":  "hike",
         "themes":  [
-                       "island",
-                       "mountain"
+                       "coastal",
+                       "island"
                    ],
         "filmedDateIso":  "2018-10-14",
         "filmedYear":  2018,
@@ -1494,6 +1509,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-certosa-di-san-giacomo-drone-tour",
         "videoType":  "drone-tour",
         "themes":  [
+                       "coastal",
+                       "waterfront",
                        "island"
                    ],
         "filmedDateIso":  null,
@@ -1527,6 +1544,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-drone-tour",
         "videoType":  "drone-tour",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  null,
@@ -1560,8 +1578,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-pizzolungo-trail-natural-arch-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "island",
-                       "mountain"
+                       "coastal",
+                       "island"
                    ],
         "filmedDateIso":  "2018-10-12",
         "filmedYear":  2018,
@@ -1594,6 +1612,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-marina-grande-walk-captions-2018",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "waterfront",
                        "island"
                    ],
@@ -1628,6 +1647,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-marina-grande-walk-no-captions-2018",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "waterfront",
                        "island"
                    ],
@@ -1662,7 +1682,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-la-piazzetta-town-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "coastal",
+                       "island",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2018-10-13",
         "filmedYear":  2018,
@@ -1695,7 +1717,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-la-piazzetta-town-no-captions-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "coastal",
+                       "island",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2018-10-13",
         "filmedYear":  2018,
@@ -1728,8 +1752,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-faraglioni-rocks-pizzolungo-trail-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "island",
-                       "mountain"
+                       "coastal",
+                       "island"
                    ],
         "filmedDateIso":  null,
         "filmedYear":  null,
@@ -1762,8 +1786,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-belvedere-tragara-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "island",
-                       "scenic-viewpoint"
+                       "coastal",
+                       "island"
                    ],
         "filmedDateIso":  null,
         "filmedYear":  null,
@@ -1796,6 +1820,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-gardens-of-augustus-drone-tour",
         "videoType":  "drone-tour",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  null,
@@ -1829,6 +1854,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-gardens-of-augustus-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2018-10-14",
@@ -1862,7 +1888,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-villa-jovis-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "coastal",
+                       "island",
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site"
                    ],
         "filmedDateIso":  "2018-10-12",
         "filmedYear":  2018,
@@ -1895,7 +1925,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-villa-jovis-drone-tour",
         "videoType":  "drone-tour",
         "themes":  [
-                       "island"
+                       "coastal",
+                       "island",
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site"
                    ],
         "filmedDateIso":  null,
         "filmedYear":  null,
@@ -1928,7 +1962,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-via-tiberio-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "coastal",
+                       "island",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2018-10-13",
         "filmedYear":  2018,
@@ -1961,8 +1997,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-anacapri-historic-center-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-                       "historic-center",
-                       "island"
+                       "coastal",
+                       "island",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2019-06-08",
         "filmedYear":  2019,
@@ -1995,6 +2032,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-phoenician-steps-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2018-06-08",
@@ -2028,6 +2066,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-phoenician-steps-drone-tour",
         "videoType":  "drone-tour",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  null,
@@ -2061,6 +2100,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-villa-san-michele-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2019-06-08",
@@ -2094,8 +2134,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-monte-solaro-chairlift-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "island",
-                       "mountain"
+                       "coastal",
+                       "island"
                    ],
         "filmedDateIso":  "2018-10-14",
         "filmedYear":  2018,
@@ -2128,8 +2168,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-monte-solaro-hike-2018",
         "videoType":  "hike",
         "themes":  [
+                       "coastal",
                        "island",
-                       "mountain"
+                       "historic-center"
                    ],
         "filmedDateIso":  null,
         "filmedYear":  null,
@@ -2162,6 +2203,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-evening-walk-2022",
         "videoType":  "evening-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2022-06-19",
@@ -2195,6 +2237,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-evening-walk-2023",
         "videoType":  "evening-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2023-07-19",
@@ -2228,6 +2271,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-via-krupp-walk-2023",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2023-07-20",
@@ -2261,7 +2305,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-day-walk-2023",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "coastal",
+                       "island",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2023-07-20",
         "filmedYear":  2023,
@@ -2294,7 +2340,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-anacapri-day-walk-2024",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "coastal",
+                       "island",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2024-09-20",
         "filmedYear":  2024,
@@ -2327,6 +2375,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-evening-walk-2024",
         "videoType":  "evening-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2024-09-21",
@@ -2360,6 +2409,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "capri-360-tour-2024",
         "videoType":  "360-tour",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2024-09-22",
@@ -2395,8 +2445,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "themes":  [
                        "ancient-site",
                        "roman-ruins",
-                       "amphitheater",
-                       "archaeological-site"
+                       "archaeological-site",
+                       "amphitheater"
                    ],
         "filmedDateIso":  "2017-09-26",
         "filmedYear":  2017,
@@ -2431,8 +2481,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "themes":  [
                        "ancient-site",
                        "roman-ruins",
-                       "amphitheater",
-                       "archaeological-site"
+                       "archaeological-site",
+                       "amphitheater"
                    ],
         "filmedDateIso":  "2025-06-06",
         "filmedYear":  2025,
@@ -2531,7 +2581,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "caserta-vecchia-day-walk-2021",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2021-05-16",
         "filmedYear":  2021,
@@ -2564,7 +2615,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "comola-grande-drone-tour",
         "videoType":  "drone-tour",
         "themes":  [
-
+                       "waterfront"
                    ],
         "filmedDateIso":  null,
         "filmedYear":  null,
@@ -2631,7 +2682,6 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "360-tour",
         "themes":  [
                        "ancient-site",
-                       "roman-ruins",
                        "archaeological-site",
                        "world-heritage-site"
                    ],
@@ -2738,6 +2788,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ischia-porto-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
+                       "waterfront",
                        "island"
                    ],
         "filmedDateIso":  "2018-09-15",
@@ -2771,9 +2823,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ischia-beaches-historic-center-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "historic-center",
+                       "coastal",
+                       "island",
                        "beach",
-                       "island"
+                       "historic-center"
                    ],
         "filmedDateIso":  null,
         "filmedYear":  null,
@@ -2806,6 +2859,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ischia-aragonese-castle-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2018-09-15",
@@ -2839,6 +2893,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ischia-bike-tour-2025",
         "videoType":  "bike-tour",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2025-06-11",
@@ -2872,6 +2927,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ischia-ponte-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
+                       "waterfront",
                        "island"
                    ],
         "filmedDateIso":  "2018-09-15",
@@ -2905,6 +2962,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ischia-ponte-aragonese-castle-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
+                       "waterfront",
                        "island"
                    ],
         "filmedDateIso":  "2025-06-10",
@@ -2938,6 +2997,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ischia-corso-vittoria-colonna-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2018-09-15",
@@ -2971,6 +3031,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ischia-sant-angelo-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2018-09-29",
@@ -3004,6 +3065,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ischia-lacco-ameno-day-walk-2025",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2025-06-14",
@@ -3037,6 +3099,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ischia-evening-walk-2025",
         "videoType":  "evening-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2025-06-10",
@@ -3070,7 +3133,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "limatola-castle-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-                       "christmas"
+
                    ],
         "filmedDateIso":  "2019-12-08",
         "filmedYear":  2019,
@@ -3136,7 +3199,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "mt-vesuvius-hike-2017",
         "videoType":  "hike",
         "themes":  [
-                       "mountain"
+
                    ],
         "filmedDateIso":  "2017-08-14",
         "filmedYear":  2017,
@@ -3169,7 +3232,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "mt-vesuvius-hike-2022",
         "videoType":  "hike",
         "themes":  [
-                       "mountain"
+
                    ],
         "filmedDateIso":  "2022-08-01",
         "filmedYear":  2022,
@@ -3202,7 +3265,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-patron-via-chiaia-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-11-09",
         "filmedYear":  2019,
@@ -3235,7 +3299,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-day-walk-2017",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2017-02-11",
         "filmedYear":  2017,
@@ -3268,7 +3333,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-quartieri-spagnoli-day-walk-2017",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2017-07-02",
         "filmedYear":  2017,
@@ -3301,7 +3367,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-evening-walk-2025",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2025-06-07",
         "filmedYear":  2025,
@@ -3334,7 +3401,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-day-walk-2023",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2023-07-30",
         "filmedYear":  2023,
@@ -3368,7 +3436,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "day-walk",
         "themes":  [
                        "historic-center",
-                       "christmas"
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-12-22",
         "filmedYear":  2020,
@@ -3401,9 +3469,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-christmas-market-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "food-market",
-                       "christmas",
-                       "christmas-market"
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2018-12-08",
         "filmedYear":  2018,
@@ -3436,7 +3503,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-evening-walk-2020",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-12-20",
         "filmedYear":  2020,
@@ -3469,9 +3537,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-christmas-market-day-walk-2021",
         "videoType":  "day-walk",
         "themes":  [
-                       "food-market",
-                       "christmas",
-                       "christmas-market"
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2021-12-19",
         "filmedYear":  2021,
@@ -3504,7 +3571,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-evening-walk-2019",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-12-14",
         "filmedYear":  2019,
@@ -3537,7 +3605,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-still-scenes-2021",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2021-02-06",
         "filmedYear":  2021,
@@ -3570,7 +3638,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-castel-dell-ovo-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "waterfront",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-07-01",
         "filmedYear":  2019,
@@ -3603,7 +3673,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-evening-walk-2022",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-06-03",
         "filmedYear":  2022,
@@ -3636,7 +3707,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-pignasecca-market-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-                       "food-market"
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-10-12",
         "filmedYear":  2019,
@@ -3669,7 +3741,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-                       "waterfront"
+                       "waterfront",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-02-16",
         "filmedYear":  2020,
@@ -3702,7 +3776,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-fontanelle-cemetery-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-10-29",
         "filmedYear":  2019,
@@ -3735,7 +3810,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-historic-center-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-                       "historic-center"
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-09-21",
         "filmedYear":  2019,
@@ -3768,7 +3844,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-360-tour-2019",
         "videoType":  "360-tour",
         "themes":  [
-
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-09-21",
         "filmedYear":  2019,
@@ -3801,7 +3877,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-fish-market-360-tour-2019",
         "videoType":  "360-tour",
         "themes":  [
-                       "food-market"
+                       "waterfront",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-09-07",
         "filmedYear":  2019,
@@ -3834,7 +3911,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-fish-market-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-                       "food-market"
+                       "waterfront",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-09-21",
         "filmedYear":  2019,
@@ -3867,7 +3946,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-bike-tour-2020",
         "videoType":  "bike-tour",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-05-23",
         "filmedYear":  2020,
@@ -3900,7 +3980,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-evening-walk-2023",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2023-07-21",
         "filmedYear":  2023,
@@ -3933,7 +4014,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-waterfront-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-                       "waterfront"
+                       "waterfront",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-12-12",
         "filmedYear":  2019,
@@ -3966,7 +4049,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-castel-nuovo-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "waterfront",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-10-27",
         "filmedYear":  2019,
@@ -3999,7 +4084,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-favorite-spot-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-07-01",
         "filmedYear":  2019,
@@ -4032,7 +4118,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-via-vergini-day-walk-2022",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-04-16",
         "filmedYear":  2022,
@@ -4065,7 +4152,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "naples-via-dei-tribunali-day-walk-2022",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-04-16",
         "filmedYear":  2022,
@@ -4168,7 +4256,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "path-of-the-gods-hike-east-to-west-hike-2017",
         "videoType":  "hike",
         "themes":  [
-                       "mountain"
+                       "coastal"
                    ],
         "filmedDateIso":  "2017-07-01",
         "filmedYear":  2017,
@@ -4201,7 +4289,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "path-of-the-gods-hike-west-to-east-hike-2017",
         "videoType":  "hike",
         "themes":  [
-                       "mountain"
+                       "coastal"
                    ],
         "filmedDateIso":  "2017-07-01",
         "filmedYear":  2017,
@@ -4234,7 +4322,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "path-of-the-gods-hike-2019",
         "videoType":  "hike",
         "themes":  [
-                       "mountain"
+                       "coastal"
                    ],
         "filmedDateIso":  "2019-06-27",
         "filmedYear":  2019,
@@ -4268,7 +4356,6 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "day-walk",
         "themes":  [
                        "ancient-site",
-                       "roman-ruins",
                        "archaeological-site",
                        "world-heritage-site"
                    ],
@@ -4304,7 +4391,6 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "360-tour",
         "themes":  [
                        "ancient-site",
-                       "roman-ruins",
                        "archaeological-site",
                        "world-heritage-site"
                    ],
@@ -4340,7 +4426,6 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "360-tour",
         "themes":  [
                        "ancient-site",
-                       "roman-ruins",
                        "archaeological-site",
                        "world-heritage-site"
                    ],
@@ -4376,7 +4461,6 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "day-walk",
         "themes":  [
                        "ancient-site",
-                       "roman-ruins",
                        "archaeological-site",
                        "world-heritage-site"
                    ],
@@ -4412,7 +4496,6 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "day-walk",
         "themes":  [
                        "ancient-site",
-                       "roman-ruins",
                        "archaeological-site",
                        "world-heritage-site"
                    ],
@@ -4448,7 +4531,6 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "day-walk",
         "themes":  [
                        "ancient-site",
-                       "roman-ruins",
                        "archaeological-site",
                        "world-heritage-site"
                    ],
@@ -4484,7 +4566,6 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "day-walk",
         "themes":  [
                        "ancient-site",
-                       "roman-ruins",
                        "archaeological-site",
                        "world-heritage-site"
                    ],
@@ -4520,7 +4601,6 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "day-walk",
         "themes":  [
                        "ancient-site",
-                       "roman-ruins",
                        "archaeological-site",
                        "world-heritage-site"
                    ],
@@ -4556,7 +4636,6 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "day-walk",
         "themes":  [
                        "ancient-site",
-                       "roman-ruins",
                        "archaeological-site",
                        "world-heritage-site"
                    ],
@@ -4592,7 +4671,6 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "day-walk",
         "themes":  [
                        "ancient-site",
-                       "roman-ruins",
                        "archaeological-site",
                        "world-heritage-site"
                    ],
@@ -4628,7 +4706,6 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "day-walk",
         "themes":  [
                        "ancient-site",
-                       "roman-ruins",
                        "archaeological-site",
                        "world-heritage-site"
                    ],
@@ -4663,7 +4740,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "positano-day-walk-may-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2018-05-12",
         "filmedYear":  2018,
@@ -4696,7 +4774,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "positano-day-walk-september-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2018-09-22",
         "filmedYear":  2018,
@@ -4729,7 +4808,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "positano-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-09-14",
         "filmedYear":  2019,
@@ -4762,7 +4842,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "positano-360-tour-2019",
         "videoType":  "360-tour",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-09-14",
         "filmedYear":  2019,
@@ -4795,7 +4876,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "positano-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-09-12",
         "filmedYear":  2020,
@@ -4828,7 +4910,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "positano-evening-walk-2021",
         "videoType":  "evening-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2021-06-13",
         "filmedYear":  2021,
@@ -4861,7 +4944,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "positano-day-walk-2022",
         "videoType":  "day-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-06-17",
         "filmedYear":  2022,
@@ -4894,7 +4978,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "positano-evening-walk-2022",
         "videoType":  "evening-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-06-25",
         "filmedYear":  2022,
@@ -4927,7 +5012,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "positano-day-walk-2023",
         "videoType":  "day-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2023-07-03",
         "filmedYear":  2023,
@@ -4960,7 +5046,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "positano-evening-walk-july-1-2023",
         "videoType":  "evening-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2023-07-01",
         "filmedYear":  2023,
@@ -4993,7 +5080,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "positano-evening-walk-july-2-2023",
         "videoType":  "evening-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2023-07-02",
         "filmedYear":  2023,
@@ -5026,7 +5114,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "positano-drone-tour",
         "videoType":  "drone-tour",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  null,
         "filmedYear":  null,
@@ -5092,10 +5181,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "pozzuoli-anfiteatro-flavio-neroniano-day-walk-2017",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "ancient-site",
                        "roman-ruins",
-                       "amphitheater",
-                       "archaeological-site"
+                       "archaeological-site",
+                       "amphitheater"
                    ],
         "filmedDateIso":  "2017-09-09",
         "filmedYear":  2017,
@@ -5227,6 +5317,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "procida-bike-tour-2020",
         "videoType":  "bike-tour",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2020-05-31",
@@ -5260,6 +5351,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "procida-day-walk-2017",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2017-08-17",
@@ -5293,6 +5385,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "procida-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2019-06-23",
@@ -5326,6 +5419,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "procida-day-walk-2023",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2023-07-18",
@@ -5359,7 +5453,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ravello-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center",
+                       "old-town",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-10-19",
         "filmedYear":  2019,
@@ -5392,7 +5489,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ravello-day-walk-2025",
         "videoType":  "day-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center",
+                       "old-town",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2025-06-09",
         "filmedYear":  2025,
@@ -5425,7 +5525,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "sant-agata-de-goti-day-walk-2017",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2017-06-10",
         "filmedYear":  2017,
@@ -5458,7 +5559,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "sorrento-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2018-05-19",
         "filmedYear":  2018,
@@ -5491,7 +5593,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "sorrento-day-walk-with-captions-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2018-05-19",
         "filmedYear":  2018,
@@ -5524,7 +5627,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "sorrento-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2020-07-12",
         "filmedYear":  2020,
@@ -5557,7 +5661,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "sorrento-evening-walk-july-2020",
         "videoType":  "evening-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2020-07-12",
         "filmedYear":  2020,
@@ -5590,7 +5695,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "sorrento-evening-walk-september-2020",
         "videoType":  "evening-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2020-09-19",
         "filmedYear":  2020,
@@ -5623,7 +5729,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "sorrento-day-walk-2021",
         "videoType":  "day-walk",
         "themes":  [
-                       "christmas"
+                       "coastal",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2021-12-11",
         "filmedYear":  2021,
@@ -5656,7 +5763,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "sorrento-evening-walk-2022",
         "videoType":  "evening-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2022-06-15",
         "filmedYear":  2022,
@@ -5689,7 +5797,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "sorrento-day-walk-2022",
         "videoType":  "day-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2022-07-31",
         "filmedYear":  2022,
@@ -5722,7 +5831,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "sorrento-evening-walk-2025",
         "videoType":  "evening-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2025-06-09",
         "filmedYear":  2025,
@@ -5823,7 +5933,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "assisi-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-07-02",
         "filmedYear":  2019,
@@ -5856,7 +5968,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "assisi-morning-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-07-04",
         "filmedYear":  2019,
@@ -5889,7 +6003,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "orvieto-bike-tour-2020",
         "videoType":  "bike-tour",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2020-07-25",
         "filmedYear":  2020,
@@ -5922,7 +6037,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "orvieto-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2020-07-25",
         "filmedYear":  2020,
@@ -5955,7 +6071,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "perugia-corso-pietro-vannucci-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center"
                    ],
         "filmedDateIso":  "2020-07-26",
         "filmedYear":  2020,
@@ -5988,7 +6104,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "perugia-360-tour-2020",
         "videoType":  "360-tour",
         "themes":  [
-
+                       "historic-center"
                    ],
         "filmedDateIso":  "2020-07-26",
         "filmedYear":  2020,
@@ -6021,7 +6137,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "perugia-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center"
                    ],
         "filmedDateIso":  "2020-07-26",
         "filmedYear":  2020,
@@ -6054,7 +6170,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "florence-day-walk-long-2019",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-07-03",
         "filmedYear":  2019,
@@ -6087,7 +6204,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "florence-day-walk-short-2019",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-07-03",
         "filmedYear":  2019,
@@ -6120,7 +6238,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "florence-day-walk-2023",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2023-05-19",
         "filmedYear":  2023,
@@ -6153,7 +6272,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "florence-evening-walk-2022",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-05-14",
         "filmedYear":  2022,
@@ -6186,7 +6306,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "florence-evening-walk-2018",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2018-12-29",
         "filmedYear":  2018,
@@ -6219,7 +6340,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "lucca-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2020-08-01",
         "filmedYear":  2020,
@@ -6252,7 +6374,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "lucca-evening-bike-tour-2020",
         "videoType":  "bike-tour",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2020-08-01",
         "filmedYear":  2020,
@@ -6285,7 +6408,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "lucca-le-murra-di-lucca-bike-tour-2020",
         "videoType":  "bike-tour",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2020-08-01",
         "filmedYear":  2020,
@@ -6318,7 +6442,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "lucca-bike-tour-2020",
         "videoType":  "bike-tour",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2020-08-01",
         "filmedYear":  2020,
@@ -6351,7 +6476,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "lucca-drone-tour-2020",
         "videoType":  "drone-tour",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2020-08-01",
         "filmedYear":  2020,
@@ -6384,7 +6510,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "montepulciano-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2020-07-31",
         "filmedYear":  2020,
@@ -6417,7 +6544,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "montepulciano-evening-walk-2021",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2021-12-29",
         "filmedYear":  2021,
@@ -6450,7 +6578,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "montepulciano-de-ricci-wine-tour-2020",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2020-07-30",
         "filmedYear":  2020,
@@ -6483,7 +6612,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "monteriggioni-day-walk-2021",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2021-08-03",
         "filmedYear":  2021,
@@ -6516,7 +6646,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "pisa-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2018-12-28",
         "filmedYear":  2018,
@@ -6549,7 +6680,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "pitigliano-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2019-07-04",
         "filmedYear":  2019,
@@ -6582,7 +6714,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "pitigliano-drone-tour",
         "videoType":  "drone-tour",
         "themes":  [
-
+                       "old-town"
                    ],
         "filmedDateIso":  null,
         "filmedYear":  null,
@@ -6615,7 +6747,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "san-gimignano-day-walk-2021",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2021-08-03",
         "filmedYear":  2021,
@@ -6681,7 +6815,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "siena-day-walk-2023",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2023-07-15",
         "filmedYear":  2023,
@@ -6714,7 +6850,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "siena-evening-walk-2023",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2023-07-15",
         "filmedYear":  2023,
@@ -6747,7 +6885,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "sorano-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2020-07-27",
         "filmedYear":  2020,
@@ -6780,7 +6919,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "sovana-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2020-07-29",
         "filmedYear":  2020,
@@ -6846,7 +6986,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "volterra-day-walk-2021",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2021-08-04",
         "filmedYear":  2021,
@@ -6879,7 +7020,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "burano-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2018-12-17",
         "filmedYear":  2018,
@@ -6912,7 +7055,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "burano-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-08-09",
         "filmedYear":  2020,
@@ -6945,7 +7090,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "burano-members-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-08-09",
         "filmedYear":  2020,
@@ -6978,7 +7125,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "burano-360-tour-2020",
         "videoType":  "360-tour",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-08-09",
         "filmedYear":  2020,
@@ -7011,7 +7160,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "burano-day-walk-2025",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2025-03-06",
         "filmedYear":  2025,
@@ -7044,7 +7195,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-ca-del-sol-mask-shop-day-walk-2025",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2025-02-22",
         "filmedYear":  2025,
@@ -7077,7 +7230,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-casa-di-carlo-goldoni-museum-tour-2025",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2025-02-24",
         "filmedYear":  2025,
@@ -7110,7 +7265,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-contrada-san-giovanni-drum-2025",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2025-02-22",
         "filmedYear":  2025,
@@ -7143,7 +7300,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "murano-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2018-12-17",
         "filmedYear":  2018,
@@ -7176,7 +7335,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-museo-di-palazzo-mocenigo-day-tour-2025",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2025-02-22",
         "filmedYear":  2025,
@@ -7209,7 +7370,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "verona-day-walk-2022",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-07-07",
         "filmedYear":  2022,
@@ -7242,7 +7404,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "verona-evening-walk-2022",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-07-07",
         "filmedYear":  2022,
@@ -7276,7 +7439,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "day-walk",
         "themes":  [
                        "waterfront",
-                       "island"
+                       "island",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-08-08",
         "filmedYear":  2020,
@@ -7309,7 +7473,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-day-walk-part-1-2022",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-07-02",
         "filmedYear":  2022,
@@ -7342,7 +7509,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-day-walk-part-2-2022",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-07-02",
         "filmedYear":  2022,
@@ -7375,7 +7545,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-evening-walk-canal-tour-2024",
         "videoType":  "evening-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2024-09-19",
         "filmedYear":  2024,
@@ -7409,7 +7582,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "day-walk",
         "themes":  [
                        "waterfront",
-                       "island"
+                       "island",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-07-03",
         "filmedYear":  2022,
@@ -7442,7 +7616,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-08-07",
         "filmedYear":  2020,
@@ -7476,7 +7653,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "evening-walk",
         "themes":  [
                        "waterfront",
-                       "island"
+                       "island",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-07-03",
         "filmedYear":  2022,
@@ -7509,7 +7687,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-day-walk-part-1-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2018-12-16",
         "filmedYear":  2018,
@@ -7542,7 +7723,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-day-walk-part-2-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2018-12-16",
         "filmedYear":  2018,
@@ -7575,7 +7759,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-day-walk-part-3-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-02-09",
         "filmedYear":  2019,
@@ -7608,7 +7795,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-day-walk-part-4-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2018-12-16",
         "filmedYear":  2018,
@@ -7641,7 +7831,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-day-walk-part-5-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2018-12-15",
         "filmedYear":  2018,
@@ -7674,7 +7867,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-day-walk-part-6-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-02-09",
         "filmedYear":  2019,
@@ -7707,7 +7903,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-02-09",
         "filmedYear":  2019,
@@ -7740,8 +7939,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-christmas-lights-evening-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "christmas",
-                       "holiday-lights"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2018-12-16",
         "filmedYear":  2018,
@@ -7774,7 +7975,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-evening-walk-2022",
         "videoType":  "evening-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-07-02",
         "filmedYear":  2022,
@@ -7807,7 +8011,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-evening-walk-2024",
         "videoType":  "evening-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2024-09-17",
         "filmedYear":  2024,
@@ -7840,7 +8047,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-carnival-morning-walk-2025",
         "videoType":  "day-walk",
         "themes":  [
-                       "carnival"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2025-02-27",
         "filmedYear":  2025,
@@ -7873,7 +8083,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-carnival-short-day-walk-2025",
         "videoType":  "day-walk",
         "themes":  [
-                       "carnival"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2025-02-24",
         "filmedYear":  2025,
@@ -7907,7 +8120,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "day-walk",
         "themes":  [
                        "waterfront",
-                       "island"
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2025-02-24",
         "filmedYear":  2025,
@@ -7940,7 +8155,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-evening-walk-2025",
         "videoType":  "evening-walk",
         "themes":  [
-                       "carnival"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2025-02-22",
         "filmedYear":  2025,
@@ -7973,7 +8191,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-early-morning-walk-2025",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2025-02-25",
         "filmedYear":  2025,
@@ -8006,7 +8227,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-carnival-long-day-walk-2025",
         "videoType":  "day-walk",
         "themes":  [
-                       "carnival"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2025-02-22",
         "filmedYear":  2025,
@@ -8039,7 +8263,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-live-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2018-12-01",
         "filmedYear":  2018,
@@ -8072,7 +8299,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-live-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-02-09",
         "filmedYear":  2019,
@@ -8105,7 +8335,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "venice-360-tour-2024",
         "videoType":  "360-tour",
         "themes":  [
-                       "island"
+                       "waterfront",
+                       "island",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2024-09-17",
         "filmedYear":  2024,
@@ -8338,7 +8570,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "civita-di-bagnoregio-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2018-11-10",
         "filmedYear":  2018,
@@ -8371,7 +8604,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "civita-di-bagnoregio-day-walk-2021",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2021-08-02",
         "filmedYear":  2021,
@@ -8404,7 +8638,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "civita-di-bagnoregio-drone-tour",
         "videoType":  "drone-tour",
         "themes":  [
-
+                       "old-town"
                    ],
         "filmedDateIso":  null,
         "filmedYear":  null,
@@ -8505,8 +8739,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "themes":  [
                        "ancient-site",
                        "roman-ruins",
-                       "archaeological-site",
-                       "world-heritage-site"
+                       "archaeological-site"
                    ],
         "filmedDateIso":  "2021-05-22",
         "filmedYear":  2021,
@@ -8574,6 +8807,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ponza-morning-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2018-06-23",
@@ -8607,6 +8841,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ponza-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2018-06-23",
@@ -8640,6 +8875,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ponza-evening-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
                        "island"
                    ],
         "filmedDateIso":  "2018-06-22",
@@ -8673,6 +8909,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ponza-night-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
+                       "waterfront",
                        "island"
                    ],
         "filmedDateIso":  "2018-06-22",
@@ -8706,8 +8944,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ponza-boat-tour",
         "videoType":  "boat-tour",
         "themes":  [
-                       "island",
-                       "waterfront"
+                       "coastal",
+                       "waterfront",
+                       "island"
                    ],
         "filmedDateIso":  null,
         "filmedYear":  null,
@@ -8740,7 +8979,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-day-walk-2017",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2017-10-21",
         "filmedYear":  2017,
@@ -8773,7 +9013,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-day-walk-with-captions-2017",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2017-10-21",
         "filmedYear":  2017,
@@ -8806,7 +9047,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-castel-sant-angelo-day-walk-2021",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2021-07-03",
         "filmedYear":  2021,
@@ -8841,7 +9083,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "themes":  [
                        "ancient-site",
                        "roman-ruins",
-                       "archaeological-site"
+                       "amphitheater",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-06-03",
         "filmedYear":  2020,
@@ -8876,8 +9120,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "themes":  [
                        "ancient-site",
                        "roman-ruins",
-                       "amphitheater",
                        "archaeological-site",
+                       "amphitheater",
+                       "historic-center",
                        "world-heritage-site"
                    ],
         "filmedDateIso":  "2017-09-23",
@@ -8911,7 +9156,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-day-walk-part-1-2017",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2017-10-21",
         "filmedYear":  2017,
@@ -8944,7 +9190,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-day-walk-part-2-2017",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2017-10-21",
         "filmedYear":  2017,
@@ -8977,7 +9224,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-day-walk-part-3-2017",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2017-10-21",
         "filmedYear":  2017,
@@ -9010,7 +9258,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-day-walk-part-4-2017",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2017-10-21",
         "filmedYear":  2017,
@@ -9043,7 +9292,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-day-walk-part-5-2017",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2017-10-21",
         "filmedYear":  2017,
@@ -9078,7 +9328,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "themes":  [
                        "ancient-site",
                        "roman-ruins",
-                       "archaeological-site"
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-06-07",
         "filmedYear":  2020,
@@ -9113,7 +9364,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "themes":  [
                        "ancient-site",
                        "roman-ruins",
-                       "archaeological-site"
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2021-05-08",
         "filmedYear":  2021,
@@ -9148,7 +9400,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "themes":  [
                        "ancient-site",
                        "roman-ruins",
-                       "archaeological-site"
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  null,
         "filmedYear":  null,
@@ -9184,6 +9437,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
                        "ancient-site",
                        "roman-ruins",
                        "archaeological-site",
+                       "historic-center",
                        "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-05-13",
@@ -9220,6 +9474,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
                        "ancient-site",
                        "roman-ruins",
                        "archaeological-site",
+                       "historic-center",
                        "world-heritage-site"
                    ],
         "filmedDateIso":  "2017-09-23",
@@ -9256,6 +9511,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
                        "ancient-site",
                        "roman-ruins",
                        "archaeological-site",
+                       "historic-center",
                        "world-heritage-site"
                    ],
         "filmedDateIso":  "2017-09-23",
@@ -9289,7 +9545,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-mouth-of-truth-day-walk",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2021-07-04",
         "filmedYear":  2021,
@@ -9325,6 +9582,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
                        "ancient-site",
                        "roman-ruins",
                        "archaeological-site",
+                       "historic-center",
                        "world-heritage-site"
                    ],
         "filmedDateIso":  null,
@@ -9358,8 +9616,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-pantheon-morning-walk-2024",
         "videoType":  "day-walk",
         "themes":  [
-                       "ancient-site",
-                       "roman-ruins",
+                       "historic-center",
                        "world-heritage-site"
                    ],
         "filmedDateIso":  "2024-05-20",
@@ -9393,8 +9650,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-pantheon-evening-walk-2024",
         "videoType":  "evening-walk",
         "themes":  [
-                       "ancient-site",
-                       "roman-ruins",
+                       "historic-center",
                        "world-heritage-site"
                    ],
         "filmedDateIso":  "2024-05-17",
@@ -9428,7 +9684,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-piazza-navona-morning-walk-2024",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2024-05-17",
         "filmedYear":  2024,
@@ -9461,7 +9718,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-piazza-navona-market-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-01-06",
         "filmedYear":  2019,
@@ -9494,7 +9752,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-piazza-navona-evening-walk-2024",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2024-05-17",
         "filmedYear":  2024,
@@ -9527,7 +9786,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-piazza-navona-bike-tour-2020",
         "videoType":  "bike-tour",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-06-03",
         "filmedYear":  2020,
@@ -9560,7 +9820,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-day-walk-2022",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2021-05-14",
         "filmedYear":  2021,
@@ -9593,7 +9854,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-day-walk-2024",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2024-05-17",
         "filmedYear":  2024,
@@ -9626,7 +9888,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-bike-tour-2020",
         "videoType":  "bike-tour",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-10-10",
         "filmedYear":  2020,
@@ -9659,7 +9922,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-tiber-river-bike-tour-2020",
         "videoType":  "bike-tour",
         "themes":  [
-
+                       "waterfront",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-06-06",
         "filmedYear":  2020,
@@ -9692,7 +9957,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-aqueduct-park-bike-tour-2020",
         "videoType":  "bike-tour",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-06-07",
         "filmedYear":  2020,
@@ -9725,7 +9991,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-01-06",
         "filmedYear":  2019,
@@ -9758,7 +10025,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-evening-walk-2020",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-10-10",
         "filmedYear":  2020,
@@ -9791,7 +10059,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-evening-walk-2021",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2021-07-03",
         "filmedYear":  2021,
@@ -9824,7 +10093,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-evening-walk-2022",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2022-05-13",
         "filmedYear":  2022,
@@ -9857,7 +10127,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-evening-walk-2024",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2024-05-17",
         "filmedYear":  2024,
@@ -9890,7 +10161,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-spanish-steps-morning-walk-2024",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2024-05-17",
         "filmedYear":  2024,
@@ -9923,7 +10195,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-trastevere-evening-walk-2021",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2021-07-04",
         "filmedYear":  2021,
@@ -9956,7 +10229,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-trevi-fountain-morning-walk-2024",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2024-05-20",
         "filmedYear":  2024,
@@ -9989,7 +10263,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-trevi-fountain-evening-walk-2024",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2024-05-17",
         "filmedYear":  2024,
@@ -10024,8 +10299,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "themes":  [
                        "ancient-site",
                        "roman-ruins",
-                       "amphitheater",
                        "archaeological-site",
+                       "amphitheater",
                        "world-heritage-site"
                    ],
         "filmedDateIso":  "2024-05-20",
@@ -10059,7 +10334,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-live-day-walk-2024",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2024-05-19",
         "filmedYear":  2024,
@@ -10092,7 +10368,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-bike-tour-2024",
         "videoType":  "bike-tour",
         "themes":  [
-
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2024-06-04",
         "filmedYear":  2024,
@@ -10125,7 +10402,11 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "ancient-site",
+                       "roman-ruins",
+                       "archaeological-site",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2018-03-24",
         "filmedYear":  2018,
@@ -10158,7 +10439,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rome-day-walk-2021",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2021-07-03",
         "filmedYear":  2021,
@@ -10224,7 +10505,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "sermoneta-day-walk-2018",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2018-05-27",
         "filmedYear":  2018,
@@ -10456,8 +10738,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "videoType":  "day-walk",
         "themes":  [
                        "ancient-site",
-                       "archaeological-site",
-                       "world-heritage-site"
+                       "archaeological-site"
                    ],
         "filmedDateIso":  "2020-06-17",
         "filmedYear":  2020,
@@ -10490,7 +10771,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "catania-evening-walk-2020",
         "videoType":  "evening-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-06-13",
         "filmedYear":  2020,
@@ -10523,7 +10806,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "catania-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-06-13",
         "filmedYear":  2020,
@@ -10556,7 +10841,10 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "catania-fish-market-day-tour-2020",
         "videoType":  "day-walk",
         "themes":  [
-                       "food-market"
+                       "coastal",
+                       "waterfront",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-06-13",
         "filmedYear":  2020,
@@ -10589,7 +10877,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "catania-extra-footage-day-walk",
         "videoType":  "day-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  null,
         "filmedYear":  null,
@@ -10622,7 +10912,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "catania-evening-walk-2024",
         "videoType":  "evening-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2024-05-25",
         "filmedYear":  2024,
@@ -10655,7 +10947,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "catania-day-walk-2024",
         "videoType":  "day-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2024-05-31",
         "filmedYear":  2024,
@@ -10688,7 +10982,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "cefalu-day-walk-2024",
         "videoType":  "day-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2024-05-23",
         "filmedYear":  2024,
@@ -10721,7 +11017,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "cefalu-drone-tour",
         "videoType":  "drone-tour",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "old-town"
                    ],
         "filmedDateIso":  null,
         "filmedYear":  null,
@@ -10754,7 +11051,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "cefalu-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2020-06-24",
         "filmedYear":  2020,
@@ -10787,7 +11086,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "erice-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2020-06-22",
         "filmedYear":  2020,
@@ -10820,6 +11120,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ortigia-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
+                       "coastal",
+                       "waterfront",
                        "island"
                    ],
         "filmedDateIso":  "2020-06-15",
@@ -10853,6 +11155,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ortigia-evening-walk-2020",
         "videoType":  "evening-walk",
         "themes":  [
+                       "coastal",
+                       "waterfront",
                        "island"
                    ],
         "filmedDateIso":  "2020-06-15",
@@ -10886,7 +11190,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "palermo-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2020-06-21",
         "filmedYear":  2020,
@@ -10919,7 +11224,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "palermo-saturday-evening-walk-2020",
         "videoType":  "evening-walk",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2020-06-20",
         "filmedYear":  2020,
@@ -10952,7 +11258,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "palermo-bike-tour-2020",
         "videoType":  "bike-tour",
         "themes":  [
-                       "coastal"
+                       "coastal",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2020-06-21",
         "filmedYear":  2020,
@@ -10985,7 +11292,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "palermo-ballaro-market-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-                       "food-market"
+                       "coastal"
                    ],
         "filmedDateIso":  "2020-07-14",
         "filmedYear":  2020,
@@ -11018,7 +11325,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "palermo-sunday-evening-walk-2020",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "coastal",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2020-06-21",
         "filmedYear":  2020,
@@ -11051,7 +11359,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "palermo-day-walk-2024",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2024-06-02",
         "filmedYear":  2024,
@@ -11084,7 +11393,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "palermo-evening-walk-2024",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "coastal",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2024-05-31",
         "filmedYear":  2024,
@@ -11117,7 +11427,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "ragusa-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center",
+                       "old-town",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-06-17",
         "filmedYear":  2020,
@@ -11183,7 +11495,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "taormina-day-walk-2024",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal",
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2024-05-22",
         "filmedYear":  2024,
@@ -11216,7 +11530,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "taormina-street-performance-2020",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal"
                    ],
         "filmedDateIso":  "2020-06-14",
         "filmedYear":  2020,
@@ -11249,7 +11563,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "taormina-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal",
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2020-06-14",
         "filmedYear":  2020,
@@ -11282,7 +11598,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "taormina-evening-walk-2024",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "coastal",
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2024-05-23",
         "filmedYear":  2024,
@@ -11315,7 +11633,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "taormina-360-tour-2024",
         "videoType":  "360-tour",
         "themes":  [
-
+                       "coastal"
                    ],
         "filmedDateIso":  "2024-05-22",
         "filmedYear":  2024,
@@ -11348,7 +11666,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "trapani-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal"
                    ],
         "filmedDateIso":  "2020-06-18",
         "filmedYear":  2020,
@@ -11381,7 +11699,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "trapani-bike-tour-2020",
         "videoType":  "bike-tour",
         "themes":  [
-
+                       "coastal"
                    ],
         "filmedDateIso":  "2020-06-18",
         "filmedYear":  2020,
@@ -11447,6 +11765,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "alberobello-day-walk-2021",
         "videoType":  "day-walk",
         "themes":  [
+                       "historic-center",
+                       "old-town",
                        "world-heritage-site"
                    ],
         "filmedDateIso":  "2021-07-29",
@@ -11480,7 +11800,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "gallipoli-day-walk-2021",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal",
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2021-07-30",
         "filmedYear":  2021,
@@ -11513,7 +11835,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "lecce-evening-walk-2021",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center"
                    ],
         "filmedDateIso":  "2021-07-31",
         "filmedYear":  2021,
@@ -11546,7 +11868,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "otranto-day-walk-2021",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal",
+                       "historic-center",
+                       "old-town"
                    ],
         "filmedDateIso":  "2021-07-31",
         "filmedYear":  2021,
@@ -11579,7 +11903,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "polignano-a-mare-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal"
                    ],
         "filmedDateIso":  "2019-06-29",
         "filmedYear":  2019,
@@ -11612,7 +11936,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "polignano-a-mare-day-walk-2021",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal"
                    ],
         "filmedDateIso":  "2021-08-14",
         "filmedYear":  2021,
@@ -11645,7 +11969,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "bellagio-day-walk-2022",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "waterfront",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2022-07-09",
         "filmedYear":  2022,
@@ -11678,7 +12003,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "bellagio-evening-walk-2022",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "waterfront",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2022-07-09",
         "filmedYear":  2022,
@@ -11711,7 +12037,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "como-evening-walk-2022",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "waterfront"
                    ],
         "filmedDateIso":  "2022-07-10",
         "filmedYear":  2022,
@@ -11744,7 +12070,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "menaggio-day-walk-2022",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "waterfront"
                    ],
         "filmedDateIso":  "2022-07-09",
         "filmedYear":  2022,
@@ -11777,7 +12103,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "milan-day-walk-2023",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center"
                    ],
         "filmedDateIso":  "2023-07-10",
         "filmedYear":  2023,
@@ -11810,7 +12136,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "milan-evening-walk-2023",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center"
                    ],
         "filmedDateIso":  "2023-07-10",
         "filmedYear":  2023,
@@ -11843,7 +12169,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "milan-grand-canal-evening-walk-2023",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "waterfront",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2023-07-09",
         "filmedYear":  2023,
@@ -11876,7 +12203,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "lake-como-bike-tour-2022",
         "videoType":  "bike-tour",
         "themes":  [
-
+                       "waterfront"
                    ],
         "filmedDateIso":  "2022-07-11",
         "filmedYear":  2022,
@@ -11909,7 +12236,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "varenna-day-walk-2022",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "waterfront",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2022-07-10",
         "filmedYear":  2022,
@@ -11942,7 +12270,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "camogli-day-walk-2023",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal",
+                       "waterfront",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2023-07-13",
         "filmedYear":  2023,
@@ -11975,7 +12305,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "corniglia-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-08-05",
         "filmedYear":  2020,
@@ -12008,7 +12340,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "genoa-day-walk-2025",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal",
+                       "waterfront",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2025-09-06",
         "filmedYear":  2025,
@@ -12041,7 +12375,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "genoa-evening-walk-2025",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "coastal",
+                       "waterfront",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2025-09-05",
         "filmedYear":  2025,
@@ -12074,7 +12410,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "genoa-street-performance-2025",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal",
+                       "waterfront"
                    ],
         "filmedDateIso":  "2025-09-06",
         "filmedYear":  2025,
@@ -12107,7 +12444,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "genoa-drone-tour-2025",
         "videoType":  "drone-tour",
         "themes":  [
-
+                       "coastal",
+                       "waterfront"
                    ],
         "filmedDateIso":  null,
         "filmedYear":  null,
@@ -12140,7 +12478,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "manarola-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-08-04",
         "filmedYear":  2020,
@@ -12173,7 +12513,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "monterosso-al-mare-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-08-06",
         "filmedYear":  2020,
@@ -12206,7 +12547,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "nervi-day-walk-2025",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal"
                    ],
         "filmedDateIso":  "2025-09-06",
         "filmedYear":  2025,
@@ -12239,7 +12580,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "portofino-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal",
+                       "waterfront",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2020-08-02",
         "filmedYear":  2020,
@@ -12272,7 +12615,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "portofino-day-walk-2023",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal",
+                       "waterfront",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2023-07-12",
         "filmedYear":  2023,
@@ -12305,7 +12650,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "portofino-morning-walk-2023",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal",
+                       "waterfront",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2023-07-14",
         "filmedYear":  2023,
@@ -12338,7 +12685,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "portofino-evening-walk-2020",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "coastal",
+                       "waterfront",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2020-08-02",
         "filmedYear":  2020,
@@ -12371,7 +12720,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "portofino-evening-walk-2023",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "coastal",
+                       "waterfront",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2023-07-13",
         "filmedYear":  2023,
@@ -12404,7 +12755,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "portofino-360-tour-2020",
         "videoType":  "360-tour",
         "themes":  [
-
+                       "coastal",
+                       "waterfront",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2020-08-02",
         "filmedYear":  2020,
@@ -12437,7 +12790,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rapallo-to-portofino-bike-tour-2020",
         "videoType":  "bike-tour",
         "themes":  [
-
+                       "coastal",
+                       "waterfront",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2020-08-02",
         "filmedYear":  2020,
@@ -12470,7 +12825,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "rapallo-to-portofino-bike-tour-2025",
         "videoType":  "bike-tour",
         "themes":  [
-
+                       "coastal",
+                       "waterfront",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2025-09-07",
         "filmedYear":  2025,
@@ -12503,7 +12860,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "riomaggiore-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-08-04",
         "filmedYear":  2020,
@@ -12536,7 +12895,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "santa-margherita-day-walk-2025",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal",
+                       "waterfront",
+                       "historic-center"
                    ],
         "filmedDateIso":  "2025-09-07",
         "filmedYear":  2025,
@@ -12569,7 +12930,9 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "vernazza-day-walk-2020",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal",
+                       "historic-center",
+                       "world-heritage-site"
                    ],
         "filmedDateIso":  "2020-08-05",
         "filmedYear":  2020,
@@ -12602,7 +12965,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "bologna-day-walk-2023",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "historic-center"
                    ],
         "filmedDateIso":  "2023-07-08",
         "filmedYear":  2023,
@@ -12635,7 +12998,7 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "bologna-evening-walk-2023",
         "videoType":  "evening-walk",
         "themes":  [
-
+                       "historic-center"
                    ],
         "filmedDateIso":  "2023-07-08",
         "filmedYear":  2023,
@@ -12668,7 +13031,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "trieste-day-walk-2025",
         "videoType":  "day-walk",
         "themes":  [
-
+                       "coastal",
+                       "waterfront"
                    ],
         "filmedDateIso":  "2025-03-02",
         "filmedYear":  2025,
@@ -12701,6 +13065,8 @@ export const italyMapFeatures: ExploreMapFeature[] = [
         "slug":  "matera-day-walk-2019",
         "videoType":  "day-walk",
         "themes":  [
+                       "historic-center",
+                       "old-town",
                        "world-heritage-site"
                    ],
         "filmedDateIso":  "2019-06-28",

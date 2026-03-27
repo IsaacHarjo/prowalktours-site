@@ -1,6 +1,7 @@
 import type {
   ExploreMapFeature,
   ExploreMapFilterOption,
+  ExploreThemeTag,
   ExploreMapVideoType,
   ExploreMapWatchDestinationType,
 } from "./types";
@@ -36,18 +37,44 @@ const INTERNAL_WALK_PAGE_BY_TOUR_ID: Record<string, string> = {
   "it-0092": "/videos/naples-daytime-walk-2023",
 };
 
-const SUPPORTED_THEME_FILTERS = [
-  { value: "christmas-market", label: "Christmas Markets" },
-  { value: "world-heritage-site", label: "World Heritage Sites" },
-  { value: "ancient-site", label: "Ancient Sites" },
-  { value: "roman-ruins", label: "Roman Ruins" },
-  { value: "coastal", label: "Coastal" },
-  { value: "waterfront", label: "Waterfront" },
-  { value: "island", label: "Island" },
-  { value: "beach", label: "Beach" },
-  { value: "historic-center", label: "Historic Center" },
-  { value: "scenic-viewpoint", label: "Scenic Viewpoint" },
+const CURATED_THEME_FILTERS = [
+  {
+    value: "coastal-towns",
+    label: "Coastal Towns",
+    tags: ["coastal", "waterfront", "island", "beach"],
+  },
+  {
+    value: "ancient-sites-roman-ruins",
+    label: "Ancient Sites & Roman Ruins",
+    tags: ["ancient-site", "roman-ruins", "archaeological-site", "amphitheater"],
+  },
+  {
+    value: "historic-centers",
+    label: "Historic Centers",
+    tags: ["historic-center", "old-town"],
+  },
+  {
+    value: "world-heritage-sites",
+    label: "World Heritage Sites",
+    tags: ["world-heritage-site"],
+  },
 ] as const;
+
+const APPROVED_THEME_TAGS: readonly ExploreThemeTag[] = [
+  "coastal",
+  "waterfront",
+  "island",
+  "beach",
+  "ancient-site",
+  "roman-ruins",
+  "archaeological-site",
+  "amphitheater",
+  "historic-center",
+  "old-town",
+  "world-heritage-site",
+] as const;
+
+const APPROVED_THEME_TAG_SET: ReadonlySet<string> = new Set(APPROVED_THEME_TAGS);
 
 function titleCase(value: string) {
   return value.replace(/\b\w/g, (char) => char.toUpperCase());
@@ -127,12 +154,12 @@ export function getFilmedYearFilterOptions(): ExploreMapFilterOption[] {
 export function getThemeFilterOptions(
   features: ExploreMapFeature[]
 ): ExploreMapFilterOption[] {
-  const availableThemes = new Set(
+  const availableThemes = new Set<ExploreThemeTag>(
     features.flatMap((feature) => feature.themes ?? [])
   );
 
-  return SUPPORTED_THEME_FILTERS.filter((theme) =>
-    availableThemes.has(theme.value)
+  return CURATED_THEME_FILTERS.filter((theme) =>
+    theme.tags.some((tag) => availableThemes.has(tag))
   ).map((theme) => ({
     value: theme.value,
     label: theme.label,
@@ -178,6 +205,10 @@ export function filterExploreMapFeatures(
   const selectedTypes = new Set(selectedVideoTypes);
   const selectedYears = new Set(selectedFilmedYears);
   const selectedThemeSet = new Set(selectedThemes);
+  const selectedThemeTags = new Set<ExploreThemeTag>(
+    CURATED_THEME_FILTERS.filter((theme) => selectedThemeSet.has(theme.value))
+      .flatMap((theme) => theme.tags)
+  );
 
   return features.filter((feature) => {
     const matchesType =
@@ -188,8 +219,12 @@ export function filterExploreMapFeatures(
         selectedYears.has(String(feature.filmedYear)));
     const matchesTheme =
       selectedThemeSet.size === 0 ||
-      feature.themes.some((theme) => selectedThemeSet.has(theme));
+      feature.themes.some((theme) => selectedThemeTags.has(theme));
 
     return matchesType && matchesYear && matchesTheme;
   });
+}
+
+export function isExploreThemeTag(value: string): value is ExploreThemeTag {
+  return APPROVED_THEME_TAG_SET.has(value);
 }

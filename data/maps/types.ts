@@ -9,6 +9,19 @@ export type ExploreMapVideoType =
   | "drive-tour"
   | "scooter-tour";
 
+export type ExploreThemeTag =
+  | "coastal"
+  | "waterfront"
+  | "island"
+  | "beach"
+  | "ancient-site"
+  | "roman-ruins"
+  | "archaeological-site"
+  | "amphitheater"
+  | "historic-center"
+  | "old-town"
+  | "world-heritage-site";
+
 export type ExploreMapFeature = {
   tourId: string;
   country: string;
@@ -18,7 +31,7 @@ export type ExploreMapFeature = {
   title: string;
   slug: string;
   videoType: string;
-  themes: string[];
+  themes: ExploreThemeTag[];
   filmedDateIso: string | null;
   filmedYear: number | null;
   youtubeUrl: string;
