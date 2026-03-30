@@ -1,4 +1,4 @@
-﻿import type { VideoCatalogRecord } from "../video-types";
+import type { VideoCatalogRecord } from "../video-types";
 
 // Generated from data/maps/france.csv for currently live France video pages.
 export const franceVideos: VideoCatalogRecord[] = [
@@ -263,6 +263,80 @@ export const franceVideos: VideoCatalogRecord[] = [
                        "walking tour"
                    ],
         "timeOfDay":  "daytime",
+        "videoType":  "walking tour",
+        "visibility":  "public",
+        "highlights":  [
+
+                       ]
+    },
+    {
+        "id":  "paris-evening-walk-2022",
+        "slug":  "paris-evening-walk-2022",
+        "siteTitle":  "Paris, France Evening Walk (2022)",
+        "youtubeTitle":  "Paris, France Evening Walk (2022)",
+        "youtubeUrl":  "https://youtu.be/fKgP6JGAM_A",
+        "thumbnail":  "/paris-evening-walk-2022/paris-evening-walk-placeholder-hero.svg",
+        "country":  "France",
+        "region":  "Île-de-France",
+        "city":  "Paris",
+        "filmingDates":  [
+                             "2022-07-23"
+                         ],
+        "filmingMonthYear":  "July 2022",
+        "durationLabel":  "2:25:33",
+        "durationSeconds":  8733,
+        "weather":  "80°F / 27°C",
+        "shortDescription":  "An evening walk through Paris linking Saint-Michel, Notre-Dame, the Marais, Bastille, the Eiffel Tower, the Louvre, Pont Neuf, the Panthéon, and late-night Left Bank streets.",
+        "keywords":  [
+                         "Paris",
+                         "France",
+                         "Île-de-France",
+                         "Paris evening walk",
+                         "Notre-Dame",
+                         "Latin Quarter",
+                         "Marais",
+                         "Eiffel Tower",
+                         "Louvre Museum",
+                         "Pont Neuf",
+                         "Panthéon",
+                         "walking tour",
+                         "4K"
+                     ],
+        "landmarks":  [
+                          "Place Saint-Michel",
+                          "Rue de la Huchette",
+                          "Notre-Dame",
+                          "Rue Saint-Séverin",
+                          "Rue de la Harpe",
+                          "Cour du Commerce Saint-André",
+                          "Rue Grégoire de Tours",
+                          "Rue de Buci",
+                          "Rue des Barres",
+                          "Rue du Bourg Tibourg",
+                          "Rue des Rosiers",
+                          "Rue de Rivoli",
+                          "Hôtel de Ville",
+                          "Seine River Walk",
+                          "Place de la Bastille",
+                          "Rue de Lappe",
+                          "Rue de Charonne",
+                          "Eiffel Tower Tour",
+                          "Pont d'Iéna",
+                          "Eiffel Tower",
+                          "Louvre Museum",
+                          "Pont Neuf",
+                          "Panthéon",
+                          "Place de la Contrescarpe"
+                      ],
+        "themes":  [
+                       "evening walk",
+                       "historic center",
+                       "riverfront",
+                       "landmarks",
+                       "night atmosphere",
+                       "walking tour"
+                   ],
+        "timeOfDay":  "evening",
         "videoType":  "walking tour",
         "visibility":  "public",
         "highlights":  [
