@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 import SearchFilterBar from "../../components/SearchFilterBar";
+import { franceSearchHits } from "../../data/search-hits/france";
+import type { SearchHitRecord } from "../../data/video-types";
 import { videos } from "../../data/videos/index";
 
 type SearchParams = {
@@ -11,6 +13,11 @@ type SearchParams = {
   type?: string | string[];
 };
 
+type SearchResultGroup = {
+  video: (typeof videos)[number];
+  matchingHits: SearchHitRecord[];
+};
+
 const normalizeQueryValue = (value: string | string[] | undefined) => {
   if (Array.isArray(value)) {
     return value[0] ?? "";
@@ -19,8 +26,10 @@ const normalizeQueryValue = (value: string | string[] | undefined) => {
   return value ?? "";
 };
 
-const matchesQuery = (query: string, video: (typeof videos)[number]) => {
-  const normalizedQuery = query.trim().toLowerCase();
+const normalizeSearchText = (value: string) => value.trim().toLowerCase();
+
+const matchesVideoMetadata = (query: string, video: (typeof videos)[number]) => {
+  const normalizedQuery = normalizeSearchText(query);
 
   if (!normalizedQuery) {
     return false;
@@ -35,6 +44,24 @@ const matchesQuery = (query: string, video: (typeof videos)[number]) => {
     ...video.keywords,
     ...video.landmarks,
     ...video.highlights.map((highlight) => highlight.title),
+  ];
+
+  return searchableValues.some((value) =>
+    value.toLowerCase().includes(normalizedQuery)
+  );
+};
+
+const matchesSearchHit = (query: string, hit: SearchHitRecord) => {
+  const normalizedQuery = normalizeSearchText(query);
+
+  if (!normalizedQuery) {
+    return false;
+  }
+
+  const searchableValues = [
+    hit.highlight_title,
+    hit.landmark,
+    ...hit.search_terms,
   ];
 
   return searchableValues.some((value) =>
@@ -71,20 +98,45 @@ export default async function SearchPage({
     query || selectedCountry || selectedRegion || selectedCity || selectedType
   );
 
-  const results = hasActiveFilters
-    ? videos.filter((video) => {
-        const matchesSelectedFilters =
-          matchesFilterValue(video.country, selectedCountry) &&
-          matchesFilterValue(video.region, selectedRegion) &&
-          matchesFilterValue(video.city, selectedCity) &&
-          matchesFilterValue(video.videoType, selectedType);
-
-        if (!matchesSelectedFilters) {
-          return false;
+  const matchingHitsBySlug = query
+    ? franceSearchHits.reduce<Record<string, SearchHitRecord[]>>((groups, hit) => {
+        if (!matchesSearchHit(query, hit)) {
+          return groups;
         }
 
-        return query ? matchesQuery(query, video) : true;
-      })
+        groups[hit.slug] = [...(groups[hit.slug] ?? []), hit];
+        return groups;
+      }, {})
+    : {};
+
+  const results: SearchResultGroup[] = hasActiveFilters
+    ? videos
+        .filter((video) => {
+          const matchesSelectedFilters =
+            matchesFilterValue(video.country, selectedCountry) &&
+            matchesFilterValue(video.region, selectedRegion) &&
+            matchesFilterValue(video.city, selectedCity) &&
+            matchesFilterValue(video.videoType, selectedType);
+
+          if (!matchesSelectedFilters) {
+            return false;
+          }
+
+          if (!query) {
+            return true;
+          }
+
+          return (
+            matchesVideoMetadata(query, video) ||
+            Boolean(matchingHitsBySlug[video.slug]?.length)
+          );
+        })
+        .map((video) => ({
+          video,
+          matchingHits: (matchingHitsBySlug[video.slug] ?? []).sort(
+            (left, right) => left.seconds - right.seconds
+          ),
+        }))
     : [];
 
   return (
@@ -128,7 +180,7 @@ export default async function SearchPage({
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-8 text-[#56493a]">
               Try a city like Naples, a country like Italy, a landmark like
-              Castel dell&apos;Ovo, or a theme like waterfront, markets, or
+              Castel d&apos;Ovo, or a theme like waterfront, markets, or
               historic center.
             </p>
           </div>
@@ -139,7 +191,7 @@ export default async function SearchPage({
             </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#3d3327]">
               {query
-                ? `No results for \"${query}\"`
+                ? `No results for "${query}"`
                 : "No videos match the current filters"}
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-8 text-[#56493a]">
@@ -155,13 +207,13 @@ export default async function SearchPage({
               </p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#3d3327]">
                 {query
-                  ? `${results.length} result${results.length === 1 ? "" : "s"} for \"${query}\"`
+                  ? `${results.length} result${results.length === 1 ? "" : "s"} for "${query}"`
                   : `${results.length} matching video${results.length === 1 ? "" : "s"}`}
               </h2>
             </div>
 
             <div className="grid gap-6 lg:grid-cols-2">
-              {results.map((video) => (
+              {results.map(({ video, matchingHits }) => (
                 <article
                   key={video.id}
                   className="overflow-hidden rounded-[2rem] border border-[#d8c7b5] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
@@ -203,6 +255,29 @@ export default async function SearchPage({
                       {video.shortDescription}
                     </p>
 
+                    {matchingHits.length > 0 ? (
+                      <div className="mt-6 rounded-[1.5rem] border border-[#eadfce] bg-[#fcfaf6] p-4">
+                        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a735a]">
+                          Matching Timestamps
+                        </p>
+                        <div className="mt-3 space-y-3">
+                          {matchingHits.map((hit) => (
+                            <div
+                              key={`${hit.slug}-${hit.seconds}-${hit.highlight_title}`}
+                              className="rounded-[1rem] border border-[#eadfce] bg-white px-4 py-3"
+                            >
+                              <p className="text-sm font-semibold text-[#167fd5]">
+                                {hit.time_label}
+                              </p>
+                              <p className="mt-1 text-sm font-semibold text-[#3d3327]">
+                                {hit.highlight_title}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ) : null}
+
                     <Link
                       href={`/videos/${video.slug}`}
                       className="mt-6 inline-flex items-center justify-center rounded-full bg-[#167fd5] px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#09679e]"
@@ -219,4 +294,3 @@ export default async function SearchPage({
     </main>
   );
 }
-

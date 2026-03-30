@@ -7,6 +7,18 @@ export type HighlightRecord = {
   description?: string;
 };
 
+export type SearchHitRecord = {
+  tour_id: string;
+  slug: string;
+  title: string;
+  youtube_url: string;
+  time_label: string;
+  seconds: number;
+  highlight_title: string;
+  landmark: string;
+  search_terms: string[];
+};
+
 export type VideoCatalogRecord = {
   id: string;
   slug: string;
