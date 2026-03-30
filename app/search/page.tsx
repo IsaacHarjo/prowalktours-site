@@ -262,9 +262,12 @@ export default async function SearchPage({
                         </p>
                         <div className="mt-3 space-y-3">
                           {matchingHits.map((hit) => (
-                            <div
+                            <a
                               key={`${hit.slug}-${hit.seconds}-${hit.highlight_title}`}
-                              className="rounded-[1rem] border border-[#eadfce] bg-white px-4 py-3"
+                              href={`https://youtu.be/${hit.youtube_url.split("/").pop()}?t=${hit.seconds}`}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="block rounded-[1rem] border border-[#eadfce] bg-white px-4 py-3 transition hover:border-[#167fd5] hover:shadow-sm"
                             >
                               <p className="text-sm font-semibold text-[#167fd5]">
                                 {hit.time_label}
@@ -272,7 +275,7 @@ export default async function SearchPage({
                               <p className="mt-1 text-sm font-semibold text-[#3d3327]">
                                 {hit.highlight_title}
                               </p>
-                            </div>
+                            </a>
                           ))}
                         </div>
                       </div>

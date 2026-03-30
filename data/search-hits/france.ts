@@ -1,78 +1,136 @@
-import type { VideoDetailRecord } from "../video-types";
-import { franceVideos } from "../videos/france";
-import { avignonWalkingTour2025Detail } from "../video-details/avignon-walking-tour-2025";
-import { antibesDaytimeWalk2025Detail } from "../video-details/antibes-daytime-walk-2025";
-import { mentonFranceWalkingTour2025Detail } from "../video-details/menton-france-walking-tour-2025";
+import "server-only";
 
-const searchableTerms = (...values: Array<string | undefined>) =>
-  Array.from(
-    new Set(
-      values
-        .flatMap((value) =>
-          value ? value.split(/[|,]/).map((item) => item.trim()) : []
-        )
-        .filter(Boolean)
-    )
-  );
+import { readFileSync } from "node:fs";
+import path from "node:path";
 
-const videoBySlug = new Map(franceVideos.map((video) => [video.slug, video]));
+import type { SearchHitRecord } from "../video-types";
 
-const manualAliases: Record<string, Record<string, string[]>> = {
-  "avignon-walking-tour-2025": {
-    "Pont Saint-Bénézet (Pont d’Avignon)": [
-      "Pont d'Avignon",
-      "Pont Saint-Benezet",
-      "bridge",
-    ],
-    "Cathédrale Notre-Dame des Doms": ["Notre-Dame des Doms", "cathedral"],
-    "Place du Palais": ["Palais des Papes", "Palace of the Popes", "papal square"],
-    "Rue des Teinturiers": ["water wheel street", "canal street"],
-    "Les Halles d'Avignon": ["market hall", "covered market"],
-  },
-  "antibes-daytime-walk-2025": {
-    "Promenade Amiral de Grasse": ["seafront promenade", "waterfront promenade"],
-    "Musee Picasso": ["Picasso Museum", "museum"],
-    "Antibes Cathedral": ["cathedral", "Notre-Dame de l'Immaculee Conception"],
-    "le Marche provencal Outdoor Market": ["market", "provencal market", "food market"],
-    "Plage de la Gravette Beach": ["beach", "Gravette"],
-    "Le Nomade Sculpture": ["sculpture", "Nomade"],
-  },
-  "menton-france-walking-tour-2025": {
-    "Sablettes Beach (West)": ["beach", "blue Menton sign", "Sablettes"],
-    "Les Rampes Saint-Michel": ["stairs", "donkey steps"],
-    "Rue du Vieux Chateau": ["old castle street", "castle path"],
-    "Cimetiere du Vieux Chateau": ["castle cemetery", "viewpoint", "sea views"],
-    "Promenade du Soleil": ["promenade", "seafront"],
-  },
+type FranceHighlightCsvRow = {
+  tour_id: string;
+  slug: string;
+  title: string;
+  youtube_url: string;
+  time_label: string;
+  seconds: string;
+  highlight_title: string;
+  landmark: string;
+  search_terms: string;
 };
 
-const buildHitRows = (tourId: string, detail: VideoDetailRecord) => {
-  const video = videoBySlug.get(detail.slug);
+const CSV_PATH = path.join(process.cwd(), "data", "import", "france-highlights.csv");
+const REQUIRED_COLUMNS = [
+  "tour_id",
+  "slug",
+  "title",
+  "youtube_url",
+  "time_label",
+  "seconds",
+  "highlight_title",
+  "landmark",
+  "search_terms",
+] as const;
 
-  if (!video) {
-    return [];
+function parseCsv(content: string) {
+  const rows: string[][] = [];
+  let currentRow: string[] = [];
+  let currentValue = "";
+  let inQuotes = false;
+
+  for (let index = 0; index < content.length; index += 1) {
+    const char = content[index];
+    const nextChar = content[index + 1];
+
+    if (char === '"') {
+      if (inQuotes && nextChar === '"') {
+        currentValue += '"';
+        index += 1;
+      } else {
+        inQuotes = !inQuotes;
+      }
+      continue;
+    }
+
+    if (char === "," && !inQuotes) {
+      currentRow.push(currentValue);
+      currentValue = "";
+      continue;
+    }
+
+    if ((char === "\n" || char === "\r") && !inQuotes) {
+      if (char === "\r" && nextChar === "\n") {
+        index += 1;
+      }
+
+      currentRow.push(currentValue);
+      const hasNonEmptyValue = currentRow.some((value) => value !== "");
+      if (hasNonEmptyValue) {
+        rows.push(currentRow);
+      }
+      currentRow = [];
+      currentValue = "";
+      continue;
+    }
+
+    currentValue += char;
   }
 
-  return detail.highlights.map((highlight) => ({
-    tour_id: tourId,
-    slug: detail.slug,
-    title: video.siteTitle,
-    youtube_url: video.youtubeUrl,
-    time_label: highlight.timeLabel,
-    seconds: highlight.seconds,
-    highlight_title: highlight.title,
-    landmark: highlight.title,
-    search_terms: searchableTerms(
-      highlight.title,
-      highlight.caption,
-      highlight.description,
-      ...(manualAliases[detail.slug]?.[highlight.title] ?? [])
-    ),
-  }));
-};
+  currentRow.push(currentValue);
+  if (currentRow.some((value) => value !== "")) {
+    rows.push(currentRow);
+  }
 
-export const franceSearchHits = [
-  ...buildHitRows("fr-0001", avignonWalkingTour2025Detail),
-  ...buildHitRows("fr-0002", antibesDaytimeWalk2025Detail),
-  ...buildHitRows("fr-0003", mentonFranceWalkingTour2025Detail),
-];
+  return rows;
+}
+
+function getCsvRows() {
+  const content = readFileSync(CSV_PATH, "utf8");
+  const [headerRow = [], ...dataRows] = parseCsv(content);
+  const headers = new Map(headerRow.map((header, index) => [header, index]));
+
+  for (const column of REQUIRED_COLUMNS) {
+    if (!headers.has(column)) {
+      throw new Error(`Missing required France highlights CSV column: ${column}`);
+    }
+  }
+
+  return dataRows.map((row) => {
+    const record = {} as FranceHighlightCsvRow;
+
+    for (const column of REQUIRED_COLUMNS) {
+      record[column] = row[headers.get(column) ?? -1] ?? "";
+    }
+
+    return record;
+  });
+}
+
+function toSearchTerms(value: string) {
+  return value
+    .split(",")
+    .map((term) => term.trim())
+    .filter(Boolean);
+}
+
+function toSearchHitRecord(row: FranceHighlightCsvRow): SearchHitRecord | null {
+  const seconds = Number.parseInt(row.seconds, 10);
+
+  if (!row.slug.trim() || !row.youtube_url.trim() || Number.isNaN(seconds)) {
+    return null;
+  }
+
+  return {
+    tour_id: row.tour_id,
+    slug: row.slug,
+    title: row.title,
+    youtube_url: row.youtube_url,
+    time_label: row.time_label,
+    seconds,
+    highlight_title: row.highlight_title,
+    landmark: row.landmark || row.highlight_title,
+    search_terms: toSearchTerms(row.search_terms),
+  };
+}
+
+export const franceSearchHits: SearchHitRecord[] = getCsvRows()
+  .map(toSearchHitRecord)
+  .filter((row): row is SearchHitRecord => row !== null);

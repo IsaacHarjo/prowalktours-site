@@ -80,8 +80,7 @@ export const franceVideos: VideoCatalogRecord[] = [
       "Antibes, France Walking Tour | Old Town, Picasso Museum, Market and Seafront",
     youtubeTitle: "Antibes, France Walking Tour",
     youtubeUrl: "https://youtu.be/LECdWNv2kzA",
-    thumbnail:
-      "https://www.prowalktours.com/antibes-daytime-walk-2025/antibes-hero-image.jpg",
+    thumbnail: "/antibes-daytime-walk-2025/antibes-hero-image.jpg",
     country: "France",
     region: "French Riviera",
     city: "Antibes",
