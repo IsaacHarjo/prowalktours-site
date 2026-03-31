@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import MentonFranceWalkingTour2025Client from "./MentonFranceWalkingTour2025Client";
+import ParisLatinQuarterMaraisEveningWalk2020Client from "./ParisLatinQuarterMaraisEveningWalk2020Client";
 
 const siteUrl = "https://www.prowalktours.com";
-const pageUrl = "https://www.prowalktours.com/videos/menton-france-walking-tour-2025";
-const ogImageUrl =
-  "https://www.prowalktours.com/menton-france-walking-tour-2025/menton-hero-image.jpg";
+const pageUrl = `${siteUrl}/videos/paris-latin-quarter-marais-evening-walk-2020`;
+const heroImagePath = "/paris-latin-quarter-marais-evening-walk-2020/hero.jpg";
+const ogImageUrl = `${siteUrl}${heroImagePath}`;
 const metadataTitle =
-  "Menton, France Walking Tour | French Riviera Old Town and Seafront";
+  "Paris Latin Quarter & Marais Evening Walk | Paris, France (2020)";
 const metadataDescription =
-  "Explore Menton on the French Riviera in this 4K walking tour from Sablettes Beach through Old Town, Rue du Vieux Chateau, and the castle ruins at Cimetiere du Vieux Chateau.";
+  "Paris Latin Quarter & Marais evening walk in 4K: Place Saint-Michel, Rue des Rosiers, Bastille, and a night bike ride past H\u00F4tel de Ville and the Louvre.";
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -24,13 +24,13 @@ export const metadata: Metadata = {
     images: [
       {
         url: ogImageUrl,
-        alt: "Menton waterfront and Old Town on the French Riviera",
+        alt: "Paris Latin Quarter & Marais Evening Walk hero image",
       },
     ],
   },
 };
 
-export default function MentonFranceWalkingTour2025Page() {
+export default function ParisLatinQuarterMaraisEveningWalk2020Page() {
   const breadcrumbStructuredData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -56,13 +56,7 @@ export default function MentonFranceWalkingTour2025Page() {
       {
         "@type": "ListItem",
         position: 4,
-        name: "French Riviera",
-        item: `${siteUrl}/destinations/france/french-riviera`,
-      },
-      {
-        "@type": "ListItem",
-        position: 5,
-        name: "Menton, France Walking Tour",
+        name: "Paris Latin Quarter & Marais Evening Walk",
         item: pageUrl,
       },
     ],
@@ -71,33 +65,33 @@ export default function MentonFranceWalkingTour2025Page() {
   const videoStructuredData = {
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    name: "Menton, France Walking Tour",
+    name: "Paris Latin Quarter & Marais Evening Walk (2020)",
     description: metadataDescription,
     thumbnailUrl: [ogImageUrl],
-    embedUrl: "https://www.youtube.com/embed/ulReotWQvO0",
-    contentUrl: "https://www.youtube.com/watch?v=ulReotWQvO0",
-    uploadDate: "2025-09-09",
-    duration: "PT1H51M10S",
+    embedUrl: "https://www.youtube.com/embed/1_XzrxXnwMM",
+    contentUrl: "https://www.youtube.com/watch?v=1_XzrxXnwMM",
+    uploadDate: "2020-07-18",
+    duration: "PT1H6M13S",
     url: pageUrl,
   };
 
   return (
     <>
       <Script
-        id="menton-breadcrumb-jsonld"
+        id="paris-latin-quarter-breadcrumb-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumbStructuredData),
         }}
       />
       <Script
-        id="menton-video-jsonld"
+        id="paris-latin-quarter-video-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(videoStructuredData),
         }}
       />
-      <MentonFranceWalkingTour2025Client />
+      <ParisLatinQuarterMaraisEveningWalk2020Client />
     </>
   );
 }

@@ -9,7 +9,7 @@ const ogImageUrl = `${siteUrl}${heroImageSrc}`;
 const metadataTitle =
   "Naples Night Walk 2025 | Via Toledo, Spanish Quarter, Waterfront";
 const metadataDescription =
-  "Explore Naples at night in this 4K walking tour through Via Toledo, the Spanish Quarter, Galleria Umberto I, Piazza del Plebiscito, Via Chiaia, and the waterfront to Castel dell'Ovo.";
+  "Naples night walk in 4K: Via Toledo, Spanish Quarter, Galleria Umberto I, Piazza del Plebiscito, and the waterfront to Castel dell'Ovo.";
 const youtubeVideoId = "Cv1zIRhxvHU";
 
 export const metadata: Metadata = {
