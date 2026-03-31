@@ -56,6 +56,12 @@ export default function ParisLatinQuarterMaraisEveningWalk2020Page() {
       {
         "@type": "ListItem",
         position: 4,
+        name: "Paris",
+        item: `${siteUrl}/destinations/france/paris`,
+      },
+      {
+        "@type": "ListItem",
+        position: 5,
         name: "Paris Latin Quarter & Marais Evening Walk",
         item: pageUrl,
       },

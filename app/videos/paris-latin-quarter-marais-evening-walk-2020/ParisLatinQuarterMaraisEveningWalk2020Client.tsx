@@ -57,6 +57,7 @@ const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Countries", href: "/countries" },
   { label: "France", href: "/destinations/france" },
+  { label: "Paris", href: "/destinations/france/paris" },
   { label: "Paris Latin Quarter & Marais Evening Walk" },
 ];
 
