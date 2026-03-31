@@ -26,7 +26,15 @@ const normalizeQueryValue = (value: string | string[] | undefined) => {
   return value ?? "";
 };
 
-const normalizeSearchText = (value: string) => value.trim().toLowerCase();
+const normalizeSearchText = (value: string) =>
+  value
+    .normalize("NFD")
+    .replace(/\p{Diacritic}+/gu, "")
+    .replace(/[-'`]+/g, " ")
+    .replace(/[^\p{Letter}\p{Number}]+/gu, " ")
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, " ");
 
 const matchesVideoMetadata = (query: string, video: (typeof videos)[number]) => {
   const normalizedQuery = normalizeSearchText(query);
@@ -47,7 +55,7 @@ const matchesVideoMetadata = (query: string, video: (typeof videos)[number]) => 
   ];
 
   return searchableValues.some((value) =>
-    value.toLowerCase().includes(normalizedQuery)
+    normalizeSearchText(value).includes(normalizedQuery)
   );
 };
 
@@ -65,7 +73,7 @@ const matchesSearchHit = (query: string, hit: SearchHitRecord) => {
   ];
 
   return searchableValues.some((value) =>
-    value.toLowerCase().includes(normalizedQuery)
+    normalizeSearchText(value).includes(normalizedQuery)
   );
 };
 
