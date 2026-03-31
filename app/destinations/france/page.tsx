@@ -9,10 +9,10 @@ const embeddedMapUrl =
 const destinations = [
   {
     name: "Paris",
-    href: null,
-    status: "Coming soon",
+    href: "/destinations/france/paris",
+    status: "Available now",
     description:
-      "City walks, landmarks, neighborhoods, and future destination guides across Paris.",
+      "Evening walks, the Latin Quarter, the Marais, the Paris Catacombs, and more city walks across Paris.",
   },
   {
     name: "French Riviera",
