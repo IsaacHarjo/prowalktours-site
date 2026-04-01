@@ -11,11 +11,11 @@ const featuredDestinations = [
   },
   {
     name: "Nice",
-    href: null,
+    href: "/videos/nice-old-town-monday-evening-walk-2025",
     description:
-      "Future walks and destination coverage for promenades, neighborhoods, and city highlights in Nice.",
-    imageSrc: null,
-    imageAlt: "",
+      "An evening walk through Place Masséna, the Baroque streets of Vieux Nice, Cours Saleya, and the French Riviera waterfront at dusk.",
+    imageSrc: "/nice-old-town-monday-evening-walk-2025/hero.jpg",
+    imageAlt: "Nice old town and waterfront at dusk",
   },
   {
     name: "Antibes",
