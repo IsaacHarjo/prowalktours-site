@@ -5,22 +5,6 @@ const highlightImageBasePath = "/paris-latin-quarter-marais-evening-walk-2020/hi
 const highlightImageSrc = (filename: string) =>
   `${highlightImageBasePath}/${filename}`;
 
-const h = (
-  title: string,
-  timeLabel: string,
-  seconds: number,
-  caption: string,
-  description: string
-) => ({
-  title,
-  timeLabel,
-  seconds,
-  imageSrc: highlightImageSrc("paris-latin-quarter-placeholder.jpg"),
-  alt: `${title} during the Paris Latin Quarter & Marais Evening Walk`,
-  caption,
-  description,
-});
-
 export const parisLatinQuarterMaraisEveningWalk2020Detail: VideoDetailRecord = {
   slug: "paris-latin-quarter-marais-evening-walk-2020",
   heroEyebrow: "France Tour",
@@ -36,124 +20,158 @@ export const parisLatinQuarterMaraisEveningWalk2020Detail: VideoDetailRecord = {
     "The footage is suitable for editorial, documentary, travel, and atmospheric licensing when you need extended coverage of Paris streets at night, including Place Saint-Michel, Rue des Rosiers, H\u00F4tel de Ville, the Louvre Pyramid, and the Seine.",
   ],
   highlights: [
-    h(
-      "Intro and Map",
-      "0:00",
-      0,
-      "Intro and Map",
-      "The walk opens with an overview map of the evening route through Paris."
-    ),
-    h(
-      "Place Saint-Michel",
-      "1:07",
-      67,
-      "Place Saint-Michel",
-      "The fountain at Place Saint-Michel marks the start of the Latin Quarter stretch."
-    ),
-    h(
-      "Rue de la Huchette",
-      "3:51",
-      231,
-      "Rue de la Huchette",
-      "One of the Latin Quarter\u2019s most famous dining streets comes alive with restaurants and crowds after dark."
-    ),
-    h(
-      "Rue Saint-S\u00E9verin",
-      "8:10",
-      490,
-      "Rue Saint-S\u00E9verin",
-      "A quieter medieval lane running parallel to the main Latin Quarter streets."
-    ),
-    h(
-      "Rue de la Harpe",
-      "12:27",
-      747,
-      "Rue de la Harpe",
-      "Another classic Latin Quarter alley lined with restaurants and old Parisian architecture."
-    ),
-    h(
-      "Cour du Commerce Saint-Andr\u00E9",
-      "15:59",
-      959,
-      "Cour du Commerce Saint-Andr\u00E9",
-      "A historic covered passage dating to the 18th century, tucked between the Latin Quarter and Saint-Germain."
-    ),
-    h(
-      "Rue Gr\u00E9goire de Tours",
-      "18:25",
-      1105,
-      "Rue Gr\u00E9goire de Tours",
-      "A short atmospheric street connecting Saint-Germain to the busier Latin Quarter lanes."
-    ),
-    h(
-      "Rue des Barres",
-      "22:39",
-      1359,
-      "Rue des Barres",
-      "One of Paris\u2019s most photogenic medieval streets, running alongside the Saint-Gervais church in the Marais."
-    ),
-    h(
-      "Rue des Rosiers",
-      "25:17",
-      1517,
-      "Rue des Rosiers",
-      "The historic heart of the Jewish quarter in the Marais, lined with falafel shops and old Parisian facades."
-    ),
-    h(
-      "Rue de Rivoli",
-      "31:09",
-      1869,
-      "Rue de Rivoli",
-      "One of Paris\u2019s main east-west arteries, running alongside the Tuileries and Marais at night."
-    ),
-    h(
-      "Rue de la Roquette",
-      "34:26",
-      2066,
-      "Rue de la Roquette",
-      "A lively Bastille-area street with bars, cafes, and nightlife crowds in full swing."
-    ),
-    h(
-      "Rue de Lappe",
-      "37:39",
-      2259,
-      "Rue de Lappe",
-      "One of Bastille\u2019s most well-known nightlife streets, packed with bars and music venues."
-    ),
-    h(
-      "Rue de Charonne",
-      "42:24",
-      2544,
-      "Rue de Charonne",
-      "A trendy street extending east from Bastille into one of Paris\u2019s most popular evening neighborhoods."
-    ),
-    h(
-      "Bike Ride Begins",
-      "45:50",
-      2750,
-      "Bike Ride Begins",
-      "The walk transitions to a night bike ride through central Paris."
-    ),
-    h(
-      "Courtyard of the H\u00F4tel de Ville",
-      "50:04",
-      3004,
-      "Courtyard of the H\u00F4tel de Ville",
-      "The grand courtyard of Paris\u2019s city hall, lit up on a summer night."
-    ),
-    h(
-      "Louvre Pyramid",
-      "56:39",
-      3399,
-      "Louvre Pyramid",
-      "The iconic glass pyramid at the Louvre glows in the Cour Napol\u00E9on after dark."
-    ),
-    h(
-      "Seine River",
-      "1:01:07",
-      3667,
-      "Seine River",
-      "The bike ride ends along the Seine with views across the river toward the Île de la Cit\u00E9."
-    ),
+    {
+      title: "Intro and Map",
+      timeLabel: "0:00",
+      seconds: 0,
+      imageSrc: highlightImageSrc("paris-intro-and-map.jpg"),
+      alt: "Intro and Map during the Paris Latin Quarter & Marais Evening Walk",
+      caption: "Intro and Map",
+      description: "The walk opens with an overview map of the evening route through Paris.",
+    },
+    {
+      title: "Place Saint-Michel",
+      timeLabel: "1:07",
+      seconds: 67,
+      imageSrc: highlightImageSrc("paris-place-saint-michel.jpg"),
+      alt: "Place Saint-Michel during the Paris Latin Quarter & Marais Evening Walk",
+      caption: "Place Saint-Michel",
+      description: "The fountain at Place Saint-Michel marks the start of the Latin Quarter stretch.",
+    },
+    {
+      title: "Rue de la Huchette",
+      timeLabel: "3:51",
+      seconds: 231,
+      imageSrc: highlightImageSrc("paris-rue-de-la-huchette.jpg"),
+      alt: "Rue de la Huchette during the Paris Latin Quarter & Marais Evening Walk",
+      caption: "Rue de la Huchette",
+      description: "One of the Latin Quarter\u2019s most famous dining streets comes alive with restaurants and crowds after dark.",
+    },
+    {
+      title: "Rue Saint-S\u00E9verin",
+      timeLabel: "8:10",
+      seconds: 490,
+      imageSrc: highlightImageSrc("paris-rue-saint-severin.jpg"),
+      alt: "Rue Saint-S\u00E9verin during the Paris Latin Quarter & Marais Evening Walk",
+      caption: "Rue Saint-S\u00E9verin",
+      description: "A quieter medieval lane running parallel to the main Latin Quarter streets.",
+    },
+    {
+      title: "Rue de la Harpe",
+      timeLabel: "12:27",
+      seconds: 747,
+      imageSrc: highlightImageSrc("paris-rue-de-la-harpe.jpg"),
+      alt: "Rue de la Harpe during the Paris Latin Quarter & Marais Evening Walk",
+      caption: "Rue de la Harpe",
+      description: "Another classic Latin Quarter alley lined with restaurants and old Parisian architecture.",
+    },
+    {
+      title: "Cour du Commerce Saint-Andr\u00E9",
+      timeLabel: "15:59",
+      seconds: 959,
+      imageSrc: highlightImageSrc("paris-cour-du-commerce-saint-andre.jpg"),
+      alt: "Cour du Commerce Saint-Andr\u00E9 during the Paris Latin Quarter & Marais Evening Walk",
+      caption: "Cour du Commerce Saint-Andr\u00E9",
+      description: "A historic covered passage dating to the 18th century, tucked between the Latin Quarter and Saint-Germain.",
+    },
+    {
+      title: "Rue Gr\u00E9goire de Tours",
+      timeLabel: "18:25",
+      seconds: 1105,
+      imageSrc: highlightImageSrc("paris-rue-gregoire-de-tours.jpg"),
+      alt: "Rue Gr\u00E9goire de Tours during the Paris Latin Quarter & Marais Evening Walk",
+      caption: "Rue Gr\u00E9goire de Tours",
+      description: "A short atmospheric street connecting Saint-Germain to the busier Latin Quarter lanes.",
+    },
+    {
+      title: "Rue des Barres",
+      timeLabel: "22:39",
+      seconds: 1359,
+      imageSrc: highlightImageSrc("paris-rue-des-barres.jpg"),
+      alt: "Rue des Barres during the Paris Latin Quarter & Marais Evening Walk",
+      caption: "Rue des Barres",
+      description: "One of Paris\u2019s most photogenic medieval streets, running alongside the Saint-Gervais church in the Marais.",
+    },
+    {
+      title: "Rue des Rosiers",
+      timeLabel: "25:17",
+      seconds: 1517,
+      imageSrc: highlightImageSrc("paris-rue-des-rosiers.jpg"),
+      alt: "Rue des Rosiers during the Paris Latin Quarter & Marais Evening Walk",
+      caption: "Rue des Rosiers",
+      description: "The historic heart of the Jewish quarter in the Marais, lined with falafel shops and old Parisian facades.",
+    },
+    {
+      title: "Rue de Rivoli",
+      timeLabel: "31:09",
+      seconds: 1869,
+      imageSrc: highlightImageSrc("paris-rue-de-rivoli.jpg"),
+      alt: "Rue de Rivoli during the Paris Latin Quarter & Marais Evening Walk",
+      caption: "Rue de Rivoli",
+      description: "One of Paris\u2019s main east-west arteries, running alongside the Tuileries and Marais at night.",
+    },
+    {
+      title: "Rue de la Roquette",
+      timeLabel: "34:26",
+      seconds: 2066,
+      imageSrc: highlightImageSrc("paris-rue-de-la-roquette.jpg"),
+      alt: "Rue de la Roquette during the Paris Latin Quarter & Marais Evening Walk",
+      caption: "Rue de la Roquette",
+      description: "A lively Bastille-area street with bars, cafes, and nightlife crowds in full swing.",
+    },
+    {
+      title: "Rue de Lappe",
+      timeLabel: "37:39",
+      seconds: 2259,
+      imageSrc: highlightImageSrc("paris-rue-de-lappe.jpg"),
+      alt: "Rue de Lappe during the Paris Latin Quarter & Marais Evening Walk",
+      caption: "Rue de Lappe",
+      description: "One of Bastille\u2019s most well-known nightlife streets, packed with bars and music venues.",
+    },
+    {
+      title: "Rue de Charonne",
+      timeLabel: "42:24",
+      seconds: 2544,
+      imageSrc: highlightImageSrc("paris-rue-de-charonne.jpg"),
+      alt: "Rue de Charonne during the Paris Latin Quarter & Marais Evening Walk",
+      caption: "Rue de Charonne",
+      description: "A trendy street extending east from Bastille into one of Paris\u2019s most popular evening neighborhoods.",
+    },
+    {
+      title: "Bike Ride Begins",
+      timeLabel: "45:50",
+      seconds: 2750,
+      imageSrc: highlightImageSrc("paris-bike-ride-begins.jpg"),
+      alt: "Bike Ride Begins during the Paris Latin Quarter & Marais Evening Walk",
+      caption: "Bike Ride Begins",
+      description: "The walk transitions to a night bike ride through central Paris.",
+    },
+    {
+      title: "Courtyard of the H\u00F4tel de Ville",
+      timeLabel: "50:04",
+      seconds: 3004,
+      imageSrc: highlightImageSrc("paris-courtyard-of-the-hotel-de-ville.jpg"),
+      alt: "Courtyard of the H\u00F4tel de Ville during the Paris Latin Quarter & Marais Evening Walk",
+      caption: "Courtyard of the H\u00F4tel de Ville",
+      description: "The grand courtyard of Paris\u2019s city hall, lit up on a summer night.",
+    },
+    {
+      title: "Louvre Pyramid",
+      timeLabel: "56:39",
+      seconds: 3399,
+      imageSrc: highlightImageSrc("paris-louvre-pyramid.jpg"),
+      alt: "Louvre Pyramid during the Paris Latin Quarter & Marais Evening Walk",
+      caption: "Louvre Pyramid",
+      description: "The iconic glass pyramid at the Louvre glows in the Cour Napol\u00E9on after dark.",
+    },
+    {
+      title: "Seine River",
+      timeLabel: "1:01:07",
+      seconds: 3667,
+      imageSrc: highlightImageSrc("paris-seine-river.jpg"),
+      alt: "Seine River during the Paris Latin Quarter & Marais Evening Walk",
+      caption: "Seine River",
+      description: "The bike ride ends along the Seine with views across the river toward the \u00CEle de la Cit\u00E9.",
+    },
   ],
 };

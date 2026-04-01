@@ -5,6 +5,13 @@
  * Fetches a YouTube video frame at each highlight timestamp for a given
  * tour slug and saves it to public/[slug]/highlights/.
  *
+ * Strategy:
+ *   1. Download the full video once to a temp file (yt-dlp, 720p)
+ *   2. Extract all frames from the local file (ffmpeg, instant seeks)
+ *   3. Delete the temp file
+ *
+ * This is much faster than seeking a remote HTTP stream per frame.
+ *
  * Naming:  [city]-[slugified-landmark-title].jpg  (no trailing number)
  * Skips:   any file that already exists (never overwrites)
  *
@@ -15,20 +22,21 @@
  *   yt-dlp  →  https://github.com/yt-dlp/yt-dlp#installation
  *   ffmpeg  →  https://ffmpeg.org/download.html
  *
- * Example:
+ * Examples:
  *   node scripts/fetch-highlight-images.js avignon-walking-tour-2025 --dry-run
- *   node scripts/fetch-highlight-images.js avignon-walking-tour-2025
+ *   node scripts/fetch-highlight-images.js paris-latin-quarter-marais-evening-walk-2020
  */
 'use strict';
 
-const { spawnSync } = require('child_process');
-const fs = require('fs');
+const { spawnSync, execFileSync } = require('child_process');
+const fs   = require('fs');
+const os   = require('os');
 const path = require('path');
 
 // ─── CLI args ────────────────────────────────────────────────────────────────
 
-const args = process.argv.slice(2);
-const slug = args.find(a => !a.startsWith('--'));
+const args   = process.argv.slice(2);
+const slug   = args.find(a => !a.startsWith('--'));
 const dryRun = args.includes('--dry-run');
 
 if (!slug) {
@@ -56,10 +64,12 @@ const OUTPUT_DIR  = path.join(ROOT, 'public', slug, 'highlights');
  *   "Pont Saint-Bénézet (Pont d'Avignon)" → "pont-saint-benezet"
  *   "Cathédrale Notre-Dame des Doms"      → "cathedrale-notre-dame-des-doms"
  *   "Place de l'Horloge"                  → "place-de-l-horloge"
+ *   "Hôtel de Ville"                      → "hotel-de-ville"
  */
 function slugify(str) {
   return str
-    .replace(/\([^)]*\)/g, '')             // strip parenthetical (sub-title) content
+    .replace(/\\u([0-9a-fA-F]{4})/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)))
+    .replace(/\([^)]*\)/g, '')             // strip parenthetical content
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')       // strip combining accent marks
     .toLowerCase()
@@ -69,9 +79,9 @@ function slugify(str) {
 
 /** Formats raw seconds as HH:MM:SS for readable console output. */
 function fmtTime(totalSeconds) {
-  const h  = Math.floor(totalSeconds / 3600);
-  const m  = Math.floor((totalSeconds % 3600) / 60);
-  const s  = totalSeconds % 60;
+  const h = Math.floor(totalSeconds / 3600);
+  const m = Math.floor((totalSeconds % 3600) / 60);
+  const s = totalSeconds % 60;
   return [h, m, s].map(v => String(v).padStart(2, '0')).join(':');
 }
 
@@ -93,7 +103,6 @@ function requireTool(name) {
   }
 }
 
-// Check tools upfront (skip in dry-run — no downloads needed)
 if (!dryRun) {
   requireTool('yt-dlp');
   requireTool('ffmpeg');
@@ -101,92 +110,46 @@ if (!dryRun) {
 
 // ─── Parse catalog (france.ts / italy.ts) → city + videoId ──────────────────
 
-/**
- * Reads the catalog files to find the entry for `slug` and returns the
- * city name and YouTube video ID.
- *
- * Parses TypeScript source files as text using targeted regex — works
- * because catalog entries follow a consistent schema.
- */
 function parseCatalog() {
   for (const file of CATALOG_PATHS) {
     if (!fs.existsSync(file)) continue;
 
     const text = fs.readFileSync(file, 'utf8');
 
-    // Find the object entry that contains `slug: "<slug>"`
     const slugRx = new RegExp(`slug:\\s*["']${slug}["']`);
     const m = slugRx.exec(text);
     if (!m) continue;
 
-    // Walk backward to find the opening { of this catalog entry
     let start = text.lastIndexOf('{', m.index);
-
-    // Walk forward counting braces to find the matching closing }
     let depth = 0;
     let end = start;
     for (let i = start; i < text.length; i++) {
       if (text[i] === '{') depth++;
-      else if (text[i] === '}') {
-        depth--;
-        if (depth === 0) { end = i; break; }
-      }
+      else if (text[i] === '}') { depth--; if (depth === 0) { end = i; break; } }
     }
     const block = text.slice(start, end + 1);
 
-    // Extract city and youtubeUrl from within the entry block
-    const cityM  = /city:\s*["']([^"']+)["']/.exec(block);
-    const urlM   = /youtubeUrl:\s*["']([^"']+)["']/.exec(block);
+    const cityM = /city:\s*["']([^"']+)["']/.exec(block);
+    const urlM  = /youtubeUrl:\s*["']([^"']+)["']/.exec(block);
 
-    if (!cityM) {
-      console.warn(`⚠  No "city" field found for slug "${slug}" — using slug as city prefix.`);
-    }
-    if (!urlM) {
-      console.error(`✗ No "youtubeUrl" field found for slug "${slug}".`);
-      process.exit(1);
-    }
+    if (!cityM) console.warn(`⚠  No "city" field for slug "${slug}" — using slug as prefix.`);
+    if (!urlM)  { console.error(`✗ No "youtubeUrl" for slug "${slug}".`); process.exit(1); }
 
     const city   = cityM ? cityM[1] : slug;
     const rawUrl = urlM[1];
-
-    // Support all common YouTube URL formats:
-    //   https://youtu.be/ID
-    //   https://www.youtube.com/watch?v=ID
-    //   https://www.youtube.com/embed/ID
-    const idM = /(?:youtu\.be\/|[?&]v=|\/embed\/)([A-Za-z0-9_-]{11})/.exec(rawUrl);
-    if (!idM) {
-      console.error(`✗ Could not parse a YouTube video ID from URL: ${rawUrl}`);
-      process.exit(1);
-    }
+    const idM    = /(?:youtu\.be\/|[?&]v=|\/embed\/)([A-Za-z0-9_-]{11})/.exec(rawUrl);
+    if (!idM) { console.error(`✗ Could not parse YouTube ID from: ${rawUrl}`); process.exit(1); }
 
     return { city, videoId: idM[1] };
   }
 
-  console.error(`✗ Slug "${slug}" not found in any catalog file.`);
+  console.error(`✗ Slug "${slug}" not found in catalog.`);
   console.error('  Checked:', CATALOG_PATHS.map(p => path.relative(ROOT, p)).join(', '));
   process.exit(1);
 }
 
 // ─── Parse video-details/[slug].ts → highlights ──────────────────────────────
 
-/**
- * Extracts the list of { title, seconds } pairs from the detail file.
- *
- * Handles two formats used in this codebase:
- *
- * Format A — direct object literals (Avignon, Menton, Antibes, …):
- *   highlights: [
- *     { title: "Landmark Name", timeLabel: "0:42", seconds: 42, … },
- *     …
- *   ]
- *
- * Format B — h() helper shorthand (Paris Catacombs, Paris Evening Walk, …):
- *   const h = (title, timeLabel, seconds, …) => ({ … })
- *   highlights: [
- *     h("Landmark Name", "0:42", 42, …),
- *     …
- *   ]
- */
 function parseHighlights() {
   if (!fs.existsSync(DETAIL_PATH)) {
     console.error(`✗ Detail file not found: ${DETAIL_PATH}`);
@@ -195,32 +158,22 @@ function parseHighlights() {
 
   const text = fs.readFileSync(DETAIL_PATH, 'utf8');
 
-  // Find the highlights array
   const hlIdx = text.indexOf('highlights:');
-  if (hlIdx === -1) {
-    console.warn('⚠  No "highlights:" field found in detail file.');
-    return [];
-  }
+  if (hlIdx === -1) { console.warn('⚠  No "highlights:" field.'); return []; }
   const arrIdx = text.indexOf('[', hlIdx);
   if (arrIdx === -1) return [];
 
-  // Find the matching closing ] by counting brackets
-  let depth = 0;
-  let arrEnd = arrIdx;
+  let depth = 0, arrEnd = arrIdx;
   for (let i = arrIdx; i < text.length; i++) {
     if (text[i] === '[') depth++;
-    else if (text[i] === ']') {
-      depth--;
-      if (depth === 0) { arrEnd = i; break; }
-    }
+    else if (text[i] === ']') { depth--; if (depth === 0) { arrEnd = i; break; } }
   }
   const hlBlock = text.slice(arrIdx, arrEnd + 1);
 
   const highlights = [];
 
-  // ── Format B: h("title", "timeLabel", seconds, …) ──────────────────────
+  // Format B: h("title", "timeLabel", seconds, …)
   if (/\bconst h\s*=/.test(text)) {
-    // Match: h( "title" , "timeLabel" , seconds
     const re = /\bh\(\s*["']((?:[^"'\\]|\\.)*?)["']\s*,\s*["'][^"']*["']\s*,\s*(\d+)/g;
     let m;
     while ((m = re.exec(hlBlock)) !== null) {
@@ -229,30 +182,19 @@ function parseHighlights() {
     return highlights;
   }
 
-  // ── Format A: { title: "…", seconds: NNN, … } ──────────────────────────
-  // Parse each individual object in the array to avoid false matches
-  // from fields like `durationSeconds` elsewhere in the file.
+  // Format A: { title: "…", seconds: NNN, … }
   let pos = 0;
   while (pos < hlBlock.length) {
     const objStart = hlBlock.indexOf('{', pos);
     if (objStart === -1) break;
-
-    // Find the matching } for this object
-    let d = 0;
-    let objEnd = objStart;
+    let d = 0, objEnd = objStart;
     for (let i = objStart; i < hlBlock.length; i++) {
       if (hlBlock[i] === '{') d++;
-      else if (hlBlock[i] === '}') {
-        d--;
-        if (d === 0) { objEnd = i; break; }
-      }
+      else if (hlBlock[i] === '}') { d--; if (d === 0) { objEnd = i; break; } }
     }
     const obj = hlBlock.slice(objStart, objEnd + 1);
-
-    // TypeScript property values are double-quoted; don't treat ' as a delimiter.
     const titleM   = /title:\s*"((?:[^"\\]|\\.)*)"/.exec(obj);
     const secondsM = /\bseconds:\s*(\d+)/.exec(obj);
-
     if (titleM && secondsM) {
       highlights.push({ title: titleM[1], seconds: parseInt(secondsM[1], 10) });
     }
@@ -262,65 +204,76 @@ function parseHighlights() {
   return highlights;
 }
 
-// ─── Get YouTube stream URL via yt-dlp ───────────────────────────────────────
+// ─── Download video to temp file ─────────────────────────────────────────────
 
 /**
- * Calls yt-dlp once to obtain a direct video stream URL for the given
- * YouTube video ID. We prefer 720p MP4 for good quality and seeking support.
- *
- * The URL is used by ffmpeg to seek and extract frames — yt-dlp is only
- * called once per script run, regardless of highlight count.
+ * Downloads the YouTube video at 720p to a temp .mp4 file.
+ * Returns the path to the temp file.
+ * Prefers formats that produce a single muxed MP4 for reliable ffmpeg seeking.
  */
-function getStreamUrl(videoId) {
-  console.log(`\n⟳  Getting stream URL for ${videoId} …`);
+function downloadVideo(videoId) {
+  const tmpFile = path.join(os.tmpdir(), `prowalk-${videoId}.mp4`);
+
+  if (fs.existsSync(tmpFile)) {
+    console.log(`   ✓ Temp file already exists, reusing: ${tmpFile}\n`);
+    return tmpFile;
+  }
+
+  console.log(`\n⟳  Downloading video ${videoId} to temp file…`);
+  console.log(`   This may take several minutes. The file will be deleted when done.\n`);
 
   const r = spawnSync('yt-dlp', [
-    '-f',
-    // Prefer 720p MP4 (best for HTTP range-based seeking by ffmpeg).
-    // Fall through to best available if not found.
-    'bestvideo[height<=720][ext=mp4]/bestvideo[height<=720]/best[height<=720]',
-    '-g',
+    // Prefer a pre-muxed progressive MP4 up to 720p — best for local ffmpeg seeking.
+    // Fall back to best available MP4, then anything ≤720p.
+    '-f', 'best[height<=720][ext=mp4]/best[height<=720]/bestvideo[ext=mp4]+bestaudio[ext=m4a]/best',
+    '--merge-output-format', 'mp4',
+    '-o', tmpFile,
     `https://www.youtube.com/watch?v=${videoId}`,
-  ], { encoding: 'utf8' });
+  ], {
+    encoding: 'utf8',
+    // Stream output to console so the user sees download progress
+    stdio: ['ignore', 'inherit', 'inherit'],
+  });
 
   if (r.error || r.status !== 0) {
-    console.error('✗ yt-dlp failed:');
-    console.error(r.stderr || r.error?.message || '(no output)');
+    console.error('\n✗ yt-dlp download failed.');
     process.exit(1);
   }
 
-  // yt-dlp may return two lines (video + audio) for adaptive formats;
-  // we only need the video stream line for frame extraction.
-  const url = r.stdout.trim().split('\n')[0].trim();
-  if (!url) {
-    console.error('✗ yt-dlp returned an empty URL.');
-    process.exit(1);
+  if (!fs.existsSync(tmpFile)) {
+    // yt-dlp may have chosen a different extension — find whatever it wrote
+    const guesses = ['.mkv', '.webm', '.mp4'].map(ext =>
+      path.join(os.tmpdir(), `prowalk-${videoId}${ext}`)
+    );
+    const found = guesses.find(p => fs.existsSync(p));
+    if (!found) {
+      console.error('✗ Downloaded file not found at expected path.');
+      process.exit(1);
+    }
+    return found;
   }
 
-  console.log('   ✓ Stream URL obtained.\n');
-  return url;
+  console.log(`\n   ✓ Download complete: ${tmpFile}\n`);
+  return tmpFile;
 }
 
-// ─── Extract a single frame via ffmpeg ───────────────────────────────────────
+// ─── Extract a single frame from a local file via ffmpeg ─────────────────────
 
 /**
- * Asks ffmpeg to seek to `seconds` in the remote stream and save one frame.
- * Using -ss before -i (input seek) is fast and works well with HTTP streams.
- * Returns true on success, false on error (does not exit — allows other
- * frames to continue).
+ * Seeks to `seconds` in the local video file and saves one JPEG frame.
+ * Local seeking is near-instant regardless of timestamp position.
  */
-function extractFrame(streamUrl, seconds, outputPath) {
+function extractFrame(localVideoPath, seconds, outputPath) {
   const r = spawnSync('ffmpeg', [
     '-ss', String(seconds),
-    '-i',  streamUrl,
+    '-i',  localVideoPath,
     '-frames:v', '1',
-    '-q:v', '2',             // JPEG quality: 2 = near-lossless (scale 1–31)
-    '-y',                    // overwrite safety (file won't exist — we check first)
+    '-q:v', '2',      // JPEG quality 2 = near-lossless
+    '-y',
     outputPath,
   ], { encoding: 'utf8' });
 
   if (r.error || r.status !== 0) {
-    // Surface only the error lines from ffmpeg's verbose stderr
     const errLines = (r.stderr || '')
       .split('\n')
       .filter(l => /error|invalid|failed/i.test(l))
@@ -337,12 +290,10 @@ console.log(`\n${'═'.repeat(60)}`);
 console.log(`  fetch-highlight-images: ${slug}${dryRun ? '  [DRY RUN]' : ''}`);
 console.log(`${'═'.repeat(60)}\n`);
 
-// 1. Resolve city + YouTube video ID from catalog data
 const { city, videoId } = parseCatalog();
 console.log(`City:       ${city}`);
 console.log(`Video ID:   ${videoId}`);
 
-// 2. Parse highlights from the detail file
 const highlights = parseHighlights();
 console.log(`Highlights: ${highlights.length}\n`);
 
@@ -351,31 +302,18 @@ if (highlights.length === 0) {
   process.exit(0);
 }
 
-// 3. Build the work list — determine filename and existence for each highlight
+// Build work list
 const cityPrefix = slugify(city);
 const tasks = [];
 const seenFilenames = new Set();
 
 for (const h of highlights) {
-  let filename = `${cityPrefix}-${slugify(h.title)}.jpg`;
-
-  // Handle duplicate generated filenames (e.g. two highlights with the same
-  // title). The first one is written; subsequent duplicates are logged only.
-  // We do NOT add a number suffix — see CLAUDE.md highlight image rules.
+  const filename    = `${cityPrefix}-${slugify(h.title)}.jpg`;
   const isDuplicate = seenFilenames.has(filename);
   seenFilenames.add(filename);
-
-  const outputPath = path.join(OUTPUT_DIR, filename);
-  const exists = fs.existsSync(outputPath);
-
-  tasks.push({
-    title:    h.title,
-    seconds:  h.seconds,
-    filename,
-    outputPath,
-    exists,
-    isDuplicate,
-  });
+  const outputPath  = path.join(OUTPUT_DIR, filename);
+  const exists      = fs.existsSync(outputPath);
+  tasks.push({ title: h.title, seconds: h.seconds, filename, outputPath, exists, isDuplicate });
 }
 
 const toFetch = tasks.filter(t => !t.exists && !t.isDuplicate);
@@ -384,20 +322,14 @@ const toSkip  = tasks.filter(t =>  t.exists || t.isDuplicate);
 console.log(`To download: ${toFetch.length}`);
 console.log(`To skip:     ${toSkip.length}  (already exist or duplicate title)\n`);
 
-// Print full preview table
 const COL = 12;
 console.log(`${'Time'.padEnd(COL)}${'Status'.padEnd(12)}Filename`);
 console.log(`${'-'.repeat(COL)}${'-'.repeat(12)}${'-'.repeat(50)}`);
 for (const t of tasks) {
-  let statusLabel;
-  if (t.isDuplicate && !t.exists) statusLabel = 'DUP-SKIP';
-  else if (t.exists)              statusLabel = 'EXISTS';
-  else                            statusLabel = 'FETCH';
-
+  const statusLabel = (t.isDuplicate && !t.exists) ? 'DUP-SKIP' : t.exists ? 'EXISTS' : 'FETCH';
   console.log(`${fmtTime(t.seconds).padEnd(COL)}${statusLabel.padEnd(12)}${t.filename}`);
 }
 
-// Stop here for dry-run
 if (dryRun) {
   console.log(`\n${'─'.repeat(60)}`);
   console.log('  Dry run complete — no files written.');
@@ -406,36 +338,38 @@ if (dryRun) {
   process.exit(0);
 }
 
-// Stop early if nothing to do
 if (toFetch.length === 0) {
   console.log(`\n✓ All highlight images already exist — nothing to download.\n`);
   process.exit(0);
 }
 
-// 4. Ensure the output directory exists before writing
 fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
-// 5. Get the YouTube stream URL (one yt-dlp call for the whole video)
-const streamUrl = getStreamUrl(videoId);
+// Download full video once to temp file
+const tmpVideo = downloadVideo(videoId);
 
-// 6. Extract frames
-let saved = 0;
-let failed = 0;
+// Extract all frames from local file
+let saved = 0, failed = 0;
 console.log(`${'─'.repeat(60)}`);
 console.log('  Extracting frames…\n');
 
 for (const t of toFetch) {
   process.stdout.write(`  [${fmtTime(t.seconds)}]  ${t.filename}  … `);
-  const ok = extractFrame(streamUrl, t.seconds, t.outputPath);
-  if (ok) {
-    console.log('✓');
-    saved++;
-  } else {
-    failed++;
-  }
+  const ok = extractFrame(tmpVideo, t.seconds, t.outputPath);
+  if (ok) { console.log('✓'); saved++; }
+  else    { failed++; }
 }
 
-console.log(`\n${'═'.repeat(60)}`);
+// Clean up temp video file
+console.log(`\n  Cleaning up temp file…`);
+try {
+  fs.unlinkSync(tmpVideo);
+  console.log(`  ✓ Deleted ${path.basename(tmpVideo)}\n`);
+} catch (e) {
+  console.warn(`  ⚠  Could not delete temp file: ${tmpVideo}`);
+}
+
+console.log(`${'═'.repeat(60)}`);
 console.log(`  Done`);
 console.log(`  Saved:   ${saved}`);
 console.log(`  Failed:  ${failed}`);
