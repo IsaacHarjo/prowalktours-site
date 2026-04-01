@@ -21,6 +21,14 @@ export const metadata: Metadata = {
 
 const featuredWalks = [
   {
+    name: "Paris Luxembourg Gardens Walk (2020)",
+    href: "/videos/paris-luxemburg-gardens-day-walk-2020",
+    description:
+      "Grand Basin sailboats, the Statue of Liberty, Orangerie du S\u00e9nat, rose garden, and Palais du Luxembourg in a compact garden walk.",
+    imageSrc: "https://i.ytimg.com/vi/bibZZXvk-UE/maxresdefault.jpg",
+    imageAlt: "Luxembourg Gardens in Paris",
+  },
+  {
     name: "Paris Landmarks Day Walk (2017)",
     href: "/videos/paris-landmarks-day-walk-2017",
     description:
