@@ -139,23 +139,6 @@ export default function ParisPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-10 lg:px-10">
-        <div className="rounded-3xl border border-[#eadfce] bg-white p-8 shadow-sm">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
-            Overview
-          </p>
-          <h2 className="mt-3 text-3xl font-bold text-[#2f261d]">
-            Evening walks, historic neighborhoods, and underground Paris
-          </h2>
-          <p className="mt-4 max-w-4xl text-[17px] leading-8 text-[#6c5b49]">
-            The Paris collection covers the city at street level — riverfront
-            promenades, the Latin Quarter, the Marais, major landmarks at dusk,
-            and the Catacombs underground. Each walk is long-form, shot in 4K,
-            with no commentary so the city speaks for itself.
-          </p>
-        </div>
-      </section>
-
       <section
         id="featured-walks"
         className="mx-auto max-w-7xl px-6 py-6 lg:px-10"
