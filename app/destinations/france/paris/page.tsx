@@ -29,6 +29,14 @@ const featuredWalks = [
     imageAlt: "Paris landmarks day walk with Eiffel Tower",
   },
   {
+    name: "Montmartre Evening Walk (2022)",
+    href: "/videos/montmartre-evening-walk-2022",
+    description:
+      "Place du Tertre, Sacr\u00e9-C\u0153ur, Square Louise Michel, Place des Abbesses, and Rue Lepic on an evening walk through Montmartre.",
+    imageSrc: "https://i.ytimg.com/vi/hLa9PRc9DFk/maxresdefault.jpg",
+    imageAlt: "Montmartre evening walk with Sacr\u00e9-C\u0153ur",
+  },
+  {
     name: "Paris, France Evening Walk (2022)",
     href: "/videos/paris-evening-walk-2022",
     description:
