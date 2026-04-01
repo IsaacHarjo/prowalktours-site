@@ -190,7 +190,7 @@ export default function ParisLandmarksDayWalk2017Client() {
                   <div className="space-y-3">
                     <div className="border-b border-[#efe3d3] pb-3">
                       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Resolution</p>
-                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">4K UHD</span>
+                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">1080p HD</span>
                     </div>
                     <div className="border-b border-[#efe3d3] pb-3">
                       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Frame Rate</p>

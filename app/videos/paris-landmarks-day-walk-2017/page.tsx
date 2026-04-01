@@ -9,7 +9,7 @@ const ogImageUrl = `${siteUrl}${heroImagePath}`;
 const metadataTitle =
   "Paris, France Landmarks Day Walk (2017) | Louvre, Notre-Dame, Eiffel Tower, Arc de Triomphe";
 const metadataDescription =
-  "Paris landmarks day walk in 4K: the Louvre, Notre-Dame, Champs-\u00c9lys\u00e9es, Arc de Triomphe, the Eiffel Tower, Les Invalides, and Paris old streets.";
+  "Paris landmarks day walk in HD: the Louvre, Notre-Dame, Champs-\u00c9lys\u00e9es, Arc de Triomphe, the Eiffel Tower, Les Invalides, and Paris old streets.";
 
 export const metadata: Metadata = {
   title: metadataTitle,
