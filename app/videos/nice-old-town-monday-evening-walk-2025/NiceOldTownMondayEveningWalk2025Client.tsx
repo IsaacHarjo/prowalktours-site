@@ -374,15 +374,15 @@ export default function NiceOldTownMondayEveningWalk2025Client() {
                   <div className="space-y-3">
                     <div className="border-b border-[#efe3d3] pb-3">
                       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Camera</p>
-                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">DJI Osmo Action 5 Pro</span>
+                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">Sony A7S III</span>
                     </div>
                     <div className="border-b border-[#efe3d3] pb-3">
                       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Lens</p>
-                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">155° FOV (built-in)</span>
+                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">Sony FE 24mm f/1.4 GM Lens</span>
                     </div>
                     <div>
                       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Microphone</p>
-                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">Built-in stereo</span>
+                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">Sony ECM-M1</span>
                     </div>
                   </div>
                 </div>
@@ -394,11 +394,11 @@ export default function NiceOldTownMondayEveningWalk2025Client() {
                     </div>
                     <div className="border-b border-[#efe3d3] pb-3">
                       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Frame Rate</p>
-                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">30 fps</span>
+                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">59.94 fps</span>
                     </div>
                     <div>
                       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Color</p>
-                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">10-bit D-Log M</span>
+                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">Rec. 709</span>
                     </div>
                   </div>
                 </div>
