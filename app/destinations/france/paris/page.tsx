@@ -23,23 +23,26 @@ const featuredWalks = [
   {
     name: "Paris, France Evening Walk (2022)",
     href: "/videos/paris-evening-walk-2022",
-    status: "Available now",
     description:
       "Saint-Michel, Notre-Dame, the Marais, Bastille, Eiffel Tower, the Louvre, Pont Neuf, and the Panthéon on a long-form evening walk through central Paris.",
+    imageSrc: "https://i.ytimg.com/vi/fKgP6JGAM_A/maxresdefault.jpg",
+    imageAlt: "Paris evening walk along the Seine at dusk",
   },
   {
     name: "Paris Latin Quarter & Marais Evening Walk (2020)",
     href: "/videos/paris-latin-quarter-marais-evening-walk-2020",
-    status: "Available now",
     description:
       "An evening walk through the Latin Quarter and into the Marais, covering the historic street grid, markets, and riverside promenades in central Paris.",
+    imageSrc: "/paris-latin-quarter-marais-evening-walk-2020/hero.jpg",
+    imageAlt: "Paris Latin Quarter streets at night",
   },
   {
     name: "Paris Catacombs Tour (2020)",
     href: "/videos/paris-catacombs-tour-2020",
-    status: "Available now",
     description:
       "The Paris Catacombs entrance, underground ossuary corridors, stacked bone walls, and key memorial features inside one of the city's most distinctive sites.",
+    imageSrc: "/paris-catacombs-tour-2020/hero.jpg",
+    imageAlt: "Paris Catacombs underground ossuary",
   },
 ];
 
@@ -152,19 +155,26 @@ export default function ParisPage() {
             <Link
               key={walk.name}
               href={walk.href}
-              className="group rounded-3xl border border-[#eadfce] bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-[#d7c3ad] hover:shadow-md"
+              className="group overflow-hidden rounded-3xl border border-[#eadfce] bg-white shadow-sm transition hover:-translate-y-1 hover:border-[#d7c3ad] hover:shadow-md"
             >
-              <h3 className="text-2xl font-bold text-[#2f261d] transition group-hover:text-[#167fd5]">
-                {walk.name}
-              </h3>
-              <p className="mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-[#9a7a52]">
-                {walk.status}
-              </p>
-              <p className="mt-4 text-[16px] leading-7 text-[#6c5b49]">
-                {walk.description}
-              </p>
-              <div className="mt-6 text-[16px] font-semibold text-[#167fd5]">
-                View walk →
+              <div className="aspect-16/10 w-full overflow-hidden">
+                <img
+                  src={walk.imageSrc}
+                  alt={walk.imageAlt}
+                  className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-[#2f261d] transition group-hover:text-[#167fd5]">
+                  {walk.name}
+                </h3>
+                <p className="mt-3 text-[15px] leading-7 text-[#6c5b49]">
+                  {walk.description}
+                </p>
+                <div className="mt-5 text-[15px] font-semibold text-[#167fd5]">
+                  Begin Walking →
+                </div>
               </div>
             </Link>
           ))}
