@@ -4,23 +4,26 @@ const featuredDestinations = [
   {
     name: "Avignon",
     href: "/videos/avignon-walking-tour-2025",
-    status: "Available now",
     description:
       "Explore Avignon as the historic City of the Popes, with papal history, city walls, lively squares, and the famous Pont d'Avignon.",
+    imageSrc: "/avignon-walking-tour-2025/avignon-hero-image.png",
+    imageAlt: "Avignon historic center and papal landmarks",
   },
   {
     name: "Nimes",
     href: null,
-    status: "Coming soon",
     description:
       "Future Provence walking tours focused on Roman history, monuments, and the grand historic core of Nimes.",
+    imageSrc: null,
+    imageAlt: "",
   },
   {
     name: "Arles",
     href: null,
-    status: "Coming soon",
     description:
       "Future walks through Arles centered on Roman heritage, old town character, and Provencal atmosphere.",
+    imageSrc: null,
+    imageAlt: "",
   },
 ];
 
@@ -117,35 +120,46 @@ export default function ProvencePage() {
               <Link
                 key={destination.name}
                 href={destination.href}
-                className="group rounded-3xl border border-[#eadfce] bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-[#d7c3ad] hover:shadow-md"
+                className="group overflow-hidden rounded-3xl border border-[#eadfce] bg-white shadow-sm transition hover:-translate-y-1 hover:border-[#d7c3ad] hover:shadow-md"
               >
-                <h2 className="text-2xl font-bold text-[#2f261d] transition group-hover:text-[#167fd5]">
-                  {destination.name}
-                </h2>
-                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-[#9a7a52]">
-                  {destination.status}
-                </p>
-                <p className="mt-4 text-[16px] leading-7 text-[#6c5b49]">
-                  {destination.description}
-                </p>
-                <div className="mt-6 text-[16px] font-semibold text-[#167fd5]">
-                  View featured walk -&gt;
+                {destination.imageSrc ? (
+                  <div className="aspect-16/10 w-full overflow-hidden">
+                    <img
+                      src={destination.imageSrc}
+                      alt={destination.imageAlt}
+                      className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                ) : null}
+                <div className="p-6">
+                  <h2 className="text-xl font-bold text-[#2f261d] transition group-hover:text-[#167fd5]">
+                    {destination.name}
+                  </h2>
+                  <p className="mt-3 text-[15px] leading-7 text-[#6c5b49]">
+                    {destination.description}
+                  </p>
+                  <div className="mt-5 text-[15px] font-semibold text-[#167fd5]">
+                    Begin Walking →
+                  </div>
                 </div>
               </Link>
             ) : (
               <div
                 key={destination.name}
-                className="rounded-3xl border border-[#eadfce] bg-[#f8f3ec] p-7 opacity-90"
+                className="overflow-hidden rounded-3xl border border-[#eadfce] bg-[#f8f3ec] opacity-90"
               >
-                <h2 className="text-2xl font-bold text-[#2f261d]">
-                  {destination.name}
-                </h2>
-                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-[#9a7a52]">
-                  {destination.status}
-                </p>
-                <p className="mt-4 text-[16px] leading-7 text-[#6c5b49]">
-                  {destination.description}
-                </p>
+                <div className="flex aspect-16/10 w-full items-center justify-center bg-[#efe5d8] text-sm font-semibold text-[#9a7a52]">
+                  Coming soon
+                </div>
+                <div className="p-6">
+                  <h2 className="text-xl font-bold text-[#2f261d]">
+                    {destination.name}
+                  </h2>
+                  <p className="mt-3 text-[15px] leading-7 text-[#6c5b49]">
+                    {destination.description}
+                  </p>
+                </div>
               </div>
             )
           )}
