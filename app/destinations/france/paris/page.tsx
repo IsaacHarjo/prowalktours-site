@@ -21,6 +21,14 @@ export const metadata: Metadata = {
 
 const featuredWalks = [
   {
+    name: "Paris Eiffel Tower Tour (2020)",
+    href: "/videos/paris-eiffel-tower-day-walk-2020",
+    description:
+      "The full Eiffel Tower experience: entrance, elevator rides, Level 2, the summit interior and exterior panoramas, Level 1 glass floor, and stairs down.",
+    imageSrc: "https://i.ytimg.com/vi/Lrj8LEZ9FA4/maxresdefault.jpg",
+    imageAlt: "Eiffel Tower tour from ground to summit",
+  },
+  {
     name: "Paris Luxembourg Gardens Walk (2020)",
     href: "/videos/paris-luxemburg-gardens-day-walk-2020",
     description:
