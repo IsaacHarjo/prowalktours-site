@@ -21,6 +21,14 @@ export const metadata: Metadata = {
 
 const featuredWalks = [
   {
+    name: "Paris, France Day Walk (2020)",
+    href: "/videos/paris-landmarks-day-walk-2020",
+    description:
+      "A 12-mile day walk through Rue Mouffetard, the Panth\u00e9on, Luxembourg Gardens, Notre-Dame, the Louvre, the Champs-\u00c9lys\u00e9es, Arc de Triomphe, and the Eiffel Tower.",
+    imageSrc: "https://i.ytimg.com/vi/oz1Mgu8e1N4/maxresdefault.jpg",
+    imageAlt: "Paris landmarks day walk with Eiffel Tower",
+  },
+  {
     name: "Paris, France Evening Walk (2022)",
     href: "/videos/paris-evening-walk-2022",
     description:
@@ -141,10 +149,10 @@ export default function ParisPage() {
             Featured Walks
           </p>
           <h2 className="mt-3 text-3xl font-bold text-[#2f261d]">
-            Three Paris walks available now
+            Paris walks available now
           </h2>
           <p className="mt-3 max-w-3xl text-[17px] leading-8 text-[#6c5b49]">
-            All three walks are live with full timestamps, route maps, and
+            All walks are live with full timestamps, route maps, and
             licensing details. Additional Paris content will be added as more
             walks are published.
           </p>
