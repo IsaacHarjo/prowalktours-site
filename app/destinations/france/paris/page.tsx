@@ -21,6 +21,14 @@ export const metadata: Metadata = {
 
 const featuredWalks = [
   {
+    name: "Paris Promenade Plant\u00e9e Walk (2020)",
+    href: "/videos/paris-promenade-plantee-day-walk-2020",
+    description:
+      "The Coul\u00e9e Verte Ren\u00e9-Dumont elevated greenway, Viaduc des Arts, and Jardin de Reuilly \u2014 a quieter side of Paris.",
+    imageSrc: "https://i.ytimg.com/vi/KoORZY4TygU/maxresdefault.jpg",
+    imageAlt: "Paris Promenade Plant\u00e9e elevated greenway",
+  },
+  {
     name: "Paris, France Day Walk (2020)",
     href: "/videos/paris-landmarks-day-walk-2020",
     description:
