@@ -21,6 +21,14 @@ export const metadata: Metadata = {
 
 const featuredWalks = [
   {
+    name: "Paris Landmarks Day Walk (2017)",
+    href: "/videos/paris-landmarks-day-walk-2017",
+    description:
+      "The Louvre, Notre-Dame, Champs-\u00c9lys\u00e9es, Arc de Triomphe, the Eiffel Tower, Les Invalides, and the atmospheric old streets of Paris.",
+    imageSrc: "https://i.ytimg.com/vi/ME2zyNBh3JM/maxresdefault.jpg",
+    imageAlt: "Paris landmarks day walk 2017",
+  },
+  {
     name: "Paris Promenade Plant\u00e9e Walk (2020)",
     href: "/videos/paris-promenade-plantee-day-walk-2020",
     description:
