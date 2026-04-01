@@ -318,15 +318,15 @@ export default function ParisLandmarksDayWalk2020Client() {
                   <div className="space-y-3">
                     <div className="border-b border-[#efe3d3] pb-3">
                       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Camera</p>
-                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">Sony A7S III</span>
+                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">GoPro Hero 8</span>
                     </div>
                     <div className="border-b border-[#efe3d3] pb-3">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Lens</p>
-                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">Sony FE 24mm f/1.4 GM Lens</span>
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Microphone</p>
+                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">H1 Zoom Handy Recorder</span>
                     </div>
                     <div>
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Microphone</p>
-                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">Sony ECM-M1</span>
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Audio</p>
+                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">Binaural (Roland CS-10EM)</span>
                     </div>
                   </div>
                 </div>
@@ -338,7 +338,7 @@ export default function ParisLandmarksDayWalk2020Client() {
                     </div>
                     <div className="border-b border-[#efe3d3] pb-3">
                       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Frame Rate</p>
-                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">59.94 fps</span>
+                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">50 fps</span>
                     </div>
                     <div>
                       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Color</p>
