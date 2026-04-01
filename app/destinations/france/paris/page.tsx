@@ -29,6 +29,14 @@ const featuredWalks = [
     imageAlt: "Paris landmarks day walk with Eiffel Tower",
   },
   {
+    name: "Montmartre Day Walk (2020)",
+    href: "/videos/montmartre-day-walk-2020",
+    description:
+      "Moulin Rouge, Rue Lepic, La Maison Rose, Place du Tertre, Sacr\u00e9-C\u0153ur dome views, and the full hilltop village of Montmartre.",
+    imageSrc: "https://i.ytimg.com/vi/yqOlY5uBBbo/maxresdefault.jpg",
+    imageAlt: "Montmartre day walk hilltop streets",
+  },
+  {
     name: "Montmartre Evening Walk (2022)",
     href: "/videos/montmartre-evening-walk-2022",
     description:
