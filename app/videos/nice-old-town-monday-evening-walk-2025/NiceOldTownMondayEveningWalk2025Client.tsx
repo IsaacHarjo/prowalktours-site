@@ -376,9 +376,13 @@ export default function NiceOldTownMondayEveningWalk2025Client() {
                       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Camera</p>
                       <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">DJI Osmo Action 5 Pro</span>
                     </div>
+                    <div className="border-b border-[#efe3d3] pb-3">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Lens</p>
+                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">155° FOV (built-in)</span>
+                    </div>
                     <div>
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Audio</p>
-                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">In-camera audio</span>
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Microphone</p>
+                      <span className="mt-1 block text-sm font-semibold text-[#5c4c33]">Built-in stereo</span>
                     </div>
                   </div>
                 </div>
