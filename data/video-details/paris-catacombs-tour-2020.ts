@@ -5,22 +5,6 @@ const highlightImageBasePath = "/paris-catacombs-tour-2020/highlights";
 const highlightImageSrc = (filename: string) =>
   `${highlightImageBasePath}/${filename}`;
 
-const h = (
-  title: string,
-  timeLabel: string,
-  seconds: number,
-  caption: string,
-  description: string
-) => ({
-  title,
-  timeLabel,
-  seconds,
-  imageSrc: highlightImageSrc("paris-catacombs-placeholder.jpg"),
-  alt: `${title} during the Paris Catacombs tour`,
-  caption,
-  description,
-});
-
 export const parisCatacombsTour2020Detail: VideoDetailRecord = {
   slug: "paris-catacombs-tour-2020",
   heroEyebrow: "France Tour",
@@ -36,47 +20,65 @@ export const parisCatacombsTour2020Detail: VideoDetailRecord = {
     "The footage is suitable for editorial, documentary, educational, travel, and history-focused licensing when you need atmospheric underground coverage of the Paris Catacombs and its landmark interior spaces.",
   ],
   highlights: [
-    h(
-      "Introduction",
-      "0:00",
-      0,
-      "Introduction",
-      "The tour opens with the first look at the Paris Catacombs experience."
-    ),
-    h(
-      "Top Level Entrance",
-      "1:25",
-      85,
-      "Top Level Entrance",
-      "The entrance sequence sets up the descent into the underground site."
-    ),
-    h(
-      "Entering the Catacombs",
-      "1:56",
-      116,
-      "Entering the Catacombs",
-      "The route moves below ground and into the historic tunnel system."
-    ),
-    h(
-      "Stacks of Bones and Skulls",
-      "3:17",
-      197,
-      "Stacks of Bones and Skulls",
-      "One of the most recognizable visual sections of the ossuary appears early in the tour."
-    ),
-    h(
-      "Column of Bones",
-      "20:35",
-      1235,
-      "Column of Bones",
-      "A distinct memorial arrangement highlights the site's formal bone displays."
-    ),
-    h(
-      "Exiting the Catacombs",
-      "22:11",
-      1331,
-      "Exiting the Catacombs",
-      "The tour returns to the surface after the final underground stretch."
-    ),
+    {
+      title: "Introduction",
+      timeLabel: "0:00",
+      seconds: 0,
+      imageSrc: highlightImageSrc("paris-introduction.jpg"),
+      alt: "Introduction during the Paris Catacombs tour",
+      caption: "Introduction",
+      description:
+        "The tour opens with the first look at the Paris Catacombs experience.",
+    },
+    {
+      title: "Top Level Entrance",
+      timeLabel: "1:25",
+      seconds: 85,
+      imageSrc: highlightImageSrc("paris-top-level-entrance.jpg"),
+      alt: "Top Level Entrance during the Paris Catacombs tour",
+      caption: "Top Level Entrance",
+      description:
+        "The entrance sequence sets up the descent into the underground site.",
+    },
+    {
+      title: "Entering the Catacombs",
+      timeLabel: "1:56",
+      seconds: 116,
+      imageSrc: highlightImageSrc("paris-entering-the-catacombs.jpg"),
+      alt: "Entering the Catacombs during the Paris Catacombs tour",
+      caption: "Entering the Catacombs",
+      description:
+        "The route moves below ground and into the historic tunnel system.",
+    },
+    {
+      title: "Stacks of Bones and Skulls",
+      timeLabel: "3:17",
+      seconds: 197,
+      imageSrc: highlightImageSrc("paris-stacks-of-bones-and-skulls.jpg"),
+      alt: "Stacks of Bones and Skulls during the Paris Catacombs tour",
+      caption: "Stacks of Bones and Skulls",
+      description:
+        "One of the most recognizable visual sections of the ossuary appears early in the tour.",
+    },
+    {
+      title: "Column of Bones",
+      timeLabel: "20:35",
+      seconds: 1235,
+      imageSrc: highlightImageSrc("paris-column-of-bones.jpg"),
+      alt: "Column of Bones during the Paris Catacombs tour",
+      caption: "Column of Bones",
+      description:
+        "A distinct memorial arrangement highlights the site's formal bone displays.",
+    },
+    {
+      title: "Exiting the Catacombs",
+      timeLabel: "22:11",
+      seconds: 1331,
+      imageSrc: highlightImageSrc("paris-exiting-the-catacombs.jpg"),
+      alt: "Exiting the Catacombs during the Paris Catacombs tour",
+      caption: "Exiting the Catacombs",
+      description:
+        "The tour returns to the surface after the final underground stretch.",
+    },
   ],
 };
