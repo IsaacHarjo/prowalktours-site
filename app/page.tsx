@@ -1,7 +1,96 @@
+import { readFileSync } from "node:fs";
+import path from "node:path";
 import Link from "next/link";
 
 import SearchFilterBar from "../components/SearchFilterBar";
+import WorldMapClient from "../components/WorldMapClient";
 import { videos } from "../data/videos/index";
+
+// ─── Load world tour data from all_tours.csv at build time ───────────────────
+
+const COUNTRY_INDICES: Record<string, number> = {
+  Italy: 0,
+  France: 1,
+  Germany: 2,
+};
+
+function loadWorldTours() {
+  const csvPath = path.join(process.cwd(), "data", "maps", "all_tours.csv");
+  const content = readFileSync(csvPath, "utf8");
+
+  const rows: string[][] = [];
+  let currentRow: string[] = [];
+  let currentValue = "";
+  let inQuotes = false;
+
+  for (let i = 0; i < content.length; i++) {
+    const c = content[i];
+    const next = content[i + 1];
+    if (c === '"') {
+      if (inQuotes && next === '"') {
+        currentValue += '"';
+        i++;
+      } else {
+        inQuotes = !inQuotes;
+      }
+      continue;
+    }
+    if (c === "," && !inQuotes) {
+      currentRow.push(currentValue);
+      currentValue = "";
+      continue;
+    }
+    if ((c === "\n" || c === "\r") && !inQuotes) {
+      if (c === "\r" && next === "\n") i++;
+      currentRow.push(currentValue);
+      if (currentRow.some((v) => v !== "")) rows.push(currentRow);
+      currentRow = [];
+      currentValue = "";
+      continue;
+    }
+    currentValue += c;
+  }
+  currentRow.push(currentValue);
+  if (currentRow.some((v) => v !== "")) rows.push(currentRow);
+
+  const [header, ...dataRows] = rows;
+  const col: Record<string, number> = {};
+  header.forEach((h, i) => {
+    col[h] = i;
+  });
+
+  return dataRows
+    .map((row) => {
+      const slug =
+        (row[col["slug_override"]] || "").trim() ||
+        (row[col["slug"]] || "").trim();
+      const lat = parseFloat(row[col["latitude"]] || "");
+      const lng = parseFloat(row[col["longitude"]] || "");
+      const ytUrl = (row[col["youtube_url"]] || "").trim();
+      const country = (row[col["country"]] || "").trim();
+      const title = (row[col["title"]] || "").trim();
+      const city = (row[col["city"]] || "").trim();
+
+      if (!slug || !ytUrl || isNaN(lat) || isNaN(lng) || lat === 0) {
+        return null;
+      }
+
+      return {
+        slug,
+        title,
+        city,
+        country,
+        latitude: lat,
+        longitude: lng,
+        countryIndex: COUNTRY_INDICES[country] ?? 0,
+      };
+    })
+    .filter(
+      (t): t is NonNullable<typeof t> => t !== null
+    );
+}
+
+const worldTours = loadWorldTours();
 
 const startHereCards = [
   {
@@ -96,7 +185,7 @@ export default function HomePage() {
                 </Link>
 
                 <Link
-                  href="#map"
+                  href="#world-map"
                   className="inline-flex items-center justify-center rounded-full border border-white/70 bg-white/10 px-6 py-3 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
                 >
                   Explore the Map
@@ -138,6 +227,25 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section
+        id="world-map"
+        className="scroll-mt-16 mx-auto max-w-7xl px-6 pb-10 lg:px-10 lg:pb-12"
+      >
+        <div className="mb-6">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
+            Interactive World Map
+          </p>
+          <h2 className="mt-3 text-3xl font-bold text-[#2f261d]">
+            Explore Our Tours Around the World
+          </h2>
+          <p className="mt-3 max-w-3xl text-[17px] leading-8 text-[#6c5b49]">
+            421 walks across Italy, France &amp; Germany
+          </p>
+        </div>
+
+        <WorldMapClient tours={worldTours} />
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-10 lg:pb-24">
