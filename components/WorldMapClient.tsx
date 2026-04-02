@@ -89,9 +89,10 @@ function makePointLayer(country: string, color: string): LayerProps {
 type WorldMapClientProps = {
   tours: WorldTour[];
   fullWidth?: boolean;
+  heightClassName?: string;
 };
 
-export default function WorldMapClient({ tours, fullWidth }: WorldMapClientProps) {
+export default function WorldMapClient({ tours, fullWidth, heightClassName }: WorldMapClientProps) {
   const mapRef = useRef<MapRef | null>(null);
   const mapboxToken =
     process.env.NEXT_PUBLIC_MAPBOX_TOKEN ??
@@ -210,9 +211,11 @@ export default function WorldMapClient({ tours, fullWidth }: WorldMapClientProps
       ? "relative overflow-hidden bg-white"
       : "relative overflow-hidden rounded-[1.5rem] border border-[#d8c7b5] bg-white shadow-sm sm:rounded-[2rem]"
     }>
-      <div className={fullWidth
-        ? "h-[50vh] w-full bg-[#f8f3ec] sm:h-[60vh]"
-        : "h-[380px] w-full bg-[#f8f3ec] lg:h-[550px]"
+      <div className={heightClassName
+        ? `${heightClassName} w-full bg-[#f8f3ec]`
+        : fullWidth
+          ? "h-[50vh] w-full bg-[#f8f3ec] sm:h-[60vh]"
+          : "h-[380px] w-full bg-[#f8f3ec] lg:h-[550px]"
       }>
         <MapboxMap
           ref={mapRef}
