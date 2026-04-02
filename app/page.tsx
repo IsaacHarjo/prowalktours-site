@@ -70,6 +70,11 @@ function loadWorldTours() {
       const country = (row[col["country"]] || "").trim();
       const title = (row[col["title"]] || "").trim();
       const city = (row[col["city"]] || "").trim();
+      const region = (row[col["region"]] || "").trim();
+      const videoType = (row[col["video_type"]] || "").trim();
+      const filmedYearStr = (row[col["filmed_year"]] || "").trim();
+      const filmedYear = filmedYearStr ? parseInt(filmedYearStr, 10) : null;
+      const durationLabel = (row[col["duration_label"]] || "").trim();
 
       if (!slug || !ytUrl || isNaN(lat) || isNaN(lng) || lat === 0) {
         return null;
@@ -80,6 +85,11 @@ function loadWorldTours() {
         title,
         city,
         country,
+        region,
+        videoType,
+        filmedYear: filmedYear && !isNaN(filmedYear) ? filmedYear : null,
+        durationLabel,
+        youtubeUrl: ytUrl,
         latitude: lat,
         longitude: lng,
         countryIndex: COUNTRY_INDICES[country] ?? 0,

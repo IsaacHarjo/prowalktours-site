@@ -19,6 +19,11 @@ type WorldTour = {
   title: string;
   city: string;
   country: string;
+  region: string;
+  videoType: string;
+  filmedYear: number | null;
+  durationLabel: string;
+  youtubeUrl: string;
   latitude: number;
   longitude: number;
   countryIndex: number; // 0=Italy, 1=France, 2=Germany
@@ -36,6 +41,23 @@ const COUNTRIES = [
   { name: "France", color: "#ED2939", index: 1 },
   { name: "Germany", color: "#FFCE00", index: 2 },
 ] as const;
+
+function getDisplayTitle(title: string) {
+  return title
+    .replace(/\b4K\b/gi, "")
+    .replace(/\s+\(\d{4}\)\s*$/u, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
+function formatVideoType(vt: string) {
+  return vt.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function getYoutubeId(url: string) {
+  const m = /(?:youtu\.be\/|[?&]v=|\/embed\/)([A-Za-z0-9_-]{11})/.exec(url);
+  return m ? m[1] : "";
+}
 
 function makeClusterLayer(country: string, color: string): LayerProps {
   return {
@@ -103,6 +125,8 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
     tours: WorldTour[];
     longitude: number;
     latitude: number;
+    clusterId: number;
+    countryName: string;
   } | null>(null);
 
   // Build per-country tour arrays and GeoJSON
@@ -214,6 +238,8 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
             tours: clusterTourList,
             longitude: center[0],
             latitude: center[1],
+            clusterId,
+            countryName,
           });
           mapRef.current?.easeTo({ center, duration: 500 });
         });
@@ -316,46 +342,168 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
             </Popup>
           ) : null}
 
-          {clusterInfo ? (
-            <Popup
-              longitude={clusterInfo.longitude}
-              latitude={clusterInfo.latitude}
-              anchor="bottom"
-              onClose={() => setClusterInfo(null)}
-              closeOnClick={false}
-              className="world-map-popup"
-              maxWidth="320px"
-            >
-              <div className="max-h-[280px] w-[280px] overflow-y-auto p-1">
-                <p className="sticky top-0 bg-white pb-2 text-xs font-semibold uppercase tracking-wider text-[#9a7a52]">
-                  {clusterInfo.tours.length} walks in this area
-                </p>
-                <div className="space-y-3">
-                  {clusterInfo.tours.map((tour) => (
-                    <div
-                      key={tour.slug}
-                      className="border-b border-[#eadfce] pb-2 last:border-0"
-                    >
-                      <p className="text-sm font-semibold text-[#2f261d]">
-                        {tour.title}
-                      </p>
-                      <p className="mt-0.5 text-xs text-[#6c5b49]">
-                        {tour.city}, {tour.country}
-                      </p>
-                      <a
-                        href={`/videos/${tour.slug}`}
-                        className="mt-1 inline-block text-xs font-semibold text-[#167fd5] hover:underline"
-                      >
-                        Watch Tour →
-                      </a>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Popup>
-          ) : null}
+          {/* cluster popup removed — now using overlay panel below */}
         </MapboxMap>
       </div>
+
+      {/* Cluster overlay panel — matches Italy map design */}
+      {clusterInfo ? (
+        <div className="pointer-events-none absolute inset-y-4 right-4 z-20 hidden w-[360px] max-w-[calc(100%-2rem)] lg:block">
+          <div className="pointer-events-auto flex max-h-full flex-col overflow-hidden rounded-[1.25rem] border border-[#eadfce] bg-white shadow-xl">
+            <div className="flex items-start justify-between gap-4 border-b border-[#eadfce] px-4 py-4">
+              <div className="min-w-0">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#9a7a52]">
+                  Cluster Results
+                </p>
+                <h3 className="mt-2 text-lg font-bold text-[#2f261d]">
+                  {clusterInfo.tours.length} videos in this area
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#6c5b49]">
+                  Browse the videos in this cluster or zoom in for a closer view.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setClusterInfo(null)}
+                className="shrink-0 rounded-full border border-[#d8c7b5] bg-white px-3 py-1.5 text-sm font-semibold text-[#5c4c33] transition hover:bg-[#f8f3ec]"
+              >
+                Close
+              </button>
+            </div>
+            <div className="overflow-y-auto p-4">
+              <button
+                type="button"
+                onClick={() => {
+                  const map = mapRef.current?.getMap();
+                  if (!map) return;
+                  const source = map.getSource(`world-tours-${clusterInfo.countryName}`) as unknown as {
+                    getClusterExpansionZoom: (id: number, cb: (err: Error | null, zoom: number) => void) => void;
+                  };
+                  source?.getClusterExpansionZoom(clusterInfo.clusterId, (err, zoom) => {
+                    if (err) return;
+                    mapRef.current?.easeTo({
+                      center: [clusterInfo.longitude, clusterInfo.latitude],
+                      zoom: Math.min(zoom ?? map.getZoom(), 14),
+                      duration: 500,
+                    });
+                    setClusterInfo(null);
+                  });
+                }}
+                className="mb-4 inline-flex items-center justify-center rounded-full border border-[#167fd5] bg-white px-4 py-2 text-sm font-semibold text-[#167fd5] transition hover:bg-[#edf6fd]"
+              >
+                Zoom in
+              </button>
+              <div className="space-y-4">
+                {clusterInfo.tours.map((item) => {
+                  const ytId = getYoutubeId(item.youtubeUrl);
+                  const thumbSrc = ytId
+                    ? `https://img.youtube.com/vi/${ytId}/mqdefault.jpg`
+                    : "";
+                  return (
+                    <div
+                      key={item.slug}
+                      className="rounded-[1rem] border border-[#eadfce] bg-[#fcfaf7] p-3"
+                    >
+                      {thumbSrc ? (
+                        <div className="overflow-hidden rounded-[0.9rem] border border-[#eadfce] bg-white">
+                          <img
+                            src={thumbSrc}
+                            alt={item.title}
+                            className="aspect-[16/9] w-full object-cover"
+                          />
+                        </div>
+                      ) : null}
+                      <div className="mt-3">
+                        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#9a7a52]">
+                          {item.region}
+                        </p>
+                        <h4 className="mt-2 text-base font-bold text-[#2f261d]">
+                          {getDisplayTitle(item.title)}
+                        </h4>
+                        <div className="mt-2 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#9a7a52]">
+                          <span className="rounded-full border border-[#eadfce] bg-white px-3 py-1">
+                            {formatVideoType(item.videoType)}
+                          </span>
+                        </div>
+                        <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-[#8a7a68]">
+                          {item.filmedYear ? (
+                            <span>Filmed {item.filmedYear}</span>
+                          ) : null}
+                          {item.durationLabel ? (
+                            <span>{item.durationLabel}</span>
+                          ) : null}
+                        </div>
+                        <div className="mt-3">
+                          <a
+                            href={`/videos/${item.slug}`}
+                            className="inline-flex w-full items-center justify-center rounded-full bg-[#167fd5] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0f6db9]"
+                          >
+                            Watch 4K Walk
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : null}
+
+      {/* Mobile cluster panel */}
+      {clusterInfo ? (
+        <div className="border-t border-[#eadfce] bg-white p-4 lg:hidden">
+          <div className="flex items-center justify-between">
+            <p className="text-sm font-semibold text-[#2f261d]">
+              {clusterInfo.tours.length} videos in this area
+            </p>
+            <button
+              type="button"
+              onClick={() => setClusterInfo(null)}
+              className="rounded-full border border-[#d8c7b5] bg-white px-3 py-1 text-xs font-semibold text-[#5c4c33]"
+            >
+              Close
+            </button>
+          </div>
+          <div className="mt-3 max-h-[300px] space-y-3 overflow-y-auto">
+            {clusterInfo.tours.map((item) => {
+              const ytId = getYoutubeId(item.youtubeUrl);
+              const thumbSrc = ytId
+                ? `https://img.youtube.com/vi/${ytId}/mqdefault.jpg`
+                : "";
+              return (
+                <div
+                  key={item.slug}
+                  className="flex gap-3 rounded-xl border border-[#eadfce] bg-[#fcfaf7] p-2"
+                >
+                  {thumbSrc ? (
+                    <img
+                      src={thumbSrc}
+                      alt={item.title}
+                      className="h-16 w-24 shrink-0 rounded-lg object-cover"
+                    />
+                  ) : null}
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold text-[#2f261d] leading-tight">
+                      {getDisplayTitle(item.title)}
+                    </p>
+                    <p className="mt-1 text-xs text-[#8a7a68]">
+                      {item.city}, {item.country}
+                    </p>
+                    <a
+                      href={`/videos/${item.slug}`}
+                      className="mt-1 inline-block text-xs font-semibold text-[#167fd5]"
+                    >
+                      Watch Tour →
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ) : null}
 
       {/* Country legend */}
       <div className="absolute bottom-4 left-4 rounded-xl border border-[#d8c7b5] bg-white/95 px-3 py-2 shadow-sm backdrop-blur-sm">
