@@ -3,7 +3,7 @@
  * scripts/generate-video-page.js
  *
  * Generates a complete video page (data file + page.tsx + Client.tsx)
- * from france.csv and all-highlights.csv for a given slug.
+ * from country CSV files and all-highlights.csv for a given slug.
  *
  * Usage:
  *   node scripts/generate-video-page.js <slug> [--dry-run]
@@ -15,7 +15,10 @@ const fs   = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const CSV_PATH = path.join(ROOT, 'data', 'maps', 'france.csv');
+const CSV_PATHS = [
+  path.join(ROOT, 'data', 'maps', 'france.csv'),
+  path.join(ROOT, 'data', 'maps', 'germany.csv'),
+];
 const HIGHLIGHTS_CSV = path.join(ROOT, 'data', 'import', 'all-highlights.csv');
 const dryRun = process.argv.includes('--dry-run');
 const batchMode = process.argv.includes('--batch');
@@ -46,8 +49,16 @@ function parseCsv(content) {
 
 // ─── Load CSV data ───────────────────────────────────────────────────────────
 
-const [csvHeader, ...csvRows] = parseCsv(fs.readFileSync(CSV_PATH, 'utf8'));
-const col = {}; csvHeader.forEach((h, i) => { col[h] = i; });
+// Load all country CSVs into one combined row set
+let csvHeader = null;
+let csvRows = [];
+for (const csvPath of CSV_PATHS) {
+  if (!fs.existsSync(csvPath)) continue;
+  const [header, ...rows] = parseCsv(fs.readFileSync(csvPath, 'utf8'));
+  if (!csvHeader) csvHeader = header;
+  csvRows = csvRows.concat(rows);
+}
+const col = {}; (csvHeader || []).forEach((h, i) => { col[h] = i; });
 function get(row, name) { return (row[col[name]] || '').trim(); }
 
 const [hlHeader, ...hlRows] = parseCsv(fs.readFileSync(HIGHLIGHTS_CSV, 'utf8'));
@@ -103,6 +114,7 @@ function getBreadcrumbs(city, region) {
       { label: 'France', href: '/destinations/france' },
     ];
   }
+  // Default France fallback
   return [
     { label: 'Home', href: '/' },
     { label: 'Countries', href: '/countries' },
@@ -110,7 +122,18 @@ function getBreadcrumbs(city, region) {
   ];
 }
 
-function getRelatedTours(city, slug) {
+function getBreadcrumbsForCountry(country, city, region) {
+  if (country === 'Germany') {
+    return [
+      { label: 'Home', href: '/' },
+      { label: 'Countries', href: '/countries' },
+      { label: 'Germany', href: '/destinations/germany' },
+    ];
+  }
+  return getBreadcrumbs(city, region);
+}
+
+function getRelatedTours(city, slug, country) {
   const c = city.toLowerCase();
   const tours = [];
   if (c === 'paris' || c === 'chessy' || c === 'montmartre') {
@@ -121,6 +144,18 @@ function getRelatedTours(city, slug) {
     ];
     return pool.filter(t => t.href !== `/videos/${slug}`).slice(0, 3);
   }
+  // Germany Christmas Markets — cross-link between cities
+  if (country === 'Germany') {
+    const germanyPool = [
+      { title: 'Nuremberg Christmas Market Evening (2024)', href: '/videos/nuremberg-nuremberg-christmas-market-evening-walk-2024', description: 'The Christkindlesmarkt and old town of Nuremberg lit up for Christmas.', imageSrc: 'https://i.ytimg.com/vi/placeholder/maxresdefault.jpg', imageAlt: 'Nuremberg Christmas market' },
+      { title: 'Dresden Christmas Market Day (2024)', href: '/videos/dresden-dresden-christmas-market-day-walk-2024', description: 'The Striezelmarkt and Frauenkirche area in Dresden by day.', imageSrc: 'https://i.ytimg.com/vi/placeholder/maxresdefault.jpg', imageAlt: 'Dresden Christmas market' },
+      { title: 'Cologne Christmas Market Evening (2024)', href: '/videos/cologne-cologne-christmas-market-evening-walk-2024', description: 'The cathedral Christmas market and old town squares of Cologne.', imageSrc: 'https://i.ytimg.com/vi/placeholder/maxresdefault.jpg', imageAlt: 'Cologne Christmas market' },
+      { title: 'Rothenburg ob der Tauber Evening (2024)', href: '/videos/rothenburg-ob-der-tauber-rothenburg-ob-der-tauber-christmas-market-evening-walk-2024', description: 'A medieval walled town with one of Germany\'s most atmospheric Christmas markets.', imageSrc: 'https://i.ytimg.com/vi/placeholder/maxresdefault.jpg', imageAlt: 'Rothenburg Christmas market' },
+      { title: 'Munich Christmas Market Evening (2024)', href: '/videos/munich-munich-christmas-market-evening-walk-2024', description: 'Marienplatz and the surrounding Christmas markets of Munich.', imageSrc: 'https://i.ytimg.com/vi/placeholder/maxresdefault.jpg', imageAlt: 'Munich Christmas market' },
+    ];
+    return germanyPool.filter(t => t.href !== `/videos/${slug}`).slice(0, 3);
+  }
+
   // Alsace — cross-link between towns
   const alsacePool = [
     { title: 'Colmar Christmas Market Evening (2023)', href: '/videos/colmar-christmas-market-evening-walk-2023', description: 'Colmar old town lit up for Christmas with market stalls and half-timbered houses.', imageSrc: 'https://i.ytimg.com/vi/NMQ4Sy3e-Ec/maxresdefault.jpg', imageAlt: 'Colmar Christmas market' },
@@ -193,9 +228,10 @@ function generatePage(slug) {
     const s = (get(row, 'slug_override') || get(row, 'slug'));
     if (s === slug) { tourRow = row; break; }
   }
-  if (!tourRow) { console.error(`  ✗ Slug "${slug}" not found in france.csv`); return false; }
+  if (!tourRow) { console.error(`  ✗ Slug "${slug}" not found in any country CSV`); return false; }
 
   const tourId = get(tourRow, 'tour_id');
+  const country = get(tourRow, 'country');
   const title = get(tourRow, 'title');
   const city = get(tourRow, 'city');
   const region = get(tourRow, 'region');
@@ -214,8 +250,8 @@ function generatePage(slug) {
   const videoId = ytId(youtubeUrl);
   const { embed: mapEmbed, viewer: mapViewer } = mapEditToEmbed(mapUrl);
   const gear = getGear(filmedDate);
-  const breadcrumbsBase = getBreadcrumbs(city, region);
-  const relatedTours = getRelatedTours(city, slug);
+  const breadcrumbsBase = getBreadcrumbsForCountry(country, city, region);
+  const relatedTours = getRelatedTours(city, slug, country);
   const citySlug = slugify(city);
 
   // Get highlights
@@ -390,14 +426,14 @@ ${bcJson.join(',\n')}
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import LongFormWalkPage, { LongFormWalkStatsRow } from "../../../components/LongFormWalkPage";${mapImport}
-import { franceVideos } from "../../../data/videos/france";
+import { ${country.toLowerCase()}Videos } from "../../../data/videos/${country.toLowerCase()}";
 import { ${exportName} as detail } from "../../../data/video-details/${slug}";
 
 type YouTubePlayer = { seekTo: (seconds: number, allowSeekAhead?: boolean) => void; playVideo: () => void; destroy: () => void };
 type YouTubePlayerNamespace = { Player: new (element: HTMLIFrameElement, options?: { events?: { onReady?: () => void } }) => YouTubePlayer };
 declare global { interface Window { YT?: YouTubePlayerNamespace; onYouTubeIframeAPIReady?: () => void } }
 
-const video = franceVideos.find((v) => v.slug === ${JSON.stringify(slug)});
+const video = ${country.toLowerCase()}Videos.find((v) => v.slug === ${JSON.stringify(slug)});
 const youtubeVideoId = video?.youtubeUrl.split("/").pop() ?? ${JSON.stringify(videoId)};
 const heroImagePath = "/${slug}/hero.jpg";
 
