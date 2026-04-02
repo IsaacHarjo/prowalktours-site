@@ -4,7 +4,7 @@ const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.youtube.com https://s.ytimg.com https://api.mapbox.com https://events.mapbox.com;
   style-src 'self' 'unsafe-inline' https://api.mapbox.com;
-  img-src 'self' data: blob: https://i.ytimg.com https://api.qrserver.com https://api.mapbox.com https://*.tiles.mapbox.com https://www.google.com https://maps.gstatic.com https://maps.google.com;
+  img-src 'self' data: blob: https://i.ytimg.com https://img.youtube.com https://api.qrserver.com https://api.mapbox.com https://*.tiles.mapbox.com https://www.google.com https://maps.gstatic.com https://maps.google.com;
   font-src 'self' https://api.mapbox.com;
   connect-src 'self' https://api.mapbox.com https://*.tiles.mapbox.com https://events.mapbox.com;
   frame-src https://www.youtube.com https://www.google.com;
@@ -48,6 +48,12 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "i.ytimg.com" },
+      { protocol: "https", hostname: "img.youtube.com" },
+    ],
+  },
   async headers() {
     return [
       {

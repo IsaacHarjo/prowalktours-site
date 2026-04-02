@@ -404,15 +404,18 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
                       key={item.slug}
                       className="rounded-[1rem] border border-[#eadfce] bg-[#fcfaf7] p-3"
                     >
-                      {thumbSrc ? (
-                        <div className="overflow-hidden rounded-[0.9rem] border border-[#eadfce] bg-white">
+                      <div className="overflow-hidden rounded-[0.9rem] border border-[#eadfce] bg-white">
+                        {thumbSrc ? (
                           <img
                             src={thumbSrc}
                             alt={item.title}
                             className="aspect-[16/9] w-full object-cover"
+                            onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; (e.target as HTMLImageElement).parentElement!.classList.add("bg-[#2f261d]"); }}
                           />
-                        </div>
-                      ) : null}
+                        ) : (
+                          <div className="aspect-[16/9] w-full bg-[#2f261d]" />
+                        )}
+                      </div>
                       <div className="mt-3">
                         <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#9a7a52]">
                           {item.region}
@@ -482,8 +485,11 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
                       src={thumbSrc}
                       alt={item.title}
                       className="h-16 w-24 shrink-0 rounded-lg object-cover"
+                      onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                     />
-                  ) : null}
+                  ) : (
+                    <div className="h-16 w-24 shrink-0 rounded-lg bg-[#2f261d]" />
+                  )}
                   <div className="min-w-0">
                     <p className="text-sm font-semibold text-[#2f261d] leading-tight">
                       {getDisplayTitle(item.title)}
