@@ -262,7 +262,7 @@ console.log(`        ${readyTours.length} ready tours, ${catalogHlCount} with hi
 // ═══════════════════════════════════════════════════════════════════════════════
 
 // Include all tours with valid lat/lng (not just ready — drafts can appear on map)
-const mapTours = allTours.filter(t => t.lat !== 0 && t.lng !== 0);
+const mapTours = allTours.filter(t => t.lat !== 0 && t.lng !== 0 && t.status === 'ready');
 
 function toMapFeature(t) {
   const videoId = t.videoId;
