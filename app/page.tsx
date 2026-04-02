@@ -142,45 +142,61 @@ const popularDestinations = [
 export default function HomePage() {
   return (
     <main className="bg-[#fcfaf7] text-[#2f261d]">
-      {/* ── Desktop: two-column split (headline+search left, map right) ── */}
-      {/* ── Mobile: stacked (headline, map, search) ── */}
+      {/* ── Mobile layout (below lg:) ── */}
 
-      {/* Mobile-only slim header */}
+      {/* Mobile header with search + buttons */}
       <section className="bg-[#1f1812] lg:hidden">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 px-6 py-6 sm:flex-row sm:items-center">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#f3dfc4]">
-              Immersive Travel Videos
-            </p>
-            <h1 className="mt-1 text-2xl font-bold leading-tight text-white sm:text-3xl">
-              Explore the world one walk at a time
-            </h1>
-            <p className="mt-1 text-sm leading-6 text-white/70">
-              421 walks across Italy, France &amp; Germany
-            </p>
+        <div className="mx-auto max-w-7xl px-5 pb-6 pt-6 sm:px-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#f3dfc4]">
+            Immersive Travel Videos
+          </p>
+          <h1 className="mt-2 text-2xl font-bold leading-tight text-white sm:text-3xl">
+            Explore the world one walk at a time
+          </h1>
+          <p className="mt-2 text-[15px] leading-6 text-white/80">
+            421 immersive 4K walking tours across Italy, France &amp; Germany
+          </p>
+
+          <div className="mt-5">
+            <SearchFilterBar
+              videos={videos}
+              action="/search"
+              placeholder="Search by country, city, or landmark"
+              submitLabel="Search"
+              variant="hero"
+            />
           </div>
-          <Link
-            href="/countries"
-            className="inline-flex shrink-0 items-center justify-center rounded-full bg-[#167fd5] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0f6db9]"
-          >
-            Browse Countries
-          </Link>
+
+          <div className="mt-4 flex gap-3">
+            <Link
+              href="/countries"
+              className="inline-flex flex-1 items-center justify-center rounded-full border border-white/30 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/20"
+            >
+              Browse Countries
+            </Link>
+            <Link
+              href="#mobile-world-map"
+              className="inline-flex flex-1 items-center justify-center rounded-full border border-white/30 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/20"
+            >
+              Explore the Map
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Mobile-only map */}
-      <section className="w-full lg:hidden">
-        <WorldMapClient tours={worldTours} fullWidth />
-      </section>
-
-      {/* Mobile-only search */}
-      <section className="mx-auto max-w-7xl px-6 py-8 lg:hidden">
-        <SearchFilterBar
-          videos={videos}
-          action="/search"
-          placeholder="Search by country, city, landmark, or video type"
-          submitLabel="Search"
-        />
+      {/* Mobile map with label */}
+      <section id="mobile-world-map" className="scroll-mt-16 w-full lg:hidden">
+        <div className="mx-auto max-w-7xl px-5 pt-6 sm:px-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#9a7a52]">
+            Interactive Tour Map
+          </p>
+          <p className="mt-1 text-sm text-[#6c5b49]">
+            Tap any cluster to browse walks in that area
+          </p>
+        </div>
+        <div className="mt-3">
+          <WorldMapClient tours={worldTours} fullWidth />
+        </div>
       </section>
 
       {/* Desktop two-column layout */}
