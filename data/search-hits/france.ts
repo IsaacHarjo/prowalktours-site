@@ -17,7 +17,7 @@ type FranceHighlightCsvRow = {
   search_terms: string;
 };
 
-const CSV_PATH = path.join(process.cwd(), "data", "import", "france-highlights.csv");
+const CSV_PATH = path.join(process.cwd(), "data", "import", "all-highlights.csv");
 const REQUIRED_COLUMNS = [
   "tour_id",
   "slug",

@@ -3,7 +3,7 @@
  * scripts/generate-video-page.js
  *
  * Generates a complete video page (data file + page.tsx + Client.tsx)
- * from france.csv and france-highlights.csv for a given slug.
+ * from france.csv and all-highlights.csv for a given slug.
  *
  * Usage:
  *   node scripts/generate-video-page.js <slug> [--dry-run]
@@ -16,7 +16,7 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const CSV_PATH = path.join(ROOT, 'data', 'maps', 'france.csv');
-const HIGHLIGHTS_CSV = path.join(ROOT, 'data', 'import', 'france-highlights.csv');
+const HIGHLIGHTS_CSV = path.join(ROOT, 'data', 'import', 'all-highlights.csv');
 const dryRun = process.argv.includes('--dry-run');
 const batchMode = process.argv.includes('--batch');
 const args = process.argv.slice(2).filter(a => !a.startsWith('--'));
