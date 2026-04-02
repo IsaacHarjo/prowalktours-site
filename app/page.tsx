@@ -92,15 +92,6 @@ function loadWorldTours() {
 
 const worldTours = loadWorldTours();
 
-const startHereCards = [
-  {
-    title: "Licensing & Contact",
-    href: "/licensing",
-    description:
-      "Need footage, have a question, or want to reach out about licensing or travel-related inquiries? Start here.",
-  },
-];
-
 const popularDestinations = [
   {
     title: "Naples & Campania",
@@ -196,42 +187,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-10 lg:px-10 lg:py-12">
-        <div className="rounded-3xl border border-[#eadfce] bg-white p-6 shadow-sm lg:p-8">
-          <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
-                Start Here
-              </p>
-              <h2 className="mt-3 text-3xl font-bold text-[#2f261d]">
-                Choose your next step
-              </h2>
-            </div>
-          </div>
-
-          <div className="mt-6 max-w-xl">
-            {startHereCards.map((card) => (
-              <Link
-                key={card.title}
-                href={card.href}
-                className="block rounded-2xl border border-[#eadfce] bg-[#fcfaf7] p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#d7c3ad] hover:shadow-md"
-              >
-                <p className="text-lg font-semibold text-[#2f261d]">{card.title}</p>
-                <p className="mt-3 text-[15px] leading-7 text-[#6c5b49]">
-                  {card.description}
-                </p>
-                <p className="mt-4 text-sm font-semibold text-[#167fd5]">
-                  Open -&gt;
-                </p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section
         id="world-map"
-        className="scroll-mt-16 mx-auto max-w-7xl px-6 pb-10 lg:px-10 lg:pb-12"
+        className="scroll-mt-16 mx-auto max-w-7xl px-6 py-10 lg:px-10 lg:py-12"
       >
         <div className="mb-6">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
