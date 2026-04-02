@@ -36,74 +36,74 @@ const cities: CitySection[] = [
     city: "Nuremberg",
     subtitle: "The Christkindlesmarkt — Germany's most famous Christmas market",
     walks: [
-      { name: "Nuremberg Christmas Market Evening Walk (2024)", href: "/videos/nuremberg-nuremberg-christmas-market-evening-walk-2024", description: "The Christkindlesmarkt and Nuremberg old town lit up after dark.", imageSrc: "https://i.ytimg.com/vi/CRAigMYQ4cM/maxresdefault.jpg", imageAlt: "Nuremberg Christmas market evening" },
-      { name: "Nuremberg Christmas Market Day Walk (2024)", href: "/videos/nuremberg-nuremberg-christmas-market-day-walk-2024", description: "The Hauptmarkt, castle area, and surrounding market squares in daylight.", imageSrc: "https://i.ytimg.com/vi/9AD44Xk2Jkg/maxresdefault.jpg", imageAlt: "Nuremberg Christmas market day" },
-      { name: "Nuremberg Christmas Market Evening Walk (2022)", href: "/videos/nuremberg-nuremberg-christmas-market-evening-walk-2022", description: "An earlier evening walk through the Christkindlesmarkt and old town.", imageSrc: "https://i.ytimg.com/vi/RqoFI3HKitY/maxresdefault.jpg", imageAlt: "Nuremberg Christmas market evening 2022" },
-      { name: "Nuremberg Christmas Market Day Walk (2022)", href: "/videos/nuremberg-nuremberg-christmas-market-day-walk-2022", description: "A daytime route through the market area and historic center.", imageSrc: "https://i.ytimg.com/vi/l6aGKVxo2kw/maxresdefault.jpg", imageAlt: "Nuremberg Christmas market day 2022" },
+      { name: "Nuremberg Christmas Market Evening Walk (2024)", href: "/videos/nuremberg-christmas-market-evening-walk-2024", description: "The Christkindlesmarkt and Nuremberg old town lit up after dark.", imageSrc: "https://i.ytimg.com/vi/CRAigMYQ4cM/maxresdefault.jpg", imageAlt: "Nuremberg Christmas market evening" },
+      { name: "Nuremberg Christmas Market Day Walk (2024)", href: "/videos/nuremberg-christmas-market-day-walk-2024", description: "The Hauptmarkt, castle area, and surrounding market squares in daylight.", imageSrc: "https://i.ytimg.com/vi/9AD44Xk2Jkg/maxresdefault.jpg", imageAlt: "Nuremberg Christmas market day" },
+      { name: "Nuremberg Christmas Market Evening Walk (2022)", href: "/videos/nuremberg-christmas-market-evening-walk-2022", description: "An earlier evening walk through the Christkindlesmarkt and old town.", imageSrc: "https://i.ytimg.com/vi/RqoFI3HKitY/maxresdefault.jpg", imageAlt: "Nuremberg Christmas market evening 2022" },
+      { name: "Nuremberg Christmas Market Day Walk (2022)", href: "/videos/nuremberg-christmas-market-day-walk-2022", description: "A daytime route through the market area and historic center.", imageSrc: "https://i.ytimg.com/vi/l6aGKVxo2kw/maxresdefault.jpg", imageAlt: "Nuremberg Christmas market day 2022" },
     ],
   },
   {
     city: "Dresden",
     subtitle: "The Striezelmarkt — Germany's oldest Christmas market since 1434",
     walks: [
-      { name: "Dresden Christmas Market Evening Walk (2024)", href: "/videos/dresden-dresden-christmas-market-evening-walk-2024", description: "The Striezelmarkt, Frauenkirche, and Zwinger area after dark.", imageSrc: "https://i.ytimg.com/vi/LWqbdWbnGlk/maxresdefault.jpg", imageAlt: "Dresden Christmas market evening" },
-      { name: "Dresden Christmas Market Day Walk (2024)", href: "/videos/dresden-dresden-christmas-market-day-walk-2024", description: "The baroque old town and Christmas market stalls in daylight.", imageSrc: "https://i.ytimg.com/vi/aNBmM3aQWz4/maxresdefault.jpg", imageAlt: "Dresden Christmas market day" },
-      { name: "Dresden Christmas Market Evening Walk (2022)", href: "/videos/dresden-dresden-christmas-market-evening-walk-2022", description: "An earlier evening route through the Striezelmarkt.", imageSrc: "https://i.ytimg.com/vi/9JCm5Nzqzfg/maxresdefault.jpg", imageAlt: "Dresden Christmas market evening 2022" },
-      { name: "Dresden Christmas Market Day Walk (2022)", href: "/videos/dresden-dresden-christmas-market-day-walk-2022", description: "A daytime walk through the market area and historic center.", imageSrc: "https://i.ytimg.com/vi/-FIJHCY8j-0/maxresdefault.jpg", imageAlt: "Dresden Christmas market day 2022" },
+      { name: "Dresden Christmas Market Evening Walk (2024)", href: "/videos/dresden-christmas-market-evening-walk-2024", description: "The Striezelmarkt, Frauenkirche, and Zwinger area after dark.", imageSrc: "https://i.ytimg.com/vi/LWqbdWbnGlk/maxresdefault.jpg", imageAlt: "Dresden Christmas market evening" },
+      { name: "Dresden Christmas Market Day Walk (2024)", href: "/videos/dresden-christmas-market-day-walk-2024", description: "The baroque old town and Christmas market stalls in daylight.", imageSrc: "https://i.ytimg.com/vi/aNBmM3aQWz4/maxresdefault.jpg", imageAlt: "Dresden Christmas market day" },
+      { name: "Dresden Christmas Market Evening Walk (2022)", href: "/videos/dresden-christmas-market-evening-walk-2022", description: "An earlier evening route through the Striezelmarkt.", imageSrc: "https://i.ytimg.com/vi/9JCm5Nzqzfg/maxresdefault.jpg", imageAlt: "Dresden Christmas market evening 2022" },
+      { name: "Dresden Christmas Market Day Walk (2022)", href: "/videos/dresden-christmas-market-day-walk-2022", description: "A daytime walk through the market area and historic center.", imageSrc: "https://i.ytimg.com/vi/-FIJHCY8j-0/maxresdefault.jpg", imageAlt: "Dresden Christmas market day 2022" },
     ],
   },
   {
     city: "Rothenburg ob der Tauber",
     subtitle: "A medieval walled town with one of Germany's most atmospheric markets",
     walks: [
-      { name: "Rothenburg Christmas Market Evening Walk (2024)", href: "/videos/rothenburg-ob-der-tauber-rothenburg-ob-der-tauber-christmas-market-evening-walk-2024", description: "The Reiterlesmarkt and medieval streets lit up for Christmas.", imageSrc: "https://i.ytimg.com/vi/rNwRKSRIVgk/maxresdefault.jpg", imageAlt: "Rothenburg Christmas market evening" },
-      { name: "Rothenburg Christmas Market Morning Walk (2024)", href: "/videos/rothenburg-ob-der-tauber-rothenburg-ob-der-tauber-christmas-market-day-walk-2024", description: "The walled town and market square in morning light.", imageSrc: "https://i.ytimg.com/vi/611ytxlZjv0/maxresdefault.jpg", imageAlt: "Rothenburg Christmas market morning" },
-      { name: "Rothenburg Christmas Market Evening Walk (2023)", href: "/videos/rothenburg-ob-der-tauber-rothenburg-ob-der-tauber-christmas-market-evening-walk-2023", description: "An earlier evening walk through the Reiterlesmarkt.", imageSrc: "https://i.ytimg.com/vi/jur8EnASUp0/maxresdefault.jpg", imageAlt: "Rothenburg Christmas market evening 2023" },
-      { name: "Rothenburg Christmas Market Day Walk (2023)", href: "/videos/rothenburg-ob-der-tauber-rothenburg-ob-der-tauber-christmas-market-day-walk-2023", description: "A daytime route through the medieval town and market.", imageSrc: "https://i.ytimg.com/vi/EzZhJgqsdYU/maxresdefault.jpg", imageAlt: "Rothenburg Christmas market day 2023" },
+      { name: "Rothenburg Christmas Market Evening Walk (2024)", href: "/videos/rothenburg-christmas-market-evening-walk-2024", description: "The Reiterlesmarkt and medieval streets lit up for Christmas.", imageSrc: "https://i.ytimg.com/vi/rNwRKSRIVgk/maxresdefault.jpg", imageAlt: "Rothenburg Christmas market evening" },
+      { name: "Rothenburg Christmas Market Morning Walk (2024)", href: "/videos/rothenburg-christmas-market-morning-walk-2024", description: "The walled town and market square in morning light.", imageSrc: "https://i.ytimg.com/vi/611ytxlZjv0/maxresdefault.jpg", imageAlt: "Rothenburg Christmas market morning" },
+      { name: "Rothenburg Christmas Market Evening Walk (2023)", href: "/videos/rothenburg-christmas-market-evening-walk-2023", description: "An earlier evening walk through the Reiterlesmarkt.", imageSrc: "https://i.ytimg.com/vi/jur8EnASUp0/maxresdefault.jpg", imageAlt: "Rothenburg Christmas market evening 2023" },
+      { name: "Rothenburg Christmas Market Day Walk (2023)", href: "/videos/rothenburg-christmas-market-day-walk-2023", description: "A daytime route through the medieval town and market.", imageSrc: "https://i.ytimg.com/vi/EzZhJgqsdYU/maxresdefault.jpg", imageAlt: "Rothenburg Christmas market day 2023" },
     ],
   },
   {
     city: "Cologne",
     subtitle: "Cathedral Christmas market and old town squares along the Rhine",
     walks: [
-      { name: "Cologne Christmas Market Evening Walk (2024)", href: "/videos/cologne-cologne-christmas-market-evening-walk-2024", description: "The cathedral market, old town, and Rhine-side markets after dark.", imageSrc: "https://i.ytimg.com/vi/pK8KdLX1uEo/maxresdefault.jpg", imageAlt: "Cologne Christmas market evening" },
-      { name: "Cologne Christmas Market Day Walk (2023)", href: "/videos/cologne-cologne-christmas-market-day-walk-2023", description: "The cathedral area and surrounding market squares in daylight.", imageSrc: "https://i.ytimg.com/vi/GCsPZt5qUpg/maxresdefault.jpg", imageAlt: "Cologne Christmas market day" },
+      { name: "Cologne Christmas Market Evening Walk (2024)", href: "/videos/cologne-christmas-market-evening-walk-2024", description: "The cathedral market, old town, and Rhine-side markets after dark.", imageSrc: "https://i.ytimg.com/vi/pK8KdLX1uEo/maxresdefault.jpg", imageAlt: "Cologne Christmas market evening" },
+      { name: "Cologne Christmas Market Day Walk (2023)", href: "/videos/cologne-christmas-market-day-walk-2023", description: "The cathedral area and surrounding market squares in daylight.", imageSrc: "https://i.ytimg.com/vi/GCsPZt5qUpg/maxresdefault.jpg", imageAlt: "Cologne Christmas market day" },
     ],
   },
   {
     city: "Stuttgart",
     subtitle: "One of Europe's largest Christmas markets in the heart of Swabia",
     walks: [
-      { name: "Stuttgart Christmas Market Evening Walk (2024)", href: "/videos/stuttgart-stuttgart-christmas-market-evening-walk-2024", description: "Schlossplatz, the market hall area, and decorated rooftop stalls.", imageSrc: "https://i.ytimg.com/vi/1umZtnFfm60/maxresdefault.jpg", imageAlt: "Stuttgart Christmas market evening" },
-      { name: "Stuttgart Christmas Market Evening Walk (2022)", href: "/videos/stuttgart-stuttgart-christmas-market-evening-walk-2022", description: "An earlier walk through the Stuttgart Christmas market.", imageSrc: "https://i.ytimg.com/vi/DssVino8XPo/maxresdefault.jpg", imageAlt: "Stuttgart Christmas market evening 2022" },
+      { name: "Stuttgart Christmas Market Evening Walk (2024)", href: "/videos/stuttgart-christmas-market-evening-walk-2024", description: "Schlossplatz, the market hall area, and decorated rooftop stalls.", imageSrc: "https://i.ytimg.com/vi/1umZtnFfm60/maxresdefault.jpg", imageAlt: "Stuttgart Christmas market evening" },
+      { name: "Stuttgart Christmas Market Evening Walk (2022)", href: "/videos/stuttgart-christmas-market-evening-walk-2022", description: "An earlier walk through the Stuttgart Christmas market.", imageSrc: "https://i.ytimg.com/vi/DssVino8XPo/maxresdefault.jpg", imageAlt: "Stuttgart Christmas market evening 2022" },
     ],
   },
   {
     city: "Munich",
     subtitle: "Marienplatz and the surrounding Christmas markets of Bavaria's capital",
     walks: [
-      { name: "Munich Christmas Market Evening Walk (2024)", href: "/videos/munich-munich-christmas-market-evening-walk-2024", description: "Marienplatz, the Viktualienmarkt area, and surrounding market squares.", imageSrc: "https://i.ytimg.com/vi/g1akZNSsS14/maxresdefault.jpg", imageAlt: "Munich Christmas market evening" },
+      { name: "Munich Christmas Market Evening Walk (2024)", href: "/videos/munich-christmas-market-evening-walk-2024", description: "Marienplatz, the Viktualienmarkt area, and surrounding market squares.", imageSrc: "https://i.ytimg.com/vi/g1akZNSsS14/maxresdefault.jpg", imageAlt: "Munich Christmas market evening" },
     ],
   },
   {
     city: "Aachen",
     subtitle: "The cathedral Christmas market near the Belgian and Dutch borders",
     walks: [
-      { name: "Aachen Christmas Market Evening Walk (2024)", href: "/videos/aachen-aachen-christmas-market-evening-walk-2024", description: "The market around Aachen Cathedral and the old town.", imageSrc: "https://i.ytimg.com/vi/sNUBp762Qik/maxresdefault.jpg", imageAlt: "Aachen Christmas market evening" },
+      { name: "Aachen Christmas Market Evening Walk (2024)", href: "/videos/aachen-christmas-market-evening-walk-2024", description: "The market around Aachen Cathedral and the old town.", imageSrc: "https://i.ytimg.com/vi/sNUBp762Qik/maxresdefault.jpg", imageAlt: "Aachen Christmas market evening" },
     ],
   },
   {
     city: "Esslingen",
     subtitle: "A medieval Christmas market with historic craft demonstrations",
     walks: [
-      { name: "Esslingen Christmas Market Day Walk (2024)", href: "/videos/esslingen-esslingen-christmas-market-day-walk-2024", description: "The medieval market, half-timbered old town, and craft stalls.", imageSrc: "https://i.ytimg.com/vi/I0BUehZBcOI/maxresdefault.jpg", imageAlt: "Esslingen Christmas market day" },
+      { name: "Esslingen Christmas Market Day Walk (2024)", href: "/videos/esslingen-christmas-market-day-walk-2024", description: "The medieval market, half-timbered old town, and craft stalls.", imageSrc: "https://i.ytimg.com/vi/I0BUehZBcOI/maxresdefault.jpg", imageAlt: "Esslingen Christmas market day" },
     ],
   },
   {
     city: "Freiburg",
     subtitle: "The Black Forest capital's atmospheric Christmas market",
     walks: [
-      { name: "Freiburg Christmas Market Evening Walk (2025)", href: "/videos/freiburg-freiburg-christmas-market-evening-walk-2025", description: "The M\u00fcnsterplatz market and Freiburg's old town streets at dusk.", imageSrc: "https://i.ytimg.com/vi/4bQoSIwQHZM/maxresdefault.jpg", imageAlt: "Freiburg Christmas market evening" },
+      { name: "Freiburg Christmas Market Evening Walk (2025)", href: "/videos/freiburg-christmas-market-evening-walk-2025", description: "The M\u00fcnsterplatz market and Freiburg's old town streets at dusk.", imageSrc: "https://i.ytimg.com/vi/4bQoSIwQHZM/maxresdefault.jpg", imageAlt: "Freiburg Christmas market evening" },
     ],
   },
 ];
