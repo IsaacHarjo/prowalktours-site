@@ -174,7 +174,7 @@ export default function HomePage() {
       </section>
 
       {/* Desktop two-column layout */}
-      <section className="hidden min-h-[600px] lg:grid lg:grid-cols-[1fr_2fr]">
+      <section className="hidden h-[600px] lg:grid lg:grid-cols-[1fr_2fr]">
         {/* Left column: headline + search */}
         <div className="flex flex-col justify-center bg-[#1f1812] px-10 py-10">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#f3dfc4]">
@@ -208,7 +208,7 @@ export default function HomePage() {
         </div>
 
         {/* Right column: map fills height */}
-        <div className="relative">
+        <div className="relative h-full">
           <WorldMapClient
             tours={worldTours}
             fullWidth
