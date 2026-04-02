@@ -31,78 +31,58 @@ type TourProperties = {
 
 // ─── Country colours ─────────────────────────────────────────────────────────
 
-const COUNTRY_COLORS: Record<string, { color: string; index: number }> = {
-  Italy: { color: "#E8673A", index: 0 },
-  France: { color: "#2563EB", index: 1 },
-  Germany: { color: "#D97706", index: 2 },
-};
+const COUNTRIES = [
+  { name: "Italy", color: "#009246", index: 0 },
+  { name: "France", color: "#ED2939", index: 1 },
+  { name: "Germany", color: "#FFCE00", index: 2 },
+] as const;
 
-const COUNTRY_LEGEND = [
-  { name: "Italy", color: "#E8673A" },
-  { name: "France", color: "#2563EB" },
-  { name: "Germany", color: "#D97706" },
-];
+function makeClusterLayer(country: string, color: string): LayerProps {
+  return {
+    id: `cluster-${country}`,
+    type: "circle",
+    source: `world-tours-${country}`,
+    filter: ["has", "point_count"],
+    paint: {
+      "circle-color": color,
+      "circle-radius": ["step", ["get", "point_count"], 18, 10, 22, 50, 28],
+      "circle-stroke-width": 2,
+      "circle-stroke-color": "#ffffff",
+    },
+  };
+}
 
-// ─── Layers ──────────────────────────────────────────────────────────────────
+function makeClusterCountLayer(country: string): LayerProps {
+  return {
+    id: `cluster-count-${country}`,
+    type: "symbol",
+    source: `world-tours-${country}`,
+    filter: ["has", "point_count"],
+    layout: {
+      "text-field": ["get", "point_count_abbreviated"],
+      "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+      "text-size": 12,
+    },
+    paint: {
+      "text-color": country === "Germany" ? "#1a1a1a" : "#ffffff",
+    },
+  };
+}
 
-const clusterLayer: LayerProps = {
-  id: "world-clusters",
-  type: "circle",
-  source: "world-tours",
-  filter: ["has", "point_count"],
-  paint: {
-    "circle-color": [
-      "step",
-      ["get", "point_count"],
-      "#167fd5",
-      10,
-      "#0f6db9",
-      50,
-      "#0a4f8b",
-    ],
-    "circle-radius": ["step", ["get", "point_count"], 18, 10, 22, 50, 28],
-    "circle-stroke-width": 2,
-    "circle-stroke-color": "#ffffff",
-  },
-};
-
-const clusterCountLayer: LayerProps = {
-  id: "world-cluster-count",
-  type: "symbol",
-  source: "world-tours",
-  filter: ["has", "point_count"],
-  layout: {
-    "text-field": ["get", "point_count_abbreviated"],
-    "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
-    "text-size": 12,
-  },
-  paint: {
-    "text-color": "#ffffff",
-  },
-};
-
-const unclusteredPointLayer: LayerProps = {
-  id: "world-unclustered-point",
-  type: "circle",
-  source: "world-tours",
-  filter: ["!", ["has", "point_count"]],
-  paint: {
-    "circle-color": [
-      "match",
-      ["get", "countryIndex"],
-      0,
-      "#E8673A", // Italy
-      1,
-      "#2563EB", // France
-      2,
-      "#D97706", // Germany
-      "#888888",
-    ],
-    "circle-radius": 7,
-    "circle-stroke-width": 2,
-    "circle-stroke-color": "#ffffff",
-  },
-};
+function makePointLayer(country: string, color: string): LayerProps {
+  return {
+    id: `point-${country}`,
+    type: "circle",
+    source: `world-tours-${country}`,
+    filter: ["!", ["has", "point_count"]],
+    paint: {
+      "circle-color": color,
+      "circle-radius": 7,
+      "circle-stroke-width": 2,
+      "circle-stroke-color": "#ffffff",
+    },
+  };
+}
 
 // ─── Component ───────────────────────────────────────────────────────────────
 
@@ -118,22 +98,43 @@ export default function WorldMapClient({ tours }: WorldMapClientProps) {
 
   const [popupInfo, setPopupInfo] = useState<WorldTour | null>(null);
 
-  const geoJsonData = useMemo<FeatureCollection<Point, TourProperties>>(
-    () => ({
-      type: "FeatureCollection",
-      features: tours.map((tour, featureIndex) => ({
-        type: "Feature",
-        geometry: {
-          type: "Point",
-          coordinates: [tour.longitude, tour.latitude],
-        },
-        properties: {
-          featureIndex,
-          countryIndex: tour.countryIndex,
-        },
-      })),
-    }),
-    [tours]
+  // Build per-country tour arrays and GeoJSON
+  const { countryGeoJson, countryTourArrays } = useMemo(() => {
+    const byCountry: Record<string, WorldTour[]> = {};
+    for (const tour of tours) {
+      const key = tour.country;
+      if (!byCountry[key]) byCountry[key] = [];
+      byCountry[key].push(tour);
+    }
+
+    const geoJson: Record<string, FeatureCollection<Point, TourProperties>> = {};
+    const tourArrays: Record<string, WorldTour[]> = {};
+
+    for (const c of COUNTRIES) {
+      const countryTours = byCountry[c.name] || [];
+      tourArrays[c.name] = countryTours;
+      geoJson[c.name] = {
+        type: "FeatureCollection",
+        features: countryTours.map((tour, featureIndex) => ({
+          type: "Feature",
+          geometry: {
+            type: "Point",
+            coordinates: [tour.longitude, tour.latitude],
+          },
+          properties: {
+            featureIndex,
+            countryIndex: c.index,
+          },
+        })),
+      };
+    }
+
+    return { countryGeoJson: geoJson, countryTourArrays: tourArrays };
+  }, [tours]);
+
+  const interactiveLayerIds = useMemo(
+    () => COUNTRIES.flatMap((c) => [`cluster-${c.name}`, `point-${c.name}`]),
+    []
   );
 
   const handleMapClick = useCallback(
@@ -144,15 +145,22 @@ export default function WorldMapClient({ tours }: WorldMapClientProps) {
         return;
       }
 
+      // Determine which country source this came from
+      const layerId = (clickedFeature as unknown as { layer?: { id: string } }).layer?.id;
+      const countryName = COUNTRIES.find(
+        (c) =>
+          layerId === `cluster-${c.name}` || layerId === `point-${c.name}`
+      )?.name;
+
       // Cluster click — zoom in
-      if (clickedFeature.properties?.cluster) {
+      if (clickedFeature.properties?.cluster && countryName) {
         const clusterId = clickedFeature.properties.cluster_id as number;
         const center = (clickedFeature.geometry as Point).coordinates as [
           number,
           number,
         ];
         const source = mapRef.current?.getSource(
-          "world-tours"
+          `world-tours-${countryName}`
         ) as unknown as {
           getClusterExpansionZoom: (
             id: number,
@@ -171,12 +179,18 @@ export default function WorldMapClient({ tours }: WorldMapClientProps) {
       }
 
       // Individual point click — show popup
-      const featureIndex = clickedFeature.properties?.featureIndex;
-      if (typeof featureIndex === "number" && tours[featureIndex]) {
-        setPopupInfo(tours[featureIndex]);
+      if (countryName) {
+        const featureIndex = clickedFeature.properties?.featureIndex;
+        const countryTours = countryTourArrays[countryName];
+        if (
+          typeof featureIndex === "number" &&
+          countryTours?.[featureIndex]
+        ) {
+          setPopupInfo(countryTours[featureIndex]);
+        }
       }
     },
-    [tours]
+    [countryTourArrays]
   );
 
   if (!mapboxToken) {
@@ -202,24 +216,27 @@ export default function WorldMapClient({ tours }: WorldMapClientProps) {
           }}
           mapStyle="mapbox://styles/mapbox/satellite-streets-v12"
           mapboxAccessToken={mapboxToken}
-          interactiveLayerIds={["world-clusters", "world-unclustered-point"]}
+          interactiveLayerIds={interactiveLayerIds}
           onClick={handleMapClick}
           style={{ width: "100%", height: "100%" }}
         >
           <NavigationControl position="top-right" showCompass={false} />
 
-          <Source
-            id="world-tours"
-            type="geojson"
-            data={geoJsonData}
-            cluster={true}
-            clusterMaxZoom={12}
-            clusterRadius={48}
-          >
-            <Layer {...clusterLayer} />
-            <Layer {...clusterCountLayer} />
-            <Layer {...unclusteredPointLayer} />
-          </Source>
+          {COUNTRIES.map((c) => (
+            <Source
+              key={c.name}
+              id={`world-tours-${c.name}`}
+              type="geojson"
+              data={countryGeoJson[c.name]}
+              cluster={true}
+              clusterMaxZoom={12}
+              clusterRadius={48}
+            >
+              <Layer {...makeClusterLayer(c.name, c.color)} />
+              <Layer {...makeClusterCountLayer(c.name)} />
+              <Layer {...makePointLayer(c.name, c.color)} />
+            </Source>
+          ))}
 
           {popupInfo ? (
             <Popup
@@ -252,7 +269,7 @@ export default function WorldMapClient({ tours }: WorldMapClientProps) {
       {/* Country legend */}
       <div className="absolute bottom-4 left-4 rounded-xl border border-[#d8c7b5] bg-white/95 px-3 py-2 shadow-sm backdrop-blur-sm">
         <div className="flex items-center gap-4">
-          {COUNTRY_LEGEND.map((c) => (
+          {COUNTRIES.map((c) => (
             <div key={c.name} className="flex items-center gap-1.5">
               <div
                 className="h-3 w-3 rounded-full border border-white shadow-sm"
