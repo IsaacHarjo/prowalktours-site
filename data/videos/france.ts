@@ -1,8 +1,8 @@
 import type { VideoCatalogRecord } from "../video-types";
 
-// Auto-generated from data/maps/france.csv by scripts/refresh-france-catalog.js
+// Auto-generated from data/maps/france.csv by scripts/import-france-csv.js
 // Only tours with status "ready" are included.
-// Last refreshed: 2026-04-01
+// Last refreshed: 2026-04-02
 export const franceVideos: VideoCatalogRecord[] = [
   {
     id: "menton-france-walking-tour-2025",
@@ -398,7 +398,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "July 2020",
     durationLabel: "5:38:18",
     durationSeconds: 20298,
-    weather: "",
+    weather: "85 F / 29 C",
     shortDescription:
       "A day walk through Paris, France, featuring Rue Mouffetard Market, the Pantheon, Luxembourg Gardens, the Latin Quarter, Notre Dame, the Seine, the Louvre, the Champs-Elysees, Arc de Triomphe, Les Invalides, Rue Cler, and the Eiffel Tower.",
     keywords: [
@@ -519,7 +519,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "July 2020",
     durationLabel: "1:53:27",
     durationSeconds: 6807,
-    weather: "",
+    weather: "83 F / 28 C",
     shortDescription:
       "A day walk through Montmartre in Paris, France, featuring Moulin Rouge, Rue Lepic, Place des Abbesses, Le Moulin de la Galette, Villa Leandre, La Maison Rose, Place du Tertre, Sacre-Coeur, and the surrounding hilltop streets.",
     keywords: [
@@ -586,7 +586,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "July 2020",
     durationLabel: "00:57:40",
     durationSeconds: 3460,
-    weather: "",
+    weather: "83 F / 28 C",
     shortDescription:
       "This walk follows the Coulée Verte René-Dumont, also known as the Promenade Plantée, one of Paris’s most distinctive linear parks. Beginning near Bastille, the route moves along the elevated greenway and related garden paths, including views around Jardin de Reuilly, before turning back along the same corridor. It is a quieter side of Paris, focused more on urban green space, old railway infrastructure, and a slower local atmosphere than the city’s main monument routes.",
     keywords: [
@@ -637,7 +637,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "August 2017",
     durationLabel: "3:08:07",
     durationSeconds: 11287,
-    weather: "",
+    weather: "73 F / 23 C",
     shortDescription:
       "This long daytime walk across Paris connects many of the city’s most iconic landmarks, beginning at the Louvre and continuing along the Seine to Notre-Dame. From there, the route heads west through the Tuileries, Place de la Concorde, and the Champs-Élysées to the Arc de Triomphe, then down to the Eiffel Tower, Champ de Mars, Les Invalides, and Pont Alexandre III before finishing with some of Paris’s most atmospheric old streets, including Cour du Commerce Saint-André, Rue de Buci, Rue des Rosiers, and Rue des Barres.",
     keywords: [
@@ -698,7 +698,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "August 2017",
     durationLabel: "3:08:16",
     durationSeconds: 11296,
-    weather: "",
+    weather: "73 F / 23 C",
     shortDescription:
       "This daytime Paris walk follows the same landmark-rich route as the natural-sound version, but with music added throughout. Beginning at the Louvre, the route continues along the Seine to Notre-Dame, then west through the Tuileries, Place de la Concorde, the Champs-Élysées, and the Arc de Triomphe before reaching the Eiffel Tower, Champ de Mars, Les Invalides, Pont Alexandre III, and several of Paris’s most memorable old streets. It is a broad city overview built around many of Paris’s best-known sights.",
     keywords: [
@@ -825,7 +825,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "July 2020",
     durationLabel: "1:06:13",
     durationSeconds: 3973,
-    weather: "",
+    weather: "85 F / 29 C",
     shortDescription:
       "This evening walk through Paris focuses on some of the city’s most beautiful streets and neighborhoods after dark, especially around Place Saint-Michel, Rue des Barres, Rue des Rosiers, and nearby parts of the Marais and Latin Quarter. The route later expands into Bastille and includes a night bike ride, ending with views of Hôtel de Ville, the Louvre Pyramid, and the Seine. It is a strong mix of historic streets, lively nightlife areas, and classic Paris night atmosphere.",
     keywords: [
@@ -890,7 +890,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "July 2020",
     durationLabel: "00:22:59",
     durationSeconds: 1379,
-    weather: "",
+    weather: "57 F / 14 C",
     shortDescription:
       "This tour explores the Paris Catacombs, one of the city’s most unusual and historic underground sites. After entering from the top-level entrance, the route descends into the ossuary and passes long corridors lined with bones and skulls, including some of the most recognizable stacked arrangements and memorial features inside the catacombs. It is a shorter but highly distinctive Paris tour focused on the underground history and atmosphere of the city rather than its streets above.",
     keywords: [
@@ -985,7 +985,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "July 2020",
     durationLabel: "00:52:45",
     durationSeconds: 3165,
-    weather: "",
+    weather: "85 F / 29 C",
     shortDescription:
       "This tour focuses on the full Eiffel Tower experience, beginning on the ground near Champ de Mars and continuing through the entrance and elevator rides up the monument. The route includes Level 2, the summit interior and exterior, the descent to Level 1, and the stairs back down to ground level. Rather than a general city walk, this video is an attraction-focused tour of one of Paris’s most famous landmarks from entrance to exit.",
     keywords: [
