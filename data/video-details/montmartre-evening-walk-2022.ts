@@ -69,7 +69,7 @@ export const montmartreEveningWalk2022Detail: VideoDetailRecord = {
       title: "Sacr\u00e9-C\u0153ur",
       timeLabel: "14:39",
       seconds: 879,
-      imageSrc: highlightImageSrc("montmartre-sacre-coeur.jpg"),
+      imageSrc: highlightImageSrc("montmartre-sacre-c-ur.jpg"),
       alt: "Sacr\u00e9-C\u0153ur basilica in Montmartre, Paris",
       caption: "Sacr\u00e9-C\u0153ur",
       description: "The white-domed basilica at the summit of Montmartre with sweeping views over Paris.",

@@ -222,7 +222,7 @@ export const parisLandmarksDayWalk2020Detail: VideoDetailRecord = {
       title: "Grand & Petit Palais",
       timeLabel: "3:59:22",
       seconds: 14362,
-      imageSrc: highlightImageSrc("paris-grand-and-petit-palais.jpg"),
+      imageSrc: highlightImageSrc("paris-grand-petit-palais.jpg"),
       alt: "Grand Palais and Petit Palais in Paris, France",
       caption: "Grand & Petit Palais",
       description: "The exhibition halls flanking Avenue Winston Churchill near the Seine.",

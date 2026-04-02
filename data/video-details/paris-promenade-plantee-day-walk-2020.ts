@@ -60,7 +60,7 @@ export const parisPromenadePlanteeDayWalk2020Detail: VideoDetailRecord = {
       title: "Reuilly Garden (return)",
       timeLabel: "41:39",
       seconds: 2499,
-      imageSrc: highlightImageSrc("paris-reuilly-garden-return.jpg"),
+      imageSrc: highlightImageSrc("paris-reuilly-garden.jpg"),
       alt: "Jardin de Reuilly on the return along the Promenade Plant\u00e9e",
       caption: "Reuilly Garden (return)",
       description: "The return pass through Reuilly Garden on the way back toward Bastille.",
