@@ -5,25 +5,25 @@ import { useEffect, useRef } from "react";
 import LongFormWalkPage, { LongFormWalkStatsRow } from "../../../components/LongFormWalkPage";
 import MapSection from "../../../components/MapSection";
 import { germanyVideos } from "../../../data/videos/germany";
-import { cologneChristmasMarketEveningWalk2024Detail as detail } from "../../../data/video-details/cologne-christmas-market-evening-walk-2024";
+import { cologneChristmasMarketEveningWalk2023Detail as detail } from "../../../data/video-details/cologne-christmas-market-evening-walk-2023";
 
 type YouTubePlayer = { seekTo: (seconds: number, allowSeekAhead?: boolean) => void; playVideo: () => void; destroy: () => void };
 type YouTubePlayerNamespace = { Player: new (element: HTMLIFrameElement, options?: { events?: { onReady?: () => void } }) => YouTubePlayer };
 declare global { interface Window { YT?: YouTubePlayerNamespace; onYouTubeIframeAPIReady?: () => void } }
 
-const video = germanyVideos.find((v) => v.slug === "cologne-christmas-market-evening-walk-2024");
+const video = germanyVideos.find((v) => v.slug === "cologne-christmas-market-evening-walk-2023");
 const youtubeVideoId = video?.youtubeUrl.split("/").pop() ?? "pK8KdLX1uEo";
-const heroImagePath = "/cologne-christmas-market-evening-walk-2024/hero.jpg";
+const heroImagePath = "/cologne-christmas-market-evening-walk-2023/hero.jpg";
 
 const breadcrumbs = [{"label":"Home","href":"/"},{"label":"Countries","href":"/countries"},{"label":"Germany","href":"/destinations/germany"},{"label":"Cologne, Germany Christmas Market Evening Walk"}];
 const highlights = detail.highlights;
 const relatedTours = [
       { title: "Nuremberg Christmas Market Evening (2024)", href: "/videos/nuremberg-christmas-market-evening-walk-2024", description: "The Christkindlesmarkt and old town of Nuremberg lit up for Christmas.", imageSrc: "https://i.ytimg.com/vi/placeholder/maxresdefault.jpg", imageAlt: "Nuremberg Christmas market" },
       { title: "Dresden Christmas Market Day (2024)", href: "/videos/dresden-christmas-market-day-walk-2024", description: "The Striezelmarkt and Frauenkirche area in Dresden by day.", imageSrc: "https://i.ytimg.com/vi/placeholder/maxresdefault.jpg", imageAlt: "Dresden Christmas market" },
-      { title: "Cologne Christmas Market Evening (2024)", href: "/videos/cologne-christmas-market-evening-walk-2024", description: "The cathedral Christmas market and old town squares of Cologne.", imageSrc: "https://i.ytimg.com/vi/placeholder/maxresdefault.jpg", imageAlt: "Cologne Christmas market" }
+      { title: "Cologne Christmas Market Evening (2023)", href: "/videos/cologne-christmas-market-evening-walk-2023", description: "The cathedral Christmas market and old town squares of Cologne.", imageSrc: "https://i.ytimg.com/vi/placeholder/maxresdefault.jpg", imageAlt: "Cologne Christmas market" }
 ];
 
-export default function CologneChristmasMarketEveningWalk2024Client() {
+export default function CologneChristmasMarketEveningWalk2023Client() {
   const formattedFilmingDate = video?.filmingDates[0]
     ? new Date(`${video.filmingDates[0]}T12:00:00`).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" })
     : "Thursday, November 28, 2024";

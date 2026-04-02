@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import CologneChristmasMarketEveningWalk2024Client from "./CologneChristmasMarketEveningWalk2024Client";
+import CologneChristmasMarketEveningWalk2023Client from "./CologneChristmasMarketEveningWalk2023Client";
 
 const siteUrl = "https://www.prowalktours.com";
-const pageUrl = `${siteUrl}/videos/cologne-christmas-market-evening-walk-2024`;
-const heroImagePath = "/cologne-christmas-market-evening-walk-2024/hero.jpg";
+const pageUrl = `${siteUrl}/videos/cologne-christmas-market-evening-walk-2023`;
+const heroImagePath = "/cologne-christmas-market-evening-walk-2023/hero.jpg";
 const ogImageUrl = `${siteUrl}${heroImagePath}`;
 const metadataTitle = "Cologne, Germany Christmas Market Evening Walk (2023)";
 const metadataDescription = "Cologne, Germany Christmas Market Evening Walk in 4K. This is an evening walk through the Christmas markets in Cologne.";
@@ -48,9 +48,9 @@ export default function Page() {
 
   return (
     <>
-      <Script id="cologne-christmas-market-evening-walk-2024-bc-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
-      <Script id="cologne-christmas-market-evening-walk-2024-video-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }} />
-      <CologneChristmasMarketEveningWalk2024Client />
+      <Script id="cologne-christmas-market-evening-walk-2023-bc-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
+      <Script id="cologne-christmas-market-evening-walk-2023-video-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }} />
+      <CologneChristmasMarketEveningWalk2023Client />
     </>
   );
 }

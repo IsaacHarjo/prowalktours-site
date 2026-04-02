@@ -20,7 +20,7 @@ const highlights = detail.highlights;
 const relatedTours = [
       { title: "Nuremberg Christmas Market Evening (2024)", href: "/videos/nuremberg-christmas-market-evening-walk-2024", description: "The Christkindlesmarkt and old town of Nuremberg lit up for Christmas.", imageSrc: "https://i.ytimg.com/vi/placeholder/maxresdefault.jpg", imageAlt: "Nuremberg Christmas market" },
       { title: "Dresden Christmas Market Day (2024)", href: "/videos/dresden-christmas-market-day-walk-2024", description: "The Striezelmarkt and Frauenkirche area in Dresden by day.", imageSrc: "https://i.ytimg.com/vi/placeholder/maxresdefault.jpg", imageAlt: "Dresden Christmas market" },
-      { title: "Cologne Christmas Market Evening (2024)", href: "/videos/cologne-christmas-market-evening-walk-2024", description: "The cathedral Christmas market and old town squares of Cologne.", imageSrc: "https://i.ytimg.com/vi/placeholder/maxresdefault.jpg", imageAlt: "Cologne Christmas market" }
+      { title: "Cologne Christmas Market Evening (2023)", href: "/videos/cologne-christmas-market-evening-walk-2023", description: "The cathedral Christmas market and old town squares of Cologne.", imageSrc: "https://i.ytimg.com/vi/placeholder/maxresdefault.jpg", imageAlt: "Cologne Christmas market" }
 ];
 
 export default function StuttgartChristmasMarketEveningWalk2022Client() {

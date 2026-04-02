@@ -61,11 +61,11 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "city": "Cologne",
     "location": "Christmas Market",
     "title": "Cologne, Germany Christmas Market Evening Walk (2023)",
-    "slug": "cologne-christmas-market-evening-walk-2024",
+    "slug": "cologne-christmas-market-evening-walk-2023",
     "videoType": "evening-walk",
     "themes": [],
-    "filmedDateIso": "2024-11-28",
-    "filmedYear": 2024,
+    "filmedDateIso": "2023-11-28",
+    "filmedYear": 2023,
     "youtubeUrl": "https://youtu.be/pK8KdLX1uEo",
     "mapUrl": "https://www.google.com/maps/d/edit?mid=1sa_ma0hfli54QGsQBK6vY4ngyFI1rVQ&usp=sharing",
     "latitude": 50.941305,
@@ -102,7 +102,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     ],
     "status": "ready",
     "thumbnailPath": null,
-    "href": "/videos/cologne-christmas-market-evening-walk-2024",
+    "href": "https://youtu.be/pK8KdLX1uEo",
     "thumbnailSrc": "https://i.ytimg.com/vi/pK8KdLX1uEo/maxresdefault.jpg"
   },
   {

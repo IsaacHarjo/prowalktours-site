@@ -66,7 +66,7 @@ const cities: CitySection[] = [
     city: "Cologne",
     subtitle: "Cathedral Christmas market and old town squares along the Rhine",
     walks: [
-      { name: "Cologne Christmas Market Evening Walk (2024)", href: "/videos/cologne-christmas-market-evening-walk-2024", description: "The cathedral market, old town, and Rhine-side markets after dark.", imageSrc: "https://i.ytimg.com/vi/pK8KdLX1uEo/maxresdefault.jpg", imageAlt: "Cologne Christmas market evening" },
+      { name: "Cologne Christmas Market Evening Walk (2023)", href: "/videos/cologne-christmas-market-evening-walk-2023", description: "The cathedral market, old town, and Rhine-side markets after dark.", imageSrc: "https://i.ytimg.com/vi/pK8KdLX1uEo/maxresdefault.jpg", imageAlt: "Cologne Christmas market evening" },
       { name: "Cologne Christmas Market Day Walk (2023)", href: "/videos/cologne-christmas-market-day-walk-2023", description: "The cathedral area and surrounding market squares in daylight.", imageSrc: "https://i.ytimg.com/vi/GCsPZt5qUpg/maxresdefault.jpg", imageAlt: "Cologne Christmas market day" },
     ],
   },

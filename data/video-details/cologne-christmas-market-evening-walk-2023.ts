@@ -1,10 +1,10 @@
 import type { VideoDetailRecord } from "../video-types";
 
-const highlightImageBasePath = "/cologne-christmas-market-evening-walk-2024/highlights";
+const highlightImageBasePath = "/cologne-christmas-market-evening-walk-2023/highlights";
 const highlightImageSrc = (filename: string) => `${highlightImageBasePath}/${filename}`;
 
-export const cologneChristmasMarketEveningWalk2024Detail: VideoDetailRecord = {
-  slug: "cologne-christmas-market-evening-walk-2024",
+export const cologneChristmasMarketEveningWalk2023Detail: VideoDetailRecord = {
+  slug: "cologne-christmas-market-evening-walk-2023",
   heroEyebrow: "France Walk",
   heroTitle: "Cologne, Germany Christmas Market Evening Walk (2023)",
   heroSubtitle: "Intro and Map, Cologne Cathedral, Cathedral Christmas Market, Heinzelmännchen Fountain, Heinzels Winter Fairytale (Alter Markt)",
