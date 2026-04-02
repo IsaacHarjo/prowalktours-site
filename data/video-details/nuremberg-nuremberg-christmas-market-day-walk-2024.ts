@@ -8,7 +8,7 @@ export const nurembergNurembergChristmasMarketDayWalk2024Detail: VideoDetailReco
   heroEyebrow: "France Walk",
   heroTitle: "Nuremberg, Germany Christmas Market Day Walk (2024)",
   heroSubtitle: "Fleischbrücke (Bridge), Hauptmarkt Christmas Market, Schöner Brunnen, Original Regional Market, St. Sebaldus Church",
-  heroDescription: "*🇩🇪 Experience the Daytime Magic of the Nürnberger Christkindlesmarkt!* 🎄",
+  heroDescription: "🇩🇪 Experience the Daytime Magic of the Nürnberger Christkindlesmarkt!",
   routeMapDescription: "Follow this route through Nuremberg on the interactive map below.",
   licensingDescription: [
     "This Nuremberg day walk captures the route in a continuous long-form format, including Fleischbrücke (Bridge), Hauptmarkt Christmas Market, Schöner Brunnen, Original Regional Market, St. Sebaldus Church, Sister Cities Market.",

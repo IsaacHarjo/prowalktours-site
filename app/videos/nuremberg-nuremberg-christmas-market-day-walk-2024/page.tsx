@@ -7,7 +7,7 @@ const pageUrl = `${siteUrl}/videos/nuremberg-nuremberg-christmas-market-day-walk
 const heroImagePath = "/nuremberg-nuremberg-christmas-market-day-walk-2024/hero.jpg";
 const ogImageUrl = `${siteUrl}${heroImagePath}`;
 const metadataTitle = "Nuremberg, Germany Christmas Market Day Walk (2024)";
-const metadataDescription = "Nuremberg, Germany Christmas Market Day Walk in 4K. *🇩🇪 Experience the Daytime Magic of the Nürnberger Christkindlesmarkt!* 🎄.";
+const metadataDescription = "Nuremberg, Germany Christmas Market Day Walk in 4K. 🇩🇪 Experience the Daytime Magic of the Nürnberger Christkindlesmarkt!.";
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -38,9 +38,9 @@ export default function Page() {
     "@type": "VideoObject",
     name: metadataTitle,
     description: metadataDescription,
-    thumbnailUrl: ["https://i.ytimg.com/vi//maxresdefault.jpg", ogImageUrl],
-    embedUrl: "https://www.youtube.com/embed/",
-    contentUrl: "https://www.youtube.com/watch?v=",
+    thumbnailUrl: ["https://i.ytimg.com/vi/9AD44Xk2Jkg/maxresdefault.jpg", ogImageUrl],
+    embedUrl: "https://www.youtube.com/embed/9AD44Xk2Jkg",
+    contentUrl: "https://www.youtube.com/watch?v=9AD44Xk2Jkg",
     uploadDate: "2024-12-12",
     duration: "PT2H11M50S",
     url: pageUrl,

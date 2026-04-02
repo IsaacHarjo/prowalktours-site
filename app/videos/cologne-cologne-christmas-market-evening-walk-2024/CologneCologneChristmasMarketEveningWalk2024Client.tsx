@@ -12,15 +12,15 @@ type YouTubePlayerNamespace = { Player: new (element: HTMLIFrameElement, options
 declare global { interface Window { YT?: YouTubePlayerNamespace; onYouTubeIframeAPIReady?: () => void } }
 
 const video = germanyVideos.find((v) => v.slug === "cologne-cologne-christmas-market-evening-walk-2024");
-const youtubeVideoId = video?.youtubeUrl.split("/").pop() ?? "";
+const youtubeVideoId = video?.youtubeUrl.split("/").pop() ?? "pK8KdLX1uEo";
 const heroImagePath = "/cologne-cologne-christmas-market-evening-walk-2024/hero.jpg";
 
 const breadcrumbs = [{"label":"Home","href":"/"},{"label":"Countries","href":"/countries"},{"label":"Germany","href":"/destinations/germany"},{"label":"Cologne, Germany Christmas Market Evening Walk"}];
 const highlights = detail.highlights;
 const relatedTours = [
-      { title: "Nuremberg Christmas Market Evening (2024)", href: "/videos/nuremberg-nuremberg-christmas-market-evening-walk-2024", description: "The Christkindlesmarkt and old town of Nuremberg lit up for Christmas.", imageSrc: "https://i.ytimg.com/vi/placeholder/maxresdefault.jpg", imageAlt: "Nuremberg Christmas market" },
-      { title: "Dresden Christmas Market Day (2024)", href: "/videos/dresden-dresden-christmas-market-day-walk-2024", description: "The Striezelmarkt and Frauenkirche area in Dresden by day.", imageSrc: "https://i.ytimg.com/vi/placeholder/maxresdefault.jpg", imageAlt: "Dresden Christmas market" },
-      { title: "Rothenburg ob der Tauber Evening (2024)", href: "/videos/rothenburg-ob-der-tauber-rothenburg-ob-der-tauber-christmas-market-evening-walk-2024", description: "A medieval walled town with one of Germany's most atmospheric Christmas markets.", imageSrc: "https://i.ytimg.com/vi/placeholder/maxresdefault.jpg", imageAlt: "Rothenburg Christmas market" }
+      { title: "Nuremberg Christmas Market Evening (2024)", href: "/videos/nuremberg-nuremberg-christmas-market-evening-walk-2024", description: "The Christkindlesmarkt and old town of Nuremberg lit up for Christmas.", imageSrc: "https://i.ytimg.com/vi/CRAigMYQ4cM/maxresdefault.jpg", imageAlt: "Nuremberg Christmas market" },
+      { title: "Dresden Christmas Market Day (2024)", href: "/videos/dresden-dresden-christmas-market-day-walk-2024", description: "The Striezelmarkt and Frauenkirche area in Dresden by day.", imageSrc: "https://i.ytimg.com/vi/aNBmM3aQWz4/maxresdefault.jpg", imageAlt: "Dresden Christmas market" },
+      { title: "Rothenburg ob der Tauber Evening (2024)", href: "/videos/rothenburg-ob-der-tauber-rothenburg-ob-der-tauber-christmas-market-evening-walk-2024", description: "A medieval walled town with one of Germany's most atmospheric Christmas markets.", imageSrc: "https://i.ytimg.com/vi/rNwRKSRIVgk/maxresdefault.jpg", imageAlt: "Rothenburg Christmas market" }
 ];
 
 export default function CologneCologneChristmasMarketEveningWalk2024Client() {

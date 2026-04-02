@@ -12,15 +12,15 @@ type YouTubePlayerNamespace = { Player: new (element: HTMLIFrameElement, options
 declare global { interface Window { YT?: YouTubePlayerNamespace; onYouTubeIframeAPIReady?: () => void } }
 
 const video = germanyVideos.find((v) => v.slug === "dresden-dresden-christmas-market-day-walk-2022");
-const youtubeVideoId = video?.youtubeUrl.split("/").pop() ?? "";
+const youtubeVideoId = video?.youtubeUrl.split("/").pop() ?? "-FIJHCY8j-0";
 const heroImagePath = "/dresden-dresden-christmas-market-day-walk-2022/hero.jpg";
 
 const breadcrumbs = [{"label":"Home","href":"/"},{"label":"Countries","href":"/countries"},{"label":"Germany","href":"/destinations/germany"},{"label":"Dresden, Germany Christmas Market Day Walk"}];
 const highlights = detail.highlights;
 const relatedTours = [
-      { title: "Nuremberg Christmas Market Evening (2024)", href: "/videos/nuremberg-nuremberg-christmas-market-evening-walk-2024", description: "The Christkindlesmarkt and old town of Nuremberg lit up for Christmas.", imageSrc: "https://i.ytimg.com/vi/placeholder/maxresdefault.jpg", imageAlt: "Nuremberg Christmas market" },
-      { title: "Dresden Christmas Market Day (2024)", href: "/videos/dresden-dresden-christmas-market-day-walk-2024", description: "The Striezelmarkt and Frauenkirche area in Dresden by day.", imageSrc: "https://i.ytimg.com/vi/placeholder/maxresdefault.jpg", imageAlt: "Dresden Christmas market" },
-      { title: "Cologne Christmas Market Evening (2024)", href: "/videos/cologne-cologne-christmas-market-evening-walk-2024", description: "The cathedral Christmas market and old town squares of Cologne.", imageSrc: "https://i.ytimg.com/vi/placeholder/maxresdefault.jpg", imageAlt: "Cologne Christmas market" }
+      { title: "Nuremberg Christmas Market Evening (2024)", href: "/videos/nuremberg-nuremberg-christmas-market-evening-walk-2024", description: "The Christkindlesmarkt and old town of Nuremberg lit up for Christmas.", imageSrc: "https://i.ytimg.com/vi/CRAigMYQ4cM/maxresdefault.jpg", imageAlt: "Nuremberg Christmas market" },
+      { title: "Dresden Christmas Market Day (2024)", href: "/videos/dresden-dresden-christmas-market-day-walk-2024", description: "The Striezelmarkt and Frauenkirche area in Dresden by day.", imageSrc: "https://i.ytimg.com/vi/aNBmM3aQWz4/maxresdefault.jpg", imageAlt: "Dresden Christmas market" },
+      { title: "Cologne Christmas Market Evening (2024)", href: "/videos/cologne-cologne-christmas-market-evening-walk-2024", description: "The cathedral Christmas market and old town squares of Cologne.", imageSrc: "https://i.ytimg.com/vi/pK8KdLX1uEo/maxresdefault.jpg", imageAlt: "Cologne Christmas market" }
 ];
 
 export default function DresdenDresdenChristmasMarketDayWalk2022Client() {

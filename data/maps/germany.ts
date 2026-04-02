@@ -15,7 +15,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2024-11-29",
     "filmedYear": 2024,
-    "youtubeUrl": "Aachen, Germany Christmas Markets - 4K60fps with Captions - 2023! - YouTube",
+    "youtubeUrl": "https://youtu.be/sNUBp762Qik",
     "mapUrl": "https://www.google.com/maps/d/edit?mid=1CqW-x0KVv8eZxsa4oDq6UDWagcLnPTU&usp=sharing",
     "latitude": 50.7751533,
     "longitude": 6.0837911,
@@ -52,7 +52,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/aachen-aachen-christmas-market-evening-walk-2024",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/sNUBp762Qik/maxresdefault.jpg"
   },
   {
     "tourId": "de-0002",
@@ -66,7 +66,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2024-11-28",
     "filmedYear": 2024,
-    "youtubeUrl": "Cologne, Germany Christmas Market Tour - 4K60fps - with Captions - YouTube",
+    "youtubeUrl": "https://youtu.be/pK8KdLX1uEo",
     "mapUrl": "https://www.google.com/maps/d/edit?mid=1sa_ma0hfli54QGsQBK6vY4ngyFI1rVQ&usp=sharing",
     "latitude": 50.941305,
     "longitude": 6.9564084,
@@ -103,7 +103,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/cologne-cologne-christmas-market-evening-walk-2024",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/pK8KdLX1uEo/maxresdefault.jpg"
   },
   {
     "tourId": "de-0003",
@@ -117,7 +117,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2023-11-28",
     "filmedYear": 2023,
-    "youtubeUrl": "COLOGNE - GERMANY'S CHRISTMAS WONDERLAND: THE MAGIC OF THE SEASON in Köln - YouTube",
+    "youtubeUrl": "https://youtu.be/GCsPZt5qUpg",
     "mapUrl": "https://www.google.com/maps/d/edit?mid=1gh1LRYayhPbfSjwEZZBf-5d-43Ff8Eg&usp=sharing",
     "latitude": 50.9418698,
     "longitude": 6.9581828,
@@ -157,7 +157,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/cologne-cologne-christmas-market-day-walk-2023",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/GCsPZt5qUpg/maxresdefault.jpg"
   },
   {
     "tourId": "de-0004",
@@ -171,7 +171,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2022-12-12",
     "filmedYear": 2022,
-    "youtubeUrl": "Christmas Markets of Dresden, Germany - 4K 60fps with Captions - YouTube",
+    "youtubeUrl": "https://youtu.be/-FIJHCY8j-0",
     "mapUrl": "https://www.google.com/maps/d/edit?mid=1-A0AlDQkjf5YGtGLZ5qAq8WmzTvXLfQ&usp=sharing",
     "latitude": 51.0502156,
     "longitude": 13.7374931,
@@ -201,7 +201,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/dresden-dresden-christmas-market-day-walk-2022",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/-FIJHCY8j-0/maxresdefault.jpg"
   },
   {
     "tourId": "de-0005",
@@ -215,7 +215,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2022-12-11",
     "filmedYear": 2022,
-    "youtubeUrl": "Christmas Markets of Dresden, Germany - 4K 60fps with Captions - YouTube",
+    "youtubeUrl": "https://youtu.be/9JCm5Nzqzfg",
     "mapUrl": "https://www.google.com/maps/d/edit?mid=1wEASx3u3RmyCVbqICJuLi-f681_Mcr0&usp=sharing",
     "latitude": 51.0501659,
     "longitude": 13.7378632,
@@ -246,7 +246,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/dresden-dresden-christmas-market-evening-walk-2022",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/9JCm5Nzqzfg/maxresdefault.jpg"
   },
   {
     "tourId": "de-0006",
@@ -260,7 +260,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2024-12-07",
     "filmedYear": 2024,
-    "youtubeUrl": "Dresden Christmas Market (DAYTIME TOUR): Striezelmarkt, Frauenkirche & German Winter Charm 🇩🇪 - YouTube",
+    "youtubeUrl": "https://youtu.be/aNBmM3aQWz4",
     "mapUrl": "https://www.google.com/maps/d/edit?mid=15fObt-LYeivbDt485M3eM4egsSa_nbE&usp=sharing",
     "latitude": 51.0499335,
     "longitude": 13.7373966,
@@ -300,7 +300,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/dresden-dresden-christmas-market-day-walk-2024",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/aNBmM3aQWz4/maxresdefault.jpg"
   },
   {
     "tourId": "de-0007",
@@ -314,7 +314,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2024-12-06",
     "filmedYear": 2024,
-    "youtubeUrl": "DRESDEN - THE HEART OF GERMAN CHRISTMAS MAGIC 🎄 | Striezelmarkt & Neumarkt Evening Walk in 4K HDR - YouTube",
+    "youtubeUrl": "https://youtu.be/LWqbdWbnGlk",
     "mapUrl": "https://www.google.com/maps/d/edit?mid=1U_e_9r6vwrfrXMt0vjyTx09HdN6NUnU&usp=sharing",
     "latitude": 51.0499387,
     "longitude": 13.7378065,
@@ -343,7 +343,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/dresden-dresden-christmas-market-evening-walk-2024",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/LWqbdWbnGlk/maxresdefault.jpg"
   },
   {
     "tourId": "de-0008",
@@ -357,7 +357,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2024-12-15",
     "filmedYear": 2024,
-    "youtubeUrl": "Esslingen, Germany: A Medieval Christmas Market Experience | 2024 - YouTube",
+    "youtubeUrl": "https://youtu.be/I0BUehZBcOI",
     "mapUrl": "https://www.google.com/maps/d/u/0/edit?mid=1oH0gIBnPwLJwb4E6-1McxytIcmFrNTg&usp=sharing",
     "latitude": 48.7413731,
     "longitude": 9.3039564,
@@ -392,7 +392,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/esslingen-esslingen-christmas-market-day-walk-2024",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/I0BUehZBcOI/maxresdefault.jpg"
   },
   {
     "tourId": "de-0009",
@@ -406,7 +406,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2025-12-16",
     "filmedYear": 2025,
-    "youtubeUrl": "Freiburg Christmas Market 🇩🇪 | Magical Old Town Walk in Germany (4K HDR)",
+    "youtubeUrl": "https://youtu.be/4bQoSIwQHZM",
     "mapUrl": "https://www.google.com/maps/d/edit?mid=1cow1Bl-XUxiBNkB8w78b4uhOkR5MGWM&usp=sharing",
     "latitude": 47.9951246,
     "longitude": 7.8414239,
@@ -443,7 +443,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/freiburg-freiburg-christmas-market-evening-walk-2025",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/4bQoSIwQHZM/maxresdefault.jpg"
   },
   {
     "tourId": "de-0010",
@@ -457,7 +457,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2024-12-12",
     "filmedYear": 2024,
-    "youtubeUrl": "Munich Christmas Market 2024 Tour | Münchner Christkindlmarkt in HDR 60fps - YouTube",
+    "youtubeUrl": "https://youtu.be/g1akZNSsS14",
     "mapUrl": "https://www.google.com/maps/d/u/0/edit?mid=1SZakjmkAEQRDBzUm8jy_Lx-fF8oaR64&usp=sharing",
     "latitude": 48.1392005,
     "longitude": 11.5661558,
@@ -495,7 +495,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/munich-munich-christmas-market-evening-walk-2024",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/g1akZNSsS14/maxresdefault.jpg"
   },
   {
     "tourId": "de-0011",
@@ -509,7 +509,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2022-12-14",
     "filmedYear": 2022,
-    "youtubeUrl": "Christmas Markets of Nuremberg, Germany - Day Walk - 4K 60fps with Captions -Nürnberg - YouTube",
+    "youtubeUrl": "https://youtu.be/l6aGKVxo2kw",
     "mapUrl": "https://www.google.com/maps/d/edit?mid=1asgVdmmzmOlQ4apfHZFRlWnd6Hyc1No&usp=sharing",
     "latitude": 49.4527434,
     "longitude": 11.0767762,
@@ -552,7 +552,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/nuremberg-nuremberg-christmas-market-day-walk-2022",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/l6aGKVxo2kw/maxresdefault.jpg"
   },
   {
     "tourId": "de-0012",
@@ -566,7 +566,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2022-12-14",
     "filmedYear": 2022,
-    "youtubeUrl": "Nuremberg Christmas Market at Night - 4K 60fps with Captions -Nürnberg - YouTube",
+    "youtubeUrl": "https://youtu.be/RqoFI3HKitY",
     "mapUrl": "https://www.google.com/maps/d/edit?mid=1wGteToXpuWR_ZptphCdFiWDidioKtB0&usp=sharing",
     "latitude": 49.4531218,
     "longitude": 11.0767869,
@@ -604,7 +604,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/nuremberg-nuremberg-christmas-market-evening-walk-2022",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/RqoFI3HKitY/maxresdefault.jpg"
   },
   {
     "tourId": "de-0013",
@@ -618,7 +618,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2024-12-11",
     "filmedYear": 2024,
-    "youtubeUrl": "Nuremberg Christmas Market Tour | Christkindlesmarkt in HDR - YouTube",
+    "youtubeUrl": "https://youtu.be/CRAigMYQ4cM",
     "mapUrl": "https://www.google.com/maps/d/u/0/edit?mid=1gAU6eK4G8ct89y55Om7ewbxkxlC-jaI&usp=sharing",
     "latitude": 49.4529828,
     "longitude": 11.0768039,
@@ -661,7 +661,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/nuremberg-nuremberg-christmas-market-evening-walk-2024",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/CRAigMYQ4cM/maxresdefault.jpg"
   },
   {
     "tourId": "de-0014",
@@ -675,14 +675,14 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2024-12-12",
     "filmedYear": 2024,
-    "youtubeUrl": "Nürnberg Christkindlesmarkt 🇩🇪 | The Ultimate Daytime Walking Tour (Full Market Experience) 4K HDR",
+    "youtubeUrl": "https://youtu.be/9AD44Xk2Jkg",
     "mapUrl": "https://www.google.com/maps/d/edit?mid=1_Fvtk_Zt_Tbh-gSxuoRYGJjV4Oxaj3Y&usp=sharing",
     "latitude": 49.4524958,
     "longitude": 11.0768138,
     "durationLabel": "2:11:50",
     "durationSeconds": 7910,
     "descriptionShort": "A daytime walk in Nuremberg, Germany.",
-    "descriptionLong": "*🇩🇪 Experience the Daytime Magic of the Nürnberger Christkindlesmarkt!* 🎄",
+    "descriptionLong": "🇩🇪 Experience the Daytime Magic of the Nürnberger Christkindlesmarkt!",
     "landmarks": [
       "Fleischbrücke (Bridge)",
       "Hauptmarkt Christmas Market",
@@ -722,7 +722,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/nuremberg-nuremberg-christmas-market-day-walk-2024",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/9AD44Xk2Jkg/maxresdefault.jpg"
   },
   {
     "tourId": "de-0015",
@@ -736,7 +736,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2024-12-13",
     "filmedYear": 2024,
-    "youtubeUrl": "Rothenburg Christmas Market 2024: A Tour Through Markets and Stores 4K 60fps",
+    "youtubeUrl": "https://youtu.be/rNwRKSRIVgk",
     "mapUrl": "https://www.google.com/maps/d/u/0/edit?mid=187uVESxX4xfYBW578u06GP5HgpqH0X0&usp=sharing",
     "latitude": 49.3769876,
     "longitude": 10.1788704,
@@ -784,7 +784,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/rothenburg-ob-der-tauber-rothenburg-ob-der-tauber-christmas-market-evening-walk-2024",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/rNwRKSRIVgk/maxresdefault.jpg"
   },
   {
     "tourId": "de-0016",
@@ -798,7 +798,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2023-12-01",
     "filmedYear": 2023,
-    "youtubeUrl": "Experience the Rothenburg ob de Tauber's Christmas Market in 4K HDR! - Reiterlesmarkt - YouTube",
+    "youtubeUrl": "https://youtu.be/EzZhJgqsdYU",
     "mapUrl": "https://www.google.com/maps/d/u/0/edit?mid=1sHVVO7f81QxO2fziOYRDryg3sV-1mW4&usp=sharing",
     "latitude": 49.3762341,
     "longitude": 10.1744849,
@@ -845,7 +845,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/rothenburg-ob-der-tauber-rothenburg-ob-der-tauber-christmas-market-day-walk-2023",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/EzZhJgqsdYU/maxresdefault.jpg"
   },
   {
     "tourId": "de-0017",
@@ -859,7 +859,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2023-12-01",
     "filmedYear": 2023,
-    "youtubeUrl": "Rothenburg ob der Tauber Christmas Market - Reiterlesmarkt - 4K 60fps with Captions - YouTube",
+    "youtubeUrl": "https://youtu.be/jur8EnASUp0",
     "mapUrl": "https://www.google.com/maps/d/edit?mid=1iO1Dd-itGUW2voFIcQQUSddhMMb-DbQ&usp=sharing",
     "latitude": 49.3764428,
     "longitude": 10.1746521,
@@ -899,7 +899,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/rothenburg-ob-der-tauber-rothenburg-ob-der-tauber-christmas-market-evening-walk-2023",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/jur8EnASUp0/maxresdefault.jpg"
   },
   {
     "tourId": "de-0018",
@@ -913,7 +913,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2024-12-14",
     "filmedYear": 2024,
-    "youtubeUrl": "Rothenburg ob der Tauber Morning Walk - December 14th, 2024 | Patreon - YouTube",
+    "youtubeUrl": "https://youtu.be/611ytxlZjv0",
     "mapUrl": "https://www.google.com/maps/d/u/0/edit?mid=1hcVUiFrWPfM4mktCaXgBUUfUwNoYino&usp=sharing",
     "latitude": 49.3780715,
     "longitude": 10.1797458,
@@ -950,7 +950,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/rothenburg-ob-der-tauber-rothenburg-ob-der-tauber-christmas-market-day-walk-2024",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/611ytxlZjv0/maxresdefault.jpg"
   },
   {
     "tourId": "de-0019",
@@ -964,7 +964,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2022-12-15",
     "filmedYear": 2022,
-    "youtubeUrl": "Stuttgart Christmas Markets - Germany Walking Tour - 4K with Captions - YouTube",
+    "youtubeUrl": "https://youtu.be/DssVino8XPo",
     "mapUrl": "https://www.google.com/maps/d/edit?mid=1xojt_cp_5JZ1noienKSgmzvLfUrabvs&usp=sharing",
     "latitude": 48.7792057,
     "longitude": 9.1793108,
@@ -996,7 +996,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/stuttgart-stuttgart-christmas-market-evening-walk-2022",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/DssVino8XPo/maxresdefault.jpg"
   },
   {
     "tourId": "de-0020",
@@ -1010,7 +1010,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "themes": [],
     "filmedDateIso": "2024-12-14",
     "filmedYear": 2024,
-    "youtubeUrl": "Stuttgart Christmas Market 4K HDR Night Walk 🌙 (Immersive Full Tour & Sights) - YouTube",
+    "youtubeUrl": "https://youtu.be/1umZtnFfm60",
     "mapUrl": "https://www.google.com/maps/d/edit?mid=1EGS_qIlNTXSWTbsM6i7BtwHFKiZ7c-o&usp=sharing",
     "latitude": 48.7786614,
     "longitude": 9.1795455,
@@ -1044,6 +1044,6 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "status": "ready",
     "thumbnailPath": null,
     "href": "/videos/stuttgart-stuttgart-christmas-market-evening-walk-2024",
-    "thumbnailSrc": ""
+    "thumbnailSrc": "https://i.ytimg.com/vi/1umZtnFfm60/maxresdefault.jpg"
   }
 ];
