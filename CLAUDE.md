@@ -217,16 +217,23 @@ Riviera" outperforms plain "Walking in Menton" — themes drive retention.
 ---
 
 ## Pages Built So Far (France Video Pages)
-Check app/videos/ directory for full current list. Known completed pages:
+Check app/videos/ directory for full current list. Completed pages:
 - menton-france-walking-tour-2025 ✓
 - antibes-daytime-walk-2025 ✓
 - avignon-walking-tour-2025 ✓
-- paris-evening-walk-2022 ✓ (correct server/client pattern)
-- paris-catacombs (completed — check slug)
-- Next in queue: fr-0021 Paris Latin Quarter & Marais Evening Walk (2020)
-- Then: fr-0018 Paris Landmarks Day (2017)
-- Then: fr-0023 Luxembourg Gardens
-- Then: fr-0024 Eiffel Tower Tour
+- nice-old-town-monday-evening-walk-2025 ✓
+- paris-evening-walk-2022 ✓
+- paris-latin-quarter-marais-evening-walk-2020 ✓
+- paris-catacombs-tour-2020 ✓
+- paris-landmarks-day-walk-2020 ✓ (fr-0014)
+- montmartre-evening-walk-2022 ✓ (fr-0015)
+- montmartre-day-walk-2020 ✓ (fr-0016)
+- paris-promenade-plantee-day-walk-2020 ✓ (fr-0017)
+- paris-landmarks-day-walk-2017 ✓ (fr-0018)
+- paris-luxemburg-gardens-day-walk-2020 ✓ (fr-0023)
+- paris-eiffel-tower-day-walk-2020 ✓ (fr-0024)
+- Hero images still needed for: fr-0014 through fr-0024 (pages live
+  with YouTube thumbnails on hub cards, placeholder gradient on hero)
 
 ---
 
@@ -379,3 +386,24 @@ When giving prompts for new video pages, always specify:
   yt-dlp and ffmpeg installed via winget. New restricted Mapbox token
   created and added to Vercel dashboard. Security audit prompt queued
   for next session.
+- 2026-04-01: Major session. Security headers added to next.config.ts
+  (CSP, X-Frame-Options, HSTS, etc.). Paris Catacombs split into
+  server+client for YouTube IFrame seeking. France catalog refreshed
+  from CSV (6 → 28 ready tours). refresh-france-catalog.js script
+  created. Paris destination hub created with image cards. French
+  Riviera and Provence cards updated with hero images. Overview
+  sections removed from Paris, French Riviera pages. Nice evening
+  walk page built (fr-0003). New France video pages built:
+  - nice-old-town-monday-evening-walk-2025 (fr-0003)
+  - paris-landmarks-day-walk-2020 (fr-0014)
+  - montmartre-evening-walk-2022 (fr-0015)
+  - montmartre-day-walk-2020 (fr-0016)
+  - paris-promenade-plantee-day-walk-2020 (fr-0017)
+  - paris-landmarks-day-walk-2017 (fr-0018)
+  - paris-luxemburg-gardens-day-walk-2020 (fr-0023)
+  - paris-eiffel-tower-day-walk-2020 (fr-0024)
+  Highlight images extracted for all 7 new Paris pages + Nice via
+  fetch-highlight-images.js. Full image audit run — 9 broken refs
+  fixed across 5 data files. All image references now verified.
+  ESLint scripts/ exclusion added. Mapbox token URL restrictions
+  configured. Camera gear memory saved (GoPro Hero 6/8 vs Sony A7S3).
