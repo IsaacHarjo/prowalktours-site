@@ -228,6 +228,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
           mapboxAccessToken={mapboxToken}
           interactiveLayerIds={interactiveLayerIds}
           onClick={handleMapClick}
+          onLoad={() => mapRef.current?.resize()}
           style={{ width: "100%", height: "100%" }}
         >
           <NavigationControl position="top-right" showCompass={false} />
