@@ -21,6 +21,14 @@ export const metadata: Metadata = {
 
 const featuredWalks = [
   {
+    name: "Disneyland Paris 4K Tour (2020)",
+    href: "/videos/disneyland-paris-tour-2020",
+    description:
+      "A full Disneyland Paris tour with Sleeping Beauty Castle, Fantasyland, Frontierland, Adventureland, Discoveryland, rides, character meets, and Main Street shops.",
+    imageSrc: "https://i.ytimg.com/vi/ALXKzjfWj8E/maxresdefault.jpg",
+    imageAlt: "Disneyland Paris tour",
+  },
+  {
     name: "Paris Eiffel Tower Tour (2020)",
     href: "/videos/paris-eiffel-tower-day-walk-2020",
     description:
