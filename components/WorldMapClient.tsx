@@ -99,6 +99,11 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
     process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
 
   const [popupInfo, setPopupInfo] = useState<WorldTour | null>(null);
+  const [clusterInfo, setClusterInfo] = useState<{
+    tours: WorldTour[];
+    longitude: number;
+    latitude: number;
+  } | null>(null);
 
   // Build per-country tour arrays and GeoJSON
   const { countryGeoJson, countryTourArrays } = useMemo(() => {
@@ -154,28 +159,63 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
           layerId === `cluster-${c.name}` || layerId === `point-${c.name}`
       )?.name;
 
-      // Cluster click — zoom in
+      // Cluster click — open list or zoom if too large
       if (clickedFeature.properties?.cluster && countryName) {
         const clusterId = clickedFeature.properties.cluster_id as number;
+        const pointCount = clickedFeature.properties.point_count as number;
         const center = (clickedFeature.geometry as Point).coordinates as [
           number,
           number,
         ];
-        const source = mapRef.current?.getSource(
-          `world-tours-${countryName}`
-        ) as unknown as {
+        const sourceName = `world-tours-${countryName}`;
+        const map = mapRef.current?.getMap();
+        if (!map) return;
+
+        const source = map.getSource(sourceName) as unknown as {
+          getClusterLeaves: (
+            id: number,
+            limit: number,
+            offset: number,
+            cb: (err: Error | null, features: Feature[]) => void
+          ) => void;
           getClusterExpansionZoom: (
             id: number,
             cb: (err: Error | null, zoom: number) => void
           ) => void;
         };
-        source?.getClusterExpansionZoom(clusterId, (err, zoom) => {
-          if (err) return;
-          mapRef.current?.easeTo({
-            center,
-            zoom: Math.min(zoom, 14),
-            duration: 500,
+        if (!source) return;
+
+        // Large clusters (50+) — zoom in instead of listing
+        if (pointCount >= 50) {
+          source.getClusterExpansionZoom(clusterId, (err, zoom) => {
+            if (err) return;
+            mapRef.current?.easeTo({
+              center,
+              zoom: Math.min(zoom ?? map.getZoom(), 14),
+              duration: 500,
+            });
           });
+          return;
+        }
+
+        // Smaller clusters — get all tours and show list
+        source.getClusterLeaves(clusterId, pointCount, 0, (err, leaves) => {
+          if (err) return;
+          const countryTourList = countryTourArrays[countryName] || [];
+          const clusterTourList = (leaves ?? [])
+            .map((leaf) => {
+              const idx = leaf.properties?.featureIndex;
+              return typeof idx === "number" ? countryTourList[idx] ?? null : null;
+            })
+            .filter((t): t is WorldTour => t !== null);
+
+          setPopupInfo(null);
+          setClusterInfo({
+            tours: clusterTourList,
+            longitude: center[0],
+            latitude: center[1],
+          });
+          mapRef.current?.easeTo({ center, duration: 500 });
         });
         return;
       }
@@ -183,12 +223,13 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
       // Individual point click — show popup
       if (countryName) {
         const featureIndex = clickedFeature.properties?.featureIndex;
-        const countryTours = countryTourArrays[countryName];
+        const countryTourList = countryTourArrays[countryName];
         if (
           typeof featureIndex === "number" &&
-          countryTours?.[featureIndex]
+          countryTourList?.[featureIndex]
         ) {
-          setPopupInfo(countryTours[featureIndex]);
+          setClusterInfo(null);
+          setPopupInfo(countryTourList[featureIndex]);
         }
       }
     },
@@ -271,6 +312,45 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
                 >
                   Watch Tour →
                 </a>
+              </div>
+            </Popup>
+          ) : null}
+
+          {clusterInfo ? (
+            <Popup
+              longitude={clusterInfo.longitude}
+              latitude={clusterInfo.latitude}
+              anchor="bottom"
+              onClose={() => setClusterInfo(null)}
+              closeOnClick={false}
+              className="world-map-popup"
+              maxWidth="320px"
+            >
+              <div className="max-h-[280px] w-[280px] overflow-y-auto p-1">
+                <p className="sticky top-0 bg-white pb-2 text-xs font-semibold uppercase tracking-wider text-[#9a7a52]">
+                  {clusterInfo.tours.length} walks in this area
+                </p>
+                <div className="space-y-3">
+                  {clusterInfo.tours.map((tour) => (
+                    <div
+                      key={tour.slug}
+                      className="border-b border-[#eadfce] pb-2 last:border-0"
+                    >
+                      <p className="text-sm font-semibold text-[#2f261d]">
+                        {tour.title}
+                      </p>
+                      <p className="mt-0.5 text-xs text-[#6c5b49]">
+                        {tour.city}, {tour.country}
+                      </p>
+                      <a
+                        href={`/videos/${tour.slug}`}
+                        className="mt-1 inline-block text-xs font-semibold text-[#167fd5] hover:underline"
+                      >
+                        Watch Tour →
+                      </a>
+                    </div>
+                  ))}
+                </div>
               </div>
             </Popup>
           ) : null}
