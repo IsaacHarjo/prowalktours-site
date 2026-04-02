@@ -30,10 +30,10 @@ const destinations = [
   },
   {
     name: "Christmas Markets",
-    href: null,
-    status: "Coming soon",
+    href: "/destinations/france/christmas-markets",
+    status: "Available now",
     description:
-      "Seasonal market destinations, festive town centers, and holiday walking pages coming later.",
+      "Strasbourg, Colmar, Riquewihr, Kaysersberg, and Ribeauvillé — day and evening walks through Alsace's Christmas markets.",
   },
 ];
 
