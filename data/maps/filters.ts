@@ -175,7 +175,10 @@ export function getMapDisplayTitle(title: string) {
 }
 
 export function hasInternalMapWatchPage(feature: ExploreMapFeature) {
-  return Boolean(INTERNAL_WALK_PAGE_BY_TOUR_ID[feature.tourId]);
+  return (
+    Boolean(INTERNAL_WALK_PAGE_BY_TOUR_ID[feature.tourId]) ||
+    feature.href.startsWith("/videos/")
+  );
 }
 
 export function getMapWatchDestinationType(
@@ -185,7 +188,13 @@ export function getMapWatchDestinationType(
 }
 
 export function getMapWatchHref(feature: ExploreMapFeature) {
-  return INTERNAL_WALK_PAGE_BY_TOUR_ID[feature.tourId] ?? feature.youtubeUrl;
+  if (INTERNAL_WALK_PAGE_BY_TOUR_ID[feature.tourId]) {
+    return INTERNAL_WALK_PAGE_BY_TOUR_ID[feature.tourId];
+  }
+  if (feature.href.startsWith("/videos/")) {
+    return feature.href;
+  }
+  return feature.youtubeUrl;
 }
 
 export function filterExploreMapFeatures(

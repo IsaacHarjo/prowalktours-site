@@ -1,10 +1,7 @@
 import Link from "next/link";
-import MapSection from "../../../components/MapSection";
 
-const fullMapUrl =
-  "https://www.google.com/maps/d/edit?mid=10grORN8XYRpuIVzrAcB04cKvxA4-BTU&usp=sharing";
-const embeddedMapUrl =
-  "https://www.google.com/maps/d/u/0/embed?mid=10grORN8XYRpuIVzrAcB04cKvxA4-BTU";
+import ExploreVideoMap from "../../../components/ExploreVideoMap";
+import { franceMapFeatures } from "../../../data/maps/france";
 
 const destinations = [
   {
@@ -89,23 +86,29 @@ export default function FrancePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 lg:px-10">
-        <MapSection
-          className="mb-8 rounded-3xl border border-[#d8c7b5] bg-[#fffaf3] p-8"
-          eyebrow="Interactive France Map"
-          heading="Explore France on the map"
-          description={
-            <>
-              Browse Paris, French Riviera, Provence, and Christmas Markets on
-            the interactive map below.
-            </>
-          }
-          iframeSrc={embeddedMapUrl}
-          iframeTitle="Interactive France map"
-          iframeLoading="lazy"
-          iframeReferrerPolicy="no-referrer-when-downgrade"
-          fullMapButtonHref={fullMapUrl}
-          fullMapButtonLabel="Open the full France map"
-        />
+        <div className="mb-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
+            Interactive France Map
+          </p>
+          <h2 className="mt-3 text-3xl font-bold text-[#2f261d]">
+            Explore France on the map
+          </h2>
+          <p className="mt-3 max-w-3xl text-[17px] leading-8 text-[#6c5b49]">
+            Browse walking tours across France. Each marker represents a mapped
+            video, and you can filter by video type to explore the library.
+          </p>
+
+          <div className="mt-6">
+            <ExploreVideoMap
+              features={franceMapFeatures}
+              initialViewState={{
+                longitude: 2.3522,
+                latitude: 46.6,
+                zoom: 5.3,
+              }}
+            />
+          </div>
+        </div>
 
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {destinations.map((destination) =>
