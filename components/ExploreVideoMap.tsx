@@ -334,7 +334,7 @@ export default function ExploreVideoMap({
     [features]
   );
 
-  const filmedYearOptions = useMemo(() => getFilmedYearFilterOptions(), []);
+  const filmedYearOptions = useMemo(() => getFilmedYearFilterOptions(features), [features]);
   const themeOptions = useMemo(() => getThemeFilterOptions(features), [features]);
 
   const visibleFeatures = useMemo(

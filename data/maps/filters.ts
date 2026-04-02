@@ -144,11 +144,21 @@ export function getVideoTypeFilterOptions(
     }));
 }
 
-export function getFilmedYearFilterOptions(): ExploreMapFilterOption[] {
-  return FILMED_YEAR_RANGE.map((value) => ({
-    value,
-    label: value,
-  }));
+export function getFilmedYearFilterOptions(
+  features?: ExploreMapFeature[]
+): ExploreMapFilterOption[] {
+  if (!features) {
+    return FILMED_YEAR_RANGE.map((value) => ({ value, label: value }));
+  }
+  const availableYears = new Set(
+    features
+      .map((f) => f.filmedYear)
+      .filter((y): y is number => y !== null)
+      .map(String)
+  );
+  return FILMED_YEAR_RANGE.filter((y) => availableYears.has(y)).map(
+    (value) => ({ value, label: value })
+  );
 }
 
 export function getThemeFilterOptions(
