@@ -132,78 +132,42 @@ const popularDestinations = [
 export default function HomePage() {
   return (
     <main className="bg-[#fcfaf7] text-[#2f261d]">
-      <section className="relative isolate overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/images/homepage/hero.jpg')",
-          }}
-        />
-        <div className="absolute inset-0 bg-[#1f1812]/55" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1f1812]/75 via-[#1f1812]/45 to-transparent" />
-
-        <div className="relative mx-auto flex min-h-[78vh] max-w-7xl items-center px-6 py-20 lg:px-10">
-          <div className="max-w-5xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#f3dfc4]">
+      {/* ── Slim header bar ── */}
+      <section className="bg-[#1f1812]">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 px-6 py-6 sm:flex-row sm:items-center lg:px-10">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#f3dfc4]">
               Immersive Travel Videos
             </p>
-
-            <h1 className="max-w-2xl text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="mt-1 text-2xl font-bold leading-tight text-white sm:text-3xl">
               Explore the world one walk at a time
             </h1>
-
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">
-              Search walking tours by country, city, landmark, or video type &mdash; or start planning your next trip.
+            <p className="mt-1 text-sm leading-6 text-white/70">
+              421 walks across Italy, France &amp; Germany
             </p>
-
-            <div className="mt-8 flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start lg:gap-6">
-              <div className="min-w-0">
-                <SearchFilterBar
-                  videos={videos}
-                  action="/search"
-                  placeholder="Search by keyword"
-                  submitLabel="Search"
-                  variant="hero"
-                />
-              </div>
-
-              <div className="flex flex-col gap-4 lg:pt-8">
-                <Link
-                  href="/countries"
-                  className="inline-flex items-center justify-center rounded-full bg-[#167fd5] px-6 py-3 text-base font-semibold text-white transition hover:bg-[#0f6db9]"
-                >
-                  Browse Countries
-                </Link>
-
-                <Link
-                  href="#world-map"
-                  className="inline-flex items-center justify-center rounded-full border border-white/70 bg-white/10 px-6 py-3 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
-                >
-                  Explore the Map
-                </Link>
-              </div>
-            </div>
           </div>
+          <Link
+            href="/countries"
+            className="inline-flex shrink-0 items-center justify-center rounded-full bg-[#167fd5] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0f6db9]"
+          >
+            Browse Countries
+          </Link>
         </div>
       </section>
 
-      <section
-        id="world-map"
-        className="scroll-mt-16 mx-auto max-w-7xl px-6 py-10 lg:px-10 lg:py-12"
-      >
-        <div className="mb-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
-            Interactive World Map
-          </p>
-          <h2 className="mt-3 text-3xl font-bold text-[#2f261d]">
-            Explore Our Tours Around the World
-          </h2>
-          <p className="mt-3 max-w-3xl text-[17px] leading-8 text-[#6c5b49]">
-            421 walks across Italy, France &amp; Germany
-          </p>
-        </div>
+      {/* ── World map — full width, no side padding ── */}
+      <section className="w-full">
+        <WorldMapClient tours={worldTours} fullWidth />
+      </section>
 
-        <WorldMapClient tours={worldTours} />
+      {/* ── Search bar ── */}
+      <section className="mx-auto max-w-7xl px-6 py-8 lg:px-10">
+        <SearchFilterBar
+          videos={videos}
+          action="/search"
+          placeholder="Search by country, city, landmark, or video type"
+          submitLabel="Search"
+        />
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-10 lg:pb-24">
