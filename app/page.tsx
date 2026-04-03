@@ -162,7 +162,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Mobile search + buttons — clean white section */}
+      {/* Mobile search — clean white section, search input only */}
       <section className="bg-white lg:hidden">
         <div className="mx-auto max-w-7xl px-5 py-6 sm:px-6">
           <SearchFilterBar
@@ -170,22 +170,8 @@ export default function HomePage() {
             action="/search"
             placeholder="Search by country, city, or landmark"
             submitLabel="Search"
+            hideFiltersOnMobile
           />
-
-          <div className="mt-4 flex gap-3">
-            <Link
-              href="/countries"
-              className="inline-flex flex-1 items-center justify-center rounded-full border border-[#d8c7b5] bg-white px-4 py-2.5 text-sm font-semibold text-[#3d3327] transition hover:bg-[#f8f3ec]"
-            >
-              Browse Countries
-            </Link>
-            <Link
-              href="#mobile-world-map"
-              className="inline-flex flex-1 items-center justify-center rounded-full border border-[#d8c7b5] bg-white px-4 py-2.5 text-sm font-semibold text-[#3d3327] transition hover:bg-[#f8f3ec]"
-            >
-              Explore the Map
-            </Link>
-          </div>
         </div>
       </section>
 

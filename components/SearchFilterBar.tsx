@@ -15,6 +15,7 @@ type SearchFilterBarProps = {
   placeholder?: string;
   submitLabel?: string;
   variant?: "page" | "hero";
+  hideFiltersOnMobile?: boolean;
 };
 
 const uniqueSorted = (values: Array<string | undefined>) =>
@@ -41,6 +42,7 @@ export default function SearchFilterBar({
   placeholder = "Search by keyword",
   submitLabel = "Search",
   variant = "page",
+  hideFiltersOnMobile = false,
 }: SearchFilterBarProps) {
   const [query, setQuery] = useState(initialQuery);
   const [selectedCountry, setSelectedCountry] = useState(initialCountry);
@@ -159,7 +161,7 @@ export default function SearchFilterBar({
         </button>
       </div>
 
-      <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+      <div className={`mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4${hideFiltersOnMobile ? " hidden lg:grid" : ""}`}>
         <select
           name="country"
           value={selectedCountry}

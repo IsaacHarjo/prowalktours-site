@@ -56,8 +56,9 @@ export const metadata: Metadata = {
 function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-[#d8c7b5] bg-white/95 backdrop-blur">
-      <div className="mx-auto grid h-16 max-w-7xl grid-cols-[1.22fr_auto_1fr] items-center pl-2 pr-6 lg:pl-4 lg:pr-10">
-        <div className="justify-self-start">
+      <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-center px-4 lg:grid lg:grid-cols-[1.22fr_auto_1fr] lg:pl-4 lg:pr-10">
+        {/* Mobile: centered logo */}
+        <div className="lg:justify-self-start">
           <Link
             href="/"
             className="inline-flex items-center"
@@ -89,7 +90,8 @@ function SiteHeader() {
           </ul>
         </nav>
 
-        <div className="justify-self-end lg:hidden">
+        {/* Mobile: hamburger positioned far right */}
+        <div className="absolute right-4 lg:hidden">
           <MobileNav items={navItems} />
         </div>
 
