@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import Link from "next/link";
 
+import MobileHero from "../components/MobileHero";
 import SearchFilterBar from "../components/SearchFilterBar";
 import WorldMapClient from "../components/WorldMapClient";
 import { videos } from "../data/videos/index";
@@ -144,23 +145,8 @@ export default function HomePage() {
     <main className="bg-[#fcfaf7] text-[#2f261d]">
       {/* ── Mobile layout (below lg:) ── */}
 
-      {/* Mobile hero — full-bleed image with headline overlay */}
-      <section className="relative isolate overflow-hidden lg:hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/homepage/hero-mobile.jpg')" }}
-        />
-        <div className="absolute inset-0 bg-[#1f1812]/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1f1812]/70 via-transparent to-transparent" />
-        <div className="relative px-5 pb-10 pt-12 sm:px-6">
-          <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl">
-            Explore the world one walk at a time
-          </h1>
-          <p className="mt-3 text-base leading-7 text-white/85">
-            421 walks across Italy, France &amp; Germany
-          </p>
-        </div>
-      </section>
+      {/* Mobile hero — client component for reliable background image */}
+      <MobileHero />
 
       {/* Mobile search — clean white section, search input only */}
       <section className="bg-white lg:hidden">
