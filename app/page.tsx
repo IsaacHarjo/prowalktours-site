@@ -148,7 +148,7 @@ export default function HomePage() {
       <section className="relative isolate overflow-hidden lg:hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/homepage/hero-mobile.jpeg')" }}
+          style={{ backgroundImage: "url('/images/homepage/hero-mobile.jpg')" }}
         />
         <div className="absolute inset-0 bg-[#1f1812]/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1f1812]/70 via-transparent to-transparent" />
