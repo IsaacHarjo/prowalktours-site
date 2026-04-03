@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import MobileNav from "../components/MobileNav";
 import "./globals.css";
 
 type NavItem = {
@@ -87,6 +88,10 @@ function SiteHeader() {
             ))}
           </ul>
         </nav>
+
+        <div className="justify-self-end lg:hidden">
+          <MobileNav items={navItems} />
+        </div>
 
         <div className="hidden items-center justify-self-end gap-3 text-[#5c4c33] lg:flex">
           <a
@@ -197,15 +202,7 @@ function SiteHeader() {
         </div>
       </div>
 
-      <div className="border-t border-[#efe3d3] lg:hidden">
-        <div className="mx-auto flex max-w-7xl flex-wrap gap-x-5 gap-y-2 px-6 py-3 text-[16px] font-semibold tracking-[0.04em] text-[#5c4c33]">
-          {navItems.map((item) => (
-            <Link key={item.label} href={item.href} className="whitespace-nowrap">
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      </div>
+      {/* Mobile nav links moved to MobileNav hamburger menu */}
     </header>
   );
 }

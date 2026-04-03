@@ -144,39 +144,44 @@ export default function HomePage() {
     <main className="bg-[#fcfaf7] text-[#2f261d]">
       {/* ── Mobile layout (below lg:) ── */}
 
-      {/* Mobile header with search + buttons */}
-      <section className="bg-[#1f1812] lg:hidden">
-        <div className="mx-auto max-w-7xl px-5 pb-6 pt-6 sm:px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#f3dfc4]">
-            Immersive Travel Videos
-          </p>
-          <h1 className="mt-2 text-2xl font-bold leading-tight text-white sm:text-3xl">
+      {/* Mobile hero — full-bleed image with headline overlay */}
+      <section className="relative isolate overflow-hidden lg:hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/homepage/hero-mobile.jpeg')" }}
+        />
+        <div className="absolute inset-0 bg-[#1f1812]/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1f1812]/70 via-transparent to-transparent" />
+        <div className="relative px-5 pb-10 pt-12 sm:px-6">
+          <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl">
             Explore the world one walk at a time
           </h1>
-          <p className="mt-2 text-[15px] leading-6 text-white/80">
-            421 immersive 4K walking tours across Italy, France &amp; Germany
+          <p className="mt-3 text-base leading-7 text-white/85">
+            421 walks across Italy, France &amp; Germany
           </p>
+        </div>
+      </section>
 
-          <div className="mt-5">
-            <SearchFilterBar
-              videos={videos}
-              action="/search"
-              placeholder="Search by country, city, or landmark"
-              submitLabel="Search"
-              variant="hero"
-            />
-          </div>
+      {/* Mobile search + buttons — clean white section */}
+      <section className="bg-white lg:hidden">
+        <div className="mx-auto max-w-7xl px-5 py-6 sm:px-6">
+          <SearchFilterBar
+            videos={videos}
+            action="/search"
+            placeholder="Search by country, city, or landmark"
+            submitLabel="Search"
+          />
 
           <div className="mt-4 flex gap-3">
             <Link
               href="/countries"
-              className="inline-flex flex-1 items-center justify-center rounded-full border border-white/30 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/20"
+              className="inline-flex flex-1 items-center justify-center rounded-full border border-[#d8c7b5] bg-white px-4 py-2.5 text-sm font-semibold text-[#3d3327] transition hover:bg-[#f8f3ec]"
             >
               Browse Countries
             </Link>
             <Link
               href="#mobile-world-map"
-              className="inline-flex flex-1 items-center justify-center rounded-full border border-white/30 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/20"
+              className="inline-flex flex-1 items-center justify-center rounded-full border border-[#d8c7b5] bg-white px-4 py-2.5 text-sm font-semibold text-[#3d3327] transition hover:bg-[#f8f3ec]"
             >
               Explore the Map
             </Link>
