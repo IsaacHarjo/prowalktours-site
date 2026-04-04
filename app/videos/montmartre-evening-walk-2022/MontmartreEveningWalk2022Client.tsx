@@ -337,7 +337,7 @@ export default function MontmartreEveningWalk2022Client() {
           {relatedTours.map((tour) => (
             <a key={tour.href} href={tour.href} className="group rounded-[1.5rem] border border-[#d8c7b5] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg">
               <div className="mb-4 overflow-hidden rounded-[1rem] border border-[#eadfce]">
-                <img src={tour.imageSrc} alt={tour.imageAlt} className="aspect-video w-full object-cover" loading="lazy" />
+                <img src={tour.imageSrc} alt={tour.imageAlt} className="aspect-video w-full object-cover" loading="lazy" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; (e.target as HTMLImageElement).parentElement!.classList.add("bg-gradient-to-br", "from-[#2f261d]", "to-[#4a3c2f]"); }} />
               </div>
               <p className="text-sm font-semibold text-[#3d3327]">{tour.title}</p>
               <p className="mt-2 text-sm leading-7 text-[#6e5a45]">{tour.description}</p>
