@@ -50,6 +50,7 @@ const ROOT = path.resolve(__dirname, '..');
 const CATALOG_PATHS = [
   path.join(ROOT, 'data', 'videos', 'france.ts'),
   path.join(ROOT, 'data', 'videos', 'italy.ts'),
+  path.join(ROOT, 'data', 'videos', 'germany.ts'),
 ];
 const DETAIL_PATH = path.join(ROOT, 'data', 'video-details', `${slug}.ts`);
 const OUTPUT_DIR  = path.join(ROOT, 'public', slug, 'highlights');
