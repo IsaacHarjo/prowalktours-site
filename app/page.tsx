@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import Link from "next/link";
 
+import LiveSearchBar from "../components/LiveSearchBar";
 import SearchFilterBar from "../components/SearchFilterBar";
 import ThumbnailImg from "../components/ThumbnailImg";
 import WorldMapClient from "../components/WorldMapClient";
@@ -149,18 +150,12 @@ export default function HomePage() {
     <main className="bg-[#fcfaf7] text-[#2f261d]">
       {/* ═══ SECTION 1 — Hero ═══ */}
       <section className="bg-white">
-        <div className="mx-auto max-w-4xl px-6 py-14 text-center lg:py-20">
-          <h1 className="text-3xl font-bold leading-tight text-[#2f261d] sm:text-4xl lg:text-5xl">
+        <div className="mx-auto max-w-4xl px-6 py-12 text-center lg:py-16">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
             421 walking tours across 24 countries
-          </h1>
-          <div className="mx-auto mt-8 max-w-2xl">
-            <SearchFilterBar
-              videos={videos}
-              action="/search"
-              placeholder="Search a city, landmark, or country..."
-              submitLabel="Search"
-              hideFiltersOnMobile
-            />
+          </p>
+          <div className="mx-auto mt-6 max-w-2xl">
+            <LiveSearchBar videos={videos} />
           </div>
         </div>
       </section>
