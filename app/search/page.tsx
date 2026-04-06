@@ -36,6 +36,17 @@ const normalizeSearchText = (value: string) =>
     .trim()
     .replace(/\s+/g, " ");
 
+// Word boundary match — "paris" matches "Paris" but NOT "Parish"
+const wordBoundaryMatch = (query: string, text: string) => {
+  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const re = new RegExp(`\\b${escaped}\\b`, "i");
+  return re.test(text);
+};
+
+// Check if normalized query matches as whole word(s) within normalized text
+const matchesWord = (normalizedQuery: string, value: string) =>
+  wordBoundaryMatch(normalizedQuery, normalizeSearchText(value));
+
 // Check if query matches city, region, or country (broad metadata match)
 const matchesBroadMetadata = (
   query: string,
@@ -52,7 +63,7 @@ const matchesBroadMetadata = (
     video.shortDescription,
     ...video.keywords,
     ...video.themes,
-  ].some((val) => normalizeSearchText(val).includes(q));
+  ].some((val) => matchesWord(q, val));
 };
 
 // Check if query matches specific landmarks in the video's highlights
@@ -63,7 +74,7 @@ const matchesLandmarks = (
   const q = normalizeSearchText(query);
   if (!q) return false;
 
-  return video.landmarks.some((val) => normalizeSearchText(val).includes(q));
+  return video.landmarks.some((val) => matchesWord(q, val));
 };
 
 // Check if query matches a search hit (highlight timestamp)
@@ -72,7 +83,7 @@ const matchesSearchHit = (query: string, hit: SearchHitRecord) => {
   if (!q) return false;
 
   return [hit.highlight_title, hit.landmark, ...hit.search_terms].some((val) =>
-    normalizeSearchText(val).includes(q)
+    matchesWord(q, val)
   );
 };
 
@@ -91,7 +102,7 @@ const matchesVideoLevel = (query: string, video: (typeof videos)[number]) => {
     video.shortDescription,
     ...video.keywords,
     ...video.themes,
-  ].some((val) => normalizeSearchText(val).includes(q));
+  ].some((val) => matchesWord(q, val));
 };
 
 const matchesFilterValue = (
