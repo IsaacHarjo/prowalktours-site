@@ -36,44 +36,53 @@ const normalizeSearchText = (value: string) =>
     .trim()
     .replace(/\s+/g, " ");
 
-const matchesVideoMetadata = (query: string, video: (typeof videos)[number]) => {
-  const normalizedQuery = normalizeSearchText(query);
+// Check if query matches city, region, or country (broad metadata match)
+const matchesBroadMetadata = (
+  query: string,
+  video: (typeof videos)[number]
+) => {
+  const q = normalizeSearchText(query);
+  if (!q) return false;
 
-  if (!normalizedQuery) {
-    return false;
-  }
-
-  const searchableValues = [
+  return [
     video.siteTitle,
     video.country,
     video.region,
     video.city,
     video.shortDescription,
     ...video.keywords,
-    ...video.landmarks,
-    ...video.highlights.map((highlight) => highlight.title),
-  ];
+    ...video.themes,
+  ].some((val) => normalizeSearchText(val).includes(q));
+};
 
-  return searchableValues.some((value) =>
-    normalizeSearchText(value).includes(normalizedQuery)
+// Check if query matches specific landmarks in the video's highlights
+const matchesLandmarks = (
+  query: string,
+  video: (typeof videos)[number]
+) => {
+  const q = normalizeSearchText(query);
+  if (!q) return false;
+
+  return video.landmarks.some((val) => normalizeSearchText(val).includes(q));
+};
+
+// Check if query matches a search hit (highlight timestamp)
+const matchesSearchHit = (query: string, hit: SearchHitRecord) => {
+  const q = normalizeSearchText(query);
+  if (!q) return false;
+
+  return [hit.highlight_title, hit.landmark, ...hit.search_terms].some((val) =>
+    normalizeSearchText(val).includes(q)
   );
 };
 
-const matchesSearchHit = (query: string, hit: SearchHitRecord) => {
-  const normalizedQuery = normalizeSearchText(query);
+// Check if query is primarily a city/region/country match (not a landmark)
+const isBroadGeoMatch = (query: string, video: (typeof videos)[number]) => {
+  const q = normalizeSearchText(query);
+  if (!q) return false;
 
-  if (!normalizedQuery) {
-    return false;
-  }
-
-  const searchableValues = [
-    hit.highlight_title,
-    hit.landmark,
-    ...hit.search_terms,
-  ];
-
-  return searchableValues.some((value) =>
-    normalizeSearchText(value).includes(normalizedQuery)
+  return [video.city, video.region, video.country].some(
+    (val) => normalizeSearchText(val).includes(q)
   );
 };
 
@@ -81,10 +90,7 @@ const matchesFilterValue = (
   videoValue: string | undefined,
   selectedValue: string
 ) => {
-  if (!selectedValue) {
-    return true;
-  }
-
+  if (!selectedValue) return true;
   return (videoValue ?? "") === selectedValue;
 };
 
@@ -98,7 +104,9 @@ export default async function SearchPage({
   const selectedCountry = normalizeQueryValue(
     resolvedSearchParams?.country
   ).trim();
-  const selectedRegion = normalizeQueryValue(resolvedSearchParams?.region).trim();
+  const selectedRegion = normalizeQueryValue(
+    resolvedSearchParams?.region
+  ).trim();
   const selectedCity = normalizeQueryValue(resolvedSearchParams?.city).trim();
   const selectedType = normalizeQueryValue(resolvedSearchParams?.type).trim();
 
@@ -106,17 +114,19 @@ export default async function SearchPage({
     query || selectedCountry || selectedRegion || selectedCity || selectedType
   );
 
+  // Group highlight hits by slug
   const matchingHitsBySlug = query
-    ? franceSearchHits.reduce<Record<string, SearchHitRecord[]>>((groups, hit) => {
-        if (!matchesSearchHit(query, hit)) {
+    ? franceSearchHits.reduce<Record<string, SearchHitRecord[]>>(
+        (groups, hit) => {
+          if (!matchesSearchHit(query, hit)) return groups;
+          groups[hit.slug] = [...(groups[hit.slug] ?? []), hit];
           return groups;
-        }
-
-        groups[hit.slug] = [...(groups[hit.slug] ?? []), hit];
-        return groups;
-      }, {})
+        },
+        {}
+      )
     : {};
 
+  // Build results: one card per video, timestamps only for landmark matches
   const results: SearchResultGroup[] = hasActiveFilters
     ? videos
         .filter((video) => {
@@ -126,25 +136,30 @@ export default async function SearchPage({
             matchesFilterValue(video.city, selectedCity) &&
             matchesFilterValue(video.videoType, selectedType);
 
-          if (!matchesSelectedFilters) {
-            return false;
-          }
-
-          if (!query) {
-            return true;
-          }
+          if (!matchesSelectedFilters) return false;
+          if (!query) return true;
 
           return (
-            matchesVideoMetadata(query, video) ||
+            matchesBroadMetadata(query, video) ||
+            matchesLandmarks(query, video) ||
             Boolean(matchingHitsBySlug[video.slug]?.length)
           );
         })
-        .map((video) => ({
-          video,
-          matchingHits: (matchingHitsBySlug[video.slug] ?? []).sort(
-            (left, right) => left.seconds - right.seconds
-          ),
-        }))
+        .map((video) => {
+          // RULE 1: If the query matches city/region/country, show card
+          // without timestamps (it's a broad geographic match)
+          const isGeoMatch = isBroadGeoMatch(query, video);
+
+          // RULE 2: Only show timestamps when the query matches a specific
+          // landmark — not when it just matches the city name
+          const hits = isGeoMatch
+            ? []
+            : (matchingHitsBySlug[video.slug] ?? []).sort(
+                (a, b) => a.seconds - b.seconds
+              );
+
+          return { video, matchingHits: hits };
+        })
     : [];
 
   return (
@@ -270,11 +285,9 @@ export default async function SearchPage({
                         </p>
                         <div className="mt-3 space-y-3">
                           {matchingHits.map((hit) => (
-                            <a
+                            <Link
                               key={`${hit.slug}-${hit.seconds}-${hit.highlight_title}`}
-                              href={`https://youtu.be/${hit.youtube_url.split("/").pop()}?t=${hit.seconds}`}
-                              target="_blank"
-                              rel="noreferrer"
+                              href={`/videos/${hit.slug}`}
                               className="block rounded-[1rem] border border-[#eadfce] bg-white px-4 py-3 transition hover:border-[#167fd5] hover:shadow-sm"
                             >
                               <p className="text-sm font-semibold text-[#167fd5]">
@@ -283,7 +296,7 @@ export default async function SearchPage({
                               <p className="mt-1 text-sm font-semibold text-[#3d3327]">
                                 {hit.highlight_title}
                               </p>
-                            </a>
+                            </Link>
                           ))}
                         </div>
                       </div>

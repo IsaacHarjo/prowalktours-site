@@ -45,31 +45,38 @@ export default function LiveSearchBar({
       city: string;
       country: string;
       videoType: string;
+      landmarkMatch: string | null;
     }> = [];
 
     for (const video of videos) {
       if (results.length >= 6) break;
 
-      const searchable = [
+      // Check broad geo match (city/region/country/title)
+      const geoFields = [
         video.siteTitle,
         video.city,
         video.region,
         video.country,
-        ...video.landmarks,
         ...video.keywords,
+        ...video.themes,
       ];
-
-      const matches = searchable.some((val) =>
+      const isGeoMatch = geoFields.some((val) =>
         normalizeSearchText(val).includes(q)
       );
 
-      if (matches) {
+      // Check landmark match
+      const matchedLandmark = video.landmarks.find((lm) =>
+        normalizeSearchText(lm).includes(q)
+      );
+
+      if (isGeoMatch || matchedLandmark) {
         results.push({
           slug: video.slug,
           title: video.siteTitle,
           city: video.city,
           country: video.country,
           videoType: video.videoType,
+          landmarkMatch: isGeoMatch ? null : (matchedLandmark ?? null),
         });
       }
     }
@@ -174,11 +181,12 @@ export default function LiveSearchBar({
                     </svg>
                     <div className="min-w-0">
                       <p className="truncate text-sm font-semibold text-[#2f261d]">
-                        {s.city}
+                        {s.landmarkMatch ? s.landmarkMatch : s.city}
                       </p>
                       <p className="truncate text-xs text-[#8a7a68]">
-                        {s.country}
-                        {s.videoType ? ` · ${formatVideoType(s.videoType)}` : ""}
+                        {s.landmarkMatch
+                          ? `${s.city}, ${s.country}`
+                          : `${s.country} · ${formatVideoType(s.videoType)}`}
                       </p>
                     </div>
                   </a>
