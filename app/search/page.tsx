@@ -76,14 +76,22 @@ const matchesSearchHit = (query: string, hit: SearchHitRecord) => {
   );
 };
 
-// Check if query is primarily a city/region/country match (not a landmark)
-const isBroadGeoMatch = (query: string, video: (typeof videos)[number]) => {
+// LEVEL 1: Does the query match any VIDEO-LEVEL field?
+// If yes → show card only, no timestamps.
+// Video-level = title, city, region, country, description, keywords, themes
+const matchesVideoLevel = (query: string, video: (typeof videos)[number]) => {
   const q = normalizeSearchText(query);
   if (!q) return false;
 
-  return [video.city, video.region, video.country].some(
-    (val) => normalizeSearchText(val).includes(q)
-  );
+  return [
+    video.siteTitle,
+    video.city,
+    video.region,
+    video.country,
+    video.shortDescription,
+    ...video.keywords,
+    ...video.themes,
+  ].some((val) => normalizeSearchText(val).includes(q));
 };
 
 const matchesFilterValue = (
@@ -148,11 +156,11 @@ export default async function SearchPage({
         .map((video) => {
           // RULE 1: If the query matches city/region/country, show card
           // without timestamps (it's a broad geographic match)
-          const isGeoMatch = isBroadGeoMatch(query, video);
+          const isVideoLevelMatch = matchesVideoLevel(query, video);
 
           // RULE 2: Only show timestamps when the query matches a specific
           // landmark — not when it just matches the city name
-          const hits = isGeoMatch
+          const hits = isVideoLevelMatch
             ? []
             : (matchingHitsBySlug[video.slug] ?? []).sort(
                 (a, b) => a.seconds - b.seconds
