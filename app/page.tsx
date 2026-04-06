@@ -154,21 +154,22 @@ export default function HomePage() {
             421 walking tours across 24 countries
           </p>
           <div className="mx-auto mt-6 max-w-2xl">
-            <LiveSearchBar videos={videos} />
-          </div>
-          <div className="mt-5 flex flex-wrap justify-center gap-3">
-            <Link
-              href="/destinations"
-              className="inline-flex items-center justify-center rounded-full border border-[#d8c7b5] px-5 py-2 text-sm font-semibold text-[#5c4c33] transition hover:border-[#9a7a52] hover:bg-[#f8f3ec]"
-            >
-              Browse Countries
-            </Link>
-            <Link
-              href="#world-map"
-              className="inline-flex items-center justify-center rounded-full border border-[#d8c7b5] px-5 py-2 text-sm font-semibold text-[#5c4c33] transition hover:border-[#9a7a52] hover:bg-[#f8f3ec]"
-            >
-              Explore the Map
-            </Link>
+            <LiveSearchBar videos={videos}>
+              <div className="mt-3 flex flex-wrap justify-center gap-3">
+                <Link
+                  href="/countries"
+                  className="inline-flex items-center justify-center rounded-full bg-[#3d3327] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#2f261d]"
+                >
+                  Browse Countries
+                </Link>
+                <Link
+                  href="#world-map"
+                  className="inline-flex items-center justify-center rounded-full bg-[#009246] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#007a3a]"
+                >
+                  Explore the Map
+                </Link>
+              </div>
+            </LiveSearchBar>
           </div>
         </div>
       </section>
