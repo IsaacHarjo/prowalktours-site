@@ -16,6 +16,7 @@ type SearchFilterBarProps = {
   submitLabel?: string;
   variant?: "page" | "hero";
   hideFiltersOnMobile?: boolean;
+  hideSearchInput?: boolean;
 };
 
 const uniqueSorted = (values: Array<string | undefined>) =>
@@ -43,6 +44,7 @@ export default function SearchFilterBar({
   submitLabel = "Search",
   variant = "page",
   hideFiltersOnMobile = false,
+  hideSearchInput = false,
 }: SearchFilterBarProps) {
   const [query, setQuery] = useState(initialQuery);
   const [selectedCountry, setSelectedCountry] = useState(initialCountry);
@@ -128,7 +130,7 @@ export default function SearchFilterBar({
 
   return (
     <form action={action} method="get" className={formClassName}>
-      <div className="flex flex-col gap-3 sm:flex-row">
+      {hideSearchInput ? null : <div className="flex flex-col gap-3 sm:flex-row">
         <div className="relative flex-1">
           <span
             aria-hidden="true"
@@ -159,9 +161,9 @@ export default function SearchFilterBar({
         <button type="submit" className={buttonClassName}>
           {submitLabel}
         </button>
-      </div>
+      </div>}
 
-      <div className={`mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4${hideFiltersOnMobile ? " hidden lg:grid" : ""}`}>
+      <div className={`${hideSearchInput ? "" : "mt-3 "}grid gap-3 md:grid-cols-2 xl:grid-cols-4${hideFiltersOnMobile ? " hidden lg:grid" : ""}`}>
         <select
           name="country"
           value={selectedCountry}

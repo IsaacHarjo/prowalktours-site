@@ -157,6 +157,16 @@ export default function HomePage() {
           <div className="mx-auto mt-6 max-w-2xl">
             <LiveSearchBar videos={videos} />
           </div>
+          <div className="mx-auto mt-4 max-w-2xl">
+            <SearchFilterBar
+              videos={videos}
+              action="/search"
+              placeholder="Search a city, landmark, or country..."
+              submitLabel="Search"
+              hideFiltersOnMobile
+              hideSearchInput
+            />
+          </div>
         </div>
       </section>
 
