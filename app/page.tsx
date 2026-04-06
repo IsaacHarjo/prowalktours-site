@@ -3,7 +3,6 @@ import path from "node:path";
 import Link from "next/link";
 
 import LiveSearchBar from "../components/LiveSearchBar";
-import SearchFilterBar from "../components/SearchFilterBar";
 import ThumbnailImg from "../components/ThumbnailImg";
 import WorldMapClient from "../components/WorldMapClient";
 import { videos } from "../data/videos/index";
@@ -157,15 +156,19 @@ export default function HomePage() {
           <div className="mx-auto mt-6 max-w-2xl">
             <LiveSearchBar videos={videos} />
           </div>
-          <div className="mx-auto mt-4 max-w-2xl">
-            <SearchFilterBar
-              videos={videos}
-              action="/search"
-              placeholder="Search a city, landmark, or country..."
-              submitLabel="Search"
-              hideFiltersOnMobile
-              hideSearchInput
-            />
+          <div className="mt-5 flex flex-wrap justify-center gap-3">
+            <Link
+              href="/destinations"
+              className="inline-flex items-center justify-center rounded-full border border-[#d8c7b5] px-5 py-2 text-sm font-semibold text-[#5c4c33] transition hover:border-[#9a7a52] hover:bg-[#f8f3ec]"
+            >
+              Browse Countries
+            </Link>
+            <Link
+              href="#world-map"
+              className="inline-flex items-center justify-center rounded-full border border-[#d8c7b5] px-5 py-2 text-sm font-semibold text-[#5c4c33] transition hover:border-[#9a7a52] hover:bg-[#f8f3ec]"
+            >
+              Explore the Map
+            </Link>
           </div>
         </div>
       </section>
@@ -215,7 +218,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══ SECTION 4 — Interactive Map ═══ */}
-      <section className="mx-auto max-w-7xl px-6 py-10 lg:px-10 lg:py-14">
+      <section id="world-map" className="scroll-mt-16 mx-auto max-w-7xl px-6 py-10 lg:px-10 lg:py-14">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
           Interactive Tour Map
         </p>
