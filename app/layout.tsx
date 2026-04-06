@@ -11,8 +11,9 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { label: "Countries", href: "/countries" },
+  { label: "Walks", href: "/search" },
+  { label: "Plan", href: "/destinations" }, // TODO — update to /plan when itinerary pages are built
   { label: "Map", href: "/" },
-  { label: "Search", href: "/search" },
   { label: "Store", href: "/" },
   { label: "Licensing", href: "/licensing" },
   { label: "About", href: "/" },
