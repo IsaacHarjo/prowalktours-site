@@ -108,37 +108,37 @@ const topDestinations = [
     name: "Naples & Campania",
     videoCount: "95 videos",
     href: "/destinations/italy/campania",
-    ytId: "990AqbKb18c",
+    img: "/images/homepage/naples-campania.jpg",
   },
   {
     name: "Venice",
     videoCount: "39 videos",
     href: "/destinations/italy/veneto",
-    ytId: "y6s_aoNeNBo",
+    img: "/images/homepage/venice.jpg",
   },
   {
     name: "Amalfi Coast",
     videoCount: "20 videos",
     href: "/destinations/italy/campania",
-    ytId: "1UxoHtG2qas",
+    img: "/images/homepage/amalfi-coast.jpg",
   },
   {
     name: "French Riviera",
     videoCount: "12 videos",
     href: "/destinations/france/french-riviera",
-    ytId: "ulReotWQvO0",
+    img: "/images/homepage/french-riviera.jpg",
   },
   {
     name: "Rome",
     videoCount: "168 videos",
     href: "/destinations/italy/lazio",
-    ytId: "b-1GGWLJMNM",
+    img: "/images/homepage/rome.jpg",
   },
   {
     name: "Paris",
     videoCount: "12 videos",
     href: "/destinations/france/paris",
-    ytId: "fKgP6JGAM_A",
+    img: "/images/homepage/paris.jpg",
   },
 ];
 
@@ -189,7 +189,7 @@ export default function HomePage() {
               >
                 <div className="aspect-video w-full overflow-hidden bg-[#2f261d]">
                   <ThumbnailImg
-                    src={`https://img.youtube.com/vi/${dest.ytId}/mqdefault.jpg`}
+                    src={dest.img}
                     alt={dest.name}
                     className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
                   />
