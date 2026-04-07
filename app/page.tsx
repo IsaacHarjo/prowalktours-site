@@ -150,7 +150,7 @@ export default function HomePage() {
       {/* ═══ SECTION 1 — Hero ═══ */}
       <section className="bg-white">
         <div className="mx-auto max-w-4xl px-6 py-12 text-center lg:py-16">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
+          <p className="text-xl font-bold uppercase text-[#9a7a52] sm:text-2xl lg:text-3xl">
             421 walking tours across 24 countries
           </p>
           <div className="mx-auto mt-6 max-w-2xl">
