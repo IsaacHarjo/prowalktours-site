@@ -234,14 +234,7 @@ export default function HomePage() {
           />
         </div>
         <p className="mt-4 text-center text-sm text-[#8a7a68]">
-          <span className="inline-block h-2.5 w-2.5 rounded-full bg-[#009246]" />{" "}
-          Italy{" "}
-          <span className="ml-3 inline-block h-2.5 w-2.5 rounded-full bg-[#ED2939]" />{" "}
-          France{" "}
-          <span className="ml-3 inline-block h-2.5 w-2.5 rounded-full bg-[#FFCE00]" />{" "}
-          Germany{" "}
-          <span className="ml-3 text-[#bba893]">&middot;</span>{" "}
-          <span className="ml-1">+ 21 more countries coming soon</span>
+          + 21 more countries coming soon
         </p>
       </section>
 

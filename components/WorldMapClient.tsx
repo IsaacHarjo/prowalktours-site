@@ -37,9 +37,9 @@ type TourProperties = {
 // ─── Country colours ─────────────────────────────────────────────────────────
 
 const COUNTRIES = [
-  { name: "Italy", color: "#009246", index: 0 },
-  { name: "France", color: "#ED2939", index: 1 },
-  { name: "Germany", color: "#FFCE00", index: 2 },
+  { name: "Italy", color: "#009246", index: 0, center: [12.5674, 41.8719] as [number, number], zoom: 5.5 },
+  { name: "France", color: "#ED2939", index: 1, center: [2.3522, 46.2276] as [number, number], zoom: 5.2 },
+  { name: "Germany", color: "#FFCE00", index: 2, center: [10.4515, 51.1657] as [number, number], zoom: 5.5 },
 ] as const;
 
 function getDisplayTitle(title: string) {
@@ -515,15 +515,27 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
       <div className="absolute bottom-4 left-4 rounded-xl border border-[#d8c7b5] bg-white/95 px-3 py-2 shadow-sm backdrop-blur-sm">
         <div className="flex items-center gap-4">
           {COUNTRIES.map((c) => (
-            <div key={c.name} className="flex items-center gap-1.5">
+            <button
+              key={c.name}
+              type="button"
+              title={`Click to explore ${c.name}`}
+              onClick={() => {
+                mapRef.current?.flyTo({
+                  center: c.center,
+                  zoom: c.zoom,
+                  duration: 1500,
+                });
+              }}
+              className="flex cursor-pointer items-center gap-1.5 transition hover:opacity-80"
+            >
               <div
                 className="h-3 w-3 rounded-full border border-white shadow-sm"
                 style={{ backgroundColor: c.color }}
               />
-              <span className="text-xs font-medium text-[#3d3327]">
+              <span className="text-xs font-medium text-[#3d3327] hover:underline">
                 {c.name}
               </span>
-            </div>
+            </button>
           ))}
         </div>
       </div>
