@@ -14,13 +14,13 @@ export const stanleyParkSeawallWalkVancouverDetail: VideoDetailRecord = {
     "If you need licensed access to this footage for commercial, documentary, or creative use, use the licensing page to request a quote and describe the exact shots or time ranges you need.",
   ],
   highlights: [
-    { title: "Seaplane Terminal â€” Tour Begins", timeLabel: "1:03", seconds: 63, imageSrc: "", alt: "Seaplane Terminal â€” Tour Begins", caption: "Seaplane Terminal â€” Tour Begins", description: "" },
+    { title: "Seaplane Terminal — Tour Begins", timeLabel: "1:03", seconds: 63, imageSrc: "", alt: "Seaplane Terminal — Tour Begins", caption: "Seaplane Terminal — Tour Begins", description: "" },
     { title: "Vancouver Seawall", timeLabel: "4:05", seconds: 245, imageSrc: "", alt: "Vancouver Seawall", caption: "Vancouver Seawall", description: "" },
     { title: "Lightshed Sculpture", timeLabel: "7:57", seconds: 477, imageSrc: "", alt: "Lightshed Sculpture", caption: "Lightshed Sculpture", description: "" },
     { title: "Cardero Park", timeLabel: "13:00", seconds: 780, imageSrc: "", alt: "Cardero Park", caption: "Cardero Park", description: "" },
     { title: "Devonian Harbour Park", timeLabel: "20:08", seconds: 1208, imageSrc: "", alt: "Devonian Harbour Park", caption: "Devonian Harbour Park", description: "" },
     { title: "Stanley Park Entrance", timeLabel: "23:38", seconds: 1418, imageSrc: "", alt: "Stanley Park Entrance", caption: "Stanley Park Entrance", description: "" },
-    { title: "HMCS Discovery â€” Deadman's Island", timeLabel: "28:17", seconds: 1697, imageSrc: "", alt: "HMCS Discovery â€” Deadman's Island", caption: "HMCS Discovery â€” Deadman's Island", description: "" },
+    { title: "HMCS Discovery — Deadman's Island", timeLabel: "28:17", seconds: 1697, imageSrc: "", alt: "HMCS Discovery — Deadman's Island", caption: "HMCS Discovery — Deadman's Island", description: "" },
     { title: "Hallelujah Point", timeLabel: "32:15", seconds: 1935, imageSrc: "", alt: "Hallelujah Point", caption: "Hallelujah Point", description: "" },
     { title: "Nine O'Clock Gun", timeLabel: "33:25", seconds: 2005, imageSrc: "", alt: "Nine O'Clock Gun", caption: "Nine O'Clock Gun", description: "" },
     { title: "Brockton Point", timeLabel: "36:31", seconds: 2191, imageSrc: "", alt: "Brockton Point", caption: "Brockton Point", description: "" },
@@ -33,6 +33,6 @@ export const stanleyParkSeawallWalkVancouverDetail: VideoDetailRecord = {
     { title: "Second Beach", timeLabel: "1:35:16", seconds: 5716, imageSrc: "", alt: "Second Beach", caption: "Second Beach", description: "" },
     { title: "English Bay Beach", timeLabel: "1:47:38", seconds: 6458, imageSrc: "", alt: "English Bay Beach", caption: "English Bay Beach", description: "" },
     { title: "Inukshuk Sculpture", timeLabel: "1:52:17", seconds: 6737, imageSrc: "", alt: "Inukshuk Sculpture", caption: "Inukshuk Sculpture", description: "" },
-    { title: "Sunset Beach â€” Ferry Dock", timeLabel: "1:57:34", seconds: 7054, imageSrc: "", alt: "Sunset Beach â€” Ferry Dock", caption: "Sunset Beach â€” Ferry Dock", description: "" }
+    { title: "Sunset Beach — Ferry Dock", timeLabel: "1:57:34", seconds: 7054, imageSrc: "", alt: "Sunset Beach — Ferry Dock", caption: "Sunset Beach — Ferry Dock", description: "" }
   ],
 };
