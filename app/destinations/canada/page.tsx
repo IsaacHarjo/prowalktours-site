@@ -1,19 +1,21 @@
 import Link from "next/link";
 import MapSection from "../../../components/MapSection";
+import ThumbnailImg from "../../../components/ThumbnailImg";
+import { canadaVideos } from "../../../data/videos/canada";
 
 const fullMapUrl =
   "https://www.google.com/maps/d/edit?mid=1a5hdtdDOzWQdZBbRJ0_4r7YQyZG31s8&usp=sharing";
 const embeddedMapUrl =
   "https://www.google.com/maps/d/u/0/embed?mid=1a5hdtdDOzWQdZBbRJ0_4r7YQyZG31s8";
 
-const provinces = [
-  {
-    name: "British Columbia",
-    status: "Coming soon",
-    description:
-      "Future walking tours, cities, and destination pages across British Columbia.",
-  },
-];
+function getYoutubeId(url: string) {
+  const m = /(?:youtu\.be\/|[?&]v=|\/embed\/)([A-Za-z0-9_-]{11})/.exec(url);
+  return m ? m[1] : "";
+}
+
+function formatVideoType(vt: string) {
+  return vt.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
 
 const breadcrumbs = [
   { label: "Home", href: "/" },
@@ -69,7 +71,7 @@ export default function CanadaPage() {
               href="#provinces"
               className="inline-flex items-center justify-center rounded-full bg-[#167fd5] px-6 py-3 text-base font-semibold text-white transition hover:bg-[#0f6db9]"
             >
-              Explore Provinces
+              Explore Tours
             </a>
 
             <Link
@@ -101,26 +103,65 @@ export default function CanadaPage() {
           fullMapButtonLabel="Open the full Canada map"
         />
 
-        <div
-          id="provinces"
-          className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3"
-        >
-          {provinces.map((province) => (
-            <div
-              key={province.name}
-              className="rounded-3xl border border-[#eadfce] bg-[#f8f3ec] p-7 opacity-90"
-            >
-              <h2 className="text-2xl font-bold text-[#2f261d]">
-                {province.name}
-              </h2>
-              <p className="mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-[#9a7a52]">
-                {province.status}
-              </p>
-              <p className="mt-4 text-[16px] leading-7 text-[#6c5b49]">
-                {province.description}
-              </p>
-            </div>
-          ))}
+        <div id="provinces" className="mb-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
+            British Columbia
+          </p>
+          <h2 className="mt-3 text-3xl font-bold text-[#2f261d]">
+            Vancouver, British Columbia
+          </h2>
+          <p className="mt-3 max-w-3xl text-[17px] leading-8 text-[#6c5b49]">
+            Explore Vancouver through walking tours, bike tours, and evening
+            walks covering Stanley Park, the seawall, Gastown, Granville Island,
+            and more.
+          </p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {canadaVideos.map((tour) => {
+            const ytId = getYoutubeId(tour.youtubeUrl);
+            const thumbSrc = ytId
+              ? `https://img.youtube.com/vi/${ytId}/mqdefault.jpg`
+              : "";
+            return (
+              <Link
+                key={tour.slug}
+                href={`/videos/${tour.slug}`}
+                className="group overflow-hidden rounded-3xl border border-[#eadfce] bg-white shadow-sm transition hover:-translate-y-1 hover:border-[#d7c3ad] hover:shadow-md"
+              >
+                <div className="aspect-video w-full overflow-hidden bg-[#2f261d]">
+                  {thumbSrc ? (
+                    <ThumbnailImg
+                      src={thumbSrc}
+                      alt={tour.siteTitle}
+                      className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="h-full w-full bg-[#2f261d]" />
+                  )}
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-[#2f261d] transition group-hover:text-[#167fd5]">
+                    {tour.siteTitle}
+                  </h3>
+                  <p className="mt-2 text-sm text-[#8a7a68]">
+                    {tour.city}, {tour.region}
+                  </p>
+                  <div className="mt-3 flex flex-wrap items-center gap-2">
+                    <span className="rounded-full bg-[#f0e8dc] px-3 py-1 text-xs font-semibold text-[#6c5b49]">
+                      {formatVideoType(tour.videoType)}
+                    </span>
+                    <span className="text-xs text-[#8a7a68]">
+                      {tour.durationLabel}
+                    </span>
+                  </div>
+                  <div className="mt-4 text-[15px] font-semibold text-[#167fd5]">
+                    View Tour →
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
     </main>
