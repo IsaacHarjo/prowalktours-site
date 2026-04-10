@@ -206,6 +206,17 @@ export default function StanleyParkSeawallWalkVancouverClient() {
                 <LongFormWalkStatsRow stats={topRowStats} />
               </div>
             </div>
+
+            <div className="relative hidden overflow-hidden rounded-[2rem] border border-[#d8c7b5] bg-white shadow-sm lg:block">
+              <div className="relative aspect-[4/3] w-full bg-gradient-to-br from-[#3d3327] to-[#1a1612]">
+                <img
+                  src={`https://img.youtube.com/vi/${youtubeVideoId}/maxresdefault.jpg`}
+                  alt={detail.heroTitle}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
