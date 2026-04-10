@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import LongFormWalkPage, {
@@ -246,7 +245,19 @@ export default function GranvilleIslandWalkingTourVancouverClient() {
               <div key={`${highlight.title}-${highlight.seconds}`} className="w-[280px] shrink-0">
                 <button onClick={() => handleHighlightClick(highlight.seconds)} className="w-full overflow-hidden rounded-[1.5rem] border border-[#d8c7b5] bg-white text-left shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg">
                   <div className="relative aspect-[16/10] overflow-hidden">
-                    <Image src={highlight.imageSrc} alt={highlight.alt} fill sizes="280px" className="object-cover transition duration-300 hover:scale-105" />
+                    {highlight.imageSrc ? (
+                      <img
+                        src={highlight.imageSrc}
+                        alt={highlight.alt || highlight.title}
+                        className="h-full w-full object-cover transition duration-300 hover:scale-105"
+                        onError={(e) => {
+                          e.currentTarget.style.display = "none";
+                          e.currentTarget.parentElement!.classList.add("bg-gradient-to-br", "from-[#2f261d]", "to-[#4a3c2f]");
+                        }}
+                      />
+                    ) : (
+                      <div className="h-full w-full bg-gradient-to-br from-[#2f261d] to-[#4a3c2f]" />
+                    )}
                   </div>
                   <div className="p-4">
                     <div className="flex items-start justify-between gap-3">
