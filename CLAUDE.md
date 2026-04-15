@@ -351,6 +351,54 @@ Do NOT run `git add .` — always add specific files to keep commits clean.
 
 ---
 
+## VS Code Workspace Config
+Workspace settings live in `.vscode/` (committed to the repo).
+
+### Tasks — prefer these over typing commands manually
+Run with **Ctrl+Shift+P → "Tasks: Run Task"**. Claude Code should mention these
+task names rather than the raw commands when guiding the user through workflows.
+
+- `npm: build` — runs `npm run build` (also bound to Ctrl+Shift+B)
+- `npm: dev` — runs `npm run dev` as a background task
+- `script: refresh highlights (all)` — runs `node scripts/refresh-highlights.js`
+  to re-import every slug from `all-highlights.csv`
+- `script: refresh highlights (one slug)` — same script, prompts for a single
+  slug. Use this after updating highlights for one specific tour.
+- `script: fix encoding` — runs `node scripts/fix-encoding.js` to repair UTF-8
+  mojibake (`â€"` → `—`, `â€™` → `'`, etc.) in CSVs and video-detail files
+- `script: fix encoding (dry run)` — preview encoding fixes without writing
+- `script: refresh France catalog` — syncs france.csv → data/videos/france.ts
+  and data/maps/france.ts (existing script, now bound as a task)
+- `script: fetch highlight images (one slug)` — runs yt-dlp + ffmpeg extraction
+  for a single tour, prompts for the slug
+- `git: status` — quick status check
+
+### Snippets for new walk pages
+Type the prefix and press Tab to expand. Defined in
+`.vscode/walk-page.code-snippets`.
+
+- `walkpage-server` — full server `page.tsx` template with metadata, breadcrumb
+  JSON-LD, and video JSON-LD. Tab through 11 placeholders (PascalSlug, slug,
+  youtubeId, title, description, alt, country, country-slug, short title,
+  upload date, ISO duration).
+- `walkpage-detail` — `VideoDetailRecord` template for
+  `data/video-details/[slug].ts` with empty highlights array ready for
+  `refresh-highlights` to populate.
+- `walkpage-highlight-img` — the standard highlight card image block with
+  empty-`imageSrc` guard and `onError` gradient fallback.
+- `walkpage-breadcrumbs` — the shared breadcrumb nav markup.
+
+When building a new video page, prefer these snippets over copying an existing
+page and find-replacing — the snippet's placeholders catch mistakes that silent
+find-replace misses.
+
+### Recommended extensions
+Listed in `.vscode/extensions.json` — VS Code prompts to install them on first
+open. The important ones for this project: Tailwind CSS IntelliSense,
+Rainbow CSV, Error Lens, GitLens, Path IntelliSense.
+
+---
+
 ## Codex / Claude Code Prompt Tips
 When giving prompts for new video pages, always specify:
 - Exact file paths to edit
