@@ -1,0 +1,124 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "npm: build",
+      "type": "shell",
+      "command": "npm run build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$tsc"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "detail": "Production build — catches TypeScript errors and broken imports"
+    },
+    {
+      "label": "npm: dev",
+      "type": "shell",
+      "command": "npm run dev",
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "detail": "Start Next.js dev server on localhost:3000"
+    },
+    {
+      "label": "script: refresh highlights (all)",
+      "type": "shell",
+      "command": "node scripts/refresh-highlights.js",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "detail": "Re-import data/import/all-highlights.csv into all matching video-detail files"
+    },
+    {
+      "label": "script: refresh highlights (one slug)",
+      "type": "shell",
+      "command": "node scripts/refresh-highlights.js ${input:slug}",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "detail": "Re-import highlights for a single slug — prompts for slug"
+    },
+    {
+      "label": "script: fix encoding",
+      "type": "shell",
+      "command": "node scripts/fix-encoding.js",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "detail": "Repair UTF-8 mojibake in CSVs and video-detail files"
+    },
+    {
+      "label": "script: fix encoding (dry run)",
+      "type": "shell",
+      "command": "node scripts/fix-encoding.js --dry-run",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "detail": "Preview UTF-8 mojibake fixes without writing"
+    },
+    {
+      "label": "script: refresh France catalog",
+      "type": "shell",
+      "command": "node scripts/refresh-france-catalog.js",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "detail": "Sync data/videos/france.ts + data/maps/france.ts from france.csv"
+    },
+    {
+      "label": "script: fetch highlight images (one slug)",
+      "type": "shell",
+      "command": "node scripts/fetch-highlight-images.js ${input:slug}",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "detail": "Download video and extract highlight frames — prompts for slug"
+    },
+    {
+      "label": "git: status",
+      "type": "shell",
+      "command": "git status",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "detail": "Show current git status"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "slug",
+      "type": "promptString",
+      "description": "Tour slug (e.g. vancouver-canada-walking-tour)"
+    }
+  ]
+}
