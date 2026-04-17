@@ -121,10 +121,10 @@ export default function StuttgartChristmasMarketEveningWalk2024Client() {
         <div ref={highlightsRef} className="mt-8 flex gap-4 overflow-x-auto scroll-smooth pb-2">
           {highlights.map((h) => (
             <div key={`${h.title}-${h.seconds}`} className="w-[280px] shrink-0">
-              <button onClick={() => handleHighlightClick(h.seconds)} type="button" className="w-full overflow-hidden rounded-[1.5rem] border border-[#d8c7b5] bg-white text-left shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg">
+              <div role="button" tabIndex={0} onClick={() => handleHighlightClick(h.seconds)} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleHighlightClick(h.seconds); } }} className="w-full cursor-pointer overflow-hidden rounded-[1.5rem] border border-[#d8c7b5] bg-white text-left shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg">
                 <div className="relative flex aspect-[16/10] items-end overflow-hidden bg-gradient-to-br from-[#d7e6f0] via-[#f8efe2] to-[#e5d3b8] p-4"><img src={h.imageSrc} alt={h.alt} className="absolute inset-0 h-full w-full object-cover" loading="lazy" /><div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" /><span className="relative rounded-full bg-white/90 px-3 py-1 text-sm font-semibold text-[#3d3327] shadow-sm">{h.timeLabel}</span></div>
                 <div className="p-4"><div className="flex items-start justify-between gap-3"><p className="text-sm font-semibold text-[#3d3327]">{h.title}</p><p className="shrink-0 text-sm text-[#8a7a68]">{h.timeLabel}</p></div>{h.description ? <p className="mt-2 text-sm leading-6 text-[#56493a]">{h.description}</p> : null}</div>
-              </button>
+              </div>
             </div>
           ))}
         </div>

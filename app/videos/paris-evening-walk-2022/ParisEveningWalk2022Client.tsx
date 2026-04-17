@@ -288,10 +288,13 @@ export default function ParisEveningWalk2022Client() {
               key={`${highlight.title}-${highlight.seconds}`}
               className="w-[280px] shrink-0"
             >
-              <button
+              <div
+                role="button"
+                tabIndex={0}
                 onClick={() => handleHighlightClick(highlight.seconds)}
-                className="w-full overflow-hidden rounded-[1.5rem] border border-[#d8c7b5] bg-white text-left shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg"
-              >
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleHighlightClick(highlight.seconds); } }}
+                className="w-full cursor-pointer overflow-hidden rounded-[1.5rem] border border-[#d8c7b5] bg-white text-left shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg"
+                >
                 <div className="relative flex aspect-[16/10] items-end overflow-hidden bg-gradient-to-br from-[#d7e6f0] via-[#f8efe2] to-[#e5d3b8] p-4">
                   <img
                     src={highlight.imageSrc}
@@ -319,7 +322,7 @@ export default function ParisEveningWalk2022Client() {
                     {highlight.description}
                   </p>
                 </div>
-              </button>
+              </div>
             </div>
           ))}
         </div>

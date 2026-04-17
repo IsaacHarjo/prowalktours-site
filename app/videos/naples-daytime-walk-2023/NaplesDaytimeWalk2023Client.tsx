@@ -585,10 +585,13 @@ const scrollToRelatedTours = () => {
               key={`${highlight.title}-${highlight.seconds}`}
               className="w-[280px] shrink-0"
             >
-              <button
+              <div
+                role="button"
+                tabIndex={0}
                 onClick={() => handleHighlightClick(highlight.seconds)}
-                className="w-full overflow-hidden rounded-[1.5rem] border border-[#d8c7b5] bg-white text-left shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg"
-              >
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleHighlightClick(highlight.seconds); } }}
+                className="w-full cursor-pointer overflow-hidden rounded-[1.5rem] border border-[#d8c7b5] bg-white text-left shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg"
+                >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
                     src={highlight.imageSrc}
@@ -615,7 +618,7 @@ const scrollToRelatedTours = () => {
                     </p>
                   ) : null}
                 </div>
-              </button>
+              </div>
             </div>
           ))}
         </div>
