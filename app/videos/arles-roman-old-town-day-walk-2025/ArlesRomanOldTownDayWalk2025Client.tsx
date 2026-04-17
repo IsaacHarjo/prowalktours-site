@@ -171,8 +171,8 @@ export default function ArlesRomanOldTownDayWalk2025Client() {
             <div className="relative hidden overflow-hidden rounded-[2rem] border border-[#d8c7b5] bg-white shadow-sm lg:block">
               <div className="relative aspect-[4/3] w-full bg-gradient-to-br from-[#3d3327] to-[#1a1612]">
                 <img
-                  src={`https://img.youtube.com/vi/${youtubeVideoId}/maxresdefault.jpg`}
-                  alt={detail.heroTitle}
+                  src="/arles-roman-old-town-day-walk-2025/hero.jpg"
+                  alt="Arles Roman old town and amphitheatre in Provence"
                   className="absolute inset-0 h-full w-full object-cover"
                   onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                 />
