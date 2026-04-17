@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import HighlightCarousel from "../../../components/HighlightCarousel";
 import LongFormWalkPage, {
   LongFormWalkStatsRow,
 } from "../../../components/LongFormWalkPage";
@@ -206,7 +207,9 @@ export default function ArlesRomanOldTownDayWalk2025Client() {
             <div key={`${highlight.title}-${highlight.seconds}`} className="w-[280px] shrink-0">
               <button onClick={() => handleHighlightClick(highlight.seconds)} className="w-full overflow-hidden rounded-[1.5rem] border border-[#d8c7b5] bg-white text-left shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg">
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  {highlight.imageSrc ? (
+                  {highlight.images && highlight.images.length >= 2 ? (
+                    <HighlightCarousel images={highlight.images} alt={highlight.alt || highlight.title} />
+                  ) : highlight.imageSrc ? (
                     <img src={highlight.imageSrc} alt={highlight.alt || highlight.title} className="h-full w-full object-cover transition duration-300 hover:scale-105" onError={(e) => { e.currentTarget.style.display = "none"; e.currentTarget.parentElement!.classList.add("bg-gradient-to-br", "from-[#2f261d]", "to-[#4a3c2f]"); }} />
                   ) : (
                     <div className="h-full w-full bg-gradient-to-br from-[#2f261d] to-[#4a3c2f]" />

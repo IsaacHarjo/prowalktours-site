@@ -3,6 +3,7 @@ export type HighlightRecord = {
   timeLabel: string;
   seconds: number;
   imageSrc: string;
+  images?: string[];
   alt: string;
   description?: string;
 };
