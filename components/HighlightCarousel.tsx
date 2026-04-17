@@ -81,13 +81,13 @@ export default function HighlightCarousel({ images, alt }: HighlightCarouselProp
   }
 
   return (
-    <div className="group/carousel relative h-full w-full">
+    <div className="group/carousel relative aspect-[16/10] w-full overflow-hidden">
       {images.map((src, i) => (
         <img
           key={src}
           src={src}
           alt={`${alt} (${i + 1})`}
-          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+          className={`${i === 0 ? "relative" : "absolute inset-0"} h-full w-full object-cover transition-opacity duration-700 ${
             i === current && !failed.has(i) ? "opacity-100" : "opacity-0"
           }`}
           onError={() => handleImageError(i)}
