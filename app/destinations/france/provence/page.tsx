@@ -19,11 +19,11 @@ const featuredDestinations = [
   },
   {
     name: "Arles",
-    href: null,
+    href: "/videos/arles-roman-old-town-day-walk-2025",
     description:
-      "Future walks through Arles centered on Roman heritage, old town character, and Provencal atmosphere.",
-    imageSrc: null,
-    imageAlt: "",
+      "Walk through Arles — Roman amphitheatre, ancient theatre, Saint-Trophime cloister, Cryptoportiques, and the famous Wednesday market along Boulevard des Lices.",
+    imageSrc: "https://img.youtube.com/vi/vRdoJsGj0Z4/maxresdefault.jpg",
+    imageAlt: "Arles Roman old town and amphitheatre in Provence",
   },
 ];
 
@@ -109,8 +109,8 @@ export default function ProvencePage() {
             Start with Provence destinations below
           </h2>
           <p className="mt-4 max-w-4xl text-[17px] leading-8 text-[#6c5b49]">
-            Avignon is live now, while Nimes and Arles are reserved as future
-            Provence destination hubs as more walks and city pages are added.
+            Avignon and Arles are live now, with Nimes reserved as a future
+            Provence destination hub as more walks and city pages are added.
           </p>
         </div>
 

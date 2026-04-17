@@ -1,8 +1,8 @@
 import type { VideoCatalogRecord } from "../video-types";
 
-// Auto-generated from data/maps/france.csv by scripts/import-france-csv.js
+// Auto-generated from data/maps/france.csv by scripts/refresh-france-catalog.js
 // Only tours with status "ready" are included.
-// Last refreshed: 2026-04-02
+// Last refreshed: 2026-04-17
 export const franceVideos: VideoCatalogRecord[] = [
   {
     id: "menton-france-walking-tour-2025",
@@ -373,6 +373,60 @@ export const franceVideos: VideoCatalogRecord[] = [
     "Rue du Vieux Sextier",
     "Place pie",
     "Tour Saint Jean"
+  ],
+    themes: [
+    "Historic Centers & Old Towns",
+    "History",
+    "Ruins & Hidden Places"
+  ],
+    timeOfDay: "daytime",
+    videoType: "day walk",
+    visibility: "public",
+    highlights: [],
+  },
+  {
+    id: "arles-roman-old-town-day-walk-2025",
+    slug: "arles-roman-old-town-day-walk-2025",
+    siteTitle: "Arles, France Roman Old Town Walk (2025)",
+    youtubeTitle: "Arles, France Roman Old Town Walk (2025)",
+    youtubeUrl: "https://youtu.be/vRdoJsGj0Z4",
+    thumbnail: "https://i.ytimg.com/vi/vRdoJsGj0Z4/maxresdefault.jpg",
+    country: "France",
+    region: "Provence-Alpes-Côte d'Azur",
+    city: "Arles",
+    filmingDates: ["2025-09-17"],
+    filmingMonthYear: "September 2025",
+    durationLabel: "3:11:12",
+    durationSeconds: 11472,
+    weather: "76 F / 24 C",
+    shortDescription:
+      "A walk through Arles — one of the most historically layered cities in France. This 4.5-mile tour covers the full old city, from the Roman amphitheatre and ancient theatre to the medieval cloister of Saint-Trophime, the underground Cryptoportiques, the Rhône riverfront, and the famous Wednesday market along Boulevard des Lices — one of the largest open-air markets in Provence.",
+    keywords: [
+    "Arles",
+    "Provence-Alpes-Côte d'Azur",
+    "France",
+    "day walk"
+  ],
+    landmarks: [
+    "Place de la République",
+    "Cloître Saint-Trophime",
+    "Saint-Trophime Cathedral",
+    "Cryptoportiques",
+    "Théâtre Antique",
+    "Arles Amphitheatre",
+    "Notre-Dame-de-la-Major",
+    "Saint-Julien Church",
+    "Rhône River",
+    "Baths of Constantine",
+    "Église des Frères Prêcheurs",
+    "Place du Forum",
+    "Frédéric Mistral Statue",
+    "Plan de la Cour",
+    "Hôtel de Ville",
+    "Boulevard des Lices",
+    "Ancient City Ramparts",
+    "Porte de la Cavalerie",
+    "Amédée Pichot Fountain"
   ],
     themes: [
     "Historic Centers & Old Towns",

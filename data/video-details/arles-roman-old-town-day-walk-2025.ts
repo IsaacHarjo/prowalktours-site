@@ -1,0 +1,51 @@
+import type { VideoDetailRecord } from "../video-types";
+
+export const arlesRomanOldTownDayWalk2025Detail: VideoDetailRecord = {
+  slug: "arles-roman-old-town-day-walk-2025",
+  heroEyebrow: "France Walk",
+  heroTitle: "Arles, France Roman Old Town Walk",
+  heroSubtitle: "Roman Amphitheatre, Saint-Trophime, Cryptoportiques & the Wednesday Market",
+  heroDescription:
+    "A walk through Arles — one of the most historically layered cities in France. This 4.5-mile tour covers the full old city, from the Roman amphitheatre and ancient theatre to the medieval cloister of Saint-Trophime, the underground Cryptoportiques, the Rh\u00f4ne riverfront, and the famous Wednesday market along Boulevard des Lices — one of the largest open-air markets in Provence.",
+  routeMapDescription:
+    "This route starts at Place de la R\u00e9publique, passes the Saint-Trophime cathedral and cloister, descends into the underground Cryptoportiques, crosses through the Roman amphitheatre and ancient theatre, follows the Rh\u00f4ne riverfront past the Baths of Constantine, and finishes along Boulevard des Lices and the ancient city ramparts.",
+  licensingDescription: [
+    "This Arles walk covers the full Roman and medieval old town in a continuous long-form format, including the amphitheatre, ancient theatre, Saint-Trophime cloister, Cryptoportiques, Rh\u00f4ne riverfront, Baths of Constantine, and the Wednesday market along Boulevard des Lices.",
+    "The footage is suitable for editorial, documentary, travel, educational, and destination-focused licensing inquiries when you need atmospheric coverage of Arles' streets, squares, landmarks, and Proven\u00e7al character.",
+  ],
+  highlights: [
+    { title: "Intro & Map", timeLabel: "0:00", seconds: 0, imageSrc: "", alt: "Intro & Map", caption: "Intro & Map", description: "" },
+    { title: "Place de la Republique", timeLabel: "1:42", seconds: 102, imageSrc: "", alt: "Place de la Republique", caption: "Place de la Republique", description: "" },
+    { title: "Cloitre Saint-Trophime", timeLabel: "5:17", seconds: 317, imageSrc: "", alt: "Cloitre Saint-Trophime", caption: "Cloitre Saint-Trophime", description: "" },
+    { title: "Saint-Trophime Cathedral", timeLabel: "18:17", seconds: 1097, imageSrc: "", alt: "Saint-Trophime Cathedral", caption: "Saint-Trophime Cathedral", description: "" },
+    { title: "Cryptoportiques", timeLabel: "26:42", seconds: 1602, imageSrc: "", alt: "Cryptoportiques", caption: "Cryptoportiques", description: "" },
+    { title: "Roman Theater", timeLabel: "36:28", seconds: 2188, imageSrc: "", alt: "Roman Theater", caption: "Roman Theater", description: "" },
+    { title: "Arles Amphitheatre", timeLabel: "50:03", seconds: 3003, imageSrc: "", alt: "Arles Amphitheatre", caption: "Arles Amphitheatre", description: "" },
+    { title: "Amphitheater Entrance", timeLabel: "54:16", seconds: 3256, imageSrc: "", alt: "Amphitheater Entrance", caption: "Amphitheater Entrance", description: "" },
+    { title: "Best View of Amphitheatre", timeLabel: "1:00:23", seconds: 3623, imageSrc: "", alt: "Best View of Amphitheatre", caption: "Best View of Amphitheatre", description: "" },
+    { title: "Amphitheatre Tower", timeLabel: "1:07:35", seconds: 4055, imageSrc: "", alt: "Amphitheatre Tower", caption: "Amphitheatre Tower", description: "" },
+    { title: "Best Seat in the Amphitheatre", timeLabel: "1:18:43", seconds: 4723, imageSrc: "", alt: "Best Seat in the Amphitheatre", caption: "Best Seat in the Amphitheatre", description: "" },
+    { title: "Rue Voltaire", timeLabel: "1:23:40", seconds: 5020, imageSrc: "", alt: "Rue Voltaire", caption: "Rue Voltaire", description: "" },
+    { title: "Place Voltaire", timeLabel: "1:25:55", seconds: 5155, imageSrc: "", alt: "Place Voltaire", caption: "Place Voltaire", description: "" },
+    { title: "Porte de la Cavalerie", timeLabel: "1:28:04", seconds: 5284, imageSrc: "", alt: "Porte de la Cavalerie", caption: "Porte de la Cavalerie", description: "" },
+    { title: "Rue Voltaire & Amedee Pichot Fountain", timeLabel: "1:30:00", seconds: 5400, imageSrc: "", alt: "Rue Voltaire & Amedee Pichot Fountain", caption: "Rue Voltaire & Amedee Pichot Fountain", description: "" },
+    { title: "Rue du 4 Septembre", timeLabel: "1:32:20", seconds: 5540, imageSrc: "", alt: "Rue du 4 Septembre", caption: "Rue du 4 Septembre", description: "" },
+    { title: "Rue de l'Amphitheatre", timeLabel: "1:33:44", seconds: 5624, imageSrc: "", alt: "Rue de l'Amphitheatre", caption: "Rue de l'Amphitheatre", description: "" },
+    { title: "Notre-Dame-de-la-Major", timeLabel: "1:37:58", seconds: 5878, imageSrc: "", alt: "Notre-Dame-de-la-Major", caption: "Notre-Dame-de-la-Major", description: "" },
+    { title: "Panoramic Viewpoint", timeLabel: "1:41:55", seconds: 6115, imageSrc: "", alt: "Panoramic Viewpoint", caption: "Panoramic Viewpoint", description: "" },
+    { title: "Saint-Julien Church", timeLabel: "1:51:22", seconds: 6682, imageSrc: "", alt: "Saint-Julien Church", caption: "Saint-Julien Church", description: "" },
+    { title: "Rhone River", timeLabel: "1:55:51", seconds: 6951, imageSrc: "", alt: "Rhone River", caption: "Rhone River", description: "" },
+    { title: "Baths of Constantine", timeLabel: "1:58:59", seconds: 7139, imageSrc: "", alt: "Baths of Constantine", caption: "Baths of Constantine", description: "" },
+    { title: "Church of the Preaching Friars", timeLabel: "2:05:56", seconds: 7556, imageSrc: "", alt: "Church of the Preaching Friars", caption: "Church of the Preaching Friars", description: "" },
+    { title: "Place du Forum", timeLabel: "2:08:08", seconds: 7688, imageSrc: "", alt: "Place du Forum", caption: "Place du Forum", description: "" },
+    { title: "Frederic Mistral Statue", timeLabel: "2:10:10", seconds: 7810, imageSrc: "", alt: "Frederic Mistral Statue", caption: "Frederic Mistral Statue", description: "" },
+    { title: "Plan de la Cour", timeLabel: "2:11:21", seconds: 7881, imageSrc: "", alt: "Plan de la Cour", caption: "Plan de la Cour", description: "" },
+    { title: "Hotel de Ville (Town Hall)", timeLabel: "2:13:35", seconds: 8015, imageSrc: "", alt: "Hotel de Ville (Town Hall)", caption: "Hotel de Ville (Town Hall)", description: "" },
+    { title: "Boulevard des Lices", timeLabel: "2:16:29", seconds: 8189, imageSrc: "", alt: "Boulevard des Lices", caption: "Boulevard des Lices", description: "" },
+    { title: "Brocante d'Arles (Flea Market)", timeLabel: "2:17:48", seconds: 8268, imageSrc: "", alt: "Brocante d'Arles (Flea Market)", caption: "Brocante d'Arles (Flea Market)", description: "" },
+    { title: "Marche Vetements (Clothing Market)", timeLabel: "2:22:52", seconds: 8572, imageSrc: "", alt: "Marche Vetements (Clothing Market)", caption: "Marche Vetements (Clothing Market)", description: "" },
+    { title: "Ancient City Ramparts", timeLabel: "2:24:00", seconds: 8640, imageSrc: "", alt: "Ancient City Ramparts", caption: "Ancient City Ramparts", description: "" },
+    { title: "Marche Alimentation (Food Market)", timeLabel: "2:32:03", seconds: 9123, imageSrc: "", alt: "Marche Alimentation (Food Market)", caption: "Marche Alimentation (Food Market)", description: "" },
+    { title: "Porte de la Cavalerie (return)", timeLabel: "2:58:57", seconds: 10737, imageSrc: "", alt: "Porte de la Cavalerie (return)", caption: "Porte de la Cavalerie (return)", description: "" }
+  ],
+};
