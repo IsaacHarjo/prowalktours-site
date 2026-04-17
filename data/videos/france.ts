@@ -1,6 +1,6 @@
 import type { VideoCatalogRecord } from "../video-types";
 
-// Auto-generated from data/maps/france.csv by scripts/refresh-france-catalog.js
+// Auto-generated from data/maps/france.csv by scripts/import-france-csv.js
 // Only tours with status "ready" are included.
 // Last refreshed: 2026-04-17
 export const franceVideos: VideoCatalogRecord[] = [

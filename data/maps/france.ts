@@ -1,7 +1,7 @@
 import type { ExploreMapFeature } from './types';
 
 // Auto-generated from data/maps/france.csv by scripts/import-france-csv.js
-// Last refreshed: 2026-04-02
+// Last refreshed: 2026-04-17
 export const franceMapFeatures: ExploreMapFeature[] = [
   {
     "tourId": "fr-0001",
@@ -312,6 +312,61 @@ export const franceMapFeatures: ExploreMapFeature[] = [
     "thumbnailPath": null,
     "href": "/videos/avignon-walking-tour-2025",
     "thumbnailSrc": "https://i.ytimg.com/vi/2iQh_R4t2Uw/maxresdefault.jpg"
+  },
+  {
+    "tourId": "fr-0013",
+    "country": "France",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "city": "Arles",
+    "location": "Roman Old Town",
+    "title": "Arles, France Roman Old Town Walk (2025)",
+    "slug": "arles-roman-old-town-day-walk-2025",
+    "videoType": "day-walk",
+    "themes": [
+      "historic-center",
+      "old-town"
+    ],
+    "filmedDateIso": "2025-09-17",
+    "filmedYear": 2025,
+    "youtubeUrl": "https://youtu.be/vRdoJsGj0Z4",
+    "mapUrl": "https://www.google.com/maps/d/edit?mid=1GXYIJNdJctAYj8-VFd9T5ze8hv44rkc&usp=sharing",
+    "latitude": 43.6754155,
+    "longitude": 4.6278501,
+    "durationLabel": "3:11:12",
+    "durationSeconds": 11472,
+    "descriptionShort": "A daytime walk in Arles, France.",
+    "descriptionLong": "A walk through Arles — one of the most historically layered cities in France. This 4.5-mile tour covers the full old city, from the Roman amphitheatre and ancient theatre to the medieval cloister of Saint-Trophime, the underground Cryptoportiques, the Rhône riverfront, and the famous Wednesday market along Boulevard des Lices — one of the largest open-air markets in Provence.",
+    "landmarks": [
+      "Place de la République",
+      "Cloître Saint-Trophime",
+      "Saint-Trophime Cathedral",
+      "Cryptoportiques",
+      "Théâtre Antique",
+      "Arles Amphitheatre",
+      "Notre-Dame-de-la-Major",
+      "Saint-Julien Church",
+      "Rhône River",
+      "Baths of Constantine",
+      "Église des Frères Prêcheurs",
+      "Place du Forum",
+      "Frédéric Mistral Statue",
+      "Plan de la Cour",
+      "Hôtel de Ville",
+      "Boulevard des Lices",
+      "Ancient City Ramparts",
+      "Porte de la Cavalerie",
+      "Amédée Pichot Fountain"
+    ],
+    "keywords": [
+      "Arles",
+      "Provence-Alpes-Côte d'Azur",
+      "France",
+      "day walk"
+    ],
+    "status": "ready",
+    "thumbnailPath": null,
+    "href": "/videos/arles-roman-old-town-day-walk-2025",
+    "thumbnailSrc": "https://i.ytimg.com/vi/vRdoJsGj0Z4/maxresdefault.jpg"
   },
   {
     "tourId": "fr-0014",
