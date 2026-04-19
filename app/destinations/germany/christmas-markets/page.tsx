@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getCardImageSrc } from "../../../../lib/cardImages";
+
+const slugFromHref = (href: string) => href.replace(/^\/videos\//, "");
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/destinations/germany/christmas-markets`;
@@ -153,7 +156,7 @@ export default function GermanyChristmasMarketsPage() {
             {section.walks.map((walk) => (
               <Link key={walk.name} href={walk.href} className="group overflow-hidden rounded-3xl border border-[#eadfce] bg-white shadow-sm transition hover:-translate-y-1 hover:border-[#d7c3ad] hover:shadow-md">
                 <div className="aspect-16/10 w-full overflow-hidden">
-                  <img src={walk.imageSrc} alt={walk.imageAlt} className="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" />
+                  <img src={getCardImageSrc(slugFromHref(walk.href), walk.imageSrc)} alt={walk.imageAlt} className="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-[#2f261d] transition group-hover:text-[#167fd5]">{walk.name}</h3>

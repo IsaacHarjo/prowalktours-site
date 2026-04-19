@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getCardImageSrc } from "../../../../lib/cardImages";
+
+const slugFromHref = (href: string) => href.replace(/^\/videos\//, "");
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/destinations/france/paris`;
@@ -206,7 +209,7 @@ export default function ParisPage() {
             >
               <div className="aspect-16/10 w-full overflow-hidden">
                 <img
-                  src={walk.imageSrc}
+                  src={getCardImageSrc(slugFromHref(walk.href), walk.imageSrc)}
                   alt={walk.imageAlt}
                   className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
                   loading="lazy"

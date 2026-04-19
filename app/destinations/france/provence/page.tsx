@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { getCardImageSrc } from "../../../../lib/cardImages";
+
+const slugFromHref = (href: string) => href.replace(/^\/videos\//, "");
 
 const featuredDestinations = [
   {
@@ -125,7 +128,7 @@ export default function ProvencePage() {
                 {destination.imageSrc ? (
                   <div className="aspect-16/10 w-full overflow-hidden">
                     <img
-                      src={destination.imageSrc}
+                      src={destination.href ? getCardImageSrc(slugFromHref(destination.href), destination.imageSrc) : destination.imageSrc}
                       alt={destination.imageAlt}
                       className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
                       loading="lazy"

@@ -2,6 +2,7 @@ import Link from "next/link";
 import MapSection from "../../../components/MapSection";
 import ThumbnailImg from "../../../components/ThumbnailImg";
 import { canadaVideos } from "../../../data/videos/canada";
+import { getCardImageSrc } from "../../../lib/cardImages";
 
 const fullMapUrl =
   "https://www.google.com/maps/d/edit?mid=1a5hdtdDOzWQdZBbRJ0_4r7YQyZG31s8&usp=sharing";
@@ -120,9 +121,10 @@ export default function CanadaPage() {
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {canadaVideos.map((tour) => {
             const ytId = getYoutubeId(tour.youtubeUrl);
-            const thumbSrc = ytId
+            const fallbackThumb = ytId
               ? `https://img.youtube.com/vi/${ytId}/mqdefault.jpg`
               : "";
+            const thumbSrc = getCardImageSrc(tour.slug, fallbackThumb);
             return (
               <Link
                 key={tour.slug}
