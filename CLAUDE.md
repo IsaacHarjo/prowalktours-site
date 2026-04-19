@@ -88,18 +88,61 @@ Source of truth: **Prowalk_Tours_Master_Maps** Google Sheet
 
 ## CSV Import Scripts
 
-### France Catalog — scripts/refresh-france-catalog.js ✓ BUILT
-Reads france.csv and updates France data files automatically.
-Run after every Google Sheets export:
+### France Full Import — scripts/import-france-csv.js ✓ BUILT
+**Use this one when rebuilding the France Mapbox map.** Reads
+france.csv and generates BOTH `data/videos/france.ts` (video catalog)
+AND `data/maps/france.ts` (Mapbox features). Always regenerates the
+map file so lat/long changes and new tours appear as markers.
+```
+node scripts/import-france-csv.js
+```
+
+### France Catalog Only — scripts/refresh-france-catalog.js ✓ BUILT
+Only regenerates `data/videos/france.ts` — does NOT update the map
+features file. Faster, but if a new tour has been added, the Mapbox
+map on /destinations/france will be missing the marker. Prefer
+`import-france-csv.js` unless you specifically only want the catalog.
 ```
 node scripts/refresh-france-catalog.js
 ```
 Always run `git status` after to review changes before committing.
-Handles: new tours, updated fields, status changes, lat/long
-corrections, weather data — all synced from CSV automatically.
+
+### Highlight Refresh — scripts/refresh-highlights.js ✓ BUILT (destructive)
+Reads `data/import/all-highlights.csv` and writes the `highlights`
+array in matching `data/video-details/[slug].ts` files.
+```
+node scripts/refresh-highlights.js                    # all slugs
+node scripts/refresh-highlights.js <slug>             # one slug
+node scripts/refresh-highlights.js --dry-run          # preview
+```
+**CRITICAL — destructive behavior:** the CSV has no image paths,
+descriptions, or alt text. Running this script on a page that
+already has rich highlight data (imageSrc, images[], description,
+alt) will **wipe all of that and replace with empty strings**.
+Only safe to run on pages with empty highlights arrays (i.e. newly
+created pages that have never been enriched).
+Never run on: menton, antibes, avignon, arles, nice, all Paris,
+all Alsace, all Germany, Stanley Park, Granville Island — these
+pages have been hand-enriched with image paths and descriptions.
+
+### Encoding Fix — scripts/fix-encoding.js ✓ BUILT
+Repairs UTF-8 mojibake introduced by Google Sheets exports.
+Fixes patterns like `â€"` → `—`, `â€™` → `'`, `â€œ` → `"`, etc.
+```
+node scripts/fix-encoding.js --dry-run    # preview
+node scripts/fix-encoding.js              # apply
+```
+Run after every highlights CSV import because Google Sheets
+consistently re-introduces mojibake on export. Safe to run
+repeatedly — only replaces corrupted sequences.
 
 ### Highlight Image Extraction — scripts/fetch-highlight-images.js ✓ BUILT
 See Highlight Images section below for full details.
+
+### Video Page Generation — scripts/generate-video-page.js ✓ BUILT
+Generates a complete video page (data file + page.tsx + Client.tsx)
+from CSV data for a given slug. Used for bulk generation of new
+country pages. Not typically run for single one-off pages.
 
 ### Highlights Data File — data/import/all-highlights.csv
 **CRITICAL — read this before touching any highlights file:**
@@ -242,18 +285,22 @@ Required scopes: `styles:read`, `fonts:read`
 
 ## Countries & Data Status
 - **Total countries with YouTube tours:** 24
-- **Data entered in master sheet:** Italy (373 tours), France (48 tours), Germany (20 tours)
-- **Remaining 22 countries:** Data entry not yet started
+- **Data entered in master sheet:** Italy (373 tours), France (48 tours),
+  Germany (20 tours), Canada (6 tours)
+- **Remaining 21 countries:** Data entry not yet started
 - Do not build pages for a country until its data is in the master sheet
   and exported — confirm with user before starting a new country
 
 ### Known Countries with Pages or Partial Work
 (Read app/destinations/ directory for current list)
 - Italy ✓ — destination page + many video pages
-- France ✓ — destination page + video pages being built
+- France ✓ — destination page + all 29 ready video pages built (includes
+  Arles fr-0013)
+- Canada ✓ — destination page + 6 Vancouver video pages built, Mapbox map
+  pending (world map marker works)
 - Croatia — page exists (check app/destinations/croatia)
 - Slovenia — page exists (check app/destinations/slovenia)
-- Germany ✓ — destination page exists + 20 Christmas market tours in master sheet
+- Germany ✓ — destination page + all 20 Christmas market video pages built
 - USA — page exists (check app/destinations/usa)
 
 ---
@@ -289,6 +336,9 @@ Check app/videos/ directory for full current list. Confirmed completed:
 - antibes-daytime-walk-2025 ✓ (fr-0002)
 - nice-old-town-monday-evening-walk-2025 ✓ (fr-0003)
 - avignon-walking-tour-2025 ✓ (fr-0010)
+- **arles-roman-old-town-day-walk-2025 ✓ (fr-0013)** — 43 highlights,
+  131 images, multi-image carousels, local hero.jpg. Use as the
+  reference template for any new page that needs the carousel pattern.
 - paris-catacombs-tour-2020 ✓
 - paris-evening-walk-2022 ✓
 - paris-latin-quarter-marais-evening-walk-2020 ✓
@@ -306,10 +356,20 @@ Check app/videos/ directory for full current list. Confirmed completed:
 - Remaining draft/coming-soon tours (fr-0047, fr-0048 Nice Evening
   Walks 2 & 3) will be built when published to YouTube
 
-### Germany Status  
+### Germany Status
 - All 20 Christmas market tour pages built ✓ (de-0001 to de-0020)
 - Germany Mapbox map built ✓
 - All 322 Germany highlights added to all-highlights.csv ✓
+
+### Canada Status
+- All 6 Vancouver tour pages built ✓ (ca-0001 to ca-0006):
+  vancouver-canada-walking-tour, stanley-park-seawall-walk-vancouver,
+  vancouver-bike-tour-2025, vancouver-sunset-beach-evening-walk-2025,
+  granville-island-walking-tour-vancouver, vancouver-evening-walk-gastown-2025
+- Canada destination page ✓ (/destinations/canada) with 6 tour cards
+- 136 Canada highlights added to all-highlights.csv ✓
+- Highlight images not yet extracted for any Canada tour
+- Canada Mapbox map page not yet built (world map markers work via all_tours.csv)
 
 ---
 
@@ -409,18 +469,135 @@ When giving prompts for new video pages, always specify:
 ---
 
 ## Highlight Images
-- Location: public/[slug]/highlights/
-- Naming: [city]-[landmark-description].jpg
-  - Lowercase, hyphen-separated, no timestamp, NO trailing number
-- Legacy files may have trailing 0 — do not rename, do not replicate
-- Script: scripts/fetch-highlight-images.js
-  - Downloads video once at lower quality, extracts all frames locally,
-    deletes temp file after — much faster than remote stream seeking
-  - Skips existing files (never overwrites)
-  - Run one tour at a time:
-    node scripts/fetch-highlight-images.js [slug]
-  - Dry run: node scripts/fetch-highlight-images.js [slug] --dry-run
-  - After running, update imageSrc paths in data/video-details/[slug].ts
+
+### Location & naming
+- Location: `public/[slug]/highlights/`
+- Single image: `[city]-[landmark-description].jpg`
+  - Lowercase, hyphen-separated, no timestamp, no trailing number
+- Multi-image (Photoshop batch workflow — see below):
+  `[city]-[landmark-description]-1.jpg`, `-2.jpg`, `-3.jpg`, etc.
+  - Sequentially numbered starting at 1
+  - Gaps in numbering are OK (e.g. arles-amphitheatre-1/2/3/4/5/7/8/9/10
+    with no -6 because a bad frame was discarded)
+- Legacy files may have a trailing `0` — do not rename, do not replicate
+- **Never use spaces** in filenames. The audit script will catch these
+  but it's easier to not create them in the first place.
+
+### Multi-image highlight pattern (Arles reference)
+When a highlight has multiple photos (different angles of the same
+landmark, or a sequence like market stalls), use the `images: string[]`
+field on the `HighlightRecord` in `data/video-details/[slug].ts`:
+```ts
+{
+  title: "Arles Amphitheatre",
+  timeLabel: "50:03",
+  seconds: 3003,
+  imageSrc: img("arles-amphitheatre-1.jpg"),  // fallback for single-image contexts
+  images: [
+    img("arles-amphitheatre-1.jpg"),
+    img("arles-amphitheatre-2.jpg"),
+    // ... up to N images
+  ],
+  alt: "Descriptive alt text for accessibility and SEO",
+  caption: "Arles Amphitheatre",
+  description: "Historical context — 1-2 sentences."
+}
+```
+The client component renders a carousel when `images.length >= 2`, or a
+plain `<img>` when only `imageSrc` is set.
+**Reference implementation:** `arles-roman-old-town-day-walk-2025` —
+43 highlights with 131 total images, mix of single and multi-image.
+See `data/video-details/arles-roman-old-town-day-walk-2025.ts` and
+`app/videos/arles-roman-old-town-day-walk-2025/ArlesRomanOldTownDayWalk2025Client.tsx`.
+
+### HighlightCarousel component
+Location: `components/HighlightCarousel.tsx` (client component).
+- Props: `images: string[]`, `alt: string`
+- 1 image → plain `<img>` tag (no carousel UI)
+- 2+ images → crossfade carousel:
+  - Auto-advances every 4 seconds
+  - Opacity fade transition (not slide)
+  - Semi-transparent left/right arrows, visible on hover
+  - Dot indicators at the bottom
+  - Clicking an arrow pauses auto-advance for 8 seconds
+  - Failed images are skipped silently
+  - Arrow clicks call `e.stopPropagation()` so they don't trigger the
+    parent card's onClick (video seek)
+- Mobile sizing: the carousel container uses `aspect-[16/10]` on itself
+  (not `h-full w-full` relying on parent) to avoid height collapse on
+  mobile browsers. First image uses `relative` positioning to establish
+  intrinsic container height; later images layer on top with `absolute`.
+
+### Highlight card wrapper — use div not button
+Because the carousel contains button children (arrows, dot indicators),
+the outer card wrapper CANNOT be a `<button>`. HTML forbids nested
+buttons and React raises a hydration error.
+Use this pattern instead:
+```tsx
+<div
+  role="button"
+  tabIndex={0}
+  onClick={() => handleHighlightClick(highlight.seconds)}
+  onKeyDown={(e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      handleHighlightClick(highlight.seconds);
+    }
+  }}
+  className="w-full cursor-pointer overflow-hidden rounded-[1.5rem] ..."
+>
+  {/* card content, including HighlightCarousel */}
+</div>
+```
+Every video page client component has already been migrated to this
+pattern. When creating new pages, follow this — do not use `<button>`
+as the outer wrapper.
+
+### Photoshop batch action workflow
+Highlight images are produced by a Photoshop batch action that processes
+raw frames extracted from the video. The action outputs sequentially
+numbered JPGs matching the slug's naming convention, saved directly to
+`public/[slug]/highlights/`.
+Workflow:
+1. Extract raw frames (manually or via `fetch-highlight-images.js`)
+2. Open in Photoshop, run the batch action (crop/color/export)
+3. Save into `public/[slug]/highlights/` with the `-1.jpg`, `-2.jpg` suffix
+4. Add image paths to `data/video-details/[slug].ts`
+5. Run the image audit below to catch any filename mismatches
+
+### Image audit — always run before committing a new page
+Before committing a new video-detail file, verify every referenced
+image actually exists on disk:
+```bash
+cd d:/Projects/prowalktours-site && node -e "
+const fs=require('fs');
+const detail=fs.readFileSync('data/video-details/[slug].ts','utf8');
+const refs=[...detail.matchAll(/img\(\"([^\"]+)\"\)/g)].map(m=>m[1]);
+const unique=[...new Set(refs)];
+const dir='public/[slug]/highlights';
+const files=new Set(fs.readdirSync(dir));
+let missing=0;
+for(const f of unique){
+  if(!files.has(f)){console.log('MISSING:',f);missing++;}
+}
+console.log('Referenced:',unique.length,'On disk:',files.size,'Missing:',missing);
+"
+```
+This caught `arles amphitheatre-1.jpg` (space instead of hyphen) on
+the first Arles build.
+
+### fetch-highlight-images.js (legacy frame-extraction approach)
+For cases where Photoshop isn't used — typically for older pages where
+a single frame per highlight is enough.
+- Script: `scripts/fetch-highlight-images.js`
+- Downloads the video once at lower quality, extracts all frames
+  locally, deletes the temp file after. Much faster than remote stream
+  seeking.
+- Skips existing files (never overwrites).
+- Run one tour at a time:
+  `node scripts/fetch-highlight-images.js [slug]`
+- Dry run: `node scripts/fetch-highlight-images.js [slug] --dry-run`
+- After running, update imageSrc paths in `data/video-details/[slug].ts`
 - Requires: yt-dlp and ffmpeg on PATH (installed via winget 2026-03-31)
 
 ---
@@ -605,6 +782,14 @@ follow this pattern for any future media processing scripts.
 - Never start bulk page generation without validating CSV data first
 - Never leave a renamed or modified data file uncommitted
 - Never seek in remote video streams — always download locally first
+- Never use `<button>` as the outer wrapper for a highlight card —
+  nested buttons cause hydration errors. Use `<div role="button"
+  tabIndex={0}>` with an `onKeyDown` handler for Enter/Space.
+- Never run `refresh-highlights.js` on a page that has already been
+  enriched with image paths, descriptions, or alt text — the CSV has
+  none of that and the script will wipe it all. Safe only for newly
+  generated pages with empty highlights arrays.
+- Never use spaces in highlight image filenames. Always hyphens.
 
 ---
 
@@ -703,3 +888,41 @@ follow this pattern for any future media processing scripts.
   Alsace pages, and Disneyland Paris. all-highlights.csv slug corrections
   applied. Cologne de-0002 year fixed. Zero broken links, zero missing
   related tour images confirmed by full audit.
+- 2026-04-04 to 2026-04-10: Homepage polish — pill buttons below search
+  bar (Browse Countries dark brown, Explore the Map green, aligned to
+  search input width only), destination cards switched from YouTube
+  thumbnails to local images (`public/images/homepage/*.jpg`), stat
+  label typography matched to map subheading, world map legend country
+  labels made clickable with flyTo animation to each country center.
+- 2026-04-10 to 2026-04-15: Canada pages built. 6 Vancouver walks
+  (ca-0001 to ca-0006) each with server/client split, YouTube thumbnail
+  hero image with gradient fallback, breadcrumb + video JSON-LD,
+  Canada flag in sticky nav. Canada destination page rebuilt with 6
+  tour cards (replaced the "British Columbia coming soon" placeholder).
+  136 Canada highlights added to all-highlights.csv. scripts/
+  refresh-highlights.js built to import highlights CSV into video-detail
+  files. scripts/fix-encoding.js built to repair UTF-8 mojibake from
+  Google Sheets exports (fixed 49 sequences in the Canada batch alone).
+  Empty-imageSrc guard + gradient fallback added to all Canada
+  highlight cards.
+- 2026-04-16: Arles page built (fr-0013). 43 highlights with 131 total
+  images, Photoshop batch-action workflow. HighlightCarousel component
+  built — crossfade, auto-advance, arrows, dots, error skipping.
+  HighlightRecord type extended with optional `images: string[]`.
+  Full SEO pass on Arles: title, keywords, OG tags, VideoObject +
+  BreadcrumbList JSON-LD. Arles added to Provence destination page
+  and France Mapbox map (via import-france-csv.js regenerating both
+  data/videos/france.ts and data/maps/france.ts). Hero image switched
+  from YouTube thumbnail to local public/[slug]/hero.jpg.
+- 2026-04-17: Nested button hydration error fixed site-wide. Highlight
+  card wrappers migrated from `<button>` to `<div role="button"
+  tabIndex={0}>` with onKeyDown handler across all 57 video page client
+  components. Mobile highlight carousel height collapse fixed — first
+  image uses `relative` positioning (not absolute), container has
+  explicit `aspect-[16/10]`. Audit of Arles image references caught
+  `arles amphitheatre-1.jpg` (space) — renamed to hyphenated.
+  All 132 Arles highlight images committed to git. Learned that
+  refresh-highlights.js is destructive on enriched pages — reverted
+  49 video-detail files that had custom image paths/descriptions/alt
+  text after an unintended re-import. Documented the destructive
+  behavior and safe-slug list in this CLAUDE.md.
