@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import HighlightCarousel from "../../../components/HighlightCarousel";
 import LongFormWalkPage, {
@@ -60,6 +60,7 @@ export default function ArlesRomanOldTownDayWalk2025Client() {
     { title: "France Destination Hub", href: "/destinations/france", description: "Browse France by major destination hub, including Provence and the French Riviera.", thumbnail: "https://i.ytimg.com/vi/naBkJ0bLzD0/maxresdefault.jpg" },
   ];
 
+  const [mounted, setMounted] = useState(false);
   const videoSectionRef = useRef<HTMLDivElement | null>(null);
   const highlightsRef = useRef<HTMLDivElement | null>(null);
   const playerIframeRef = useRef<HTMLIFrameElement | null>(null);
@@ -67,6 +68,11 @@ export default function ArlesRomanOldTownDayWalk2025Client() {
   const pendingSeekRef = useRef<number | null>(null);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     let isUnmounting = false;
     const initializePlayer = () => {
       if (isUnmounting || playerRef.current || !playerIframeRef.current || !window.YT?.Player) return;
@@ -97,7 +103,7 @@ export default function ArlesRomanOldTownDayWalk2025Client() {
       playerRef.current?.destroy();
       playerRef.current = null;
     };
-  }, []);
+  }, [mounted]);
 
   const handleHighlightClick = (seconds: number) => {
     pendingSeekRef.current = seconds;
@@ -185,7 +191,9 @@ export default function ArlesRomanOldTownDayWalk2025Client() {
       <section ref={videoSectionRef} id="video" className="mx-auto max-w-6xl px-6 pb-6 pt-6 lg:px-10 lg:pb-6 lg:pt-14">
         <div className="overflow-hidden rounded-[2rem] border border-[#d8c7b5] shadow-lg">
           <div className="aspect-video w-full bg-black">
-            <iframe ref={playerIframeRef} className="h-full w-full" src={`https://www.youtube.com/embed/${youtubeVideoId}?rel=0&playsinline=1&enablejsapi=1`} title="Arles France walking tour" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen />
+            {mounted && (
+              <iframe ref={playerIframeRef} className="h-full w-full" src={`https://www.youtube.com/embed/${youtubeVideoId}?rel=0&playsinline=1&enablejsapi=1`} title="Arles France walking tour" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen />
+            )}
           </div>
         </div>
       </section>

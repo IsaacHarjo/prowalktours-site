@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import LongFormWalkPage, {
   LongFormWalkStatsRow,
 } from "../../../components/LongFormWalkPage";
@@ -118,11 +118,17 @@ export default function ParisCatacombsTour2020Client() {
   const routeMapRef = useRef<HTMLElement | null>(null);
   const licensingHubRef = useRef<HTMLElement | null>(null);
   const relatedToursRef = useRef<HTMLElement | null>(null);
+  const [mounted, setMounted] = useState(false);
   const playerIframeRef = useRef<HTMLIFrameElement | null>(null);
   const playerRef = useRef<YouTubePlayer | null>(null);
   const pendingSeekRef = useRef<number | null>(null);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
 
   useEffect(() => {
+    if (!mounted) return;
     let isUnmounting = false;
 
     const initializePlayer = () => {
@@ -173,7 +179,7 @@ export default function ParisCatacombsTour2020Client() {
       playerRef.current?.destroy();
       playerRef.current = null;
     };
-  }, []);
+  }, [mounted]);
 
   const handleHighlightClick = (seconds: number) => {
     pendingSeekRef.current = seconds;
@@ -369,7 +375,7 @@ export default function ParisCatacombsTour2020Client() {
       >
         <div className="overflow-hidden rounded-[2rem] border border-[#d8c7b5] shadow-lg">
           <div className="aspect-video w-full bg-black">
-            <iframe
+            {mounted && (<iframe
               ref={playerIframeRef}
               className="h-full w-full"
               src={initialYoutubeEmbedUrl}
@@ -377,7 +383,7 @@ export default function ParisCatacombsTour2020Client() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
-            />
+            />)}
           </div>
         </div>
       </section>

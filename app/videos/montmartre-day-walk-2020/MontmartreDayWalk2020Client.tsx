@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import LongFormWalkPage, { LongFormWalkStatsRow } from "../../../components/LongFormWalkPage";
 import MapSection from "../../../components/MapSection";
 import { franceVideos } from "../../../data/videos/france";
@@ -55,11 +55,17 @@ export default function MontmartreDayWalk2020Client() {
   const routeMapRef = useRef<HTMLElement | null>(null);
   const licensingHubRef = useRef<HTMLElement | null>(null);
   const relatedToursRef = useRef<HTMLElement | null>(null);
+  const [mounted, setMounted] = useState(false);
   const playerIframeRef = useRef<HTMLIFrameElement | null>(null);
   const playerRef = useRef<YouTubePlayer | null>(null);
   const pendingSeekRef = useRef<number | null>(null);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
 
   useEffect(() => {
+    if (!mounted) return;
     let isUnmounting = false;
     const initializePlayer = () => {
       if (isUnmounting || playerRef.current || !playerIframeRef.current || !window.YT?.Player) return;
@@ -70,7 +76,7 @@ export default function MontmartreDayWalk2020Client() {
     if (window.YT?.Player) initializePlayer();
     else if (!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) { const s = document.createElement("script"); s.src = "https://www.youtube.com/iframe_api"; document.head.appendChild(s); }
     return () => { isUnmounting = true; window.onYouTubeIframeAPIReady = prev; playerRef.current?.destroy(); playerRef.current = null; };
-  }, []);
+  }, [mounted]);
 
   const handleHighlightClick = (seconds: number) => { pendingSeekRef.current = seconds; playerRef.current?.seekTo(seconds, true); playerRef.current?.playVideo(); if (playerRef.current) pendingSeekRef.current = null; setTimeout(() => { videoSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }); }, 50); };
   const scrollToOverview = () => overviewSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -121,7 +127,7 @@ export default function MontmartreDayWalk2020Client() {
       </section>
 
       <section ref={videoSectionRef as React.RefObject<HTMLElement>} className="mx-auto max-w-6xl px-6 pb-6 pt-6 lg:px-10 lg:pb-6 lg:pt-14">
-        <div className="overflow-hidden rounded-[2rem] border border-[#d8c7b5] shadow-lg"><div className="aspect-video w-full bg-black"><iframe ref={playerIframeRef} className="h-full w-full" src={initialYoutubeEmbedUrl} title="Montmartre, France Day Walk (2020)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /></div></div>
+        <div className="overflow-hidden rounded-[2rem] border border-[#d8c7b5] shadow-lg"><div className="aspect-video w-full bg-black">{mounted && (<iframe ref={playerIframeRef} className="h-full w-full" src={initialYoutubeEmbedUrl} title="Montmartre, France Day Walk (2020)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen />)}</div></div>
       </section>
 
       <section id="highlights" ref={highlightsSectionRef} className="scroll-mt-32 mx-auto max-w-6xl rounded-[2rem] border border-[#e4d3b2] bg-gradient-to-br from-[#f4e6bc] via-[#fbf3dc] to-[#f7ede3] px-6 py-6 lg:px-10">

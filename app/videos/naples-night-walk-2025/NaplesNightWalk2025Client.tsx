@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { naplesNightWalk2025Detail } from "../../../data/video-details/naples-night-walk-2025";
 import { videos } from "../../../data/videos/index";
 import MapSection from "../../../components/MapSection";
@@ -62,11 +62,17 @@ export default function NaplesNightWalk2025Page() {
   const routeMapRef = useRef<HTMLElement | null>(null);
   const licensingHubRef = useRef<HTMLElement | null>(null);
   const relatedToursRef = useRef<HTMLElement | null>(null);
+  const [mounted, setMounted] = useState(false);
   const playerIframeRef = useRef<HTMLIFrameElement | null>(null);
   const playerRef = useRef<YouTubePlayer | null>(null);
   const pendingSeekRef = useRef<number | null>(null);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
 
   useEffect(() => {
+    if (!mounted) return;
     let isUnmounting = false;
 
     const initializePlayer = () => {
@@ -115,7 +121,7 @@ export default function NaplesNightWalk2025Page() {
       playerRef.current?.destroy();
       playerRef.current = null;
     };
-  }, []);
+  }, [mounted]);
 
   const highlights = naplesNightWalk2025Detail.highlights;
 
@@ -347,7 +353,7 @@ export default function NaplesNightWalk2025Page() {
       >
         <div className="overflow-hidden rounded-[2rem] border border-[#d8c7b5] shadow-lg">
           <div className="aspect-video w-full bg-black">
-            <iframe
+            {mounted && (<iframe
               ref={playerIframeRef}
               className="h-full w-full"
               src={initialYoutubeEmbedUrl}
@@ -355,7 +361,7 @@ export default function NaplesNightWalk2025Page() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
-            />
+            />)}
           </div>
         </div>
 

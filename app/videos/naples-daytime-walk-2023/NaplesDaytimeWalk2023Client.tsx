@@ -57,11 +57,17 @@ const routeMapRef = useRef<HTMLElement | null>(null);
 const licensingHubRef = useRef<HTMLElement | null>(null);
 const relatedToursRef = useRef<HTMLElement | null>(null);
 const ratingsPopoverRef = useRef<HTMLDivElement | null>(null);
+const [mounted, setMounted] = useState(false);
 const playerIframeRef = useRef<HTMLIFrameElement | null>(null);
 const playerRef = useRef<YouTubePlayer | null>(null);
 const pendingSeekRef = useRef<number | null>(null);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
 
   useEffect(() => {
+    if (!mounted) return;
     const handlePointerDown = (event: MouseEvent | TouchEvent) => {
       if (
         ratingsPopoverRef.current &&
@@ -86,7 +92,7 @@ const pendingSeekRef = useRef<number | null>(null);
       document.removeEventListener("touchstart", handlePointerDown);
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [mounted]);
 
   useEffect(() => {
     let isUnmounting = false;
@@ -519,7 +525,7 @@ const scrollToRelatedTours = () => {
       >
         <div className="overflow-hidden rounded-[2rem] border border-[#d8c7b5] shadow-lg">
           <div className="aspect-video w-full bg-black">
-            <iframe
+            {mounted && (<iframe
               ref={playerIframeRef}
               className="h-full w-full"
               src={initialYoutubeEmbedUrl}
@@ -527,7 +533,7 @@ const scrollToRelatedTours = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
-            />
+            />)}
           </div>
         </div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import LongFormWalkPage, {
   LongFormWalkStatsRow,
 } from "../../../components/LongFormWalkPage";
@@ -118,11 +118,17 @@ export default function NiceOldTownMondayEveningWalk2025Client() {
   const routeMapRef = useRef<HTMLElement | null>(null);
   const licensingHubRef = useRef<HTMLElement | null>(null);
   const relatedToursRef = useRef<HTMLElement | null>(null);
+  const [mounted, setMounted] = useState(false);
   const playerIframeRef = useRef<HTMLIFrameElement | null>(null);
   const playerRef = useRef<YouTubePlayer | null>(null);
   const pendingSeekRef = useRef<number | null>(null);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
 
   useEffect(() => {
+    if (!mounted) return;
     let isUnmounting = false;
 
     const initializePlayer = () => {
@@ -170,7 +176,7 @@ export default function NiceOldTownMondayEveningWalk2025Client() {
       playerRef.current?.destroy();
       playerRef.current = null;
     };
-  }, []);
+  }, [mounted]);
 
   const handleHighlightClick = (seconds: number) => {
     pendingSeekRef.current = seconds;
@@ -277,7 +283,7 @@ export default function NiceOldTownMondayEveningWalk2025Client() {
       <section ref={videoSectionRef as React.RefObject<HTMLElement>} className="mx-auto max-w-6xl px-6 pb-6 pt-6 lg:px-10 lg:pb-6 lg:pt-14">
         <div className="overflow-hidden rounded-[2rem] border border-[#d8c7b5] shadow-lg">
           <div className="aspect-video w-full bg-black">
-            <iframe
+            {mounted && (<iframe
               ref={playerIframeRef}
               className="h-full w-full"
               src={initialYoutubeEmbedUrl}
@@ -285,7 +291,7 @@ export default function NiceOldTownMondayEveningWalk2025Client() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
-            />
+            />)}
           </div>
         </div>
       </section>
