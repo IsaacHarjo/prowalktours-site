@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getCardImageSrc } from "../../../../lib/cardImages";
+import CardImage from "../../../../components/CardImage";
 
 const slugFromHref = (href: string) => href.replace(/^\/videos\//, "");
 
@@ -208,11 +208,11 @@ export default function ParisPage() {
               className="group overflow-hidden rounded-3xl border border-[#eadfce] bg-white shadow-sm transition hover:-translate-y-1 hover:border-[#d7c3ad] hover:shadow-md"
             >
               <div className="aspect-16/10 w-full overflow-hidden">
-                <img
-                  src={getCardImageSrc(slugFromHref(walk.href), walk.imageSrc)}
+                <CardImage
+                  slug={slugFromHref(walk.href)}
+                  fallbackSrc={walk.imageSrc}
                   alt={walk.imageAlt}
                   className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
-                  loading="lazy"
                 />
               </div>
               <div className="p-6">

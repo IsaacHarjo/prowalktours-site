@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getCardImageSrc } from "../../../../lib/cardImages";
+import CardImage from "../../../../components/CardImage";
 
 const slugFromHref = (href: string) => href.replace(/^\/videos\//, "");
 
@@ -127,12 +127,21 @@ export default function ProvencePage() {
               >
                 {destination.imageSrc ? (
                   <div className="aspect-16/10 w-full overflow-hidden">
-                    <img
-                      src={destination.href ? getCardImageSrc(slugFromHref(destination.href), destination.imageSrc) : destination.imageSrc}
-                      alt={destination.imageAlt}
-                      className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
-                      loading="lazy"
-                    />
+                    {destination.href ? (
+                      <CardImage
+                        slug={slugFromHref(destination.href)}
+                        fallbackSrc={destination.imageSrc}
+                        alt={destination.imageAlt}
+                        className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                      />
+                    ) : (
+                      <img
+                        src={destination.imageSrc}
+                        alt={destination.imageAlt}
+                        className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    )}
                   </div>
                 ) : null}
                 <div className="p-6">

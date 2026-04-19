@@ -1,8 +1,7 @@
 import Link from "next/link";
+import CardImage from "../../../components/CardImage";
 import MapSection from "../../../components/MapSection";
-import ThumbnailImg from "../../../components/ThumbnailImg";
 import { canadaVideos } from "../../../data/videos/canada";
-import { getCardImageSrc } from "../../../lib/cardImages";
 
 const fullMapUrl =
   "https://www.google.com/maps/d/edit?mid=1a5hdtdDOzWQdZBbRJ0_4r7YQyZG31s8&usp=sharing";
@@ -124,7 +123,6 @@ export default function CanadaPage() {
             const fallbackThumb = ytId
               ? `https://img.youtube.com/vi/${ytId}/mqdefault.jpg`
               : "";
-            const thumbSrc = getCardImageSrc(tour.slug, fallbackThumb);
             return (
               <Link
                 key={tour.slug}
@@ -132,15 +130,12 @@ export default function CanadaPage() {
                 className="group overflow-hidden rounded-3xl border border-[#eadfce] bg-white shadow-sm transition hover:-translate-y-1 hover:border-[#d7c3ad] hover:shadow-md"
               >
                 <div className="aspect-video w-full overflow-hidden bg-[#2f261d]">
-                  {thumbSrc ? (
-                    <ThumbnailImg
-                      src={thumbSrc}
-                      alt={tour.siteTitle}
-                      className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
-                    />
-                  ) : (
-                    <div className="h-full w-full bg-[#2f261d]" />
-                  )}
+                  <CardImage
+                    slug={tour.slug}
+                    fallbackSrc={fallbackThumb}
+                    alt={tour.siteTitle}
+                    className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-bold text-[#2f261d] transition group-hover:text-[#167fd5]">

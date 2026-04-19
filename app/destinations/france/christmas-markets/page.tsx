@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getCardImageSrc } from "../../../../lib/cardImages";
+import CardImage from "../../../../components/CardImage";
 
 const slugFromHref = (href: string) => href.replace(/^\/videos\//, "");
 
@@ -236,11 +236,11 @@ export default function ChristmasMarketsPage() {
                 >
                   {walk.imageSrc ? (
                     <div className="aspect-16/10 w-full overflow-hidden">
-                      <img
-                        src={getCardImageSrc(slugFromHref(walk.href), walk.imageSrc)}
+                      <CardImage
+                        slug={slugFromHref(walk.href)}
+                        fallbackSrc={walk.imageSrc}
                         alt={walk.imageAlt}
                         className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
-                        loading="lazy"
                       />
                     </div>
                   ) : null}
