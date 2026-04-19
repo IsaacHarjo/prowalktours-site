@@ -2,7 +2,7 @@ import type { VideoCatalogRecord } from "../video-types";
 
 // Auto-generated from data/maps/france.csv by scripts/import-france-csv.js
 // Only tours with status "ready" are included.
-// Last refreshed: 2026-04-17
+// Last refreshed: 2026-04-19
 export const franceVideos: VideoCatalogRecord[] = [
   {
     id: "menton-france-walking-tour-2025",
@@ -18,7 +18,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "September 2025",
     durationLabel: "1:51:10",
     durationSeconds: 6670,
-    weather: "79 F / 26 C",
+    weather: "79.0 F / 26.0 C",
     shortDescription:
       "A day walk through Menton, France, featuring the old town, seaside promenade, colorful architecture, and the atmosphere of the French Riviera near the Italian border.",
     keywords: [
@@ -82,7 +82,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "September 2025",
     durationLabel: "2:16:36",
     durationSeconds: 8196,
-    weather: "85 F / 29 C",
+    weather: "85.0 F / 29.0 C",
     shortDescription:
       "A day walk through Antibes, France, featuring the old town, Picasso Museum, Antibes Cathedral, the Provencal market, marina, and scenic waterfront along the French Riviera.",
     keywords: [
@@ -230,7 +230,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "September 2025",
     durationLabel: "1:30:55",
     durationSeconds: 5455,
-    weather: "85 F / 29 C",
+    weather: "85.0 F / 29.0 C",
     shortDescription:
       "An evening walk through Nice, France, exploring Place Masséna, the French Riviera waterfront, Cours Saleya, and the Baroque streets of Vieux Nice.",
     keywords: [
@@ -329,7 +329,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "September 2025",
     durationLabel: "2:23:39",
     durationSeconds: 8619,
-    weather: "85 F / 29 C",
+    weather: "85.0 F / 29.0 C",
     shortDescription:
       "A day walk through Avignon, France, featuring Place du Palais, the Palace of the Popes area, Pont d'Avignon, the city ramparts, Les Halles, and the medieval old town.",
     keywords: [
@@ -398,35 +398,77 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "September 2025",
     durationLabel: "3:11:12",
     durationSeconds: 11472,
-    weather: "76 F / 24 C",
+    weather: "76.0 F / 24.0 C",
     shortDescription:
       "A walk through Arles — one of the most historically layered cities in France. This 4.5-mile tour covers the full old city, from the Roman amphitheatre and ancient theatre to the medieval cloister of Saint-Trophime, the underground Cryptoportiques, the Rhône riverfront, and the famous Wednesday market along Boulevard des Lices — one of the largest open-air markets in Provence.",
     keywords: [
     "Arles",
     "Provence-Alpes-Côte d'Azur",
     "France",
-    "day walk"
+    "day walk",
+    "Roman amphitheatre",
+    "les Arènes",
+    "Arles arena",
+    "Théâtre Antique",
+    "Roman theatre",
+    "Cloître Saint-Trophime",
+    "Saint-Trophime Cathedral",
+    "Cryptoportiques",
+    "Place du Forum",
+    "Baths of Constantine",
+    "thermes de Constantin",
+    "Rhône River",
+    "Boulevard des Lices",
+    "Wednesday market",
+    "Provence market",
+    "Place de la République",
+    "Hôtel de Ville",
+    "Arles old town",
+    "Roman ruins France",
+    "UNESCO Arles",
+    "Van Gogh Arles",
+    "Place des Arènes",
+    "Notre-Dame-de-la-Major",
+    "Frédéric Mistral",
+    "walking tour 4K",
+    "Arles France 2025"
   ],
     landmarks: [
+    "Intro and Map",
+    "Walk begins on Rue Jean Jaures",
     "Place de la République",
     "Cloître Saint-Trophime",
     "Saint-Trophime Cathedral",
     "Cryptoportiques",
     "Théâtre Antique",
     "Arles Amphitheatre",
+    "Amphitheater Entrance",
+    "Best View of Amphitheatre",
+    "Amphitheatre Tower",
+    "Best Seat in the Amphitheatre",
+    "Place des Arènes",
+    "Rue Voltaire",
+    "Place Voltaire",
+    "Porte de la Cavalerie",
+    "Rue Voltaire & Amédée Pichot Fountain",
+    "Rue du 4 Septembre",
+    "Rue de l'Amphithéâtre",
     "Notre-Dame-de-la-Major",
+    "Panoramic Viewpoint",
+    "Walking Around the Amphitheater",
     "Saint-Julien Church",
     "Rhône River",
     "Baths of Constantine",
     "Église des Frères Prêcheurs",
     "Place du Forum",
     "Frédéric Mistral Statue",
-    "Plan de la Cour",
-    "Hôtel de Ville",
+    "Plan de la Cour (Gladiator Cells)",
+    "Hôtel de Ville (Town Hall)",
     "Boulevard des Lices",
+    "Brocante d'Arles (Flea Market)",
+    "Marché Vêtements (Clothing Market)",
     "Ancient City Ramparts",
-    "Porte de la Cavalerie",
-    "Amédée Pichot Fountain"
+    "Marché Alimentation (Food Market)"
   ],
     themes: [
     "Historic Centers & Old Towns",
@@ -452,7 +494,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "July 2020",
     durationLabel: "5:38:18",
     durationSeconds: 20298,
-    weather: "85 F / 29 C",
+    weather: "85.0 F / 29.0 C",
     shortDescription:
       "A day walk through Paris, France, featuring Rue Mouffetard Market, the Pantheon, Luxembourg Gardens, the Latin Quarter, Notre Dame, the Seine, the Louvre, the Champs-Elysees, Arc de Triomphe, Les Invalides, Rue Cler, and the Eiffel Tower.",
     keywords: [
@@ -519,7 +561,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "July 2022",
     durationLabel: "00:55:25",
     durationSeconds: 3325,
-    weather: "87 F / 31 C",
+    weather: "87.0 F / 31.0 C",
     shortDescription:
       "An evening walk through Montmartre in Paris, France, featuring Rue Norvins, Place du Tertre, Sacre-Coeur, Square Louise Michel, Place Saint-Pierre, Place des Abbesses, Rue Lepic, and Place Blanche.",
     keywords: [
@@ -573,7 +615,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "July 2020",
     durationLabel: "1:53:27",
     durationSeconds: 6807,
-    weather: "83 F / 28 C",
+    weather: "83.0 F / 28.0 C",
     shortDescription:
       "A day walk through Montmartre in Paris, France, featuring Moulin Rouge, Rue Lepic, Place des Abbesses, Le Moulin de la Galette, Villa Leandre, La Maison Rose, Place du Tertre, Sacre-Coeur, and the surrounding hilltop streets.",
     keywords: [
@@ -640,7 +682,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "July 2020",
     durationLabel: "00:57:40",
     durationSeconds: 3460,
-    weather: "83 F / 28 C",
+    weather: "83.0 F / 28.0 C",
     shortDescription:
       "This walk follows the Coulée Verte René-Dumont, also known as the Promenade Plantée, one of Paris’s most distinctive linear parks. Beginning near Bastille, the route moves along the elevated greenway and related garden paths, including views around Jardin de Reuilly, before turning back along the same corridor. It is a quieter side of Paris, focused more on urban green space, old railway infrastructure, and a slower local atmosphere than the city’s main monument routes.",
     keywords: [
@@ -691,7 +733,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "August 2017",
     durationLabel: "3:08:07",
     durationSeconds: 11287,
-    weather: "73 F / 23 C",
+    weather: "73.0 F / 23.0 C",
     shortDescription:
       "This long daytime walk across Paris connects many of the city’s most iconic landmarks, beginning at the Louvre and continuing along the Seine to Notre-Dame. From there, the route heads west through the Tuileries, Place de la Concorde, and the Champs-Élysées to the Arc de Triomphe, then down to the Eiffel Tower, Champ de Mars, Les Invalides, and Pont Alexandre III before finishing with some of Paris’s most atmospheric old streets, including Cour du Commerce Saint-André, Rue de Buci, Rue des Rosiers, and Rue des Barres.",
     keywords: [
@@ -752,7 +794,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "August 2017",
     durationLabel: "3:08:16",
     durationSeconds: 11296,
-    weather: "73 F / 23 C",
+    weather: "73.0 F / 23.0 C",
     shortDescription:
       "This daytime Paris walk follows the same landmark-rich route as the natural-sound version, but with music added throughout. Beginning at the Louvre, the route continues along the Seine to Notre-Dame, then west through the Tuileries, Place de la Concorde, the Champs-Élysées, and the Arc de Triomphe before reaching the Eiffel Tower, Champ de Mars, Les Invalides, Pont Alexandre III, and several of Paris’s most memorable old streets. It is a broad city overview built around many of Paris’s best-known sights.",
     keywords: [
@@ -813,7 +855,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "July 2022",
     durationLabel: "2:25:33",
     durationSeconds: 8733,
-    weather: "80 F / 27 C",
+    weather: "80.0 F / 27.0 C",
     shortDescription:
       "This evening walk through Paris begins in the Latin Quarter and winds through some of the city’s most beautiful streets and squares before expanding into a broader night route across Paris. Along the way, the walk passes Place Saint-Michel, Rue de la Huchette, Notre-Dame, Rue des Barres, Rue des Rosiers, Hôtel de Ville, Bastille, the Eiffel Tower, the Louvre, Pont Neuf, and the Panthéon. It combines lively neighborhood streets, historic architecture, and major Paris landmarks, with the final stretch turning into a night bike ride through the city.",
     keywords: [
@@ -879,7 +921,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "July 2020",
     durationLabel: "1:06:13",
     durationSeconds: 3973,
-    weather: "85 F / 29 C",
+    weather: "85.0 F / 29.0 C",
     shortDescription:
       "This evening walk through Paris focuses on some of the city’s most beautiful streets and neighborhoods after dark, especially around Place Saint-Michel, Rue des Barres, Rue des Rosiers, and nearby parts of the Marais and Latin Quarter. The route later expands into Bastille and includes a night bike ride, ending with views of Hôtel de Ville, the Louvre Pyramid, and the Seine. It is a strong mix of historic streets, lively nightlife areas, and classic Paris night atmosphere.",
     keywords: [
@@ -944,7 +986,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "July 2020",
     durationLabel: "00:22:59",
     durationSeconds: 1379,
-    weather: "57 F / 14 C",
+    weather: "57.0 F / 14.0 C",
     shortDescription:
       "This tour explores the Paris Catacombs, one of the city’s most unusual and historic underground sites. After entering from the top-level entrance, the route descends into the ossuary and passes long corridors lined with bones and skulls, including some of the most recognizable stacked arrangements and memorial features inside the catacombs. It is a shorter but highly distinctive Paris tour focused on the underground history and atmosphere of the city rather than its streets above.",
     keywords: [
@@ -988,7 +1030,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "July 2020",
     durationLabel: "00:29:09",
     durationSeconds: 1749,
-    weather: "85 F / 29 C",
+    weather: "85.0 F / 29.0 C",
     shortDescription:
       "This walk explores Luxembourg Gardens, one of Paris’s most elegant and relaxing public spaces. Beginning at Porte Gay-Lussac, the route circles the Grand Basin, passes the sailboats, Porte de l’Observatoire, Porte Fleurus, the basketball court, the Statue of Liberty, the Orangerie du Sénat, the rose garden, the Delacroix monument, and the Palais du Luxembourg before exiting near Porte Odéon. It is a compact Paris garden walk centered on the beauty, layout, and atmosphere of the Jardin du Luxembourg.",
     keywords: [
@@ -1039,7 +1081,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "July 2020",
     durationLabel: "00:52:45",
     durationSeconds: 3165,
-    weather: "85 F / 29 C",
+    weather: "85.0 F / 29.0 C",
     shortDescription:
       "This tour focuses on the full Eiffel Tower experience, beginning on the ground near Champ de Mars and continuing through the entrance and elevator rides up the monument. The route includes Level 2, the summit interior and exterior, the descent to Level 1, and the stairs back down to ground level. Rather than a general city walk, this video is an attraction-focused tour of one of Paris’s most famous landmarks from entrance to exit.",
     keywords: [
@@ -1085,7 +1127,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "July 2020",
     durationLabel: "3:02:24",
     durationSeconds: 10944,
-    weather: "91 F / 33 C",
+    weather: "91.0 F / 33.0 C",
     shortDescription:
       "This tour explores Disneyland Paris across multiple themed lands, attractions, and character moments, beginning at the park entrance and moving through Main Street, Fantasyland, Discoveryland, Frontierland, and Adventureland. Along the way, it includes highlights such as Sleeping Beauty Castle, It’s a Small World, Autopia, Big Thunder Mountain, Pirates of the Caribbean, Peter Pan’s Flight, and several shop and train segments. It is a full park experience rather than a traditional city walk, built around the atmosphere and layout of Disneyland Paris.",
     keywords: [
@@ -1152,7 +1194,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "December 2023",
     durationLabel: "1:48:39",
     durationSeconds: 6519,
-    weather: "42 F / 6 C",
+    weather: "42.0 F / 6.0 C",
     shortDescription:
       "This evening walk through Colmar’s Christmas markets follows the old town through several of the city’s main holiday squares and streets, including Place des Dominicains, Place de la Cathédrale, St Martin’s Church, Rue des Marchands, Place de l’Ancienne Douane, Place Jeanne d’Arc, Grand Rue, the gourmet market, Little Venice, the covered market, and Place du Marché aux Fruits. It captures Colmar at night, when the market lights, half-timbered buildings, and decorated streets are at their most atmospheric.",
     keywords: [
@@ -1212,7 +1254,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "December 2023",
     durationLabel: "2:09:07",
     durationSeconds: 7747,
-    weather: "42 F / 6 C",
+    weather: "42.0 F / 6.0 C",
     shortDescription:
       "This daytime walk through Colmar’s Christmas markets follows many of the same famous streets and squares as the evening version, but with a brighter daytime view of the town. The route includes Place des Unterlinden, Place des Dominicains, Place de la Cathédrale, St Martin’s Church, Rue des Marchands, Place de l’Ancienne Douane, Place Jeanne d’Arc, Grand Rue, Little Venice, the covered market, and Place du Marché aux Fruits. It is a strong overview of Colmar’s holiday market layout, architecture, and old-town atmosphere by day.",
     keywords: [
@@ -1273,7 +1315,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "December 2025",
     durationLabel: "00:47:13",
     durationSeconds: 2833,
-    weather: "59 F / 9 C",
+    weather: "59.0 F / 9.0 C",
     shortDescription:
       "This 360° Christmas market walk through Kaysersberg explores one of the most atmospheric holiday villages in Alsace. The route follows the town’s decorated main streets and market squares, passing Place de la Mairie, the Church of the Holy Cross, the Marché de Noël, the Constantine Fountain, the fortified bridge, Rue des Forgerons, and the medieval town gate. It is a compact but immersive holiday walk filled with festive lights, market stalls, and the storybook character of Kaysersberg’s old town.",
     keywords: [
@@ -1326,7 +1368,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "December 2025",
     durationLabel: "1:25:09",
     durationSeconds: 5109,
-    weather: "49 F / 9 C",
+    weather: "49.0 F / 9.0 C",
     shortDescription:
       "This daytime Christmas market walk through Kaysersberg follows the town’s decorated streets, market areas, and historic landmarks during the holiday season. The route includes Place de la Mairie, the Marché de Noël, the First French Army Memorial Cemetery, the Church of the Holy Cross, the Constantine Fountain, Rue du Collège, the old wash house on the river, the fortified bridge, Rue des Forgerons, the medieval town gate, and a nearby vineyard. It gives a wider daytime look at Kaysersberg’s Christmas market atmosphere and historic setting in Alsace.",
     keywords: [
@@ -1381,7 +1423,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "December 2025",
     durationLabel: "2:18:24",
     durationSeconds: 8304,
-    weather: "49 F / 9 C",
+    weather: "49.0 F / 9.0 C",
     shortDescription:
       "This walk explores the Ribeauvillé Medieval Christmas Market, one of the most distinctive holiday events in Alsace. The route moves through Place de la République, Place du Bouc, the Sipp Courtyard, Place de la Sinne, Cour du Grand Bailli, Salle de la Tour des Bouchers, Place de l’Hotel de Ville, Cour de la Médiathèque, Place de la 1ère Armée, and Place Gouraud. More than a standard Christmas market walk, it emphasizes the town’s medieval setting, themed stalls, and festive performances.",
     keywords: [
@@ -1435,7 +1477,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "December 2025",
     durationLabel: "1:29:35",
     durationSeconds: 5375,
-    weather: "49 F / 9 C",
+    weather: "49.0 F / 9.0 C",
     shortDescription:
       "This 360 VR walk through the Ribeauvillé Christmas Market captures the event’s medieval atmosphere with a more immersive point of view. Along the route are farm animals, the apple grinder, food stalls, local shops, church interiors, Place de la 1ère Armée, Salle de la Tour des Bouchers, Cour du Grand Bailli, the Sipp Courtyard, Viking-themed areas, market games, wine tasting, and the medieval market at Place de la République. It is a more interactive and experiential companion to the standard Ribeauvillé market walk.",
     keywords: [
@@ -1499,7 +1541,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "December 2023",
     durationLabel: "1:17:17",
     durationSeconds: 4637,
-    weather: "43 F / 6 C",
+    weather: "43.0 F / 6.0 C",
     shortDescription:
       "This evening walk through Riquewihr’s Christmas market follows the old town through its decorated streets, gates, courtyards, and market areas. The route includes the town hall, the main street, an underground cheese shop, the Court of the Nobles, the Dolder Tower, the Sinne Fountain, Rue des Remparts, Porte Haute, the Passage, and the main Christmas market area. It captures Riquewihr at night, when the half-timbered buildings and holiday decorations feel especially vivid and atmospheric.",
     keywords: [
@@ -1555,7 +1597,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "December 2023",
     durationLabel: "1:36:53",
     durationSeconds: 5813,
-    weather: "42 F / 6 C",
+    weather: "42.0 F / 6.0 C",
     shortDescription:
       "This daytime walk through Riquewihr’s Christmas market explores the old town from the town hall and Rue du Général de Gaulle to the Dolder Tower, Porte Haute, Rue des Remparts, the Sinne Fountain, the Court of the Nobles, Sainte-Marguerite Church, and several smaller old-town streets before returning to the market area. It is a broad daytime look at one of Alsace’s most picturesque Christmas villages, with a strong focus on the town’s historic architecture and street layout.",
     keywords: [
@@ -1616,7 +1658,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "December 2022",
     durationLabel: "2:24:49",
     durationSeconds: 8689,
-    weather: "21 F / -6 C",
+    weather: "21.0 F / -6.0 C",
     shortDescription:
       "This daytime walk through Strasbourg’s Christmas markets follows a long route through the historic center, the cathedral district, and Petite France. Along the way, it passes Pont du Corbeau, Place de la Cathédrale, Place du Château, Palais Rohan, Quai des Bateliers, Place du Marché Gayot, Place Broglie, Place Kléber, Place Gutenberg, Place Benjamin Zix, Ponts Couverts, and Barrage Vauban. It gives a broad daytime overview of Strasbourg’s Christmas market layout, major landmarks, and the atmosphere of the city during the holiday season.",
     keywords: [
@@ -1683,7 +1725,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "December 2023",
     durationLabel: "2:19:01",
     durationSeconds: 8341,
-    weather: "34 F / 1 C",
+    weather: "34.0 F / 1.0 C",
     shortDescription:
       "This daytime walk through Strasbourg’s Christmas markets moves through both the historic center and Petite France, connecting many of the city’s best-known market squares and landmarks. The route includes Place de la Cathédrale, Place Gutenberg, Place du Château, Place du Marché aux Poissons, Quai des Bateliers, Place Saint-Étienne, Place du Marché Gayot, Place Benjamin Zix, Square Louise-Weiss, Barrage Vauban, Place Saint-Thomas, and Place des Tripiers. It gives a wide daytime overview of Strasbourg’s Christmas market network and the city’s historic core.",
     keywords: [
@@ -1750,7 +1792,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "December 2023",
     durationLabel: "2:33:53",
     durationSeconds: 9233,
-    weather: "33 F / 5 C",
+    weather: "33.0 F / 5.0 C",
     shortDescription:
       "This evening walk through Strasbourg’s Christmas markets begins in Petite France and gradually works across the city’s decorated bridges, riverside paths, and major market squares. The route includes Barrage Vauban, Ponts Couverts, the Ill River, Square Louise-Weiss, Place Saint-Thomas, Rue Mercière, Strasbourg Cathedral, Place de la Cathédrale, Place du Château, Place du Marché aux Poissons, Place Broglie, Place Kléber, Place du Temple Neuf, Place Gutenberg, and Place des Tripiers. It is one of the most complete night views of Strasbourg’s Christmas market atmosphere and layout.",
     keywords: [
@@ -1817,7 +1859,7 @@ export const franceVideos: VideoCatalogRecord[] = [
     filmingMonthYear: "December 2022",
     durationLabel: "2:03:15",
     durationSeconds: 7395,
-    weather: "21 F / -6 C",
+    weather: "21.0 F / -6.0 C",
     shortDescription:
       "This evening walk through Strasbourg’s Christmas markets moves across the old town and Petite France, linking many of the city’s most important market squares and decorated streets after dark. The route includes Pont du Corbeau, Place de la Grande Boucherie, Place du Marché-aux-Cochons-de-Lait, the cathedral market, Place du Château, Place des Tripiers, Place de la Cathédrale, Temple Neuf, Broglie, Kléber, Place Gutenberg, Place Benjamin Zix, Petite France, Ponts Couverts, and Barrage Vauban. It is a strong night-time overview of Strasbourg’s holiday atmosphere, with a mix of major Christmas markets, historic streets, and scenic canal-side views.",
     keywords: [
