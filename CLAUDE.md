@@ -19,10 +19,14 @@ research, and licensing.
 
 ## YouTube Channel
 - Channel: Prowalk Tours — first-person 4K walking tours worldwide
-- Walking tours across **24 countries** (data entered for Italy + France so far)
+- Walking tours across **24 countries** (data entered for Italy, France, Germany, and Canada so far)
 - Weekly uploads every **Saturday at 6am PST**
 - The site should give older videos new life through search and
   destination browsing, and serve as a serious business asset
+- **Content standards & channel strategy:** See "Prowalk Tours Content
+  Standards v2" in Google Drive (not part of this repo) — references
+  for video title/description format, content tier strategy, and
+  YouTube Studio analytics insights.
 
 ## Camera Gear
 - **GoPro Hero 6 / Hero 8** — used for many older walks
