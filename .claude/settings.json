@@ -1,0 +1,10 @@
+{
+  "hooks": {
+    "postToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "command": "bash -c 'git diff --name-only | grep -E \\.csv$ && echo \"WARNING: Uncommitted CSV changes detected\"'"
+      }
+    ]
+  }
+}
