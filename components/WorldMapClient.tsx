@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState, type ReactNode } from "react";
+import Link from "next/link";
 import MapboxMap, {
   Layer,
   NavigationControl,
@@ -11,6 +12,7 @@ import MapboxMap, {
 import type { LayerProps } from "react-map-gl/mapbox";
 import type { Feature, FeatureCollection, Point } from "geojson";
 import "mapbox-gl/dist/mapbox-gl.css";
+import type { ExploreMapWatchDestinationType } from "../data/maps/types";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -24,6 +26,8 @@ type WorldTour = {
   filmedYear: number | null;
   durationLabel: string;
   youtubeUrl: string;
+  watchHref: string;
+  watchDestinationType: ExploreMapWatchDestinationType;
   latitude: number;
   longitude: number;
   countryIndex: number; // 0=Italy, 1=France, 2=Germany
@@ -113,6 +117,35 @@ type WorldMapClientProps = {
   fullWidth?: boolean;
   heightClassName?: string;
 };
+
+function WorldTourWatchLink({
+  tour,
+  className,
+  children,
+}: {
+  tour: WorldTour;
+  className: string;
+  children: ReactNode;
+}) {
+  if (tour.watchDestinationType === "internal-page") {
+    return (
+      <Link href={tour.watchHref} className={className}>
+        {children}
+      </Link>
+    );
+  }
+
+  return (
+    <a
+      href={tour.watchHref}
+      target="_blank"
+      rel="noreferrer"
+      className={className}
+    >
+      {children}
+    </a>
+  );
+}
 
 export default function WorldMapClient({ tours, fullWidth, heightClassName }: WorldMapClientProps) {
   const mapRef = useRef<MapRef | null>(null);
@@ -332,12 +365,12 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
                 <p className="mt-1 text-xs text-[#6c5b49]">
                   {popupInfo.city}, {popupInfo.country}
                 </p>
-                <a
-                  href={`/videos/${popupInfo.slug}`}
+                <WorldTourWatchLink
+                  tour={popupInfo}
                   className="mt-2 inline-block text-xs font-semibold text-[#167fd5] hover:underline"
                 >
                   Watch Tour →
-                </a>
+                </WorldTourWatchLink>
               </div>
             </Popup>
           ) : null}
@@ -437,12 +470,12 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
                           ) : null}
                         </div>
                         <div className="mt-3">
-                          <a
-                            href={`/videos/${item.slug}`}
+                          <WorldTourWatchLink
+                            tour={item}
                             className="inline-flex w-full items-center justify-center rounded-full bg-[#167fd5] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0f6db9]"
                           >
                             Watch 4K Walk
-                          </a>
+                          </WorldTourWatchLink>
                         </div>
                       </div>
                     </div>
@@ -497,12 +530,12 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
                     <p className="mt-1 text-xs text-[#8a7a68]">
                       {item.city}, {item.country}
                     </p>
-                    <a
-                      href={`/videos/${item.slug}`}
+                    <WorldTourWatchLink
+                      tour={item}
                       className="mt-1 inline-block text-xs font-semibold text-[#167fd5]"
                     >
                       Watch Tour →
-                    </a>
+                    </WorldTourWatchLink>
                   </div>
                 </div>
               );

@@ -1,7 +1,12 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 import SearchFilterBar from "../../components/SearchFilterBar";
-import { franceSearchHits } from "../../data/search-hits/france";
+import {
+  getVideoWatchDestinationType,
+  getVideoWatchHref,
+} from "../../data/maps/filters";
+import { allSearchHits } from "../../data/search-hits/france";
 import type { SearchHitRecord } from "../../data/video-types";
 import { videos } from "../../data/videos/index";
 
@@ -66,6 +71,18 @@ const matchesBroadMetadata = (
   ].some((val) => matchesWord(q, val));
 };
 
+const matchesGeographicMetadata = (
+  query: string,
+  video: (typeof videos)[number]
+) => {
+  const q = normalizeSearchText(query);
+  if (!q) return false;
+
+  return [video.city, video.region, video.country].some((val) =>
+    matchesWord(q, val)
+  );
+};
+
 // Check if query matches specific landmarks in the video's highlights
 const matchesLandmarks = (
   query: string,
@@ -89,20 +106,13 @@ const matchesSearchHit = (query: string, hit: SearchHitRecord) => {
 
 // LEVEL 1: Does the query match any VIDEO-LEVEL field?
 // If yes → show card only, no timestamps.
-// Video-level = title, city, region, country, description, keywords, themes
+// Video-level = broad page-title match only. Geographic matches are handled
+// separately so landmark/highlight queries can still surface timestamps.
 const matchesVideoLevel = (query: string, video: (typeof videos)[number]) => {
   const q = normalizeSearchText(query);
   if (!q) return false;
 
-  return [
-    video.siteTitle,
-    video.city,
-    video.region,
-    video.country,
-    video.shortDescription,
-    ...video.keywords,
-    ...video.themes,
-  ].some((val) => matchesWord(q, val));
+  return matchesWord(q, video.siteTitle);
 };
 
 const matchesFilterValue = (
@@ -112,6 +122,40 @@ const matchesFilterValue = (
   if (!selectedValue) return true;
   return (videoValue ?? "") === selectedValue;
 };
+
+function SearchResultLink({
+  href,
+  isInternal,
+  className,
+  children,
+  ariaLabel,
+}: {
+  href: string;
+  isInternal: boolean;
+  className: string;
+  children: ReactNode;
+  ariaLabel?: string;
+}) {
+  if (isInternal) {
+    return (
+      <Link href={href} className={className} aria-label={ariaLabel}>
+        {children}
+      </Link>
+    );
+  }
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className={className}
+      aria-label={ariaLabel}
+    >
+      {children}
+    </a>
+  );
+}
 
 export default async function SearchPage({
   searchParams,
@@ -135,7 +179,7 @@ export default async function SearchPage({
 
   // Group highlight hits by slug
   const matchingHitsBySlug = query
-    ? franceSearchHits.reduce<Record<string, SearchHitRecord[]>>(
+    ? allSearchHits.reduce<Record<string, SearchHitRecord[]>>(
         (groups, hit) => {
           if (!matchesSearchHit(query, hit)) return groups;
           groups[hit.slug] = [...(groups[hit.slug] ?? []), hit];
@@ -165,13 +209,20 @@ export default async function SearchPage({
           );
         })
         .map((video) => {
-          // RULE 1: If the query matches city/region/country, show card
-          // without timestamps (it's a broad geographic match)
-          const isVideoLevelMatch = matchesVideoLevel(query, video);
+          // RULE 1: Geographic queries stay card-only.
+          const isGeographicMatch = matchesGeographicMetadata(query, video);
 
-          // RULE 2: Only show timestamps when the query matches a specific
-          // landmark — not when it just matches the city name
-          const hits = isVideoLevelMatch
+          // RULE 2: Broad page-title matches stay card-only unless we also
+          // have a more specific landmark/highlight match for this video.
+          const isVideoLevelMatch = matchesVideoLevel(query, video);
+          const hasSpecificMatch =
+            matchesLandmarks(query, video) ||
+            Boolean(matchingHitsBySlug[video.slug]?.length);
+
+          // RULE 3: Only suppress timestamps for broad geographic queries or
+          // title-only matches with no more specific evidence.
+          const hits =
+            isGeographicMatch || (isVideoLevelMatch && !hasSpecificMatch)
             ? []
             : (matchingHitsBySlug[video.slug] ?? []).sort(
                 (a, b) => a.seconds - b.seconds
@@ -255,81 +306,100 @@ export default async function SearchPage({
             </div>
 
             <div className="grid gap-6 lg:grid-cols-2">
-              {results.map(({ video, matchingHits }) => (
-                <article
-                  key={video.id}
-                  className="overflow-hidden rounded-[2rem] border border-[#d8c7b5] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-                >
-                  <Link
-                    href={`/videos/${video.slug}`}
-                    className="block overflow-hidden border-b border-[#eadfce]"
-                    aria-label={`View ${video.siteTitle}`}
+              {results.map(({ video, matchingHits }) => {
+                const watchHref = getVideoWatchHref(video.slug, video.youtubeUrl);
+                const isInternalWatchPage =
+                  getVideoWatchDestinationType(video.slug) === "internal-page";
+
+                return (
+                  <article
+                    key={video.id}
+                    className="overflow-hidden rounded-[2rem] border border-[#d8c7b5] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
                   >
-                    <img
-                      src={video.thumbnail}
-                      alt={video.siteTitle}
-                      className="aspect-[16/9] w-full object-cover"
-                      loading="lazy"
-                    />
-                  </Link>
-
-                  <div className="p-6">
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a735a]">
-                      {video.city}, {video.region}, {video.country}
-                    </p>
-                    <h3 className="mt-3 text-2xl font-bold tracking-tight text-[#3d3327]">
-                      {video.siteTitle}
-                    </h3>
-
-                    <div className="mt-4 flex flex-wrap gap-3 text-sm text-[#6e5a45]">
-                      <span className="rounded-full border border-[#e5d7c6] bg-[#fcfaf6] px-3 py-1.5 font-medium">
-                        {video.filmingMonthYear}
-                      </span>
-                      <span className="rounded-full border border-[#e5d7c6] bg-[#fcfaf6] px-3 py-1.5 font-medium">
-                        {video.durationLabel}
-                      </span>
-                      <span className="rounded-full border border-[#e5d7c6] bg-[#fcfaf6] px-3 py-1.5 font-medium">
-                        {video.videoType}
-                      </span>
-                    </div>
-
-                    <p className="mt-5 text-base leading-8 text-[#56493a]">
-                      {video.shortDescription}
-                    </p>
-
-                    {matchingHits.length > 0 ? (
-                      <div className="mt-6 rounded-[1.5rem] border border-[#eadfce] bg-[#fcfaf6] p-4">
-                        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a735a]">
-                          Matching Timestamps
-                        </p>
-                        <div className="mt-3 space-y-3">
-                          {matchingHits.map((hit) => (
-                            <Link
-                              key={`${hit.slug}-${hit.seconds}-${hit.highlight_title}`}
-                              href={`/videos/${hit.slug}`}
-                              className="block rounded-[1rem] border border-[#eadfce] bg-white px-4 py-3 transition hover:border-[#167fd5] hover:shadow-sm"
-                            >
-                              <p className="text-sm font-semibold text-[#167fd5]">
-                                {hit.time_label}
-                              </p>
-                              <p className="mt-1 text-sm font-semibold text-[#3d3327]">
-                                {hit.highlight_title}
-                              </p>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ) : null}
-
-                    <Link
-                      href={`/videos/${video.slug}`}
-                      className="mt-6 inline-flex items-center justify-center rounded-full bg-[#167fd5] px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#09679e]"
+                    <SearchResultLink
+                      href={watchHref}
+                      isInternal={isInternalWatchPage}
+                      className="block overflow-hidden border-b border-[#eadfce]"
+                      ariaLabel={`View ${video.siteTitle}`}
                     >
-                      View video
-                    </Link>
-                  </div>
-                </article>
-              ))}
+                      <img
+                        src={video.thumbnail}
+                        alt={video.siteTitle}
+                        className="aspect-[16/9] w-full object-cover"
+                        loading="lazy"
+                      />
+                    </SearchResultLink>
+
+                    <div className="p-6">
+                      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a735a]">
+                        {video.city}, {video.region}, {video.country}
+                      </p>
+                      <h3 className="mt-3 text-2xl font-bold tracking-tight text-[#3d3327]">
+                        {video.siteTitle}
+                      </h3>
+
+                      <div className="mt-4 flex flex-wrap gap-3 text-sm text-[#6e5a45]">
+                        <span className="rounded-full border border-[#e5d7c6] bg-[#fcfaf6] px-3 py-1.5 font-medium">
+                          {video.filmingMonthYear}
+                        </span>
+                        <span className="rounded-full border border-[#e5d7c6] bg-[#fcfaf6] px-3 py-1.5 font-medium">
+                          {video.durationLabel}
+                        </span>
+                        <span className="rounded-full border border-[#e5d7c6] bg-[#fcfaf6] px-3 py-1.5 font-medium">
+                          {video.videoType}
+                        </span>
+                      </div>
+
+                      <p className="mt-5 text-base leading-8 text-[#56493a]">
+                        {video.shortDescription}
+                      </p>
+
+                      {matchingHits.length > 0 ? (
+                        <div className="mt-6 rounded-[1.5rem] border border-[#eadfce] bg-[#fcfaf6] p-4">
+                          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a735a]">
+                            Matching Timestamps
+                          </p>
+                          <div className="mt-3 space-y-3">
+                            {matchingHits.map((hit) => {
+                              const hitHref = getVideoWatchHref(
+                                hit.slug,
+                                hit.youtube_url
+                              );
+                              const isInternalHit =
+                                getVideoWatchDestinationType(hit.slug) ===
+                                "internal-page";
+
+                              return (
+                                <SearchResultLink
+                                  key={`${hit.slug}-${hit.seconds}-${hit.highlight_title}`}
+                                  href={hitHref}
+                                  isInternal={isInternalHit}
+                                  className="block rounded-[1rem] border border-[#eadfce] bg-white px-4 py-3 transition hover:border-[#167fd5] hover:shadow-sm"
+                                >
+                                  <p className="text-sm font-semibold text-[#167fd5]">
+                                    {hit.time_label}
+                                  </p>
+                                  <p className="mt-1 text-sm font-semibold text-[#3d3327]">
+                                    {hit.highlight_title}
+                                  </p>
+                                </SearchResultLink>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      ) : null}
+
+                      <SearchResultLink
+                        href={watchHref}
+                        isInternal={isInternalWatchPage}
+                        className="mt-6 inline-flex items-center justify-center rounded-full bg-[#167fd5] px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#09679e]"
+                      >
+                        View video
+                      </SearchResultLink>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           </div>
         )}

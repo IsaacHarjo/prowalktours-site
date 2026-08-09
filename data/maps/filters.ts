@@ -5,6 +5,7 @@ import type {
   ExploreMapVideoType,
   ExploreMapWatchDestinationType,
 } from "./types";
+import { videos } from "../videos";
 
 const VIDEO_TYPE_ORDER: readonly ExploreMapVideoType[] = [
   "day-walk",
@@ -36,6 +37,16 @@ const INTERNAL_WALK_PAGE_BY_TOUR_ID: Record<string, string> = {
   "it-0091": "/videos/naples-night-walk-2025",
   "it-0092": "/videos/naples-daytime-walk-2023",
 };
+
+const EXTERNAL_ONLY_VIDEO_SLUGS = new Set([
+  "paris-day-walk-with-music-2017",
+]);
+
+const LIVE_INTERNAL_VIDEO_SLUGS = new Set(
+  videos
+    .map((video) => video.slug)
+    .filter((slug) => !EXTERNAL_ONLY_VIDEO_SLUGS.has(slug))
+);
 
 const CURATED_THEME_FILTERS = [
   {
@@ -184,10 +195,24 @@ export function getMapDisplayTitle(title: string) {
     .trim();
 }
 
+export function hasLiveInternalVideoPage(slug: string) {
+  return LIVE_INTERNAL_VIDEO_SLUGS.has(slug);
+}
+
+export function getVideoWatchDestinationType(
+  slug: string
+): ExploreMapWatchDestinationType {
+  return hasLiveInternalVideoPage(slug) ? "internal-page" : "youtube";
+}
+
+export function getVideoWatchHref(slug: string, youtubeUrl: string) {
+  return hasLiveInternalVideoPage(slug) ? `/videos/${slug}` : youtubeUrl;
+}
+
 export function hasInternalMapWatchPage(feature: ExploreMapFeature) {
   return (
     Boolean(INTERNAL_WALK_PAGE_BY_TOUR_ID[feature.tourId]) ||
-    feature.href.startsWith("/videos/")
+    hasLiveInternalVideoPage(feature.slug)
   );
 }
 
@@ -201,10 +226,7 @@ export function getMapWatchHref(feature: ExploreMapFeature) {
   if (INTERNAL_WALK_PAGE_BY_TOUR_ID[feature.tourId]) {
     return INTERNAL_WALK_PAGE_BY_TOUR_ID[feature.tourId];
   }
-  if (feature.href.startsWith("/videos/")) {
-    return feature.href;
-  }
-  return feature.youtubeUrl;
+  return getVideoWatchHref(feature.slug, feature.youtubeUrl);
 }
 
 export function filterExploreMapFeatures(

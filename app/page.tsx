@@ -5,6 +5,10 @@ import Link from "next/link";
 import LiveSearchBar from "../components/LiveSearchBar";
 import ThumbnailImg from "../components/ThumbnailImg";
 import WorldMapClient from "../components/WorldMapClient";
+import {
+  getVideoWatchDestinationType,
+  getVideoWatchHref,
+} from "../data/maps/filters";
 import { videos } from "../data/videos/index";
 
 // ─── Load world tour data from all_tours.csv at build time ───────────────────
@@ -91,6 +95,8 @@ function loadWorldTours() {
         filmedYear: filmedYear && !isNaN(filmedYear) ? filmedYear : null,
         durationLabel,
         youtubeUrl: ytUrl,
+        watchHref: getVideoWatchHref(slug, ytUrl),
+        watchDestinationType: getVideoWatchDestinationType(slug),
         latitude: lat,
         longitude: lng,
         countryIndex: COUNTRY_INDICES[country] ?? 0,

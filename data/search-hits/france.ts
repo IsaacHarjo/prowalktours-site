@@ -5,7 +5,7 @@ import path from "node:path";
 
 import type { SearchHitRecord } from "../video-types";
 
-type FranceHighlightCsvRow = {
+type HighlightCsvRow = {
   tour_id: string;
   slug: string;
   title: string;
@@ -89,12 +89,12 @@ function getCsvRows() {
 
   for (const column of REQUIRED_COLUMNS) {
     if (!headers.has(column)) {
-      throw new Error(`Missing required France highlights CSV column: ${column}`);
+      throw new Error(`Missing required search highlights CSV column: ${column}`);
     }
   }
 
   return dataRows.map((row) => {
-    const record = {} as FranceHighlightCsvRow;
+    const record = {} as HighlightCsvRow;
 
     for (const column of REQUIRED_COLUMNS) {
       record[column] = row[headers.get(column) ?? -1] ?? "";
@@ -111,7 +111,7 @@ function toSearchTerms(value: string) {
     .filter(Boolean);
 }
 
-function toSearchHitRecord(row: FranceHighlightCsvRow): SearchHitRecord | null {
+function toSearchHitRecord(row: HighlightCsvRow): SearchHitRecord | null {
   const seconds = Number.parseInt(row.seconds, 10);
 
   if (!row.slug.trim() || !row.youtube_url.trim() || Number.isNaN(seconds)) {
@@ -131,6 +131,8 @@ function toSearchHitRecord(row: FranceHighlightCsvRow): SearchHitRecord | null {
   };
 }
 
-export const franceSearchHits: SearchHitRecord[] = getCsvRows()
+export const allSearchHits: SearchHitRecord[] = getCsvRows()
   .map(toSearchHitRecord)
   .filter((row): row is SearchHitRecord => row !== null);
+
+export const franceSearchHits = allSearchHits;
