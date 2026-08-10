@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import StrasbourgChristmasMarketDayWalk2023Client from "./StrasbourgChristmasMarketDayWalk2023Client";
+import { strasbourgChristmasMarketDayWalk2023Detail } from "../../../data/video-details/strasbourg-christmas-market-day-walk-2023";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/strasbourg-christmas-market-day-walk-2023`;
@@ -8,6 +11,10 @@ const heroImagePath = "/strasbourg-christmas-market-day-walk-2023/hero.jpg";
 const ogImageUrl = `${siteUrl}${heroImagePath}`;
 const metadataTitle = "Strasbourg, France Christmas Market Day Walk (2023)";
 const metadataDescription = "Strasbourg, France Christmas Market Day Walk in 4K. This daytime walk through Strasbourg’s Christmas markets moves through both the historic center and .";
+
+const videoRecord = franceVideos.find(
+  (video) => video.slug === "strasbourg-christmas-market-day-walk-2023"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -44,12 +51,27 @@ export default function Page() {
     uploadDate: "2023-12-03",
     duration: "PT2H19M1S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: strasbourgChristmasMarketDayWalk2023Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script id="strasbourg-christmas-market-day-walk-2023-bc-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
-      <Script id="strasbourg-christmas-market-day-walk-2023-video-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(breadcrumbStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(videoStructuredData),
+        }}
+      />
       <StrasbourgChristmasMarketDayWalk2023Client />
     </>
   );

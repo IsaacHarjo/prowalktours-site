@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import RibeauvilleDayWalk2025Client from "./RibeauvilleDayWalk2025Client";
+import { ribeauvilleDayWalk2025Detail } from "../../../data/video-details/ribeauville-day-walk-2025";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/ribeauville-day-walk-2025`;
@@ -8,6 +11,10 @@ const heroImagePath = "/ribeauville-day-walk-2025/hero.jpg";
 const ogImageUrl = `${siteUrl}${heroImagePath}`;
 const metadataTitle = "Ribeauvillé, France Medieval Christmas Market Walk (2025)";
 const metadataDescription = "Ribeauvillé, France Medieval Christmas Market Walk in 4K. This walk explores the Ribeauvillé Medieval Christmas Market, one of the most distinctive holi...";
+
+const videoRecord = franceVideos.find(
+  (video) => video.slug === "ribeauville-day-walk-2025"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -44,12 +51,27 @@ export default function Page() {
     uploadDate: "2025-12-13",
     duration: "PT2H18M24S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: ribeauvilleDayWalk2025Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script id="ribeauville-day-walk-2025-bc-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
-      <Script id="ribeauville-day-walk-2025-video-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(breadcrumbStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(videoStructuredData),
+        }}
+      />
       <RibeauvilleDayWalk2025Client />
     </>
   );

@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import VancouverBikeTour2025Client from "./VancouverBikeTour2025Client";
+import { vancouverBikeTour2025Detail } from "../../../data/video-details/vancouver-bike-tour-2025";
+import { canadaVideos } from "../../../data/videos/canada";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = "https://www.prowalktours.com/videos/vancouver-bike-tour-2025";
 const ogImageUrl = "https://img.youtube.com/vi/dfWwFF4h5Sk/maxresdefault.jpg";
 const metadataTitle = "Vancouver Seawall & Downtown Bike Tour (2025) | 45 Miles Through Stanley Park & Kitsilano";
 const metadataDescription = "Ride 45 miles through Vancouver in this 4K bike tour from Canada Place around Stanley Park, the False Creek Seawall, Kitsilano, Gastown, and downtown.";
+
+const videoRecord = canadaVideos.find(
+  (video) => video.slug === "vancouver-bike-tour-2025"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -42,11 +49,26 @@ export default function VancouverBikeTour2025Page() {
     uploadDate: "2025-04-04",
     duration: "PT4H16M47S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: vancouverBikeTour2025Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
   return (
     <>
-      <Script id="vancouver-bike-breadcrumb-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
-      <Script id="vancouver-bike-video-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(breadcrumbStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(videoStructuredData),
+        }}
+      />
       <VancouverBikeTour2025Client />
     </>
   );

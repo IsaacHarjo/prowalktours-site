@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import AntibesDaytimeWalk2025Client from "./AntibesDaytimeWalk2025Client";
+import { antibesDaytimeWalk2025Detail } from "../../../data/video-details/antibes-daytime-walk-2025";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/antibes-daytime-walk-2025`;
@@ -10,6 +13,10 @@ const metadataTitle =
   "Antibes, France Walking Tour | Old Town, Picasso Museum, Market and Seafront";
 const metadataDescription =
   "Antibes, France 4K walking tour: Old Town, waterfront promenade, marina, market streets, and beaches along the Côte d'Azur.";
+
+const videoRecord = franceVideos.find(
+  (video) => video.slug === "antibes-daytime-walk-2025"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -54,22 +61,25 @@ export default function AntibesDaytimeWalk2025Page() {
     uploadDate: "2025-09-12",
     duration: "PT2H16M36S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: antibesDaytimeWalk2025Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script
-        id="antibes-breadcrumb-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbStructuredData),
+          __html: stringifyJsonLd(breadcrumbStructuredData),
         }}
       />
-      <Script
-        id="antibes-video-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(videoStructuredData),
+          __html: stringifyJsonLd(videoStructuredData),
         }}
       />
       <AntibesDaytimeWalk2025Client />

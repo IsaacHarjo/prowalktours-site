@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import ParisLuxemburgGardensDayWalk2020Client from "./ParisLuxemburgGardensDayWalk2020Client";
+import { parisLuxemburgGardensDayWalk2020Detail } from "../../../data/video-details/paris-luxemburg-gardens-day-walk-2020";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/paris-luxemburg-gardens-day-walk-2020`;
@@ -10,6 +13,10 @@ const metadataTitle =
   "Paris Luxembourg Gardens Walk (2020) | Grand Basin, Palais du Luxembourg";
 const metadataDescription =
   "Paris Luxembourg Gardens walk in 4K: Grand Basin sailboats, Statue of Liberty, Orangerie du S\u00e9nat, rose garden, and Palais du Luxembourg.";
+
+const videoRecord = franceVideos.find(
+  (video) => video.slug === "paris-luxemburg-gardens-day-walk-2020"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -47,12 +54,27 @@ export default function ParisLuxemburgGardensDayWalk2020Page() {
     uploadDate: "2020-07-19",
     duration: "PT29M9S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: parisLuxemburgGardensDayWalk2020Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script id="luxembourg-gardens-breadcrumb-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
-      <Script id="luxembourg-gardens-video-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(breadcrumbStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(videoStructuredData),
+        }}
+      />
       <ParisLuxemburgGardensDayWalk2020Client />
     </>
   );

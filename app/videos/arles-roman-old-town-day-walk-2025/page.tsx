@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import ArlesRomanOldTownDayWalk2025Client from "./ArlesRomanOldTownDayWalk2025Client";
+import { arlesRomanOldTownDayWalk2025Detail } from "../../../data/video-details/arles-roman-old-town-day-walk-2025";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/arles-roman-old-town-day-walk-2025`;
@@ -9,6 +12,10 @@ const metadataTitle =
   "Arles, France Walking Tour (2025) | Roman Amphitheatre, Old Town & Wednesday Market | Prowalk Tours";
 const metadataDescription =
   "Walk through Arles, France \u2014 a UNESCO World Heritage city with 2,000 years of Roman and medieval history. See the Roman Amphitheatre, Theatre Antique, Cloitre Saint-Trophime, Cryptoportiques, Place du Forum, Baths of Constantine, and the famous Wednesday outdoor market on Boulevard des Lices. 4K walking tour, 3 hours 11 minutes, filmed September 2025.";
+
+const videoRecord = franceVideos.find(
+  (video) => video.slug === "arles-roman-old-town-day-walk-2025"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -52,22 +59,25 @@ export default function ArlesRomanOldTownDayWalk2025Page() {
     uploadDate: "2025-10-04",
     duration: "PT3H11M12S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: arlesRomanOldTownDayWalk2025Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script
-        id="arles-breadcrumb-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbStructuredData),
+          __html: stringifyJsonLd(breadcrumbStructuredData),
         }}
       />
-      <Script
-        id="arles-video-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(videoStructuredData),
+          __html: stringifyJsonLd(videoStructuredData),
         }}
       />
       <ArlesRomanOldTownDayWalk2025Client />

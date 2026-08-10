@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import NaplesDaytimeWalk2023Client from "./NaplesDaytimeWalk2023Client";
+import { naplesDaytimeWalk2023Detail } from "../../../data/video-details/naples-daytime-walk-2023";
+import { italyVideos } from "../../../data/videos/italy";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/naples-daytime-walk-2023`;
 const metadataDescription =
   "Naples Italy 4K walking tour: historic city center, Spaccanapoli, Piazza del Plebiscito, and sweeping bay views. Filmed July 2023. 5h 45m.";
+
+const videoRecord = italyVideos.find(
+  (video) => video.slug === "naples-daytime-walk-2023"
+);
 
 export const metadata: Metadata = {
   title: "Naples Italy 4K Walking Tour | Naples, Campania, Italy (2023)",
@@ -92,23 +99,26 @@ const videoStructuredData = {
     name: "Prowalk Tours",
     url: siteUrl,
   },
-};
+    hasPart: buildVideoClips({
+      highlights: naplesDaytimeWalk2023Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
+  };
 
 export default function NaplesDaytimeWalk2023Page() {
   return (
     <>
-      <Script
-        id="breadcrumb-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbStructuredData),
+          __html: stringifyJsonLd(breadcrumbStructuredData),
         }}
       />
-      <Script
-        id="video-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(videoStructuredData),
+          __html: stringifyJsonLd(videoStructuredData),
         }}
       />
       <NaplesDaytimeWalk2023Client />

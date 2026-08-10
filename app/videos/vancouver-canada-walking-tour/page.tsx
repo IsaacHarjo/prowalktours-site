@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import VancouverCanadaWalkingTourClient from "./VancouverCanadaWalkingTourClient";
+import { vancouverCanadaWalkingTourDetail } from "../../../data/video-details/vancouver-canada-walking-tour";
+import { canadaVideos } from "../../../data/videos/canada";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = "https://www.prowalktours.com/videos/vancouver-canada-walking-tour";
@@ -10,6 +13,10 @@ const metadataTitle =
   "Vancouver, Canada Walking Tour | Stanley Park, Kitsilano, Downtown & Gastown";
 const metadataDescription =
   "Explore Vancouver in this 4K walking tour from Stanley Park and Kitsilano Beach through False Creek, downtown, Gastown, and Canada Place.";
+
+const videoRecord = canadaVideos.find(
+  (video) => video.slug === "vancouver-canada-walking-tour"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -73,22 +80,25 @@ export default function VancouverCanadaWalkingTourPage() {
     uploadDate: "2018-07-29",
     duration: "PT3H52M12S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: vancouverCanadaWalkingTourDetail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script
-        id="vancouver-walking-breadcrumb-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbStructuredData),
+          __html: stringifyJsonLd(breadcrumbStructuredData),
         }}
       />
-      <Script
-        id="vancouver-walking-video-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(videoStructuredData),
+          __html: stringifyJsonLd(videoStructuredData),
         }}
       />
       <VancouverCanadaWalkingTourClient />

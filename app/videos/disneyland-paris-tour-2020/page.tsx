@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import DisneylandParisTour2020Client from "./DisneylandParisTour2020Client";
+import { disneylandParisTour2020Detail } from "../../../data/video-details/disneyland-paris-tour-2020";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/disneyland-paris-tour-2020`;
@@ -8,6 +11,10 @@ const heroImagePath = "/disneyland-paris-tour-2020/hero.jpg";
 const ogImageUrl = `${siteUrl}${heroImagePath}`;
 const metadataTitle = "Disneyland, Paris 4K Tour (2020)";
 const metadataDescription = "Disneyland, Paris 4K Tour in 4K. This tour explores Disneyland Paris across multiple themed lands, attractions, and character moments.";
+
+const videoRecord = franceVideos.find(
+  (video) => video.slug === "disneyland-paris-tour-2020"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -45,12 +52,27 @@ export default function Page() {
     uploadDate: "2020-07-20",
     duration: "PT3H2M24S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: disneylandParisTour2020Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script id="disneyland-paris-tour-2020-bc-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
-      <Script id="disneyland-paris-tour-2020-video-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(breadcrumbStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(videoStructuredData),
+        }}
+      />
       <DisneylandParisTour2020Client />
     </>
   );

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import ParisLandmarksDayWalk2020Client from "./ParisLandmarksDayWalk2020Client";
+import { parisLandmarksDayWalk2020Detail } from "../../../data/video-details/paris-landmarks-day-walk-2020";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/paris-landmarks-day-walk-2020`;
@@ -10,6 +13,10 @@ const metadataTitle =
   "Paris, France Day Walk (2020) | Panth\u00e9on, Louvre, Champs-\u00c9lys\u00e9es, Eiffel Tower";
 const metadataDescription =
   "Paris day walk in 4K: Rue Mouffetard, Panth\u00e9on, Luxembourg Gardens, Notre-Dame, the Louvre, Champs-\u00c9lys\u00e9es, Arc de Triomphe, and the Eiffel Tower.";
+
+const videoRecord = franceVideos.find(
+  (video) => video.slug === "paris-landmarks-day-walk-2020"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -82,22 +89,25 @@ export default function ParisLandmarksDayWalk2020Page() {
     uploadDate: "2020-07-19",
     duration: "PT5H38M18S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: parisLandmarksDayWalk2020Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script
-        id="paris-landmarks-breadcrumb-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbStructuredData),
+          __html: stringifyJsonLd(breadcrumbStructuredData),
         }}
       />
-      <Script
-        id="paris-landmarks-video-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(videoStructuredData),
+          __html: stringifyJsonLd(videoStructuredData),
         }}
       />
       <ParisLandmarksDayWalk2020Client />

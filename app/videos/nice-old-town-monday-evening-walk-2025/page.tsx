@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import NiceOldTownMondayEveningWalk2025Client from "./NiceOldTownMondayEveningWalk2025Client";
+import { niceOldTownMondayEveningWalk2025Detail } from "../../../data/video-details/nice-old-town-monday-evening-walk-2025";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/nice-old-town-monday-evening-walk-2025`;
@@ -10,6 +13,10 @@ const metadataTitle =
   "Nice, France Evening Walk (2025) | Place Masséna, Vieux Nice, Cours Saleya";
 const metadataDescription =
   "Nice evening walk in 4K: Place Masséna, Vieux Nice old town, Cours Saleya, and the French Riviera waterfront at dusk.";
+
+const videoRecord = franceVideos.find(
+  (video) => video.slug === "nice-old-town-monday-evening-walk-2025"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -82,22 +89,25 @@ export default function NiceOldTownMondayEveningWalk2025Page() {
     uploadDate: "2025-09-08",
     duration: "PT1H30M55S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: niceOldTownMondayEveningWalk2025Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script
-        id="nice-evening-walk-breadcrumb-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbStructuredData),
+          __html: stringifyJsonLd(breadcrumbStructuredData),
         }}
       />
-      <Script
-        id="nice-evening-walk-video-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(videoStructuredData),
+          __html: stringifyJsonLd(videoStructuredData),
         }}
       />
       <NiceOldTownMondayEveningWalk2025Client />

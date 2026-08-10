@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import ParisLandmarksDayWalk2017Client from "./ParisLandmarksDayWalk2017Client";
+import { parisLandmarksDayWalk2017Detail } from "../../../data/video-details/paris-landmarks-day-walk-2017";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/paris-landmarks-day-walk-2017`;
@@ -10,6 +13,10 @@ const metadataTitle =
   "Paris, France Landmarks Day Walk (2017) | Louvre, Notre-Dame, Eiffel Tower, Arc de Triomphe";
 const metadataDescription =
   "Paris landmarks day walk in HD: the Louvre, Notre-Dame, Champs-\u00c9lys\u00e9es, Arc de Triomphe, the Eiffel Tower, Les Invalides, and Paris old streets.";
+
+const videoRecord = franceVideos.find(
+  (video) => video.slug === "paris-landmarks-day-walk-2017"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -47,12 +54,27 @@ export default function ParisLandmarksDayWalk2017Page() {
     uploadDate: "2017-08-05",
     duration: "PT3H8M7S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: parisLandmarksDayWalk2017Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script id="paris-2017-breadcrumb-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
-      <Script id="paris-2017-video-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(breadcrumbStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(videoStructuredData),
+        }}
+      />
       <ParisLandmarksDayWalk2017Client />
     </>
   );

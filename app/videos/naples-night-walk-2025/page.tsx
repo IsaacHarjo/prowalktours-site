@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import NaplesNightWalk2025Client from "./NaplesNightWalk2025Client";
+import { naplesNightWalk2025Detail } from "../../../data/video-details/naples-night-walk-2025";
+import { italyVideos } from "../../../data/videos/italy";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/naples-night-walk-2025`;
@@ -11,6 +14,10 @@ const metadataTitle =
 const metadataDescription =
   "Naples night walk in 4K: Via Toledo, Spanish Quarter, Galleria Umberto I, Piazza del Plebiscito, and the waterfront to Castel dell'Ovo.";
 const youtubeVideoId = "Cv1zIRhxvHU";
+
+const videoRecord = italyVideos.find(
+  (video) => video.slug === "naples-night-walk-2025"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -89,22 +96,25 @@ export default function NaplesNightWalk2025Page() {
     embedUrl: `https://www.youtube.com/embed/${youtubeVideoId}`,
     contentUrl: "https://youtu.be/Cv1zIRhxvHU",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: naplesNightWalk2025Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script
-        id="naples-night-walk-breadcrumb-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbStructuredData),
+          __html: stringifyJsonLd(breadcrumbStructuredData),
         }}
       />
-      <Script
-        id="naples-night-walk-video-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(videoStructuredData),
+          __html: stringifyJsonLd(videoStructuredData),
         }}
       />
       <NaplesNightWalk2025Client />

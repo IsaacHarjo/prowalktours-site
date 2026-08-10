@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { italyVideos } from "../../../data/videos/italy";
 import NaplesBikeTour2020Client from "./NaplesBikeTour2020Client";
+import { naplesBikeTour2020Detail } from "../../../data/video-details/naples-bike-tour-2020";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/naples-bike-tour-2020`;
 const bikeVideo = italyVideos.find(v => v.slug === "naples-bike-tour-2020");
+const videoRecord = bikeVideo;
 const youtubeUrl = bikeVideo?.youtubeUrl ?? "https://youtu.be/IHXZnU2bmc8";
 const youtubeVideoId = youtubeUrl.split("/").pop() ?? "IHXZnU2bmc8";
 const ogImageUrl = bikeVideo?.thumbnail ?? `https://i.ytimg.com/vi/${youtubeVideoId}/maxresdefault.jpg`;
@@ -38,7 +41,12 @@ const videoStructuredData = {
   uploadDate: "2020-05-23",
   duration: "PT1H54M",
   url: pageUrl,
-};
+    hasPart: buildVideoClips({
+      highlights: naplesBikeTour2020Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
+  };
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -62,18 +70,16 @@ export const metadata: Metadata = {
 export default function NaplesBikeTour2020Page() {
   return (
     <>
-      <Script
-        id="naples-bike-tour-breadcrumb-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbStructuredData),
+          __html: stringifyJsonLd(breadcrumbStructuredData),
         }}
       />
-      <Script
-        id="naples-bike-tour-video-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(videoStructuredData),
+          __html: stringifyJsonLd(videoStructuredData),
         }}
       />
       <NaplesBikeTour2020Client />

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import DresdenChristmasMarketEveningWalk2024Client from "./DresdenChristmasMarketEveningWalk2024Client";
+import { dresdenChristmasMarketEveningWalk2024Detail } from "../../../data/video-details/dresden-christmas-market-evening-walk-2024";
+import { germanyVideos } from "../../../data/videos/germany";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/dresden-christmas-market-evening-walk-2024`;
@@ -8,6 +11,10 @@ const heroImagePath = "/dresden-christmas-market-evening-walk-2024/hero.jpg";
 const ogImageUrl = `${siteUrl}${heroImagePath}`;
 const metadataTitle = "Dresden, Germany Christmas Market Evening Walk (2024)";
 const metadataDescription = "Dresden, Germany Christmas Market Evening Walk in 4K. Join me for a peaceful evening walking tour through Dresden’s Christmas markets.";
+
+const videoRecord = germanyVideos.find(
+  (video) => video.slug === "dresden-christmas-market-evening-walk-2024"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -44,12 +51,27 @@ export default function Page() {
     uploadDate: "2024-12-06",
     duration: "PT1H34M36S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: dresdenChristmasMarketEveningWalk2024Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script id="dresden-christmas-market-evening-walk-2024-bc-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
-      <Script id="dresden-christmas-market-evening-walk-2024-video-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(breadcrumbStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(videoStructuredData),
+        }}
+      />
       <DresdenChristmasMarketEveningWalk2024Client />
     </>
   );

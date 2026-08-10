@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import GranvilleIslandWalkingTourVancouverClient from "./GranvilleIslandWalkingTourVancouverClient";
+import { granvilleIslandWalkingTourVancouverDetail } from "../../../data/video-details/granville-island-walking-tour-vancouver";
+import { canadaVideos } from "../../../data/videos/canada";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = "https://www.prowalktours.com/videos/granville-island-walking-tour-vancouver";
 const ogImageUrl = "https://img.youtube.com/vi/fyQqc6cZNA8/maxresdefault.jpg";
 const metadataTitle = "Granville Island Walking Tour | Public Market, Boardwalks & Boat Yards — Vancouver";
 const metadataDescription = "Explore Granville Island in this 4K walking tour through the Public Market, waterfront boardwalks, Ron Basford Park, and the boat yards in Vancouver.";
+
+const videoRecord = canadaVideos.find(
+  (video) => video.slug === "granville-island-walking-tour-vancouver"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -42,11 +49,26 @@ export default function GranvilleIslandWalkingTourVancouverPage() {
     uploadDate: "2025-07-28",
     duration: "PT46M44S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: granvilleIslandWalkingTourVancouverDetail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
   return (
     <>
-      <Script id="granville-island-breadcrumb-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
-      <Script id="granville-island-video-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(breadcrumbStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(videoStructuredData),
+        }}
+      />
       <GranvilleIslandWalkingTourVancouverClient />
     </>
   );

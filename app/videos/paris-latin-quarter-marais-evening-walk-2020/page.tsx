@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import ParisLatinQuarterMaraisEveningWalk2020Client from "./ParisLatinQuarterMaraisEveningWalk2020Client";
+import { parisLatinQuarterMaraisEveningWalk2020Detail } from "../../../data/video-details/paris-latin-quarter-marais-evening-walk-2020";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/paris-latin-quarter-marais-evening-walk-2020`;
@@ -10,6 +13,10 @@ const metadataTitle =
   "Paris Latin Quarter & Marais Evening Walk | Paris, France (2020)";
 const metadataDescription =
   "Paris Latin Quarter & Marais evening walk in 4K: Place Saint-Michel, Rue des Rosiers, Bastille, and a night bike ride past H\u00F4tel de Ville and the Louvre.";
+
+const videoRecord = franceVideos.find(
+  (video) => video.slug === "paris-latin-quarter-marais-evening-walk-2020"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -79,22 +86,25 @@ export default function ParisLatinQuarterMaraisEveningWalk2020Page() {
     uploadDate: "2020-07-18",
     duration: "PT1H6M13S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: parisLatinQuarterMaraisEveningWalk2020Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script
-        id="paris-latin-quarter-breadcrumb-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbStructuredData),
+          __html: stringifyJsonLd(breadcrumbStructuredData),
         }}
       />
-      <Script
-        id="paris-latin-quarter-video-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(videoStructuredData),
+          __html: stringifyJsonLd(videoStructuredData),
         }}
       />
       <ParisLatinQuarterMaraisEveningWalk2020Client />

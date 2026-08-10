@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import ParisCatacombsTour2020Client from "./ParisCatacombsTour2020Client";
+import { parisCatacombsTour2020Detail } from "../../../data/video-details/paris-catacombs-tour-2020";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/paris-catacombs-tour-2020`;
@@ -9,6 +12,10 @@ const ogImageUrl = `${siteUrl}${heroImagePath}`;
 const metadataTitle = "Paris Catacombs Tour | Paris, France (2020)";
 const metadataDescription =
   "Explore the Paris Catacombs in this 4K tour through the entrance, underground ossuary, stacked bones and skulls, and one of Paris's most unusual historic sites.";
+
+const videoRecord = franceVideos.find(
+  (video) => video.slug === "paris-catacombs-tour-2020"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -78,22 +85,25 @@ export default function ParisCatacombsTour2020Page() {
     uploadDate: "2020-07-19",
     duration: "PT22M59S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: parisCatacombsTour2020Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script
-        id="paris-catacombs-breadcrumb-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbStructuredData),
+          __html: stringifyJsonLd(breadcrumbStructuredData),
         }}
       />
-      <Script
-        id="paris-catacombs-video-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(videoStructuredData),
+          __html: stringifyJsonLd(videoStructuredData),
         }}
       />
       <ParisCatacombsTour2020Client />

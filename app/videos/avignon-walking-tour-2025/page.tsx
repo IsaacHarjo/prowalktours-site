@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import AvignonWalkingTour2025Client from "./AvignonWalkingTour2025Client";
+import { avignonWalkingTour2025Detail } from "../../../data/video-details/avignon-walking-tour-2025";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/avignon-walking-tour-2025`;
@@ -10,6 +13,10 @@ const metadataTitle =
   "Avignon, France Walking Tour | Palace of the Popes, Old Town, Pont d'Avignon";
 const metadataDescription =
   "Avignon, France 4K walking tour: Palace of the Popes, Pont Saint-Bénézet, city ramparts, Les Halles, and the historic streets of Old Town.";
+
+const videoRecord = franceVideos.find(
+  (video) => video.slug === "avignon-walking-tour-2025"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -54,22 +61,25 @@ export default function AvignonWalkingTour2025Page() {
     uploadDate: "2025-09-18",
     duration: "PT2H23M39S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: avignonWalkingTour2025Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script
-        id="avignon-breadcrumb-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbStructuredData),
+          __html: stringifyJsonLd(breadcrumbStructuredData),
         }}
       />
-      <Script
-        id="avignon-video-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(videoStructuredData),
+          __html: stringifyJsonLd(videoStructuredData),
         }}
       />
       <AvignonWalkingTour2025Client />

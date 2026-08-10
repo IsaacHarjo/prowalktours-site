@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import StanleyParkSeawallWalkVancouverClient from "./StanleyParkSeawallWalkVancouverClient";
+import { stanleyParkSeawallWalkVancouverDetail } from "../../../data/video-details/stanley-park-seawall-walk-vancouver";
+import { canadaVideos } from "../../../data/videos/canada";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = "https://www.prowalktours.com/videos/stanley-park-seawall-walk-vancouver";
 const ogImageUrl = "https://img.youtube.com/vi/uN7UkfKc-_w/maxresdefault.jpg";
 const metadataTitle = "Stanley Park Seawall Walking Tour | Full Loop — Vancouver BC";
 const metadataDescription = "Walk the full Stanley Park Seawall loop in this 4K walking tour featuring waterfront views, beaches, sculptures, and the Lions Gate Bridge in Vancouver, British Columbia.";
+
+const videoRecord = canadaVideos.find(
+  (video) => video.slug === "stanley-park-seawall-walk-vancouver"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -42,11 +49,26 @@ export default function StanleyParkSeawallWalkVancouverPage() {
     uploadDate: "2018-07-29",
     duration: "PT2H4M52S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: stanleyParkSeawallWalkVancouverDetail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
   return (
     <>
-      <Script id="stanley-park-breadcrumb-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
-      <Script id="stanley-park-video-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(breadcrumbStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(videoStructuredData),
+        }}
+      />
       <StanleyParkSeawallWalkVancouverClient />
     </>
   );

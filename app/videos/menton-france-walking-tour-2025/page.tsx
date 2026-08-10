@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import MentonFranceWalkingTour2025Client from "./MentonFranceWalkingTour2025Client";
+import { mentonFranceWalkingTour2025Detail } from "../../../data/video-details/menton-france-walking-tour-2025";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = "https://www.prowalktours.com/videos/menton-france-walking-tour-2025";
+const mentonVideo = franceVideos.find(
+  (video) => video.slug === "menton-france-walking-tour-2025"
+);
 const ogImageUrl =
   "https://www.prowalktours.com/menton-france-walking-tour-2025/menton-hero-image.jpg";
 const metadataTitle =
@@ -79,22 +85,25 @@ export default function MentonFranceWalkingTour2025Page() {
     uploadDate: "2025-09-09",
     duration: "PT1H51M10S",
     url: pageUrl,
+    hasPart: buildVideoClips({
+      highlights: mentonFranceWalkingTour2025Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: mentonVideo?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script
-        id="menton-breadcrumb-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbStructuredData),
+          __html: stringifyJsonLd(breadcrumbStructuredData),
         }}
       />
-      <Script
-        id="menton-video-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(videoStructuredData),
+          __html: stringifyJsonLd(videoStructuredData),
         }}
       />
       <MentonFranceWalkingTour2025Client />

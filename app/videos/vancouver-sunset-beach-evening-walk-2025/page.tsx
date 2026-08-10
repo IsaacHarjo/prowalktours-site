@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import VancouverSunsetBeachEveningWalk2025Client from "./VancouverSunsetBeachEveningWalk2025Client";
+import { vancouverSunsetBeachEveningWalk2025Detail } from "../../../data/video-details/vancouver-sunset-beach-evening-walk-2025";
+import { canadaVideos } from "../../../data/videos/canada";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = "https://www.prowalktours.com/videos/vancouver-sunset-beach-evening-walk-2025";
 const ogImageUrl = "https://img.youtube.com/vi/KQaXN949DW8/maxresdefault.jpg";
 const metadataTitle = "Vancouver Sunset Beach Evening Walk (2025) | English Bay to Granville Island";
 const metadataDescription = "An evening walk along Vancouver's waterfront from English Bay Beach and Sunset Beach to the False Creek ferry and Granville Island in 4K.";
+
+const videoRecord = canadaVideos.find(
+  (video) => video.slug === "vancouver-sunset-beach-evening-walk-2025"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -42,11 +49,26 @@ export default function VancouverSunsetBeachEveningWalk2025Page() {
     uploadDate: "2025-04-04",
     duration: "PT54M32S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: vancouverSunsetBeachEveningWalk2025Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
   return (
     <>
-      <Script id="sunset-beach-breadcrumb-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
-      <Script id="sunset-beach-video-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(breadcrumbStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(videoStructuredData),
+        }}
+      />
       <VancouverSunsetBeachEveningWalk2025Client />
     </>
   );

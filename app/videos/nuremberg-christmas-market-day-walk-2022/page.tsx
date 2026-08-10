@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import NurembergChristmasMarketDayWalk2022Client from "./NurembergChristmasMarketDayWalk2022Client";
+import { nurembergChristmasMarketDayWalk2022Detail } from "../../../data/video-details/nuremberg-christmas-market-day-walk-2022";
+import { germanyVideos } from "../../../data/videos/germany";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/nuremberg-christmas-market-day-walk-2022`;
@@ -8,6 +11,10 @@ const heroImagePath = "/nuremberg-christmas-market-day-walk-2022/hero.jpg";
 const ogImageUrl = `${siteUrl}${heroImagePath}`;
 const metadataTitle = "Nuremberg, Germany Christmas Market Day Walk (2022)";
 const metadataDescription = "Nuremberg, Germany Christmas Market Day Walk in 4K. Germany while it is snowing outside.";
+
+const videoRecord = germanyVideos.find(
+  (video) => video.slug === "nuremberg-christmas-market-day-walk-2022"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -44,12 +51,27 @@ export default function Page() {
     uploadDate: "2022-12-14",
     duration: "PT1H45M30S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: nurembergChristmasMarketDayWalk2022Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script id="nuremberg-christmas-market-day-walk-2022-bc-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
-      <Script id="nuremberg-christmas-market-day-walk-2022-video-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(breadcrumbStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(videoStructuredData),
+        }}
+      />
       <NurembergChristmasMarketDayWalk2022Client />
     </>
   );

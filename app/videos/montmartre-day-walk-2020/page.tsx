@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import MontmartreDayWalk2020Client from "./MontmartreDayWalk2020Client";
+import { montmartreDayWalk2020Detail } from "../../../data/video-details/montmartre-day-walk-2020";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/montmartre-day-walk-2020`;
@@ -10,6 +13,10 @@ const metadataTitle =
   "Montmartre, France Day Walk (2020) | Sacr\u00e9-C\u0153ur, Place du Tertre, La Maison Rose";
 const metadataDescription =
   "Montmartre day walk in 4K: Moulin Rouge, Rue Lepic, La Maison Rose, Place du Tertre, Sacr\u00e9-C\u0153ur dome views, and the hilltop streets of Paris.";
+
+const videoRecord = franceVideos.find(
+  (video) => video.slug === "montmartre-day-walk-2020"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -47,12 +54,27 @@ export default function MontmartreDayWalk2020Page() {
     uploadDate: "2020-07-18",
     duration: "PT1H53M27S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: montmartreDayWalk2020Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script id="montmartre-day-breadcrumb-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
-      <Script id="montmartre-day-video-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(breadcrumbStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(videoStructuredData),
+        }}
+      />
       <MontmartreDayWalk2020Client />
     </>
   );

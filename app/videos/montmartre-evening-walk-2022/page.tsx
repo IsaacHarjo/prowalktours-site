@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import MontmartreEveningWalk2022Client from "./MontmartreEveningWalk2022Client";
+import { montmartreEveningWalk2022Detail } from "../../../data/video-details/montmartre-evening-walk-2022";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/montmartre-evening-walk-2022`;
@@ -10,6 +13,10 @@ const metadataTitle =
   "Montmartre, France Evening Walk (2022) | Sacr\u00e9-C\u0153ur, Place du Tertre, Rue Lepic";
 const metadataDescription =
   "Montmartre evening walk in 4K: Place du Tertre, Sacr\u00e9-C\u0153ur, Place des Abbesses, Rue Lepic, and Place Blanche at dusk.";
+
+const videoRecord = franceVideos.find(
+  (video) => video.slug === "montmartre-evening-walk-2022"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -57,19 +64,26 @@ export default function MontmartreEveningWalk2022Page() {
     uploadDate: "2022-07-24",
     duration: "PT55M25S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: montmartreEveningWalk2022Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script
-        id="montmartre-evening-breadcrumb-jsonld"
+      <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(breadcrumbStructuredData),
+        }}
       />
-      <Script
-        id="montmartre-evening-video-jsonld"
+      <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }}
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(videoStructuredData),
+        }}
       />
       <MontmartreEveningWalk2022Client />
     </>

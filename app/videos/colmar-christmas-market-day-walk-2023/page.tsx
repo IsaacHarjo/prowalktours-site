@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import ColmarChristmasMarketDayWalk2023Client from "./ColmarChristmasMarketDayWalk2023Client";
+import { colmarChristmasMarketDayWalk2023Detail } from "../../../data/video-details/colmar-christmas-market-day-walk-2023";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/colmar-christmas-market-day-walk-2023`;
@@ -8,6 +11,10 @@ const heroImagePath = "/colmar-christmas-market-day-walk-2023/hero.jpg";
 const ogImageUrl = `${siteUrl}${heroImagePath}`;
 const metadataTitle = "Colmar, France Christmas Market Day Walk (2023)";
 const metadataDescription = "Colmar, France Christmas Market Day Walk in 4K. This daytime walk through Colmar’s Christmas markets follows many of the same famous streets and squ.";
+
+const videoRecord = franceVideos.find(
+  (video) => video.slug === "colmar-christmas-market-day-walk-2023"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -44,12 +51,27 @@ export default function Page() {
     uploadDate: "2023-12-06",
     duration: "PT2H9M7S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: colmarChristmasMarketDayWalk2023Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script id="colmar-christmas-market-day-walk-2023-bc-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
-      <Script id="colmar-christmas-market-day-walk-2023-video-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(breadcrumbStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(videoStructuredData),
+        }}
+      />
       <ColmarChristmasMarketDayWalk2023Client />
     </>
   );

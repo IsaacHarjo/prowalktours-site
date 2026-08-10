@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import ParisEveningWalk2022Client from "./ParisEveningWalk2022Client";
+import { parisEveningWalk2022Detail } from "../../../data/video-details/paris-evening-walk-2022";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/paris-evening-walk-2022`;
+const videoRecord = franceVideos.find(
+  (video) => video.slug === "paris-evening-walk-2022"
+);
 const heroImagePath = "/paris-evening-walk-2022/paris-evening-walk-placeholder-hero.svg";
 const ogImageUrl = `${siteUrl}${heroImagePath}`;
 const metadataTitle = "Paris, France Evening Walk (2022)";
@@ -32,7 +38,12 @@ const videoStructuredData = {
   uploadDate: "2022-07-23",
   duration: "PT2H25M33S",
   url: pageUrl,
-};
+    hasPart: buildVideoClips({
+      highlights: parisEveningWalk2022Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
+  };
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -56,18 +67,16 @@ export const metadata: Metadata = {
 export default function ParisEveningWalk2022Page() {
   return (
     <>
-      <Script
-        id="paris-breadcrumb-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbStructuredData),
+          __html: stringifyJsonLd(breadcrumbStructuredData),
         }}
       />
-      <Script
-        id="paris-video-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(videoStructuredData),
+          __html: stringifyJsonLd(videoStructuredData),
         }}
       />
       <ParisEveningWalk2022Client />

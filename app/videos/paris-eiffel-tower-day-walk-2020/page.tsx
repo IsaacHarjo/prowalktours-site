@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import ParisEiffelTowerDayWalk2020Client from "./ParisEiffelTowerDayWalk2020Client";
+import { parisEiffelTowerDayWalk2020Detail } from "../../../data/video-details/paris-eiffel-tower-day-walk-2020";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/paris-eiffel-tower-day-walk-2020`;
@@ -10,6 +13,10 @@ const metadataTitle =
   "Paris Eiffel Tower Tour (2020) | Summit, Level 2, Level 1, Full Experience";
 const metadataDescription =
   "Eiffel Tower tour in 4K: entrance, elevator rides, Level 2, the summit interior and exterior panoramic views, Level 1 glass floor, and stairs down.";
+
+const videoRecord = franceVideos.find(
+  (video) => video.slug === "paris-eiffel-tower-day-walk-2020"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -47,12 +54,27 @@ export default function ParisEiffelTowerDayWalk2020Page() {
     uploadDate: "2020-07-19",
     duration: "PT52M45S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: parisEiffelTowerDayWalk2020Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script id="eiffel-tower-breadcrumb-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
-      <Script id="eiffel-tower-video-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(breadcrumbStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(videoStructuredData),
+        }}
+      />
       <ParisEiffelTowerDayWalk2020Client />
     </>
   );

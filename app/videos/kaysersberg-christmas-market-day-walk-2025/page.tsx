@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import KaysersbergChristmasMarketDayWalk2025Client from "./KaysersbergChristmasMarketDayWalk2025Client";
+import { kaysersbergChristmasMarketDayWalk2025Detail } from "../../../data/video-details/kaysersberg-christmas-market-day-walk-2025";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/kaysersberg-christmas-market-day-walk-2025`;
@@ -8,6 +11,10 @@ const heroImagePath = "/kaysersberg-christmas-market-day-walk-2025/hero.jpg";
 const ogImageUrl = `${siteUrl}${heroImagePath}`;
 const metadataTitle = "Kaysersberg, France Christmas Market Day Walk (2025)";
 const metadataDescription = "Kaysersberg, France Christmas Market Day Walk in 4K. This daytime Christmas market walk through Kaysersberg follows the town’s decorated streets, market .";
+
+const videoRecord = franceVideos.find(
+  (video) => video.slug === "kaysersberg-christmas-market-day-walk-2025"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -44,12 +51,27 @@ export default function Page() {
     uploadDate: "2025-12-12",
     duration: "PT1H25M9S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: kaysersbergChristmasMarketDayWalk2025Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script id="kaysersberg-christmas-market-day-walk-2025-bc-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
-      <Script id="kaysersberg-christmas-market-day-walk-2025-video-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(breadcrumbStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(videoStructuredData),
+        }}
+      />
       <KaysersbergChristmasMarketDayWalk2025Client />
     </>
   );

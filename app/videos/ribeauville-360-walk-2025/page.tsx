@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import Ribeauville360Walk2025Client from "./Ribeauville360Walk2025Client";
+import { ribeauville360Walk2025Detail } from "../../../data/video-details/ribeauville-360-walk-2025";
+import { franceVideos } from "../../../data/videos/france";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/ribeauville-360-walk-2025`;
@@ -8,6 +11,10 @@ const heroImagePath = "/ribeauville-360-walk-2025/hero.jpg";
 const ogImageUrl = `${siteUrl}${heroImagePath}`;
 const metadataTitle = "Ribeauvillé, France Christmas Market 360° Walk (2025)";
 const metadataDescription = "Ribeauvillé, France Christmas Market 360° Walk in 4K. This 360 VR walk through the Ribeauvillé Christmas Market captures the event’s medieval atmosphere w.";
+
+const videoRecord = franceVideos.find(
+  (video) => video.slug === "ribeauville-360-walk-2025"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -44,12 +51,27 @@ export default function Page() {
     uploadDate: "2025-12-13",
     duration: "PT1H29M35S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: ribeauville360Walk2025Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script id="ribeauville-360-walk-2025-bc-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
-      <Script id="ribeauville-360-walk-2025-video-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(breadcrumbStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(videoStructuredData),
+        }}
+      />
       <Ribeauville360Walk2025Client />
     </>
   );

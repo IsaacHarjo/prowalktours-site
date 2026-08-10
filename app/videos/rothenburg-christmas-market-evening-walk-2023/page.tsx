@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import RothenburgChristmasMarketEveningWalk2023Client from "./RothenburgChristmasMarketEveningWalk2023Client";
+import { rothenburgChristmasMarketEveningWalk2023Detail } from "../../../data/video-details/rothenburg-christmas-market-evening-walk-2023";
+import { germanyVideos } from "../../../data/videos/germany";
+import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
+import { buildVideoClips } from "../../../lib/seo/videoClips";
 
 const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/videos/rothenburg-christmas-market-evening-walk-2023`;
@@ -8,6 +11,10 @@ const heroImagePath = "/rothenburg-christmas-market-evening-walk-2023/hero.jpg";
 const ogImageUrl = `${siteUrl}${heroImagePath}`;
 const metadataTitle = "Rothenburg ob der Tauber, Germany Christmas Market Evening Walk (2023)";
 const metadataDescription = "Rothenburg ob der Tauber, Germany Christmas Market Evening Walk in 4K. This walking tour around the Christmas markets of Rothenburg ob der Tauber.";
+
+const videoRecord = germanyVideos.find(
+  (video) => video.slug === "rothenburg-christmas-market-evening-walk-2023"
+);
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -44,12 +51,27 @@ export default function Page() {
     uploadDate: "2023-12-01",
     duration: "PT1H38M0S",
     url: pageUrl,
+      hasPart: buildVideoClips({
+      highlights: rothenburgChristmasMarketEveningWalk2023Detail.highlights,
+      canonicalUrl: pageUrl,
+      videoDurationSeconds: videoRecord?.durationSeconds,
+    }),
   };
 
   return (
     <>
-      <Script id="rothenburg-christmas-market-evening-walk-2023-bc-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
-      <Script id="rothenburg-christmas-market-evening-walk-2023-video-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(breadcrumbStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(videoStructuredData),
+        }}
+      />
       <RothenburgChristmasMarketEveningWalk2023Client />
     </>
   );
