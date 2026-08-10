@@ -9,6 +9,7 @@ import LongFormWalkPage, {
 import MapSection from "../../../components/MapSection";
 import { franceVideos } from "../../../data/videos/france";
 import { mentonFranceWalkingTour2025Detail } from "../../../data/video-details/menton-france-walking-tour-2025";
+import { useInitialVideoStartTime } from "../../../lib/hooks/useInitialVideoStartTime";
 
 type RelatedVideo = {
   title: string;
@@ -113,7 +114,8 @@ export default function MentonFranceWalkingTour2025Page() {
     `https://www.youtube.com/embed/${youtubeVideoId}?start=${start}&autoplay=${
       autoplay ? 1 : 0
     }&rel=0&enablejsapi=1&playsinline=1`;
-  const initialYoutubeEmbedUrl = buildYoutubeEmbedUrl(0, false);
+  const initialStart = useInitialVideoStartTime();
+  const initialYoutubeEmbedUrl = buildYoutubeEmbedUrl(initialStart, false);
 
   const overviewSectionRef = useRef<HTMLElement | null>(null);
   const videoSectionRef = useRef<HTMLDivElement | null>(null);

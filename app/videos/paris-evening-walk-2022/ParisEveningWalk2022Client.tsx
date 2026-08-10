@@ -8,6 +8,7 @@ import LongFormWalkPage, {
 import MapSection from "../../../components/MapSection";
 import { parisEveningWalk2022Detail } from "../../../data/video-details/paris-evening-walk-2022";
 import { franceVideos } from "../../../data/videos/france";
+import { useInitialVideoStartTime } from "../../../lib/hooks/useInitialVideoStartTime";
 
 type YouTubePlayer = {
   seekTo: (seconds: number, allowSeekAhead?: boolean) => void;
@@ -61,6 +62,8 @@ export default function ParisEveningWalk2022Client() {
   const videoSectionRef = useRef<HTMLDivElement | null>(null);
   const highlightsRef = useRef<HTMLDivElement | null>(null);
   const [mounted, setMounted] = useState(false);
+
+  const initialStart = useInitialVideoStartTime();
   const playerIframeRef = useRef<HTMLIFrameElement | null>(null);
   const playerRef = useRef<YouTubePlayer | null>(null);
   const pendingSeekRef = useRef<number | null>(null);
@@ -247,7 +250,7 @@ export default function ParisEveningWalk2022Client() {
             {mounted && (<iframe
               ref={playerIframeRef}
               className="h-full w-full"
-              src={`https://www.youtube.com/embed/${youtubeVideoId}?rel=0&playsinline=1&enablejsapi=1`}
+              src={`https://www.youtube.com/embed/${youtubeVideoId}?start=${initialStart}&rel=0&playsinline=1&enablejsapi=1`}
               title="Paris France evening walk 2022"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"

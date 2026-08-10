@@ -8,6 +8,7 @@ import LongFormWalkPage, {
 import MapSection from "../../../components/MapSection";
 import { canadaVideos } from "../../../data/videos/canada";
 import { vancouverBikeTour2025Detail } from "../../../data/video-details/vancouver-bike-tour-2025";
+import { useInitialVideoStartTime } from "../../../lib/hooks/useInitialVideoStartTime";
 
 type RelatedVideo = {
   title: string;
@@ -94,9 +95,11 @@ export default function VancouverBikeTour2025Client() {
     { icon: "🕒", label: "Duration", value: videoRecord?.durationLabel ?? "4:16:47" },
     { icon: "☀️", label: "Weather", value: videoRecord?.weather ?? "55°F / 13°C" },
   ];
+  const initialStart = useInitialVideoStartTime();
+
   const buildYoutubeEmbedUrl = (start: number, autoplay: boolean) =>
     `https://www.youtube.com/embed/${youtubeVideoId}?start=${start}&autoplay=${autoplay ? 1 : 0}&rel=0&enablejsapi=1&playsinline=1`;
-  const initialYoutubeEmbedUrl = buildYoutubeEmbedUrl(0, false);
+  const initialYoutubeEmbedUrl = buildYoutubeEmbedUrl(initialStart, false);
 
   const overviewSectionRef = useRef<HTMLElement | null>(null);
   const videoSectionRef = useRef<HTMLDivElement | null>(null);

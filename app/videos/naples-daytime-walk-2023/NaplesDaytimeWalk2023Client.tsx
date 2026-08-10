@@ -8,6 +8,7 @@ import LongFormWalkPage, {
 import { naplesDaytimeWalk2023Detail } from "../../../data/video-details/naples-daytime-walk-2023";
 import { videos } from "../../../data/videos/index";
 import MapSection from "../../../components/MapSection";
+import { useInitialVideoStartTime } from "../../../lib/hooks/useInitialVideoStartTime";
 
 type YouTubePlayer = {
   seekTo: (seconds: number, allowSeekAhead?: boolean) => void;
@@ -35,11 +36,13 @@ declare global {
 
 export default function NaplesDaytimeWalk2023Client() {
   const [isRatingsOpen, setIsRatingsOpen] = useState(false);
+  const initialStart = useInitialVideoStartTime();
+
   const buildYoutubeEmbedUrl = (start: number, autoplay: boolean) =>
     `https://www.youtube.com/embed/990AqbKb18c?start=${start}&autoplay=${
       autoplay ? 1 : 0
     }&rel=0&enablejsapi=1&playsinline=1`;
-  const initialYoutubeEmbedUrl = buildYoutubeEmbedUrl(0, false);
+  const initialYoutubeEmbedUrl = buildYoutubeEmbedUrl(initialStart, false);
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Countries", href: "/countries" },

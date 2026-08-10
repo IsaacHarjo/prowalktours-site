@@ -6,6 +6,7 @@ import LongFormWalkPage, { LongFormWalkStatsRow } from "../../../components/Long
 import MapSection from "../../../components/MapSection";
 import { franceVideos } from "../../../data/videos/france";
 import { ribeauville360Walk2025Detail as detail } from "../../../data/video-details/ribeauville-360-walk-2025";
+import { useInitialVideoStartTime } from "../../../lib/hooks/useInitialVideoStartTime";
 
 type YouTubePlayer = { seekTo: (seconds: number, allowSeekAhead?: boolean) => void; playVideo: () => void; destroy: () => void };
 type YouTubePlayerNamespace = { Player: new (element: HTMLIFrameElement, options?: { events?: { onReady?: () => void } }) => YouTubePlayer };
@@ -35,7 +36,10 @@ export default function Ribeauville360Walk2025Client() {
     { icon: "\u2600\ufe0f", label: "Weather", value: "9°C | 49°F" },
   ];
 
-  const initialYoutubeEmbedUrl = `https://www.youtube.com/embed/${youtubeVideoId}?start=0&autoplay=0&rel=0&enablejsapi=1&playsinline=1`;
+  const initialStart = useInitialVideoStartTime();
+
+
+  const initialYoutubeEmbedUrl = `https://www.youtube.com/embed/${youtubeVideoId}?start=${initialStart}&autoplay=0&rel=0&enablejsapi=1&playsinline=1`;
 
   const overviewSectionRef = useRef<HTMLElement | null>(null);
   const videoSectionRef = useRef<HTMLDivElement | null>(null);

@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import LongFormWalkPage, { LongFormWalkStatsRow } from "../../../components/LongFormWalkPage";
 import { franceVideos } from "../../../data/videos/france";
 import { parisEiffelTowerDayWalk2020Detail } from "../../../data/video-details/paris-eiffel-tower-day-walk-2020";
+import { useInitialVideoStartTime } from "../../../lib/hooks/useInitialVideoStartTime";
 
 type YouTubePlayer = { seekTo: (seconds: number, allowSeekAhead?: boolean) => void; playVideo: () => void; destroy: () => void };
 type YouTubePlayerNamespace = { Player: new (element: HTMLIFrameElement, options?: { events?: { onReady?: () => void } }) => YouTubePlayer };
@@ -42,7 +43,10 @@ export default function ParisEiffelTowerDayWalk2020Client() {
     { icon: "\u2600\ufe0f", label: "Weather", value: "Daytime, Summer" },
   ];
 
-  const initialYoutubeEmbedUrl = `https://www.youtube.com/embed/${youtubeVideoId}?start=0&autoplay=0&rel=0&enablejsapi=1&playsinline=1`;
+  const initialStart = useInitialVideoStartTime();
+
+
+  const initialYoutubeEmbedUrl = `https://www.youtube.com/embed/${youtubeVideoId}?start=${initialStart}&autoplay=0&rel=0&enablejsapi=1&playsinline=1`;
 
   const overviewSectionRef = useRef<HTMLElement | null>(null);
   const videoSectionRef = useRef<HTMLDivElement | null>(null);

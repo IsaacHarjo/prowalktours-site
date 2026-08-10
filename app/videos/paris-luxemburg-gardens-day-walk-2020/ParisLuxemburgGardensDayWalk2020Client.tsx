@@ -6,6 +6,7 @@ import LongFormWalkPage, { LongFormWalkStatsRow } from "../../../components/Long
 import MapSection from "../../../components/MapSection";
 import { franceVideos } from "../../../data/videos/france";
 import { parisLuxemburgGardensDayWalk2020Detail } from "../../../data/video-details/paris-luxemburg-gardens-day-walk-2020";
+import { useInitialVideoStartTime } from "../../../lib/hooks/useInitialVideoStartTime";
 
 type YouTubePlayer = { seekTo: (seconds: number, allowSeekAhead?: boolean) => void; playVideo: () => void; destroy: () => void };
 type YouTubePlayerNamespace = { Player: new (element: HTMLIFrameElement, options?: { events?: { onReady?: () => void } }) => YouTubePlayer };
@@ -46,7 +47,10 @@ export default function ParisLuxemburgGardensDayWalk2020Client() {
     { icon: "\u2600\ufe0f", label: "Weather", value: "29\u00b0C | 85\u00b0F" },
   ];
 
-  const initialYoutubeEmbedUrl = `https://www.youtube.com/embed/${youtubeVideoId}?start=0&autoplay=0&rel=0&enablejsapi=1&playsinline=1`;
+  const initialStart = useInitialVideoStartTime();
+
+
+  const initialYoutubeEmbedUrl = `https://www.youtube.com/embed/${youtubeVideoId}?start=${initialStart}&autoplay=0&rel=0&enablejsapi=1&playsinline=1`;
 
   const overviewSectionRef = useRef<HTMLElement | null>(null);
   const videoSectionRef = useRef<HTMLDivElement | null>(null);

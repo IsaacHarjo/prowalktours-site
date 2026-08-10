@@ -8,6 +8,7 @@ import LongFormWalkPage, {
 import MapSection from "../../../components/MapSection";
 import { naplesBikeTour2020Detail } from "../../../data/video-details/naples-bike-tour-2020";
 import { italyVideos } from "../../../data/videos/italy";
+import { useInitialVideoStartTime } from "../../../lib/hooks/useInitialVideoStartTime";
 
 type YouTubePlayer = {
   seekTo: (seconds: number, allowSeekAhead?: boolean) => void;
@@ -60,6 +61,8 @@ export default function NaplesBikeTour2020Client() {
   const videoSectionRef = useRef<HTMLDivElement | null>(null);
   const highlightsRef = useRef<HTMLDivElement | null>(null);
   const [mounted, setMounted] = useState(false);
+
+  const initialStart = useInitialVideoStartTime();
   const playerIframeRef = useRef<HTMLIFrameElement | null>(null);
   const playerRef = useRef<YouTubePlayer | null>(null);
   const pendingSeekRef = useRef<number | null>(null);
@@ -226,7 +229,7 @@ export default function NaplesBikeTour2020Client() {
             {mounted && (<iframe
               ref={playerIframeRef}
               className="h-full w-full"
-              src={`https://www.youtube.com/embed/${youtubeVideoId}?rel=0&playsinline=1&enablejsapi=1`}
+              src={`https://www.youtube.com/embed/${youtubeVideoId}?start=${initialStart}&rel=0&playsinline=1&enablejsapi=1`}
               title="Naples Italy bike tour"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"

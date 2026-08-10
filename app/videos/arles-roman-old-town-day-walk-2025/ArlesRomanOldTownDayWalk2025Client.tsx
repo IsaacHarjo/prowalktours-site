@@ -9,6 +9,7 @@ import LongFormWalkPage, {
 import MapSection from "../../../components/MapSection";
 import { arlesRomanOldTownDayWalk2025Detail } from "../../../data/video-details/arles-roman-old-town-day-walk-2025";
 import { franceVideos } from "../../../data/videos/france";
+import { useInitialVideoStartTime } from "../../../lib/hooks/useInitialVideoStartTime";
 
 type YouTubePlayer = {
   seekTo: (seconds: number, allowSeekAhead?: boolean) => void;
@@ -61,6 +62,7 @@ export default function ArlesRomanOldTownDayWalk2025Client() {
   ];
 
   const [mounted, setMounted] = useState(false);
+  const initialStart = useInitialVideoStartTime();
   const videoSectionRef = useRef<HTMLDivElement | null>(null);
   const highlightsRef = useRef<HTMLDivElement | null>(null);
   const playerIframeRef = useRef<HTMLIFrameElement | null>(null);
@@ -192,7 +194,7 @@ export default function ArlesRomanOldTownDayWalk2025Client() {
         <div className="overflow-hidden rounded-[2rem] border border-[#d8c7b5] shadow-lg">
           <div className="aspect-video w-full bg-black">
             {mounted && (
-              <iframe ref={playerIframeRef} className="h-full w-full" src={`https://www.youtube.com/embed/${youtubeVideoId}?rel=0&playsinline=1&enablejsapi=1`} title="Arles France walking tour" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen />
+              <iframe ref={playerIframeRef} className="h-full w-full" src={`https://www.youtube.com/embed/${youtubeVideoId}?start=${initialStart}&rel=0&playsinline=1&enablejsapi=1`} title="Arles France walking tour" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen />
             )}
           </div>
         </div>

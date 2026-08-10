@@ -8,6 +8,7 @@ import LongFormWalkPage, {
 import MapSection from "../../../components/MapSection";
 import { franceVideos } from "../../../data/videos/france";
 import { parisLatinQuarterMaraisEveningWalk2020Detail } from "../../../data/video-details/paris-latin-quarter-marais-evening-walk-2020";
+import { useInitialVideoStartTime } from "../../../lib/hooks/useInitialVideoStartTime";
 
 type RelatedTour = {
   title: string;
@@ -117,11 +118,14 @@ export default function ParisLatinQuarterMaraisEveningWalk2020Client() {
     },
   ];
 
+  const initialStart = useInitialVideoStartTime();
+
+
   const buildYoutubeEmbedUrl = (start: number, autoplay: boolean) =>
     `https://www.youtube.com/embed/${youtubeVideoId}?start=${start}&autoplay=${
       autoplay ? 1 : 0
     }&rel=0&enablejsapi=1&playsinline=1`;
-  const initialYoutubeEmbedUrl = buildYoutubeEmbedUrl(0, false);
+  const initialYoutubeEmbedUrl = buildYoutubeEmbedUrl(initialStart, false);
 
   const overviewSectionRef = useRef<HTMLElement | null>(null);
   const videoSectionRef = useRef<HTMLDivElement | null>(null);

@@ -8,6 +8,7 @@ import LongFormWalkPage, {
 import MapSection from "../../../components/MapSection";
 import { franceVideos } from "../../../data/videos/france";
 import { parisLandmarksDayWalk2020Detail } from "../../../data/video-details/paris-landmarks-day-walk-2020";
+import { useInitialVideoStartTime } from "../../../lib/hooks/useInitialVideoStartTime";
 
 type YouTubePlayer = {
   seekTo: (seconds: number, allowSeekAhead?: boolean) => void;
@@ -105,11 +106,14 @@ export default function ParisLandmarksDayWalk2020Client() {
     { icon: "\u2600\ufe0f", label: "Weather", value: "Daytime, Summer" },
   ];
 
+  const initialStart = useInitialVideoStartTime();
+
+
   const buildYoutubeEmbedUrl = (start: number, autoplay: boolean) =>
     `https://www.youtube.com/embed/${youtubeVideoId}?start=${start}&autoplay=${
       autoplay ? 1 : 0
     }&rel=0&enablejsapi=1&playsinline=1`;
-  const initialYoutubeEmbedUrl = buildYoutubeEmbedUrl(0, false);
+  const initialYoutubeEmbedUrl = buildYoutubeEmbedUrl(initialStart, false);
 
   const overviewSectionRef = useRef<HTMLElement | null>(null);
   const videoSectionRef = useRef<HTMLDivElement | null>(null);
