@@ -50,6 +50,7 @@ const footerSections = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.prowalktours.com"),
   title: "Prowalk Tours",
   description: "Immersive walking tours, 360 videos, drone footage, and licensing.",
 };
