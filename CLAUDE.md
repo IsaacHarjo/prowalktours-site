@@ -241,6 +241,54 @@ Every finished video page must follow this structure in order:
 
 ---
 
+## SEO Patterns — ALWAYS Follow These
+
+### JSON-LD tags (VideoObject, BreadcrumbList)
+- Use plain server-rendered `<script type="application/ld+json"
+  dangerouslySetInnerHTML=...>` — NEVER `<Script>` from `next/script`.
+  `next/script` injects the tag client-side via the RSC payload, which
+  Facebook, Pinterest, Bing, and other non-JS scrapers can't see.
+- Wrap `JSON.stringify(x)` in `stringifyJsonLd(x)` from
+  `lib/seo/jsonLd.ts`. It escapes `<` → `\\u003c` (backslash-u003c) so a stray `</script>`
+  in a description can't break out of the tag.
+
+### VideoObject Clips (Google Key Moments)
+- `lib/seo/videoClips.ts` `buildVideoClips()` reads `HighlightRecord[]`
+  from a page's `data/video-details/[slug].ts` and returns `Clip[]`
+  ready for `VideoObject.hasPart`. Returns `undefined` when highlights
+  are empty or `videoDurationSeconds` is missing, so `JSON.stringify`
+  drops the field cleanly.
+- Standard shape in every video `page.tsx`:
+  ```ts
+  const videoRecord = <catalogVar>.find(v => v.slug === "<slug>");
+  ...
+  hasPart: buildVideoClips({
+    highlights: <slugCamel>Detail.highlights,
+    canonicalUrl: pageUrl,
+    videoDurationSeconds: videoRecord?.durationSeconds,
+  }),
+  ```
+
+### ?t= deep links
+- Every video Client component calls `useInitialVideoStartTime()` from
+  `lib/hooks/useInitialVideoStartTime.ts` and passes the result as
+  `start=` on the YouTube iframe URL, so Google Key Moment clicks land
+  at the right timestamp.
+- Autoplay stays OFF (see "Things To NEVER Do").
+
+### Sitemap and robots
+- `app/sitemap.ts` enumerates pages at build time from the real routes
+  on disk (`app/videos/*` + recursive walk of `app/destinations/**` +
+  the static top-level pages `/`, `/countries`, `/search`, `/licensing`).
+  Do NOT hardcode URLs.
+- No `lastModified` — Vercel rebuilds every deploy so mtime is build
+  time (a false signal).
+- `app/robots.ts` allows all crawlers and points to `/sitemap.xml`.
+- `metadataBase = https://www.prowalktours.com` in `app/layout.tsx` so
+  OG URLs resolve absolute.
+
+---
+
 ## Map Strategy
 
 ### Current State
@@ -794,6 +842,17 @@ follow this pattern for any future media processing scripts.
   none of that and the script will wipe it all. Safe only for newly
   generated pages with empty highlights arrays.
 - Never use spaces in highlight image filenames. Always hyphens.
+- Never use `<Script>` from `next/script` for JSON-LD — it injects the
+  tag client-side via the RSC payload, invisible to Facebook, Pinterest,
+  Bing, and other non-JS scrapers. Always use plain `<script
+  type="application/ld+json" dangerouslySetInnerHTML=...>` with
+  `stringifyJsonLd()` from `lib/seo/jsonLd.ts` (which escapes `<` to
+  `\\u003c` — backslash-u003c — so a stray `</script>` in a description
+  can't break out).
+- Never turn on YouTube autoplay in the video Client components.
+  Binaural audio is a key differentiator of the channel and browser
+  autoplay policies are inconsistent. The `?t=` deep link seeks the
+  player to the requested timestamp, but the user still hits play.
 
 ---
 
@@ -820,23 +879,30 @@ follow this pattern for any future media processing scripts.
 - onError fallback added to all 41 client components ✓
 - all-highlights.csv slug corrections — all 20 Germany slugs fixed ✓
 - Cologne de-0002 year corrected (2024→2023) across all data files ✓
+- france-highlights.csv → all-highlights.csv code references fixed ✓
+  (data/search-hits/france.ts exports `allSearchHits` — `franceSearchHits`
+  kept as back-compat alias)
+- SEO foundation shipped ✓ (app/sitemap.ts auto-enumerates 92 real
+  content routes from disk, app/robots.ts, metadataBase in the root
+  layout, VideoObject JSON-LD with hasPart Clips on all 57 video pages
+  server-rendered with </script> breakout escaped, ?t= deep-link seek
+  via useInitialVideoStartTime — Menton verified in Google Rich Results
+  Test)
 
 ### Active Priority List
-1. Update all code references from france-highlights.csv → all-highlights.csv
-2. Build /press page (content ready — see Press & Partnerships section)
-3. Connect /licensing form to email service (Resend or Formspree)
-4. Fix nav dead links (Store, About, Map)
-5. Add hero images for fr-0014 through fr-0024
-6. Mobile map height fix (Italy first, then all country pages)
-7. Build remaining Italy video pages
-8. Add remaining country data to master sheet (one country at a time)
-9. Build Mapbox maps for each new country as data is added
-10. Enhance search (landmark timestamps, filter by video_type, region)
-11. Full mobile responsiveness audit across all pages
-12. Connect to YouTube API for live data
-13. Generate and maintain sitemap.xml automatically
-14. Build downloadable PDF media kit from /press page content
-15. Future: Prowalk Tours mobile app (Expo/React Native)
+1. Build /press page (content ready — see Press & Partnerships section)
+2. Connect /licensing form to email service (Resend or Formspree)
+3. Fix nav dead links (Store, About, Map)
+4. Add hero images for fr-0014 through fr-0024
+5. Mobile map height fix (Italy first, then all country pages)
+6. Build remaining Italy video pages
+7. Add remaining country data to master sheet (one country at a time)
+8. Build Mapbox maps for each new country as data is added
+9. Enhance search (landmark timestamps, filter by video_type, region)
+10. Full mobile responsiveness audit across all pages
+11. Connect to YouTube API for live data
+12. Build downloadable PDF media kit from /press page content
+13. Future: Prowalk Tours mobile app (Expo/React Native)
 
 ### World Map — Known Unavailable Videos (skip these forever)
 - freiburg-christmas-market-evening-walk-2025 — members only, cannot extract
@@ -930,3 +996,28 @@ follow this pattern for any future media processing scripts.
   49 video-detail files that had custom image paths/descriptions/alt
   text after an unintended re-import. Documented the destructive
   behavior and safe-slug list in this CLAUDE.md.
+- 2026-08-10: SEO foundation shipped. New: `app/sitemap.ts` (92 real
+  content URLs enumerated at build time from `app/videos/*` +
+  recursive walk of `app/destinations/**` + static top-level pages;
+  no lastModified since Vercel rebuilds every deploy so mtime is
+  build time — a false signal), `app/robots.ts` (allow-all + sitemap
+  pointer), `metadataBase = https://www.prowalktours.com` in
+  `app/layout.tsx` so OG URLs resolve absolute. `lib/seo/jsonLd.ts`
+  provides `stringifyJsonLd()` which escapes `<` to `\\u003c`
+  (backslash-u003c) so a stray `</script>` in a JSON-LD payload can't
+  break out.
+  `lib/seo/videoClips.ts` turns `HighlightRecord[]` from
+  `data/video-details` into `Clip[]` for `VideoObject.hasPart`
+  (endOffset = next clip's start, or `videoDurationSeconds` for the
+  last). All 57 video pages migrated off `<Script>` from `next/script`
+  (which injected JSON-LD via the RSC payload — invisible to Facebook,
+  Pinterest, Bing) to plain server-rendered `<script>` tags with
+  `hasPart` Clips populated. All 57 client components now call
+  `useInitialVideoStartTime()` (`lib/hooks/useInitialVideoStartTime.ts`)
+  which reads `?t=` from the URL after mount; the YouTube iframe's
+  native `start=` param handles the seek. Autoplay stayed OFF —
+  browser autoplay policies are inconsistent and binaural audio is a
+  channel differentiator. Verified Menton end-to-end via Google Rich
+  Results Test: 1 valid item, Clips detected with correct offsets.
+  New "SEO Patterns" section added to this CLAUDE.md alongside two
+  new NEVER-do entries (no `next/script` for JSON-LD, no autoplay).
