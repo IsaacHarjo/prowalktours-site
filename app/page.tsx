@@ -13,10 +13,21 @@ import { videos } from "../data/videos/index";
 
 // ─── Load world tour data from all_tours.csv at build time ───────────────────
 
+// Must stay in sync with COUNTRIES in components/WorldMapClient.tsx — a country
+// missing from that array renders nothing on the map.
 const COUNTRY_INDICES: Record<string, number> = {
   Italy: 0,
   France: 1,
   Germany: 2,
+  Canada: 3,
+};
+
+// Some tours carry a country the map does not render as its own group. Monaco
+// (fr-0006) lives in france.csv but has country=Monaco; it sits on the Riviera
+// beside Menton and Nice, so it rides along with France rather than earning a
+// one-tour legend entry. Grouping in WorldMapClient is by this exact string.
+const COUNTRY_ALIASES: Record<string, string> = {
+  Monaco: "France",
 };
 
 function loadWorldTours() {
@@ -72,7 +83,8 @@ function loadWorldTours() {
       const lat = parseFloat(row[col["latitude"]] || "");
       const lng = parseFloat(row[col["longitude"]] || "");
       const ytUrl = (row[col["youtube_url"]] || "").trim();
-      const country = (row[col["country"]] || "").trim();
+      const rawCountry = (row[col["country"]] || "").trim();
+      const country = COUNTRY_ALIASES[rawCountry] ?? rawCountry;
       const title = (row[col["title"]] || "").trim();
       const city = (row[col["city"]] || "").trim();
       const region = (row[col["region"]] || "").trim();
@@ -99,7 +111,10 @@ function loadWorldTours() {
         watchDestinationType: getVideoWatchDestinationType(slug),
         latitude: lat,
         longitude: lng,
-        countryIndex: COUNTRY_INDICES[country] ?? 0,
+        // Not used for colouring — WorldMapClient colours by `country` name.
+        // Kept because WorldTour requires it; -1 marks "no mapped country"
+        // rather than silently masquerading as Italy.
+        countryIndex: COUNTRY_INDICES[country] ?? -1,
       };
     })
     .filter((t): t is NonNullable<typeof t> => t !== null);

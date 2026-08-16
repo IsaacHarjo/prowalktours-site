@@ -30,7 +30,7 @@ type WorldTour = {
   watchDestinationType: ExploreMapWatchDestinationType;
   latitude: number;
   longitude: number;
-  countryIndex: number; // 0=Italy, 1=France, 2=Germany
+  countryIndex: number; // index into COUNTRIES below; see note there
 };
 
 type TourProperties = {
@@ -40,10 +40,16 @@ type TourProperties = {
 
 // ─── Country colours ─────────────────────────────────────────────────────────
 
+// This list is the single source of truth for what appears on the world map.
+// Tours are grouped by `tour.country` matching `name` exactly, and the render
+// loop below iterates COUNTRIES — so a country missing from this array renders
+// NOTHING on the map, silently. Add an entry here when a country is onboarded.
+// (`tour.countryIndex` does not drive colour; `index` here does.)
 const COUNTRIES = [
   { name: "Italy", color: "#009246", index: 0, center: [12.5674, 41.8719] as [number, number], zoom: 5.5 },
   { name: "France", color: "#ED2939", index: 1, center: [2.3522, 46.2276] as [number, number], zoom: 5.2 },
   { name: "Germany", color: "#FFCE00", index: 2, center: [10.4515, 51.1657] as [number, number], zoom: 5.5 },
+  { name: "Canada", color: "#D80621", index: 3, center: [-123.1207, 49.2827] as [number, number], zoom: 5.5 },
 ] as const;
 
 function getDisplayTitle(title: string) {
