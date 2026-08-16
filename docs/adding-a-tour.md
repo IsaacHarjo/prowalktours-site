@@ -280,14 +280,6 @@ Each script does **not**:
 
 `--dry-run` shows the diff without writing.
 
-> **⚠ TEMPORARY GAP — as of writing** ⚠
->
-> Only `import-france-csv.js` and `import-germany-csv.js` exist. Italy and
-> Canada scripts are Automation item 2. Until they land, doing a `[SINGLE]`
-> tour for Italy or Canada requires editing `data/videos/[country].ts` and
-> `data/maps/[country].ts` by hand — hand-edit the new record, preserve the
-> ordering, no free lunch. Fix the scripts before the next Italy tour.
-
 ---
 
 ## 4. Generate the page files
@@ -324,15 +316,6 @@ Behaviour:
   `stringifyJsonLd`, `hasPart` populated from `data/video-details/*.ts`
   highlights, `useInitialVideoStartTime` wired for `?t=` deep links,
   autoplay off. Nothing to patch by hand.
-
-> **⚠ TEMPORARY GAP — as of writing** ⚠
->
-> The generator template still emits the **pre-SEO-migration** pattern —
-> `<Script>` from `next/script`, no `hasPart`, no
-> `useInitialVideoStartTime`, no `stringifyJsonLd`. Until Automation item
-> 1 lands, every generated page needs the SEO patch applied by hand. The
-> exact shape is in commits `daaa53f`..`56d4056`. **Fix the generator
-> template first**, before doing this at scale.
 
 ---
 
@@ -594,59 +577,52 @@ Vercel auto-deploys on push. There's no separate deploy step.
 
 ## 12. Automation — do these before the next 40 tours
 
-Ranked by pain-per-tour. Items 1 and 2 are **prerequisites** — the flow
-above assumes both are done and the two `⚠ TEMPORARY GAP` callouts in
-§3 and §4 will be removed the moment they land. Items 3–4 are
-"do before the next country." Items 5–7 are "do eventually."
+Ranked by pain-per-tour. Items 1–3 are "do before the next country."
+Items 4–6 are "do eventually."
 
-Items 8–9 are the two **silent-failure** gaps on the `[SINGLE]` path (§1b and
+Items 7–8 are the two **silent-failure** gaps on the `[SINGLE]` path (§1b and
 §2). They rank low only because they cost nothing per tour *when you
 remember* — the cost lands entirely on the times you don't, and neither one
-announces itself. Item 9 is small and worth doing next.
+announces itself. Item 8 is small and worth doing next.
 
-1. **Update the generator + VS Code snippet templates to the current SEO
-   pattern.** Every new tour today needs a manual post-generation SEO
-   fixup that the tooling should just do. Files:
-   `scripts/generate-video-page.js` (the two template strings around the
-   `page.tsx` and `Client.tsx` emissions) and
-   `.vscode/walk-page.code-snippets`. Reference pattern lives in commits
-   `daaa53f..56d4056`. Zero-risk mechanical fix; saves ~15 minutes per
-   tour.
-2. **Extend the generator to Italy and Canada.** `CSV_PATHS` at the top
-   of `generate-video-page.js` lists only France and Germany.
-   `getBreadcrumbsForCountry` and `getRelatedTours` have hardcoded
-   per-country branches that need Italy + Canada entries. Blocks the
-   "add remaining Italy" work item on CLAUDE.md's priority list.
-3. **Write the MyMaps CSV parser.** Every bulk country import today
+1. **Update the `.vscode/walk-page.code-snippets` template to the current
+   SEO pattern.** The generator template was already updated (commit
+   `a605516`), but the snippet still imports `Script` from `next/script`
+   and doesn't emit `hasPart`, `useInitialVideoStartTime`, or
+   `stringifyJsonLd`. Any page authored by expanding the snippet ships
+   with the pre-SEO-migration pattern. Reference: commits
+   `daaa53f..56d4056` for the SEO shape, `a605516` for the mechanical
+   template diff.
+2. **Write the MyMaps CSV parser.** Every bulk country import today
    starts with parsing a `POINT (lon lat)`-with-timestamp-overflow CSV
    by hand in a chat session. A `scripts/parse-mymaps.js input.csv >
    sheet-rows.tsv` eliminates that step. Nontrivial to write (multi-line
    CSV with unquoted overflow rows), but writes itself once. Saves
    hours per country.
-4. **Data-drive the destination pages.** The catalog already has
+3. **Data-drive the destination pages.** The catalog already has
    city/region/theme metadata; destination pages should render tour
    cards automatically, filtered by region/theme. Removes an entire
    manual step and eliminates the "forgot to add the card" failure
    mode.
-5. **Decide the fate of `highlight.caption` and `highlight.proTip`.**
+4. **Decide the fate of `highlight.caption` and `highlight.proTip`.**
    `caption` is required by the type, populated on many tours, rendered
    by exactly one client. `proTip` is typed but never rendered. Either
    wire them into every client or delete them from the type. Currently
    they mislead every new page author.
-6. **CI check for the image audit.** Turn the manual bash one-liner
+5. **CI check for the image audit.** Turn the manual bash one-liner
    into a script that runs in CI or a pre-commit hook so filename typos
    can't reach main.
-7. **Metadata description length linter.** The generator truncates
+6. **Metadata description length linter.** The generator truncates
    `description` to 155 chars; hand-enriched pages have no enforcement.
    Add a build-time check.
-8. **Sheet ↔ My Maps drift check.** Nothing verifies that every tour in a
+7. **Sheet ↔ My Maps drift check.** Nothing verifies that every tour in a
    country tab has a matching My Maps marker (§1b). Every `[SINGLE]` tour
    is a chance to forget, and the drift is invisible from the repo. A
    script can't read My Maps directly, but it can compare a periodic My
    Maps CSV export against `data/maps/[country].csv` and list tour_ids
    present in one and not the other. Cheap, and it turns an unbounded
    silent drift into a periodic reconcile.
-9. **Generate `all_tours.csv` from the per-country CSVs.** It's currently a
+8. **Generate `all_tours.csv` from the per-country CSVs.** It's currently a
    third manual Sheets export (§2) that no script writes, feeding
    `loadWorldTours()` in `app/page.tsx` — and a forgotten export silently
    drops the tour from the homepage world map with no build error. Every
