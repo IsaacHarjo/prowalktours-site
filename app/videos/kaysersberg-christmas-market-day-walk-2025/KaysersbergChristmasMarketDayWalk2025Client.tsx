@@ -167,7 +167,7 @@ export default function KaysersbergChristmasMarketDayWalk2025Client() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-[1.25rem] border border-[#eadfce] bg-[#fcfaf6] p-4"><div className="space-y-3">
                     <div className="border-b border-[#efe3d3] pb-3"><p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Camera</p><span className="mt-1 block text-sm font-semibold text-[#5c4c33]">Sony A7S III</span></div>
-                    <div className="border-b border-[#efe3d3] pb-3"><p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Lens</p><span className="mt-1 block text-sm font-semibold text-[#5c4c33]">Sony FE 24mm f/1.4 GM Lens</span></div>
+                    <div className="border-b border-[#efe3d3] pb-3"><p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Lens</p><span className="mt-1 block text-sm font-semibold text-[#5c4c33]">Sony FE PZ 16-35mm F4 G</span></div>
                     <div><p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a735a]">Microphone</p><span className="mt-1 block text-sm font-semibold text-[#5c4c33]">Sony ECM-M1</span></div>
                 </div></div>
                 <div className="rounded-[1.25rem] border border-[#eadfce] bg-[#fcfaf6] p-4"><div className="space-y-3">

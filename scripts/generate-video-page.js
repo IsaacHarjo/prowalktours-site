@@ -77,7 +77,7 @@ const hlCol = {}; hlHeader.forEach((h, i) => { hlCol[h] = i; });
 
 // ─── Gear config by filming date ─────────────────────────────────────────────
 
-function getGear(filmedDate) {
+function getGear(filmedDate, videoType) {
   if (!filmedDate) return { camera: 'GoPro Hero 8', mic: 'H1 Zoom Handy Recorder', audio: 'Binaural (Roland CS-10EM)', res: '4K UHD', fps: '50 fps', color: 'Rec. 709' };
   const d = new Date(filmedDate + 'T12:00:00');
   if (d < new Date('2018-01-01T00:00:00')) {
@@ -86,7 +86,17 @@ function getGear(filmedDate) {
   if (d < new Date('2022-06-01T00:00:00')) {
     return { camera: 'GoPro Hero 8', mic: 'H1 Zoom Handy Recorder', audio: 'Binaural (Roland CS-10EM)', res: '4K UHD', fps: '50 fps', color: 'Rec. 709' };
   }
-  return { camera: 'Sony A7S III', lens: 'Sony FE 24mm f/1.4 GM Lens', mic: 'Sony ECM-M1', res: '4K UHD', fps: '59.94 fps', color: 'Rec. 709' };
+  // Day walks on the A7S III are always shot on the FE PZ 16-35mm F4 G — a
+  // reliable rule confirmed by Ike (2026-08-17). Evening-walk lens has
+  // changed at least twice (24mm f/1.4 GM historically, a 20mm F1.8 G
+  // starting the July 2026 trip) with no clean date rule yet, so it's left
+  // at the long-standing 24mm default rather than guessed. Color profile
+  // has NO reliable default at all — Ike has tried many picture profiles
+  // over time — so it stays 'Rec. 709' here only as a fallback; verify the
+  // real value per tour (e.g. from camera sidecar XML) and override by hand
+  // when it's known, same as was done for Sirmione/Otranto (Rec. 2100 HLG).
+  const lens = videoType === 'day-walk' ? 'Sony FE PZ 16-35mm F4 G' : 'Sony FE 24mm f/1.4 GM Lens';
+  return { camera: 'Sony A7S III', lens, mic: 'Sony ECM-M1', res: '4K UHD', fps: '59.94 fps', color: 'Rec. 709' };
 }
 
 // ─── Per-country configuration ───────────────────────────────────────────────
@@ -380,7 +390,7 @@ function generatePage(slug) {
   const landmarks = get(tourRow, 'landmarks');
   const videoId = ytId(youtubeUrl);
   const { embed: mapEmbed, viewer: mapViewer } = mapEditToEmbed(mapUrl);
-  const gear = getGear(filmedDate);
+  const gear = getGear(filmedDate, videoType);
   const countryConfig = getCountryConfig(country);
   const countryName = countryConfig.displayName;
   const catalogModule = countryConfig.destinationSlug;
