@@ -115,6 +115,12 @@ export default function HomePage() {
       </section>
 
       {/* ═══ SECTION 3 — Trust Bar ═══ */}
+      <section className="border-b border-[#eadfce] bg-[#f5f0e8]">
+        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 py-8 sm:flex-row sm:items-center sm:justify-between lg:px-10">
+          <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">From the Christmas archive</p><h2 className="mt-2 text-2xl font-bold">Europe’s Christmas markets, on foot</h2><p className="mt-2 text-sm leading-6 text-[#6c5b49]">Explore the walks by destination and discover the journeys behind the films.</p></div>
+          <Link href="/christmas-markets" className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full bg-[#009246] px-5 py-3 text-sm font-semibold text-white hover:bg-[#007a3a]">Explore Christmas Markets →</Link>
+        </div>
+      </section>
       <section className="bg-[#f5f0e8]">
         <div className="mx-auto max-w-5xl px-6 py-4 text-center">
           <p className="text-xs font-medium tracking-wide text-[#6c5b49] sm:text-sm">

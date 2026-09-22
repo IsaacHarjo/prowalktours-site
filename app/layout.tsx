@@ -13,6 +13,7 @@ const navItems: NavItem[] = [
   { label: "Countries", href: "/countries" },
   { label: "Walks", href: "/search" },
   { label: "Map", href: "/#world-map" },
+  { label: "Christmas Markets", href: "/christmas-markets" },
   { label: "Licensing", href: "/licensing" },
 ];
 
@@ -27,6 +28,7 @@ const socialLinks = {
 
 const footerSections = {
   explore: [
+    { label: "Christmas Markets", href: "/christmas-markets" },
     { label: "Countries", href: "/countries" },
     { label: "Italy", href: "/destinations/italy" },
     { label: "Campania", href: "/destinations/italy/campania" },
@@ -75,7 +77,7 @@ function SiteHeader() {
         </div>
 
         <nav className="hidden justify-self-center lg:block">
-          <ul className="flex items-center gap-8 text-[17px] font-semibold tracking-[0.04em] text-[#5c4c33]">
+          <ul className="flex items-center gap-4 whitespace-nowrap text-[15px] font-semibold text-[#5c4c33] xl:gap-6 xl:text-[17px]">
             {navItems.map((item) => (
               <li key={item.label}>
                 <Link

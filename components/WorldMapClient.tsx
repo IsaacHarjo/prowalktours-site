@@ -90,6 +90,7 @@ type WorldMapClientProps = {
   tours: WorldTour[];
   fullWidth?: boolean;
   heightClassName?: string;
+  fitToTours?: boolean;
 };
 
 function WorldTourWatchLink({
@@ -121,8 +122,12 @@ function WorldTourWatchLink({
   );
 }
 
-export default function WorldMapClient({ tours, fullWidth, heightClassName }: WorldMapClientProps) {
+export default function WorldMapClient({ tours, fullWidth, heightClassName, fitToTours = false }: WorldMapClientProps) {
   const mapRef = useRef<MapRef | null>(null);
+  const countries = useMemo(() => fitToTours
+    ? COUNTRIES.filter((country) => tours.some((tour) => tour.mapGroup === country.name))
+    : COUNTRIES, [tours, fitToTours]);
+  const [mapError, setMapError] = useState(false);
   const mapboxToken =
     process.env.NEXT_PUBLIC_MAPBOX_TOKEN ??
     process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
@@ -148,7 +153,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
     const geoJson: Record<string, FeatureCollection<Point, TourProperties>> = {};
     const tourArrays: Record<string, WorldTour[]> = {};
 
-    for (const c of COUNTRIES) {
+    for (const c of countries) {
       const countryTours = byCountry[c.name] || [];
       tourArrays[c.name] = countryTours;
       geoJson[c.name] = {
@@ -168,11 +173,11 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
     }
 
     return { countryGeoJson: geoJson, countryTourArrays: tourArrays };
-  }, [tours]);
+  }, [tours, countries]);
 
   const interactiveLayerIds = useMemo(
-    () => COUNTRIES.flatMap((c) => [`cluster-${c.name}`, `point-${c.name}`]),
-    []
+    () => countries.flatMap((c) => [`cluster-${c.name}`, `point-${c.name}`]),
+    [countries]
   );
 
   const handleMapClick = useCallback(
@@ -185,7 +190,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
 
       // Determine which country source this came from
       const layerId = (clickedFeature as unknown as { layer?: { id: string } }).layer?.id;
-      const countryName = COUNTRIES.find(
+      const countryName = countries.find(
         (c) =>
           layerId === `cluster-${c.name}` || layerId === `point-${c.name}`
       )?.name;
@@ -266,15 +271,15 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
         }
       }
     },
-    [countryTourArrays]
+    [countryTourArrays, countries]
   );
 
-  if (!mapboxToken) {
+  if (!mapboxToken || mapError) {
     return (
       <div className="rounded-[1.5rem] border border-[#d8c7b5] bg-[#fff7ed] p-6 text-[#7c2d12] shadow-sm">
-        <p className="text-lg font-semibold">Mapbox token missing</p>
+        <p className="text-lg font-semibold">The map is temporarily unavailable</p>
         <p className="mt-2 text-sm leading-7">
-          Set <code>NEXT_PUBLIC_MAPBOX_TOKEN</code> to enable the world map.
+          You can still browse walks using the links on this page.
         </p>
       </div>
     );
@@ -286,10 +291,10 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
       : "relative overflow-hidden rounded-[1.5rem] border border-[#d8c7b5] bg-white shadow-sm sm:rounded-[2rem]"
     }>
       <div className={heightClassName
-        ? `${heightClassName} w-full bg-[#f8f3ec]`
+        ? `relative ${heightClassName} w-full bg-[#f8f3ec]`
         : fullWidth
-          ? "h-[50vh] w-full bg-[#f8f3ec] sm:h-[60vh]"
-          : "h-[380px] w-full bg-[#f8f3ec] lg:h-[550px]"
+          ? "relative h-[50vh] w-full bg-[#f8f3ec] sm:h-[60vh]"
+          : "relative h-[380px] w-full bg-[#f8f3ec] lg:h-[550px]"
       }>
         <MapboxMap
           ref={mapRef}
@@ -301,13 +306,25 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
           mapStyle="mapbox://styles/mapbox/satellite-streets-v12"
           mapboxAccessToken={mapboxToken}
           interactiveLayerIds={interactiveLayerIds}
+          cooperativeGestures={fitToTours}
           onClick={handleMapClick}
-          onLoad={() => mapRef.current?.resize()}
+          onError={() => setMapError(true)}
+          onLoad={() => {
+            mapRef.current?.resize();
+            if (fitToTours && tours.length) {
+              const lngs = tours.map((tour) => tour.longitude);
+              const lats = tours.map((tour) => tour.latitude);
+              mapRef.current?.fitBounds([
+                [Math.min(...lngs), Math.min(...lats)],
+                [Math.max(...lngs), Math.max(...lats)],
+              ], { padding: 65, maxZoom: 12, duration: 0 });
+            }
+          }}
           style={{ width: "100%", height: "100%" }}
         >
           <NavigationControl position="top-right" showCompass={false} />
 
-          {COUNTRIES.map((c) => (
+          {countries.map((c) => (
             <Source
               key={c.name}
               id={`world-tours-${c.name}`}
@@ -351,6 +368,35 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
 
           {/* cluster popup removed — now using overlay panel below */}
         </MapboxMap>
+      {/* Country legend */}
+      <div className="absolute bottom-4 left-4 rounded-xl border border-[#d8c7b5] bg-white/95 px-3 py-2 shadow-sm backdrop-blur-sm">
+        <div className="flex items-center gap-4">
+          {countries.map((c) => (
+            <button
+              key={c.name}
+              type="button"
+              title={`Click to explore ${c.name}`}
+              onClick={() => {
+                mapRef.current?.flyTo({
+                  center: c.center,
+                  zoom: c.zoom,
+                  duration: 1500,
+                });
+              }}
+              className="flex cursor-pointer items-center gap-1.5 transition hover:opacity-80"
+            >
+              <div
+                className="h-3 w-3 rounded-full border border-white shadow-sm"
+                style={{ backgroundColor: c.color }}
+              />
+              <span className="text-xs font-medium text-[#3d3327] hover:underline">
+                {c.name}
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+
       </div>
 
       {/* Cluster overlay panel — matches Italy map design */}
@@ -518,34 +564,6 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
         </div>
       ) : null}
 
-      {/* Country legend */}
-      <div className="absolute bottom-4 left-4 rounded-xl border border-[#d8c7b5] bg-white/95 px-3 py-2 shadow-sm backdrop-blur-sm">
-        <div className="flex items-center gap-4">
-          {COUNTRIES.map((c) => (
-            <button
-              key={c.name}
-              type="button"
-              title={`Click to explore ${c.name}`}
-              onClick={() => {
-                mapRef.current?.flyTo({
-                  center: c.center,
-                  zoom: c.zoom,
-                  duration: 1500,
-                });
-              }}
-              className="flex cursor-pointer items-center gap-1.5 transition hover:opacity-80"
-            >
-              <div
-                className="h-3 w-3 rounded-full border border-white shadow-sm"
-                style={{ backgroundColor: c.color }}
-              />
-              <span className="text-xs font-medium text-[#3d3327] hover:underline">
-                {c.name}
-              </span>
-            </button>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }

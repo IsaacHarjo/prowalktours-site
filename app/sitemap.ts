@@ -5,7 +5,7 @@ import type { MetadataRoute } from "next";
 
 const SITE_URL = "https://www.prowalktours.com";
 
-const STATIC_ROUTES = ["/", "/countries", "/search", "/licensing"] as const;
+const STATIC_ROUTES = ["/", "/countries", "/search", "/licensing", "/christmas-markets"] as const;
 
 function listDirectRouteSlugs(relativeDir: string): string[] {
   const dir = path.join(process.cwd(), relativeDir);
