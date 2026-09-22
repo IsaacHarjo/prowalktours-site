@@ -1,127 +1,9 @@
-import { readFileSync } from "node:fs";
-import path from "node:path";
 import Link from "next/link";
-
 import LiveSearchBar from "../components/LiveSearchBar";
 import ThumbnailImg from "../components/ThumbnailImg";
 import WorldMapClient from "../components/WorldMapClient";
-import {
-  getVideoWatchDestinationType,
-  getVideoWatchHref,
-} from "../data/maps/filters";
-import { videos } from "../data/videos/index";
+import { discoveryVideos as videos, worldTours as mappedTours } from "../lib/tours/server";
 
-// ─── Load world tour data from all_tours.csv at build time ───────────────────
-
-// Must stay in sync with COUNTRIES in components/WorldMapClient.tsx — a country
-// missing from that array renders nothing on the map.
-const COUNTRY_INDICES: Record<string, number> = {
-  Italy: 0,
-  France: 1,
-  Germany: 2,
-  Canada: 3,
-};
-
-// Some tours carry a country the map does not render as its own group. Monaco
-// (fr-0006) lives in france.csv but has country=Monaco; it sits on the Riviera
-// beside Menton and Nice, so it rides along with France rather than earning a
-// one-tour legend entry. Grouping in WorldMapClient is by this exact string.
-const COUNTRY_ALIASES: Record<string, string> = {
-  Monaco: "France",
-};
-
-function loadWorldTours() {
-  const csvPath = path.join(process.cwd(), "data", "maps", "all_tours.csv");
-  const content = readFileSync(csvPath, "utf8");
-
-  const rows: string[][] = [];
-  let currentRow: string[] = [];
-  let currentValue = "";
-  let inQuotes = false;
-
-  for (let i = 0; i < content.length; i++) {
-    const c = content[i];
-    const next = content[i + 1];
-    if (c === '"') {
-      if (inQuotes && next === '"') {
-        currentValue += '"';
-        i++;
-      } else {
-        inQuotes = !inQuotes;
-      }
-      continue;
-    }
-    if (c === "," && !inQuotes) {
-      currentRow.push(currentValue);
-      currentValue = "";
-      continue;
-    }
-    if ((c === "\n" || c === "\r") && !inQuotes) {
-      if (c === "\r" && next === "\n") i++;
-      currentRow.push(currentValue);
-      if (currentRow.some((v) => v !== "")) rows.push(currentRow);
-      currentRow = [];
-      currentValue = "";
-      continue;
-    }
-    currentValue += c;
-  }
-  currentRow.push(currentValue);
-  if (currentRow.some((v) => v !== "")) rows.push(currentRow);
-
-  const [header, ...dataRows] = rows;
-  const col: Record<string, number> = {};
-  header.forEach((h, i) => {
-    col[h] = i;
-  });
-
-  return dataRows
-    .map((row) => {
-      const slug =
-        (row[col["slug_override"]] || "").trim() ||
-        (row[col["slug"]] || "").trim();
-      const lat = parseFloat(row[col["latitude"]] || "");
-      const lng = parseFloat(row[col["longitude"]] || "");
-      const ytUrl = (row[col["youtube_url"]] || "").trim();
-      const rawCountry = (row[col["country"]] || "").trim();
-      const country = COUNTRY_ALIASES[rawCountry] ?? rawCountry;
-      const title = (row[col["title"]] || "").trim();
-      const city = (row[col["city"]] || "").trim();
-      const region = (row[col["region"]] || "").trim();
-      const videoType = (row[col["video_type"]] || "").trim();
-      const filmedYearStr = (row[col["filmed_year"]] || "").trim();
-      const filmedYear = filmedYearStr ? parseInt(filmedYearStr, 10) : null;
-      const durationLabel = (row[col["duration_label"]] || "").trim();
-
-      if (!slug || !ytUrl || isNaN(lat) || isNaN(lng) || lat === 0) {
-        return null;
-      }
-
-      return {
-        slug,
-        title,
-        city,
-        country,
-        region,
-        videoType,
-        filmedYear: filmedYear && !isNaN(filmedYear) ? filmedYear : null,
-        durationLabel,
-        youtubeUrl: ytUrl,
-        watchHref: getVideoWatchHref(slug, ytUrl),
-        watchDestinationType: getVideoWatchDestinationType(slug),
-        latitude: lat,
-        longitude: lng,
-        // Not used for colouring — WorldMapClient colours by `country` name.
-        // Kept because WorldTour requires it; -1 marks "no mapped country"
-        // rather than silently masquerading as Italy.
-        countryIndex: COUNTRY_INDICES[country] ?? -1,
-      };
-    })
-    .filter((t): t is NonNullable<typeof t> => t !== null);
-}
-
-const worldTours = loadWorldTours();
-const mappedTours = worldTours.filter((tour) => tour.countryIndex >= 0);
 const mappedCountryCount = new Set(mappedTours.map((tour) => tour.country)).size;
 const featuredVideo = videos.find((video) => video.slug === "nice-old-town-monday-evening-walk-2025");
 
@@ -337,7 +219,7 @@ export default function HomePage() {
               {featuredVideo.city}, {featuredVideo.country} &middot; Filmed {featuredVideo.filmingMonthYear}
             </p>
             <Link
-              href={getVideoWatchHref(featuredVideo.slug, featuredVideo.youtubeUrl)}
+              href={featuredVideo.watchHref}
               className="mt-4 inline-flex items-center justify-center rounded-full bg-[#167fd5] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0f6db9]"
             >
               Watch the tour &rarr;

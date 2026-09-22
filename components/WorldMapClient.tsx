@@ -12,45 +12,13 @@ import MapboxMap, {
 import type { LayerProps } from "react-map-gl/mapbox";
 import type { Feature, FeatureCollection, Point } from "geojson";
 import "mapbox-gl/dist/mapbox-gl.css";
-import type { ExploreMapWatchDestinationType } from "../data/maps/types";
-
-// ─── Types ───────────────────────────────────────────────────────────────────
-
-type WorldTour = {
-  slug: string;
-  title: string;
-  city: string;
-  country: string;
-  region: string;
-  videoType: string;
-  filmedYear: number | null;
-  durationLabel: string;
-  youtubeUrl: string;
-  watchHref: string;
-  watchDestinationType: ExploreMapWatchDestinationType;
-  latitude: number;
-  longitude: number;
-  countryIndex: number; // index into COUNTRIES below; see note there
-};
+import type { WorldTour } from "../lib/tours/types";
+import { tourCountries as COUNTRIES } from "../lib/tours/countries";
 
 type TourProperties = {
   featureIndex: number;
   countryIndex: number;
 };
-
-// ─── Country colours ─────────────────────────────────────────────────────────
-
-// This list is the single source of truth for what appears on the world map.
-// Tours are grouped by `tour.country` matching `name` exactly, and the render
-// loop below iterates COUNTRIES — so a country missing from this array renders
-// NOTHING on the map, silently. Add an entry here when a country is onboarded.
-// (`tour.countryIndex` does not drive colour; `index` here does.)
-const COUNTRIES = [
-  { name: "Italy", color: "#009246", index: 0, center: [12.5674, 41.8719] as [number, number], zoom: 5.5 },
-  { name: "France", color: "#ED2939", index: 1, center: [2.3522, 46.2276] as [number, number], zoom: 5.2 },
-  { name: "Germany", color: "#FFCE00", index: 2, center: [10.4515, 51.1657] as [number, number], zoom: 5.5 },
-  { name: "Canada", color: "#D80621", index: 3, center: [-123.1207, 49.2827] as [number, number], zoom: 5.5 },
-] as const;
 
 function getDisplayTitle(title: string) {
   return title
@@ -172,7 +140,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
   const { countryGeoJson, countryTourArrays } = useMemo(() => {
     const byCountry: Record<string, WorldTour[]> = {};
     for (const tour of tours) {
-      const key = tour.country;
+      const key = tour.mapGroup;
       if (!byCountry[key]) byCountry[key] = [];
       byCountry[key].push(tour);
     }
@@ -440,7 +408,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
                     : "";
                   return (
                     <div
-                      key={item.slug}
+                      key={item.tourId}
                       className="rounded-[1rem] border border-[#eadfce] bg-[#fcfaf7] p-3"
                     >
                       <div className="overflow-hidden rounded-[0.9rem] border border-[#eadfce] bg-white">
@@ -516,7 +484,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName }: Wo
                 : "";
               return (
                 <div
-                  key={item.slug}
+                  key={item.tourId}
                   className="flex gap-3 rounded-xl border border-[#eadfce] bg-[#fcfaf7] p-2"
                 >
                   {thumbSrc ? (

@@ -2,13 +2,9 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 import SearchFilterBar from "../../components/SearchFilterBar";
-import {
-  getVideoWatchDestinationType,
-  getVideoWatchHref,
-} from "../../data/maps/filters";
-import { allSearchHits } from "../../data/search-hits/france";
+import { withWatchTimestamp } from "../../lib/tours/links";
 import type { SearchHitRecord } from "../../data/video-types";
-import { videos } from "../../data/videos/index";
+import { discoveryVideos as videos, searchHits as allSearchHits } from "../../lib/tours/server";
 
 type SearchParams = {
   q?: string | string[];
@@ -307,9 +303,9 @@ export default async function SearchPage({
 
             <div className="grid gap-6 lg:grid-cols-2">
               {results.map(({ video, matchingHits }) => {
-                const watchHref = getVideoWatchHref(video.slug, video.youtubeUrl);
+                const watchHref = video.watchHref;
                 const isInternalWatchPage =
-                  getVideoWatchDestinationType(video.slug) === "internal-page";
+                  video.watchDestinationType === "internal-page";
 
                 return (
                   <article
@@ -361,14 +357,8 @@ export default async function SearchPage({
                           </p>
                           <div className="mt-3 space-y-3">
                             {matchingHits.map((hit) => {
-                              const hitHref = getVideoWatchHref(
-                                hit.slug,
-                                hit.youtube_url,
-                                hit.seconds
-                              );
-                              const isInternalHit =
-                                getVideoWatchDestinationType(hit.slug) ===
-                                "internal-page";
+                              const hitHref = withWatchTimestamp(video.watchHref, hit.seconds);
+                              const isInternalHit = video.watchDestinationType === "internal-page";
 
                               return (
                                 <SearchResultLink

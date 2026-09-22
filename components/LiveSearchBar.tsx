@@ -1,11 +1,10 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import type { VideoCatalogRecord } from "../data/video-types";
-import { getVideoWatchHref, getVideoWatchDestinationType } from "../data/maps/filters";
+import type { DiscoveryVideo } from "../lib/tours/types";
 
 type LiveSearchBarProps = {
-  videos: VideoCatalogRecord[];
+  videos: DiscoveryVideo[];
   action?: string;
   placeholder?: string;
   children?: React.ReactNode;
@@ -44,7 +43,8 @@ export default function LiveSearchBar({
 
     const results: Array<{
       slug: string;
-      youtubeUrl: string;
+      watchHref: string;
+      watchDestinationType: DiscoveryVideo["watchDestinationType"];
       title: string;
       city: string;
       country: string;
@@ -76,7 +76,8 @@ export default function LiveSearchBar({
       if (isGeoMatch || matchedLandmark) {
         results.push({
           slug: video.slug,
-          youtubeUrl: video.youtubeUrl,
+          watchHref: video.watchHref,
+          watchDestinationType: video.watchDestinationType,
           title: video.siteTitle,
           city: video.city,
           country: video.country,
@@ -172,9 +173,9 @@ export default function LiveSearchBar({
               {suggestions.map((s) => (
                 <li key={s.slug}>
                   <a
-                    href={getVideoWatchHref(s.slug, s.youtubeUrl)}
-                    target={getVideoWatchDestinationType(s.slug) === "youtube" ? "_blank" : undefined}
-                    rel={getVideoWatchDestinationType(s.slug) === "youtube" ? "noreferrer" : undefined}
+                    href={s.watchHref}
+                    target={s.watchDestinationType === "youtube" ? "_blank" : undefined}
+                    rel={s.watchDestinationType === "youtube" ? "noreferrer" : undefined}
                     className="flex items-center gap-3 px-4 py-3 transition hover:bg-[#f8f3ec]"
                     onClick={() => setOpen(false)}
                   >
