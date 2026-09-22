@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { VideoCatalogRecord } from "../data/video-types";
+import { getVideoWatchHref, getVideoWatchDestinationType } from "../data/maps/filters";
 
 type LiveSearchBarProps = {
   videos: VideoCatalogRecord[];
@@ -43,6 +44,7 @@ export default function LiveSearchBar({
 
     const results: Array<{
       slug: string;
+      youtubeUrl: string;
       title: string;
       city: string;
       country: string;
@@ -74,6 +76,7 @@ export default function LiveSearchBar({
       if (isGeoMatch || matchedLandmark) {
         results.push({
           slug: video.slug,
+          youtubeUrl: video.youtubeUrl,
           title: video.siteTitle,
           city: video.city,
           country: video.country,
@@ -116,7 +119,7 @@ export default function LiveSearchBar({
   return (
     <div ref={containerRef} className="relative" onKeyDown={handleKeyDown}>
       <form action={action} method="get" className="flex items-start gap-3">
-        <div className="relative flex-1">
+        <div className="relative min-w-0 flex-1">
           <div className="relative">
             <span
               aria-hidden="true"
@@ -139,6 +142,7 @@ export default function LiveSearchBar({
               ref={inputRef}
               type="text"
               name="q"
+              aria-label="Search a city, landmark, or country"
               value={query}
               onChange={(e) => {
                 setQuery(e.target.value);
@@ -168,7 +172,9 @@ export default function LiveSearchBar({
               {suggestions.map((s) => (
                 <li key={s.slug}>
                   <a
-                    href={`/videos/${s.slug}`}
+                    href={getVideoWatchHref(s.slug, s.youtubeUrl)}
+                    target={getVideoWatchDestinationType(s.slug) === "youtube" ? "_blank" : undefined}
+                    rel={getVideoWatchDestinationType(s.slug) === "youtube" ? "noreferrer" : undefined}
                     className="flex items-center gap-3 px-4 py-3 transition hover:bg-[#f8f3ec]"
                     onClick={() => setOpen(false)}
                   >

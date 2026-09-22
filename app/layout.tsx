@@ -12,11 +12,8 @@ type NavItem = {
 const navItems: NavItem[] = [
   { label: "Countries", href: "/countries" },
   { label: "Walks", href: "/search" },
-  { label: "Plan", href: "/destinations" }, // TODO — update to /plan when itinerary pages are built
-  { label: "Map", href: "/" },
-  { label: "Store", href: "/" },
+  { label: "Map", href: "/#world-map" },
   { label: "Licensing", href: "/licensing" },
-  { label: "About", href: "/" },
 ];
 
 const socialLinks = {
@@ -39,7 +36,7 @@ const footerSections = {
     { label: "Licensing", href: "/licensing" },
     { label: "Featured Walk", href: "/videos/naples-daytime-walk-2023" },
     { label: "YouTube Channel", href: socialLinks.youtube },
-    { label: "Travel Videos", href: "/" },
+    { label: "Travel Videos", href: "/search" },
   ],
   social: [
     { label: "Instagram", href: socialLinks.instagram },
@@ -93,7 +90,7 @@ function SiteHeader() {
         </nav>
 
         {/* Mobile: hamburger positioned far right */}
-        <div className="absolute right-4 lg:hidden">
+        <div className="contents lg:hidden">
           <MobileNav items={navItems} />
         </div>
 

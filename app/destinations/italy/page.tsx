@@ -141,7 +141,7 @@ export default function ItalyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-14 lg:px-10">
+      <section id="tour-map" className="scroll-mt-16 mx-auto max-w-7xl px-6 py-14 lg:px-10">
         <div className="mb-8 rounded-3xl border border-[#d8c7b5] bg-[#fffaf3] p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
             Interactive Italy Map

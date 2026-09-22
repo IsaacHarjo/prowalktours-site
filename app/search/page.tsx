@@ -363,7 +363,8 @@ export default async function SearchPage({
                             {matchingHits.map((hit) => {
                               const hitHref = getVideoWatchHref(
                                 hit.slug,
-                                hit.youtube_url
+                                hit.youtube_url,
+                                hit.seconds
                               );
                               const isInternalHit =
                                 getVideoWatchDestinationType(hit.slug) ===

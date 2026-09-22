@@ -121,43 +121,46 @@ function loadWorldTours() {
 }
 
 const worldTours = loadWorldTours();
+const mappedTours = worldTours.filter((tour) => tour.countryIndex >= 0);
+const mappedCountryCount = new Set(mappedTours.map((tour) => tour.country)).size;
+const featuredVideo = videos.find((video) => video.slug === "nice-old-town-monday-evening-walk-2025");
 
 // ─── Top destinations data ───────────────────────────────────────────────────
 
 const topDestinations = [
   {
     name: "Naples & Campania",
-    videoCount: "95 videos",
+    description: "Explore Campania walks",
     href: "/destinations/italy/campania",
     img: "/images/homepage/naples-campania.jpg",
   },
   {
     name: "Venice",
-    videoCount: "39 videos",
-    href: "/destinations/italy/veneto",
+    description: "Explore on the Italy map",
+    href: "/destinations/italy#tour-map",
     img: "/images/homepage/venice.jpg",
   },
   {
     name: "Amalfi Coast",
-    videoCount: "20 videos",
+    description: "Explore coastal Campania",
     href: "/destinations/italy/campania",
     img: "/images/homepage/amalfi-coast.jpg",
   },
   {
     name: "French Riviera",
-    videoCount: "12 videos",
+    description: "Explore Riviera walks",
     href: "/destinations/france/french-riviera",
     img: "/images/homepage/french-riviera.jpg",
   },
   {
     name: "Rome",
-    videoCount: "168 videos",
-    href: "/destinations/italy/lazio",
+    description: "Explore on the Italy map",
+    href: "/destinations/italy#tour-map",
     img: "/images/homepage/rome.jpg",
   },
   {
     name: "Paris",
-    videoCount: "12 videos",
+    description: "Explore Paris walks",
     href: "/destinations/france/paris",
     img: "/images/homepage/paris.jpg",
   },
@@ -167,13 +170,13 @@ const topDestinations = [
 
 export default function HomePage() {
   return (
-    <main className="bg-[#fcfaf7] text-[#2f261d]">
+    <div className="bg-[#fcfaf7] text-[#2f261d]">
       {/* ═══ SECTION 1 — Hero ═══ */}
       <section className="bg-white">
         <div className="mx-auto max-w-4xl px-6 py-12 text-center lg:py-16">
-          <p className="text-xl font-bold uppercase text-[#9a7a52] sm:text-2xl lg:text-3xl">
-            421 walking tours across 24 countries
-          </p>
+          <h1 className="text-xl font-bold uppercase text-[#9a7a52] sm:text-2xl lg:text-3xl">
+            {mappedTours.length} tours to explore on the map
+          </h1>
           <div className="mx-auto mt-6 max-w-2xl">
             <LiveSearchBar videos={videos}>
               <div className="mt-3 flex flex-wrap justify-center gap-3">
@@ -220,7 +223,7 @@ export default function HomePage() {
                     {dest.name}
                   </p>
                   <p className="mt-0.5 text-xs text-[#8a7a68]">
-                    {dest.videoCount}
+                    {dest.description}
                   </p>
                 </div>
               </Link>
@@ -234,7 +237,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-5xl px-6 py-4 text-center">
           <p className="text-xs font-medium tracking-wide text-[#6c5b49] sm:text-sm">
             Wall Street Journal &middot; 24 countries &middot; TV distribution
-            via Janson Media &middot; 758K YouTube subscribers
+            via Janson Media &middot; 4K walks with binaural audio
           </p>
         </div>
       </section>
@@ -249,13 +252,13 @@ export default function HomePage() {
         </h2>
         <div className="mt-6">
           <WorldMapClient
-            tours={worldTours}
+            tours={mappedTours}
             fullWidth
             heightClassName="h-[360px] sm:h-[500px]"
           />
         </div>
         <p className="mt-4 text-center text-sm text-[#8a7a68]">
-          + 21 more countries coming soon
+          Explore tours in {mappedCountryCount} countries. More destinations are being added.
         </p>
       </section>
 
@@ -266,33 +269,32 @@ export default function HomePage() {
         </p>
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <Link
-            href="/destinations"
+            href="/countries"
             className="rounded-2xl border border-[#eadfce] bg-white p-6 transition hover:-translate-y-0.5 hover:border-[#d7c3ad] hover:shadow-md"
           >
             <h3 className="text-lg font-bold text-[#2f261d]">
               Find more walks
             </h3>
             <p className="mt-2 text-[15px] leading-7 text-[#6c5b49]">
-              Browse all 421 tours by country or region
+              Browse walking tours by country and region
             </p>
             <p className="mt-4 text-sm font-semibold text-[#167fd5]">
               Browse Countries &rarr;
             </p>
           </Link>
 
-          {/* TODO — update href to /plan when itinerary pages are built */}
           <Link
-            href="/destinations"
+            href="/search"
             className="rounded-2xl border border-[#eadfce] bg-white p-6 transition hover:-translate-y-0.5 hover:border-[#d7c3ad] hover:shadow-md"
           >
             <h3 className="text-lg font-bold text-[#2f261d]">
-              Plan your trip
+              Find a place
             </h3>
             <p className="mt-2 text-[15px] leading-7 text-[#6c5b49]">
-              Destination guides, tips, ferries, and best things to do
+              Search for a city, neighborhood, or landmark you want to explore
             </p>
             <p className="mt-4 text-sm font-semibold text-[#167fd5]">
-              Explore Destinations &rarr;
+              Search Walks &rarr;
             </p>
           </Link>
 
@@ -313,39 +315,37 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 — Latest Video ═══ */}
-      {/* TODO — replace with dynamic YouTube API data when connected */}
+      {/* ═══ SECTION 6 — Featured Walk ═══ */}
+      {featuredVideo ? (
       <section className="mx-auto max-w-7xl px-6 pb-16 lg:px-10">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#c89b3c]">
-          New This Saturday
+          Featured Walk
         </p>
         <div className="mt-4 flex flex-col gap-5 rounded-2xl border border-[#eadfce] bg-white p-5 sm:flex-row sm:items-start">
           <div className="w-full shrink-0 overflow-hidden rounded-xl bg-[#2f261d] sm:w-[200px]">
             <ThumbnailImg
-              src="https://img.youtube.com/vi/br0MPT2SdTE/mqdefault.jpg"
-              alt="Nice, France Evening Walking Tour"
+              src={featuredVideo.thumbnail}
+              alt={featuredVideo.siteTitle}
               className="aspect-video w-full object-cover"
             />
           </div>
           <div className="min-w-0">
             <h3 className="text-base font-bold leading-snug text-[#2f261d]">
-              Nice, France 🇫🇷 Evening Walking Tour | Vieux Nice &amp;
-              Promenade des Anglais | 4K 60fps
+              {featuredVideo.siteTitle}
             </h3>
             <p className="mt-1.5 text-sm text-[#8a7a68]">
-              Nice, France &middot; Released April 5, 2026
+              {featuredVideo.city}, {featuredVideo.country} &middot; Filmed {featuredVideo.filmingMonthYear}
             </p>
-            <a
-              href="https://youtu.be/br0MPT2SdTE"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              href={getVideoWatchHref(featuredVideo.slug, featuredVideo.youtubeUrl)}
               className="mt-4 inline-flex items-center justify-center rounded-full bg-[#167fd5] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0f6db9]"
             >
-              Watch on YouTube &rarr;
-            </a>
+              Watch the tour &rarr;
+            </Link>
           </div>
         </div>
       </section>
-    </main>
+      ) : null}
+    </div>
   );
 }

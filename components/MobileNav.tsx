@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 type MobileNavProps = {
   items: { label: string; href: string }[];
@@ -9,16 +9,19 @@ type MobileNavProps = {
 
 export default function MobileNav({ items }: MobileNavProps) {
   const [open, setOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   return (
     <>
       {/* Hamburger button — visible only on mobile */}
       <button
+        ref={buttonRef}
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex items-center justify-center rounded-lg p-2 text-[#5c4c33] transition hover:bg-[#f8f3ec] lg:hidden"
+        className="absolute right-4 flex items-center justify-center rounded-lg p-2 text-[#5c4c33] transition hover:bg-[#f8f3ec] lg:hidden"
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
+        aria-controls="mobile-navigation"
       >
         {open ? (
           <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -33,8 +36,17 @@ export default function MobileNav({ items }: MobileNavProps) {
 
       {/* Slide-down menu */}
       {open ? (
-        <div className="absolute left-0 right-0 top-16 z-50 border-b border-[#d8c7b5] bg-white shadow-lg lg:hidden">
-          <nav className="mx-auto max-w-7xl px-6 py-4">
+        <div
+          id="mobile-navigation"
+          className="absolute left-0 right-0 top-16 z-50 max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-[#d8c7b5] bg-white shadow-lg lg:hidden"
+          onKeyDown={(event) => {
+            if (event.key === "Escape") {
+              setOpen(false);
+              buttonRef.current?.focus();
+            }
+          }}
+        >
+          <nav aria-label="Mobile navigation" className="mx-auto max-w-7xl px-6 py-4">
             <ul className="flex flex-col gap-1">
               {items.map((item) => (
                 <li key={item.label}>
