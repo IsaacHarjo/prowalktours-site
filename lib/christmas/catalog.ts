@@ -29,7 +29,7 @@ export const christmasHero = {
 };
 
 // Editorial journey records, separate from the reusable video inventory.
-// 2022: itinerary documents supplied by Isaac. 2025: dated filming folders
+// 2022–2024: itinerary documents and filming folders supplied by Isaac. 2025: dated filming folders
 // and Isaac's recollection. These are not transport or current-season schedules.
 export const christmasJourneys = [
   {
@@ -41,6 +41,28 @@ export const christmasJourneys = [
       { city: "Prague", country: "Czech Republic" }, { city: "Dresden", country: "Germany" },
       { city: "Nuremberg", country: "Germany" }, { city: "Stuttgart", country: "Germany" },
       { city: "Basel", country: "Switzerland" }, { city: "Strasbourg", country: "France" },
+    ],
+  },
+  {
+    id: "germany-alsace-2023", title: "Cologne to Alsace", label: "The 2023 journey",
+    description: "This filming journey connects Cologne and Aachen with Rothenburg ob der Tauber, then continues into Alsace through Strasbourg, Colmar and Riquewihr. I returned to Colmar for another daytime walk after filming in Riquewihr.",
+    note: "This outline follows the recorded filming sequence, including the return to Colmar. Overnight stays and transport connections still need to be checked before adding a day-by-day itinerary.",
+    stops: [
+      { city: "Cologne", country: "Germany" }, { city: "Aachen", country: "Germany" },
+      { city: "Rothenburg ob der Tauber", country: "Germany" },
+      { city: "Strasbourg", country: "France" }, { city: "Colmar", country: "France" },
+      { city: "Riquewihr", country: "France" }, { city: "Colmar", country: "France" },
+    ],
+  },
+  {
+    id: "dresden-esslingen-2024", title: "Dresden, Prague & southern Germany", label: "The 2024 journey",
+    description: "Starting in Dresden, this Christmas filming journey continues to Prague, then through Nuremberg, Munich and Rothenburg ob der Tauber before finishing with Stuttgart and Esslingen.",
+    note: "The filming records establish this sequence of destinations. Overnight bases, travel legs and time spent at each stop remain to be verified for a practical itinerary.",
+    stops: [
+      { city: "Dresden", country: "Germany" }, { city: "Prague", country: "Czech Republic" },
+      { city: "Nuremberg", country: "Germany" }, { city: "Munich", country: "Germany" },
+      { city: "Rothenburg ob der Tauber", country: "Germany" },
+      { city: "Stuttgart", country: "Germany" }, { city: "Esslingen", country: "Germany" },
     ],
   },
   {

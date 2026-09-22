@@ -27,6 +27,11 @@ filming years; they do not imply footage from the journey year is published.
 - December 2025 sequence comes from dated filming-folder screenshots, with the
   Basel/EuroAirport arrival from the user's recollection. Transport and overnight
   bases are not confirmed.
+- 2023 covers Cologne, Aachen, Rothenburg, Strasbourg, Colmar, Riquewihr and
+  the return to Colmar. Repeated destinations are separate stops, not deduplicated.
+- 2024 covers Dresden, Prague, Nuremberg, Munich, Rothenburg, Stuttgart and
+  Esslingen. Both new outlines follow the supplied filming records, not a
+  verified overnight-stay or transport itinerary.
 - No raw diary details, unpublished inventory, new country pages, current market
   dates, journey durations or individual snow classifications are published.
 
@@ -37,6 +42,12 @@ bases before adding those filters or turning the journey sketches into practical
 itineraries. Add new footage through the master source and shared eligibility
 workflow. Existing France/Germany Christmas pages retain their URLs and current
 content; their legacy hard-coded inventories remain a later migration task.
+
+Booking confirmations can later establish accommodation names, overnight cities,
+check-in/check-out dates and their relationship to filming stops. A booking alone
+does not prove a stay occurred or establish transport/pacing. Reconcile with the
+user's recollection before publishing. Keep confirmation numbers, contact/payment
+details and raw booking documents out of public site data.
 
 Checks: `node scripts/test-tour-data.cjs`, TypeScript, targeted ESLint, production
 build, browser checks of filters/map/list agreement, empty states, journey links,
