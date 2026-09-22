@@ -205,8 +205,19 @@ export function getVideoWatchDestinationType(
   return hasLiveInternalVideoPage(slug) ? "internal-page" : "youtube";
 }
 
-export function getVideoWatchHref(slug: string, youtubeUrl: string) {
-  return hasLiveInternalVideoPage(slug) ? `/videos/${slug}` : youtubeUrl;
+export function getVideoWatchHref(slug: string, youtubeUrl: string, seconds?: number) {
+  const href = hasLiveInternalVideoPage(slug) ? `/videos/${slug}` : youtubeUrl;
+  if (seconds === undefined || !Number.isFinite(seconds) || seconds < 0) return href;
+
+  const timestamp = Math.floor(seconds);
+  if (href.startsWith("/")) return `${href}?t=${timestamp}`;
+
+  const url = new URL(href);
+  // YouTube embed links use start; watch and short links use t.
+  url.searchParams.delete("start");
+  url.searchParams.delete("t");
+  url.searchParams.set(url.pathname.startsWith("/embed/") ? "start" : "t", String(timestamp));
+  return url.toString();
 }
 
 export function hasInternalMapWatchPage(feature: ExploreMapFeature) {
