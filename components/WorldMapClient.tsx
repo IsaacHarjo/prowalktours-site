@@ -323,7 +323,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
             zoom: 4.5,
           }}
           mapStyle="mapbox://styles/mapbox/satellite-streets-v12"
-          projection="mercator"
+          projection="globe"
           mapboxAccessToken={mapboxToken}
           interactiveLayerIds={interactiveLayerIds}
           cooperativeGestures={fitToTours}

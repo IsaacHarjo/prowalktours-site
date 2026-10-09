@@ -48,8 +48,8 @@ Full legacy-page content migration and SEO redirects remain separate launch work
 - Production build passed: 118 generated entries, with no new content routes. Both catalog test scripts passed.
 - Changed application files passed targeted lint with zero errors and two existing image-element warnings. The full-repository lint backlog recorded in the launch audit remains separate.
 - Local production HTTP checks passed for homepage, Tokyo search and the Christmas collection, including expected new video links.
-- Desktop browser: country navigation, cluster cards, exact shared-pin results at zoom 13, direct YouTube URLs, and accuracy labels verified. The worldwide view uses a flat projection so destinations are not hidden on the back of a globe.
+- Desktop browser: country navigation, cluster cards, exact shared-pin results at zoom 13, direct YouTube URLs, and accuracy labels verified. The 3D globe projection was restored at the owner's request; drag the globe or choose a country to explore destinations on its other side.
 - 390px mobile browser: 420px map height, country selector, Copenhagen popup, Cairo five-tour list, accuracy labels and watch URLs verified; no horizontal page overflow. Country navigation waits until the map finishes loading.
 - Browser console showed no errors during these checks. Viewport override was reset. No physical-device or Lighthouse score is claimed.
 
-Screenshots: [world view](map-world-desktop.jpg), [shared Cairo pin](map-cairo-shared-pin.jpg), [mobile destination popup](map-mobile-destination.jpg), [mobile cluster](map-mobile-cluster.jpg).
+Screenshots: [restored 3D globe](map-globe-desktop.jpg), [earlier flat world view](map-world-desktop.jpg), [shared Cairo pin](map-cairo-shared-pin.jpg), [mobile destination popup](map-mobile-destination.jpg), [mobile cluster](map-mobile-cluster.jpg).
