@@ -147,6 +147,7 @@ export default function HomeClient({ videos, mappedTours }: { videos: DiscoveryV
             tours={mappedTours}
             fullWidth
             fitToTours
+            globeOverview
             heightClassName="h-[420px] sm:h-[500px]"
           />
         </div>

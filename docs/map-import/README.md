@@ -53,3 +53,11 @@ Full legacy-page content migration and SEO redirects remain separate launch work
 - Browser console showed no errors during these checks. Viewport override was reset. No physical-device or Lighthouse score is claimed.
 
 Screenshots: [restored 3D globe](map-globe-desktop.jpg), [earlier flat world view](map-world-desktop.jpg), [shared Cairo pin](map-cairo-shared-pin.jpg), [mobile destination popup](map-mobile-destination.jpg), [mobile cluster](map-mobile-cluster.jpg).
+
+## Globe drag follow-up
+
+The owner reported the globe catching while dragging with the mouse. The new worldwide bounds had placed the initial camera at latitude 47.9, zoom 0.46. Browser reproduction showed a 100px northward drag carrying it to latitude 84; reversing direction moved it away again. No permanent freeze was reproduced, but overshoot into the polar limit was observable.
+
+The homepage now frames the globe independently of the video coordinate bounds, centered at longitude 10 / latitude 20, with zoom sized to the actual map container. Drag momentum is reduced (`maxSpeed: 350`, `deceleration: 4500`). The All countries option returns to that overview. Country and collection fits use `retainPadding: false` so navigation does not leave camera padding behind. The globe projection, all 539 tours, clusters and watch links are preserved; collection maps retain their destination fitting behavior.
+
+Verification: production build and targeted lint passed (two existing image warnings). Mouse tests covered horizontal rotation, northward/reverse dragging and crossing the date line. The comparable northward drag stopped around latitude 51, and the reverse drag returned around latitude 16.7. Australia navigation and the All countries return were checked. The 390px overview uses zoom 0.42 with a 420px map and no horizontal overflow. Browser console showed no errors. See the [adjusted globe preview](map-globe-drag-adjusted.jpg). This is a local camera/interaction adjustment, not a data change or dependency upgrade.

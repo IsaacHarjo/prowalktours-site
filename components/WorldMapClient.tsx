@@ -97,6 +97,7 @@ type WorldMapClientProps = {
   fullWidth?: boolean;
   heightClassName?: string;
   fitToTours?: boolean;
+  globeOverview?: boolean;
 };
 
 function WorldTourWatchLink({
@@ -128,18 +129,31 @@ function WorldTourWatchLink({
   );
 }
 
-export default function WorldMapClient({ tours, fullWidth, heightClassName, fitToTours = false }: WorldMapClientProps) {
+export default function WorldMapClient({ tours, fullWidth, heightClassName, fitToTours = false, globeOverview = false }: WorldMapClientProps) {
   const mapRef = useRef<MapRef | null>(null);
   const countries = useMemo(() => COUNTRIES.filter((country) => tours.some((tour) => tour.mapGroup === country.name)), [tours]);
+  const showGlobe = (duration: number) => {
+    const map = mapRef.current;
+    if (!map) return;
+    const { clientWidth, clientHeight } = map.getCanvas();
+    // Frame the planet itself, not a worldwide rectangle of tour coordinates.
+    // A consistent, equator-facing view avoids starting near the polar pan limit.
+    const zoom = Math.max(0, Math.min(1.3, Math.log2(Math.min(clientWidth, clientHeight) / 256)));
+    map.easeTo({ center: [10, 20], zoom, bearing: 0, pitch: 0, padding: 0, duration });
+  };
   const exploreCountry = (name: string) => {
     const selected = name ? tours.filter(tour => tour.mapGroup === name) : tours;
     if (!selected.length) return;
     setClusterInfo(null);
     setPopupInfo(null);
+    if (!name && globeOverview) {
+      showGlobe(800);
+      return;
+    }
     mapRef.current?.fitBounds([
       [Math.min(...selected.map(t => t.longitude)), Math.min(...selected.map(t => t.latitude))],
       [Math.max(...selected.map(t => t.longitude)), Math.max(...selected.map(t => t.latitude))],
-    ], { padding: 65, maxZoom: 11, duration: 1000 });
+    ], { padding: 65, retainPadding: false, maxZoom: 11, duration: 1000 });
   };
   const [mapError, setMapError] = useState(false);
   const [mapReady, setMapReady] = useState(false);
@@ -327,18 +341,21 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
           mapboxAccessToken={mapboxToken}
           interactiveLayerIds={interactiveLayerIds}
           cooperativeGestures={fitToTours}
+          dragPan={globeOverview ? { maxSpeed: 350, deceleration: 4500 } : true}
           onClick={handleMapClick}
           onError={() => setMapError(true)}
           onLoad={() => {
             setMapReady(true);
             mapRef.current?.resize();
-            if (fitToTours && tours.length) {
+            if (globeOverview) {
+              showGlobe(0);
+            } else if (fitToTours && tours.length) {
               const lngs = tours.map((tour) => tour.longitude);
               const lats = tours.map((tour) => tour.latitude);
               mapRef.current?.fitBounds([
                 [Math.min(...lngs), Math.min(...lats)],
                 [Math.max(...lngs), Math.max(...lats)],
-              ], { padding: 65, maxZoom: 12, duration: 0 });
+              ], { padding: 65, retainPadding: false, maxZoom: 12, duration: 0 });
             }
           }}
           style={{ width: "100%", height: "100%" }}
