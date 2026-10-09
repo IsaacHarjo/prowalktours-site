@@ -404,4 +404,3 @@ export default function NaplesClient() {
     </div>
   );
 }
-

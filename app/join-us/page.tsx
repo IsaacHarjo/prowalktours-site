@@ -7,4 +7,3 @@ export const metadata = pageMetadata("Join Us", "Introduce your filming work and
 export default function Page() {
   return <><PageJsonLd title="Join Us" pathname="/join-us" /><JoinUsClient /></>;
 }
-

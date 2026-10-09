@@ -129,4 +129,3 @@ export default function TurkeyClient() {
     </div>
   );
 }
-

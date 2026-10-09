@@ -7,4 +7,3 @@ export const metadata = pageMetadata("Press & Partnerships", "Prowalk Tours medi
 export default function Page() {
   return <><PageJsonLd title="Press & Partnerships" pathname="/press" /><PressClient /></>;
 }
-

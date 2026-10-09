@@ -7,4 +7,3 @@ export const metadata = pageMetadata("Contact Us", "Contact Prowalk Tours about 
 export default function Page() {
   return <><PageJsonLd title="Contact Us" pathname="/contact-us" /><ContactClient /></>;
 }
-

@@ -715,5 +715,3 @@ export default function MentonFranceWalkingTour2025Page() {
     </LongFormWalkPage>
   );
 }
-
-

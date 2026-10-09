@@ -7,4 +7,3 @@ export const metadata = pageMetadata("Filming Gear", "Explore the cameras, stabi
 export default function Page() {
   return <><PageJsonLd title="Filming Gear" pathname="/filming-gear" /><FilmingGearClient /></>;
 }
-

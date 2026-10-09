@@ -7,4 +7,3 @@ export const metadata = pageMetadata("About Prowalk Tours", "Meet Isaac Harjo an
 export default function Page() {
   return <><PageJsonLd title="About Prowalk Tours" pathname="/about" /><AboutClient /></>;
 }
-

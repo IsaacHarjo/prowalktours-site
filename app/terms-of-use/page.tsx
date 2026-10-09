@@ -7,4 +7,3 @@ export const metadata = pageMetadata("Terms of Use", "Review draft covering use 
 export default function Page() {
   return <><PageJsonLd title="Terms of Use" pathname="/terms-of-use" /><TermsOfUseClient /></>;
 }
-

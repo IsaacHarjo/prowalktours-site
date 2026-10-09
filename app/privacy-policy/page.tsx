@@ -7,4 +7,3 @@ export const metadata = pageMetadata("Privacy Policy", "Review draft covering pr
 export default function Page() {
   return <><PageJsonLd title="Privacy Policy" pathname="/privacy-policy" /><PrivacyPolicyClient /></>;
 }
-
