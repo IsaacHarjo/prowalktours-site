@@ -115,7 +115,7 @@ export default function SearchClient({videos, query, selectedCountry, selectedRe
               </h2>
             </div>
 
-            <div className="grid gap-6 lg:grid-cols-2">
+            <div className="grid items-start gap-6 lg:grid-cols-2">
               {results.map(({ video, matchingHits }) => {
                 const watchHref = video.watchHref;
                 const isInternalWatchPage =

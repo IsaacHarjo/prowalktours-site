@@ -139,6 +139,12 @@ export default async function SearchPage({
     query || selectedCountry || selectedRegion || selectedCity || selectedType
   );
 
+  // Classify the query across the catalog, not separately for each result.
+  // Paris is still a destination search for tours cataloged under Montmartre.
+  const isGeographicQuery = videos.some((video) =>
+    matchesGeographicMetadata(query, video)
+  );
+
   // Group highlight hits by slug
   const matchingHitsBySlug = query
     ? allSearchHits.reduce<Record<string, SearchHitRecord[]>>(
@@ -172,7 +178,6 @@ export default async function SearchPage({
         })
         .map((video) => {
           // RULE 1: Geographic queries stay card-only.
-          const isGeographicMatch = matchesGeographicMetadata(query, video);
 
           // RULE 2: Broad page-title matches stay card-only unless we also
           // have a more specific landmark/highlight match for this video.
@@ -184,7 +189,7 @@ export default async function SearchPage({
           // RULE 3: Only suppress timestamps for broad geographic queries or
           // title-only matches with no more specific evidence.
           const hits =
-            isGeographicMatch || (isVideoLevelMatch && !hasSpecificMatch)
+            isGeographicQuery || (isVideoLevelMatch && !hasSpecificMatch)
             ? []
             : (matchingHitsBySlug[video.slug] ?? []).sort(
                 (a, b) => a.seconds - b.seconds
