@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import LiveSearchBar from "../components/LiveSearchBar";
-import ThumbnailImg from "../components/ThumbnailImg";
+import Image from "next/image";
 import WorldMapClient from "../components/WorldMapClient";
 import type { DiscoveryVideo, WorldTour } from "../lib/tours/types";
 
@@ -47,201 +47,111 @@ const topDestinations = [
   },
 ];
 
-// ─── Homepage ────────────────────────────────────────────────────────────────
+
+const sectionWidth = "mx-auto max-w-7xl px-5 sm:px-8 lg:px-10";
+const eyebrow = "text-xs font-semibold uppercase tracking-[0.18em] text-[#607767]";
+const textLink = "inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#176347] underline-offset-4 hover:underline";
 
 export default function HomeClient({ videos, mappedTours }: { videos: DiscoveryVideo[]; mappedTours: WorldTour[] }) {
-  const mappedCountryCount = new Set(mappedTours.map((tour) => tour.country)).size;
-  const featuredVideo = videos.find((video) => video.slug === "nice-old-town-monday-evening-walk-2025");
+  const countryCount = new Set(mappedTours.map(tour => tour.country)).size;
+  const featuredVideo = videos.find(video => video.slug === "nice-old-town-monday-evening-walk-2025");
   return (
-    <div className="bg-[#fcfaf7] text-[#2f261d]">
-      {/* ═══ SECTION 1 — Hero ═══ */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-4xl px-6 py-12 text-center lg:py-16">
-          <h1 className="text-xl font-bold uppercase text-[#9a7a52] sm:text-2xl lg:text-3xl">
-            4K walking tours with binaural audio
-          </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#6c5b49]">Explore historic streets, coastlines, and Christmas markets at walking pace. Find a place, hear its atmosphere, and follow the route.</p>
-          <p className="mt-3 text-sm text-[#8a7a68]">{mappedTours.length} tours to explore on the map · New walks on YouTube every Saturday</p>
-          <div className="mx-auto mt-6 max-w-2xl">
-            <LiveSearchBar videos={videos}>
-              <div className="mt-3 flex flex-wrap justify-center gap-3">
-                <Link
-                  href="/countries"
-                  className="inline-flex items-center justify-center rounded-full bg-[#3d3327] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#2f261d]"
-                >
-                  Browse Countries
-                </Link>
-                <Link
-                  href="#world-map"
-                  className="inline-flex items-center justify-center rounded-full bg-[#009246] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#007a3a]"
-                >
-                  Explore the Map
-                </Link>
+    <div className="bg-[#fcfaf7] text-[#25382f]">
+      <section className={sectionWidth + " pt-8 pb-12 sm:pt-12 lg:pb-16"}>
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+          <div className="relative z-10 py-2 lg:py-6">
+            <p className={eyebrow}>The world, at walking pace</p>
+            <h1 className="mt-5 max-w-xl text-4xl font-semibold leading-[1.08] tracking-[-0.035em] sm:text-5xl lg:text-6xl">A new place.<br />A different perspective.</h1>
+            <p className="mt-6 max-w-lg text-base leading-7 text-[#657069] sm:text-lg sm:leading-8">Wander historic streets, follow the coast, and hear a city come to life. Immersive 4K walking tours, with the sounds of being there.</p>
+            <div className="mt-8 max-w-xl">
+              <p className="mb-3 text-sm font-semibold">Where would you like to explore?</p>
+              <LiveSearchBar videos={videos} />
+              <div className="mt-3 flex flex-wrap gap-x-6">
+                <Link href="/countries" className={textLink}>Browse countries <span aria-hidden="true">→</span></Link>
+                <Link href="#world-map" className={textLink}>Explore the globe <span aria-hidden="true">↓</span></Link>
               </div>
-            </LiveSearchBar>
+            </div>
+            <p className="mt-6 text-xs leading-6 tracking-wide text-[#657069]">{mappedTours.length} tours · {countryCount} countries · 4K video & binaural audio</p>
           </div>
-        </div>
-      </section>
-
-      {/* ═══ SECTION 2 — Top Destinations ═══ */}
-      <section className="border-y border-[#eadfce] bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-10 lg:px-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
-            Top Destinations
-          </p>
-          <div className="mt-5 flex gap-4 overflow-x-auto pb-2 lg:grid lg:grid-cols-6 lg:overflow-visible">
-            {topDestinations.map((dest) => (
-              <Link
-                key={dest.name}
-                href={dest.href}
-                className="group w-[200px] shrink-0 overflow-hidden rounded-2xl border border-[#eadfce] bg-[#fcfaf7] shadow-sm transition hover:-translate-y-0.5 hover:border-[#d7c3ad] hover:shadow-md lg:w-auto"
-              >
-                <div className="aspect-video w-full overflow-hidden bg-[#2f261d]">
-                  <ThumbnailImg
-                    src={dest.img}
-                    alt={dest.name}
-                    className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="px-3 py-3">
-                  <p className="text-sm font-bold text-[#2f261d]">
-                    {dest.name}
-                  </p>
-                  <p className="mt-0.5 text-xs text-[#8a7a68]">
-                    {dest.description}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ SECTION 3 — Trust Bar ═══ */}
-      <section className="border-b border-[#eadfce] bg-[#f5f0e8]">
-        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 py-8 sm:flex-row sm:items-center sm:justify-between lg:px-10">
-          <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">From the Christmas archive</p><h2 className="mt-2 text-2xl font-bold">Europe’s Christmas markets, on foot</h2><p className="mt-2 text-sm leading-6 text-[#6c5b49]">Explore the walks by destination and discover the journeys behind the films.</p></div>
-          <Link href="/christmas-markets" className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full bg-[#009246] px-5 py-3 text-sm font-semibold text-white hover:bg-[#007a3a]">Explore Christmas Markets →</Link>
-        </div>
-      </section>
-      <section className="bg-[#f5f0e8]">
-        <div className="mx-auto max-w-5xl px-6 py-4 text-center">
-          <p className="text-xs font-medium tracking-wide text-[#6c5b49] sm:text-sm">
-            Wall Street Journal &middot; 24 countries &middot; TV distribution
-            via Janson Media &middot; 4K walks with binaural audio
-            {" · "}<Link href="/press" className="underline underline-offset-4">Press &amp; Partnerships</Link>
-          </p>
-        </div>
-      </section>
-
-      {/* ═══ SECTION 4 — Interactive Map ═══ */}
-      <section id="world-map" className="scroll-mt-16 mx-auto max-w-7xl px-4 sm:px-6 py-10 lg:px-10 lg:py-14">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
-          Interactive Tour Map
-        </p>
-        <h2 className="mt-2 text-2xl font-bold text-[#2f261d] sm:text-3xl">
-          Browse walks by geography
-        </h2>
-        <div className="mt-6">
-          <WorldMapClient
-            tours={mappedTours}
-            fullWidth
-            fitToTours
-            globeOverview
-            heightClassName="h-[420px] sm:h-[500px]"
-          />
-        </div>
-        <p className="mt-4 text-center text-sm text-[#8a7a68]">
-          Explore {mappedTours.length} tours across {mappedCountryCount} countries. Choose a country, then select a pin or numbered group to watch.
-          <span className="mt-1 block">Approximate destination pins are labeled when the exact starting point is unconfirmed.</span>
-        </p>
-      </section>
-
-      {/* ═══ SECTION 5 — Visitor Intent Cards ═══ */}
-      <section className="mx-auto max-w-7xl px-6 pb-10 lg:px-10">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
-          What Brings You Here?
-        </p>
-        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <Link
-            href="/countries"
-            className="rounded-2xl border border-[#eadfce] bg-white p-6 transition hover:-translate-y-0.5 hover:border-[#d7c3ad] hover:shadow-md"
-          >
-            <h3 className="text-lg font-bold text-[#2f261d]">
-              Find more walks
-            </h3>
-            <p className="mt-2 text-[15px] leading-7 text-[#6c5b49]">
-              Browse walking tours by country and region
-            </p>
-            <p className="mt-4 text-sm font-semibold text-[#167fd5]">
-              Browse Countries &rarr;
-            </p>
-          </Link>
-
-          <Link
-            href="/search"
-            className="rounded-2xl border border-[#eadfce] bg-white p-6 transition hover:-translate-y-0.5 hover:border-[#d7c3ad] hover:shadow-md"
-          >
-            <h3 className="text-lg font-bold text-[#2f261d]">
-              Find a place
-            </h3>
-            <p className="mt-2 text-[15px] leading-7 text-[#6c5b49]">
-              Search for a city, neighborhood, or landmark you want to explore
-            </p>
-            <p className="mt-4 text-sm font-semibold text-[#167fd5]">
-              Search Walks &rarr;
-            </p>
-          </Link>
-
-          <Link
-            href="/licensing"
-            className="rounded-2xl border border-[#eadfce] bg-white p-6 transition hover:-translate-y-0.5 hover:border-[#d7c3ad] hover:shadow-md"
-          >
-            <h3 className="text-lg font-bold text-[#2f261d]">
-              License footage
-            </h3>
-            <p className="mt-2 text-[15px] leading-7 text-[#6c5b49]">
-              TV, streaming, commercial, ambient, and institutional
-            </p>
-            <p className="mt-4 text-sm font-semibold text-[#167fd5]">
-              Licensing Info &rarr;
-            </p>
+          <Link href="/destinations/italy/campania" className="group relative block h-[280px] overflow-hidden rounded-[1.5rem] sm:h-[380px] lg:h-[510px]" aria-label="Explore Naples and Campania">
+            <Image src="/images/homepage/hero.jpg" alt="Fishing boats on the Bay of Naples with Mount Vesuvius beyond" fill priority sizes="(min-width: 1024px) 560px, 100vw" className="object-cover transition duration-700 group-hover:scale-[1.025]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute inset-x-6 bottom-6 flex items-end justify-between text-white">
+              <div><p className="text-xs uppercase tracking-[0.16em] text-white/80">Through the lens</p><p className="mt-2 text-xl font-semibold">Naples, Italy</p></div>
+              <span aria-hidden="true" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/60 text-xl">↗</span>
+            </div>
           </Link>
         </div>
       </section>
 
-      {/* ═══ SECTION 6 — Featured Walk ═══ */}
-      {featuredVideo ? (
-      <section className="mx-auto max-w-7xl px-6 pb-16 lg:px-10">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#c89b3c]">
-          Featured Walk
-        </p>
-        <div className="mt-4 flex flex-col gap-5 rounded-2xl border border-[#eadfce] bg-white p-5 sm:flex-row sm:items-start">
-          <div className="w-full shrink-0 overflow-hidden rounded-xl bg-[#2f261d] sm:w-[200px]">
-            <ThumbnailImg
-              src={featuredVideo.thumbnail}
-              alt={featuredVideo.siteTitle}
-              className="aspect-video w-full object-cover"
-            />
+      <section className={sectionWidth + " pb-14 lg:pb-20"} aria-labelledby="destinations-heading">
+        <div className="flex flex-wrap items-end justify-between gap-3 border-t border-[#dddcd2] pt-9">
+          <div><p className={eyebrow}>Choose your next stop</p><h2 id="destinations-heading" className="mt-2 text-3xl font-semibold tracking-tight">Places worth getting lost in</h2></div>
+          <Link href="/countries" className={textLink}>All destinations →</Link>
+        </div>
+        <div className="mt-7 grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 lg:grid-cols-6 lg:gap-5">
+          {topDestinations.map(dest => <Link key={dest.name} href={dest.href} className="group block min-w-0">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#e6e7de]">
+              <Image src={dest.img} alt={dest.name} fill sizes="(min-width: 1024px) 190px, (min-width: 640px) 30vw, 45vw" className="object-cover transition duration-500 group-hover:scale-105" />
+            </div>
+            <h3 className="mt-3 text-base font-semibold group-hover:underline">{dest.name}</h3>
+            <p className="mt-1 text-xs leading-5 text-[#657069]">{dest.description}</p>
+          </Link>)}
+        </div>
+      </section>
+
+      <section id="world-map" className="scroll-mt-20 bg-[#edf1ed] py-12 lg:py-16" aria-labelledby="map-heading">
+        <div className={sectionWidth}>
+          <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+            <div><p className={eyebrow}>Follow your curiosity</p><h2 id="map-heading" className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">A world of walks. One map.</h2></div>
+            <p className="max-w-sm text-sm leading-6 text-[#657069]">Spin the globe, zoom into a place, and choose a tour. Your next walk can start anywhere.</p>
           </div>
-          <div className="min-w-0">
-            <h3 className="text-base font-bold leading-snug text-[#2f261d]">
-              {featuredVideo.siteTitle}
-            </h3>
-            <p className="mt-1.5 text-sm text-[#8a7a68]">
-              {featuredVideo.city}, {featuredVideo.country} &middot; Filmed {featuredVideo.filmingMonthYear}
-            </p>
-            <p className="mt-3 text-sm leading-7 text-[#6c5b49]">{featuredVideo.shortDescription}</p>
-            <Link
-              href={featuredVideo.watchHref}
-              className="mt-4 inline-flex items-center justify-center rounded-full bg-[#167fd5] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0f6db9]"
-            >
-              Watch the tour &rarr;
+          <div className="mt-7 overflow-hidden rounded-2xl border border-[#d8e0d7] bg-[#10151c]">
+            <WorldMapClient tours={mappedTours} fullWidth fitToTours globeOverview heightClassName="h-[420px] sm:h-[500px]" />
+          </div>
+          <div className="mt-4 flex flex-col justify-between gap-2 text-xs leading-5 text-[#657069] sm:flex-row">
+            <p>{mappedTours.length} tours across {countryCount} countries · Select a pin or numbered group to watch.</p>
+            <p>Approximate destination pins are labeled.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className={sectionWidth + " py-14 lg:py-20"} aria-labelledby="featured-heading">
+        <div className="flex flex-wrap items-end justify-between gap-3">
+          <div><p className={eyebrow}>Stay a little longer</p><h2 id="featured-heading" className="mt-2 text-3xl font-semibold tracking-tight">Find a walk for your mood</h2></div>
+          <Link href="/search" className={textLink}>Browse all walks →</Link>
+        </div>
+        <div className="mt-7 grid gap-10 md:grid-cols-2 md:gap-8">
+          {featuredVideo && <article>
+            <Link href={featuredVideo.watchHref} className="group relative block aspect-video overflow-hidden rounded-2xl bg-[#e6e7de]">
+              <Image src="/nice-old-town-monday-evening-walk-2025/hero.jpg" alt={featuredVideo.siteTitle} fill sizes="(min-width: 768px) 560px, 100vw" className="object-cover transition duration-500 group-hover:scale-[1.025]" />
+              <span className="absolute bottom-4 left-4 rounded-full bg-white px-4 py-2 text-xs font-semibold">Featured walk</span>
             </Link>
-          </div>
+            <p className={eyebrow + " mt-5"}>{featuredVideo.city}, {featuredVideo.country}</p>
+            <h3 className="mt-2 text-2xl font-semibold leading-snug"><Link href={featuredVideo.watchHref} className="hover:underline">{featuredVideo.siteTitle}</Link></h3>
+            <p className="mt-3 text-sm leading-7 text-[#657069]">{featuredVideo.shortDescription}</p>
+            <Link href={featuredVideo.watchHref} className={textLink + " mt-2"}>Watch the tour →</Link>
+          </article>}
+          <article>
+            <Link href="/christmas-markets" className="group relative block aspect-video overflow-hidden rounded-2xl bg-[#e6e7de]">
+              <Image src="/colmar-christmas-market-evening-walk-2023/hero.jpg" alt="Colmar Christmas market evening walking tour" fill sizes="(min-width: 768px) 560px, 100vw" className="object-cover transition duration-500 group-hover:scale-[1.025]" />
+              <span className="absolute bottom-4 left-4 rounded-full bg-white px-4 py-2 text-xs font-semibold">The Christmas collection</span>
+            </Link>
+            <p className={eyebrow + " mt-5"}>Lights, markets & winter evenings</p>
+            <h3 className="mt-2 text-2xl font-semibold leading-snug"><Link href="/christmas-markets" className="hover:underline">A little Christmas, whenever you like</Link></h3>
+            <p className="mt-3 text-sm leading-7 text-[#657069]">Wander through Europe’s festive squares and market stalls. Explore the collection by destination and discover the journeys behind the films.</p>
+            <Link href="/christmas-markets" className={textLink + " mt-2"}>Explore Christmas markets →</Link>
+          </article>
         </div>
       </section>
-      ) : null}
+
+      <section className="bg-[#25382f] text-white">
+        <div className={sectionWidth + " grid gap-10 py-12 lg:grid-cols-[1.4fr_1fr] lg:gap-20 lg:py-16"}>
+          <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#c0d3c5]">Behind the walks</p><h2 className="mt-3 text-3xl font-semibold tracking-tight">The atmosphere is the story.</h2><p className="mt-4 max-w-xl text-base leading-7 text-[#d1dcd4]">Prowalk Tours brings you closer to a place through its streets, everyday moments, and binaural sound. Put on your headphones and come along. New walks arrive on YouTube every Saturday.</p><Link href="/about" className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold underline underline-offset-4">About Prowalk Tours →</Link></div>
+          <div className="border-t border-white/20 pt-8 lg:border-t-0 lg:border-l lg:pl-10 lg:pt-0"><h3 className="text-xl font-semibold">Bring these places to your audience.</h3><p className="mt-3 text-sm leading-7 text-[#d1dcd4]">Footage for film, television, hospitality, and spaces that could use a window to the world.</p><Link href="/licensing" className="mt-5 inline-flex min-h-11 items-center rounded-full border border-white/50 px-5 text-sm font-semibold hover:bg-white/10">Explore footage licensing →</Link></div>
+        </div>
+        <div className="border-t border-white/15"><div className={sectionWidth + " flex flex-wrap items-center justify-between gap-3 py-5 text-xs leading-6 text-[#d1dcd4]"}><p>Featured in The Wall Street Journal · Distribution through Janson Media</p><Link href="/press" className="underline underline-offset-4">Press & partnerships →</Link></div></div>
+      </section>
     </div>
   );
 }
