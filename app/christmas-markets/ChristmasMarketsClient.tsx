@@ -42,7 +42,7 @@ export default function ChristmasMarketsClient({ walks, points }: { walks: Chris
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">Europe, one winter walk at a time</p>
           <h1 className="mt-3 text-4xl font-bold leading-tight sm:text-5xl">Christmas Markets</h1>
-          <p className="mt-5 text-lg leading-8 text-[#6c5b49]">Walk through the lights, listen to the streets, and get to know a place before you go.</p>
+          <p className="mt-5 text-lg leading-8 text-[#6c5b49]">Explore Europe’s Christmas markets, whether you’re planning a trip or enjoying the sights and sounds from home.</p>
           <p className="mt-4 leading-7 text-[#6c5b49]">I’m Isaac, the filmmaker behind ProWalk Tours. These are markets and streets I’ve walked myself, filmed across several Christmas seasons. Explore the walks by destination, then follow the journeys that connect them.</p>
           <div className="mt-6 flex flex-wrap gap-3"><a href="#browse-walks" className={buttonClass}>Find a Christmas walk</a><a href="#journeys" className="inline-flex min-h-11 items-center rounded-full border border-[#d8c7b5] px-5 py-2.5 text-sm font-semibold hover:bg-white">Explore my journeys →</a></div>
           <p className="mt-6 text-sm font-semibold text-[#9a7a52]">{walks.length} walks · {destinationCount} destinations · {countries.length} countries in this collection</p>
