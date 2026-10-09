@@ -120,7 +120,7 @@ const breadcrumbs = [
 
 export default function GermanyChristmasMarketsPage() {
   return (
-    <main className="bg-[#fcfaf7] text-[#2f261d]">
+    <div className="bg-[#fcfaf7] text-[#2f261d]">
       <section className="border-b border-[#eadfce] bg-white">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
           <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-[#8a7a68]">
@@ -168,6 +168,6 @@ export default function GermanyChristmasMarketsPage() {
           </div>
         </section>
       ))}
-    </main>
+    </div>
   );
 }

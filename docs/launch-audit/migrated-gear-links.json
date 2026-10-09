@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "sony-a7siii",
+    "products": 10,
+    "source": "https://prowalktours.com/sony-a7siii"
+  },
+  {
+    "slug": "gopro",
+    "products": 6,
+    "source": "https://prowalktours.com/gopro"
+  },
+  {
+    "slug": "insta360",
+    "products": 3,
+    "source": "https://prowalktours.com/insta360"
+  },
+  {
+    "slug": "osmo-pocket",
+    "products": 3,
+    "source": "https://prowalktours.com/osmo-pocket"
+  },
+  {
+    "slug": "phone",
+    "products": 2,
+    "source": "https://prowalktours.com/phone"
+  },
+  {
+    "slug": "microphones",
+    "products": 4,
+    "source": "https://prowalktours.com/microphones"
+  },
+  {
+    "slug": "travel-accessories",
+    "products": 8,
+    "source": "https://prowalktours.com/travel-accessories"
+  }
+]

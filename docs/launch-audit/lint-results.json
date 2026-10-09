@@ -1,0 +1,368 @@
+{
+  "errors": 60,
+  "warnings": 247,
+  "introducedErrors": 0,
+  "comparison": "Compared rule, first diagnostic line and affected source line against HEAD; ignores shifted line numbers.",
+  "issues": [
+    {
+      "file": "app/videos/aachen-christmas-market-evening-walk-2024/AachenChristmasMarketEveningWalk2024Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/antibes-daytime-walk-2025/AntibesDaytimeWalk2025Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/arles-roman-old-town-day-walk-2025/ArlesRomanOldTownDayWalk2025Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/avignon-walking-tour-2025/AvignonWalkingTour2025Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/colmar-christmas-market-day-walk-2023/ColmarChristmasMarketDayWalk2023Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/colmar-christmas-market-evening-walk-2023/ColmarChristmasMarketEveningWalk2023Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/cologne-christmas-market-day-walk-2023/CologneChristmasMarketDayWalk2023Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/cologne-christmas-market-evening-walk-2023/CologneChristmasMarketEveningWalk2023Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/disneyland-paris-tour-2020/DisneylandParisTour2020Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/dresden-christmas-market-day-walk-2022/DresdenChristmasMarketDayWalk2022Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/dresden-christmas-market-day-walk-2024/DresdenChristmasMarketDayWalk2024Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/dresden-christmas-market-evening-walk-2022/DresdenChristmasMarketEveningWalk2022Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/dresden-christmas-market-evening-walk-2024/DresdenChristmasMarketEveningWalk2024Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/esslingen-christmas-market-day-walk-2024/EsslingenChristmasMarketDayWalk2024Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/freiburg-christmas-market-evening-walk-2025/FreiburgChristmasMarketEveningWalk2025Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/granville-island-walking-tour-vancouver/GranvilleIslandWalkingTourVancouverClient.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/kaysersberg-christmas-market-360-tour-2025/KaysersbergChristmasMarket360Tour2025Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/kaysersberg-christmas-market-day-walk-2025/KaysersbergChristmasMarketDayWalk2025Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/menton-france-walking-tour-2025/MentonFranceWalkingTour2025Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/montmartre-day-walk-2020/MontmartreDayWalk2020Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/montmartre-evening-walk-2022/MontmartreEveningWalk2022Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/munich-christmas-market-evening-walk-2024/MunichChristmasMarketEveningWalk2024Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/naples-bike-tour-2020/NaplesBikeTour2020Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/naples-daytime-walk-2023/NaplesDaytimeWalk2023Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/naples-night-walk-2025/NaplesNightWalk2025Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/nice-old-town-monday-evening-walk-2025/NiceOldTownMondayEveningWalk2025Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/nuremberg-christmas-market-day-walk-2022/NurembergChristmasMarketDayWalk2022Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/nuremberg-christmas-market-day-walk-2024/NurembergChristmasMarketDayWalk2024Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/nuremberg-christmas-market-evening-walk-2022/NurembergChristmasMarketEveningWalk2022Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/nuremberg-christmas-market-evening-walk-2024/NurembergChristmasMarketEveningWalk2024Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/otranto-day-walk-2026/OtrantoDayWalk2026Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/paris-catacombs-tour-2020/ParisCatacombsTour2020Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/paris-eiffel-tower-day-walk-2020/ParisEiffelTowerDayWalk2020Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/paris-evening-walk-2022/ParisEveningWalk2022Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/paris-landmarks-day-walk-2017/ParisLandmarksDayWalk2017Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/paris-landmarks-day-walk-2020/ParisLandmarksDayWalk2020Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/paris-latin-quarter-marais-evening-walk-2020/ParisLatinQuarterMaraisEveningWalk2020Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/paris-luxemburg-gardens-day-walk-2020/ParisLuxemburgGardensDayWalk2020Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/paris-promenade-plantee-day-walk-2020/ParisPromenadePlanteeDayWalk2020Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/ribeauville-360-walk-2025/Ribeauville360Walk2025Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/ribeauville-day-walk-2025/RibeauvilleDayWalk2025Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/riquewihr-christmas-market-day-walk-2023/RiquewihrChristmasMarketDayWalk2023Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/riquewihr-christmas-market-evening-walk-2023/RiquewihrChristmasMarketEveningWalk2023Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/rothenburg-christmas-market-day-walk-2023/RothenburgChristmasMarketDayWalk2023Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/rothenburg-christmas-market-evening-walk-2023/RothenburgChristmasMarketEveningWalk2023Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/rothenburg-christmas-market-evening-walk-2024/RothenburgChristmasMarketEveningWalk2024Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/rothenburg-christmas-market-morning-walk-2024/RothenburgChristmasMarketMorningWalk2024Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/sirmione-day-walk-2026/SirmioneDayWalk2026Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/stanley-park-seawall-walk-vancouver/StanleyParkSeawallWalkVancouverClient.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/strasbourg-christmas-market-day-walk-2022/StrasbourgChristmasMarketDayWalk2022Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/strasbourg-christmas-market-day-walk-2023/StrasbourgChristmasMarketDayWalk2023Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/strasbourg-christmas-market-evening-walk-2022/StrasbourgChristmasMarketEveningWalk2022Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/strasbourg-christmas-market-evening-walk-2023/StrasbourgChristmasMarketEveningWalk2023Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/stuttgart-christmas-market-evening-walk-2022/StuttgartChristmasMarketEveningWalk2022Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/stuttgart-christmas-market-evening-walk-2024/StuttgartChristmasMarketEveningWalk2024Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/vancouver-bike-tour-2025/VancouverBikeTour2025Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/vancouver-canada-walking-tour/VancouverCanadaWalkingTourClient.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/vancouver-evening-walk-gastown-2025/VancouverEveningWalkGastown2025Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "app/videos/vancouver-sunset-beach-evening-walk-2025/VancouverSunsetBeachEveningWalk2025Client.tsx",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    },
+    {
+      "file": "lib/hooks/useInitialVideoStartTime.ts",
+      "errors": 1,
+      "baselineErrors": 1,
+      "introduced": []
+    }
+  ]
+}

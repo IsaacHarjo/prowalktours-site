@@ -1,0 +1,904 @@
+{
+  "base": "http://localhost:3001",
+  "checked": "2026-10-09",
+  "routes": [
+    {
+      "path": "/about",
+      "status": 200,
+      "title": "About Prowalk Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/about",
+      "jsonLd": 1,
+      "htmlBytes": 35583
+    },
+    {
+      "path": "/cameras",
+      "status": 200,
+      "title": "Cameras | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/cameras",
+      "jsonLd": 1,
+      "htmlBytes": 33191
+    },
+    {
+      "path": "/christmas-markets",
+      "status": 200,
+      "title": "European Christmas Markets: Walks &amp; Journey Inspiration | ProWalk Tours",
+      "canonical": "https://www.prowalktours.com/christmas-markets",
+      "jsonLd": 1,
+      "htmlBytes": 190254
+    },
+    {
+      "path": "/contact-us",
+      "status": 200,
+      "title": "Contact Us | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/contact-us",
+      "jsonLd": 1,
+      "htmlBytes": 34255
+    },
+    {
+      "path": "/countries",
+      "status": 200,
+      "title": "Browse Countries | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/countries",
+      "jsonLd": 1,
+      "htmlBytes": 47125
+    },
+    {
+      "path": "/destinations/australia",
+      "status": 200,
+      "title": "Australia Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/australia",
+      "jsonLd": 1,
+      "htmlBytes": 36651
+    },
+    {
+      "path": "/destinations/austria",
+      "status": 200,
+      "title": "Austria Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/austria",
+      "jsonLd": 1,
+      "htmlBytes": 35506
+    },
+    {
+      "path": "/destinations/brazil",
+      "status": 200,
+      "title": "Brazil Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/brazil",
+      "jsonLd": 1,
+      "htmlBytes": 35501
+    },
+    {
+      "path": "/destinations/canada",
+      "status": 200,
+      "title": "Canada Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/canada",
+      "jsonLd": 1,
+      "htmlBytes": 41887
+    },
+    {
+      "path": "/destinations/croatia",
+      "status": 200,
+      "title": "Croatia Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/croatia",
+      "jsonLd": 1,
+      "htmlBytes": 36256
+    },
+    {
+      "path": "/destinations/czechia",
+      "status": 200,
+      "title": "Czechia Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/czechia",
+      "jsonLd": 1,
+      "htmlBytes": 35500
+    },
+    {
+      "path": "/destinations/denmark",
+      "status": 200,
+      "title": "Denmark Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/denmark",
+      "jsonLd": 1,
+      "htmlBytes": 35519
+    },
+    {
+      "path": "/destinations/egypt",
+      "status": 200,
+      "title": "Egypt Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/egypt",
+      "jsonLd": 1,
+      "htmlBytes": 36280
+    },
+    {
+      "path": "/destinations/france/christmas-markets",
+      "status": 200,
+      "title": "France Christmas Market Walking Tours | ProWalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/france/christmas-markets",
+      "jsonLd": 0,
+      "htmlBytes": 66539
+    },
+    {
+      "path": "/destinations/france/french-riviera",
+      "status": 200,
+      "title": "French Riviera Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/france/french-riviera",
+      "jsonLd": 1,
+      "htmlBytes": 38366
+    },
+    {
+      "path": "/destinations/france",
+      "status": 200,
+      "title": "France Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/france",
+      "jsonLd": 1,
+      "htmlBytes": 40123
+    },
+    {
+      "path": "/destinations/france/paris",
+      "status": 200,
+      "title": "Paris, France Walking Tours | ProWalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/france/paris",
+      "jsonLd": 0,
+      "htmlBytes": 60937
+    },
+    {
+      "path": "/destinations/france/provence",
+      "status": 200,
+      "title": "Provence Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/france/provence",
+      "jsonLd": 1,
+      "htmlBytes": 37572
+    },
+    {
+      "path": "/destinations/germany/christmas-markets",
+      "status": 200,
+      "title": "Germany Christmas Market Walking Tours | ProWalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/germany/christmas-markets",
+      "jsonLd": 0,
+      "htmlBytes": 86430
+    },
+    {
+      "path": "/destinations/germany",
+      "status": 200,
+      "title": "Germany Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/germany",
+      "jsonLd": 1,
+      "htmlBytes": 37807
+    },
+    {
+      "path": "/destinations/greece",
+      "status": 200,
+      "title": "Greece Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/greece",
+      "jsonLd": 1,
+      "htmlBytes": 36600
+    },
+    {
+      "path": "/destinations/hungary",
+      "status": 200,
+      "title": "Hungary Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/hungary",
+      "jsonLd": 1,
+      "htmlBytes": 35513
+    },
+    {
+      "path": "/destinations/italy/campania/naples",
+      "status": 200,
+      "title": "Naples Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/italy/campania/naples",
+      "jsonLd": 1,
+      "htmlBytes": 58733
+    },
+    {
+      "path": "/destinations/italy/campania",
+      "status": 200,
+      "title": "Campania Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/italy/campania",
+      "jsonLd": 1,
+      "htmlBytes": 50471
+    },
+    {
+      "path": "/destinations/italy",
+      "status": 200,
+      "title": "Italy Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/italy",
+      "jsonLd": 1,
+      "htmlBytes": 45258
+    },
+    {
+      "path": "/destinations/japan",
+      "status": 200,
+      "title": "Japan Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/japan",
+      "jsonLd": 1,
+      "htmlBytes": 35823
+    },
+    {
+      "path": "/destinations/jordan",
+      "status": 200,
+      "title": "Jordan Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/jordan",
+      "jsonLd": 1,
+      "htmlBytes": 35832
+    },
+    {
+      "path": "/destinations/malta",
+      "status": 200,
+      "title": "Malta Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/malta",
+      "jsonLd": 1,
+      "htmlBytes": 35450
+    },
+    {
+      "path": "/destinations/netherlands",
+      "status": 200,
+      "title": "Netherlands Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/netherlands",
+      "jsonLd": 1,
+      "htmlBytes": 35644
+    },
+    {
+      "path": "/destinations/norway",
+      "status": 200,
+      "title": "Norway Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/norway",
+      "jsonLd": 1,
+      "htmlBytes": 35856
+    },
+    {
+      "path": "/destinations/portugal",
+      "status": 200,
+      "title": "Portugal Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/portugal",
+      "jsonLd": 1,
+      "htmlBytes": 35537
+    },
+    {
+      "path": "/destinations/slovenia",
+      "status": 200,
+      "title": "Slovenia Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/slovenia",
+      "jsonLd": 1,
+      "htmlBytes": 35535
+    },
+    {
+      "path": "/destinations/spain",
+      "status": 200,
+      "title": "Spain Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/spain",
+      "jsonLd": 1,
+      "htmlBytes": 35456
+    },
+    {
+      "path": "/destinations/switzerland",
+      "status": 200,
+      "title": "Switzerland Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/switzerland",
+      "jsonLd": 1,
+      "htmlBytes": 35624
+    },
+    {
+      "path": "/destinations/turkey",
+      "status": 200,
+      "title": "Turkey Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/turkey",
+      "jsonLd": 1,
+      "htmlBytes": 35483
+    },
+    {
+      "path": "/destinations/usa",
+      "status": 200,
+      "title": "United States Walking Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/destinations/usa",
+      "jsonLd": 1,
+      "htmlBytes": 36978
+    },
+    {
+      "path": "/filming-gear",
+      "status": 200,
+      "title": "Filming Gear | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/filming-gear",
+      "jsonLd": 1,
+      "htmlBytes": 35779
+    },
+    {
+      "path": "/gopro",
+      "status": 200,
+      "title": "GoPro &amp; Action Cameras | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/gopro",
+      "jsonLd": 1,
+      "htmlBytes": 35361
+    },
+    {
+      "path": "/insta360",
+      "status": 200,
+      "title": "Insta360 | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/insta360",
+      "jsonLd": 1,
+      "htmlBytes": 34163
+    },
+    {
+      "path": "/join-us",
+      "status": 200,
+      "title": "Join Us | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/join-us",
+      "jsonLd": 1,
+      "htmlBytes": 33275
+    },
+    {
+      "path": "/licensing",
+      "status": 200,
+      "title": "Footage Licensing | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/licensing",
+      "jsonLd": 1,
+      "htmlBytes": 42301
+    },
+    {
+      "path": "/microphones",
+      "status": 200,
+      "title": "Microphones &amp; Audio | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/microphones",
+      "jsonLd": 1,
+      "htmlBytes": 34524
+    },
+    {
+      "path": "/osmo-pocket",
+      "status": 200,
+      "title": "Osmo Pocket | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/osmo-pocket",
+      "jsonLd": 1,
+      "htmlBytes": 34268
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "title": "4K Walking Tours &amp; Destination Maps | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com",
+      "jsonLd": 1,
+      "htmlBytes": 735192
+    },
+    {
+      "path": "/phone",
+      "status": 200,
+      "title": "Phone Filming | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/phone",
+      "jsonLd": 1,
+      "htmlBytes": 33996
+    },
+    {
+      "path": "/press",
+      "status": 200,
+      "title": "Press &amp; Partnerships | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/press",
+      "jsonLd": 1,
+      "htmlBytes": 35428
+    },
+    {
+      "path": "/privacy-policy",
+      "status": 200,
+      "title": "Privacy Policy | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/privacy-policy",
+      "jsonLd": 1,
+      "htmlBytes": 41853
+    },
+    {
+      "path": "/search",
+      "status": 200,
+      "title": "Search Walks &amp; Landmarks | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/search",
+      "jsonLd": 1,
+      "htmlBytes": 484760
+    },
+    {
+      "path": "/sony-a7siii",
+      "status": 200,
+      "title": "Sony A7S III | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/sony-a7siii",
+      "jsonLd": 1,
+      "htmlBytes": 36236
+    },
+    {
+      "path": "/sponsor",
+      "status": 200,
+      "title": "Sponsor Prowalk Tours | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/sponsor",
+      "jsonLd": 1,
+      "htmlBytes": 33526
+    },
+    {
+      "path": "/support",
+      "status": 200,
+      "title": "Support the Walks | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/support",
+      "jsonLd": 1,
+      "htmlBytes": 33657
+    },
+    {
+      "path": "/terms-of-use",
+      "status": 200,
+      "title": "Terms of Use | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/terms-of-use",
+      "jsonLd": 1,
+      "htmlBytes": 39306
+    },
+    {
+      "path": "/travel-accessories",
+      "status": 200,
+      "title": "Travel Accessories | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/travel-accessories",
+      "jsonLd": 1,
+      "htmlBytes": 35698
+    },
+    {
+      "path": "/videos/aachen-christmas-market-evening-walk-2024",
+      "status": 200,
+      "title": "Aachen, Germany Christmas Market Evening Walk (2024)",
+      "canonical": "https://www.prowalktours.com/videos/aachen-christmas-market-evening-walk-2024",
+      "jsonLd": 2,
+      "htmlBytes": 75884
+    },
+    {
+      "path": "/videos/antibes-daytime-walk-2025",
+      "status": 200,
+      "title": "Antibes, France Walking Tour | Old Town, Picasso Museum, Market and Seafront",
+      "canonical": "https://www.prowalktours.com/videos/antibes-daytime-walk-2025",
+      "jsonLd": 2,
+      "htmlBytes": 103862
+    },
+    {
+      "path": "/videos/arles-roman-old-town-day-walk-2025",
+      "status": 200,
+      "title": "Arles, France Walking Tour (2025) | Roman Amphitheatre, Old Town &amp; Wednesday Market | Prowalk Tours",
+      "canonical": "https://www.prowalktours.com/videos/arles-roman-old-town-day-walk-2025",
+      "jsonLd": 2,
+      "htmlBytes": 210223
+    },
+    {
+      "path": "/videos/avignon-walking-tour-2025",
+      "status": 200,
+      "title": "Avignon, France Walking Tour | Palace of the Popes, Old Town, Pont d&#x27;Avignon",
+      "canonical": "https://www.prowalktours.com/videos/avignon-walking-tour-2025",
+      "jsonLd": 2,
+      "htmlBytes": 110040
+    },
+    {
+      "path": "/videos/colmar-christmas-market-day-walk-2023",
+      "status": 200,
+      "title": "Colmar, France Christmas Market Day Walk (2023)",
+      "canonical": "https://www.prowalktours.com/videos/colmar-christmas-market-day-walk-2023",
+      "jsonLd": 2,
+      "htmlBytes": 86032
+    },
+    {
+      "path": "/videos/colmar-christmas-market-evening-walk-2023",
+      "status": 200,
+      "title": "Colmar, France Christmas Market Evening Walk (2023)",
+      "canonical": "https://www.prowalktours.com/videos/colmar-christmas-market-evening-walk-2023",
+      "jsonLd": 2,
+      "htmlBytes": 84209
+    },
+    {
+      "path": "/videos/cologne-christmas-market-day-walk-2023",
+      "status": 200,
+      "title": "Cologne, Germany Christmas Market Day Walk (2023)",
+      "canonical": "https://www.prowalktours.com/videos/cologne-christmas-market-day-walk-2023",
+      "jsonLd": 2,
+      "htmlBytes": 81740
+    },
+    {
+      "path": "/videos/cologne-christmas-market-evening-walk-2023",
+      "status": 200,
+      "title": "Cologne, Germany Christmas Market Evening Walk (2023)",
+      "canonical": "https://www.prowalktours.com/videos/cologne-christmas-market-evening-walk-2023",
+      "jsonLd": 2,
+      "htmlBytes": 76780
+    },
+    {
+      "path": "/videos/disneyland-paris-tour-2020",
+      "status": 200,
+      "title": "Disneyland, Paris 4K Tour (2020)",
+      "canonical": "https://www.prowalktours.com/videos/disneyland-paris-tour-2020",
+      "jsonLd": 2,
+      "htmlBytes": 93722
+    },
+    {
+      "path": "/videos/dresden-christmas-market-day-walk-2022",
+      "status": 200,
+      "title": "Dresden, Germany Christmas Market Day Walk (2022)",
+      "canonical": "https://www.prowalktours.com/videos/dresden-christmas-market-day-walk-2022",
+      "jsonLd": 2,
+      "htmlBytes": 64461
+    },
+    {
+      "path": "/videos/dresden-christmas-market-day-walk-2024",
+      "status": 200,
+      "title": "Dresden, Germany Christmas Market Day Walk (2024)",
+      "canonical": "https://www.prowalktours.com/videos/dresden-christmas-market-day-walk-2024",
+      "jsonLd": 2,
+      "htmlBytes": 80815
+    },
+    {
+      "path": "/videos/dresden-christmas-market-evening-walk-2022",
+      "status": 200,
+      "title": "Dresden, Germany Christmas Market Evening Walk (2022)",
+      "canonical": "https://www.prowalktours.com/videos/dresden-christmas-market-evening-walk-2022",
+      "jsonLd": 2,
+      "htmlBytes": 66318
+    },
+    {
+      "path": "/videos/dresden-christmas-market-evening-walk-2024",
+      "status": 200,
+      "title": "Dresden, Germany Christmas Market Evening Walk (2024)",
+      "canonical": "https://www.prowalktours.com/videos/dresden-christmas-market-evening-walk-2024",
+      "jsonLd": 2,
+      "htmlBytes": 62939
+    },
+    {
+      "path": "/videos/esslingen-christmas-market-day-walk-2024",
+      "status": 200,
+      "title": "Esslingen, Germany Christmas Market Day Walk (2024)",
+      "canonical": "https://www.prowalktours.com/videos/esslingen-christmas-market-day-walk-2024",
+      "jsonLd": 2,
+      "htmlBytes": 71652
+    },
+    {
+      "path": "/videos/freiburg-christmas-market-evening-walk-2025",
+      "status": 200,
+      "title": "Freiburg, Germany Christmas Market Evening Walk (2025)",
+      "canonical": "https://www.prowalktours.com/videos/freiburg-christmas-market-evening-walk-2025",
+      "jsonLd": 2,
+      "htmlBytes": 73177
+    },
+    {
+      "path": "/videos/granville-island-walking-tour-vancouver",
+      "status": 200,
+      "title": "Granville Island Walking Tour | Public Market, Boardwalks &amp; Boat Yards — Vancouver",
+      "canonical": "https://www.prowalktours.com/videos/granville-island-walking-tour-vancouver",
+      "jsonLd": 2,
+      "htmlBytes": 72027
+    },
+    {
+      "path": "/videos/kaysersberg-christmas-market-360-tour-2025",
+      "status": 200,
+      "title": "Kaysersberg, France Christmas Market 360° VR Walk (2025)",
+      "canonical": "https://www.prowalktours.com/videos/kaysersberg-christmas-market-360-tour-2025",
+      "jsonLd": 2,
+      "htmlBytes": 72713
+    },
+    {
+      "path": "/videos/kaysersberg-christmas-market-day-walk-2025",
+      "status": 200,
+      "title": "Kaysersberg, France Christmas Market Day Walk (2025)",
+      "canonical": "https://www.prowalktours.com/videos/kaysersberg-christmas-market-day-walk-2025",
+      "jsonLd": 2,
+      "htmlBytes": 76873
+    },
+    {
+      "path": "/videos/menton-france-walking-tour-2025",
+      "status": 200,
+      "title": "Menton, France Walking Tour | French Riviera Old Town and Seafront",
+      "canonical": "https://www.prowalktours.com/videos/menton-france-walking-tour-2025",
+      "jsonLd": 2,
+      "htmlBytes": 130035
+    },
+    {
+      "path": "/videos/montmartre-day-walk-2020",
+      "status": 200,
+      "title": "Montmartre, France Day Walk (2020) | Sacré-Cœur, Place du Tertre, La Maison Rose",
+      "canonical": "https://www.prowalktours.com/videos/montmartre-day-walk-2020",
+      "jsonLd": 2,
+      "htmlBytes": 106586
+    },
+    {
+      "path": "/videos/montmartre-evening-walk-2022",
+      "status": 200,
+      "title": "Montmartre, France Evening Walk (2022) | Sacré-Cœur, Place du Tertre, Rue Lepic",
+      "canonical": "https://www.prowalktours.com/videos/montmartre-evening-walk-2022",
+      "jsonLd": 2,
+      "htmlBytes": 70282
+    },
+    {
+      "path": "/videos/munich-christmas-market-evening-walk-2024",
+      "status": 200,
+      "title": "Munich, Germany Christmas Market Evening Walk (2024)",
+      "canonical": "https://www.prowalktours.com/videos/munich-christmas-market-evening-walk-2024",
+      "jsonLd": 2,
+      "htmlBytes": 78031
+    },
+    {
+      "path": "/videos/naples-bike-tour-2020",
+      "status": 200,
+      "title": "Naples, Italy Bike Tour - May 2020",
+      "canonical": "https://www.prowalktours.com/videos/naples-bike-tour-2020",
+      "jsonLd": 2,
+      "htmlBytes": 84025
+    },
+    {
+      "path": "/videos/naples-daytime-walk-2023",
+      "status": 200,
+      "title": "Naples Italy 4K Walking Tour | Naples, Campania, Italy (2023)",
+      "canonical": "https://www.prowalktours.com/videos/naples-daytime-walk-2023",
+      "jsonLd": 2,
+      "htmlBytes": 177198
+    },
+    {
+      "path": "/videos/naples-night-walk-2025",
+      "status": 200,
+      "title": "Naples Night Walk 2025 | Via Toledo, Spanish Quarter, Waterfront",
+      "canonical": "https://www.prowalktours.com/videos/naples-night-walk-2025",
+      "jsonLd": 2,
+      "htmlBytes": 128525
+    },
+    {
+      "path": "/videos/nice-old-town-monday-evening-walk-2025",
+      "status": 200,
+      "title": "Nice, France Evening Walk (2025) | Place Masséna, Vieux Nice, Cours Saleya",
+      "canonical": "https://www.prowalktours.com/videos/nice-old-town-monday-evening-walk-2025",
+      "jsonLd": 2,
+      "htmlBytes": 78747
+    },
+    {
+      "path": "/videos/nuremberg-christmas-market-day-walk-2022",
+      "status": 200,
+      "title": "Nuremberg, Germany Christmas Market Day Walk (2022)",
+      "canonical": "https://www.prowalktours.com/videos/nuremberg-christmas-market-day-walk-2022",
+      "jsonLd": 2,
+      "htmlBytes": 86278
+    },
+    {
+      "path": "/videos/nuremberg-christmas-market-day-walk-2024",
+      "status": 200,
+      "title": "Nuremberg, Germany Christmas Market Day Walk (2024)",
+      "canonical": "https://www.prowalktours.com/videos/nuremberg-christmas-market-day-walk-2024",
+      "jsonLd": 2,
+      "htmlBytes": 94018
+    },
+    {
+      "path": "/videos/nuremberg-christmas-market-evening-walk-2022",
+      "status": 200,
+      "title": "Nuremberg, Germany Christmas Market Evening Walk (2022)",
+      "canonical": "https://www.prowalktours.com/videos/nuremberg-christmas-market-evening-walk-2022",
+      "jsonLd": 2,
+      "htmlBytes": 78467
+    },
+    {
+      "path": "/videos/nuremberg-christmas-market-evening-walk-2024",
+      "status": 200,
+      "title": "Nuremberg, Germany Christmas Market Evening Walk (2024)",
+      "canonical": "https://www.prowalktours.com/videos/nuremberg-christmas-market-evening-walk-2024",
+      "jsonLd": 2,
+      "htmlBytes": 87232
+    },
+    {
+      "path": "/videos/otranto-day-walk-2026",
+      "status": 200,
+      "title": "Otranto, Italy Walking Tour 2026 - 4K - with Captions",
+      "canonical": "https://www.prowalktours.com/videos/otranto-day-walk-2026",
+      "jsonLd": 2,
+      "htmlBytes": 85388
+    },
+    {
+      "path": "/videos/paris-catacombs-tour-2020",
+      "status": 200,
+      "title": "Paris Catacombs Tour | Paris, France (2020)",
+      "canonical": "https://www.prowalktours.com/videos/paris-catacombs-tour-2020",
+      "jsonLd": 2,
+      "htmlBytes": 60588
+    },
+    {
+      "path": "/videos/paris-eiffel-tower-day-walk-2020",
+      "status": 200,
+      "title": "Paris Eiffel Tower Tour (2020) | Summit, Level 2, Level 1, Full Experience",
+      "canonical": "https://www.prowalktours.com/videos/paris-eiffel-tower-day-walk-2020",
+      "jsonLd": 2,
+      "htmlBytes": 65681
+    },
+    {
+      "path": "/videos/paris-evening-walk-2022",
+      "status": 200,
+      "title": "Paris, France Evening Walk (2022)",
+      "canonical": "https://www.prowalktours.com/videos/paris-evening-walk-2022",
+      "jsonLd": 2,
+      "htmlBytes": 91116
+    },
+    {
+      "path": "/videos/paris-landmarks-day-walk-2017",
+      "status": 200,
+      "title": "Paris, France Landmarks Day Walk (2017) | Louvre, Notre-Dame, Eiffel Tower, Arc de Triomphe",
+      "canonical": "https://www.prowalktours.com/videos/paris-landmarks-day-walk-2017",
+      "jsonLd": 2,
+      "htmlBytes": 81096
+    },
+    {
+      "path": "/videos/paris-landmarks-day-walk-2020",
+      "status": 200,
+      "title": "Paris, France Day Walk (2020) | Panthéon, Louvre, Champs-Élysées, Eiffel Tower",
+      "canonical": "https://www.prowalktours.com/videos/paris-landmarks-day-walk-2020",
+      "jsonLd": 2,
+      "htmlBytes": 100310
+    },
+    {
+      "path": "/videos/paris-latin-quarter-marais-evening-walk-2020",
+      "status": 200,
+      "title": "Paris Latin Quarter &amp; Marais Evening Walk | Paris, France (2020)",
+      "canonical": "https://www.prowalktours.com/videos/paris-latin-quarter-marais-evening-walk-2020",
+      "jsonLd": 2,
+      "htmlBytes": 79955
+    },
+    {
+      "path": "/videos/paris-luxemburg-gardens-day-walk-2020",
+      "status": 200,
+      "title": "Paris Luxembourg Gardens Walk (2020) | Grand Basin, Palais du Luxembourg",
+      "canonical": "https://www.prowalktours.com/videos/paris-luxemburg-gardens-day-walk-2020",
+      "jsonLd": 2,
+      "htmlBytes": 75714
+    },
+    {
+      "path": "/videos/paris-promenade-plantee-day-walk-2020",
+      "status": 200,
+      "title": "Paris Promenade Plantée Walk (2020) | Coulée Verte, Jardin de Reuilly",
+      "canonical": "https://www.prowalktours.com/videos/paris-promenade-plantee-day-walk-2020",
+      "jsonLd": 2,
+      "htmlBytes": 59983
+    },
+    {
+      "path": "/videos/ribeauville-360-walk-2025",
+      "status": 200,
+      "title": "Ribeauvillé, France Christmas Market 360° Walk (2025)",
+      "canonical": "https://www.prowalktours.com/videos/ribeauville-360-walk-2025",
+      "jsonLd": 2,
+      "htmlBytes": 82592
+    },
+    {
+      "path": "/videos/ribeauville-day-walk-2025",
+      "status": 200,
+      "title": "Ribeauvillé, France Medieval Christmas Market Walk (2025)",
+      "canonical": "https://www.prowalktours.com/videos/ribeauville-day-walk-2025",
+      "jsonLd": 2,
+      "htmlBytes": 68851
+    },
+    {
+      "path": "/videos/riquewihr-christmas-market-day-walk-2023",
+      "status": 200,
+      "title": "Riquewihr, France Christmas Market Day Walk (2023)",
+      "canonical": "https://www.prowalktours.com/videos/riquewihr-christmas-market-day-walk-2023",
+      "jsonLd": 2,
+      "htmlBytes": 78921
+    },
+    {
+      "path": "/videos/riquewihr-christmas-market-evening-walk-2023",
+      "status": 200,
+      "title": "Riquewihr, France Christmas Market Evening Walk (2023)",
+      "canonical": "https://www.prowalktours.com/videos/riquewihr-christmas-market-evening-walk-2023",
+      "jsonLd": 2,
+      "htmlBytes": 73511
+    },
+    {
+      "path": "/videos/rothenburg-christmas-market-day-walk-2023",
+      "status": 200,
+      "title": "Rothenburg ob der Tauber, Germany Christmas Market Day Walk (2023)",
+      "canonical": "https://www.prowalktours.com/videos/rothenburg-christmas-market-day-walk-2023",
+      "jsonLd": 2,
+      "htmlBytes": 93752
+    },
+    {
+      "path": "/videos/rothenburg-christmas-market-evening-walk-2023",
+      "status": 200,
+      "title": "Rothenburg ob der Tauber, Germany Christmas Market Evening Walk (2023)",
+      "canonical": "https://www.prowalktours.com/videos/rothenburg-christmas-market-evening-walk-2023",
+      "jsonLd": 2,
+      "htmlBytes": 82522
+    },
+    {
+      "path": "/videos/rothenburg-christmas-market-evening-walk-2024",
+      "status": 200,
+      "title": "Rothenburg ob der Tauber, Germany Christmas Market Evening Walk (2024)",
+      "canonical": "https://www.prowalktours.com/videos/rothenburg-christmas-market-evening-walk-2024",
+      "jsonLd": 2,
+      "htmlBytes": 96959
+    },
+    {
+      "path": "/videos/rothenburg-christmas-market-morning-walk-2024",
+      "status": 200,
+      "title": "Rothenburg ob der Tauber, Germany Christmas Market Morning Walk (2024)",
+      "canonical": "https://www.prowalktours.com/videos/rothenburg-christmas-market-morning-walk-2024",
+      "jsonLd": 2,
+      "htmlBytes": 72900
+    },
+    {
+      "path": "/videos/sirmione-day-walk-2026",
+      "status": 200,
+      "title": "Sirmione 4K Walking Tour — Lake Garda&#x27;s Peninsula Town, Italy",
+      "canonical": "https://www.prowalktours.com/videos/sirmione-day-walk-2026",
+      "jsonLd": 2,
+      "htmlBytes": 92935
+    },
+    {
+      "path": "/videos/stanley-park-seawall-walk-vancouver",
+      "status": 200,
+      "title": "Stanley Park Seawall Walking Tour | Full Loop — Vancouver BC",
+      "canonical": "https://www.prowalktours.com/videos/stanley-park-seawall-walk-vancouver",
+      "jsonLd": 2,
+      "htmlBytes": 71860
+    },
+    {
+      "path": "/videos/strasbourg-christmas-market-day-walk-2022",
+      "status": 200,
+      "title": "Strasbourg, France Christmas Market Day Walk (2022)",
+      "canonical": "https://www.prowalktours.com/videos/strasbourg-christmas-market-day-walk-2022",
+      "jsonLd": 2,
+      "htmlBytes": 103729
+    },
+    {
+      "path": "/videos/strasbourg-christmas-market-day-walk-2023",
+      "status": 200,
+      "title": "Strasbourg, France Christmas Market Day Walk (2023)",
+      "canonical": "https://www.prowalktours.com/videos/strasbourg-christmas-market-day-walk-2023",
+      "jsonLd": 2,
+      "htmlBytes": 92960
+    },
+    {
+      "path": "/videos/strasbourg-christmas-market-evening-walk-2022",
+      "status": 200,
+      "title": "Strasbourg, France Christmas Market Evening Walk (2022)",
+      "canonical": "https://www.prowalktours.com/videos/strasbourg-christmas-market-evening-walk-2022",
+      "jsonLd": 2,
+      "htmlBytes": 96606
+    },
+    {
+      "path": "/videos/strasbourg-christmas-market-evening-walk-2023",
+      "status": 200,
+      "title": "Strasbourg, France Christmas Market Evening Walk (2023)",
+      "canonical": "https://www.prowalktours.com/videos/strasbourg-christmas-market-evening-walk-2023",
+      "jsonLd": 2,
+      "htmlBytes": 103720
+    },
+    {
+      "path": "/videos/stuttgart-christmas-market-evening-walk-2022",
+      "status": 200,
+      "title": "Stuttgart, Germany Christmas Market Evening Walk (2022)",
+      "canonical": "https://www.prowalktours.com/videos/stuttgart-christmas-market-evening-walk-2022",
+      "jsonLd": 2,
+      "htmlBytes": 67884
+    },
+    {
+      "path": "/videos/stuttgart-christmas-market-evening-walk-2024",
+      "status": 200,
+      "title": "Stuttgart, Germany Christmas Market Evening Walk (2024)",
+      "canonical": "https://www.prowalktours.com/videos/stuttgart-christmas-market-evening-walk-2024",
+      "jsonLd": 2,
+      "htmlBytes": 72372
+    },
+    {
+      "path": "/videos/vancouver-bike-tour-2025",
+      "status": 200,
+      "title": "Vancouver Seawall &amp; Downtown Bike Tour (2025) | 45 Miles Through Stanley Park &amp; Kitsilano",
+      "canonical": "https://www.prowalktours.com/videos/vancouver-bike-tour-2025",
+      "jsonLd": 2,
+      "htmlBytes": 89177
+    },
+    {
+      "path": "/videos/vancouver-canada-walking-tour",
+      "status": 200,
+      "title": "Vancouver, Canada Walking Tour | Stanley Park, Kitsilano, Downtown &amp; Gastown",
+      "canonical": "https://www.prowalktours.com/videos/vancouver-canada-walking-tour",
+      "jsonLd": 2,
+      "htmlBytes": 77382
+    },
+    {
+      "path": "/videos/vancouver-evening-walk-gastown-2025",
+      "status": 200,
+      "title": "Vancouver Evening Walk | Coal Harbour, Gastown, Chinatown &amp; Granville Street (2025)",
+      "canonical": "https://www.prowalktours.com/videos/vancouver-evening-walk-gastown-2025",
+      "jsonLd": 2,
+      "htmlBytes": 78408
+    },
+    {
+      "path": "/videos/vancouver-sunset-beach-evening-walk-2025",
+      "status": 200,
+      "title": "Vancouver Sunset Beach Evening Walk (2025) | English Bay to Granville Island",
+      "canonical": "https://www.prowalktours.com/videos/vancouver-sunset-beach-evening-walk-2025",
+      "jsonLd": 2,
+      "htmlBytes": 57689
+    }
+  ],
+  "sitemapUrls": 108,
+  "failures": []
+}

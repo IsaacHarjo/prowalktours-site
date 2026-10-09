@@ -2,13 +2,15 @@ import { existsSync, readdirSync } from "node:fs";
 import path from "node:path";
 
 import type { MetadataRoute } from "next";
+import { publicTours } from "../lib/tours/server";
 
 const SITE_URL = "https://www.prowalktours.com";
 
-const STATIC_ROUTES = ["/", "/countries", "/search", "/licensing", "/christmas-markets"] as const;
+// Draft documents and a separate design preview must not enter the public sitemap.
+const EXCLUDED_TOP_LEVEL = new Set(["home-preview", "privacy-policy", "terms-of-use"]);
 
-function listDirectRouteSlugs(relativeDir: string): string[] {
-  const dir = path.join(process.cwd(), relativeDir);
+function listDirectRouteSlugs(subdirectory: string): string[] {
+  const dir = path.join(process.cwd(), "app", subdirectory);
   if (!existsSync(dir)) return [];
   return readdirSync(dir, { withFileTypes: true })
     .filter(
@@ -37,7 +39,11 @@ function walkRoutesRecursive(
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const videoSlugs = listDirectRouteSlugs("app/videos");
+  const publicSlugs = new Set(publicTours.map((tour) => tour.slug));
+  const videoSlugs = listDirectRouteSlugs("videos").filter((slug) => publicSlugs.has(slug));
+  const topLevelRoutes = listDirectRouteSlugs("")
+    .filter((slug) => !EXCLUDED_TOP_LEVEL.has(slug))
+    .map((slug) => `/${slug}`);
 
   const destinationRoutes: string[] = [];
   walkRoutesRecursive(
@@ -47,7 +53,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
 
   const allPaths = [
-    ...STATIC_ROUTES,
+    "/",
+    ...topLevelRoutes,
     ...destinationRoutes,
     ...videoSlugs.map((slug) => `/videos/${slug}`),
   ];

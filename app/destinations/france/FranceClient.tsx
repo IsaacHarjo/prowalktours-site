@@ -1,0 +1,159 @@
+"use client";
+
+import Link from "next/link";
+
+import ExploreVideoMap from "../../../components/ExploreVideoMap";
+import { franceMapFeatures } from "../../../data/maps/france";
+
+const destinations = [
+  {
+    name: "Paris",
+    href: "/destinations/france/paris",
+    status: "Available now",
+    description:
+      "Evening walks, the Latin Quarter, the Marais, the Paris Catacombs, and more city walks across Paris.",
+  },
+  {
+    name: "French Riviera",
+    href: "/destinations/france/french-riviera",
+    status: "Available now",
+    description:
+      "Explore Riviera destinations, coastal towns, scenic walks, and travel-focused pages.",
+  },
+  {
+    name: "Provence",
+    href: "/destinations/france/provence",
+    status: "Available now",
+    description:
+      "Explore Provence destinations beginning with Avignon and expanding into more historic cities over time.",
+  },
+  {
+    name: "Christmas Markets",
+    href: "/destinations/france/christmas-markets",
+    status: "Available now",
+    description:
+      "Strasbourg, Colmar, Riquewihr, Kaysersberg, and Ribeauvillé — day and evening walks through Alsace's Christmas markets.",
+  },
+];
+
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Countries", href: "/countries" },
+  { label: "France" },
+];
+
+export default function FranceClient() {
+  return (
+    <div className="bg-[#fcfaf7] text-[#2f261d]">
+      <section className="border-b border-[#eadfce] bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+          <nav
+            aria-label="Breadcrumb"
+            className="mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-[#8a7a68]"
+          >
+            {breadcrumbs.map((item, index) => (
+              <div key={item.label} className="inline-flex items-center gap-2">
+                {item.href ? (
+                  <Link
+                    href={item.href}
+                    className="transition hover:text-[#167fd5]"
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <span className="font-medium text-[#5c4c33]">
+                    {item.label}
+                  </span>
+                )}
+                {index < breadcrumbs.length - 1 ? (
+                  <span aria-hidden="true" className="text-[#bba893]">
+                    /
+                  </span>
+                ) : null}
+              </div>
+            ))}
+          </nav>
+
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
+            Country
+          </p>
+          <h1 className="mt-3 text-4xl font-bold tracking-tight text-[#2f261d] sm:text-5xl">
+            France
+          </h1>
+          <p className="mt-5 max-w-3xl text-[18px] leading-8 text-[#6c5b49]">
+            Browse France by destination hub, then expand into cities, regions,
+            seasonal travel pages, and individual walking tours as they go live.
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-10">
+        <div className="mb-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
+            Interactive France Map
+          </p>
+          <h2 className="mt-3 text-3xl font-bold text-[#2f261d]">
+            Explore France on the map
+          </h2>
+          <p className="mt-3 max-w-3xl text-[17px] leading-8 text-[#6c5b49]">
+            Browse walking tours across France. Each marker represents a mapped
+            video, and you can filter by video type to explore the library.
+          </p>
+
+          <div className="mt-6">
+            <ExploreVideoMap
+              countryName="France"
+              features={franceMapFeatures}
+              initialViewState={{
+                longitude: 2.3522,
+                latitude: 46.6,
+                zoom: 5.3,
+              }}
+            />
+          </div>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {destinations.map((destination) =>
+            destination.href ? (
+              <Link
+                key={destination.name}
+                href={destination.href}
+                className="group rounded-3xl border border-[#eadfce] bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-[#d7c3ad] hover:shadow-md"
+              >
+                <h2 className="text-2xl font-bold text-[#2f261d] transition group-hover:text-[#167fd5]">
+                  {destination.name}
+                </h2>
+                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-[#9a7a52]">
+                  {destination.status}
+                </p>
+                <p className="mt-4 text-[16px] leading-7 text-[#6c5b49]">
+                  {destination.description}
+                </p>
+                <div className="mt-6 text-[16px] font-semibold text-[#167fd5]">
+                  View destination page →
+                </div>
+              </Link>
+            ) : (
+              <div
+                key={destination.name}
+                className="rounded-3xl border border-[#eadfce] bg-[#f8f3ec] p-7 opacity-90"
+              >
+                <h2 className="text-2xl font-bold text-[#2f261d]">
+                  {destination.name}
+                </h2>
+                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-[#9a7a52]">
+                  {destination.status}
+                </p>
+                <p className="mt-4 text-[16px] leading-7 text-[#6c5b49]">
+                  {destination.description}
+                </p>
+              </div>
+            )
+          )}
+        </div>
+      </section>
+    </div>
+  );
+}
+

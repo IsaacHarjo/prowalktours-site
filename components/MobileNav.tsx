@@ -18,7 +18,7 @@ export default function MobileNav({ items }: MobileNavProps) {
         ref={buttonRef}
         type="button"
         onClick={() => setOpen(!open)}
-        className="absolute right-4 flex items-center justify-center rounded-lg p-2 text-[#5c4c33] transition hover:bg-[#f8f3ec] lg:hidden"
+        className="absolute right-4 flex items-center justify-center rounded-lg p-2 text-[#5c4c33] transition hover:bg-[#f8f3ec] xl:hidden"
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         aria-controls="mobile-navigation"
@@ -38,7 +38,7 @@ export default function MobileNav({ items }: MobileNavProps) {
       {open ? (
         <div
           id="mobile-navigation"
-          className="absolute left-0 right-0 top-16 z-50 max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-[#d8c7b5] bg-white shadow-lg lg:hidden"
+          className="absolute left-0 right-0 top-16 z-50 max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-[#d8c7b5] bg-white shadow-lg xl:hidden"
           onKeyDown={(event) => {
             if (event.key === "Escape") {
               setOpen(false);

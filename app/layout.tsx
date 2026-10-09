@@ -15,6 +15,8 @@ const navItems: NavItem[] = [
   { label: "Map", href: "/#world-map" },
   { label: "Christmas Markets", href: "/christmas-markets" },
   { label: "Licensing", href: "/licensing" },
+  { label: "About", href: "/about" },
+  { label: "Press", href: "/press" },
 ];
 
 const socialLinks = {
@@ -35,6 +37,12 @@ const footerSections = {
     { label: "Naples", href: "/destinations/italy/campania/naples" },
   ],
   resources: [
+    { label: "About Prowalk Tours", href: "/about" },
+    { label: "Contact Us", href: "/contact-us" },
+    { label: "Filming Gear", href: "/filming-gear" },
+    { label: "Press & Partnerships", href: "/press" },
+    { label: "Support the Walks", href: "/support" },
+    { label: "Join Us", href: "/join-us" },
     { label: "Licensing", href: "/licensing" },
     { label: "Featured Walk", href: "/videos/naples-daytime-walk-2023" },
     { label: "YouTube Channel", href: socialLinks.youtube },
@@ -57,9 +65,9 @@ export const metadata: Metadata = {
 function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-[#d8c7b5] bg-white/95 backdrop-blur">
-      <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-center px-4 lg:grid lg:grid-cols-[1.22fr_auto_1fr] lg:pl-4 lg:pr-10">
+      <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-center px-4 xl:grid xl:grid-cols-[1.22fr_auto_1fr] xl:pl-4 xl:pr-10">
         {/* Mobile: centered logo */}
-        <div className="lg:justify-self-start">
+        <div className="xl:justify-self-start">
           <Link
             href="/"
             className="inline-flex items-center"
@@ -76,8 +84,8 @@ function SiteHeader() {
           </Link>
         </div>
 
-        <nav className="hidden justify-self-center lg:block">
-          <ul className="flex items-center gap-4 whitespace-nowrap text-[15px] font-semibold text-[#5c4c33] xl:gap-6 xl:text-[17px]">
+        <nav className="hidden justify-self-center xl:block">
+          <ul className="flex items-center gap-4 whitespace-nowrap text-[15px] font-semibold text-[#5c4c33] 2xl:gap-6 2xl:text-[17px]">
             {navItems.map((item) => (
               <li key={item.label}>
                 <Link
@@ -92,11 +100,11 @@ function SiteHeader() {
         </nav>
 
         {/* Mobile: hamburger positioned far right */}
-        <div className="contents lg:hidden">
+        <div className="contents xl:hidden">
           <MobileNav items={navItems} />
         </div>
 
-        <div className="hidden items-center justify-self-end gap-3 text-[#5c4c33] lg:flex">
+        <div className="hidden items-center justify-self-end gap-3 text-[#5c4c33] xl:flex">
           <a
             href={socialLinks.facebook}
             target="_blank"
@@ -289,6 +297,7 @@ function SiteFooter() {
 
         <div className="mt-8 border-t border-[#dccbb7] pt-4 text-sm text-[#7c6b59]">
           <p>© 2026 Prowalk Tours. All rights reserved.</p>
+          <nav aria-label="Legal" className="mt-3 flex flex-wrap gap-x-6 gap-y-3"><Link href="/privacy-policy" className="underline underline-offset-4">Privacy Policy (draft)</Link><Link href="/terms-of-use" className="underline underline-offset-4">Terms of Use (draft)</Link><Link href="/contact-us#roku" className="underline underline-offset-4">Roku inquiries</Link></nav>
         </div>
       </div>
     </footer>
@@ -303,8 +312,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:p-4 focus:text-[#09679e]">Skip to content</a>
         <SiteHeader />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <SiteFooter />
       </body>
     </html>

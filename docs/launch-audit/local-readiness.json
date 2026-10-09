@@ -1,0 +1,2031 @@
+{
+  "reviewed": "2026-10-09",
+  "totalCatalog": 449,
+  "publicTours": 427,
+  "publicInternalTours": 57,
+  "youtubeOnlyTours": [
+    {
+      "tourId": "it-0001",
+      "slug": "agropoli-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0002",
+      "slug": "amalfi-coast-bike-tour-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0003",
+      "slug": "amalfi-scooter-tour-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0004",
+      "slug": "amalfi-coast-drone-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0005",
+      "slug": "positano-boat-tour-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0006",
+      "slug": "amalfi-coast-360-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0007",
+      "slug": "maiori-hike-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0008",
+      "slug": "amalfi-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0009",
+      "slug": "amalfi-day-walk-with-captions-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0010",
+      "slug": "amalfi-360-tour-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0011",
+      "slug": "amalfi-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0012",
+      "slug": "amalfi-hike-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0013",
+      "slug": "amalfi-evening-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0014",
+      "slug": "amalfi-day-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0015",
+      "slug": "amalfi-day-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0016",
+      "slug": "amalfi-drive-tour-timelapse-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0017",
+      "slug": "amalfi-bike-tour-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0018",
+      "slug": "amalfi-hike-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0019",
+      "slug": "amalfi-drive-tour-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0020",
+      "slug": "aqueduct-of-vanvitelli-drone-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0021",
+      "slug": "atrani-day-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0022",
+      "slug": "aversa-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0023",
+      "slug": "aversa-evening-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0024",
+      "slug": "aversa-evening-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0025",
+      "slug": "aversa-bike-tour-osmo-pocket-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0026",
+      "slug": "aversa-bike-tour-gopro-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0027",
+      "slug": "baia-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0028",
+      "slug": "baia-day-walk-sony-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0029",
+      "slug": "baia-day-walk-gopro-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0030",
+      "slug": "baia-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0031",
+      "slug": "bocca-della-selva-drone-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0032",
+      "slug": "capri-bike-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0033",
+      "slug": "capri-evening-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0034",
+      "slug": "capri-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0035",
+      "slug": "capri-day-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0036",
+      "slug": "capri-hike-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0037",
+      "slug": "capri-certosa-di-san-giacomo-drone-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0038",
+      "slug": "capri-drone-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0039",
+      "slug": "capri-pizzolungo-trail-natural-arch-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0040",
+      "slug": "capri-marina-grande-walk-captions-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0041",
+      "slug": "capri-marina-grande-walk-no-captions-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0042",
+      "slug": "capri-la-piazzetta-town-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0043",
+      "slug": "capri-la-piazzetta-town-no-captions-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0044",
+      "slug": "capri-faraglioni-rocks-pizzolungo-trail-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0045",
+      "slug": "capri-belvedere-tragara-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0046",
+      "slug": "capri-gardens-of-augustus-drone-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0047",
+      "slug": "capri-gardens-of-augustus-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0048",
+      "slug": "capri-villa-jovis-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0049",
+      "slug": "capri-villa-jovis-drone-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0050",
+      "slug": "capri-via-tiberio-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0051",
+      "slug": "capri-anacapri-historic-center-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0052",
+      "slug": "capri-phoenician-steps-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0053",
+      "slug": "capri-phoenician-steps-drone-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0054",
+      "slug": "capri-villa-san-michele-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0055",
+      "slug": "capri-monte-solaro-chairlift-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0056",
+      "slug": "capri-monte-solaro-hike-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0057",
+      "slug": "capri-evening-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0058",
+      "slug": "capri-evening-walk-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0059",
+      "slug": "capri-via-krupp-walk-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0060",
+      "slug": "capri-day-walk-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0061",
+      "slug": "capri-anacapri-day-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0062",
+      "slug": "capri-evening-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0063",
+      "slug": "capri-360-tour-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0064",
+      "slug": "capua-amphitheater-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0065",
+      "slug": "capua-amphitheater-day-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0066",
+      "slug": "capri-drive-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0067",
+      "slug": "caserta-royal-palace-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0068",
+      "slug": "caserta-vecchia-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0069",
+      "slug": "comola-grande-drone-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0070",
+      "slug": "ercolano-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0071",
+      "slug": "herculaneum-360-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0072",
+      "slug": "herculaneum-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0073",
+      "slug": "herculaneum-day-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0074",
+      "slug": "ischia-porto-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0075",
+      "slug": "ischia-beaches-historic-center-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0076",
+      "slug": "ischia-aragonese-castle-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0077",
+      "slug": "ischia-bike-tour-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0078",
+      "slug": "ischia-ponte-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0079",
+      "slug": "ischia-ponte-aragonese-castle-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0080",
+      "slug": "ischia-corso-vittoria-colonna-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0081",
+      "slug": "ischia-sant-angelo-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0082",
+      "slug": "ischia-lacco-ameno-day-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0083",
+      "slug": "ischia-evening-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0084",
+      "slug": "limatola-castle-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0085",
+      "slug": "maiori-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0086",
+      "slug": "mt-vesuvius-hike-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0087",
+      "slug": "mt-vesuvius-hike-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0088",
+      "slug": "naples-patron-via-chiaia-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0089",
+      "slug": "naples-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0090",
+      "slug": "naples-quartieri-spagnoli-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0093",
+      "slug": "naples-historic-center-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0094",
+      "slug": "naples-christmas-market-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0095",
+      "slug": "naples-evening-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0096",
+      "slug": "naples-christmas-market-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0097",
+      "slug": "naples-evening-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0098",
+      "slug": "naples-still-scenes-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0099",
+      "slug": "naples-castel-dell-ovo-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0100",
+      "slug": "naples-evening-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0101",
+      "slug": "naples-pignasecca-market-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0102",
+      "slug": "naples-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0103",
+      "slug": "naples-fontanelle-cemetery-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0104",
+      "slug": "naples-historic-center-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0105",
+      "slug": "naples-360-tour-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0106",
+      "slug": "naples-fish-market-360-tour-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0107",
+      "slug": "naples-fish-market-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0109",
+      "slug": "naples-evening-walk-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0110",
+      "slug": "naples-waterfront-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0111",
+      "slug": "naples-castel-nuovo-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0112",
+      "slug": "naples-favorite-spot-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0113",
+      "slug": "naples-via-vergini-day-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0114",
+      "slug": "naples-via-dei-tribunali-day-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0115",
+      "slug": "paestum-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0116",
+      "slug": "paestum-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0117",
+      "slug": "path-of-the-gods-hike-east-to-west-hike-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0118",
+      "slug": "path-of-the-gods-hike-west-to-east-hike-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0119",
+      "slug": "path-of-the-gods-hike-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0120",
+      "slug": "pompeii-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0121",
+      "slug": "pompeii-360-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0122",
+      "slug": "pompeii-bread-oven-360-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0123",
+      "slug": "pompeii-part-1-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0124",
+      "slug": "pompeii-part-2-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0125",
+      "slug": "pompeii-part-3-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0126",
+      "slug": "pompeii-part-4-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0127",
+      "slug": "pompeii-part-5-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0128",
+      "slug": "pompeii-part-6-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0129",
+      "slug": "pompeii-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0130",
+      "slug": "pompeii-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0131",
+      "slug": "positano-day-walk-may-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0132",
+      "slug": "positano-day-walk-september-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0133",
+      "slug": "positano-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0134",
+      "slug": "positano-360-tour-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0135",
+      "slug": "positano-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0136",
+      "slug": "positano-evening-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0137",
+      "slug": "positano-day-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0138",
+      "slug": "positano-evening-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0139",
+      "slug": "positano-day-walk-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0140",
+      "slug": "positano-evening-walk-july-1-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0141",
+      "slug": "positano-evening-walk-july-2-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0142",
+      "slug": "positano-drone-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0143",
+      "slug": "pozzuoli-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0144",
+      "slug": "pozzuoli-anfiteatro-flavio-neroniano-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0145",
+      "slug": "pozzuoli-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0146",
+      "slug": "pozzuoli-drive-tour-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0147",
+      "slug": "pozzuoli-drone-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0148",
+      "slug": "procida-bike-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0149",
+      "slug": "procida-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0150",
+      "slug": "procida-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0151",
+      "slug": "procida-day-walk-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0152",
+      "slug": "ravello-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0153",
+      "slug": "ravello-day-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0154",
+      "slug": "sant-agata-de-goti-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0155",
+      "slug": "sorrento-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0156",
+      "slug": "sorrento-day-walk-with-captions-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0157",
+      "slug": "sorrento-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0158",
+      "slug": "sorrento-evening-walk-july-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0159",
+      "slug": "sorrento-evening-walk-september-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0160",
+      "slug": "sorrento-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0161",
+      "slug": "sorrento-evening-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0162",
+      "slug": "sorrento-day-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0163",
+      "slug": "sorrento-evening-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0164",
+      "slug": "sorrento-drive-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0165",
+      "slug": "teatro-romano-antica-cales-drone-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0166",
+      "slug": "assisi-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0167",
+      "slug": "assisi-morning-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0168",
+      "slug": "orvieto-bike-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0169",
+      "slug": "orvieto-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0170",
+      "slug": "perugia-corso-pietro-vannucci-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0171",
+      "slug": "perugia-360-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0172",
+      "slug": "perugia-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0173",
+      "slug": "florence-day-walk-long-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0174",
+      "slug": "florence-day-walk-short-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0175",
+      "slug": "florence-day-walk-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0176",
+      "slug": "florence-evening-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0177",
+      "slug": "florence-evening-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0178",
+      "slug": "lucca-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0179",
+      "slug": "lucca-evening-bike-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0180",
+      "slug": "lucca-le-murra-di-lucca-bike-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0181",
+      "slug": "lucca-bike-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0182",
+      "slug": "lucca-drone-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0183",
+      "slug": "montepulciano-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0184",
+      "slug": "montepulciano-evening-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0185",
+      "slug": "montepulciano-de-ricci-wine-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0186",
+      "slug": "monteriggioni-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0187",
+      "slug": "pisa-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0188",
+      "slug": "pitigliano-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0189",
+      "slug": "pitigliano-drone-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0190",
+      "slug": "san-gimignano-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0191",
+      "slug": "saturnia-hot-springs-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0192",
+      "slug": "siena-day-walk-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0193",
+      "slug": "siena-evening-walk-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0194",
+      "slug": "sorano-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0195",
+      "slug": "sovana-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0196",
+      "slug": "tuscany-bike-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0197",
+      "slug": "volterra-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0198",
+      "slug": "burano-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0199",
+      "slug": "burano-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0200",
+      "slug": "burano-members-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0201",
+      "slug": "burano-360-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0202",
+      "slug": "burano-day-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0203",
+      "slug": "venice-ca-del-sol-mask-shop-day-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0204",
+      "slug": "venice-casa-di-carlo-goldoni-museum-tour-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0205",
+      "slug": "venice-contrada-san-giovanni-drum-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0206",
+      "slug": "murano-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0207",
+      "slug": "venice-museo-di-palazzo-mocenigo-day-tour-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0208",
+      "slug": "verona-day-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0209",
+      "slug": "verona-evening-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0210",
+      "slug": "venice-grand-canal-boat-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0211",
+      "slug": "venice-day-walk-part-1-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0212",
+      "slug": "venice-day-walk-part-2-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0213",
+      "slug": "venice-evening-walk-canal-tour-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0214",
+      "slug": "venice-boat-tour-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0215",
+      "slug": "venice-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0216",
+      "slug": "venice-evening-canal-tour-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0217",
+      "slug": "venice-day-walk-part-1-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0218",
+      "slug": "venice-day-walk-part-2-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0219",
+      "slug": "venice-day-walk-part-3-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0220",
+      "slug": "venice-day-walk-part-4-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0221",
+      "slug": "venice-day-walk-part-5-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0222",
+      "slug": "venice-day-walk-part-6-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0223",
+      "slug": "venice-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0224",
+      "slug": "venice-christmas-lights-evening-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0225",
+      "slug": "venice-evening-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0226",
+      "slug": "venice-evening-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0227",
+      "slug": "venice-carnival-morning-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0228",
+      "slug": "venice-carnival-short-day-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0229",
+      "slug": "venice-gondola-boat-tour-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0230",
+      "slug": "venice-evening-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0231",
+      "slug": "venice-early-morning-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0232",
+      "slug": "venice-carnival-long-day-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0233",
+      "slug": "venice-live-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0234",
+      "slug": "venice-live-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0235",
+      "slug": "venice-360-tour-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0236",
+      "slug": "saepinum-day-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0237",
+      "slug": "alghero-evening-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0238",
+      "slug": "alghero-bike-tour-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0239",
+      "slug": "alghero-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0240",
+      "slug": "cagliari-evening-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0241",
+      "slug": "cagliari-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0242",
+      "slug": "civita-di-bagnoregio-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0243",
+      "slug": "civita-di-bagnoregio-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0244",
+      "slug": "civita-di-bagnoregio-drone-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0245",
+      "slug": "garden-of-ninfa-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0246",
+      "slug": "garden-of-ninfa-drone-tour-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0247",
+      "slug": "hadrian-s-villa-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0248",
+      "slug": "ostia-antica-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0249",
+      "slug": "ponza-morning-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0250",
+      "slug": "ponza-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0251",
+      "slug": "ponza-evening-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0252",
+      "slug": "ponza-night-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0253",
+      "slug": "ponza-boat-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0254",
+      "slug": "rome-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0255",
+      "slug": "rome-day-walk-with-captions-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0256",
+      "slug": "rome-castel-sant-angelo-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0257",
+      "slug": "rome-circus-maximus-bike-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0258",
+      "slug": "rome-colosseum-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0259",
+      "slug": "rome-day-walk-part-1-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0260",
+      "slug": "rome-day-walk-part-2-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0261",
+      "slug": "rome-day-walk-part-3-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0262",
+      "slug": "rome-day-walk-part-4-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0263",
+      "slug": "rome-day-walk-part-5-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0264",
+      "slug": "rome-appian-way-bike-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0265",
+      "slug": "rome-appian-way-bike-tour-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0266",
+      "slug": "rome-appian-way-bike-fail",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0267",
+      "slug": "rome-roman-forum-palatine-hill-day-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0268",
+      "slug": "rome-roman-forum-narrated-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0269",
+      "slug": "rome-roman-forum-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0270",
+      "slug": "rome-mouth-of-truth-day-walk",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0271",
+      "slug": "rome-palatine-hill-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0272",
+      "slug": "rome-pantheon-morning-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0273",
+      "slug": "rome-pantheon-evening-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0274",
+      "slug": "rome-piazza-navona-morning-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0275",
+      "slug": "rome-piazza-navona-market-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0276",
+      "slug": "rome-piazza-navona-evening-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0277",
+      "slug": "rome-piazza-navona-bike-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0278",
+      "slug": "rome-day-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0279",
+      "slug": "rome-day-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0280",
+      "slug": "rome-bike-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0281",
+      "slug": "rome-tiber-river-bike-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0282",
+      "slug": "rome-aqueduct-park-bike-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0283",
+      "slug": "rome-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0284",
+      "slug": "rome-evening-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0285",
+      "slug": "rome-evening-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0286",
+      "slug": "rome-evening-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0287",
+      "slug": "rome-evening-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0288",
+      "slug": "rome-spanish-steps-morning-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0289",
+      "slug": "rome-trastevere-evening-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0290",
+      "slug": "rome-trevi-fountain-morning-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0291",
+      "slug": "rome-trevi-fountain-evening-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0292",
+      "slug": "rome-colosseum-360-tour-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0293",
+      "slug": "rome-live-day-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0294",
+      "slug": "rome-bike-tour-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0295",
+      "slug": "rome-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0296",
+      "slug": "rome-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0297",
+      "slug": "sasseto-forest-hike-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0298",
+      "slug": "sermoneta-day-walk-2018",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0299",
+      "slug": "sperlonga-day-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0300",
+      "slug": "sperlonga-day-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0301",
+      "slug": "the-vatican-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0302",
+      "slug": "the-vatican-day-walk-2017",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0303",
+      "slug": "villa-farnese-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0304",
+      "slug": "villa-farnese-narrated-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0305",
+      "slug": "agrigento-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0306",
+      "slug": "catania-evening-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0307",
+      "slug": "catania-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0308",
+      "slug": "catania-fish-market-day-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0309",
+      "slug": "catania-extra-footage-day-walk",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0310",
+      "slug": "catania-evening-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0311",
+      "slug": "catania-day-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0312",
+      "slug": "cefalu-day-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0313",
+      "slug": "cefalu-drone-tour",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0314",
+      "slug": "cefalu-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0315",
+      "slug": "erice-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0316",
+      "slug": "ortigia-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0317",
+      "slug": "ortigia-evening-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0318",
+      "slug": "palermo-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0319",
+      "slug": "palermo-saturday-evening-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0320",
+      "slug": "palermo-bike-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0321",
+      "slug": "palermo-ballaro-market-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0322",
+      "slug": "palermo-sunday-evening-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0323",
+      "slug": "palermo-day-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0324",
+      "slug": "palermo-evening-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0325",
+      "slug": "ragusa-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0326",
+      "slug": "san-vito-to-erice-drive-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0327",
+      "slug": "taormina-day-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0328",
+      "slug": "taormina-street-performance-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0329",
+      "slug": "taormina-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0330",
+      "slug": "taormina-evening-walk-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0331",
+      "slug": "taormina-360-tour-2024",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0332",
+      "slug": "trapani-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0333",
+      "slug": "trapani-bike-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0334",
+      "slug": "tripi-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0335",
+      "slug": "alberobello-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0336",
+      "slug": "gallipoli-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0337",
+      "slug": "lecce-evening-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0338",
+      "slug": "otranto-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0339",
+      "slug": "polignano-a-mare-day-walk-2019",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0340",
+      "slug": "polignano-a-mare-day-walk-2021",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0341",
+      "slug": "bellagio-day-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0342",
+      "slug": "bellagio-evening-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0343",
+      "slug": "como-evening-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0344",
+      "slug": "menaggio-day-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0345",
+      "slug": "milan-day-walk-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0346",
+      "slug": "milan-evening-walk-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0347",
+      "slug": "milan-grand-canal-evening-walk-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0348",
+      "slug": "lake-como-bike-tour-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0349",
+      "slug": "varenna-day-walk-2022",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0350",
+      "slug": "camogli-day-walk-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0351",
+      "slug": "corniglia-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0352",
+      "slug": "genoa-day-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0353",
+      "slug": "genoa-evening-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0354",
+      "slug": "genoa-street-performance-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0355",
+      "slug": "genoa-drone-tour-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0356",
+      "slug": "manarola-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0357",
+      "slug": "monterosso-al-mare-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0358",
+      "slug": "nervi-day-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0359",
+      "slug": "portofino-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0360",
+      "slug": "portofino-day-walk-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0361",
+      "slug": "portofino-morning-walk-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0362",
+      "slug": "portofino-evening-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0363",
+      "slug": "portofino-evening-walk-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0364",
+      "slug": "portofino-360-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0365",
+      "slug": "rapallo-to-portofino-bike-tour-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0366",
+      "slug": "rapallo-to-portofino-bike-tour-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0367",
+      "slug": "riomaggiore-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0368",
+      "slug": "santa-margherita-day-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0369",
+      "slug": "vernazza-day-walk-2020",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0370",
+      "slug": "bologna-day-walk-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0371",
+      "slug": "bologna-evening-walk-2023",
+      "country": "Italy"
+    },
+    {
+      "tourId": "it-0372",
+      "slug": "trieste-day-walk-2025",
+      "country": "Italy"
+    },
+    {
+      "tourId": "fr-0019",
+      "slug": "paris-day-walk-with-music-2017",
+      "country": "France"
+    }
+  ],
+  "publicToursWithoutShortDescription": [],
+  "missingLocalImages": [
+    {
+      "image": "/freiburg-christmas-market-evening-walk-2025/hero.jpg",
+      "files": [
+        "app/videos/freiburg-christmas-market-evening-walk-2025/FreiburgChristmasMarketEveningWalk2025Client.tsx",
+        "app/videos/freiburg-christmas-market-evening-walk-2025/page.tsx"
+      ]
+    },
+    {
+      "image": "/rothenburg-christmas-market-morning-walk-2024/hero.jpg",
+      "files": [
+        "app/videos/rothenburg-christmas-market-morning-walk-2024/page.tsx",
+        "app/videos/rothenburg-christmas-market-morning-walk-2024/RothenburgChristmasMarketMorningWalk2024Client.tsx"
+      ]
+    },
+    {
+      "image": "/freiburg-christmas-market-evening-walk-2025/highlights/freiburg-christmas-market-on-tower-street.jpg",
+      "files": [
+        "data/video-details/freiburg-christmas-market-evening-walk-2025.ts",
+        "data/video-details/freiburg-christmas-market-evening-walk-2025.ts"
+      ]
+    },
+    {
+      "image": "/freiburg-christmas-market-evening-walk-2025/highlights/freiburg-christmas-market-at-rathausplatz.jpg",
+      "files": [
+        "data/video-details/freiburg-christmas-market-evening-walk-2025.ts"
+      ]
+    },
+    {
+      "image": "/freiburg-christmas-market-evening-walk-2025/highlights/freiburg-christmas-market-on-franciscan-street.jpg",
+      "files": [
+        "data/video-details/freiburg-christmas-market-evening-walk-2025.ts",
+        "data/video-details/freiburg-christmas-market-evening-walk-2025.ts"
+      ]
+    },
+    {
+      "image": "/freiburg-christmas-market-evening-walk-2025/highlights/freiburg-christmas-market-at-kartoffelmarkt.jpg",
+      "files": [
+        "data/video-details/freiburg-christmas-market-evening-walk-2025.ts"
+      ]
+    },
+    {
+      "image": "/freiburg-christmas-market-evening-walk-2025/highlights/freiburg-munsterplatz.jpg",
+      "files": [
+        "data/video-details/freiburg-christmas-market-evening-walk-2025.ts",
+        "data/video-details/freiburg-christmas-market-evening-walk-2025.ts"
+      ]
+    },
+    {
+      "image": "/freiburg-christmas-market-evening-walk-2025/highlights/freiburg-cathedral.jpg",
+      "files": [
+        "data/video-details/freiburg-christmas-market-evening-walk-2025.ts"
+      ]
+    },
+    {
+      "image": "/freiburg-christmas-market-evening-walk-2025/highlights/freiburg-munsterplatz-produce-market.jpg",
+      "files": [
+        "data/video-details/freiburg-christmas-market-evening-walk-2025.ts"
+      ]
+    },
+    {
+      "image": "/freiburg-christmas-market-evening-walk-2025/highlights/freiburg-67-kids.jpg",
+      "files": [
+        "data/video-details/freiburg-christmas-market-evening-walk-2025.ts"
+      ]
+    },
+    {
+      "image": "/freiburg-christmas-market-evening-walk-2025/highlights/freiburg-shoemaker-street.jpg",
+      "files": [
+        "data/video-details/freiburg-christmas-market-evening-walk-2025.ts"
+      ]
+    },
+    {
+      "image": "/freiburg-christmas-market-evening-walk-2025/highlights/freiburg-seminary-street.jpg",
+      "files": [
+        "data/video-details/freiburg-christmas-market-evening-walk-2025.ts"
+      ]
+    },
+    {
+      "image": "/freiburg-christmas-market-evening-walk-2025/highlights/freiburg-swabian-gate.jpg",
+      "files": [
+        "data/video-details/freiburg-christmas-market-evening-walk-2025.ts"
+      ]
+    },
+    {
+      "image": "/freiburg-christmas-market-evening-walk-2025/highlights/freiburg-christmas-market-at-colombipark.jpg",
+      "files": [
+        "data/video-details/freiburg-christmas-market-evening-walk-2025.ts"
+      ]
+    },
+    {
+      "image": "/rothenburg-christmas-market-morning-walk-2024/highlights/rothenburg-ob-der-tauber-marktplatz.jpg",
+      "files": [
+        "data/video-details/rothenburg-christmas-market-morning-walk-2024.ts",
+        "data/video-details/rothenburg-christmas-market-morning-walk-2024.ts"
+      ]
+    },
+    {
+      "image": "/rothenburg-christmas-market-morning-walk-2024/highlights/rothenburg-ob-der-tauber-kathe-wohlfahrt-car.jpg",
+      "files": [
+        "data/video-details/rothenburg-christmas-market-morning-walk-2024.ts"
+      ]
+    },
+    {
+      "image": "/rothenburg-christmas-market-morning-walk-2024/highlights/rothenburg-ob-der-tauber-obere-schmiedgasse-street.jpg",
+      "files": [
+        "data/video-details/rothenburg-christmas-market-morning-walk-2024.ts"
+      ]
+    },
+    {
+      "image": "/rothenburg-christmas-market-morning-walk-2024/highlights/rothenburg-ob-der-tauber-plonlein.jpg",
+      "files": [
+        "data/video-details/rothenburg-christmas-market-morning-walk-2024.ts",
+        "data/video-details/rothenburg-christmas-market-morning-walk-2024.ts"
+      ]
+    },
+    {
+      "image": "/rothenburg-christmas-market-morning-walk-2024/highlights/rothenburg-ob-der-tauber-siebersturm.jpg",
+      "files": [
+        "data/video-details/rothenburg-christmas-market-morning-walk-2024.ts"
+      ]
+    },
+    {
+      "image": "/rothenburg-christmas-market-morning-walk-2024/highlights/rothenburg-ob-der-tauber-kobolzeller-turm.jpg",
+      "files": [
+        "data/video-details/rothenburg-christmas-market-morning-walk-2024.ts"
+      ]
+    },
+    {
+      "image": "/rothenburg-christmas-market-morning-walk-2024/highlights/rothenburg-ob-der-tauber-herrngasse-street.jpg",
+      "files": [
+        "data/video-details/rothenburg-christmas-market-morning-walk-2024.ts"
+      ]
+    },
+    {
+      "image": "/rothenburg-christmas-market-morning-walk-2024/highlights/rothenburg-ob-der-tauber-castle-garden.jpg",
+      "files": [
+        "data/video-details/rothenburg-christmas-market-morning-walk-2024.ts"
+      ]
+    },
+    {
+      "image": "/rothenburg-christmas-market-morning-walk-2024/highlights/rothenburg-ob-der-tauber-tower-trail.jpg",
+      "files": [
+        "data/video-details/rothenburg-christmas-market-morning-walk-2024.ts"
+      ]
+    },
+    {
+      "image": "/rothenburg-christmas-market-morning-walk-2024/highlights/rothenburg-ob-der-tauber-st-wolfgang.jpg",
+      "files": [
+        "data/video-details/rothenburg-christmas-market-morning-walk-2024.ts"
+      ]
+    },
+    {
+      "image": "/rothenburg-christmas-market-morning-walk-2024/highlights/rothenburg-ob-der-tauber-blade-gate-and-wall-walk.jpg",
+      "files": [
+        "data/video-details/rothenburg-christmas-market-morning-walk-2024.ts"
+      ]
+    },
+    {
+      "image": "/rothenburg-christmas-market-morning-walk-2024/highlights/rothenburg-ob-der-tauber-morning-market.jpg",
+      "files": [
+        "data/video-details/rothenburg-christmas-market-morning-walk-2024.ts"
+      ]
+    },
+    {
+      "image": "/rothenburg-christmas-market-morning-walk-2024/highlights/rothenburg-ob-der-tauber-jewish-quarter.jpg",
+      "files": [
+        "data/video-details/rothenburg-christmas-market-morning-walk-2024.ts"
+      ]
+    }
+  ],
+  "pagesWithoutMetadata": []
+}

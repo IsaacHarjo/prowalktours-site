@@ -1,5 +1,7 @@
 "use client";
 
+import StayConnected from "../../../components/StayConnected";
+
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import HighlightCarousel from "../../../components/HighlightCarousel";
@@ -346,19 +348,7 @@ export default function ArlesRomanOldTownDayWalk2025Client() {
               <p className="mt-3 text-sm text-[#8a7a68]">Occasional updates only. Unsubscribe anytime.</p>
               <a href="https://www.youtube.com/@ProWalkTours?sub_confirmation=1" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center justify-center rounded-full bg-[#d52b1e] px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#b82217]">Join the Journey - Subscribe to ProWalk Tours</a>
             </div>
-            <form onSubmit={(event) => { event.preventDefault(); alert("This sign-up box is just the layout for now. It still needs to be connected to an email service."); }} className="rounded-[1.75rem] border border-[#d8c7b5] bg-white p-6 shadow-sm">
-              <div className="grid gap-4">
-                <div>
-                  <label className="mb-1.5 block text-sm font-semibold text-[#5c4c33]">First Name</label>
-                  <input type="text" className="w-full rounded-xl border border-[#d8c7b5] bg-[#fcfaf6] px-4 py-2.5 text-sm outline-none transition focus:border-[#167fd5]" />
-                </div>
-                <div>
-                  <label className="mb-1.5 block text-sm font-semibold text-[#5c4c33]">Email</label>
-                  <input type="email" className="w-full rounded-xl border border-[#d8c7b5] bg-[#fcfaf6] px-4 py-2.5 text-sm outline-none transition focus:border-[#167fd5]" />
-                </div>
-                <button type="submit" className="mt-2 rounded-2xl bg-[#167fd5] px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#09679e]">Notify Me</button>
-              </div>
-            </form>
+            <StayConnected />
           </div>
         </div>
       </section>

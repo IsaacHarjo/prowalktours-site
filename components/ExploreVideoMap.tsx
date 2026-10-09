@@ -32,6 +32,7 @@ type ExploreVideoMapProps = {
   features: ExploreMapFeature[];
   initialViewState: Pick<ViewState, "longitude" | "latitude" | "zoom">;
   mapStyle?: string;
+  countryName?: string;
 };
 
 type FeatureProperties = {
@@ -317,6 +318,7 @@ export default function ExploreVideoMap({
   features,
   initialViewState,
   mapStyle = "mapbox://styles/mapbox/satellite-streets-v12",
+  countryName = "Italy",
 }: ExploreVideoMapProps) {
   const mapRef = useRef<MapRef | null>(null);
   const mapboxToken =
@@ -664,7 +666,7 @@ export default function ExploreVideoMap({
       </div>
 
       <div className="mt-4 text-sm leading-7 text-[#6c5b49]">
-        Showing {visibleFeatures.length} mapped videos across Italy.
+        Showing {visibleFeatures.length} mapped videos across {countryName}.
       </div>
 
       <ExploreMapDrawer
