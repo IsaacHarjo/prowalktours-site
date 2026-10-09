@@ -1,0 +1,387 @@
+{
+  "San Francisco": {
+    "latitude": 37.7775,
+    "longitude": -122.41638889,
+    "title": "San Francisco",
+    "source": "https://en.wikipedia.org/?curid=49728",
+    "checked": "2026-10-09T20:11:09.411Z"
+  },
+  "Mount St. Helens": {
+    "latitude": 46.1912,
+    "longitude": -122.1944,
+    "title": "Mount St. Helens",
+    "source": "https://en.wikipedia.org/?curid=36649",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Seattle": {
+    "latitude": 47.60388889,
+    "longitude": -122.33,
+    "title": "Seattle",
+    "source": "https://en.wikipedia.org/?curid=11388236",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Capri, Campania": {
+    "error": "No primary coordinate found",
+    "title": "Capri, Campania"
+  },
+  "Anacapri": {
+    "latitude": 40.55,
+    "longitude": 14.21666667,
+    "title": "Anacapri",
+    "source": "https://en.wikipedia.org/?curid=1104395",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Cairo": {
+    "latitude": 30.04444444,
+    "longitude": 31.23583333,
+    "title": "Cairo",
+    "source": "https://en.wikipedia.org/?curid=6293",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Giza pyramid complex": {
+    "latitude": 29.97611111,
+    "longitude": 31.13277778,
+    "title": "Giza pyramid complex",
+    "source": "https://en.wikipedia.org/?curid=1979299",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Parikia": {
+    "latitude": 37.0862,
+    "longitude": 25.1508,
+    "title": "Parikia",
+    "source": "https://en.wikipedia.org/?curid=21018374",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Santorini": {
+    "latitude": 36.415,
+    "longitude": 25.4325,
+    "title": "Santorini",
+    "source": "https://en.wikipedia.org/?curid=28377",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Athens": {
+    "latitude": 37.98416667,
+    "longitude": 23.72805556,
+    "title": "Athens",
+    "source": "https://en.wikipedia.org/?curid=1216",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Mykonos": {
+    "latitude": 37.45888889,
+    "longitude": 25.36416667,
+    "title": "Mykonos",
+    "source": "https://en.wikipedia.org/?curid=490946",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Fira": {
+    "latitude": 36.42,
+    "longitude": 25.43166667,
+    "title": "Fira",
+    "source": "https://en.wikipedia.org/?curid=2672829",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Naousa, Paros": {
+    "latitude": 37.12277778,
+    "longitude": 25.24,
+    "title": "Naousa, Paros",
+    "source": "https://en.wikipedia.org/?curid=9001841",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Oia, Greece": {
+    "latitude": 36.46666667,
+    "longitude": 25.36666667,
+    "title": "Oia, Greece",
+    "source": "https://en.wikipedia.org/?curid=6218296",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Split, Croatia": {
+    "latitude": 43.51,
+    "longitude": 16.44,
+    "title": "Split, Croatia",
+    "source": "https://en.wikipedia.org/?curid=18952408",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Budapest": {
+    "latitude": 47.4925,
+    "longitude": 19.05138889,
+    "title": "Budapest",
+    "source": "https://en.wikipedia.org/?curid=36787",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Lisbon": {
+    "latitude": 38.72527778,
+    "longitude": -9.15,
+    "title": "Lisbon",
+    "source": "https://en.wikipedia.org/?curid=18091",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Amman": {
+    "latitude": 31.94972222,
+    "longitude": 35.93277778,
+    "title": "Amman",
+    "source": "https://en.wikipedia.org/?curid=45007",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Prague": {
+    "latitude": 50.0875,
+    "longitude": 14.42138889,
+    "title": "Prague",
+    "source": "https://en.wikipedia.org/?curid=23844",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Petra": {
+    "error": "No primary coordinate found",
+    "title": "Petra"
+  },
+  "Norris Geyser Basin": {
+    "error": "No primary coordinate found",
+    "title": "Norris Geyser Basin"
+  },
+  "Mammoth Hot Springs": {
+    "latitude": 44.96694444,
+    "longitude": -110.71222222,
+    "title": "Mammoth Hot Springs",
+    "source": "https://en.wikipedia.org/?curid=245179",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Yellowstone National Park": {
+    "latitude": 44.6,
+    "longitude": -110.5,
+    "title": "Yellowstone National Park",
+    "source": "https://en.wikipedia.org/?curid=34340",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Basel": {
+    "latitude": 47.55472222,
+    "longitude": 7.59055556,
+    "title": "Basel",
+    "source": "https://en.wikipedia.org/?curid=4911",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Vienna": {
+    "latitude": 48.2083,
+    "longitude": 16.3725,
+    "title": "Vienna",
+    "source": "https://en.wikipedia.org/?curid=55866",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Sydney": {
+    "latitude": -33.86777778,
+    "longitude": 151.21,
+    "title": "Sydney",
+    "source": "https://en.wikipedia.org/?curid=27862",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Manhattan": {
+    "latitude": 40.7127,
+    "longitude": -74.0059,
+    "title": "Manhattan",
+    "source": "https://en.wikipedia.org/?curid=45470",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Manly, New South Wales": {
+    "latitude": -33.7962,
+    "longitude": 151.2827,
+    "title": "Manly, New South Wales",
+    "source": "https://en.wikipedia.org/?curid=1097916",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Milan": {
+    "latitude": 45.46694444,
+    "longitude": 9.19,
+    "title": "Milan",
+    "source": "https://en.wikipedia.org/?curid=36511",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Rio de Janeiro": {
+    "latitude": -22.91111111,
+    "longitude": -43.20555556,
+    "title": "Rio de Janeiro",
+    "source": "https://en.wikipedia.org/?curid=25936",
+    "checked": "2026-10-09T20:11:09.412Z"
+  },
+  "Istanbul": {
+    "latitude": 41.01361111,
+    "longitude": 28.955,
+    "title": "Istanbul",
+    "source": "https://en.wikipedia.org/?curid=3391396",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Kyoto": {
+    "latitude": 35.01161,
+    "longitude": 135.76811,
+    "title": "Kyoto",
+    "source": "https://en.wikipedia.org/?curid=37652",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Amsterdam": {
+    "latitude": 52.37277778,
+    "longitude": 4.89361111,
+    "title": "Amsterdam",
+    "source": "https://en.wikipedia.org/?curid=844",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Shibuya": {
+    "latitude": 35.65944444,
+    "longitude": 139.70055556,
+    "title": "Shibuya",
+    "source": "https://en.wikipedia.org/?curid=147739",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Tsukiji": {
+    "latitude": 35.66819,
+    "longitude": 139.7739,
+    "title": "Tsukiji",
+    "source": "https://en.wikipedia.org/?curid=525536",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Shinjuku": {
+    "latitude": 35.70138889,
+    "longitude": 139.70972222,
+    "title": "Shinjuku",
+    "source": "https://en.wikipedia.org/?curid=147734",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Valletta": {
+    "latitude": 35.89833333,
+    "longitude": 14.5125,
+    "title": "Valletta",
+    "source": "https://en.wikipedia.org/?curid=57664",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Marsaxlokk": {
+    "latitude": 35.84166667,
+    "longitude": 14.54472222,
+    "title": "Marsaxlokk",
+    "source": "https://en.wikipedia.org/?curid=275714",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Barcelona": {
+    "latitude": 41.38333333,
+    "longitude": 2.18333333,
+    "title": "Barcelona",
+    "source": "https://en.wikipedia.org/?curid=4443",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Antibes": {
+    "latitude": 43.5808,
+    "longitude": 7.1239,
+    "title": "Antibes",
+    "source": "https://en.wikipedia.org/?curid=230124",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Miami Beach, Florida": {
+    "latitude": 25.82555556,
+    "longitude": -80.1325,
+    "title": "Miami Beach, Florida",
+    "source": "https://en.wikipedia.org/?curid=109449",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Oslo": {
+    "latitude": 59.91333333,
+    "longitude": 10.73888889,
+    "title": "Oslo",
+    "source": "https://en.wikipedia.org/?curid=22309",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Piran": {
+    "latitude": 45.52833333,
+    "longitude": 13.56833333,
+    "title": "Piran",
+    "source": "https://en.wikipedia.org/?curid=554228",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Rovinj": {
+    "latitude": 45.08333333,
+    "longitude": 13.63333333,
+    "title": "Rovinj",
+    "source": "https://en.wikipedia.org/?curid=539754",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Forio": {
+    "error": "No primary coordinate found",
+    "title": "Forio"
+  },
+  "Matera": {
+    "error": "No primary coordinate found",
+    "title": "Matera"
+  },
+  "Copenhagen": {
+    "latitude": 55.67611111,
+    "longitude": 12.56833333,
+    "title": "Copenhagen",
+    "source": "https://en.wikipedia.org/?curid=5166",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Perugia": {
+    "latitude": 43.11222222,
+    "longitude": 12.38888889,
+    "title": "Perugia",
+    "source": "https://en.wikipedia.org/?curid=51594",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Rome": {
+    "latitude": 41.89333333,
+    "longitude": 12.48277778,
+    "title": "Rome",
+    "source": "https://en.wikipedia.org/?curid=25458",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Positano": {
+    "latitude": 40.63333333,
+    "longitude": 14.48333333,
+    "title": "Positano",
+    "source": "https://en.wikipedia.org/?curid=342921",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Spello": {
+    "latitude": 42.992112,
+    "longitude": 12.671063,
+    "title": "Spello",
+    "source": "https://en.wikipedia.org/?curid=1032663",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Otranto": {
+    "error": "No primary coordinate found",
+    "title": "Otranto"
+  },
+  "Assisi": {
+    "error": "No primary coordinate found",
+    "title": "Assisi"
+  },
+  "Bardolino": {
+    "latitude": 45.53333333,
+    "longitude": 10.71666667,
+    "title": "Bardolino",
+    "source": "https://en.wikipedia.org/?curid=6552142",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Limone sul Garda": {
+    "latitude": 45.80833333,
+    "longitude": 10.7875,
+    "title": "Limone sul Garda",
+    "source": "https://en.wikipedia.org/?curid=1087219",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Bari": {
+    "latitude": 41.12527778,
+    "longitude": 16.86666667,
+    "title": "Bari",
+    "source": "https://en.wikipedia.org/?curid=44784",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Viterbo": {
+    "latitude": 42.41666667,
+    "longitude": 12.1,
+    "title": "Viterbo",
+    "source": "https://en.wikipedia.org/?curid=92898",
+    "checked": "2026-10-09T20:11:10.747Z"
+  },
+  "Pozzuoli": {
+    "latitude": 40.84444444,
+    "longitude": 14.09333333,
+    "title": "Pozzuoli",
+    "source": "https://en.wikipedia.org/?curid=875635",
+    "checked": "2026-10-09T20:13:06.141Z"
+  }
+}

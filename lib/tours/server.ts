@@ -4,7 +4,7 @@ import path from "node:path";
 import { videos as editorialVideos } from "../../data/videos";
 import { allSearchHits } from "../../data/search-hits/france";
 import { tourCountries } from "./countries";
-import { buildTours, isPublicTour, parseTourCsv } from "./core";
+import { buildTours, isPublicTour, parseTourCsv, pendingLibraryRows } from "./core";
 import type { DiscoveryVideo, WorldTour } from "./types";
 
 const sourceDirectory = path.join(process.cwd(), "data", "maps");
@@ -14,10 +14,14 @@ const pageSlugs = new Set(readdirSync(pageDirectory, { withFileTypes: true })
   .map((entry) => entry.name));
 
 // Private/server-side collection includes drafts. Never serialize it into a client.
-export const tours = buildTours(tourCountries.map((country) => ({
+const primarySources = tourCountries.filter((country) => country.source).map((country) => ({
   source: country.source,
   rows: parseTourCsv(readFileSync(path.join(sourceDirectory, country.source), "utf8"), country.source),
-})), editorialVideos, pageSlugs);
+}));
+const librarySource = "library-additions.csv";
+const libraryPath = path.join(sourceDirectory, librarySource);
+const libraryRows = existsSync(libraryPath) ? pendingLibraryRows(primarySources.flatMap(source => source.rows), parseTourCsv(readFileSync(libraryPath, "utf8"), librarySource)) : [];
+export const tours = buildTours([...primarySources, { source: librarySource, rows: libraryRows }], editorialVideos, pageSlugs);
 export const publicTours = tours.filter(isPublicTour);
 const publicById = new Map(publicTours.map((tour) => [tour.tourId, tour]));
 
@@ -54,5 +58,6 @@ export const worldTours: WorldTour[] = publicTours.flatMap((tour) => {
     videoType: tour.videoType, filmedYear: tour.filmedYear, durationLabel: tour.durationLabel,
     youtubeUrl: tour.youtubeUrl, watchHref: tour.watchHref, watchDestinationType: tour.watchDestinationType,
     latitude: tour.latitude, longitude: tour.longitude,
+    locationAccuracy: tour.locationAccuracy,
   }];
 });

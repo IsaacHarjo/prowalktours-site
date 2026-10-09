@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Copacabana Evening Beach Walk</name>
+    <description><![CDATA[Video Link: https://youtu.be/TfvheIZa5yg<br>Saturday<br>January 20th, 2024]]></description>
+    <Style id="icon-1596-558B2F-nodesc-normal">
+      <IconStyle>
+        <color>ff2f8b55</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1596-558B2F-nodesc-highlight">
+      <IconStyle>
+        <color>ff2f8b55</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1596-558B2F-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1596-558B2F-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1596-558B2F-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-0288D1-nodesc-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-0288D1-nodesc-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1899-0288D1-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-FFD600-6969-nodesc-normal">
+      <LineStyle>
+        <color>ff00d6ff</color>
+        <width>6.969</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="line-FFD600-6969-nodesc-highlight">
+      <LineStyle>
+        <color>ff00d6ff</color>
+        <width>10.4535</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="line-FFD600-6969-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-FFD600-6969-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-FFD600-6969-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Walking Route</name>
+      <Placemark>
+        <name>Start/End</name>
+        <styleUrl>#icon-1596-558B2F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1896168,-22.982627,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Line 2</name>
+        <styleUrl>#line-FFD600-6969-nodesc</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -43.1896168,-22.9825282,0
+            -43.1892735,-22.982301,0
+            -43.1891233,-22.9813034,0
+            -43.1888443,-22.9801082,0
+            -43.1892306,-22.979965,0
+            -43.189016,-22.979244,0
+            -43.1884688,-22.9791057,0
+            -43.1880665,-22.9780883,0
+            -43.1876105,-22.9773129,0
+            -43.1871492,-22.9766758,0
+            -43.1857544,-22.9748484,0
+            -43.1861299,-22.9738804,0
+            -43.185057,-22.9726358,0
+            -43.1838661,-22.9728037,0
+            -43.1832224,-22.9722012,0
+            -43.1811732,-22.9706799,0
+            -43.1812268,-22.9697119,0
+            -43.1783086,-22.9678548,0
+            -43.1768495,-22.9671238,0
+            -43.1770211,-22.9667879,0
+            -43.1804329,-22.9688624,0
+            -43.183673,-22.9710948,0
+            -43.1852424,-22.972642,0
+            -43.1867445,-22.9744595,0
+            -43.1871414,-22.9752942,0
+            -43.1873775,-22.9750917,0
+            -43.188268,-22.976682,0
+            -43.1889385,-22.9782426,0
+            -43.1888044,-22.978292,0
+            -43.1885469,-22.9776697,0
+            -43.1876028,-22.9757337,0
+            -43.1873453,-22.9753584,0
+            -43.1871951,-22.9754473,0
+            -43.188107,-22.977003,0
+            -43.1885255,-22.9778673,0
+            -43.1890834,-22.9792403,0
+            -43.1894803,-22.9807219,0
+            -43.1896144,-22.9821837,0
+            -43.1895983,-22.9824603,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>Christ the Redeemer Statue</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2122041,-22.9511918,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ipanema Beach</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2060242,-22.9873459,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Copacabana Beach</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1846524,-22.9737942,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Leme Beach</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.168707,-22.9645246,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Leblon Beach</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2222614,-22.9877781,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

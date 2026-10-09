@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Piran Evening Walking Tour Map - Prowalk Tours</name>
+    <description><![CDATA[Video Link: https://youtu.be/fA1qxYtjxEY<br>🌍 Website: https://www.prowalktours.com<br>📧 Email: prowalktours@gmail.com<br>🔔 Subscribe for more! (https://www.youtube.com/@ProwalkTours)]]></description>
+    <Style id="icon-1499-E65100-nodesc-normal">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1499-E65100-nodesc-highlight">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1499-E65100-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1499-E65100-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1499-E65100-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1596-7CB342-nodesc-normal">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1596-7CB342-nodesc-highlight">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1596-7CB342-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1596-7CB342-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1596-7CB342-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-0288D1-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-0288D1-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-0288D1">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-0288D1-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-0288D1-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-FFD600-6619-nodesc-normal">
+      <LineStyle>
+        <color>ff00d6ff</color>
+        <width>6.619</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="line-FFD600-6619-nodesc-highlight">
+      <LineStyle>
+        <color>ff00d6ff</color>
+        <width>9.9285</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="line-FFD600-6619-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-FFD600-6619-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-FFD600-6619-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Walking Route</name>
+      <Placemark>
+        <name>Start</name>
+        <styleUrl>#icon-1596-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            13.5666715,45.5265554,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Line 1</name>
+        <styleUrl>#line-FFD600-6619-nodesc</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            13.5666715,45.5265554,0
+            13.5664328,45.5261833,0
+            13.5663416,45.5262152,0
+            13.5670631,45.5272807,0
+            13.5670712,45.527384,0
+            13.5669746,45.5275005,0
+            13.566811,45.527664,0
+            13.5666715,45.5277335,0
+            13.5661619,45.5283536,0
+            13.5661914,45.5283931,0
+            13.5660305,45.5285772,0
+            13.565891,45.5287088,0
+            13.5657569,45.5287839,0
+            13.5654082,45.528938,0
+            13.565143,45.529034,0
+            13.5650143,45.5290847,0
+            13.5646602,45.5293609,0
+            13.5643169,45.5295751,0
+            13.5639414,45.5296916,0
+            13.5635739,45.5298419,0
+            13.5632628,45.5299904,0
+            13.5630858,45.5300731,0
+            13.5629999,45.5301351,0
+            13.5630214,45.5302196,0
+            13.563059,45.5302835,0
+            13.5631662,45.5303192,0
+            13.5633567,45.5303455,0
+            13.5642418,45.5304113,0
+            13.5642713,45.5304601,0
+            13.5649821,45.530509,0
+            13.565017,45.5304545,0
+            13.565017,45.5302967,0
+            13.5650974,45.5302459,0
+            13.5651833,45.5302365,0
+            13.565261,45.5302102,0
+            13.5653415,45.5301614,0
+            13.5654166,45.5301914,0
+            13.5654542,45.5302083,0
+            13.5655333,45.5302102,0
+            13.5656647,45.5301792,0
+            13.5657733,45.5301454,0
+            13.5658364,45.5301304,0
+            13.5659262,45.5301247,0
+            13.5660094,45.530152,0
+            13.5660577,45.5301858,0
+            13.5662012,45.5301708,0
+            13.5667269,45.5301069,0
+            13.5669401,45.5300646,0
+            13.5670782,45.5299951,0
+            13.5671507,45.5299528,0
+            13.56727,45.5299162,0
+            13.5673706,45.5298955,0
+            13.5677139,45.5298279,0
+            13.5679285,45.5297771,0
+            13.5680559,45.5300007,0
+            13.5689384,45.5297865,0
+            13.5689182,45.5297677,0
+            13.5680774,45.5299725,0
+            13.5679661,45.5297583,0
+            13.56819,45.5296832,0
+            13.5684207,45.5295911,0
+            13.5686607,45.5294643,0
+            13.5687841,45.5293919,0
+            13.5688928,45.5293374,0
+            13.5689464,45.5293262,0
+            13.568996,45.5293205,0
+            13.5696786,45.5292735,0
+            13.569684,45.5292454,0
+            13.5695056,45.5291035,0
+            13.5693554,45.5289917,0
+            13.56922,45.5289344,0
+            13.5690819,45.5289165,0
+            13.5688579,45.5289663,0
+            13.5685213,45.5290556,0
+            13.5684207,45.529064,0
+            13.5683711,45.5290246,0
+            13.5683577,45.5289701,0
+            13.5685213,45.5286103,0
+            13.5685883,45.5285313,0
+            13.5685883,45.5283688,0
+            13.5685535,45.5282504,0
+            13.5684368,45.5281978,0
+            13.5680733,45.5280409,0
+            13.5679821,45.5281179,0
+            13.5678373,45.5281565,0
+            13.5676965,45.5281264,0
+            13.5675704,45.5280512,0
+            13.5675034,45.5279808,0
+            13.5674765,45.5279235,0
+            13.5675101,45.5278765,0
+            13.5674913,45.5277872,0
+            13.5673626,45.5274922,0
+            13.567553,45.5274302,0
+            13.5675369,45.5274077,0
+            13.5673532,45.5274622,0
+            13.5672633,45.5274678,0
+            13.5672016,45.527465,0
+            13.5671024,45.5274913,0
+            13.5670246,45.527527,0
+            13.5667687,45.5277787,0
+            13.5664468,45.5281395,0
+            13.5662457,45.5283988,0
+            13.5660016,45.5286938,0
+            13.5659345,45.5287427,0
+            13.5652694,45.5290227,0
+            13.565044,45.5291166,0
+            13.564926,45.5292068,0
+            13.5648697,45.5291636,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>1. Boat Pier 0:38</name>
+        <description>A peaceful start with views of boats along the marina.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            13.5667732,45.526722,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>2. Coastal Walkway South 6:27</name>
+        <description>Walking along the picturesque seaside promenade.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            13.5667195,45.5277104,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>3. Piran Lighthouse 12:19 </name>
+        <description>A beautiful viewpoint overlooking the sea.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            13.5631851,45.5302059,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>4. Coastal Walkway North 13:45</name>
+        <description>Scenic coastal views continue.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            13.5636143,45.5303637,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>5. Church of St. George 19:24</name>
+        <description>Stunning hilltop views and historic architecture.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            13.5678575,45.5299654,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Sunset & Drone 22:49]]></name>
+        <description>Capturing the golden hour over Piran from above.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            13.5679661,45.5297583,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>5. Piazza Tartini 29:55</name>
+        <description>Piran’s central square, bustling with activity.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            13.5683577,45.5289701,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Port of Piran 33:11</name>
+        <description>A charming harbor view.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            13.5680185,45.5280713,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Coastal Walkway South 37:44</name>
+        <description>Wrapping up the walk with serene coastal views.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            13.566951,45.5276805,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>End</name>
+        <styleUrl>#icon-1499-E65100-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            13.5648697,45.5291636,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

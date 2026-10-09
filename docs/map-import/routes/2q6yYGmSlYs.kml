@@ -1,0 +1,1002 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name><![CDATA[NYC Highline & Hudson River Walk]]></name>
+    <description/>
+    <Style id="icon-1500-E65100-nodesc-normal">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1500-E65100-nodesc-highlight">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1500-E65100-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1500-E65100-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1500-E65100-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1596-097138-nodesc-normal">
+      <IconStyle>
+        <color>ff387109</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1596-097138-nodesc-highlight">
+      <IconStyle>
+        <color>ff387109</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1596-097138-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1596-097138-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1596-097138-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-0288D1-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-0288D1-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-0288D1">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-0288D1-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-0288D1-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-0288D1-nodesc-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-0288D1-nodesc-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1899-0288D1-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-FFD600-4875-nodesc-normal">
+      <LineStyle>
+        <color>ff00d6ff</color>
+        <width>4.875</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="line-FFD600-4875-nodesc-highlight">
+      <LineStyle>
+        <color>ff00d6ff</color>
+        <width>7.3125</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="line-FFD600-4875-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-FFD600-4875-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-FFD600-4875-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Untitled layer</name>
+      <Placemark>
+        <name>Start</name>
+        <styleUrl>#icon-1596-097138-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.0015925,40.7543852,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Line 2</name>
+        <styleUrl>#line-FFD600-4875-nodesc</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -74.0016113,40.7543852,0
+            -74.0016877,40.7543669,0
+            -74.001795,40.7543202,0
+            -74.0020297,40.7541769,0
+            -74.0021598,40.7540641,0
+            -74.0022161,40.7540144,0
+            -74.0022939,40.7540662,0
+            -74.0024226,40.7541312,0
+            -74.0025125,40.7541607,0
+            -74.0026225,40.754182,0
+            -74.002707,40.7541871,0
+            -74.0027244,40.7541678,0
+            -74.0023663,40.7539819,0
+            -74.0022952,40.7539951,0
+            -74.002251,40.7540001,0
+            -74.0021651,40.7540001,0
+            -74.0020444,40.7539981,0
+            -74.0019586,40.7539798,0
+            -74.0019117,40.7539554,0
+            -74.0018782,40.753928,0
+            -74.0018178,40.7538772,0
+            -74.0018071,40.7538356,0
+            -74.0018057,40.7537868,0
+            -74.0017977,40.753738,0
+            -74.0018218,40.7535867,0
+            -74.0018956,40.7534841,0
+            -74.002306,40.7528572,0
+            -74.0022577,40.7528044,0
+            -74.0021987,40.7526764,0
+            -74.0020686,40.7524651,0
+            -74.0019975,40.7523503,0
+            -74.001968,40.7522781,0
+            -74.0019412,40.7521918,0
+            -74.0019291,40.7521125,0
+            -74.0019291,40.7520292,0
+            -74.0019412,40.7519236,0
+            -74.0019693,40.7518128,0
+            -74.0020176,40.7517184,0
+            -74.0020981,40.7515934,0
+            -74.0022845,40.7513333,0
+            -74.0024508,40.7510956,0
+            -74.0026131,40.7508711,0
+            -74.0027888,40.7506414,0
+            -74.0029202,40.7504555,0
+            -74.0031388,40.7501548,0
+            -74.0034164,40.7497728,0
+            -74.0035827,40.7495777,0
+            -74.0036605,40.7493512,0
+            -74.003686,40.7492973,0
+            -74.0037383,40.7492272,0
+            -74.0040588,40.7487832,0
+            -74.0041245,40.7487334,0
+            -74.0041822,40.7486918,0
+            -74.0042828,40.7485445,0
+            -74.0043149,40.7484408,0
+            -74.0043471,40.7483829,0
+            -74.0044102,40.7483047,0
+            -74.0046462,40.7479664,0
+            -74.0050338,40.747438,0
+            -74.0050941,40.7473618,0
+            -74.0052483,40.7472745,0
+            -74.0052618,40.747246,0
+            -74.0052671,40.7471464,0
+            -74.0052832,40.7470824,0
+            -74.0055353,40.7467786,0
+            -74.0056078,40.746741,0
+            -74.0060383,40.7461396,0
+            -74.0062609,40.7458337,0
+            -74.0064151,40.7456295,0
+            -74.0064232,40.7454852,0
+            -74.0065452,40.7453084,0
+            -74.006635,40.7451753,0
+            -74.0067316,40.74509,0
+            -74.0068335,40.7449498,0
+            -74.0068402,40.7448634,0
+            -74.0069945,40.7446683,0
+            -74.0070132,40.7445688,0
+            -74.0069676,40.7442619,0
+            -74.0069811,40.7441197,0
+            -74.0068738,40.7434531,0
+            -74.0069891,40.7433373,0
+            -74.0074746,40.7426606,0
+            -74.0076382,40.7424391,0
+            -74.0077294,40.7420834,0
+            -74.0076865,40.7420387,0
+            -74.0079011,40.7412909,0
+            -74.0079493,40.741301,0
+            -74.0080164,40.741238,0
+            -74.00807,40.7408235,0
+            -74.0079708,40.7407462,0
+            -74.0080244,40.7405024,0
+            -74.0081022,40.7403987,0
+            -74.0082363,40.7399333,0
+            -74.008188,40.7393989,0
+            -74.0095613,40.7393785,0
+            -74.0096418,40.7388115,0
+            -74.0097142,40.7387445,0
+            -74.0097947,40.7385331,0
+            -74.0103633,40.7385148,0
+            -74.0103633,40.7385677,0
+            -74.0103928,40.7385758,0
+            -74.0104062,40.7385229,0
+            -74.0103928,40.7384762,0
+            -74.0103982,40.7384173,0
+            -74.0104089,40.7383644,0
+            -74.010476,40.7376043,0
+            -74.0105698,40.7362894,0
+            -74.0106932,40.7349907,0
+            -74.0107549,40.7342692,0
+            -74.0119619,40.7343261,0
+            -74.0119807,40.7340944,0
+            -74.0107657,40.7340273,0
+            -74.0108247,40.7336209,0
+            -74.0108542,40.7333343,0
+            -74.0108595,40.7332733,0
+            -74.0139816,40.7333262,0
+            -74.0139897,40.7330884,0
+            -74.0108971,40.7330436,0
+            -74.0108837,40.7329928,0
+            -74.010999,40.7317896,0
+            -74.0110956,40.7307327,0
+            -74.0111251,40.7304481,0
+            -74.0112216,40.7293953,0
+            -74.0113262,40.7281818,0
+            -74.0114603,40.7268077,0
+            -74.0114979,40.7263545,0
+            -74.011624,40.7257121,0
+            -74.0119136,40.7243705,0
+            -74.0120933,40.723466,0
+            -74.0122838,40.7224719,0
+            -74.0125037,40.7214596,0
+            -74.0125922,40.7211242,0
+            -74.0126351,40.7210795,0
+            -74.012721,40.7210144,0
+            -74.0128095,40.7209738,0
+            -74.0129195,40.7209514,0
+            -74.0130563,40.7209392,0
+            -74.013236,40.7209473,0
+            -74.0161649,40.7213031,0
+            -74.0161837,40.7213763,0
+            -74.015658,40.7215287,0
+            -74.0155346,40.7215003,0
+            -74.0151967,40.7214535,0
+            -74.0142069,40.721358,0
+            -74.0140674,40.7212096,0
+            -74.013126,40.7212035,0
+            -74.0131555,40.7210408,0
+            -74.0131287,40.7209677,0
+            -74.0129114,40.7209311,0
+            -74.0128175,40.7209189,0
+            -74.0129382,40.7202806,0
+            -74.0163071,40.7207176,0
+            -74.0163634,40.7204107,0
+            -74.0133567,40.720059,0
+            -74.0134023,40.7198333,0
+            -74.0128685,40.7197723,0
+            -74.0131099,40.7186604,0
+            -74.013193,40.7182782,0
+            -74.0149472,40.7185262,0
+            -74.014966,40.7184408,0
+            -74.0151859,40.718453,0
+            -74.0166316,40.7186604,0
+            -74.0166826,40.7186461,0
+            -74.0167014,40.7186055,0
+            -74.0168999,40.7174833,0
+            -74.0170501,40.7166396,0
+            -74.0172539,40.7155499,0
+            -74.0173934,40.7147672,0
+            -74.0175731,40.7136796,0
+            -74.0176219,40.7136764,0
+            -74.0174583,40.7146808,0
+            -74.0169728,40.717285,0
+            -74.0168387,40.7174029,0
+            -74.0166242,40.7175147,0
+            -74.0164766,40.717653,0
+            -74.0163881,40.7177709,0
+            -74.0160931,40.718084,0
+            -74.0155513,40.7185251,0
+            -74.0150068,40.7184702,0
+            -74.0149826,40.7185475,0
+            -74.0148673,40.7185312,0
+            -74.0132204,40.7183157,0
+            -74.0131695,40.7185576,0
+            -74.0128476,40.7200437,0
+            -74.0129576,40.7202429,0
+            -74.012971,40.7203364,0
+            -74.0128503,40.7208751,0
+            -74.0126786,40.7209585,0
+            -74.0125794,40.7213772,0
+            -74.0125365,40.7215093,0
+            -74.0122039,40.7231945,0
+            -74.011941,40.7244833,0
+            -74.0116594,40.7259204,0
+            -74.011544,40.7264448,0
+            -74.0114824,40.727266,0
+            -74.0113161,40.7290507,0
+            -74.011139,40.7308739,0
+            -74.0109647,40.7326239,0
+            -74.0109003,40.7332011,0
+            -74.0108789,40.7333718,0
+            -74.0108011,40.7344409,0
+            -74.0105785,40.7368675,0
+            -74.0104738,40.7383044,0
+            -74.0104256,40.738784,0
+            -74.0103639,40.7392535,0
+            -74.0102834,40.7394547,0
+            -74.010101,40.7398876,0
+            -74.0100206,40.7400786,0
+            -74.0097631,40.7403509,0
+            -74.0096477,40.740485,0
+            -74.0096102,40.740611,0
+            -74.0094868,40.7412756,0
+            -74.009578,40.7413792,0
+            -74.0102204,40.7416525,0
+            -74.0102821,40.7416718,0
+            -74.0103652,40.7416901,0
+            -74.0104524,40.741745,0
+            -74.0105369,40.7417704,0
+            -74.0106108,40.7418149,0
+            -74.0106295,40.7417956,0
+            -74.0106121,40.7417814,0
+            -74.0106362,40.741758,0
+            -74.0106725,40.7417824,0
+            -74.0107489,40.7417479,0
+            -74.0107972,40.7417601,0
+            -74.0108133,40.7417286,0
+            -74.0108361,40.7417052,0
+            -74.0108522,40.7416961,0
+            -74.0108857,40.741695,0
+            -74.010942,40.7417103,0
+            -74.0109474,40.7417418,0
+            -74.010997,40.7417326,0
+            -74.0110144,40.7417672,0
+            -74.0110748,40.7417702,0
+            -74.0110574,40.7418393,0
+            -74.0110895,40.741817,0
+            -74.0111445,40.7418068,0
+            -74.0111794,40.7418119,0
+            -74.0112062,40.7418434,0
+            -74.0112304,40.741883,0
+            -74.0112625,40.7419125,0
+            -74.0112974,40.7419166,0
+            -74.0113229,40.7418983,0
+            -74.0113537,40.7418556,0
+            -74.0113685,40.7418698,0
+            -74.0113296,40.7419105,0
+            -74.011292,40.7419348,0
+            -74.0112907,40.7419674,0
+            -74.0112451,40.7419958,0
+            -74.0112223,40.742006,0
+            -74.0112049,40.7420405,0
+            -74.0111713,40.7420497,0
+            -74.0110962,40.7420476,0
+            -74.0110734,40.7420415,0
+            -74.0110439,40.7420222,0
+            -74.0110171,40.7419857,0
+            -74.0110024,40.7419531,0
+            -74.0109501,40.74188,0
+            -74.0109353,40.7418475,0
+            -74.0109219,40.7418271,0
+            -74.0108803,40.7418129,0
+            -74.0108562,40.741816,0
+            -74.0108508,40.7418363,0
+            -74.0108066,40.7418576,0
+            -74.0108079,40.7419033,0
+            -74.0108629,40.7419511,0
+            -74.0108817,40.7419887,0
+            -74.0108991,40.7420202,0
+            -74.0109179,40.7420588,0
+            -74.0109568,40.7420903,0
+            -74.0109903,40.7421015,0
+            -74.0110493,40.7421086,0
+            -74.0110936,40.7421116,0
+            -74.0111003,40.7421208,0
+            -74.0110962,40.7421533,0
+            -74.0110869,40.7421543,0
+            -74.0110185,40.7421472,0
+            -74.0109232,40.742137,0
+            -74.0108522,40.7421411,0
+            -74.0107556,40.7421818,0
+            -74.0107154,40.7422122,0
+            -74.0106926,40.742263,0
+            -74.0106765,40.7423189,0
+            -74.0106832,40.7423647,0
+            -74.0107154,40.7424002,0
+            -74.0107449,40.7424429,0
+            -74.0107771,40.7424591,0
+            -74.0108227,40.7424785,0
+            -74.0108441,40.7424917,0
+            -74.0107972,40.742514,0
+            -74.0108401,40.7425963,0
+            -74.0107958,40.7425933,0
+            -74.0107073,40.7424957,0
+            -74.0106242,40.7424785,0
+            -74.0106067,40.7424337,0
+            -74.0105839,40.7424083,0
+            -74.0105705,40.742389,0
+            -74.0105692,40.7423504,0
+            -74.010592,40.7423352,0
+            -74.0106309,40.7423291,0
+            -74.0106362,40.7423108,0
+            -74.0106121,40.7422925,0
+            -74.0105625,40.7422834,0
+            -74.0105209,40.7422783,0
+            -74.0104659,40.7422813,0
+            -74.0104297,40.7422691,0
+            -74.0103358,40.7422376,0
+            -74.0101025,40.7425486,0
+            -74.00933,40.7422082,0
+            -74.0090873,40.7422509,0
+            -74.0085508,40.7421818,0
+            -74.0083322,40.7420822,0
+            -74.0071373,40.7415894,0
+            -74.007596,40.7409502,0
+            -74.008009,40.7403873,0
+            -74.0080761,40.7402766,0
+            -74.0081324,40.739424,0
+            -74.0082571,40.739423,0
+            -74.0082249,40.739551,0
+            -74.0082531,40.7399402,0
+            -74.0081177,40.740428,0
+            -74.0081405,40.740494,0
+            -74.0080774,40.7408019,0
+            -74.0080586,40.7411169,0
+            -74.0080479,40.7412307,0
+            -74.0079674,40.7413252,0
+            -74.0079232,40.7413191,0
+            -74.0077569,40.7418769,0
+            -74.0077153,40.7420314,0
+            -74.0077556,40.7420751,0
+            -74.0076657,40.7424439,0
+            -74.0073237,40.7429144,0
+            -74.0070488,40.7433533,0
+            -74.0068986,40.7434508,0
+            -74.0069214,40.7436297,0
+            -74.0070045,40.7441255,0
+            -74.0070394,40.7445634,0
+            -74.0070126,40.7446843,0
+            -74.0068744,40.7448601,0
+            -74.0068664,40.7449556,0
+            -74.0067377,40.7451284,0
+            -74.0066599,40.7451832,0
+            -74.0064533,40.745485,0
+            -74.0064372,40.7456425,0
+            -74.005937,40.7463171,0
+            -74.0056178,40.746755,0
+            -74.0055508,40.7467926,0
+            -74.0053107,40.7470802,0
+            -74.0052852,40.7472234,0
+            -74.0052772,40.7472651,0
+            -74.0052651,40.7472935,0
+            -74.0051122,40.7473728,0
+            -74.0048896,40.7476684,0
+            -74.004545,40.748149,0
+            -74.0043559,40.748403,0
+            -74.0043196,40.7484792,0
+            -74.0042982,40.7485564,0
+            -74.0042057,40.7486987,0
+            -74.0040742,40.7487871,0
+            -74.0037014,40.7493103,0
+            -74.0036035,40.7495795,0
+            -74.0035284,40.7496699,0
+            -74.0032655,40.7500326,0
+            -74.002878,40.750567,0
+            -74.0022785,40.751393,0
+            -74.0021605,40.7515525,0
+            -74.0020666,40.7516897,0
+            -74.0020197,40.7517781,0
+            -74.0019982,40.7518553,0
+            -74.0019741,40.7519599,0
+            -74.0019647,40.7520199,0
+            -74.00197,40.7521062,0
+            -74.0019767,40.752159,0
+            -74.0020129,40.7522952,0
+            -74.0020961,40.7524506,0
+            -74.0022074,40.7526416,0
+            -74.0022959,40.7527747,0
+            -74.0023402,40.7528326,0
+            -74.0028538,40.7530388,0
+            -74.004612,40.7537764,0
+            -74.0045718,40.7538302,0
+            -74.0044712,40.7537876,0
+            -74.0044926,40.75375,0
+            -74.0040581,40.753561,0
+            -74.0038918,40.7535387,0
+            -74.0035592,40.7533964,0
+            -74.0028257,40.7530774,0
+            -74.0023375,40.7528692,0
+            -74.0020706,40.7532756,0
+            -74.0019352,40.753493,0
+            -74.0018855,40.7535844,0
+            -74.001856,40.7536494,0
+            -74.0018332,40.7537307,0
+            -74.0018386,40.7537866,0
+            -74.0018949,40.7538018,0
+            -74.0019526,40.7537713,0
+            -74.0020411,40.7537165,0
+            -74.0021028,40.7536961,0
+            -74.0021578,40.753689,0
+            -74.0022074,40.7536961,0
+            -74.002308,40.7537236,0
+            -74.0023429,40.7537551,0
+            -74.0023737,40.7538038,0
+            -74.0023871,40.7538536,0
+            -74.0023817,40.7538841,0
+            -74.0022959,40.7538577,0
+            -74.0022356,40.7538404,0
+            -74.0022034,40.7538353,0
+            -74.0021484,40.7538333,0
+            -74.0021028,40.7538374,0
+            -74.0019593,40.7538567,0
+            -74.0019338,40.753876,0
+            -74.0019271,40.7539186,0
+            -74.0019392,40.753941,0
+            -74.0019928,40.7539633,0
+            -74.0020478,40.7539694,0
+            -74.0021122,40.7539704,0
+            -74.0021913,40.7539654,0
+            -74.0022637,40.7539552,0
+            -74.0023402,40.753945,0
+            -74.0023952,40.7539583,0
+            -74.0027345,40.7541452,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>End</name>
+        <styleUrl>#icon-1500-E65100-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.0027345,40.7541452,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Points of Interest</name>
+      <Placemark>
+        <name>1. Vessel 2:03</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4i2eZLh_Bhql1mW8Tx92FjHNu-Ra9HCqVCpvozW0QXSGMjTsIQIQLVRkn1N0VfWHNOnD_BfR8uMDNqgJoQw0WmTPh0G_AzM1_Vekg4D1eJKdg9Fc5fphovov32kL-yEdNlvpXKp6lslobItmmJxCQNp0Amh_2UJXBVgFvmulXxj07JDQOTLsMckTyxBgaZwOSQXdvs-MH8J1DAgta9iWgb9uMqUEAwykTVyeWkrsNd_fgVGECJwg-whPU?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4i2eZLh_Bhql1mW8Tx92FjHNu-Ra9HCqVCpvozW0QXSGMjTsIQIQLVRkn1N0VfWHNOnD_BfR8uMDNqgJoQw0WmTPh0G_AzM1_Vekg4D1eJKdg9Fc5fphovov32kL-yEdNlvpXKp6lslobItmmJxCQNp0Amh_2UJXBVgFvmulXxj07JDQOTLsMckTyxBgaZwOSQXdvs-MH8J1DAgta9iWgb9uMqUEAwykTVyeWkrsNd_fgVGECJwg-whPU?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.0021467,40.7539382,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>2. The Shed 5:27</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR40v6NtF-xgvy9KO6lWIoz-0r7rhnhxSJIgJzsP_bxmmb89E-55Gg7WtYdhYTZYe01VL8YoLED3YUqp1PeRVhv3p4XVu74jWxAes7t19OJTzRyXaUdgQy2OVOXXDJj3a5aWXs-Zfb1810KcMQfuLBHrYhCvH7FSdhOUQqg4erlcDNy0VgC0E776j64XMl6ZgdEG1XCUu8kOwuoiH3V5kazAlQ1pU5cYmeR3560GZ6Z_81DdFrtWxBenAyY?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR40v6NtF-xgvy9KO6lWIoz-0r7rhnhxSJIgJzsP_bxmmb89E-55Gg7WtYdhYTZYe01VL8YoLED3YUqp1PeRVhv3p4XVu74jWxAes7t19OJTzRyXaUdgQy2OVOXXDJj3a5aWXs-Zfb1810KcMQfuLBHrYhCvH7FSdhOUQqg4erlcDNy0VgC0E776j64XMl6ZgdEG1XCUu8kOwuoiH3V5kazAlQ1pU5cYmeR3560GZ6Z_81DdFrtWxBenAyY?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.0024364,40.7533002,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>3. High Line 6:28</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR48VlAGsO-o6gnzdJAUV2y06Z9bVaynw7nx6wkOJf-X1RJSK1Z8x8A-5-aDbaK5W6xBdyGlxwUjcakBpnqy753wlW6u5RZP0x27ulNhIXFoJ6Ps3Y4Vcq_npGRwWtbDajIGiBTFBs-HEJdfoTB3iUn5K6kO3xmWz-SI_7V4OGJ4X-smWG_tK-JSo4hNavpjyPO5PW3rfA7qNzJuJUtDrommwcZxSipMVBaqHNfkokbqpUFoYojBLRdhbzU?fife=s16383" height="200" width="auto" /><br><br><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5TmeHYevJlv_EzQvQhD1MPuZ3g9VbihDNMAqQyjYa0Nyf8nWn4SqTaBectnMu8tE3K0tzn5MvOnfz98GBrUdpCtrpHZlHlhbx8fxYD2Nel6DTbVhHWAxVo9dNAebFg3MNW4GjJ4KqZnJs_2XI12Yt_YYv710j_gSti8yKurYXXoC43d1wNHfJB35dqi6gDrSGeS7QK9XEuyOxQ1va4s3C2OV_OQohmkf5bjE2aQroYCyl_Dj8TcEI72O8?fife=s16383" height="200" width="auto" />]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR48VlAGsO-o6gnzdJAUV2y06Z9bVaynw7nx6wkOJf-X1RJSK1Z8x8A-5-aDbaK5W6xBdyGlxwUjcakBpnqy753wlW6u5RZP0x27ulNhIXFoJ6Ps3Y4Vcq_npGRwWtbDajIGiBTFBs-HEJdfoTB3iUn5K6kO3xmWz-SI_7V4OGJ4X-smWG_tK-JSo4hNavpjyPO5PW3rfA7qNzJuJUtDrommwcZxSipMVBaqHNfkokbqpUFoYojBLRdhbzU?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5TmeHYevJlv_EzQvQhD1MPuZ3g9VbihDNMAqQyjYa0Nyf8nWn4SqTaBectnMu8tE3K0tzn5MvOnfz98GBrUdpCtrpHZlHlhbx8fxYD2Nel6DTbVhHWAxVo9dNAebFg3MNW4GjJ4KqZnJs_2XI12Yt_YYv710j_gSti8yKurYXXoC43d1wNHfJB35dqi6gDrSGeS7QK9XEuyOxQ1va4s3C2OV_OQohmkf5bjE2aQroYCyl_Dj8TcEI72O8?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.002306,40.7528572,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>End of the High Line 31:52</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7Hiv1urzkcBgpmLDw3gx2ge-SWe_rF1WRYyHvL4iqAmlfTcV4TqXzA0c1UlIB1etCw4qKrEoanZ-YJpeUysgdp2zR67JUD-_vLNhPaa0nklyGB9uzmea5xszm5LJS_0s_JS4p272AWgcVnNoXiP0HX4sXfY8kXh7nL9rr7QokhGArOqrtpOiZZPyMESxRU88UxwLtVPYFmg4kktvh2njij5qicUiwlnDaKNSUFsURMPHvnwMD7zYhPTyA?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7Hiv1urzkcBgpmLDw3gx2ge-SWe_rF1WRYyHvL4iqAmlfTcV4TqXzA0c1UlIB1etCw4qKrEoanZ-YJpeUysgdp2zR67JUD-_vLNhPaa0nklyGB9uzmea5xszm5LJS_0s_JS4p272AWgcVnNoXiP0HX4sXfY8kXh7nL9rr7QokhGArOqrtpOiZZPyMESxRU88UxwLtVPYFmg4kktvh2njij5qicUiwlnDaKNSUFsURMPHvnwMD7zYhPTyA?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.0081811,40.7394506,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>4. Hudson River Walk 35:23</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR79_vt6iuLVQXzqON1L-xd1T52A97ddBgqtkM8cHDuJEO_nDN8gO7I0De3m9JISW246o6T3udkM5sgKy5V9qPqyVvc3XJSqLHUKZinWjrdHSZpPKUUB9oJ20eC59FnUwfxtI5mrg653KEtMHXX5zFgXD_jmp9epKdolX4l5jqOQxMOheTsASXAkGd7L_OSkK3C_HfnNC57jY_OequbizK7UX9-HMyFRPbUS68IL-lc_PIBzCNMRmmyFJs8?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR79_vt6iuLVQXzqON1L-xd1T52A97ddBgqtkM8cHDuJEO_nDN8gO7I0De3m9JISW246o6T3udkM5sgKy5V9qPqyVvc3XJSqLHUKZinWjrdHSZpPKUUB9oJ20eC59FnUwfxtI5mrg653KEtMHXX5zFgXD_jmp9epKdolX4l5jqOQxMOheTsASXAkGd7L_OSkK3C_HfnNC57jY_OequbizK7UX9-HMyFRPbUS68IL-lc_PIBzCNMRmmyFJs8?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.0103633,40.7385148,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>5. Pier 46 41:39</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR46NOjdcOP_vAJwemsOUtpBsBc_3fXXOZ5svOKV_LPv_3p-JjeKMpX0Uxb4WhBMscEgfMeLLhSze8pGelBRvRl8GhDyGDjwC8D_Ami7yckuQlxrOW_l_BhT-fgtxFpI33JP5lIIgspF8iolOuPx6nz75tV8NqQ2CkG74nhJXQ8d4zorcGIo2YBYVOpirBnWi6vlQ7abH6txR8v0aDhbiGhrC2d2zy7LIy_ZJWznhohzzkR_7UegSBgg348?fife=s16383" height="200" width="auto" /><br><br><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4CkxazKP_WetT_ClA9wkCdxqFzVGoYR9nxMb5UdPp8ak2Ljr_6_qDYDwcyoMY8S9iwFshAFLOAXsRK7_HhU2WKoSjYVFdIf6H7RvXiH3PXFrWR2iVrEcj64d1l97Jk0k5Nw1tAlbPRBQDVVA-I8rHoAYb642C0TEA2ahkQkKb9QHgyPRQLjiYfku7siquvSUjMY6qTRJ5Qxanbjk6_R4QhP5GhFb3kCse5Ib1RlL9zNBhbQVgjlk1PJBE?fife=s16383" height="200" width="auto" />]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR46NOjdcOP_vAJwemsOUtpBsBc_3fXXOZ5svOKV_LPv_3p-JjeKMpX0Uxb4WhBMscEgfMeLLhSze8pGelBRvRl8GhDyGDjwC8D_Ami7yckuQlxrOW_l_BhT-fgtxFpI33JP5lIIgspF8iolOuPx6nz75tV8NqQ2CkG74nhJXQ8d4zorcGIo2YBYVOpirBnWi6vlQ7abH6txR8v0aDhbiGhrC2d2zy7LIy_ZJWznhohzzkR_7UegSBgg348?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4CkxazKP_WetT_ClA9wkCdxqFzVGoYR9nxMb5UdPp8ak2Ljr_6_qDYDwcyoMY8S9iwFshAFLOAXsRK7_HhU2WKoSjYVFdIf6H7RvXiH3PXFrWR2iVrEcj64d1l97Jk0k5Nw1tAlbPRBQDVVA-I8rHoAYb642C0TEA2ahkQkKb9QHgyPRQLjiYfku7siquvSUjMY6qTRJ5Qxanbjk6_R4QhP5GhFb3kCse5Ib1RlL9zNBhbQVgjlk1PJBE?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.0111401,40.734187,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>6. Pier 45 45:00</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6E66EvdslHBGvHpvLZF1M54pCwCWIq_rIsUL4FGhvV9S0qRsM-61ebN2kTOi9rN7f9WptwO0A6_t5VtGHI0SWriuLv51_SaSdxGLPe3TcC9uRPahmr_8aJauRNi6THL1ZgJKIJyHAushZ6Kt7em7Pt-mjF9BgHkgkDPmfVHqA6y-7QXQCwxF4fSsLR7a30o2xCHBlSZutc2kiQpfAAgtaDSKRahfaAo0Lcbf84p5f59zq9ULJ2rrPWjDU?fife=s16383" height="200" width="auto" /><br><br><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR45bNfSVly2cF_ZUjOWn8QndpkGXNrC7eTpUBJ0RBif9SHU0K18GUHAf16wcl9UjRWUmy20unXvaYtAcLPhaF3OYwJF1EL0oTM2pYZM4CH6ipNvkSTg1XRawTIlzDx5amiDIJ7CnxtbM9b5nakPJTu3dN-gws0_wYYzcZ4k2p4nLhbCMyLZVc-D5z13oYMTLv0fDw3aRbV_bjrbVyUhHWb_a5yCk8QJ04W6ENeGtIx48A07qmOvFD7nX8Y?fife=s16383" height="200" width="auto" /><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR41ZcLLV0R2e-4eIiEZ7uiUPy-cRMb6C2Ia-GbPMitA18VXt-_yXwkbybhOQ8896pjPj9cweN8vTyK2ccSwYmgY2zNwGizsYDD4gLGqKhO0KyCPJO_lquor7oGs8wMg3APcBeo0d6hokoahBKl14Lw0dW_Ypwpmo4EncMwhQtBYhKUw_PlU6mTxQRmhsVudbpf_fGXoYOxO9U65yuC-gWzBaOiN557YK63kbo2fsVSyDfvWPukLmz-F5u4?fife=s16383" height="200" width="auto" />]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6E66EvdslHBGvHpvLZF1M54pCwCWIq_rIsUL4FGhvV9S0qRsM-61ebN2kTOi9rN7f9WptwO0A6_t5VtGHI0SWriuLv51_SaSdxGLPe3TcC9uRPahmr_8aJauRNi6THL1ZgJKIJyHAushZ6Kt7em7Pt-mjF9BgHkgkDPmfVHqA6y-7QXQCwxF4fSsLR7a30o2xCHBlSZutc2kiQpfAAgtaDSKRahfaAo0Lcbf84p5f59zq9ULJ2rrPWjDU?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR45bNfSVly2cF_ZUjOWn8QndpkGXNrC7eTpUBJ0RBif9SHU0K18GUHAf16wcl9UjRWUmy20unXvaYtAcLPhaF3OYwJF1EL0oTM2pYZM4CH6ipNvkSTg1XRawTIlzDx5amiDIJ7CnxtbM9b5nakPJTu3dN-gws0_wYYzcZ4k2p4nLhbCMyLZVc-D5z13oYMTLv0fDw3aRbV_bjrbVyUhHWb_a5yCk8QJ04W6ENeGtIx48A07qmOvFD7nX8Y?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR41ZcLLV0R2e-4eIiEZ7uiUPy-cRMb6C2Ia-GbPMitA18VXt-_yXwkbybhOQ8896pjPj9cweN8vTyK2ccSwYmgY2zNwGizsYDD4gLGqKhO0KyCPJO_lquor7oGs8wMg3APcBeo0d6hokoahBKl14Lw0dW_Ypwpmo4EncMwhQtBYhKUw_PlU6mTxQRmhsVudbpf_fGXoYOxO9U65yuC-gWzBaOiN557YK63kbo2fsVSyDfvWPukLmz-F5u4?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.0122505,40.7331992,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>7. Pier 40 55:32</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6TjZ1brHHLmgHSfQiHE4o5Wvcjc1fSQCVoRYjVNqCLCSb9KPTPdclLWZPKVwHBYTYHfVYjajZpGDRf2tOHCKbsp1DGiITwr2RgaIYQmUXIHEqQ8YjSYSv04BvT_0cLImt2tag3_3zMEt-sFp6kL4PHyyhqZC52YQFTo2QUg5tbKPIZm1qYFnIgR70iis3-7bkUTddTzIzBqurrR_Ttt5qXR-Xm3Rj2UZw0AUk9S648JFOqK7ekXchOnD0?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6TjZ1brHHLmgHSfQiHE4o5Wvcjc1fSQCVoRYjVNqCLCSb9KPTPdclLWZPKVwHBYTYHfVYjajZpGDRf2tOHCKbsp1DGiITwr2RgaIYQmUXIHEqQ8YjSYSv04BvT_0cLImt2tag3_3zMEt-sFp6kL4PHyyhqZC52YQFTo2QUg5tbKPIZm1qYFnIgR70iis3-7bkUTddTzIzBqurrR_Ttt5qXR-Xm3Rj2UZw0AUk9S648JFOqK7ekXchOnD0?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.0127303,40.7295946,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>8. Pier 34 1:00:11</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7uJ4iP2kfSO4lZuSinOnhKN_dCiXeVVaUsaC_0Cls76YQr0DXrxTwnMMl8wCcCxIwn1mS5KkoVj9t8DCAulLTWiBzyHEAUB2HnAPj91aI4prlvcqRoPxcRPIqHXrYyQbHoit5BncYXWvLgtAttv-J6xfO5EqkVWgCFKXHfGmJw_fFkbQn6F0t-vo3Vi-NGkYrGQy67epE9DCI6qgvtXnIycGID_Xog8h99oU6MK6mmNNBQuluVOg7wZEM?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7uJ4iP2kfSO4lZuSinOnhKN_dCiXeVVaUsaC_0Cls76YQr0DXrxTwnMMl8wCcCxIwn1mS5KkoVj9t8DCAulLTWiBzyHEAUB2HnAPj91aI4prlvcqRoPxcRPIqHXrYyQbHoit5BncYXWvLgtAttv-J6xfO5EqkVWgCFKXHfGmJw_fFkbQn6F0t-vo3Vi-NGkYrGQy67epE9DCI6qgvtXnIycGID_Xog8h99oU6MK6mmNNBQuluVOg7wZEM?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.0130825,40.726392,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>9. Pier 26 1:06:36</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5lC6U9YDJ-uzkySvyiAd_NuyqFqO1QU2d18Ak5fJCI08I2s8lgWpN5WdExHBn-FR2gG7wXPqAPXBuvbFP6krw9lr8x-q-ieB3vBk_2ZS2dggjRoouazA3LqsDjza0ptXPOAOs4m75AV65vCPXfeiR4bZi_BRjF5Aw1rM2wWiTok51oOFwgoqrb0c61MAZhXONLZkLWBfwrHjUptRjeYKAdyhAXg3ZBQqJsuyfC_ADc21EGx9wJNODsaKM?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5lC6U9YDJ-uzkySvyiAd_NuyqFqO1QU2d18Ak5fJCI08I2s8lgWpN5WdExHBn-FR2gG7wXPqAPXBuvbFP6krw9lr8x-q-ieB3vBk_2ZS2dggjRoouazA3LqsDjza0ptXPOAOs4m75AV65vCPXfeiR4bZi_BRjF5Aw1rM2wWiTok51oOFwgoqrb0c61MAZhXONLZkLWBfwrHjUptRjeYKAdyhAXg3ZBQqJsuyfC_ADc21EGx9wJNODsaKM?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.0144009,40.7212446,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>10. Pier 25 1:15:17</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR76UvfTW_34cw2_EmbeelVPOSHoaoi84EFuFBBl7Io0uIq_TFqUAKFVN-mEUEgTYtwonHmX30O-IjMTr_wHzCQeDvSqueGTb0YmbddKguGAmDGcxn5paJ-o3FB2uK0M6oEBT9JeVu2X016DnyrKiYkHIHl8yr2NdRQTlEbGYBv5fIM7tv5eesObOHz3jlNyaPSWC7-cGNRHzsO3XeT-m8Bx6O01uL068QiAofzD3-tr2-1Eizzw9To5eZc?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR76UvfTW_34cw2_EmbeelVPOSHoaoi84EFuFBBl7Io0uIq_TFqUAKFVN-mEUEgTYtwonHmX30O-IjMTr_wHzCQeDvSqueGTb0YmbddKguGAmDGcxn5paJ-o3FB2uK0M6oEBT9JeVu2X016DnyrKiYkHIHl8yr2NdRQTlEbGYBv5fIM7tv5eesObOHz3jlNyaPSWC7-cGNRHzsO3XeT-m8Bx6O01uL068QiAofzD3-tr2-1Eizzw9To5eZc?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.0146584,40.7203827,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>11. Battery Park City Esplanade 1:25:13</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6ySsUhu4asP5r95zj6kQnuIJeG1zQ24JpiqUeA0b9hsdrT2azwbfkW_e9dJ3THNuiWy-qgxEXcApPQqql_yJw7R3THjSg0Fzae082RX8QLnvMGMVRPn7CFJqpVDEdDXabWk05CC9kqCBZuCGGjg-fpXROgATtKVT--GJoQTiYRO9Q1kipGy7WybYpPI0yCnQuwQLTrfh8YM1iF97-2tEmF74c5siU-hX7tltADjaILiXevXA3NPa1H-Hw?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6ySsUhu4asP5r95zj6kQnuIJeG1zQ24JpiqUeA0b9hsdrT2azwbfkW_e9dJ3THNuiWy-qgxEXcApPQqql_yJw7R3THjSg0Fzae082RX8QLnvMGMVRPn7CFJqpVDEdDXabWk05CC9kqCBZuCGGjg-fpXROgATtKVT--GJoQTiYRO9Q1kipGy7WybYpPI0yCnQuwQLTrfh8YM1iF97-2tEmF74c5siU-hX7tltADjaILiXevXA3NPa1H-Hw?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.013193,40.7182782,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>12. Rockefeller Park 1:27:23</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6LmVFwlTOOPDKNTSAvQTnl9ILVGl4cZL50t_aWGO14v1CQvaEg7eEzCeZ0JnD4pq2BYco-JHa-5ZPEIX-JohgNr7_Nw4HeMAKfv_bkQmapcKp_HCBZMKXxvjaJuN90AuLSEd5f4bud_TcfwkPWvKaXx6dzP8V26gZ3FGBM9Y8dPEep3kf_1RDlx_SHuQJiPAAGR0FR96FICy3q4eOHGMlwBvoDzMsQ0NZ5qYyviFuiw2tVeOJf-DjdBzw?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6LmVFwlTOOPDKNTSAvQTnl9ILVGl4cZL50t_aWGO14v1CQvaEg7eEzCeZ0JnD4pq2BYco-JHa-5ZPEIX-JohgNr7_Nw4HeMAKfv_bkQmapcKp_HCBZMKXxvjaJuN90AuLSEd5f4bud_TcfwkPWvKaXx6dzP8V26gZ3FGBM9Y8dPEep3kf_1RDlx_SHuQJiPAAGR0FR96FICy3q4eOHGMlwBvoDzMsQ0NZ5qYyviFuiw2tVeOJf-DjdBzw?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.0163268,40.7180611,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>13. Port Authority Ferry Terminal 1:32:28</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4W1NaQM2JURH5er8q4tL36sQu0V9lG1zQCbFRG_HkpYN7KUZ1M9poR4YqNF5rhTxvtkob54R3jGH1DbmwhW2Z-IQgZwAneDOFaBIo1gYDKrIVm-TPTH4dRaVGrhoWgFWAoZ89sYzV5QSm28-kHdDX_e8f5VkuddJuyBlv_lATf36JQormNrmaTJufuI_NstkdQ49ajsQhL0tCzn0VdFh10bpl8rNoXoThK6LvVjn5TuACExfBVnFF2slY?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4W1NaQM2JURH5er8q4tL36sQu0V9lG1zQCbFRG_HkpYN7KUZ1M9poR4YqNF5rhTxvtkob54R3jGH1DbmwhW2Z-IQgZwAneDOFaBIo1gYDKrIVm-TPTH4dRaVGrhoWgFWAoZ89sYzV5QSm28-kHdDX_e8f5VkuddJuyBlv_lATf36JQormNrmaTJufuI_NstkdQ49ajsQhL0tCzn0VdFh10bpl8rNoXoThK6LvVjn5TuACExfBVnFF2slY?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.0177414,40.7150434,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>14. North Cove Marina 1:35:08</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR57X8Lp1v6-MY8pLIoLgG0XMK29bs9ax4a9i0D-nd9QbeDZ96eBfyfkHiJj1FjVbVNrtRQfZdwlnfAJT27VgdOded7MEliwSd7p59tNdUS-e1IIvYMWhZBPfr5Jrm5HBefDGjl7atia8ihGZuLC6Ljrts_e8H4mK6RuNVX6WmpuvXlKYmA4qXB5xPqHm5BkQV7VUMwidgO6na8b0tKtoFo7Xltym-IxyUzSh91-TJ53WQEbbAUlSsdD5pc?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR57X8Lp1v6-MY8pLIoLgG0XMK29bs9ax4a9i0D-nd9QbeDZ96eBfyfkHiJj1FjVbVNrtRQfZdwlnfAJT27VgdOded7MEliwSd7p59tNdUS-e1IIvYMWhZBPfr5Jrm5HBefDGjl7atia8ihGZuLC6Ljrts_e8H4mK6RuNVX6WmpuvXlKYmA4qXB5xPqHm5BkQV7VUMwidgO6na8b0tKtoFo7Xltym-IxyUzSh91-TJ53WQEbbAUlSsdD5pc?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.0176219,40.7136764,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>15. Pier 26 1:48:24</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7sSTYYlwrEN9aI_bpKfjCMghof1lXCQIG7Q64N-afmv8dJEDG8xXSlyPuEQm8950ESLwLcfedzpXgHuVyA-ZBsjjkd2WNG5wQ6Q5i1Sv2nqRPM_eD9ukGE62np6OBRQNb1T-1u4ihKKrurzaqD94rS_n6tWZeWC-dPypFL_vDBMCG05bJ9NsRAdDR31LU7Mf3nbbk7Pt5ZhHA3M_zHyLpsU7wirkoFkF6FE-MLk0XkeCB98lQHGkP0YhU?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7sSTYYlwrEN9aI_bpKfjCMghof1lXCQIG7Q64N-afmv8dJEDG8xXSlyPuEQm8950ESLwLcfedzpXgHuVyA-ZBsjjkd2WNG5wQ6Q5i1Sv2nqRPM_eD9ukGE62np6OBRQNb1T-1u4ihKKrurzaqD94rS_n6tWZeWC-dPypFL_vDBMCG05bJ9NsRAdDR31LU7Mf3nbbk7Pt5ZhHA3M_zHyLpsU7wirkoFkF6FE-MLk0XkeCB98lQHGkP0YhU?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.0128175,40.7209189,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>16. Pier 40 1:56:57</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7fe9_2WhYmMW9kls91Xq8GYKClEKXLXjg5Y45kLOuwz11XBwOYyxtO_6dH7HBbihDi94QzdRCpq1lSSVXzV8C0GkK68iwqn4I1IDxtiAvSPHEkHI-uE_sbUJTSmBVJmEb9mydlADbiL-Qnw9b5tD7fPfwtJDraBOrVpgSzdwm7PyJf-Gee3Reb8BzZcF6KxsKnc473BrHD--7jlbvPTh0GEGS3pGEUmYD8DwLdOHdQW56MB5HVQD9nO4s?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7fe9_2WhYmMW9kls91Xq8GYKClEKXLXjg5Y45kLOuwz11XBwOYyxtO_6dH7HBbihDi94QzdRCpq1lSSVXzV8C0GkK68iwqn4I1IDxtiAvSPHEkHI-uE_sbUJTSmBVJmEb9mydlADbiL-Qnw9b5tD7fPfwtJDraBOrVpgSzdwm7PyJf-Gee3Reb8BzZcF6KxsKnc473BrHD--7jlbvPTh0GEGS3pGEUmYD8DwLdOHdQW56MB5HVQD9nO4s?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.0113262,40.7281818,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>17. Pier 45 2:02:18</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR59zCb5i3jlKRUYfi8tLfMwHNF6OavVWe3_F85xzhpHm-jXdNkU607jxUvlOcspg_6doUnNVYmAH_HLoBhW_7Rym34JBvlimgt3_TMezP-uURgxDgXAPvx3Z8w-lpyveaXj7MORCsp-p976PCfHl175jirFsAZLuipl87UsfMKo38B5d-tIH8UbpMD33AVF5qvp9yPCKoCz4NzR8vQQs2qnWAhng9yW-AapI5gVnuhNpWC7S2oKyCRHzWU?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR59zCb5i3jlKRUYfi8tLfMwHNF6OavVWe3_F85xzhpHm-jXdNkU607jxUvlOcspg_6doUnNVYmAH_HLoBhW_7Rym34JBvlimgt3_TMezP-uURgxDgXAPvx3Z8w-lpyveaXj7MORCsp-p976PCfHl175jirFsAZLuipl87UsfMKo38B5d-tIH8UbpMD33AVF5qvp9yPCKoCz4NzR8vQQs2qnWAhng9yW-AapI5gVnuhNpWC7S2oKyCRHzWU?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.0108971,40.7330436,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>18. Pier 51 2:08:10</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4zxktgy5d-zUCJDQjWz-OSkH9m0LETgv4U2hgyiO_XXN5UFd_GyoFJ13RtMp5OcxvGzlM7sWPPhMdL2aXVk6ls0sVBGLKQ85Lht38BktxA74-ImnGEY4JJ-bVLgnTYxMFmsX8OS-R_NjXn1-k8Ty-j5Wvms_AkPp7a7_cxTtMFmsWyW2cMEVnjOBRRP4nEn0dw3lY61PYUUrV7fXWcVy81pYBLy9kJMSXhvW9x1kLh0LorCaFo0rleQhk?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4zxktgy5d-zUCJDQjWz-OSkH9m0LETgv4U2hgyiO_XXN5UFd_GyoFJ13RtMp5OcxvGzlM7sWPPhMdL2aXVk6ls0sVBGLKQ85Lht38BktxA74-ImnGEY4JJ-bVLgnTYxMFmsX8OS-R_NjXn1-k8Ty-j5Wvms_AkPp7a7_cxTtMFmsWyW2cMEVnjOBRRP4nEn0dw3lY61PYUUrV7fXWcVy81pYBLy9kJMSXhvW9x1kLh0LorCaFo0rleQhk?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.0104307,40.7381835,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>19. Pier 54 - Little Island 2:11:37</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6gzdKwElq83RWBaU-l-fzSXEi6c7CtObjand9AOrrbnxExBDGyzo2mHhpVdFIp9tKyOWlrMV2PbWYf2K7RIiVdLV-LROS52aEE4pKODN4413s8RMck4FyhRJUY9W2BArQtLwgYfZ2EM-xEWdT8PnpiM7Oa1WEMllwDDE_tvPnafLsqHCU6-XLMF8zOasWF0kKFaLhu15CF3Ft-xKhET7eVbP_l5vN41j-Kure3HraOoN8_eOLV2V43XGU?fife=s16383" height="200" width="auto" /><br><br><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6jC0yTlWW5rLSkiYUPnxoR5GumPaEsRYM8yBrPrJ7wLmx6VC9pozDBxaxSvplsESSHhEDwsj5EtzkJcp1zh1UXid6xlbCcI443XHr7IRu_-gpNE85SDpS6InSSRaFG_OuZ_JDptlBcXtq8BeDaLnAH8NuUeT8EENGC6irEwB16uh6A0LM9fYyEpVG_vd01ectLftIWHaBQueCBMyimaeE2LR-4WFb4_3pYSLjgEUKh9Lq_hNzTldeMlRo?fife=s16383" height="200" width="auto" /><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5lgHHZnXWoP9isD-ohElJFlzjxP5mXj1Gibc_w8jEXQ-rniortT5jn3nJGCf0Yzh0uuv4K3oX6IbY10n0M3gwbK-XmCJqN8fW8CRQ_nTrxl2L3lYGORlt_5v_QNLYa3ynnDCBgdKrtcxubK36qP9k7zbcp2eKdPM-LY6XITYFcsolGr5tE-BIaHDy8xPoN3VxyGW9-264JIRE9M1H4zStDXPUmgOb3pwgJExhEBUhWeaYhd5FNIUdGj0o?fife=s16383" height="200" width="auto" /><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4PiB-heeM9JtPOM73WG-veT5FkIJBX0d8uBmv1un0x0GQsVYqsA_Kzk3GcBjyUNZ1MB1icus3QRSrPNgQ5fAWLMyHbKr64QxlL89IgZCWHUW5eoNBU6oTFMYDSmsKhLJHZM4Pz6LGDgAF1PcTZqcNlkB0NOBombESIKVfCr_Q4mjTubi5xL9hRXRcwkwnyCNUT3LnQmYqdJJ_px0_cxCKwD-KWfYYVzWds83FcXkubE1FNRdUcaPWQaPY?fife=s16383" height="200" width="auto" />]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6gzdKwElq83RWBaU-l-fzSXEi6c7CtObjand9AOrrbnxExBDGyzo2mHhpVdFIp9tKyOWlrMV2PbWYf2K7RIiVdLV-LROS52aEE4pKODN4413s8RMck4FyhRJUY9W2BArQtLwgYfZ2EM-xEWdT8PnpiM7Oa1WEMllwDDE_tvPnafLsqHCU6-XLMF8zOasWF0kKFaLhu15CF3Ft-xKhET7eVbP_l5vN41j-Kure3HraOoN8_eOLV2V43XGU?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6jC0yTlWW5rLSkiYUPnxoR5GumPaEsRYM8yBrPrJ7wLmx6VC9pozDBxaxSvplsESSHhEDwsj5EtzkJcp1zh1UXid6xlbCcI443XHr7IRu_-gpNE85SDpS6InSSRaFG_OuZ_JDptlBcXtq8BeDaLnAH8NuUeT8EENGC6irEwB16uh6A0LM9fYyEpVG_vd01ectLftIWHaBQueCBMyimaeE2LR-4WFb4_3pYSLjgEUKh9Lq_hNzTldeMlRo?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5lgHHZnXWoP9isD-ohElJFlzjxP5mXj1Gibc_w8jEXQ-rniortT5jn3nJGCf0Yzh0uuv4K3oX6IbY10n0M3gwbK-XmCJqN8fW8CRQ_nTrxl2L3lYGORlt_5v_QNLYa3ynnDCBgdKrtcxubK36qP9k7zbcp2eKdPM-LY6XITYFcsolGr5tE-BIaHDy8xPoN3VxyGW9-264JIRE9M1H4zStDXPUmgOb3pwgJExhEBUhWeaYhd5FNIUdGj0o?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4PiB-heeM9JtPOM73WG-veT5FkIJBX0d8uBmv1un0x0GQsVYqsA_Kzk3GcBjyUNZ1MB1icus3QRSrPNgQ5fAWLMyHbKr64QxlL89IgZCWHUW5eoNBU6oTFMYDSmsKhLJHZM4Pz6LGDgAF1PcTZqcNlkB0NOBombESIKVfCr_Q4mjTubi5xL9hRXRcwkwnyCNUT3LnQmYqdJJ_px0_cxCKwD-KWfYYVzWds83FcXkubE1FNRdUcaPWQaPY?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.010656,40.7419635,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>20. West 14th Street 2:30:41</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6n6yObEqxCvdwp0xoDNAqpqioPjbZNKkBYmhH0vY_5-DwfqD3wZzZTTSAUgMUQEfFV1vmPDbCoRY7FQIUxENCW9D9Yv5fUUoM-gSuHf0-n7DFTxzFI9bxItkdm0iHnT-u6UA4uSvvV2bfolO_RBf9nuplXyAelsPzaAmKmeLOrvwhgEx_eo3Pn5C-35BKyZS_nE5OCc3aUap4xkxfyp7ybtZvMVc1yslPAv5pUgfkQE9dPMP9eOnOOYKc?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6n6yObEqxCvdwp0xoDNAqpqioPjbZNKkBYmhH0vY_5-DwfqD3wZzZTTSAUgMUQEfFV1vmPDbCoRY7FQIUxENCW9D9Yv5fUUoM-gSuHf0-n7DFTxzFI9bxItkdm0iHnT-u6UA4uSvvV2bfolO_RBf9nuplXyAelsPzaAmKmeLOrvwhgEx_eo3Pn5C-35BKyZS_nE5OCc3aUap4xkxfyp7ybtZvMVc1yslPAv5pUgfkQE9dPMP9eOnOOYKc?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.0085508,40.7421818,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>21. Washington Street 2:32:11</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4RCMCTGCSjjw-OybpfHp7Nn-D5cYXg1OyQZAAmc_4lyWhtydoWvKXrY8ZNoIVi6yj96U6s0VvDyDQT7wW1ZWn213AhpXkzi_wmRYlSDngF44Y0FmMthPoa2Sh7ceePw6WIGty3ot2Fd1iePNtbnjSLuK4ayLpdRNtaWAan0TIlE0r7BkmRhcUczCrGMGjW2rggXhwhB_zU2rw-gVmEvdiILuNDt9qv4DDjEAOlifqAhuGwepJ68G9IJDo?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4RCMCTGCSjjw-OybpfHp7Nn-D5cYXg1OyQZAAmc_4lyWhtydoWvKXrY8ZNoIVi6yj96U6s0VvDyDQT7wW1ZWn213AhpXkzi_wmRYlSDngF44Y0FmMthPoa2Sh7ceePw6WIGty3ot2Fd1iePNtbnjSLuK4ayLpdRNtaWAan0TIlE0r7BkmRhcUczCrGMGjW2rggXhwhB_zU2rw-gVmEvdiILuNDt9qv4DDjEAOlifqAhuGwepJ68G9IJDo?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.0072121,40.7415164,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>22. HIgh Line Return Trip 2:35:26</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7pFQjRccRcT79L1BxbWkzeagR8tLu1jcNS7q12JlJ0ItZ_IPUMwAjRIyrEjgllK0xezHJ9tGXS6YijSywlr4Oq5sR3T2Rk8oYnJ4WunT0pF3I2o75w1SXvGQYw5zCDgAZyGeXtzF9Ub8sCwXbypOr-BSMrrLB_mmMwN9lY-cdCxdfQYZotPdCVpjdNonbGlfULEqAGq8MKYIVB5N2XAKQepDBZoNo93GI972cfWSIzQUWN0XMY5y_MYVs?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7pFQjRccRcT79L1BxbWkzeagR8tLu1jcNS7q12JlJ0ItZ_IPUMwAjRIyrEjgllK0xezHJ9tGXS6YijSywlr4Oq5sR3T2Rk8oYnJ4WunT0pF3I2o75w1SXvGQYw5zCDgAZyGeXtzF9Ub8sCwXbypOr-BSMrrLB_mmMwN9lY-cdCxdfQYZotPdCVpjdNonbGlfULEqAGq8MKYIVB5N2XAKQepDBZoNo93GI972cfWSIzQUWN0XMY5y_MYVs?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -74.008188,40.7393989,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>23. Vessel 3:06:33</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.0018218,40.7535867,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

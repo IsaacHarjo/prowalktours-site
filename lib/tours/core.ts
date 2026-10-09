@@ -1,7 +1,25 @@
 import type { VideoCatalogRecord } from "../../data/video-types";
-import type { TourRecord } from "./types";
+import type { LocationAccuracy, TourRecord } from "./types";
 
 export type SourceRow = Record<string, string>;
+
+// Keep exported master-sheet rows authoritative. Import rows can be copied into
+// that sheet with their permanent IDs; subsequent exports then replace them here.
+export function pendingLibraryRows(primary: SourceRow[], additions: SourceRow[]): SourceRow[] {
+  const byId = new Map(primary.map(row => [row.tour_id, row]));
+  const byVideo = new Map(primary.filter(row => youtubeIdFromUrl(row.youtube_url)).map(row => [youtubeIdFromUrl(row.youtube_url), row]));
+  return additions.filter(row => {
+    const existingId = byId.get(row.tour_id);
+    const existingVideo = byVideo.get(youtubeIdFromUrl(row.youtube_url));
+    if (existingId && youtubeIdFromUrl(existingId.youtube_url) !== youtubeIdFromUrl(row.youtube_url)) {
+      throw new Error(`${row.tour_id}: library import ID conflicts with the master export`);
+    }
+    if (existingVideo && existingVideo.tour_id !== row.tour_id) {
+      throw new Error(`${row.tour_id}: preserve this imported tour ID when adding it to the master sheet (found ${existingVideo.tour_id})`);
+    }
+    return !existingId && !existingVideo;
+  });
+}
 
 /** Quoted CSV including embedded newlines, escaped quotes and UTF-8 BOM. */
 export function parseTourCsv(content: string, source: string): SourceRow[] {
@@ -113,6 +131,8 @@ export function buildTours(
     if (youtubeId && youtubeIds.has(youtubeId)) throw new Error(`${source} ${id}: duplicate YouTube ID`);
     if (youtubeId) youtubeIds.add(youtubeId);
     const latitude = numberField(row, "latitude", source), longitude = numberField(row, "longitude", source);
+    const locationAccuracy = row.location_accuracy || "tour-start";
+    if (!["tour-start", "original-map-pin", "approximate-destination"].includes(locationAccuracy)) throw new Error(`${source} ${id}: invalid location accuracy`);
     if ((latitude === null) !== (longitude === null) || (latitude !== null && Math.abs(latitude) > 90) || (longitude !== null && Math.abs(longitude) > 180)) {
       throw new Error(`${source} ${id}: invalid coordinate pair`);
     }
@@ -142,6 +162,7 @@ export function buildTours(
       youtubeId, youtubeUrl, watchDestinationType,
       watchHref: watchDestinationType === "internal-page" ? `/videos/${slug}` : youtubeUrl,
       latitude, longitude, filmedYear: numberField(row, "filmed_year", source),
+      locationAccuracy: locationAccuracy as LocationAccuracy, locationSource: row.location_source || "",
       location: row.location, distanceMiles, distanceKm, mapUrl: row.map_url,
       siteTitle: editorial?.siteTitle || row.title,
       youtubeTitle: editorial?.youtubeTitle || row.title,

@@ -1,0 +1,1039 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Sydney, Australia</name>
+    <description/>
+    <Style id="icon-1899-0288D1-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-0288D1-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-0288D1">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-0288D1-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-0288D1-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-0288D1-nodesc-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-0288D1-nodesc-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1899-0288D1-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-FFD600-normal">
+      <IconStyle>
+        <color>ff00d6ff</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-FFD600-highlight">
+      <IconStyle>
+        <color>ff00d6ff</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-FFD600">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-FFD600-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-FFD600-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Sydney Central</name>
+      <Placemark>
+        <name>Sydney Harbour Marriott Hotel at Circular Quay</name>
+        <description><![CDATA[descripción: <br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value/>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2094187,-33.8628027,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Opera Sidney</name>
+        <description><![CDATA[descripción: <br>name: Opera Sidney<br>description: La Ópera de Sídney, situada en la ciudad de Sídney, estado de Nueva Gales del Sur, Australia, es uno de los edificios más famosos y distintivos del siglo XX. Declarado en 2007 Patrimonio de la Humanidad, fue diseñado por el arquitecto danés Jørn Utzon en 1957 e inaugurado el 20 de octubre de 1973.<br><br>En el edificio se realizan obras de teatro, ballet, ópera o producciones musicales. Es sede de la compañía de Ópera de Australia, la Compañía de Teatro de Sídney y la Orquesta Sinfónica de Sídney. Está administrada por la Opera House Trust, un organismo público del gobierno estatal de Nueva Gales del Sur.La Casa de la Ópera de Sídney es una construcción expresionista y con un diseño radicalmente innovador, conformado por una serie de grandes conchas prefabricadas, cada una tomada de la misma semiesfera, que forman los tejados de la estructura. El Teatro de la Ópera cubre 1,8 hectárea (4,5 acres de tierra). Tiene 185 metros (605 pies) de largo y alrededor de 120 metros (388 pies) de anchura máxima. Se apoya en 580 pilares hundidos hasta una profundidad de 25 metros bajo el nivel del mar. Su fuente de alimentación tiene una capacidad equivalente al consumo eléctrico de una ciudad de 25 000 personas. La energía es distribuida por 645 kilómetros de cable.1<br><br>Aunque a las estructuras de los tejados de la Casa de Ópera de Sídney se las denomina comúnmente como cáscaras (como en este artículo), éstas de hecho no lo son en el sentido arquitectónico de la palabra, ya que están formadas por paneles prefabricados de hormigón que se apoyan en costillas prefabricadas del mismo material.<br><br>Las cáscaras están recubiertas con 1 056 006 azulejos de colores blanco brillante y crema mate, formando un tenue patrón en "V" invertida (chevrón); aunque vistas desde la distancia parecen de color blanco uniforme. Los azulejos fueron fabricados por la empresa sueca Höganäs AB y aunque están diseñados para que se limpien solos, se realiza un mantenimiento periódico de limpieza. Para mantener la uniformidad del color del cascarón y evitar que luzca parchado, se reutilizan y reparan los mismos azulejos que se han desprendido con el paso de los años. Durante 2015 cayeron apenas 40 azulejos, por lo que el promedio de reparación es muy bajo.2<br><br>Los dos grupos mayores de bóvedas que conforman el techo del teatro pertenecen cada uno al Salón de Conciertos (Concert Hall) y al del Teatro de la Ópera (Opera Theater). Los otros salones tienen como techo las agrupaciones más pequeñas de bóvedas. La escala de las cáscaras fue elegida para reflejar las necesidades de altura en el interior, con espacios bajos en la entrada que se elevan sobre las zonas de asientos hasta llegar a las altas torres de escena.<br><br>Un grupo mucho más pequeño del sistema de cáscaras se encuentra a un lado de las entradas y de la escalinata monumental y del restaurante de Bennelong.<br><br>El interior del edificio está construido en granito rosa extraído de la región de Tarana, madera y contrachapado proveniente de Nueva Gales del Sur.3<br><br>La estación de acceso más cercana es Circular Quay Station. Otros accesos son la terminal del ferry y la terminal de autobús. Dentro de la ciudad está situado en el distrito de Central Business District (CBD).<br><br>Lugares e instalaciones de funcionamiento<br><br>El teatro de conciertos y el gran órgano.<br><br>Interior del teatro Joan Sutherland, sede de la Ópera de Australia y de la Compañía de Ballet Australiano<br>La Casa de la Ópera de Sídney contiene cinco teatros, cinco estudios de ensayos, dos salas principales, cuatro restaurantes, seis bares y numerosas tiendas de recuerdos.<br><br>Los cinco teatros son los siguientes:<br><br>El Concert Hall o Sala de Conciertos, con 2679 asientos, contiene el magnífico órgano de la Ópera de Sídney, el órgano mecánico más grande del mundo, con unos 10 000 tubos.3<br>El Joan Sutherland Theatre o Teatro de Ópera, con 1547 asientos, es el espacio principal de la compañía Ópera de Australia; también es utilizado por la Compañía Australiana de Ballet.<br>El Drama Theatre o T]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value/>
+          </Data>
+          <Data name="name">
+            <value>Opera Sidney</value>
+          </Data>
+          <Data name="description">
+            <value><![CDATA[La Ópera de Sídney, situada en la ciudad de Sídney, estado de Nueva Gales del Sur, Australia, es uno de los edificios más famosos y distintivos del siglo XX. Declarado en 2007 Patrimonio de la Humanidad, fue diseñado por el arquitecto danés Jørn Utzon en 1957 e inaugurado el 20 de octubre de 1973.
+
+En el edificio se realizan obras de teatro, ballet, ópera o producciones musicales. Es sede de la compañía de Ópera de Australia, la Compañía de Teatro de Sídney y la Orquesta Sinfónica de Sídney. Está administrada por la Opera House Trust, un organismo público del gobierno estatal de Nueva Gales del Sur.La Casa de la Ópera de Sídney es una construcción expresionista y con un diseño radicalmente innovador, conformado por una serie de grandes conchas prefabricadas, cada una tomada de la misma semiesfera, que forman los tejados de la estructura. El Teatro de la Ópera cubre 1,8 hectárea (4,5 acres de tierra). Tiene 185 metros (605 pies) de largo y alrededor de 120 metros (388 pies) de anchura máxima. Se apoya en 580 pilares hundidos hasta una profundidad de 25 metros bajo el nivel del mar. Su fuente de alimentación tiene una capacidad equivalente al consumo eléctrico de una ciudad de 25 000 personas. La energía es distribuida por 645 kilómetros de cable.1
+
+Aunque a las estructuras de los tejados de la Casa de Ópera de Sídney se las denomina comúnmente como cáscaras (como en este artículo), éstas de hecho no lo son en el sentido arquitectónico de la palabra, ya que están formadas por paneles prefabricados de hormigón que se apoyan en costillas prefabricadas del mismo material.
+
+Las cáscaras están recubiertas con 1 056 006 azulejos de colores blanco brillante y crema mate, formando un tenue patrón en "V" invertida (chevrón); aunque vistas desde la distancia parecen de color blanco uniforme. Los azulejos fueron fabricados por la empresa sueca Höganäs AB y aunque están diseñados para que se limpien solos, se realiza un mantenimiento periódico de limpieza. Para mantener la uniformidad del color del cascarón y evitar que luzca parchado, se reutilizan y reparan los mismos azulejos que se han desprendido con el paso de los años. Durante 2015 cayeron apenas 40 azulejos, por lo que el promedio de reparación es muy bajo.2
+
+Los dos grupos mayores de bóvedas que conforman el techo del teatro pertenecen cada uno al Salón de Conciertos (Concert Hall) y al del Teatro de la Ópera (Opera Theater). Los otros salones tienen como techo las agrupaciones más pequeñas de bóvedas. La escala de las cáscaras fue elegida para reflejar las necesidades de altura en el interior, con espacios bajos en la entrada que se elevan sobre las zonas de asientos hasta llegar a las altas torres de escena.
+
+Un grupo mucho más pequeño del sistema de cáscaras se encuentra a un lado de las entradas y de la escalinata monumental y del restaurante de Bennelong.
+
+El interior del edificio está construido en granito rosa extraído de la región de Tarana, madera y contrachapado proveniente de Nueva Gales del Sur.3
+
+La estación de acceso más cercana es Circular Quay Station. Otros accesos son la terminal del ferry y la terminal de autobús. Dentro de la ciudad está situado en el distrito de Central Business District (CBD).
+
+Lugares e instalaciones de funcionamiento
+
+El teatro de conciertos y el gran órgano.
+
+Interior del teatro Joan Sutherland, sede de la Ópera de Australia y de la Compañía de Ballet Australiano
+La Casa de la Ópera de Sídney contiene cinco teatros, cinco estudios de ensayos, dos salas principales, cuatro restaurantes, seis bares y numerosas tiendas de recuerdos.
+
+Los cinco teatros son los siguientes:
+
+El Concert Hall o Sala de Conciertos, con 2679 asientos, contiene el magnífico órgano de la Ópera de Sídney, el órgano mecánico más grande del mundo, con unos 10 000 tubos.3
+El Joan Sutherland Theatre o Teatro de Ópera, con 1547 asientos, es el espacio principal de la compañía Ópera de Australia; también es utilizado por la Compañía Australiana de Ballet.
+El Drama Theatre o T]]></value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2144186,-33.8570675,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Circular Quay</name>
+        <description><![CDATA[descripción: Circular Quay (literalmente, «muelle circular») es un refugio marítimo, un antiguo puerto comercial y actualmente un puerto internacional de pasajeros y una plaza pública situada en Sídney (Nueva Gales del Sur, Australia), en el extremo norte del distrito financiero de Sídney, a lo largo de la Cala de Sídney, entre Bennelong Point y The Rocks. Forma parte de la zona de gobierno local de la Ciudad de Sídney.<br><br>Circular Quay es una zona popular para los turistas y consta de pasarelas, centros comerciales peatonales, parques y restaurantes. También es un importante nodo de transporte de la ciudad: contiene varios muelles de ferries, paradas de autobús y una estación de ferrocarril.1 A menudo denominada la «puerta de entrada a Sídney», tiene vistas del Puente de la Bahía y de la Ópera de Sídney, y es un lugar popular para ver los fuegos artificiales de la Víspera de Año Nuevo.<br><br>Historia<br>Historia indígena<br>El nombre aborigen de Circular Quay es Warrung, que significa «niño pequeño».2 El primer pueblo que ocupó la zona conocida actualmente como Sídney fueron los aborígenes australianos. La datación por radiocarbono sugiere que vivieron en Sídney y sus alrededores durante al menos treinta mil años.3 En una excavación arqueológica en Parramatta, al oeste de Sídney, se descubrió que los aborígenes usaban carbón vegetal, herramientas de piedra y fogatas.4 Cerca de Penrith, un suburbio situado unos 50 km al oeste del centro de Sídney, se encontraron en sedimentos de arena numerosas herramientas de piedra aborígenes que datan de hace entre 45 000 y 50 000 años. Esto significa que ha habido presencia humana en Sídney desde antes de lo que se pensaba.5<br><br>Antes de la llegada de los británicos, había entre 4000 y 8000 personas nativas de hasta veintinueve clanes diferentes en la zona de Sídney.6 La Cala de Sídney, desde Port Jackson hasta Petersham, estaba habitada por el clan Cadigal.6 Los principales grupos lingüísticos eran los Darug, Guringai y Dharawal. Los primeros europeos que visitaron la zona observaron que los indígenas realizaban actividades como acampar y pescar, usaban árboles para obtener corteza y alimentos, recogían conchas y cocinaban pescado.7 Los Eora eran los aborígenes que habitaban la zona costera de Sídney. El nombre Eora significa simplemente «aquí» o «de este lugar», y fue usado por los aborígenes locales para describir a los británicos de dónde eran. Los Cadigal eran los habitantes del actual distrito financiero de Sídney, y su territorio al sur de Port Jackson se extendía desde South Head hasta Petersham.<br><br>Asentamiento colonial<br><br>Vista de la Cala de Sídney hacia el este (ca. 1841).<br>La Cala de Sídney, en la que se encuentra Circular Quay, fue el lugar en el que desembarcó inicialmente la Primera Flota en Port Jackson el 26 de enero de 1788. En el lado este de la cala se instaló la casa de lona temporal del gobernador,8 mientras la costa oeste se convirtió en el centro inicial del asentamiento, a partir del cual creció la ciudad de Sídney. El primer muelle en la Cala de Sídney probablemente databa de en torno a 1792. En 1802 fue sustituido por un muelle con entramado de madera llamado Hospital Wharf, que fue el primer muelle público de la colonia (posteriormente renombrado King's Wharf y Queen's Wharf). El reformista constitucional escocés del siglo xviii Thomas Muir fue sentenciado a destierro a Sídney por sedición, y tenía una casa de campo en lo que actualmente es Circular Quay. Thomas Muir escapó de la colonia en 1796 a bordo de un bergantín estadounidense, el Otter.<br><br>El lado este de la cala permaneció deshabitado en su mayor parte durante los primeros años de la colonia; un residente notable fue Bennelong, al cual deben su nombre el Bennelong Point y los Bennelong Apartments. A principios del siglo xix, toda la costa este de Circular Quay formaba parte del dominio del gobernador, aunque se desarrollaron algunas actividades comerciales a lo largo de la línea de costa. La costa oeste, al ser adyacente al asentamiento o<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value><![CDATA[Circular Quay (literalmente, «muelle circular») es un refugio marítimo, un antiguo puerto comercial y actualmente un puerto internacional de pasajeros y una plaza pública situada en Sídney (Nueva Gales del Sur, Australia), en el extremo norte del distrito financiero de Sídney, a lo largo de la Cala de Sídney, entre Bennelong Point y The Rocks. Forma parte de la zona de gobierno local de la Ciudad de Sídney.
+
+Circular Quay es una zona popular para los turistas y consta de pasarelas, centros comerciales peatonales, parques y restaurantes. También es un importante nodo de transporte de la ciudad: contiene varios muelles de ferries, paradas de autobús y una estación de ferrocarril.1 A menudo denominada la «puerta de entrada a Sídney», tiene vistas del Puente de la Bahía y de la Ópera de Sídney, y es un lugar popular para ver los fuegos artificiales de la Víspera de Año Nuevo.
+
+Historia
+Historia indígena
+El nombre aborigen de Circular Quay es Warrung, que significa «niño pequeño».2 El primer pueblo que ocupó la zona conocida actualmente como Sídney fueron los aborígenes australianos. La datación por radiocarbono sugiere que vivieron en Sídney y sus alrededores durante al menos treinta mil años.3 En una excavación arqueológica en Parramatta, al oeste de Sídney, se descubrió que los aborígenes usaban carbón vegetal, herramientas de piedra y fogatas.4 Cerca de Penrith, un suburbio situado unos 50 km al oeste del centro de Sídney, se encontraron en sedimentos de arena numerosas herramientas de piedra aborígenes que datan de hace entre 45 000 y 50 000 años. Esto significa que ha habido presencia humana en Sídney desde antes de lo que se pensaba.5
+
+Antes de la llegada de los británicos, había entre 4000 y 8000 personas nativas de hasta veintinueve clanes diferentes en la zona de Sídney.6 La Cala de Sídney, desde Port Jackson hasta Petersham, estaba habitada por el clan Cadigal.6 Los principales grupos lingüísticos eran los Darug, Guringai y Dharawal. Los primeros europeos que visitaron la zona observaron que los indígenas realizaban actividades como acampar y pescar, usaban árboles para obtener corteza y alimentos, recogían conchas y cocinaban pescado.7 Los Eora eran los aborígenes que habitaban la zona costera de Sídney. El nombre Eora significa simplemente «aquí» o «de este lugar», y fue usado por los aborígenes locales para describir a los británicos de dónde eran. Los Cadigal eran los habitantes del actual distrito financiero de Sídney, y su territorio al sur de Port Jackson se extendía desde South Head hasta Petersham.
+
+Asentamiento colonial
+
+Vista de la Cala de Sídney hacia el este (ca. 1841).
+La Cala de Sídney, en la que se encuentra Circular Quay, fue el lugar en el que desembarcó inicialmente la Primera Flota en Port Jackson el 26 de enero de 1788. En el lado este de la cala se instaló la casa de lona temporal del gobernador,8 mientras la costa oeste se convirtió en el centro inicial del asentamiento, a partir del cual creció la ciudad de Sídney. El primer muelle en la Cala de Sídney probablemente databa de en torno a 1792. En 1802 fue sustituido por un muelle con entramado de madera llamado Hospital Wharf, que fue el primer muelle público de la colonia (posteriormente renombrado King's Wharf y Queen's Wharf). El reformista constitucional escocés del siglo xviii Thomas Muir fue sentenciado a destierro a Sídney por sedición, y tenía una casa de campo en lo que actualmente es Circular Quay. Thomas Muir escapó de la colonia en 1796 a bordo de un bergantín estadounidense, el Otter.
+
+El lado este de la cala permaneció deshabitado en su mayor parte durante los primeros años de la colonia; un residente notable fue Bennelong, al cual deben su nombre el Bennelong Point y los Bennelong Apartments. A principios del siglo xix, toda la costa este de Circular Quay formaba parte del dominio del gobernador, aunque se desarrollaron algunas actividades comerciales a lo largo de la línea de costa. La costa oeste, al ser adyacente al asentamiento o]]></value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2126457,-33.8611374,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cahill Walk Lookout</name>
+        <description><![CDATA[descripción: <br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value/>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2125127,-33.8613561,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>The Rocks</name>
+        <description><![CDATA[descripción: La historia de Australia comienza en “The Rocks”, el barrio más antiguo de Sydney, donde hace poco más de doscientos años arribó la primera flota de prisioneros enviada por el gobierno británico, ante la imposibilidad de llevarlos a las antiguas colonias norteamericanas, que acababan de obtener la independencia.<br>El barrio de "The Rocks" se sitúa en un lugar privilegiado, entre la Ópera y el famoso Puente de la ciudad. Pasear por este distrito histórico es retroceder hasta comienzos del siglo XIX: sus calles adoquinadas, plagadas de antiguos pubs (llamados “hoteles”) y residencias adosadas de los antiguos trabajadores, han sabido mantener su encanto colonial con el paso del tiempo.<br><br><br><br>Entre sus numerosísimos atractivos destaca el Cadman’s Cottage, la casa más antigua de esta antigua colonia penitenciaria, cuyo interior alberga en la actualidad el centro de información de los Parques Naturales y el servicio de Vida Salvaje. Otras visitas imprescindibles en la zona son el Museo de Arte Contemporáneo y el Observatory Hill, con hermosas vistas de "The Rocks" y el puerto.<br><br>La guinda del pastel la pone el mercado que todos los fines de semana llena de bullicio y alegría las calles de este pintoresco centro histórico. En él podréis encontrar antigüedades, artesanías, joyas, cuadros y todos los artículos imaginables, además de puestos de fruta y verduras.<br><br>No obstante, el mayor encanto de "The Rocks" reside en perderse por sus laberínticas y empinadas callejuelas, deteniéndose a curiosear en las numerosas galerías de arte, locales de música en directo y restaurantes de última moda que dan al barrio un ambiente muy bohemio.<br><br>El paseo es aún más especial al ponerse el sol, cuando sus calles quedan levemente iluminadas a la luz de las farolas y las historias de fantasmas de los antiguos convictos se convierten en indiscutibles protagonistas de la noche. Esto demuestra una vez más, que hasta del lado más oscuro de la historia es posible hacer negocio.<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value><![CDATA[La historia de Australia comienza en “The Rocks”, el barrio más antiguo de Sydney, donde hace poco más de doscientos años arribó la primera flota de prisioneros enviada por el gobierno británico, ante la imposibilidad de llevarlos a las antiguas colonias norteamericanas, que acababan de obtener la independencia.
+El barrio de "The Rocks" se sitúa en un lugar privilegiado, entre la Ópera y el famoso Puente de la ciudad. Pasear por este distrito histórico es retroceder hasta comienzos del siglo XIX: sus calles adoquinadas, plagadas de antiguos pubs (llamados “hoteles”) y residencias adosadas de los antiguos trabajadores, han sabido mantener su encanto colonial con el paso del tiempo.
+
+
+
+Entre sus numerosísimos atractivos destaca el Cadman’s Cottage, la casa más antigua de esta antigua colonia penitenciaria, cuyo interior alberga en la actualidad el centro de información de los Parques Naturales y el servicio de Vida Salvaje. Otras visitas imprescindibles en la zona son el Museo de Arte Contemporáneo y el Observatory Hill, con hermosas vistas de "The Rocks" y el puerto.
+
+La guinda del pastel la pone el mercado que todos los fines de semana llena de bullicio y alegría las calles de este pintoresco centro histórico. En él podréis encontrar antigüedades, artesanías, joyas, cuadros y todos los artículos imaginables, además de puestos de fruta y verduras.
+
+No obstante, el mayor encanto de "The Rocks" reside en perderse por sus laberínticas y empinadas callejuelas, deteniéndose a curiosear en las numerosas galerías de arte, locales de música en directo y restaurantes de última moda que dan al barrio un ambiente muy bohemio.
+
+El paseo es aún más especial al ponerse el sol, cuando sus calles quedan levemente iluminadas a la luz de las farolas y las historias de fantasmas de los antiguos convictos se convierten en indiscutibles protagonistas de la noche. Esto demuestra una vez más, que hasta del lado más oscuro de la historia es posible hacer negocio.]]></value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2080421,-33.859062,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nurses Walk</name>
+        <description><![CDATA[descripción: En 1979 se creó el Nurses Walk para honrar a las enfermeras que prestaron servicios en los hospitales locales entre 1788 y 1816. El nombre de Nurses Walk hace referencia al primer hospital de la época colonial de Sídney, que se estableció en Sydney Cove para curar a los convictos que ingresaban. El pequeño camino funcionaba como atajo hacia el hospital, ya que pasaba por los callejones y pasadizos de The Rocks. A lo largo del camino hay varias placas informativas que detallan la historia de la región.<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value>En 1979 se creó el Nurses Walk para honrar a las enfermeras que prestaron servicios en los hospitales locales entre 1788 y 1816. El nombre de Nurses Walk hace referencia al primer hospital de la época colonial de Sídney, que se estableció en Sydney Cove para curar a los convictos que ingresaban. El pequeño camino funcionaba como atajo hacia el hospital, ya que pasaba por los callejones y pasadizos de The Rocks. A lo largo del camino hay varias placas informativas que detallan la historia de la región.</value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2082795,-33.8598892,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>The Rocks Market</name>
+        <description><![CDATA[descripción: <br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value/>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2085595,-33.8577866,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sydney Harbour Bridge</name>
+        <description><![CDATA[descripción: <br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value/>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2082987,-33.855973,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Walsh Bay</name>
+        <description><![CDATA[descripción: Walsh Bay es un puerto histórico que se ha transformado en un recinto de espectáculos de vanguardia, con teatros de primera clase, fantásticos restaurantes y bares de moda. Los muelles tipo finger sobresalen del agua, justo en el borde del puerto de Sídney, y ofrecen vistas impresionantes.<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value>Walsh Bay es un puerto histórico que se ha transformado en un recinto de espectáculos de vanguardia, con teatros de primera clase, fantásticos restaurantes y bares de moda. Los muelles tipo finger sobresalen del agua, justo en el borde del puerto de Sídney, y ofrecen vistas impresionantes.</value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2278665,-33.7393509,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Wulugul Walk</name>
+        <description><![CDATA[descripción: La reserva Barangaroo es el parque costero más nuevo de Sídney. Uno de los sitios industriales más antiguos de la ciudad y una antigua terminal de contenedores de hormigón se ha transformado en un espectacular espacio abierto de seis hectáreas para que lo disfruten tanto los habitantes de Sídney como los visitantes. La reserva es peatonal y es el lugar perfecto para pasear, hacer un picnic o ir en bicicleta, y los perros son bienvenidos si van con correa. Sube a Stargazer Lawn para disfrutar de las mejores vistas de los jardines y del puerto o sigue el paseo Wulugul Walk, que une Walsh Bay y Darling Harbour y atraviesa la reserva.<br><br>Se han plantado más de 75 000 árboles y arbustos autóctonos, que reproducen el follaje que habría en este sitio antes de la colonización europea. También se han introducido colonias de abejas nativas para ayudar a polinizar las especies de plantas autóctonas. Únete a uno de los recorridos culturales aborígenes habituales para aprender más sobre estas plantas, así como sobre la importancia del sitio para la población indígena local. A los niños les encantará la experiencia de Bush Buji, donde aprenderán sobre la tierra, escucharán historias y cantarán canciones.<br><br>Incluso pueden darse un chapuzón en el puerto en la nueva zona de baño que se inauguró en Marrinawi Cove a principios de 2023. Este lugar protegido está bordeado por escalones de arenisca y cerrado con redes de seguridad.<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value>La reserva Barangaroo es el parque costero más nuevo de Sídney. Uno de los sitios industriales más antiguos de la ciudad y una antigua terminal de contenedores de hormigón se ha transformado en un espectacular espacio abierto de seis hectáreas para que lo disfruten tanto los habitantes de Sídney como los visitantes. La reserva es peatonal y es el lugar perfecto para pasear, hacer un picnic o ir en bicicleta, y los perros son bienvenidos si van con correa. Sube a Stargazer Lawn para disfrutar de las mejores vistas de los jardines y del puerto o sigue el paseo Wulugul Walk, que une Walsh Bay y Darling Harbour y atraviesa la reserva.
+
+Se han plantado más de 75 000 árboles y arbustos autóctonos, que reproducen el follaje que habría en este sitio antes de la colonización europea. También se han introducido colonias de abejas nativas para ayudar a polinizar las especies de plantas autóctonas. Únete a uno de los recorridos culturales aborígenes habituales para aprender más sobre estas plantas, así como sobre la importancia del sitio para la población indígena local. A los niños les encantará la experiencia de Bush Buji, donde aprenderán sobre la tierra, escucharán historias y cantarán canciones.
+
+Incluso pueden darse un chapuzón en el puerto en la nueva zona de baño que se inauguró en Marrinawi Cove a principios de 2023. Este lugar protegido está bordeado por escalones de arenisca y cerrado con redes de seguridad.</value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.200598,-33.8572679,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nawi Cove</name>
+        <description><![CDATA[descripción: A solo un minuto a pie de la reserva de Barangaroo se encuentra Nawi Cove, una pequeña cala con una pintoresca piedra arenisca.<br>Esta hermosa cala en el centro de la ciudad está disponible para filmar y tomar fotografías. Tiene vistas impresionantes del puerto, abundante vegetación autóctona y orillas de piedra arenisca antigua.<br><br>El espacio cuenta con un anfiteatro costero de piedra arenisca antigua, una zona de césped abierta y árboles autóctonos agrupados.<br><br>Reservar Nawi Cove<br>El principal lugar de eventos frente al mar de Sídney, Nawi Cove, está en el corazón de Sídney, pero se siente como si fuera otro mundo. Se puede acceder a pie a través de Wulugul Walk, conectado con los senderos para bicicletas de la ciudad y cerca de varias conexiones de transporte público, incluidos ferry y autobús. Si prefiere conducir, también hay un estacionamiento público de 300 plazas cerca.<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value>A solo un minuto a pie de la reserva de Barangaroo se encuentra Nawi Cove, una pequeña cala con una pintoresca piedra arenisca.
+Esta hermosa cala en el centro de la ciudad está disponible para filmar y tomar fotografías. Tiene vistas impresionantes del puerto, abundante vegetación autóctona y orillas de piedra arenisca antigua.
+
+El espacio cuenta con un anfiteatro costero de piedra arenisca antigua, una zona de césped abierta y árboles autóctonos agrupados.
+
+Reservar Nawi Cove
+El principal lugar de eventos frente al mar de Sídney, Nawi Cove, está en el corazón de Sídney, pero se siente como si fuera otro mundo. Se puede acceder a pie a través de Wulugul Walk, conectado con los senderos para bicicletas de la ciudad y cerca de varias conexiones de transporte público, incluidos ferry y autobús. Si prefiere conducir, también hay un estacionamiento público de 300 plazas cerca.</value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2020448,-33.858828,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Watermans Cove</name>
+        <description><![CDATA[descripción: Se ha abierto al público un nuevo paseo marítimo estilo anfiteatro a lo largo de la costa de Barangaroo, Watermans Cove, que suma 11.000 metros cuadrados (alrededor de 22 canchas de baloncesto) de espacio a la zona. La ensenada ampliará el paseo marítimo a 350 metros y proporcionará espacios para que la gente pueda pasear y sentarse mientras contempla el puerto.<br><br>Una vez que se termine el desarrollo de Barangaroo (actualmente se estima que para 2025), habrá un sendero costero de 14 kilómetros que unirá Garden Island en Woolloomooloo con los mercados de pescado en Pyrmont. Antes del desarrollo, Barangaroo era una terminal de contenedores y tiendas de cruceros de hormigón de 22 hectáreas.<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value>Se ha abierto al público un nuevo paseo marítimo estilo anfiteatro a lo largo de la costa de Barangaroo, Watermans Cove, que suma 11.000 metros cuadrados (alrededor de 22 canchas de baloncesto) de espacio a la zona. La ensenada ampliará el paseo marítimo a 350 metros y proporcionará espacios para que la gente pueda pasear y sentarse mientras contempla el puerto.
+
+Una vez que se termine el desarrollo de Barangaroo (actualmente se estima que para 2025), habrá un sendero costero de 14 kilómetros que unirá Garden Island en Woolloomooloo con los mercados de pescado en Pyrmont. Antes del desarrollo, Barangaroo era una terminal de contenedores y tiendas de cruceros de hormigón de 22 hectáreas.</value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2012032,-33.8632716,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Barangaroo, Wharf 1</name>
+        <description><![CDATA[descripción: <br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value/>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.200592,-33.864376,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pyrmont Bridge</name>
+        <description><![CDATA[descripción: El puente Pyrmont, un puente giratorio declarado patrimonio histórico que cruza la bahía Cockle, se encuentra en Darling Harbour, parte de Port Jackson, al oeste del distrito comercial central en el área de gobierno local de la ciudad de Sídney en Nueva Gales del Sur, Australia. Inaugurado en 1902, el puente inicialmente transportaba tráfico de vehículos a través de la carretera Pyrmont Bridge Road entre el distrito comercial central y Pyrmont. Desde 1981, el puente solo transporta tráfico peatonal y de bicicletas, ya que los vehículos a motor se desvían a los pasos elevados de la autopista adyacente. El puente se agregó al Registro de Patrimonio del Estado de Nueva Gales del Sur el 28 de junio de 2002, el centenario de su inauguración.[1]<br><br>La canción de 1985 de Jimmy Barnes "I'd die to be with you Tonight" se filmó en el puente, con él en la configuración abatible. (Véase: I'd Die to be with You Tonight)<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value><![CDATA[El puente Pyrmont, un puente giratorio declarado patrimonio histórico que cruza la bahía Cockle, se encuentra en Darling Harbour, parte de Port Jackson, al oeste del distrito comercial central en el área de gobierno local de la ciudad de Sídney en Nueva Gales del Sur, Australia. Inaugurado en 1902, el puente inicialmente transportaba tráfico de vehículos a través de la carretera Pyrmont Bridge Road entre el distrito comercial central y Pyrmont. Desde 1981, el puente solo transporta tráfico peatonal y de bicicletas, ya que los vehículos a motor se desvían a los pasos elevados de la autopista adyacente. El puente se agregó al Registro de Patrimonio del Estado de Nueva Gales del Sur el 28 de junio de 2002, el centenario de su inauguración.[1]
+
+La canción de 1985 de Jimmy Barnes "I'd die to be with you Tonight" se filmó en el puente, con él en la configuración abatible. (Véase: I'd Die to be with You Tonight)]]></value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2021708,-33.8709081,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Puerto Darling</name>
+        <description><![CDATA[descripción: Darling Harbour es una localidad de Sídney, Nueva Gales del Sur, Australia. Se trata de una gran calle peatonal de recreo y que está situado en las afueras del oeste del distrito central de negocios de Sídney. La localidad se extiende hacia el norte de Chinatown, a lo largo de ambos lados desde la bahía de Cockle a King Street Wharf, en el este, y al barrio de Pyrmont en el oeste. Cockle Bay es uno de los canales que conforman el puerto Darling, que se abre al norte en la bahía de Sídney.<br><br>El recinto y su entorno inmediato son administrados independientemente del área de gobierno local de la ciudad de Sídney, por un gobierno de Nueva Gales del Sur la autoridad legal del gobierno del estado, la Sydney Harbour Foreshore Authority.<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value>Darling Harbour es una localidad de Sídney, Nueva Gales del Sur, Australia. Se trata de una gran calle peatonal de recreo y que está situado en las afueras del oeste del distrito central de negocios de Sídney. La localidad se extiende hacia el norte de Chinatown, a lo largo de ambos lados desde la bahía de Cockle a King Street Wharf, en el este, y al barrio de Pyrmont en el oeste. Cockle Bay es uno de los canales que conforman el puerto Darling, que se abre al norte en la bahía de Sídney.
+
+El recinto y su entorno inmediato son administrados independientemente del área de gobierno local de la ciudad de Sídney, por un gobierno de Nueva Gales del Sur la autoridad legal del gobierno del estado, la Sydney Harbour Foreshore Authority.</value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2009,-33.87488,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sydney Heritage Fleet</name>
+        <description><![CDATA[descripción: <br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value/>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.198098,-33.867669,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cockle Bay Wharf</name>
+        <description><![CDATA[descripción: Si buscas vistas del puerto, buenos momentos y buena comida, estás en el lugar adecuado.<br><br>Cockle Bay Wharf está en el animado centro del emblemático Darling Harbour, y cuenta con algunos de los mejores bares, restaurantes y lugares de ocio de Sídney (sin mencionar las impresionantes vistas del puerto). Es el lugar perfecto para tomar un cóctel mientras se pone el sol, escuchar música en directo o bailar toda la noche.<br><br>A la hora de elegir un lugar para comer, en Cockle Bay Wharf tendrás mucho trabajo. Por la mañana temprano, puedes ir al Nick's Cafe and Bar para tomar un café preparado por un barista, tartas, pasteles y un brunch. Más tarde, disfruta de un vino italiano y degusta cocina mediterránea en un salón al aire libre junto al mar en Adria, o disfruta de un abundante festín de carne a la brasa en Hunter and Barrel.<br><br>Cuando se ponga el sol, dirígete a uno de los numerosos bares frente al mar que sirven cócteles y momentos divertidos. La terraza del Café Del Mar es un lugar ideal para terminar con un Aperol Spritz en la mano y con Darling Harbour como telón de fondo. Si quieres pasar una noche inolvidable, tu próxima parada debería ser Home the Venue, la discoteca más grande de Sídney, que acoge a algunos de los mejores DJ de la ciudad (y las noches más importantes).<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value><![CDATA[Si buscas vistas del puerto, buenos momentos y buena comida, estás en el lugar adecuado.
+
+Cockle Bay Wharf está en el animado centro del emblemático Darling Harbour, y cuenta con algunos de los mejores bares, restaurantes y lugares de ocio de Sídney (sin mencionar las impresionantes vistas del puerto). Es el lugar perfecto para tomar un cóctel mientras se pone el sol, escuchar música en directo o bailar toda la noche.
+
+A la hora de elegir un lugar para comer, en Cockle Bay Wharf tendrás mucho trabajo. Por la mañana temprano, puedes ir al Nick's Cafe and Bar para tomar un café preparado por un barista, tartas, pasteles y un brunch. Más tarde, disfruta de un vino italiano y degusta cocina mediterránea en un salón al aire libre junto al mar en Adria, o disfruta de un abundante festín de carne a la brasa en Hunter and Barrel.
+
+Cuando se ponga el sol, dirígete a uno de los numerosos bares frente al mar que sirven cócteles y momentos divertidos. La terraza del Café Del Mar es un lugar ideal para terminar con un Aperol Spritz en la mano y con Darling Harbour como telón de fondo. Si quieres pasar una noche inolvidable, tu próxima parada debería ser Home the Venue, la discoteca más grande de Sídney, que acoge a algunos de los mejores DJ de la ciudad (y las noches más importantes).]]></value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.1928382,-33.872554,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tumbalong Park</name>
+        <description><![CDATA[descripción: El parque Tumbalong se encuentra en el centro del distrito de Darling Harbour y está rodeado de una variedad de edificios públicos y comerciales e instalaciones al aire libre.<br>Esta maravilla arquitectónica cuenta con un techo voladizo único que se asemeja a una hermosa concha de berberecho, un sutil guiño a la rica historia indígena de la zona. Este recinto de última generación cuenta con características de primer nivel, como pantallas digitales, altavoces y un escenario flexible, lo que lo hace perfecto para conciertos en vivo, eventos deportivos y reuniones comunitarias.<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value>El parque Tumbalong se encuentra en el centro del distrito de Darling Harbour y está rodeado de una variedad de edificios públicos y comerciales e instalaciones al aire libre.
+Esta maravilla arquitectónica cuenta con un techo voladizo único que se asemeja a una hermosa concha de berberecho, un sutil guiño a la rica historia indígena de la zona. Este recinto de última generación cuenta con características de primer nivel, como pantallas digitales, altavoces y un escenario flexible, lo que lo hace perfecto para conciertos en vivo, eventos deportivos y reuniones comunitarias.</value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2017266,-33.8756884,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Chinatown Sydney</name>
+        <description><![CDATA[descripción: Chinatown (en chino: 悉尼唐人街; en cantonés de Yale: Sīknèih Tòhngyàhn'gāai; en pinyin: Xīní Tángrénjiē) es un enclave urbano situado en la parte sur del distrito central de negocios de Sídney, en Nueva Gales del Sur, Australia. Comprende la mayor parte del suburbio de Haymarket, entre la estación central y Darling Harbour. Forma parte del área de gobierno local de la ciudad de Sídney y es el barrio chino más grande de Australia.[2]<br><br>Sídney y la colonia de Nueva Gales del Sur experimentaron la migración china ya en 1828. El primer grupo de trabajadores chinos de Amoy (actual Xiamen) se embarcó hacia Nueva Gales del Sur en 1848. Con el descubrimiento de oro en 1851, la inmigración china aumentó y en 1855 el número de inmigrantes chinos alcanzó alrededor de 17.000.[3] La población china había estado tradicionalmente representada por aquellos que venían del sur de China (es decir, provincias como Guangdong y Fujian), debido a que la mayoría de los puertos coloniales estaban ubicados en la costa sur de China.[4]<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value><![CDATA[Chinatown (en chino: 悉尼唐人街; en cantonés de Yale: Sīknèih Tòhngyàhn'gāai; en pinyin: Xīní Tángrénjiē) es un enclave urbano situado en la parte sur del distrito central de negocios de Sídney, en Nueva Gales del Sur, Australia. Comprende la mayor parte del suburbio de Haymarket, entre la estación central y Darling Harbour. Forma parte del área de gobierno local de la ciudad de Sídney y es el barrio chino más grande de Australia.[2]
+
+Sídney y la colonia de Nueva Gales del Sur experimentaron la migración china ya en 1828. El primer grupo de trabajadores chinos de Amoy (actual Xiamen) se embarcó hacia Nueva Gales del Sur en 1848. Con el descubrimiento de oro en 1851, la inmigración china aumentó y en 1855 el número de inmigrantes chinos alcanzó alrededor de 17.000.[3] La población china había estado tradicionalmente representada por aquellos que venían del sur de China (es decir, provincias como Guangdong y Fujian), debido a que la mayoría de los puertos coloniales estaban ubicados en la costa sur de China.[4]]]></value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2040867,-33.8787982,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Paddy's Markets]]></name>
+        <description><![CDATA[descripción: Paddy's ha ocupado un lugar central en la historia de Sydney durante más de 150 años. Paddy's Markets, los mercados más grandes de Sydney, tienen una amplia variedad de puestos: comida, moda, regalos y aparatos en un verdadero ambiente de mercado.<br><br>Un mercado animado en el corazón de la ciudad y justo al lado de Chinatown que ofrece una variedad de opciones de comida para llevar o para comer en el lugar a la hora del almuerzo que seguramente lo harán volver por más.<br><br>Paddy's Haymarket es para los curiosos y también para aquellos que tienen un presupuesto limitado. Funciona como un mercado tradicional y ofrece moda femenina importada y local, ropa para niños, accesorios para el cabello, joyas, así como regalos, recuerdos, aparatos y mucho más.<br><br>Para los amantes de la comida, Paddy's Haymarket es el lugar ideal para comprar frutas y verduras frescas. Los mercados de Haymarket han sido el hogar de cultivadores y productores durante más de un siglo. ¡Ven y pruébalo tú mismo!<br>Para los amantes de los mariscos, hay mucho pescado fresco, camarones y la mejor pesca del día.<br><br>Paddy’s es un mercado que tiene algo para todos e incluso una biblioteca de música, arte y libros para disfrutar.<br>Paddy’s Haymarket es una visita obligada para los turistas que buscan recuerdos australianos y regalos baratos que sean realmente australianos.<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value><![CDATA[Paddy's ha ocupado un lugar central en la historia de Sydney durante más de 150 años. Paddy's Markets, los mercados más grandes de Sydney, tienen una amplia variedad de puestos: comida, moda, regalos y aparatos en un verdadero ambiente de mercado.
+
+Un mercado animado en el corazón de la ciudad y justo al lado de Chinatown que ofrece una variedad de opciones de comida para llevar o para comer en el lugar a la hora del almuerzo que seguramente lo harán volver por más.
+
+Paddy's Haymarket es para los curiosos y también para aquellos que tienen un presupuesto limitado. Funciona como un mercado tradicional y ofrece moda femenina importada y local, ropa para niños, accesorios para el cabello, joyas, así como regalos, recuerdos, aparatos y mucho más.
+
+Para los amantes de la comida, Paddy's Haymarket es el lugar ideal para comprar frutas y verduras frescas. Los mercados de Haymarket han sido el hogar de cultivadores y productores durante más de un siglo. ¡Ven y pruébalo tú mismo!
+Para los amantes de los mariscos, hay mucho pescado fresco, camarones y la mejor pesca del día.
+
+Paddy’s es un mercado que tiene algo para todos e incluso una biblioteca de música, arte y libros para disfrutar.
+Paddy’s Haymarket es una visita obligada para los turistas que buscan recuerdos australianos y regalos baratos que sean realmente australianos.]]></value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2035622,-33.8800089,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>George Street</name>
+        <description><![CDATA[descripción: George Street es una calle situada en el centro de Sídney, Nueva Gales del Sur, Australia. Fue la calle de tiendas principal original de Sídney, y sigue siendo una de las calles más ajetreadas del centro de la ciudad. Conecta varios de los edificios y zonas más importantes de la ciudad.<br><br>La calle empieza en el norte de Sídney, en The Rocks, cerca del puente de la bahía de Sídney, y discurre hasta el extremo sur de la ciudad, cerca de la estación central y Ultimo, donde conduce a Railway Square. Desde aquí, Broadway es la prolongación de George Street hacia el oeste, que conduce hacia los suburbios occidentales como Parramatta Road.<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value>George Street es una calle situada en el centro de Sídney, Nueva Gales del Sur, Australia. Fue la calle de tiendas principal original de Sídney, y sigue siendo una de las calles más ajetreadas del centro de la ciudad. Conecta varios de los edificios y zonas más importantes de la ciudad.
+
+La calle empieza en el norte de Sídney, en The Rocks, cerca del puente de la bahía de Sídney, y discurre hasta el extremo sur de la ciudad, cerca de la estación central y Ultimo, donde conduce a Railway Square. Desde aquí, Broadway es la prolongación de George Street hacia el oeste, que conduce hacia los suburbios occidentales como Parramatta Road.</value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2070449,-33.8682002,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Queen Victoria Building</name>
+        <description><![CDATA[descripción: <br>name: Queen Victoria Building<br>description: El Queen Victoria Building es un edificio que pertenece al siglo XIX que está ubicado en el centro financiero de Sídney, Australia. Este edificio fue diseñado por el arquitecto George McRae. El edificio representa la época del neorrománico, fue construido entre 1893 y 1898 y mide 30 metros de ancho por 190 metros de largo. El edificio cubre las calles George, Market, York y Druit las cuales están alrededor del edificio. También fue diseñado para un mercado, fue usado para varios propósitos, fue remodelado y sufrió una decadencia hasta que fue restaurado a su diseñado original a fines del siglo XX.El edificio fue diseñado a una “gran escala estilo catedral” 5 por el arquitecto George McRae, un arquitecto escocés que emigró a Sídney en 1884.6 Para entonces la ciudad de Sídney estaba pasando por un boom de edificaciones de edificios y por consiguiente en el ámbito de la arquitectura “ninguna escuela exclusivamente o estilo había predominado” McRae produjo cuatro diseños para el edificio con diferentes estilos (Gótico, Renacimiento, el estilo Reina Ana y el estilo Románico) de los cuales el ayuntamiento podía elegir.7 El ayuntamiento eligió el estilo Románico Victoriano el cual combina con la influencia del arquitecto americano Henry Hobson Richardson. El uso de las columnas, los arcos y detalles sobresalientes los cuales fueron usados por McRae en un diseño elegido típicamente al estilo románico richardsoniano un estilo ecléctico el cual se estableció de manera identificable entre 1877 y 1886.8<br><br><br>Imagen aérea del QVB muestra la posición de las cúpulas<br>Las características que dominan el edificio es la cúpula central que consiste en una cúpula de vidrio al interior y una fachada de cobre enfundado al exterior, encabezada por otra cúpula encima. Hay cúpulas de tamaños más pequeñas las cuales están ubicadas en el techo y también están incluidas en cada esquina en el techo del edificio rectangular. Las vidrieras de colores incluyendo las ventanillas en forma de rueda de carro que representan el escudo de la ciudad de Sídney y a la vez permiten que entre la luz al área central, y también el techo mismo incorpora arcos de claraboyas que recorren en sentido longitudinal en dirección norte y sur desde la cúpula central. Las columnatas, los arcos, balaustradas y cúpulas típicamente un estilo intricado Victoriano.]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value/>
+          </Data>
+          <Data name="name">
+            <value>Queen Victoria Building</value>
+          </Data>
+          <Data name="description">
+            <value>El Queen Victoria Building es un edificio que pertenece al siglo XIX que está ubicado en el centro financiero de Sídney, Australia. Este edificio fue diseñado por el arquitecto George McRae. El edificio representa la época del neorrománico, fue construido entre 1893 y 1898 y mide 30 metros de ancho por 190 metros de largo. El edificio cubre las calles George, Market, York y Druit las cuales están alrededor del edificio. También fue diseñado para un mercado, fue usado para varios propósitos, fue remodelado y sufrió una decadencia hasta que fue restaurado a su diseñado original a fines del siglo XX.El edificio fue diseñado a una “gran escala estilo catedral” 5 por el arquitecto George McRae, un arquitecto escocés que emigró a Sídney en 1884.6 Para entonces la ciudad de Sídney estaba pasando por un boom de edificaciones de edificios y por consiguiente en el ámbito de la arquitectura “ninguna escuela exclusivamente o estilo había predominado” McRae produjo cuatro diseños para el edificio con diferentes estilos (Gótico, Renacimiento, el estilo Reina Ana y el estilo Románico) de los cuales el ayuntamiento podía elegir.7 El ayuntamiento eligió el estilo Románico Victoriano el cual combina con la influencia del arquitecto americano Henry Hobson Richardson. El uso de las columnas, los arcos y detalles sobresalientes los cuales fueron usados por McRae en un diseño elegido típicamente al estilo románico richardsoniano un estilo ecléctico el cual se estableció de manera identificable entre 1877 y 1886.8
+
+
+Imagen aérea del QVB muestra la posición de las cúpulas
+Las características que dominan el edificio es la cúpula central que consiste en una cúpula de vidrio al interior y una fachada de cobre enfundado al exterior, encabezada por otra cúpula encima. Hay cúpulas de tamaños más pequeñas las cuales están ubicadas en el techo y también están incluidas en cada esquina en el techo del edificio rectangular. Las vidrieras de colores incluyendo las ventanillas en forma de rueda de carro que representan el escudo de la ciudad de Sídney y a la vez permiten que entre la luz al área central, y también el techo mismo incorpora arcos de claraboyas que recorren en sentido longitudinal en dirección norte y sur desde la cúpula central. Las columnatas, los arcos, balaustradas y cúpulas típicamente un estilo intricado Victoriano.</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2067078,-33.871722,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>The Strand Arcade</name>
+        <description><![CDATA[descripción: The Strand Arcade es una galería comercial de estilo victoriano declarada patrimonio histórico ubicada en 195-197 Pitt Street en el corazón del distrito comercial central de Sídney, entre Pitt Street Mall y George Street en el área de gobierno local de la ciudad de Sídney de Nueva Gales del Sur, Australia. Fue diseñada por John B. Spencer, con la ayuda de Charles E. Fairfax; y construida entre 1890 y 1892 por Bignell y Clark (1891), con renovaciones completadas por Stephenson & Turner (1976). La propiedad, la única galería comercial de este tipo que queda en Sídney, se agregó al Registro de Patrimonio Estatal de Nueva Gales del Sur el 13 de diciembre de 2011.[1]<br><br>Con tres pisos de altura, la galería comercial tiene galerías salientes de estilo tradicional, escaleras de cedro, pisos de baldosas, balaustres de hierro fundido y frentes de tiendas con marcos de madera, bajo un techo prominente de vidrio tintado para reducir el deslumbramiento. La galería comercial contiene las boutiques preliminares que caracterizaron la experiencia de compras en Sídney de la década de 1890. Cuando se inauguró en 1892, se decía que era el diseño más moderno de un centro comercial y se lo describía como "la mejor vía pública de las colonias australianas". La galería ha resistido dos depresiones, dos guerras mundiales y dos grandes incendios. Las fachadas restauradas de las tiendas son una réplica exacta de las fachadas interiores originales de las tiendas.<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value><![CDATA[The Strand Arcade es una galería comercial de estilo victoriano declarada patrimonio histórico ubicada en 195-197 Pitt Street en el corazón del distrito comercial central de Sídney, entre Pitt Street Mall y George Street en el área de gobierno local de la ciudad de Sídney de Nueva Gales del Sur, Australia. Fue diseñada por John B. Spencer, con la ayuda de Charles E. Fairfax; y construida entre 1890 y 1892 por Bignell y Clark (1891), con renovaciones completadas por Stephenson & Turner (1976). La propiedad, la única galería comercial de este tipo que queda en Sídney, se agregó al Registro de Patrimonio Estatal de Nueva Gales del Sur el 13 de diciembre de 2011.[1]
+
+Con tres pisos de altura, la galería comercial tiene galerías salientes de estilo tradicional, escaleras de cedro, pisos de baldosas, balaustres de hierro fundido y frentes de tiendas con marcos de madera, bajo un techo prominente de vidrio tintado para reducir el deslumbramiento. La galería comercial contiene las boutiques preliminares que caracterizaron la experiencia de compras en Sídney de la década de 1890. Cuando se inauguró en 1892, se decía que era el diseño más moderno de un centro comercial y se lo describía como "la mejor vía pública de las colonias australianas". La galería ha resistido dos depresiones, dos guerras mundiales y dos grandes incendios. Las fachadas restauradas de las tiendas son una réplica exacta de las fachadas interiores originales de las tiendas.]]></value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2075288,-33.8693593,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sydney Arcade</name>
+        <description><![CDATA[descripción: <br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value/>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2081485,-33.8692828,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Martin Place</name>
+        <description><![CDATA[descripción: Martin Place es un centro comercial peatonal en el distrito comercial central de Sídney, Nueva Gales del Sur, Australia. Martin Place ha sido descrito como el "corazón cívico" de Sídney. [1] Como sede del Banco de la Reserva de Australia, el Commonwealth Bank, Macquarie Bank, Westpac y otras corporaciones, también es un centro de negocios y finanzas. La Oficina de Correos de Sídney también se encuentra en Martin Place.<br><br>Martin Place se ha convertido en un icono nacional australiano en la cultura popular por atraer a actores y producciones de cine y televisión de alta gama a la zona. Martin Place se extiende entre George Street y Macquarie Street, y ofrece entradas a la estación de tren de Martin Place por debajo del nivel de la calle. Otras calles transversales incluyen Pitt Street, Castlereagh Street, Elizabeth Street y Phillip Street.<br><br>El "Martin Place" inicial era la sección entre George Street y Pitt Street, inaugurada oficialmente en 1892, y recibió su nombre en honor a Sir James Martin, tres veces primer ministro de Nueva Gales del Sur y presidente del Tribunal Supremo de Nueva Gales del Sur. Cerrado al tráfico en etapas desde 1971, Martin Place está rodeado de numerosos edificios patrimoniales y cuenta con el Cenotafio de Sydney de la Primera Guerra Mundial de 1927, una fuente de agua, un área de entretenimiento, acceso ferroviario y asientos para peatones.<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value><![CDATA[Martin Place es un centro comercial peatonal en el distrito comercial central de Sídney, Nueva Gales del Sur, Australia. Martin Place ha sido descrito como el "corazón cívico" de Sídney. [1] Como sede del Banco de la Reserva de Australia, el Commonwealth Bank, Macquarie Bank, Westpac y otras corporaciones, también es un centro de negocios y finanzas. La Oficina de Correos de Sídney también se encuentra en Martin Place.
+
+Martin Place se ha convertido en un icono nacional australiano en la cultura popular por atraer a actores y producciones de cine y televisión de alta gama a la zona. Martin Place se extiende entre George Street y Macquarie Street, y ofrece entradas a la estación de tren de Martin Place por debajo del nivel de la calle. Otras calles transversales incluyen Pitt Street, Castlereagh Street, Elizabeth Street y Phillip Street.
+
+El "Martin Place" inicial era la sección entre George Street y Pitt Street, inaugurada oficialmente en 1892, y recibió su nombre en honor a Sir James Martin, tres veces primer ministro de Nueva Gales del Sur y presidente del Tribunal Supremo de Nueva Gales del Sur. Cerrado al tráfico en etapas desde 1971, Martin Place está rodeado de numerosos edificios patrimoniales y cuenta con el Cenotafio de Sydney de la Primera Guerra Mundial de 1927, una fuente de agua, un área de entretenimiento, acceso ferroviario y asientos para peatones.]]></value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2098596,-33.8676606,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pitt Street</name>
+        <description><![CDATA[descripción: <br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value/>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2082569,-33.8703146,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Iglesia de Saint James</name>
+        <description><![CDATA[descripción: La iglesia de St James, comúnmente conocida como St James', King Street, es una iglesia parroquial anglicana declarada patrimonio histórico australiano y ubicada en el 173 de King Street, en el distrito comercial central de Sídney, en Nueva Gales del Sur. Consagrada en febrero de 1824 y nombrada en honor a Santiago el Mayor, se convirtió en iglesia parroquial en 1835. Diseñada al estilo de una iglesia de pueblo georgiana por el arquitecto Francis Greenway, un convicto deportado, durante la gobernación de Lachlan Macquarie, St James' es parte del recinto histórico de Macquarie Street, que incluye otros edificios de la era colonial temprana, como el cuartel Hyde Park, declarado Patrimonio de la Humanidad.<br><br>La iglesia sigue siendo histórica, social y arquitectónicamente significativa. El edificio es el más antiguo que existe en la región del centro de la ciudad de Sídney. Fue agregado al Registro del Patrimonio Estatal de Nueva Gales del Sur el 3 de septiembre de 2004;[1] y fue incluido en el Registro del Patrimonio Nacional (ahora extinto).<br><br>La iglesia ha mantenido su papel especial en la vida religiosa, cívica y musical de la ciudad, así como su estrecha relación con las profesiones médicas y jurídicas de la ciudad gracias a su proximidad a los juzgados y al Hospital de Sídney. Su ministerio original estaba dirigido a la población de presos de Sídney y ha seguido sirviendo a los pobres y necesitados de la ciudad en los siglos siguientes.<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value><![CDATA[La iglesia de St James, comúnmente conocida como St James', King Street, es una iglesia parroquial anglicana declarada patrimonio histórico australiano y ubicada en el 173 de King Street, en el distrito comercial central de Sídney, en Nueva Gales del Sur. Consagrada en febrero de 1824 y nombrada en honor a Santiago el Mayor, se convirtió en iglesia parroquial en 1835. Diseñada al estilo de una iglesia de pueblo georgiana por el arquitecto Francis Greenway, un convicto deportado, durante la gobernación de Lachlan Macquarie, St James' es parte del recinto histórico de Macquarie Street, que incluye otros edificios de la era colonial temprana, como el cuartel Hyde Park, declarado Patrimonio de la Humanidad.
+
+La iglesia sigue siendo histórica, social y arquitectónicamente significativa. El edificio es el más antiguo que existe en la región del centro de la ciudad de Sídney. Fue agregado al Registro del Patrimonio Estatal de Nueva Gales del Sur el 3 de septiembre de 2004;[1] y fue incluido en el Registro del Patrimonio Nacional (ahora extinto).
+
+La iglesia ha mantenido su papel especial en la vida religiosa, cívica y musical de la ciudad, así como su estrecha relación con las profesiones médicas y jurídicas de la ciudad gracias a su proximidad a los juzgados y al Hospital de Sídney. Su ministerio original estaba dirigido a la población de presos de Sídney y ha seguido sirviendo a los pobres y necesitados de la ciudad en los siglos siguientes.]]></value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2111378,-33.8694112,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Hyde Park</name>
+        <description><![CDATA[descripción: Hyde Park, Sydney, es un parque urbano de 16,2 hectáreas (40 acres), ubicado en el distrito comercial central de Sídney, en el área de gobierno local de la ciudad de Sídney de Nueva Gales del Sur, Australia. Es el parque público más antiguo de Australia. Hyde Park está en la periferia oriental del centro de la ciudad de Sídney y tiene una forma aproximadamente rectangular, siendo cuadrada en el extremo sur y redondeada en el extremo norte. Limita al oeste con Elizabeth Street, al este con College Street, al norte con St James Road y Prince Albert Road y al sur con Liverpool Street.[2]<br><br>El parque fue diseñado por Norman Weekes, Sir John Sulman (resolución de diseño de 1927), Alfred Hook, W. G. Layton e I. Berzins y fue construido entre 1810 y 1927. Históricamente, también se lo ha conocido como Sydney Common, Government Domain, The Common, The Exercising Ground, Cricket Ground y Racecourse. Hyde Park es propiedad de la ciudad de Sídney y de la Autoridad de Gestión de Tierras y Propiedades, una agencia del Gobierno de Nueva Gales del Sur. Fue añadido al Registro de Patrimonio del Estado de Nueva Gales del Sur el 13 de diciembre de 2011.[1]<br><br>Es el parque más meridional de una cadena que se extiende hacia el norte hasta la costa del puerto de Sídney a través de The Domain y el Real Jardín Botánico. Alrededor de los límites del parque se encuentran varios edificios que albergan la Corte Suprema de Nueva Gales del Sur, la iglesia de St James, el cuartel de Hyde Park y el hospital de Sídney al norte, la catedral de St Mary, el Museo Australiano y la escuela secundaria de Sídney al este, el Downing Centre al sur, la tienda insignia de David Jones y el CBD al oeste. Está dividido en dos por la calle Park Street que corre de este a oeste.<br><br>Hyde Park contiene jardines bien cuidados y aproximadamente 580 árboles: una mezcla de higueras,[3] coníferas, palmeras y otras variedades. Es famoso por sus magníficas avenidas bordeadas de higueras. Los jardines Sandringham se encuentran en el lado este del parque, cerca de la intersección de Park Street y College Street.<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value>Hyde Park, Sydney, es un parque urbano de 16,2 hectáreas (40 acres), ubicado en el distrito comercial central de Sídney, en el área de gobierno local de la ciudad de Sídney de Nueva Gales del Sur, Australia. Es el parque público más antiguo de Australia. Hyde Park está en la periferia oriental del centro de la ciudad de Sídney y tiene una forma aproximadamente rectangular, siendo cuadrada en el extremo sur y redondeada en el extremo norte. Limita al oeste con Elizabeth Street, al este con College Street, al norte con St James Road y Prince Albert Road y al sur con Liverpool Street.[2]
+
+El parque fue diseñado por Norman Weekes, Sir John Sulman (resolución de diseño de 1927), Alfred Hook, W. G. Layton e I. Berzins y fue construido entre 1810 y 1927. Históricamente, también se lo ha conocido como Sydney Common, Government Domain, The Common, The Exercising Ground, Cricket Ground y Racecourse. Hyde Park es propiedad de la ciudad de Sídney y de la Autoridad de Gestión de Tierras y Propiedades, una agencia del Gobierno de Nueva Gales del Sur. Fue añadido al Registro de Patrimonio del Estado de Nueva Gales del Sur el 13 de diciembre de 2011.[1]
+
+Es el parque más meridional de una cadena que se extiende hacia el norte hasta la costa del puerto de Sídney a través de The Domain y el Real Jardín Botánico. Alrededor de los límites del parque se encuentran varios edificios que albergan la Corte Suprema de Nueva Gales del Sur, la iglesia de St James, el cuartel de Hyde Park y el hospital de Sídney al norte, la catedral de St Mary, el Museo Australiano y la escuela secundaria de Sídney al este, el Downing Centre al sur, la tienda insignia de David Jones y el CBD al oeste. Está dividido en dos por la calle Park Street que corre de este a oeste.
+
+Hyde Park contiene jardines bien cuidados y aproximadamente 580 árboles: una mezcla de higueras,[3] coníferas, palmeras y otras variedades. Es famoso por sus magníficas avenidas bordeadas de higueras. Los jardines Sandringham se encuentran en el lado este del parque, cerca de la intersección de Park Street y College Street.</value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2112757,-33.8731383,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Hyde Park Barracks</name>
+        <description><![CDATA[descripción: El cuartel Hyde Park de Sídney es un antiguo cuartel, hospital, alojamiento para presos, casa de la moneda y palacio de justicia declarado patrimonio histórico y ahora museo y cafetería situado en Macquarie Street, en el distrito comercial central de Sídney, en el área de gobierno local de la ciudad de Sídney, Nueva Gales del Sur, Australia. Originalmente construido entre 1817 y 1819 como un edificio de ladrillo y un recinto para albergar a hombres y niños convictos, fue diseñado por el arquitecto de convictos Francis Greenway.[2] También se lo conoce como Mint Building y Hyde Park Barracks Group and Rum Hospital; Royal Mint – Sydney Branch; Sydney Infirmary and Dispensary; Queen's Square Courts; Queen's Square. El sitio es administrado por los Museos de Historia de Nueva Gales del Sur, una agencia del Gobierno de Nueva Gales del Sur, como un museo de historia viviente abierto al público.<br><br>El sitio está inscrito en la Lista del Patrimonio Mundial de la UNESCO como uno de los 11 sitios de convictos australianos más destacados[3] como uno de "los mejores ejemplos sobrevivientes de transporte de convictos a gran escala y la expansión colonial de las potencias europeas a través de la presencia y el trabajo de los convictos",[4][5] y fue incluido en la Lista del Patrimonio Nacional de Australia el 1 de agosto de 2007,[6] y en el Registro del Patrimonio del Estado de Nueva Gales del Sur el 2 de abril de 1999.[7]<br><br>El sitio histórico se cerró en enero de 2019 para trabajos de restauración de $ 18 millones para transformarlo en "una nueva experiencia de visitante rica e inmersiva como ninguna otra en Australia"[8] y reabrió en febrero de 2020.[9] Hoy en día, el museo cuenta las historias de los miles de hombres, mujeres y niños retenidos o alojados allí, y las comunidades aborígenes profundamente impactadas por la expansión colonial.<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value><![CDATA[El cuartel Hyde Park de Sídney es un antiguo cuartel, hospital, alojamiento para presos, casa de la moneda y palacio de justicia declarado patrimonio histórico y ahora museo y cafetería situado en Macquarie Street, en el distrito comercial central de Sídney, en el área de gobierno local de la ciudad de Sídney, Nueva Gales del Sur, Australia. Originalmente construido entre 1817 y 1819 como un edificio de ladrillo y un recinto para albergar a hombres y niños convictos, fue diseñado por el arquitecto de convictos Francis Greenway.[2] También se lo conoce como Mint Building y Hyde Park Barracks Group and Rum Hospital; Royal Mint – Sydney Branch; Sydney Infirmary and Dispensary; Queen's Square Courts; Queen's Square. El sitio es administrado por los Museos de Historia de Nueva Gales del Sur, una agencia del Gobierno de Nueva Gales del Sur, como un museo de historia viviente abierto al público.
+
+El sitio está inscrito en la Lista del Patrimonio Mundial de la UNESCO como uno de los 11 sitios de convictos australianos más destacados[3] como uno de "los mejores ejemplos sobrevivientes de transporte de convictos a gran escala y la expansión colonial de las potencias europeas a través de la presencia y el trabajo de los convictos",[4][5] y fue incluido en la Lista del Patrimonio Nacional de Australia el 1 de agosto de 2007,[6] y en el Registro del Patrimonio del Estado de Nueva Gales del Sur el 2 de abril de 1999.[7]
+
+El sitio histórico se cerró en enero de 2019 para trabajos de restauración de $ 18 millones para transformarlo en "una nueva experiencia de visitante rica e inmersiva como ninguna otra en Australia"[8] y reabrió en febrero de 2020.[9] Hoy en día, el museo cuenta las historias de los miles de hombres, mujeres y niños retenidos o alojados allí, y las comunidades aborígenes profundamente impactadas por la expansión colonial.]]></value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.212585,-33.8696036,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>The Mint</name>
+        <description><![CDATA[descripción: La Casa de la Moneda de Sídney, en Sídney, Nueva Gales del Sur, Australia, es el edificio público más antiguo que aún se conserva en el distrito comercial central de Sídney. Construida entre 1811 y 1816 como el ala sur del Hospital de Sídney, en aquel entonces se la conocía como el Hospital del Ron. En 1854 se estableció una Casa de la Moneda en el lugar y el edificio del hospital se utilizó para albergar al personal de la Casa de la Moneda y como residencia del vicedirector de la Casa de la Moneda. En la parte trasera se construyó una fábrica de acuñación de monedas. Ambas estructuras tienen una importancia patrimonial excepcional y se han asociado con importantes acontecimientos de la historia colonial de Nueva Gales del Sur.<br><br>Ubicada en el distrito comercial central de Sídney, en el número 10 de Macquarie Street, está cerca de muchos otros edificios históricos australianos famosos, como Hyde Park Barracks, la iglesia de St James y el Parlamento. El edificio es ahora la sede del Historic Houses Trust de Nueva Gales del Sur y está incluido en el Registro del Patrimonio Estatal de Nueva Gales del Sur.[1][2] Algunas secciones del edificio están abiertas al público.<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value>La Casa de la Moneda de Sídney, en Sídney, Nueva Gales del Sur, Australia, es el edificio público más antiguo que aún se conserva en el distrito comercial central de Sídney. Construida entre 1811 y 1816 como el ala sur del Hospital de Sídney, en aquel entonces se la conocía como el Hospital del Ron. En 1854 se estableció una Casa de la Moneda en el lugar y el edificio del hospital se utilizó para albergar al personal de la Casa de la Moneda y como residencia del vicedirector de la Casa de la Moneda. En la parte trasera se construyó una fábrica de acuñación de monedas. Ambas estructuras tienen una importancia patrimonial excepcional y se han asociado con importantes acontecimientos de la historia colonial de Nueva Gales del Sur.
+
+Ubicada en el distrito comercial central de Sídney, en el número 10 de Macquarie Street, está cerca de muchos otros edificios históricos australianos famosos, como Hyde Park Barracks, la iglesia de St James y el Parlamento. El edificio es ahora la sede del Historic Houses Trust de Nueva Gales del Sur y está incluido en el Registro del Patrimonio Estatal de Nueva Gales del Sur.[1][2] Algunas secciones del edificio están abiertas al público.</value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2126165,-33.8689323,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Real Jardín Botánico de Sídney</name>
+        <description><![CDATA[descripción: <br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value/>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2165708,-33.8641859,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rose Garden Beds</name>
+        <description><![CDATA[descripción: <br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value/>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2139314,-33.8642693,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Herb Garden and Pavilion</name>
+        <description><![CDATA[descripción: <br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value/>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2153536,-33.8639858,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Succulent Garden</name>
+        <description><![CDATA[descripción: <br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value/>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2184694,-33.865768,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Vistas ópera y puente</name>
+        <description><![CDATA[descripción: <br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value/>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2520284,-33.894599,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Campbells Cove</name>
+        <description><![CDATA[descripción: Campbells Cove está situada en el lado noroeste del puerto de Sídney.<br>El sitio de Campbells Cove ofrece acceso peatonal desde The Rocks, alrededor del puerto de Sídney, desde Hickson Road y George St North.<br><br>El sitio es ideal para la toma de muestras, las activaciones y la filmación y fotografía.<br><br>Campbells Cove es un espacio abierto pavimentado en The Rocks, con el puerto de Sídney y el puente del puerto de Sídney como telón de fondo.<br><br>Es parte del paseo marítimo que conecta las actividades terrestres a lo largo del borde del puerto, incluidas Walsh Bay, The Rocks y la terminal de pasajeros internacionales.<br>name: <br>description: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="descripción">
+            <value>Campbells Cove está situada en el lado noroeste del puerto de Sídney.
+El sitio de Campbells Cove ofrece acceso peatonal desde The Rocks, alrededor del puerto de Sídney, desde Hickson Road y George St North.
+
+El sitio es ideal para la toma de muestras, las activaciones y la filmación y fotografía.
+
+Campbells Cove es un espacio abierto pavimentado en The Rocks, con el puerto de Sídney y el puente del puerto de Sídney como telón de fondo.
+
+Es parte del paseo marítimo que conecta las actividades terrestres a lo largo del borde del puerto, incluidas Walsh Bay, The Rocks y la terminal de pasajeros internacionales.</value>
+          </Data>
+          <Data name="name">
+            <value/>
+          </Data>
+          <Data name="description">
+            <value/>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2176627,-33.8663569,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Livello senza titolo</name>
+    </Folder>
+    <Folder>
+      <name>Coastal Walk</name>
+      <Placemark>
+        <name>Coastal Walk - Clovelly to Tamarama.</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            151.2896599,-33.9374434,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Livello senza titolo</name>
+    </Folder>
+    <Folder>
+      <name>Livello senza titolo</name>
+    </Folder>
+    <Folder>
+      <name>Livello senza titolo</name>
+    </Folder>
+    <Folder>
+      <name>Livello senza titolo</name>
+    </Folder>
+    <Folder>
+      <name>Livello senza titolo</name>
+    </Folder>
+    <Folder>
+      <name>Livello senza titolo</name>
+    </Folder>
+    <Folder>
+      <name>Livello senza titolo</name>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Athens Day Walk</name>
+    <description/>
+    <Style id="icon-1535-0288D1-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1535-0288D1-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1535-0288D1">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1535-0288D1-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1535-0288D1-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1535-E65100-normal">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1535-E65100-highlight">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1535-E65100">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1535-E65100-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1535-E65100-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1596-558B2F-nodesc-normal">
+      <IconStyle>
+        <color>ff2f8b55</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1596-558B2F-nodesc-highlight">
+      <IconStyle>
+        <color>ff2f8b55</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1596-558B2F-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1596-558B2F-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1596-558B2F-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-0288D1-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-0288D1-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-0288D1">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-0288D1-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-0288D1-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-0288D1-nodesc-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-0288D1-nodesc-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1899-0288D1-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-FFD600-4875-nodesc-normal">
+      <LineStyle>
+        <color>ff00d6ff</color>
+        <width>4.875</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="line-FFD600-4875-nodesc-highlight">
+      <LineStyle>
+        <color>ff00d6ff</color>
+        <width>7.3125</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="line-FFD600-4875-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-FFD600-4875-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-FFD600-4875-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Points of Interest</name>
+      <Placemark>
+        <name>Start</name>
+        <styleUrl>#icon-1596-558B2F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            23.7293034,37.9679646,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Line 1</name>
+        <styleUrl>#line-FFD600-4875-nodesc</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            23.7293034,37.9679646,0
+            23.7299364,37.9694786,0
+            23.7300008,37.9695885,0
+            23.7300115,37.9696943,0
+            23.7300598,37.9708297,0
+            23.7300866,37.9709799,0
+            23.7300705,37.9710285,0
+            23.7300384,37.9710729,0
+            23.7300303,37.9711004,0
+            23.7300464,37.9712167,0
+            23.7299659,37.9712082,0
+            23.7299445,37.9711702,0
+            23.7299284,37.9710814,0
+            23.7298774,37.9708572,0
+            23.7300839,37.9708128,0
+            23.7301161,37.9710179,0
+            23.730387,37.9708974,0
+            23.7304407,37.9709524,0
+            23.7303897,37.9710454,0
+            23.7303307,37.9716607,0
+            23.7313473,37.9720329,0
+            23.7314572,37.9718256,0
+            23.7310039,37.9716544,0
+            23.7308752,37.9718912,0
+            23.73032,37.9717051,0
+            23.7303495,37.9718468,0
+            23.7303844,37.9719673,0
+            23.7303844,37.9721069,0
+            23.7303575,37.9725234,0
+            23.7303441,37.9726059,0
+            23.7300518,37.9735066,0
+            23.7300276,37.9735679,0
+            23.7292149,37.9742508,0
+            23.7291532,37.9742868,0
+            23.7284183,37.974532,0
+            23.7283405,37.9743333,0
+            23.728201,37.9740267,0
+            23.7280991,37.9738364,0
+            23.7279248,37.973551,0
+            23.7278094,37.973367,0
+            23.7277397,37.9732402,0
+            23.72767,37.9730076,0
+            23.7282547,37.9728469,0
+            23.7282091,37.9727856,0
+            23.7284666,37.9726122,0
+            23.7283754,37.9724261,0
+            23.7281984,37.9725023,0
+            23.7281367,37.9723796,0
+            23.7279677,37.9724494,0
+            23.7278336,37.9725276,0
+            23.7277424,37.9725467,0
+            23.7275546,37.9725234,0
+            23.7276565,37.9724536,0
+            23.7277746,37.9724156,0
+            23.7278524,37.9723014,0
+            23.7279757,37.972202,0
+            23.7280696,37.9721449,0
+            23.7281367,37.972128,0
+            23.7282359,37.9720603,0
+            23.7282118,37.9721016,0
+            23.7282574,37.9721312,0
+            23.7281689,37.9722073,0
+            23.7282225,37.9722718,0
+            23.7282788,37.9723056,0
+            23.7283373,37.9723554,0
+            23.7283923,37.9724051,0
+            23.7283976,37.9724315,0
+            23.7284875,37.9725954,0
+            23.7284915,37.9726218,0
+            23.7282756,37.9727645,0
+            23.7283105,37.9728185,0
+            23.728521,37.9727445,0
+            23.7286189,37.9730077,0
+            23.728627,37.9730563,0
+            23.7286672,37.9731335,0
+            23.7287624,37.9733407,0
+            23.7290373,37.9732149,0
+            23.7290682,37.9732012,0
+            23.7295134,37.9733682,0
+            23.7300579,37.9735839,0
+            23.7296274,37.9739412,0
+            23.7292278,37.9742721,0
+            23.7294128,37.9744137,0
+            23.7296529,37.9749994,0
+            23.7296864,37.9750893,0
+            23.7299868,37.9750248,0
+            23.7299976,37.9750544,0
+            23.7296891,37.9751252,0
+            23.7297521,37.9753134,0
+            23.730125,37.9752193,0
+            23.7301424,37.9752637,0
+            23.7297615,37.9753567,0
+            23.729374,37.975398,0
+            23.7291527,37.9754498,0
+            23.7290521,37.975195,0
+            23.7280154,37.975454,0
+            23.7274039,37.9757024,0
+            23.7268057,37.9758451,0
+            23.7259863,37.9760471,0
+            23.7259179,37.9761242,0
+            23.7258308,37.9761443,0
+            23.7258629,37.976323,0
+            23.7257329,37.97625,0
+            23.7255572,37.97623,0
+            23.72512,37.9761919,0
+            23.7247324,37.9761517,0
+            23.7243582,37.9761813,0
+            23.7241222,37.976212,0
+            23.723862,37.9762648,0
+            23.7238942,37.9763209,0
+            23.7239693,37.9764551,0
+            23.724023,37.9765513,0
+            23.7240471,37.976693,0
+            23.7239076,37.9767152,0
+            23.7238339,37.9765862,0
+            23.7237655,37.9765809,0
+            23.7236743,37.9766074,0
+            23.7235308,37.9763536,0
+            23.723406,37.9763674,0
+            23.7232639,37.9763769,0
+            23.7232116,37.9764255,0
+            23.7232867,37.9765249,0
+            23.7232451,37.9765439,0
+            23.7231646,37.9764033,0
+            23.7229662,37.9760862,0
+            23.7232156,37.9760037,0
+            23.72317,37.9758853,0
+            23.7232076,37.9758747,0
+            23.7232545,37.9760037,0
+            23.7236528,37.9759625,0
+            23.7238513,37.9759424,0
+            23.7243153,37.9758758,0
+            23.7248102,37.9757859,0
+            23.7257248,37.9755893,0
+            23.7258603,37.9759953,0
+            23.7259246,37.9762934,0
+            23.7259997,37.9766475,0
+            23.7262237,37.9766592,0
+            23.7263659,37.9773072,0
+            23.7265697,37.9780968,0
+            23.7267078,37.978729,0
+            23.7268607,37.9793316,0
+            23.7270606,37.9802301,0
+            23.727082,37.9803862,0
+            23.7279242,37.9802424,0
+            23.7280101,37.9805637,0
+            23.7259179,37.9808936,0
+            23.7257999,37.9804369,0
+            23.7269801,37.9802509,0
+            23.726905,37.9798872,0
+            23.7282836,37.9796758,0
+            23.7278813,37.9778322,0
+            23.7275733,37.9765235,0
+            23.7284584,37.9763924,0
+            23.7284745,37.9762994,0
+            23.7285657,37.9762402,0
+            23.7286837,37.9762359,0
+            23.7287534,37.9762698,0
+            23.7288071,37.9763501,0
+            23.7326534,37.9758384,0
+            23.735931,37.9754071,0
+            23.7358291,37.9755382,0
+            23.7359525,37.9760752,0
+            23.7361349,37.9761344,0
+            23.740464,37.9756101,0
+            23.740362,37.9750392,0
+            23.7403406,37.9743161,0
+            23.7403513,37.97424,0
+            23.7394772,37.9743126,0
+            23.7393887,37.9742047,0
+            23.7395094,37.9740187,0
+            23.7395522,37.9739045,0
+            23.739563,37.9736889,0
+            23.7396596,37.9735429,0
+            23.739748,37.9734055,0
+            23.7398003,37.9731,0
+            23.7396924,37.9729176,0
+            23.7395472,37.9728243,0
+            23.7393942,37.9727925,0
+            23.7391406,37.9728622,0
+            23.7388905,37.973044,0
+            23.7389183,37.9733019,0
+            23.7390555,37.9734372,0
+            23.739158,37.9735683,0
+            23.7388777,37.9736571,0
+            23.7387617,37.9734743,0
+            23.7386323,37.9734161,0
+            23.7385545,37.9733823,0
+            23.7384452,37.9733326,0
+            23.7383627,37.9734901,0
+            23.7383432,37.9735398,0
+            23.7382048,37.9735752,0
+            23.7380738,37.9735168,0
+            23.7380352,37.9734115,0
+            23.7380548,37.9733472,0
+            23.737913,37.9732516,0
+            23.7378005,37.9732006,0
+            23.7377659,37.9730757,0
+            23.7377015,37.9722109,0
+            23.7376532,37.9719318,0
+            23.738474,37.9714455,0
+            23.7388871,37.9711664,0
+            23.7393055,37.9707646,0
+            23.7400136,37.9696482,0
+            23.7402389,37.9690434,0
+            23.7413601,37.9675506,0
+            23.7415317,37.967521,0
+            23.741698,37.967576,0
+            23.7417087,37.9677367,0
+            23.7415478,37.96802,0
+            23.740491,37.9693775,0
+            23.7401584,37.9698808,0
+            23.7399814,37.9700795,0
+            23.7384579,37.9693268,0
+            23.7379,37.969238,0
+            23.7374977,37.9692211,0
+            23.7368325,37.9694156,0
+            23.7371436,37.970291,0
+            23.7370892,37.9706282,0
+            23.7369224,37.9708713,0
+            23.736327,37.9711081,0
+            23.7355545,37.9698817,0
+            23.7344655,37.9703004,0
+            23.7343958,37.970034,0
+            23.7343851,37.969924,0
+            23.7324807,37.9699494,0
+            23.7324485,37.9693869,0
+            23.7320569,37.9694081,0
+            23.7321374,37.9700678,0
+            23.7320247,37.97022,0
+            23.7317517,37.9703755,0
+            23.7316552,37.9703459,0
+            23.7315157,37.969627,0
+            23.7301424,37.9694832,0
+            23.729563,37.9694452,0
+            23.7288603,37.9694367,0
+            23.7281737,37.9694748,0
+            23.7262156,37.9697539,0
+            23.7246921,37.9699442,0
+            23.7248423,37.970477,0
+            23.7241128,37.9705701,0
+            23.7240323,37.9705235,0
+            23.7239036,37.9705105,0
+            23.7238821,37.9706754,0
+            23.7238714,37.9707896,0
+            23.7237588,37.9709164,0
+            23.7237212,37.9709545,0
+            23.7237427,37.9710771,0
+            23.7237695,37.9714281,0
+            23.7237588,37.9715846,0
+            23.7236944,37.9717707,0
+            23.7234852,37.9717918,0
+            23.7234584,37.971851,0
+            23.7233779,37.9720159,0
+            23.7234369,37.9721724,0
+            23.7232277,37.9722485,0
+            23.7229273,37.9723162,0
+            23.7229648,37.9724304,0
+            23.7233618,37.9723712,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>Monument of Lysicrates</name>
+        <description>https://youtu.be/QVh0TuWyEYc?t=423</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            23.7299112,37.9711092,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Adrianou Street</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4dkO-LG5tHfYSLqooB0o6jf_-pMylToK50HGXJqIDt1OZJGTmix7xXp_EauJ-tDM1rF4soqGsIX0Vp_2SHY0TMfx0wPIJu0iNSbtY0cvdltqlyS0FDpl_Ehmw7YXt66vXBIqT7o4EPK9eKXrNjsvGjeYQ5HqkXgtNWXnO_TFOOMaA8egZZ8WmJRjlV_Mey7c7Clf1TO8AQ3jg?fife=s16383" height="200" width="auto" /><br><br>https://youtu.be/QVh0TuWyEYc?t=579<br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7flc57KDoLsd8GwkHZnmtnkcMFpBVZL4FtPrSmZnFcgZmAbdmvvHMXtrKyXDPTU3QqGQ6fxei_s9FYVF9UEtS97Ank2otRJQNTmhNca8W2TlJVcuJtbcuf-ssyFUBi3H-_VgqsmhqdMB3THo1Tg412mAPVSNkWcGFltNN4-n7ZdXuDHhr5E1RjvvYzIjpQye_VedXy4GUPO_Q?fife=s16383" height="200" width="auto" />]]></description>
+        <styleUrl>#icon-1535-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4dkO-LG5tHfYSLqooB0o6jf_-pMylToK50HGXJqIDt1OZJGTmix7xXp_EauJ-tDM1rF4soqGsIX0Vp_2SHY0TMfx0wPIJu0iNSbtY0cvdltqlyS0FDpl_Ehmw7YXt66vXBIqT7o4EPK9eKXrNjsvGjeYQ5HqkXgtNWXnO_TFOOMaA8egZZ8WmJRjlV_Mey7c7Clf1TO8AQ3jg?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7flc57KDoLsd8GwkHZnmtnkcMFpBVZL4FtPrSmZnFcgZmAbdmvvHMXtrKyXDPTU3QqGQ6fxei_s9FYVF9UEtS97Ank2otRJQNTmhNca8W2TlJVcuJtbcuf-ssyFUBi3H-_VgqsmhqdMB3THo1Tg412mAPVSNkWcGFltNN4-n7ZdXuDHhr5E1RjvvYzIjpQye_VedXy4GUPO_Q?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            23.7303859,37.9710606,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Brettos Bar</name>
+        <description>https://youtu.be/QVh0TuWyEYc?t=693</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            23.7305334,37.9716991,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Filomousou Square</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4kHV_V1XMxoMmiL4Kbgk-VW4W1uaCOlq5G9rkXaM37Ihg_6gjrO8mJhFUb989GYH1g2iknDIKaNg2rZjyHAexsESPBcSn0rCbi4vFLJyiGUln_L2ZTAL48kwXVC06BqYfIs_VeeXyWA0tTeNHNZJ9_-9-gELkJ1AM01L8NuK2RNT1Tlxyz9k0VbkifxtCjNxHSpEjnry0p5wU?fife=s16383" height="200" width="auto" /><br><br>https://youtu.be/QVh0TuWyEYc?t=793<br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7lPOWnTHmoQmOAgfby5zyW1-NAQv0ZZ6Je-zuaWNeGp150zX22o8YJSV5jMAe789D8YyB-yH_pLVicuGZImzm54yU2sPgR0DI_ZzetkXNwrzFYFXbeaa8iPhxGP_7GbGJVslDOTcNrI6tvPKVKaJwUV9BSyiPqEgA3EIs-suovw5qbBBpRkGyyjw1Pni4i75q07A8OOpePIfs?fife=s16383" height="200" width="auto" />]]></description>
+        <styleUrl>#icon-1535-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4kHV_V1XMxoMmiL4Kbgk-VW4W1uaCOlq5G9rkXaM37Ihg_6gjrO8mJhFUb989GYH1g2iknDIKaNg2rZjyHAexsESPBcSn0rCbi4vFLJyiGUln_L2ZTAL48kwXVC06BqYfIs_VeeXyWA0tTeNHNZJ9_-9-gELkJ1AM01L8NuK2RNT1Tlxyz9k0VbkifxtCjNxHSpEjnry0p5wU?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7lPOWnTHmoQmOAgfby5zyW1-NAQv0ZZ6Je-zuaWNeGp150zX22o8YJSV5jMAe789D8YyB-yH_pLVicuGZImzm54yU2sPgR0DI_ZzetkXNwrzFYFXbeaa8iPhxGP_7GbGJVslDOTcNrI6tvPKVKaJwUV9BSyiPqEgA3EIs-suovw5qbBBpRkGyyjw1Pni4i75q07A8OOpePIfs?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            23.7311557,37.9718471,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Plaka Stairs</name>
+        <description>https://youtu.be/QVh0TuWyEYc?t=1510</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            23.7279402,37.9735824,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Anafiotika</name>
+        <description>https://youtu.be/QVh0TuWyEYc?t=1715</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            23.7281874,37.9724845,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Metropolitan Cathedral of Athens</name>
+        <description>https://youtu.be/QVh0TuWyEYc?t=2464</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            23.7295259,37.9753311,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pandrossou Street</name>
+        <description>https://youtu.be/QVh0TuWyEYc?t=2875</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            23.7286113,37.9753099,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Monastiraki Square</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR76pBVN7dkv5TOYVZNhyZyJumW0XEBS9yRbSTuBxqh5TOUuV8a1LXCcn12UxsJvxNd1Ue4G9uzjgRlYL1l5UHaSTB5Oh48HfCMx1B0Wq8bHDrgF73J_-JJ0SRRmrbZfYYEuEuivkVZhBiY255FwTEZU_tMkyATQXFHQfSqjDP-WCXQ59QNu0moJDInE75KgkqcK0JjexiJVMjk?fife=s16383" height="200" width="auto" /><br><br>https://youtu.be/QVh0TuWyEYc?t=2875  & https://youtu.be/QVh0TuWyEYc?t=4140<br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4ME4ymFkpRvO2o46trcZg2Bml--hEiXl93Gpy1yvSIgS5ksbZY3GxggPbDKoDMi_Q1SumyefY716OF9BgWd1E52j-xrdaZNXpa95kF9iFSXjsHIECIRYIhxrUp7LjH2KK4FBfTSXtnM8ICYckYhLWLcE93-pJ5ECYKSFexavcnIAfwYgF5lNM-rDmlQhZZlMjQxX0LwqiVgpw?fife=s16383" height="200" width="auto" /><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6XnnnRruckH1KvaVvXx3mdJXTt3lsKys2CxRnTbc4Kqlho08i6j-I6jChtkXxm9xaLZ9IJAGKwANKr92zm9kZW0fTQAYDkzPI5Pg7qrlKX0M3S0I8r4Jxr-eQkzBdrS4619r7R7cK5DEVcBP-NNhhgtlyzThWQ_7v6fuxi0KSI0yh7Pe3BxLn_82fAIsBo9TRQK0JmD905OtE?fife=s16383" height="200" width="auto" />]]></description>
+        <styleUrl>#icon-1535-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR76pBVN7dkv5TOYVZNhyZyJumW0XEBS9yRbSTuBxqh5TOUuV8a1LXCcn12UxsJvxNd1Ue4G9uzjgRlYL1l5UHaSTB5Oh48HfCMx1B0Wq8bHDrgF73J_-JJ0SRRmrbZfYYEuEuivkVZhBiY255FwTEZU_tMkyATQXFHQfSqjDP-WCXQ59QNu0moJDInE75KgkqcK0JjexiJVMjk?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4ME4ymFkpRvO2o46trcZg2Bml--hEiXl93Gpy1yvSIgS5ksbZY3GxggPbDKoDMi_Q1SumyefY716OF9BgWd1E52j-xrdaZNXpa95kF9iFSXjsHIECIRYIhxrUp7LjH2KK4FBfTSXtnM8ICYckYhLWLcE93-pJ5ECYKSFexavcnIAfwYgF5lNM-rDmlQhZZlMjQxX0LwqiVgpw?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6XnnnRruckH1KvaVvXx3mdJXTt3lsKys2CxRnTbc4Kqlho08i6j-I6jChtkXxm9xaLZ9IJAGKwANKr92zm9kZW0fTQAYDkzPI5Pg7qrlKX0M3S0I8r4Jxr-eQkzBdrS4619r7R7cK5DEVcBP-NNhhgtlyzThWQ_7v6fuxi0KSI0yh7Pe3BxLn_82fAIsBo9TRQK0JmD905OtE?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            23.7258379,37.9764178,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Flea Market</name>
+        <description>https://youtu.be/QVh0TuWyEYc?t=3266</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            23.7253218,37.9762182,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Avissinias Square</name>
+        <description>https://youtu.be/QVh0TuWyEYc?t=3461</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            23.7238037,37.9765269,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ancient Agora</name>
+        <description>https://youtu.be/QVh0TuWyEYc?t=3840</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            23.72317,37.9758853,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Central Market</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6y5Nb44e9pS0rwDB-jpp37HiD6DXf9hN7fA93aoDKDDMBP_cXRHBoYa4hKbhmVF8ARiO5-ZZ9kQ4gBf2VISKZADrE_WCZW4V1TJmKcjmHLE2nng0_BQfLk_s_I41OU1axLsPn2nZASJiDW3ZBA1ynNfIHCRQ9X4uurXJZK3LN63PT-43YuyOBj0HqgIYGiy4J68jLU4FMaqzw?fife=s16383" height="200" width="auto" /><br><br>https://youtu.be/QVh0TuWyEYc?t=4655<br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6RVMGINdM_zYOpcyKIkj2eNlaMEASiFsuI3VIsHrmJ9HxqziUlxyZZFvU-NvchBCiIuJ3YHAZN4J_WQ2_A8y3x4kxHoArI3mQYxh-K2wc8_Ws2Fjvpgiy-WZZfI0RM_jH3bNQ2NVNacYCL4rmLZjUw2TcEqe1aHNruPFt0rNvmbBBY3QB-x8SabIA-6ok9H4pB4jrK9iFehXY?fife=s16383" height="200" width="auto" />]]></description>
+        <styleUrl>#icon-1535-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6y5Nb44e9pS0rwDB-jpp37HiD6DXf9hN7fA93aoDKDDMBP_cXRHBoYa4hKbhmVF8ARiO5-ZZ9kQ4gBf2VISKZADrE_WCZW4V1TJmKcjmHLE2nng0_BQfLk_s_I41OU1axLsPn2nZASJiDW3ZBA1ynNfIHCRQ9X4uurXJZK3LN63PT-43YuyOBj0HqgIYGiy4J68jLU4FMaqzw?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6RVMGINdM_zYOpcyKIkj2eNlaMEASiFsuI3VIsHrmJ9HxqziUlxyZZFvU-NvchBCiIuJ3YHAZN4J_WQ2_A8y3x4kxHoArI3mQYxh-K2wc8_Ws2Fjvpgiy-WZZfI0RM_jH3bNQ2NVNacYCL4rmLZjUw2TcEqe1aHNruPFt0rNvmbBBY3QB-x8SabIA-6ok9H4pB4jrK9iFehXY?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            23.7270842,37.9805014,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Aiolou Street</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5o1fJ3q7KK0ogB6G22sPGI2o1dQCeYMalKIXzjwItCivBjrPqS08hhfXeXAdWjX8rhwKbLUg62A7mL2lTGHOrSM1tphPLXvnTuvNUJ489JbSHRc9YyHBrYhMWkY0V_QqPxfULritiOtnShUcBC-MJSWT2eReIphBS2lpGPh6JVoYgHLmFn7Ak1_A2h3szYUOmHBDxc5eD912s?fife=s16383" height="200" width="auto" /><br><br>https://youtu.be/QVh0TuWyEYc?t=5735]]></description>
+        <styleUrl>#icon-1535-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5o1fJ3q7KK0ogB6G22sPGI2o1dQCeYMalKIXzjwItCivBjrPqS08hhfXeXAdWjX8rhwKbLUg62A7mL2lTGHOrSM1tphPLXvnTuvNUJ489JbSHRc9YyHBrYhMWkY0V_QqPxfULritiOtnShUcBC-MJSWT2eReIphBS2lpGPh6JVoYgHLmFn7Ak1_A2h3szYUOmHBDxc5eD912s?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            23.7282301,37.9794492,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ermou Street</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR73OZAwEpgBfgzdOHsbs-xpTR7WSY5k_2mMul5kr5PVpRqcisLNyJHJYiItKtZYN4adeFWD39gcIE7BvIW0dFFq4YGIjdEA0aTq7nMlnsXNUwm4wKFbHVRkjjUuVHcIOzGtFvHza9fhlepPOBPkjV4sPYVQsyfJyq-4-xqY8ay6kFL4VIIpRJjlyjHeuzB7DuI3_c5QXFqS5r8?fife=s16383" height="200" width="auto" /><br><br>https://youtu.be/QVh0TuWyEYc?t=6050<br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR69LfrUhoalqYi3XYViAQ7exEEIL3_Gh7CWS8QGPVrfOChovEXdtwtn8vl_rkxlG4zRBv00GJP4wc6RoVmit6nqLENhske3wzssHcdG-68GVpLb2KNvwVn2BwH9LCnu4rvAQuAIKFrjGH8jJBd59dmYt-0CDAdmcT-1-kQjMlNL4OVlxY5GL2MywmeacJ-hXQuhgWYjf8R2ydE?fife=s16383" height="200" width="auto" /><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR48vYfSIogzA5rIp--R42XjX0wKGO4F3C2MNNTPFbVRC8oDtRfDElQczkVICUlkT0aQ9oAWU6tjulmABo_kYVhkPaEAKFaN4eRF395GQBdOmiCxzQhinsJw19f906oW0t_1Koi3hai6_WBorhh2__ucV1Z6M4APhaGLD_A8P28UsJfLRG5XYsuLAQiTm8GrOsTeBAfGHch1K08?fife=s16383" height="200" width="auto" /><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7KYcUzGPh9G2ShjGDRckfWEthPkaj77NNUfI3W79AHoJMSzgBSVdhJnWqj5plVXMdswXgxmNh9W84M4AjOi_yvFgZZGfWgpEVe3v3ezJUZpgCXDeUQOLLjqpakX_DrW2Hrm-pRWFdnRvSwnHoxRrgtK4yeJfQummDU0ieQd-_IC8dMOwzxIQ38FTh4Ib1ubVFY57TsL-4QhGM?fife=s16383" height="200" width="auto" /><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5XgXysb1ggY4zuVJJL9JFlq7Ehv-mTVL0NcTKydar3U2YR35zPrbJUy_73ih4_rPxsftfo_5J3X8a-59978RlPA138UiO9xmIVVIrBGqjl_2JdXbjSLIpI6Q1chMXe1jCMbm4tuoUoFZSg9gRpi0nWs3bnqytTzlvzbTi2m0JqGfRGXJyIa7Ud0N2iCtfYq3LIRsIvWoCFck4?fife=s16383" height="200" width="auto" />]]></description>
+        <styleUrl>#icon-1535-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR73OZAwEpgBfgzdOHsbs-xpTR7WSY5k_2mMul5kr5PVpRqcisLNyJHJYiItKtZYN4adeFWD39gcIE7BvIW0dFFq4YGIjdEA0aTq7nMlnsXNUwm4wKFbHVRkjjUuVHcIOzGtFvHza9fhlepPOBPkjV4sPYVQsyfJyq-4-xqY8ay6kFL4VIIpRJjlyjHeuzB7DuI3_c5QXFqS5r8?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR69LfrUhoalqYi3XYViAQ7exEEIL3_Gh7CWS8QGPVrfOChovEXdtwtn8vl_rkxlG4zRBv00GJP4wc6RoVmit6nqLENhske3wzssHcdG-68GVpLb2KNvwVn2BwH9LCnu4rvAQuAIKFrjGH8jJBd59dmYt-0CDAdmcT-1-kQjMlNL4OVlxY5GL2MywmeacJ-hXQuhgWYjf8R2ydE?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR48vYfSIogzA5rIp--R42XjX0wKGO4F3C2MNNTPFbVRC8oDtRfDElQczkVICUlkT0aQ9oAWU6tjulmABo_kYVhkPaEAKFaN4eRF395GQBdOmiCxzQhinsJw19f906oW0t_1Koi3hai6_WBorhh2__ucV1Z6M4APhaGLD_A8P28UsJfLRG5XYsuLAQiTm8GrOsTeBAfGHch1K08?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7KYcUzGPh9G2ShjGDRckfWEthPkaj77NNUfI3W79AHoJMSzgBSVdhJnWqj5plVXMdswXgxmNh9W84M4AjOi_yvFgZZGfWgpEVe3v3ezJUZpgCXDeUQOLLjqpakX_DrW2Hrm-pRWFdnRvSwnHoxRrgtK4yeJfQummDU0ieQd-_IC8dMOwzxIQ38FTh4Ib1ubVFY57TsL-4QhGM?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5XgXysb1ggY4zuVJJL9JFlq7Ehv-mTVL0NcTKydar3U2YR35zPrbJUy_73ih4_rPxsftfo_5J3X8a-59978RlPA138UiO9xmIVVIrBGqjl_2JdXbjSLIpI6Q1chMXe1jCMbm4tuoUoFZSg9gRpi0nWs3bnqytTzlvzbTi2m0JqGfRGXJyIa7Ud0N2iCtfYq3LIRsIvWoCFck4?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            23.7276669,37.97652,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Syntagma Square</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6LUtifosBJcsVMOxUjLf_0HsnRw1P93EeX5tjThhL7CT1ZO8OLcXHHmoNmqW5a4prbgNxEeHNjqusgmBVNyrSQk02iQgtpqVKBW4iIYRr-AAaEcfP610jnNdycrpopar2Rec7Ekqrc5nYZSqq1mkbpFUSzgpLsmIHTMDtBCh4Qgp7kSIJFNIrjspu13w4W3c8BWHZrj8OQje0?fife=s16383" height="200" width="auto" /><br><br>https://youtu.be/QVh0TuWyEYc?t=6690]]></description>
+        <styleUrl>#icon-1535-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6LUtifosBJcsVMOxUjLf_0HsnRw1P93EeX5tjThhL7CT1ZO8OLcXHHmoNmqW5a4prbgNxEeHNjqusgmBVNyrSQk02iQgtpqVKBW4iIYRr-AAaEcfP610jnNdycrpopar2Rec7Ekqrc5nYZSqq1mkbpFUSzgpLsmIHTMDtBCh4Qgp7kSIJFNIrjspu13w4W3c8BWHZrj8OQje0?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            23.73451,37.9755939,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>National Garden</name>
+        <description>https://youtu.be/QVh0TuWyEYc?t=7386</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            23.7394772,37.9743126,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Panathenaic Stadium</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5dy_dbVhJDHprtK1kXXlpk7HOImegpfRWvF3KmZKjv9iIk7MYDX9oyeV3DFBYbxHyfrcQFYFFrtgc_t6VrqjugRnQkTovEtkNJ2l21WINeTuA5ZrhWeMNx2KJk-JwBdQBN2Fn_6avBTIJMnrCZR0PwWeTTcOng2ZusIZdsE2jsxsNN42issyXCMdynWxQ3Qb7YhjS9C7B5cMQ?fife=s16383" height="200" width="auto" /><br><br>https://youtu.be/QVh0TuWyEYc?t=8158<br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR74YkiDlQKcN5OmntL0g87RbJtyGUPP3aa821aJdHo2BTXqDzaHLArTl4vG8qoIVe9yiPI6QiyD9SPjzgp-I05Wq-MtQtYQUv6K__CrRZbf8yBhZ-KWpJ1SOU5G6pdSIhErsWkuI34j0AxZEa3Bp0mxUH7_w-d4J1K9djomCjUxtO8FXtrshB-HkW8bxsnf1z149EX2-iHPvzM?fife=s16383" height="200" width="auto" /><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7UsH1r0kgbBBwolHGMm2bDEKibnsbMnMPxOQr1E7s4y-FNnJ3WsfahvO-ciZ_QqvgIWwB4wcTDMGG7FulmVWi0CoZPHkjcnEsItSSeym20QaSxjRWedjTe8YEfUSKjObCDHJehucEtExCeWF-2wluYeNiStIh57bNmsLqNmhpmDlDP1tPqvF3TOfesFlpUE29juUxEn0N-fz0?fife=s16383" height="200" width="auto" /><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5quISTfLIPIl27hcaXQvg0GhrPnLgJwTWOlIklTkgWhIidVBY96epcMQRLr20lcTxJj45Tr-P3WUIxWYD97jmGhKekKlMgtjanyr-L2tnbopAHkaHWCVzrZBqu4nXxGlAggpm7BU7f1N3S9FtcnWzaojoEmnKrR67wx3Zi2zwpyEZtxW8H2Ke9TEifGaxHgoD_ugUKbEUtNik?fife=s16383" height="200" width="auto" /><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5U-SNVRFOZxZjW6xk47kGal9bs5mSo9RzdSf9EHsYoXY6Cn895_q0Cc7TsN_n_OnT1r7-IGP0fRQdbKPK5X5yXAG8zKSulDQF2M-LTj2mWB_m9qiIXl42NSCxQ18DZbirIiS0NmhojfyTwmLvbinsPasfehmLnUrv5wGUogWoVo8DwhwNL4JheSPJnsJOsSJUVwNz-l8jtvHI?fife=s16383" height="200" width="auto" /><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6VmCuwE5Q_FYNkAkafDhtnWHD1o_89Yh5R3-g5K8-spmCygVcDVrrScezjMONQ7UEs4bEEjgHowLz21eUUaukegMVF7g6O3bLEjytBm7YjXgvENd7UHbgjfH41-tUH5ymKOpRDuLRLbDSsLY0vgbT1h20bB9VumdubGO2qDk-I3RQ1jemr7WwWWhEWXd08Woyat1CxJyArgp0?fife=s16383" height="200" width="auto" /><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7-HvmVDY7zns0lInYkSL_aL3lDjfiZV7ENN6N3xiPykpB0jkGYv8qHdxETl-Uub19DaTRO3twtdDD6-ijXiydDDxYpTX4mDBgOMmyZVRku9cMg8fhMpfPlqN87talqWsERlxBM9UpcmXDcU23C6jbTHbWYyZQ8ASRXAcOqbypvwzUHZaC3h2ozs6pbjVAME86jPMfVB5OBJ8g?fife=s16383" height="200" width="auto" />]]></description>
+        <styleUrl>#icon-1535-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5dy_dbVhJDHprtK1kXXlpk7HOImegpfRWvF3KmZKjv9iIk7MYDX9oyeV3DFBYbxHyfrcQFYFFrtgc_t6VrqjugRnQkTovEtkNJ2l21WINeTuA5ZrhWeMNx2KJk-JwBdQBN2Fn_6avBTIJMnrCZR0PwWeTTcOng2ZusIZdsE2jsxsNN42issyXCMdynWxQ3Qb7YhjS9C7B5cMQ?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR74YkiDlQKcN5OmntL0g87RbJtyGUPP3aa821aJdHo2BTXqDzaHLArTl4vG8qoIVe9yiPI6QiyD9SPjzgp-I05Wq-MtQtYQUv6K__CrRZbf8yBhZ-KWpJ1SOU5G6pdSIhErsWkuI34j0AxZEa3Bp0mxUH7_w-d4J1K9djomCjUxtO8FXtrshB-HkW8bxsnf1z149EX2-iHPvzM?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7UsH1r0kgbBBwolHGMm2bDEKibnsbMnMPxOQr1E7s4y-FNnJ3WsfahvO-ciZ_QqvgIWwB4wcTDMGG7FulmVWi0CoZPHkjcnEsItSSeym20QaSxjRWedjTe8YEfUSKjObCDHJehucEtExCeWF-2wluYeNiStIh57bNmsLqNmhpmDlDP1tPqvF3TOfesFlpUE29juUxEn0N-fz0?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5quISTfLIPIl27hcaXQvg0GhrPnLgJwTWOlIklTkgWhIidVBY96epcMQRLr20lcTxJj45Tr-P3WUIxWYD97jmGhKekKlMgtjanyr-L2tnbopAHkaHWCVzrZBqu4nXxGlAggpm7BU7f1N3S9FtcnWzaojoEmnKrR67wx3Zi2zwpyEZtxW8H2Ke9TEifGaxHgoD_ugUKbEUtNik?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5U-SNVRFOZxZjW6xk47kGal9bs5mSo9RzdSf9EHsYoXY6Cn895_q0Cc7TsN_n_OnT1r7-IGP0fRQdbKPK5X5yXAG8zKSulDQF2M-LTj2mWB_m9qiIXl42NSCxQ18DZbirIiS0NmhojfyTwmLvbinsPasfehmLnUrv5wGUogWoVo8DwhwNL4JheSPJnsJOsSJUVwNz-l8jtvHI?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6VmCuwE5Q_FYNkAkafDhtnWHD1o_89Yh5R3-g5K8-spmCygVcDVrrScezjMONQ7UEs4bEEjgHowLz21eUUaukegMVF7g6O3bLEjytBm7YjXgvENd7UHbgjfH41-tUH5ymKOpRDuLRLbDSsLY0vgbT1h20bB9VumdubGO2qDk-I3RQ1jemr7WwWWhEWXd08Woyat1CxJyArgp0?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR7-HvmVDY7zns0lInYkSL_aL3lDjfiZV7ENN6N3xiPykpB0jkGYv8qHdxETl-Uub19DaTRO3twtdDD6-ijXiydDDxYpTX4mDBgOMmyZVRku9cMg8fhMpfPlqN87talqWsERlxBM9UpcmXDcU23C6jbTHbWYyZQ8ASRXAcOqbypvwzUHZaC3h2ozs6pbjVAME86jPMfVB5OBJ8g?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            23.7404206,37.9691111,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Zappeion Hall</name>
+        <description>https://youtu.be/QVh0TuWyEYc?t=9933</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            23.7371162,37.9704348,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Olympian Archaeological Park</name>
+        <description>https://youtu.be/QVh0TuWyEYc?t=10193</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            23.7331197,37.9695044,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Hadrian's Arch]]></name>
+        <description>https://youtu.be/QVh0TuWyEYc?t=10496</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            23.7321374,37.9700678,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Dionysiou Areopagitou Street</name>
+        <description>https://youtu.be/QVh0TuWyEYc?t=10720</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            23.729563,37.9694452,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>End</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5yZypbJK6ENSCnVM18kLoCCW20mCHcvCnRsYXh-YhAW4roLp9QN4OIBt7R4RFYPoAEe-7ZdPXybDQrvCn0XvGU6VJTNBsDjjsmgF9Ndm3Ex0GSnp040rNU4eUvJ7f-x-zM1b_Rsk6xHnHYb8KVV0UUcCLO4YurOgKgsSDAP2eRk6x0o4TjwD8_WcyYvzh8eU8fWXTPvknyYvc?fife=s16383" height="200" width="auto" /><br><br><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6LDTE-8Uar4tOGmMM32gXDbwACiZ7sHAoZT0rYuIh_CLNcgUgNT0plWkKBezmfm4KNec4WZmpOYQj6MAfRxvc7td8ZzR6K8zimrXeefyUQC3hQbagKAXrlxfAOjukFad2RECytZOFpenoUfxXYiWyBGlEBE5Onf4AnTUUXGF_elMOXUYvuz6Z9AMmlN4SOcEqMx43D-JKlmWQ?fife=s16383" height="200" width="auto" />]]></description>
+        <styleUrl>#icon-1535-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5yZypbJK6ENSCnVM18kLoCCW20mCHcvCnRsYXh-YhAW4roLp9QN4OIBt7R4RFYPoAEe-7ZdPXybDQrvCn0XvGU6VJTNBsDjjsmgF9Ndm3Ex0GSnp040rNU4eUvJ7f-x-zM1b_Rsk6xHnHYb8KVV0UUcCLO4YurOgKgsSDAP2eRk6x0o4TjwD8_WcyYvzh8eU8fWXTPvknyYvc?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6LDTE-8Uar4tOGmMM32gXDbwACiZ7sHAoZT0rYuIh_CLNcgUgNT0plWkKBezmfm4KNec4WZmpOYQj6MAfRxvc7td8ZzR6K8zimrXeefyUQC3hQbagKAXrlxfAOjukFad2RECytZOFpenoUfxXYiWyBGlEBE5Onf4AnTUUXGF_elMOXUYvuz6Z9AMmlN4SOcEqMx43D-JKlmWQ?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            23.7233618,37.9723712,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Untitled layer</name>
+      <Placemark>
+        <name>My first meal</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR53WFrc7Tz4tr050Q0ZdF2C_8lFre4DZaWcc4M2GagR05Xf5RwFiFVb_WGvwpuGzeNKj7bAyG5rqMvVQRqS5HfZYpRKN3L2LpVu2upgKC6pzyzJ3WCxkYlHeQYGQCquepypjh5frESzkJAxg7bzsTeH6kAZpN6qNz0B7t5iprIJ4ejUxHQKrsQTL86zeuOfdOevW4ie6Uq9hDo?fife=s16383" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1535-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR53WFrc7Tz4tr050Q0ZdF2C_8lFre4DZaWcc4M2GagR05Xf5RwFiFVb_WGvwpuGzeNKj7bAyG5rqMvVQRqS5HfZYpRKN3L2LpVu2upgKC6pzyzJ3WCxkYlHeQYGQCquepypjh5frESzkJAxg7bzsTeH6kAZpN6qNz0B7t5iprIJ4ejUxHQKrsQTL86zeuOfdOevW4ie6Uq9hDo?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            23.7298734,37.9686676,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CD Store</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            23.7231919,37.9763312,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Scenic Corner</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4ehOtuaiLRQ6iV3Rom5OrSU0azpRwyIg8kd2L_Dio86YaDLzxOtaU-3jnwWQhvyFk3Ra-ZQEAImYakctlxxhmsTWSxBifsDuJq5pv4DhooGARKI8QCX-WauvK-e9wFbsIAPDvMFlZf0Pdw23jMKZaE_Ks3jg5FZCvqFeqS-OQ5NfpmK8HhUQOp7i5ZomITa08onMSWGF9aAIM?fife=s16383" height="200" width="auto" /><br><br><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6opIwlsbsQN1T9ulkj6YKJVVJggXaYY8N-TcQ9rGet4tknQVEwzDFOAGovg98lt3SxbHY8bWHHR-y6D29aY-r-4i3zhsghTMkB1RzVS49vl-iBkeMBSbqzk-WmAcno2t5h4pFEzW8XahidSS_29Jfv84xj_BBWclAqxVeT9_uzWdDm2Ysrs8r6Hh4uDjss0kSz5urBXx_oamI?fife=s16383" height="200" width="auto" /><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6odCnLCy2itbb2Nev-fm5lGE_jlZ2Exp53RZ1we126JK0YBAl2_RY5U01_WOedRFJmst-tZXhsYQuOwBmuXC6tp-9OyAeVaD_Z0w2UzadXHTdcN-BSjmp0KY-IfmFcb8W-YqugR3tltqJRysNHh87NungUcuHhGmj46IZTubcEAOqEldH2YHgWJQx73XZlzM6bj6xX8eoejDI?fife=s16383" height="200" width="auto" />]]></description>
+        <styleUrl>#icon-1535-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4ehOtuaiLRQ6iV3Rom5OrSU0azpRwyIg8kd2L_Dio86YaDLzxOtaU-3jnwWQhvyFk3Ra-ZQEAImYakctlxxhmsTWSxBifsDuJq5pv4DhooGARKI8QCX-WauvK-e9wFbsIAPDvMFlZf0Pdw23jMKZaE_Ks3jg5FZCvqFeqS-OQ5NfpmK8HhUQOp7i5ZomITa08onMSWGF9aAIM?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6opIwlsbsQN1T9ulkj6YKJVVJggXaYY8N-TcQ9rGet4tknQVEwzDFOAGovg98lt3SxbHY8bWHHR-y6D29aY-r-4i3zhsghTMkB1RzVS49vl-iBkeMBSbqzk-WmAcno2t5h4pFEzW8XahidSS_29Jfv84xj_BBWclAqxVeT9_uzWdDm2Ysrs8r6Hh4uDjss0kSz5urBXx_oamI?fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR6odCnLCy2itbb2Nev-fm5lGE_jlZ2Exp53RZ1we126JK0YBAl2_RY5U01_WOedRFJmst-tZXhsYQuOwBmuXC6tp-9OyAeVaD_Z0w2UzadXHTdcN-BSjmp0KY-IfmFcb8W-YqugR3tltqJRysNHh87NungUcuHhGmj46IZTubcEAOqEldH2YHgWJQx73XZlzM6bj6xX8eoejDI?fife=s16383</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            23.7303225,37.9716969,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

@@ -1,6 +1,7 @@
 import type { VideoCatalogRecord } from "../../data/video-types";
 
 export type WatchDestination = "internal-page" | "youtube";
+export type LocationAccuracy = "tour-start" | "original-map-pin" | "approximate-destination";
 export type DiscoveryVideo = VideoCatalogRecord & {
   watchHref: string;
   watchDestinationType: WatchDestination;
@@ -22,6 +23,8 @@ export type TourRecord = DiscoveryVideo & {
   distanceMiles: number | null;
   distanceKm: number | null;
   mapUrl: string;
+  locationAccuracy: LocationAccuracy;
+  locationSource: string;
 };
 
 export type WorldTour = {
@@ -41,4 +44,5 @@ export type WorldTour = {
   watchDestinationType: WatchDestination;
   latitude: number;
   longitude: number;
+  locationAccuracy?: LocationAccuracy;
 };

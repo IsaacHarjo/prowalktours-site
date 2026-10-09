@@ -146,11 +146,13 @@ export default function HomeClient({ videos, mappedTours }: { videos: DiscoveryV
           <WorldMapClient
             tours={mappedTours}
             fullWidth
+            fitToTours
             heightClassName="h-[420px] sm:h-[500px]"
           />
         </div>
         <p className="mt-4 text-center text-sm text-[#8a7a68]">
-          Explore tours in {mappedCountryCount} countries. More destinations are being added.
+          Explore {mappedTours.length} tours across {mappedCountryCount} countries. Choose a country, then select a pin or numbered group to watch.
+          <span className="mt-1 block">Approximate destination pins are labeled when the exact starting point is unconfirmed.</span>
         </p>
       </section>
 

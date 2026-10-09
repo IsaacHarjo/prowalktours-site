@@ -14,6 +14,7 @@ import type { Feature, FeatureCollection, Point } from "geojson";
 import "mapbox-gl/dist/mapbox-gl.css";
 import type { WorldTour } from "../lib/tours/types";
 import { tourCountries as COUNTRIES } from "../lib/tours/countries";
+import { toursAtSamePoint } from "../lib/tours/map";
 
 type TourProperties = {
   featureIndex: number;
@@ -30,6 +31,11 @@ function getDisplayTitle(title: string) {
 
 function formatVideoType(vt: string) {
   return vt.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function LocationNote({ tour }: { tour: WorldTour }) {
+  if (!tour.locationAccuracy || tour.locationAccuracy === "tour-start") return null;
+  return <p className="mt-1 text-xs leading-5 text-[#6c5b49]">{tour.locationAccuracy === "original-map-pin" ? "Original tour-map pin · start unconfirmed" : "Approximate destination · not the exact start"}</p>;
 }
 
 function getYoutubeId(url: string) {
@@ -124,9 +130,17 @@ function WorldTourWatchLink({
 
 export default function WorldMapClient({ tours, fullWidth, heightClassName, fitToTours = false }: WorldMapClientProps) {
   const mapRef = useRef<MapRef | null>(null);
-  const countries = useMemo(() => fitToTours
-    ? COUNTRIES.filter((country) => tours.some((tour) => tour.mapGroup === country.name))
-    : COUNTRIES, [tours, fitToTours]);
+  const countries = useMemo(() => COUNTRIES.filter((country) => tours.some((tour) => tour.mapGroup === country.name)), [tours]);
+  const exploreCountry = (name: string) => {
+    const selected = name ? tours.filter(tour => tour.mapGroup === name) : tours;
+    if (!selected.length) return;
+    setClusterInfo(null);
+    setPopupInfo(null);
+    mapRef.current?.fitBounds([
+      [Math.min(...selected.map(t => t.longitude)), Math.min(...selected.map(t => t.latitude))],
+      [Math.max(...selected.map(t => t.longitude)), Math.max(...selected.map(t => t.latitude))],
+    ], { padding: 65, maxZoom: 11, duration: 1000 });
+  };
   const [mapError, setMapError] = useState(false);
   const mapboxToken =
     process.env.NEXT_PUBLIC_MAPBOX_TOKEN ??
@@ -137,7 +151,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
     tours: WorldTour[];
     longitude: number;
     latitude: number;
-    clusterId: number;
+    clusterId: number | null;
     countryName: string;
   } | null>(null);
 
@@ -266,8 +280,15 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
           typeof featureIndex === "number" &&
           countryTourList?.[featureIndex]
         ) {
-          setClusterInfo(null);
-          setPopupInfo(countryTourList[featureIndex]);
+          const selected = countryTourList[featureIndex];
+          const coincident = toursAtSamePoint(countryTourList, selected);
+          if (coincident.length > 1) {
+            setPopupInfo(null);
+            setClusterInfo({ tours: coincident, longitude: selected.longitude, latitude: selected.latitude, clusterId: null, countryName });
+          } else {
+            setClusterInfo(null);
+            setPopupInfo(selected);
+          }
         }
       }
     },
@@ -356,6 +377,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
                 <p className="mt-1 text-xs text-[#6c5b49]">
                   {popupInfo.city}, {popupInfo.country}
                 </p>
+                <LocationNote tour={popupInfo} />
                 <WorldTourWatchLink
                   tour={popupInfo}
                   className="mt-2 inline-block text-xs font-semibold text-[#167fd5] hover:underline"
@@ -369,20 +391,20 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
           {/* cluster popup removed — now using overlay panel below */}
         </MapboxMap>
       {/* Country legend */}
-      <div className="absolute bottom-4 left-4 rounded-xl border border-[#d8c7b5] bg-white/95 px-3 py-2 shadow-sm backdrop-blur-sm">
-        <div className="flex items-center gap-4">
+      <div className="absolute bottom-4 left-4 max-w-[calc(100%-2rem)] rounded-xl border border-[#d8c7b5] bg-white/95 px-3 py-2 shadow-sm backdrop-blur-sm">
+        {countries.length > 6 ? <div className="flex items-center gap-2">
+          <label htmlFor="world-map-country" className="sr-only">Explore a country on the map</label>
+          <select id="world-map-country" defaultValue="" onChange={event => exploreCountry(event.target.value)} className="min-h-10 max-w-full rounded-lg border border-[#d8c7b5] bg-white px-3 text-sm text-[#3d3327]">
+            <option value="">All {countries.length} countries</option>
+            {countries.map(country => <option key={country.name} value={country.name}>{country.name} ({countryTourArrays[country.name].length})</option>)}
+          </select>
+        </div> : <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           {countries.map((c) => (
             <button
               key={c.name}
               type="button"
               title={`Click to explore ${c.name}`}
-              onClick={() => {
-                mapRef.current?.flyTo({
-                  center: c.center,
-                  zoom: c.zoom,
-                  duration: 1500,
-                });
-              }}
+              onClick={() => exploreCountry(c.name)}
               className="flex cursor-pointer items-center gap-1.5 transition hover:opacity-80"
             >
               <div
@@ -394,7 +416,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
               </span>
             </button>
           ))}
-        </div>
+        </div>}
       </div>
 
       </div>
@@ -406,13 +428,13 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
             <div className="flex items-start justify-between gap-4 border-b border-[#eadfce] px-4 py-4">
               <div className="min-w-0">
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#9a7a52]">
-                  Cluster Results
+                  {clusterInfo.clusterId === null ? "Tours at this location" : "Cluster Results"}
                 </p>
                 <h3 className="mt-2 text-lg font-bold text-[#2f261d]">
                   {clusterInfo.tours.length} videos in this area
                 </h3>
                 <p className="mt-2 text-sm leading-6 text-[#6c5b49]">
-                  Browse the videos in this cluster or zoom in for a closer view.
+                  {clusterInfo.clusterId === null ? "These videos share a map pin. Choose a tour below." : "Browse the videos in this cluster or zoom in for a closer view."}
                 </p>
               </div>
               <button
@@ -424,11 +446,11 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
               </button>
             </div>
             <div className="overflow-y-auto p-4">
-              <button
+              {clusterInfo.clusterId !== null && <button
                 type="button"
                 onClick={() => {
                   const map = mapRef.current?.getMap();
-                  if (!map) return;
+                  if (!map || clusterInfo.clusterId === null) return;
                   const source = map.getSource(`world-tours-${clusterInfo.countryName}`) as unknown as {
                     getClusterExpansionZoom: (id: number, cb: (err: Error | null, zoom: number) => void) => void;
                   };
@@ -445,7 +467,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
                 className="mb-4 inline-flex items-center justify-center rounded-full border border-[#167fd5] bg-white px-4 py-2 text-sm font-semibold text-[#167fd5] transition hover:bg-[#edf6fd]"
               >
                 Zoom in
-              </button>
+              </button>}
               <div className="space-y-4">
                 {clusterInfo.tours.map((item) => {
                   const ytId = getYoutubeId(item.youtubeUrl);
@@ -476,6 +498,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
                         <h4 className="mt-2 text-base font-bold text-[#2f261d]">
                           {getDisplayTitle(item.title)}
                         </h4>
+                        <LocationNote tour={item} />
                         <div className="mt-2 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#9a7a52]">
                           <span className="rounded-full border border-[#eadfce] bg-white px-3 py-1">
                             {formatVideoType(item.videoType)}
@@ -550,6 +573,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
                     <p className="mt-1 text-xs text-[#8a7a68]">
                       {item.city}, {item.country}
                     </p>
+                    <LocationNote tour={item} />
                     <WorldTourWatchLink
                       tour={item}
                       className="mt-1 inline-block text-xs font-semibold text-[#167fd5]"

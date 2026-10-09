@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Tsukiji Outer Fish Market Walking Tour Map - Prowalk Tours</name>
+    <description><![CDATA[Video Link: https://youtu.be/_9n0CX6nF2g<br>Tuesday<br>April 2nd, 2024<br>Prowalk Tours<br>www.prowalks.com<br>🌎Complete List of Walks: http://www.prowalks.com/videos 🌎<br>📢 𝗦𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲 📢 - https://www.youtube.com/c/ProWalks?sub_confirmation=1<br>🔷 Help with a donation!   -   https://www.paypal.me/Prowalks 🔷]]></description>
+    <Style id="icon-1500-E65100-nodesc-normal">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1500-E65100-nodesc-highlight">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1500-E65100-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1500-E65100-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1500-E65100-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1596-558B2F-nodesc-normal">
+      <IconStyle>
+        <color>ff2f8b55</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1596-558B2F-nodesc-highlight">
+      <IconStyle>
+        <color>ff2f8b55</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1596-558B2F-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1596-558B2F-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1596-558B2F-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-0288D1-nodesc-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-0288D1-nodesc-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1899-0288D1-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-FFD600-5844-nodesc-normal">
+      <LineStyle>
+        <color>ff00d6ff</color>
+        <width>5.844</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="line-FFD600-5844-nodesc-highlight">
+      <LineStyle>
+        <color>ff00d6ff</color>
+        <width>8.766</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="line-FFD600-5844-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-FFD600-5844-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-FFD600-5844-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Walking Route</name>
+      <Placemark>
+        <name>Start</name>
+        <styleUrl>#icon-1596-558B2F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            139.7706288,35.6664392,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Line 2</name>
+        <styleUrl>#line-FFD600-5844-nodesc</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            139.7706476,35.6664239,0
+            139.770889,35.666182,0
+            139.7697276,35.6653017,0
+            139.7700548,35.6650075,0
+            139.7708568,35.6656307,0
+            139.7702694,35.6661559,0
+            139.7694808,35.6655174,0
+            139.769686,35.6653185,0
+            139.7697732,35.6652268,0
+            139.7696981,35.6651633,0
+            139.7698228,35.6650494,0
+            139.7699107,35.6651047,0
+            139.770036,35.6649988,0
+            139.770374,35.6646871,0
+            139.7715193,35.665574,0
+            139.7719967,35.665075,0
+            139.7715971,35.6647765,0
+            139.7719699,35.6644474,0
+            139.7719136,35.66443,0
+            139.7715461,35.6647525,0
+            139.7708702,35.6642448,0
+            139.7714549,35.663737,0
+            139.7714388,35.6636608,0
+            139.7715247,35.6635932,0
+            139.771471,35.6635474,0
+            139.7713745,35.6636324,0
+            139.7713798,35.6637022,0
+            139.7707817,35.6642535,0
+            139.7700924,35.6648985,0
+            139.7694513,35.6654956,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>1. Tsukiji Nishi-dori 2:10</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            139.7708581,35.6661654,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>2. Namiyoke-dori Ave. 11:20</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            139.7697423,35.6652872,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>3. Tsukiji Naka-dori 17:16</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            139.7700915,35.6650449,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>4. Tsukiji Yokocho St. 24:12</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            139.7708103,35.6656725,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>5. Monzeki-dori 29:48</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            139.7702444,35.6661432,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>6. Namiyoke-dori Ave. 33:07</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            139.7695202,35.6654764,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>7. Tsukiji Higashi-dori 39:36</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            139.7704322,35.6647309,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>8. Harumi-dori Ave. 45:47</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            139.7715533,35.6655306,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>9. Namiyoke-dori Ave. 50:50</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            139.7709029,35.6642195,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>10. Namiyoke Shrine 52:27</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            139.771442,35.6636049,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>End</name>
+        <styleUrl>#icon-1500-E65100-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            139.7694513,35.6654956,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,3432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Prowalk Tours - Complete List</name>
+    <description><![CDATA[Click on the links below to view a walking tour and map of each location. <br>If there is no video, then I have not uploaded the walk to Youtube yet. ]]></description>
+    <Style id="icon-1727-000000-normal">
+      <IconStyle>
+        <color>ff000000</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1727-000000-highlight">
+      <IconStyle>
+        <color>ff000000</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1727-000000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1727-000000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1727-000000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1727-0288D1-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1727-0288D1-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1727-0288D1">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1727-0288D1-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1727-0288D1-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1727-0288D1-nodesc-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1727-0288D1-nodesc-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1727-0288D1-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1727-0288D1-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1727-0288D1-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1727-795548-normal">
+      <IconStyle>
+        <color>ff485579</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1727-795548-highlight">
+      <IconStyle>
+        <color>ff485579</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1727-795548">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1727-795548-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1727-795548-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1727-9C27B0-normal">
+      <IconStyle>
+        <color>ffb0279c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1727-9C27B0-highlight">
+      <IconStyle>
+        <color>ffb0279c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1727-9C27B0">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1727-9C27B0-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1727-9C27B0-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1727-E65100-normal">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1727-E65100-highlight">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1727-E65100">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1727-E65100-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1727-E65100-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1727-E65100-nodesc-normal">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1727-E65100-nodesc-highlight">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1727-E65100-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1727-E65100-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1727-E65100-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1727-FFEA00-normal">
+      <IconStyle>
+        <color>ff00eaff</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1727-FFEA00-highlight">
+      <IconStyle>
+        <color>ff00eaff</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1727-FFEA00">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1727-FFEA00-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1727-FFEA00-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1727-FFEA00-nodesc-normal">
+      <IconStyle>
+        <color>ff00eaff</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1727-FFEA00-nodesc-highlight">
+      <IconStyle>
+        <color>ff00eaff</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1727-FFEA00-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1727-FFEA00-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1727-FFEA00-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-FFEA00-normal">
+      <IconStyle>
+        <color>ff00eaff</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-FFEA00-highlight">
+      <IconStyle>
+        <color>ff00eaff</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-FFEA00">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-FFEA00-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-FFEA00-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Italy Walking Tours</name>
+      <Placemark>
+        <name>Naples - 2/11/2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=ljudH28fomA"><img src="https://img.youtube.com/vi/ljudH28fomA/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/ljudH28fomA">https://www.youtube.com/embed/ljudH28fomA</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/ljudH28fomA</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2680608,40.8521952,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Path of the Gods (East to West)</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=Ka0sobyX2nA"><img src="https://img.youtube.com/vi/Ka0sobyX2nA/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/Ka0sobyX2nA">https://www.youtube.com/embed/Ka0sobyX2nA</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/Ka0sobyX2nA</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.5347879,40.6250424,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Path of the Gods (West to East)</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=ZkLXPYrgGtg"><img src="https://img.youtube.com/vi/ZkLXPYrgGtg/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/ZkLXPYrgGtg">https://www.youtube.com/embed/ZkLXPYrgGtg</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/ZkLXPYrgGtg</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.5036313,40.6290161,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Naples - Spanish Quarter - 2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=iY4xoXlrTc8"><img src="https://img.youtube.com/vi/iY4xoXlrTc8/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/iY4xoXlrTc8">https://www.youtube.com/embed/iY4xoXlrTc8</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/iY4xoXlrTc8</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2462092,40.8415591,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Sant'Agata de'Goti - 7/2017]]></name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=ba7riTFW8d8"><img src="https://img.youtube.com/vi/ba7riTFW8d8/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/ba7riTFW8d8">https://www.youtube.com/embed/ba7riTFW8d8</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/ba7riTFW8d8</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.5010571,41.0894132,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Paestum Greek Ruins - 8/2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=-jfLIQa2IYI"><img src="https://img.youtube.com/vi/-jfLIQa2IYI/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/-jfLIQa2IYI">https://www.youtube.com/embed/-jfLIQa2IYI</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/-jfLIQa2IYI</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            15.0049694,40.4212476,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Caserta Palace - 8/12/2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=IyVkAcwZ8fE"><img src="https://img.youtube.com/vi/IyVkAcwZ8fE/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/IyVkAcwZ8fE">https://www.youtube.com/embed/IyVkAcwZ8fE</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/IyVkAcwZ8fE</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.327814,41.0816282,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mt. Vesuvius - 8/14/2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=SQO2ATOPDZc"><img src="https://img.youtube.com/vi/SQO2ATOPDZc/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/SQO2ATOPDZc">https://www.youtube.com/embed/SQO2ATOPDZc</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/SQO2ATOPDZc</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.4289241,40.8230414,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Procida - 8/2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=YklUi-ux6IA"><img src="https://img.youtube.com/vi/YklUi-ux6IA/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/YklUi-ux6IA">https://www.youtube.com/embed/YklUi-ux6IA</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/YklUi-ux6IA</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.028788,40.7641632,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>The Colosseum - 9/23/2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=eJeF7hDB0UA"><img src="https://img.youtube.com/vi/eJeF7hDB0UA/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/eJeF7hDB0UA">https://www.youtube.com/embed/eJeF7hDB0UA</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/eJeF7hDB0UA</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.4920629,41.8902741,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Palatine Hill - 9/23/2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=JeApHXIiLbo"><img src="https://img.youtube.com/vi/JeApHXIiLbo/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/JeApHXIiLbo">https://www.youtube.com/embed/JeApHXIiLbo</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/JeApHXIiLbo</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.4869313,41.8887847,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Flavian Amphitheater - 9/24/2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=JUjvzHBUoGc"><img src="https://img.youtube.com/vi/JUjvzHBUoGc/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/JUjvzHBUoGc">https://www.youtube.com/embed/JUjvzHBUoGc</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/JUjvzHBUoGc</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.125393,40.8260494,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pozzuoli - 9/30/2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=yb1a5bXSlTo"><img src="https://img.youtube.com/vi/yb1a5bXSlTo/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/yb1a5bXSlTo">https://www.youtube.com/embed/yb1a5bXSlTo</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/yb1a5bXSlTo</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.1184804,40.8266754,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capua Amphitheater  - 10/8/2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=5HvLJmV-Dw4"><img src="https://img.youtube.com/vi/5HvLJmV-Dw4/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/5HvLJmV-Dw4">https://www.youtube.com/embed/5HvLJmV-Dw4</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/5HvLJmV-Dw4</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2500509,41.0859266,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Roman Forum - 10/7/2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=k4P5W1DKTBI"><img src="https://img.youtube.com/vi/k4P5W1DKTBI/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/k4P5W1DKTBI">https://www.youtube.com/embed/k4P5W1DKTBI</a><br><br>Map: http://www.shorturl.at/kmwCQ]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/k4P5W1DKTBI</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.4869531,41.8915662,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Roman Forum - 10/7/2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=hWHr-RlJqWU"><img src="https://img.youtube.com/vi/hWHr-RlJqWU/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/hWHr-RlJqWU">https://www.youtube.com/embed/hWHr-RlJqWU</a><br><br>Map: http://www.shorturl.at/kmwCQ]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/hWHr-RlJqWU</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.4878297,41.8908575,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[St. Peter's Basilica - 10/21/2017]]></name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=0B54PR2kvWE"><img src="https://img.youtube.com/vi/0B54PR2kvWE/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/0B54PR2kvWE">https://www.youtube.com/embed/0B54PR2kvWE</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/0B54PR2kvWE</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.4568663,41.9023095,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pompeii 1 - 11/4/2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=gaJPcKLyXLQ"><img src="https://img.youtube.com/vi/gaJPcKLyXLQ/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/gaJPcKLyXLQ">https://www.youtube.com/embed/gaJPcKLyXLQ</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/gaJPcKLyXLQ</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.4856025,40.7483347,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pompeii 2 - 11/4/2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=SoXIbF4etSw"><img src="https://img.youtube.com/vi/SoXIbF4etSw/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/SoXIbF4etSw">https://www.youtube.com/embed/SoXIbF4etSw</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/SoXIbF4etSw</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.4852163,40.7490824,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pompeii 3 - 11/4/2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=tMvnWHvHLrs"><img src="https://img.youtube.com/vi/tMvnWHvHLrs/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/tMvnWHvHLrs">https://www.youtube.com/embed/tMvnWHvHLrs</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/tMvnWHvHLrs</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.4847871,40.7497814,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pompeii 4 - 11/4/2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=9gfhCXa7E30"><img src="https://img.youtube.com/vi/9gfhCXa7E30/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/9gfhCXa7E30">https://www.youtube.com/embed/9gfhCXa7E30</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/9gfhCXa7E30</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.4841648,40.7507893,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pompeii 5 - 11/4/2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=KJF_0-ihALs"><img src="https://img.youtube.com/vi/KJF_0-ihALs/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/KJF_0-ihALs">https://www.youtube.com/embed/KJF_0-ihALs</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/KJF_0-ihALs</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.4836928,40.7513745,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pompeii 6 - 11/4/2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=91kdMglbv78"><img src="https://img.youtube.com/vi/91kdMglbv78/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/91kdMglbv78">https://www.youtube.com/embed/91kdMglbv78</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/91kdMglbv78</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.4832636,40.7520735,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sassesto Forest - 12/3/2017</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=PgKiEheXoqA"><img src="https://img.youtube.com/vi/PgKiEheXoqA/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/PgKiEheXoqA">https://www.youtube.com/embed/PgKiEheXoqA</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/PgKiEheXoqA</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            11.9464071,42.7596487,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Amalfi - 2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=ougQYMEic3k"><img src="https://img.youtube.com/vi/ougQYMEic3k/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/ougQYMEic3k">https://www.youtube.com/embed/ougQYMEic3k</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/ougQYMEic3k</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.6027466,40.6335083,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sorrento Walking Tour 2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=TzjxFCqT-40"><img src="https://img.youtube.com/vi/TzjxFCqT-40/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/TzjxFCqT-40">https://www.youtube.com/embed/TzjxFCqT-40</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/TzjxFCqT-40</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.3756657,40.6265269,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Herculaneum - 1/6/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=eXkpFnF7ovY"><img src="https://img.youtube.com/vi/eXkpFnF7ovY/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/eXkpFnF7ovY">https://www.youtube.com/embed/eXkpFnF7ovY</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/eXkpFnF7ovY</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.3465721,40.8056259,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Aversa (Night) - 1/27/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=DXVgSjUVIwE"><img src="https://img.youtube.com/vi/DXVgSjUVIwE/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/DXVgSjUVIwE">https://www.youtube.com/embed/DXVgSjUVIwE</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/DXVgSjUVIwE</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2065199,40.969445,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Aversa (Day) - 1/28/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=C99feskJLS8"><img src="https://img.youtube.com/vi/C99feskJLS8/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/C99feskJLS8">https://www.youtube.com/embed/C99feskJLS8</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/C99feskJLS8</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2081936,40.9694774,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rome 3/24/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=vK928kqYUPI"><img src="https://img.youtube.com/vi/vK928kqYUPI/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/vK928kqYUPI">https://www.youtube.com/embed/vK928kqYUPI</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/vK928kqYUPI</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.5016841,41.9006799,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Positano - 5/12/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=uj2OCe-4XC0"><img src="https://img.youtube.com/vi/uj2OCe-4XC0/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/uj2OCe-4XC0">https://www.youtube.com/embed/uj2OCe-4XC0</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/uj2OCe-4XC0</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.4870015,40.6278329,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sermoneta - 5/27/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=HPAAtxin4kI"><img src="https://img.youtube.com/vi/HPAAtxin4kI/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/HPAAtxin4kI">https://www.youtube.com/embed/HPAAtxin4kI</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/HPAAtxin4kI</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.985192,41.5491271,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ponza (7pm) - 6/22/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=3FrvtihiLJk"><img src="https://img.youtube.com/vi/3FrvtihiLJk/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/3FrvtihiLJk">https://www.youtube.com/embed/3FrvtihiLJk</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/3FrvtihiLJk</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.9606433,40.8941432,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ponza (10pm) - 6/22/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=8wYWSz_azdM"><img src="https://img.youtube.com/vi/8wYWSz_azdM/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/8wYWSz_azdM">https://www.youtube.com/embed/8wYWSz_azdM</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/8wYWSz_azdM</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.9598279,40.8951326,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ponza (7am) - 6/23/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=UMVJxk98lzI"><img src="https://img.youtube.com/vi/UMVJxk98lzI/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/UMVJxk98lzI">https://www.youtube.com/embed/UMVJxk98lzI</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/UMVJxk98lzI</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.9632182,40.8938999,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ponza (10am) - June 23, 2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=TGgTcCfNHww"><img src="https://img.youtube.com/vi/TGgTcCfNHww/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/TGgTcCfNHww">https://www.youtube.com/embed/TGgTcCfNHww</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/TGgTcCfNHww</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.9657931,40.8951326,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ischia 1 - 9/15/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=6Cym0DxM2xM"><img src="https://img.youtube.com/vi/6Cym0DxM2xM/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/6Cym0DxM2xM">https://www.youtube.com/embed/6Cym0DxM2xM</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/6Cym0DxM2xM</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.9390833,40.743207,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ischia 2 - 9/15/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=WGnrP5QctkI"><img src="https://img.youtube.com/vi/WGnrP5QctkI/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/WGnrP5QctkI">https://www.youtube.com/embed/WGnrP5QctkI</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/WGnrP5QctkI</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.9473177,40.7433817,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ischia 3 - 9/15/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=16T6Do7XXsQ"><img src="https://img.youtube.com/vi/16T6Do7XXsQ/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/16T6Do7XXsQ">https://www.youtube.com/embed/16T6Do7XXsQ</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/16T6Do7XXsQ</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.9651504,40.7316879,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ischia 4 - 9/15/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=haUtQc2yPdk"><img src="https://img.youtube.com/vi/haUtQc2yPdk/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/haUtQc2yPdk">https://www.youtube.com/embed/haUtQc2yPdk</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/haUtQc2yPdk</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.9555374,40.7360656,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ischia 5 - 9/15/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=t4Ootyavh0A"><img src="https://img.youtube.com/vi/t4Ootyavh0A/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/t4Ootyavh0A">https://www.youtube.com/embed/t4Ootyavh0A</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/t4Ootyavh0A</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.9504561,40.740249,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Positano - 9/22/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=lpo62RjldVA"><img src="https://img.youtube.com/vi/lpo62RjldVA/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/lpo62RjldVA">https://www.youtube.com/embed/lpo62RjldVA</a><br><br>Map: https://shorturl.at/tN039]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/lpo62RjldVA</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.4858303,40.6301509,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sant Angelo - 9/29/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=J4ZGR3FfH2c"><img src="https://img.youtube.com/vi/J4ZGR3FfH2c/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/J4ZGR3FfH2c">https://www.youtube.com/embed/J4ZGR3FfH2c</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/J4ZGR3FfH2c</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.892876,40.6963326,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capri Faraglioni Rocks - 10/12/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=c6O0DAE3NMo"><img src="https://img.youtube.com/vi/c6O0DAE3NMo/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/c6O0DAE3NMo">https://www.youtube.com/embed/c6O0DAE3NMo</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/c6O0DAE3NMo</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2529466,40.5430799,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capri Villa Jovis - 10/12/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=JMGL5yRDXp4"><img src="https://img.youtube.com/vi/JMGL5yRDXp4/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/JMGL5yRDXp4">https://www.youtube.com/embed/JMGL5yRDXp4</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/JMGL5yRDXp4</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2620145,40.5581164,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capri Arch Trail - 10/12/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=kv0CwdSGb_A"><img src="https://img.youtube.com/vi/kv0CwdSGb_A/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/kv0CwdSGb_A">https://www.youtube.com/embed/kv0CwdSGb_A</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/kv0CwdSGb_A</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2575386,40.5487705,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capri 1 - 10/13/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=T0XVmsd7Z7A"><img src="https://img.youtube.com/vi/T0XVmsd7Z7A/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/T0XVmsd7Z7A">https://www.youtube.com/embed/T0XVmsd7Z7A</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/T0XVmsd7Z7A</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2405835,40.5554294,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capri 2 - 10/13/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=0HQTXioQkfU"><img src="https://img.youtube.com/vi/0HQTXioQkfU/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/0HQTXioQkfU">https://www.youtube.com/embed/0HQTXioQkfU</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/0HQTXioQkfU</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2426949,40.5508165,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capri 3 - 10/12/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=XTw5yMxVuzw"><img src="https://img.youtube.com/vi/XTw5yMxVuzw/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/XTw5yMxVuzw">https://www.youtube.com/embed/XTw5yMxVuzw</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/XTw5yMxVuzw</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2501069,40.5453661,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capri Chair Lift - 10/13/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=o4W6s9XJlDQ"><img src="https://img.youtube.com/vi/o4W6s9XJlDQ/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/o4W6s9XJlDQ">https://www.youtube.com/embed/o4W6s9XJlDQ</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/o4W6s9XJlDQ</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2223121,40.5506436,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capri Hike 1 - 10/13/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=u1DXzDTkysg"><img src="https://img.youtube.com/vi/u1DXzDTkysg/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/u1DXzDTkysg">https://www.youtube.com/embed/u1DXzDTkysg</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/u1DXzDTkysg</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2231989,40.5465125,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capri Hike 2 - 10/13/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=iLBzilHVNxo"><img src="https://img.youtube.com/vi/iLBzilHVNxo/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/iLBzilHVNxo">https://www.youtube.com/embed/iLBzilHVNxo</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/iLBzilHVNxo</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2269756,40.5557082,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capri Via Tiberio - 10/13/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=t9STwl3BuZk"><img src="https://img.youtube.com/vi/t9STwl3BuZk/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/t9STwl3BuZk">https://www.youtube.com/embed/t9STwl3BuZk</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/t9STwl3BuZk</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2547984,40.5542462,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capri Gardens of Augustus - 10/14/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=hJG9aZuAkNU"><img src="https://img.youtube.com/vi/hJG9aZuAkNU/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/hJG9aZuAkNU">https://www.youtube.com/embed/hJG9aZuAkNU</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/hJG9aZuAkNU</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2431925,40.5473417,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capri Phoenician Steps - 10/14/2018</name>
+        <styleUrl>#icon-1727-FFEA00-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            14.227934,40.5564581,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Civita di Bagnoregio - 11/10/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=oEB3BBiIe3c"><img src="https://img.youtube.com/vi/oEB3BBiIe3c/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/oEB3BBiIe3c">https://www.youtube.com/embed/oEB3BBiIe3c</a><br><br>Map: https://www.shorturl.at/divVY]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/oEB3BBiIe3c</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.112617,42.6276372,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Naples Christmas Markets - 12/8/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=DFV7o07zsGQ"><img src="https://img.youtube.com/vi/DFV7o07zsGQ/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/DFV7o07zsGQ">https://www.youtube.com/embed/DFV7o07zsGQ</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/DFV7o07zsGQ</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2518372,40.8471433,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Venice 1 - 12/16/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=hjVl6yutTPk"><img src="https://img.youtube.com/vi/hjVl6yutTPk/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/hjVl6yutTPk">https://www.youtube.com/embed/hjVl6yutTPk</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/hjVl6yutTPk</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.3146435,45.4447394,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Venice 2 - 12/16/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=84NASdlG7JY"><img src="https://img.youtube.com/vi/84NASdlG7JY/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/84NASdlG7JY">https://www.youtube.com/embed/84NASdlG7JY</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/84NASdlG7JY</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.3216817,45.4478105,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Venice 3 - 12/16/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=n0_SXJ4eQ_o"><img src="https://img.youtube.com/vi/n0_SXJ4eQ_o/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/n0_SXJ4eQ_o">https://www.youtube.com/embed/n0_SXJ4eQ_o</a><br><br>]]></description>
+        <styleUrl>#icon-1899-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/n0_SXJ4eQ_o</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.3295781,45.4476299,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Venice 4 - 12/16/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=n0_SXJ4eQ_o"><img src="https://img.youtube.com/vi/n0_SXJ4eQ_o/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/n0_SXJ4eQ_o">https://www.youtube.com/embed/n0_SXJ4eQ_o</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/n0_SXJ4eQ_o</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.3347279,45.445703,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Venice 5 - 12/16/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=PGvkZOfp-Cw"><img src="https://img.youtube.com/vi/PGvkZOfp-Cw/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/PGvkZOfp-Cw">https://www.youtube.com/embed/PGvkZOfp-Cw</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/PGvkZOfp-Cw</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.3415944,45.4420898,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Venice 6 - 12/18/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=7QMD4A9vaUQ"><img src="https://img.youtube.com/vi/7QMD4A9vaUQ/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/7QMD4A9vaUQ">https://www.youtube.com/embed/7QMD4A9vaUQ</a><br><br>...and 2/9/2019]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/7QMD4A9vaUQ</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.3488041,45.438356,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Venice (Night) - 12/16/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=EwIigsXdjfs"><img src="https://img.youtube.com/vi/EwIigsXdjfs/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/EwIigsXdjfs">https://www.youtube.com/embed/EwIigsXdjfs</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/EwIigsXdjfs</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.3364034,45.4389581,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Murano - 12/17/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=h9ovlrJ6ba8"><img src="https://img.youtube.com/vi/h9ovlrJ6ba8/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/h9ovlrJ6ba8">https://www.youtube.com/embed/h9ovlrJ6ba8</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/h9ovlrJ6ba8</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.3543762,45.4528606,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Burano 12/17/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=E6_JLRwoTqw"><img src="https://img.youtube.com/vi/E6_JLRwoTqw/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/E6_JLRwoTqw">https://www.youtube.com/embed/E6_JLRwoTqw</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/E6_JLRwoTqw</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.4163832,45.4873376,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pisa 12/28/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=9Hqzz84U0-M"><img src="https://img.youtube.com/vi/9Hqzz84U0-M/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/9Hqzz84U0-M">https://www.youtube.com/embed/9Hqzz84U0-M</a><br><br>Map: http://www.shorturl.at/hlCKU]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/9Hqzz84U0-M</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            10.396438,43.7229828,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Florence (Night) - 12/29/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=5fAr9Oc9xh8"><img src="https://img.youtube.com/vi/5fAr9Oc9xh8/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/5fAr9Oc9xh8">https://www.youtube.com/embed/5fAr9Oc9xh8</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/5fAr9Oc9xh8</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            11.2574536,43.7728016,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rome 8am - 1/6/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=x-Cgkgj5KR0"><img src="https://img.youtube.com/vi/x-Cgkgj5KR0/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/x-Cgkgj5KR0">https://www.youtube.com/embed/x-Cgkgj5KR0</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/x-Cgkgj5KR0</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.4827199,41.9059919,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Piazza Navona - 1/6/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=8VoZDct2OwI"><img src="https://img.youtube.com/vi/8VoZDct2OwI/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/8VoZDct2OwI">https://www.youtube.com/embed/8VoZDct2OwI</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/8VoZDct2OwI</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.4731623,41.8989319,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Garden of Ninfa 4/7/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=gr6NflJhcJo"><img src="https://img.youtube.com/vi/gr6NflJhcJo/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/gr6NflJhcJo">https://www.youtube.com/embed/gr6NflJhcJo</a><br><br>Map: shorturl.at/bjpzE]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/gr6NflJhcJo</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.9545914,41.5814758,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Paestum - 5/23/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=D9Fod_S9Ruo"><img src="https://img.youtube.com/vi/D9Fod_S9Ruo/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/D9Fod_S9Ruo">https://www.youtube.com/embed/D9Fod_S9Ruo</a><br><br>Map: http://www.shorturl.at/cemqI]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/D9Fod_S9Ruo</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            15.0049074,40.4236689,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Anacapri - 6/8/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=zaEpFAcjkxo"><img src="https://img.youtube.com/vi/zaEpFAcjkxo/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/zaEpFAcjkxo">https://www.youtube.com/embed/zaEpFAcjkxo</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/zaEpFAcjkxo</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2211275,40.5558562,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Villa San Michele 6/8/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=pmgDn7s6oDQ"><img src="https://img.youtube.com/vi/pmgDn7s6oDQ/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/pmgDn7s6oDQ">https://www.youtube.com/embed/pmgDn7s6oDQ</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/pmgDn7s6oDQ</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2248853,40.557189,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Island of Procida - 6/23/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=3ewiolpn-JQ"><img src="https://img.youtube.com/vi/3ewiolpn-JQ/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/3ewiolpn-JQ">https://www.youtube.com/embed/3ewiolpn-JQ</a><br><br>Map: https://www.shorturl.at/atwPY]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/3ewiolpn-JQ</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.0265815,40.7656555,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Path of the Gods - 6/27/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=b0zbifs2gRM"><img src="https://img.youtube.com/vi/b0zbifs2gRM/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/b0zbifs2gRM">https://www.youtube.com/embed/b0zbifs2gRM</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/b0zbifs2gRM</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.523911,40.627241,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Matera - 6/28/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=CvnroN73Le8"><img src="https://img.youtube.com/vi/CvnroN73Le8/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/CvnroN73Le8">https://www.youtube.com/embed/CvnroN73Le8</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/CvnroN73Le8</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            16.6060916,40.6673477,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Polignano a Mare - 6/29/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=EBxw4VkKwjw"><img src="https://img.youtube.com/vi/EBxw4VkKwjw/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/EBxw4VkKwjw">https://www.youtube.com/embed/EBxw4VkKwjw</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/EBxw4VkKwjw</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            17.2180429,40.9963115,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Castel dell'Ovo - 7/1/2019]]></name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=Af8lGDOR7FU"><img src="https://img.youtube.com/vi/Af8lGDOR7FU/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/Af8lGDOR7FU">https://www.youtube.com/embed/Af8lGDOR7FU</a><br><br>Map: http://www.shorturl.at/pstBJ]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/Af8lGDOR7FU</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2485434,40.8278072,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Assisi - 7/2/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=KvtrEO3mKow"><img src="https://img.youtube.com/vi/KvtrEO3mKow/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/KvtrEO3mKow">https://www.youtube.com/embed/KvtrEO3mKow</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/KvtrEO3mKow</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.6184444,43.0701803,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Florence (short) - 7/3/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=0vwcddEiRQs"><img src="https://img.youtube.com/vi/0vwcddEiRQs/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/0vwcddEiRQs">https://www.youtube.com/embed/0vwcddEiRQs</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/0vwcddEiRQs</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            11.2553003,43.7733397,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Florence (long) - 7/3/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=AqFLqzHAgzA"><img src="https://img.youtube.com/vi/AqFLqzHAgzA/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/AqFLqzHAgzA">https://www.youtube.com/embed/AqFLqzHAgzA</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/AqFLqzHAgzA</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            11.2483666,43.7765897,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Assisi (Morning) - 7/4/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=hSJ-6ZvHA6M"><img src="https://img.youtube.com/vi/hSJ-6ZvHA6M/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/hSJ-6ZvHA6M">https://www.youtube.com/embed/hSJ-6ZvHA6M</a><br><br>Map: http://www.shorturl.at/bilHW]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/hSJ-6ZvHA6M</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.6056127,43.0745692,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pitigliano - 7/4/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=lV-Wu4hBqEg"><img src="https://img.youtube.com/vi/lV-Wu4hBqEg/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/lV-Wu4hBqEg">https://www.youtube.com/embed/lV-Wu4hBqEg</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/lV-Wu4hBqEg</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            11.6699254,42.6347036,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Amalfi Coast Driving Tour - 9/7/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=vL3tziOxNC8"><img src="https://img.youtube.com/vi/vL3tziOxNC8/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/vL3tziOxNC8">https://www.youtube.com/embed/vL3tziOxNC8</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/vL3tziOxNC8</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.4279996,40.6174886,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Amalfi Coast 360 - 9/7/2019</name>
+        <styleUrl>#icon-1727-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            14.4527912,40.6220698,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Amalfi 360 - 9/7/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=G4BrczBZAXY"><img src="https://img.youtube.com/vi/G4BrczBZAXY/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/G4BrczBZAXY">https://www.youtube.com/embed/G4BrczBZAXY</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/G4BrczBZAXY</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.6020858,40.6347214,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Positano - 9/14/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=lPtzAPFsdls"><img src="https://img.youtube.com/vi/lPtzAPFsdls/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/lPtzAPFsdls">https://www.youtube.com/embed/lPtzAPFsdls</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/lPtzAPFsdls</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.4900511,40.6279125,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Positano 360 - 9/14/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=FZL0ynym3DI"><img src="https://img.youtube.com/vi/FZL0ynym3DI/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/FZL0ynym3DI">https://www.youtube.com/embed/FZL0ynym3DI</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/FZL0ynym3DI</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.4867145,40.6283888,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Naples 360 - 9/21/2019</name>
+        <styleUrl>#icon-1727-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            14.267856,40.8497955,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Naples Fish Market - 9/21/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=eaet6G10FDo"><img src="https://img.youtube.com/vi/eaet6G10FDo/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/eaet6G10FDo">https://www.youtube.com/embed/eaet6G10FDo</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/eaet6G10FDo</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2677261,40.850319,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Naples Historic Center - 9/21/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=c5Ha5LUiNZY"><img src="https://img.youtube.com/vi/c5Ha5LUiNZY/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/c5Ha5LUiNZY">https://www.youtube.com/embed/c5Ha5LUiNZY</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/c5Ha5LUiNZY</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2530274,40.8476719,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Naples 360 - 9/21/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=jJk5e2Gsyy4"><img src="https://img.youtube.com/vi/jJk5e2Gsyy4/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/jJk5e2Gsyy4">https://www.youtube.com/embed/jJk5e2Gsyy4</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/jJk5e2Gsyy4</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2549987,40.8483482,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Pignasecca Market & Via Toledo - 10/12/2019]]></name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=J2U9qbk1l8M"><img src="https://img.youtube.com/vi/J2U9qbk1l8M/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/J2U9qbk1l8M">https://www.youtube.com/embed/J2U9qbk1l8M</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/J2U9qbk1l8M</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2476737,40.8463977,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ravello - 10/19/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=EGugufam8p4"><img src="https://img.youtube.com/vi/EGugufam8p4/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/EGugufam8p4">https://www.youtube.com/embed/EGugufam8p4</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/EGugufam8p4</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.611946,40.6509656,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Fontanelle Cemetery - 10/29/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=xYmaWdxi_Zs"><img src="https://img.youtube.com/vi/xYmaWdxi_Zs/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/xYmaWdxi_Zs">https://www.youtube.com/embed/xYmaWdxi_Zs</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/xYmaWdxi_Zs</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.238732,40.8586676,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Resina Market - 11/23/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=AiCtaSNuzxw"><img src="https://img.youtube.com/vi/AiCtaSNuzxw/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/AiCtaSNuzxw">https://www.youtube.com/embed/AiCtaSNuzxw</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/AiCtaSNuzxw</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.3516454,40.8117919,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Limatola Castle - 12/8/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=3bL2f6NRbYA"><img src="https://img.youtube.com/vi/3bL2f6NRbYA/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/3bL2f6NRbYA">https://www.youtube.com/embed/3bL2f6NRbYA</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/3bL2f6NRbYA</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.3910146,41.1391095,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Naples (Night) - 12/14/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=ekvwB-pMzV4"><img src="https://img.youtube.com/vi/ekvwB-pMzV4/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/ekvwB-pMzV4">https://www.youtube.com/embed/ekvwB-pMzV4</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/ekvwB-pMzV4</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2494144,40.8465743,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pompeii 360 - 2/8/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=d4flx14q5OE"><img src="https://img.youtube.com/vi/d4flx14q5OE/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/d4flx14q5OE">https://www.youtube.com/embed/d4flx14q5OE</a><br><br>]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/d4flx14q5OE</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.4869438,40.7510575,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pompeii - 2/8/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=sUYJ8LbF1Ys"><img src="https://img.youtube.com/vi/sUYJ8LbF1Ys/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/sUYJ8LbF1Ys">https://www.youtube.com/embed/sUYJ8LbF1Ys</a><br><br>Map: https://www.shorturl.at/frFKW]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/sUYJ8LbF1Ys</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.4824053,40.7484078,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Naples Waterfront 2/16/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=GK8VQPRnA1s"><img src="https://img.youtube.com/vi/GK8VQPRnA1s/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/GK8VQPRnA1s">https://www.youtube.com/embed/GK8VQPRnA1s</a><br><br>Map: https://www.shorturl.at/novBZ]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/GK8VQPRnA1s</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2204667,40.8259846,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Herculaneum 360 - 2/22/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=_Y277FddmD4"><img src="https://img.youtube.com/vi/_Y277FddmD4/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/_Y277FddmD4">https://www.youtube.com/embed/_Y277FddmD4</a><br><br>Map of the Walk: http://www.shorturl.at/jlqOW]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/_Y277FddmD4</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.3476707,40.8058451,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Naples Bike Tour - 5/23/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=IHXZnU2bmc8"><img src="https://img.youtube.com/vi/IHXZnU2bmc8/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/IHXZnU2bmc8">https://www.youtube.com/embed/IHXZnU2bmc8</a><br><br>Map of the Ride - https://shorturl.at/nBKTV]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/IHXZnU2bmc8</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2556517,40.8439009,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Procida Bike Tour - 5/31/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=_gcrpo8qBx8"><img src="https://img.youtube.com/vi/_gcrpo8qBx8/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/_gcrpo8qBx8">https://www.youtube.com/embed/_gcrpo8qBx8</a><br><br>Map of the Walk - https://shorturl.at/fqzL1]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/_gcrpo8qBx8</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.0279537,40.761657,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capri Biking Tour - 6/11/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=qzYx6vcs-2o"><img src="https://img.youtube.com/vi/qzYx6vcs-2o/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/qzYx6vcs-2o">https://www.youtube.com/embed/qzYx6vcs-2o</a><br><br>Map of the Walk - https://shorturl.at/eqAOY]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/qzYx6vcs-2o</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2397654,40.5576403,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tiber River Ride - 6/6/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=GXTW_mIC2po"><img src="https://img.youtube.com/vi/GXTW_mIC2po/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/GXTW_mIC2po">https://www.youtube.com/embed/GXTW_mIC2po</a><br><br>Map of the Walk - https://shorturl.at/gzFNR]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/GXTW_mIC2po</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.4706264,41.8922783,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Agropoli - 7/11/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=NJFZtpqdtE0"><img src="https://img.youtube.com/vi/NJFZtpqdtE0/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/NJFZtpqdtE0">https://www.youtube.com/embed/NJFZtpqdtE0</a><br><br>Map of the Walk - https://shorturl.at/rtLQ7]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/NJFZtpqdtE0</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.9931872,40.3491102,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sorrento (Day) - 7/12/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=WPIuF0-evxo"><img src="https://img.youtube.com/vi/WPIuF0-evxo/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/WPIuF0-evxo">https://www.youtube.com/embed/WPIuF0-evxo</a><br><br>Map of the Walk - https://shorturl.at/rLO24 ]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/WPIuF0-evxo</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.372354,40.6253645,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sorrento (Night) - 7/12/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=jd5xjDJHsI8"><img src="https://img.youtube.com/vi/jd5xjDJHsI8/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/jd5xjDJHsI8">https://www.youtube.com/embed/jd5xjDJHsI8</a><br><br>Map of the Walk - https://shorturl.at/rsD59]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/jd5xjDJHsI8</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.376034,40.6263164,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Orvieto - 7/25/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=is7fJVLo9Js"><img src="https://img.youtube.com/vi/is7fJVLo9Js/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/is7fJVLo9Js">https://www.youtube.com/embed/is7fJVLo9Js</a><br><br>Map of the Walk - https://shorturl.at/fvzHM]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/is7fJVLo9Js</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.1107273,42.7184591,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Perugia - 7/26/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=oKTQDkNG8NM"><img src="https://img.youtube.com/vi/oKTQDkNG8NM/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/oKTQDkNG8NM">https://www.youtube.com/embed/oKTQDkNG8NM</a><br><br>Map of the Walk - https://shorturl.at/hBGHV]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/oKTQDkNG8NM</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.3887338,43.1120932,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Amalfi - 6/27/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=EJ5Ju8-t3jk"><img src="https://img.youtube.com/vi/EJ5Ju8-t3jk/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/EJ5Ju8-t3jk">https://www.youtube.com/embed/EJ5Ju8-t3jk</a><br><br>Map of the Walk - https://shorturl.at/egFU8]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/EJ5Ju8-t3jk</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.6019591,40.635902,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sorano - 7/27/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=R6t5GiWPaMk"><img src="https://img.youtube.com/vi/R6t5GiWPaMk/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/R6t5GiWPaMk">https://www.youtube.com/embed/R6t5GiWPaMk</a><br><br>Map of the Walk - https://shorturl.at/iDGKY]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/R6t5GiWPaMk</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            11.7157982,42.6820912,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Villa Farnese Tour - 7/28/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=sfV0A-esgq4"><img src="https://img.youtube.com/vi/sfV0A-esgq4/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/sfV0A-esgq4">https://www.youtube.com/embed/sfV0A-esgq4</a><br><br>Map of the Walk - https://shorturl.at/qAO07]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/sfV0A-esgq4</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.2385303,42.3275447,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sovana - 7/29/2020</name>
+        <description>Map of the walk: http://www.shorturl.at/jtwLS.com</description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <Point>
+          <coordinates>
+            11.6450941,42.6572444,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Saturnia Hot Springs - 7/29/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=cT1HekU2vho"><img src="https://img.youtube.com/vi/cT1HekU2vho/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/cT1HekU2vho">https://www.youtube.com/embed/cT1HekU2vho</a><br><br>Map of the Walk - https://www.shorturl.at/qBKW5]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/cT1HekU2vho</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            11.5126514,42.6480686,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Montepulciano - 7/31/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=gvcKh443vVk"><img src="https://img.youtube.com/vi/gvcKh443vVk/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/gvcKh443vVk">https://www.youtube.com/embed/gvcKh443vVk</a><br><br>Map of the Walk - https://shorturl.at/qzMRW ]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/gvcKh443vVk</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            11.7809523,43.0927315,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lucca Morning Bike Ride - 8/1/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=nSTpNsBFRPM"><img src="https://img.youtube.com/vi/nSTpNsBFRPM/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/nSTpNsBFRPM">https://www.youtube.com/embed/nSTpNsBFRPM</a><br><br>Map of the Walk - https://shorturl.at/uzDKM]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/nSTpNsBFRPM</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            10.5037648,43.8385374,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lucca City Walk Bike Ride - 8/1/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=jIKNueYoUh0"><img src="https://img.youtube.com/vi/jIKNueYoUh0/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/jIKNueYoUh0">https://www.youtube.com/embed/jIKNueYoUh0</a><br><br>Map of the Walk - https://shorturl.at/hpLQ9]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/jIKNueYoUh0</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            10.5081422,43.8402553,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lucca Walking Tour - 8/1/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=4tS18rOsyMM"><img src="https://img.youtube.com/vi/4tS18rOsyMM/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/4tS18rOsyMM">https://www.youtube.com/embed/4tS18rOsyMM</a><br><br>Map of the Walk: https://shorturl.at/huETU]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/4tS18rOsyMM</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            10.5026404,43.8429447,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lucca Evening Bike Ride - 8/1/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=OMgbNxCB5dU"><img src="https://img.youtube.com/vi/OMgbNxCB5dU/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/OMgbNxCB5dU">https://www.youtube.com/embed/OMgbNxCB5dU</a><br><br>Map of the Walk: https://shorturl.at/qzMRW]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/OMgbNxCB5dU</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            10.5015761,43.8389398,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Portofino (Day) - 8/2/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=AhYBDeW9CKE"><img src="https://img.youtube.com/vi/AhYBDeW9CKE/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/AhYBDeW9CKE">https://www.youtube.com/embed/AhYBDeW9CKE</a><br><br>Map of the Walk - https://shorturl.at/pwN36 ]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/AhYBDeW9CKE</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            9.2081275,44.3038576,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Portofino (Evening) - 8/2/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=uYN6tPAaXwE"><img src="https://img.youtube.com/vi/uYN6tPAaXwE/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/uYN6tPAaXwE">https://www.youtube.com/embed/uYN6tPAaXwE</a><br><br>Map of the Walk - https://shorturl.at/rMR34]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/uYN6tPAaXwE</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            9.2097261,44.3031742,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Manarola - 8/4/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=QNdkI8BRats"><img src="https://img.youtube.com/vi/QNdkI8BRats/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/QNdkI8BRats">https://www.youtube.com/embed/QNdkI8BRats</a><br><br>Map of the Walk - https://shorturl.at/dfsK7]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/QNdkI8BRats</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            9.7270991,44.1067835,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Riomaggiore - 8/4/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=MIzp8Wrj44s"><img src="https://img.youtube.com/vi/MIzp8Wrj44s/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/MIzp8Wrj44s">https://www.youtube.com/embed/MIzp8Wrj44s</a><br><br>Map of the Walk - https://shorturl.at/qrzFU]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/MIzp8Wrj44s</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            9.7380546,44.0991574,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Corniglia - 8/5/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=sUFIQzXu7S8"><img src="https://img.youtube.com/vi/sUFIQzXu7S8/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/sUFIQzXu7S8">https://www.youtube.com/embed/sUFIQzXu7S8</a><br><br>Map of the Walk - https://shorturl.at/pBLP4]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/sUFIQzXu7S8</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            9.7080397,44.1199306,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Vernazza - 8/5/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=qwxEyy_CwUo"><img src="https://img.youtube.com/vi/qwxEyy_CwUo/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/qwxEyy_CwUo">https://www.youtube.com/embed/qwxEyy_CwUo</a><br><br>Map of the Walk - https://shorturl.at/cjIQ0]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/qwxEyy_CwUo</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            9.6824448,44.1348825,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Monterosso al Mare - 8/6/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=L-CIQchiiv4"><img src="https://img.youtube.com/vi/L-CIQchiiv4/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/L-CIQchiiv4">https://www.youtube.com/embed/L-CIQchiiv4</a><br><br>Map of the Walk - https://shorturl.at/zFOTY]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/L-CIQchiiv4</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            9.6556385,44.1460805,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Venice - 8/7/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=sW0EENhO07g"><img src="https://img.youtube.com/vi/sW0EENhO07g/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/sW0EENhO07g">https://www.youtube.com/embed/sW0EENhO07g</a><br><br>Map of the Walk - https://shorturl.at/npJ16]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/sW0EENhO07g</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.3276195,45.4384385,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Venice Canal Tour - 8/8/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=riZWEoGKyuU"><img src="https://img.youtube.com/vi/riZWEoGKyuU/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/riZWEoGKyuU">https://www.youtube.com/embed/riZWEoGKyuU</a><br><br>Map of the Walk - https://shorturl.at/ayTV9]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/riZWEoGKyuU</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.3185588,45.4398952,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Burano - 8/9/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=0U3Aea9awAQ"><img src="https://img.youtube.com/vi/0U3Aea9awAQ/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/0U3Aea9awAQ">https://www.youtube.com/embed/0U3Aea9awAQ</a><br><br>Map of the Walk - http://shorturl.at/qFGLU]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/0U3Aea9awAQ</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.4176308,45.4849352,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Positano - 9/12/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=5WICzbKzc-8"><img src="https://img.youtube.com/vi/5WICzbKzc-8/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/5WICzbKzc-8">https://www.youtube.com/embed/5WICzbKzc-8</a><br><br>Map of the Walk - https://shorturl.at/lxAPR]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/5WICzbKzc-8</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.4866414,40.6293326,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sorrento (Night): 9/19/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=DbEtuqqgWLA"><img src="https://img.youtube.com/vi/DbEtuqqgWLA/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/DbEtuqqgWLA">https://www.youtube.com/embed/DbEtuqqgWLA</a><br><br>Map of the Walk - https://shorturl.at/qKN25]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/DbEtuqqgWLA</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.3742262,40.6258124,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rome Biking Tour - 10/10/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=bdjUv2ctBQ4"><img src="https://img.youtube.com/vi/bdjUv2ctBQ4/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/bdjUv2ctBQ4">https://www.youtube.com/embed/bdjUv2ctBQ4</a><br><br>Map of the Walk - https://shorturl.at/byJW9]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/bdjUv2ctBQ4</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.4765598,41.9104074,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rome Night Walk - 10/10/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=Gy6fDx9L-zk"><img src="https://img.youtube.com/vi/Gy6fDx9L-zk/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/Gy6fDx9L-zk">https://www.youtube.com/embed/Gy6fDx9L-zk</a><br><br>Map of the Walk - https://shorturl.at/csKY1]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/Gy6fDx9L-zk</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.471367,41.9025823,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Naples Passeggiata - 12/20/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=iQ-8iiJaM0Y"><img src="https://img.youtube.com/vi/iQ-8iiJaM0Y/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/iQ-8iiJaM0Y">https://www.youtube.com/embed/iQ-8iiJaM0Y</a><br><br>Map of the Walk - https://shorturl.at/imJP3]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/iQ-8iiJaM0Y</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2484172,40.839176,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Naples' Christmas Alley - 12/22/2020]]></name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=5nuZ-0s21Ho"><img src="https://img.youtube.com/vi/5nuZ-0s21Ho/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/5nuZ-0s21Ho">https://www.youtube.com/embed/5nuZ-0s21Ho</a><br><br>Map of the Walk - https://shorturl.at/esGW7]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/5nuZ-0s21Ho</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2576465,40.8503218,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Appian Way Bike Ride - 5/8/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=ogWKnHSTEN0"><img src="https://img.youtube.com/vi/ogWKnHSTEN0/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/ogWKnHSTEN0">https://www.youtube.com/embed/ogWKnHSTEN0</a><br><br>Map of the Walk: https://shorturl.at/hlz07]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/ogWKnHSTEN0</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.5153314,41.8568655,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Casertavecchia - 5/16/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=4UutcBV7TK4"><img src="https://img.youtube.com/vi/4UutcBV7TK4/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/4UutcBV7TK4">https://www.youtube.com/embed/4UutcBV7TK4</a><br><br>Map of the Walk -https://www.google.com/maps/d/u/0/edit?mid=1S-Ucdj2HJJF3rWH_IiAxnHirjO2BrfH5&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/4UutcBV7TK4</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.3679014,41.0962797,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Hadrian's Villa - 5/22/2021]]></name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=fpn9qj9rCrs"><img src="https://img.youtube.com/vi/fpn9qj9rCrs/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/fpn9qj9rCrs">https://www.youtube.com/embed/fpn9qj9rCrs</a><br><br>Map of the Walk - https://www.google.com/maps/d/u/0/edit?mid=1yT_ZFnZWcVcESX7ZUgeOhEavrxRpIKT2&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/fpn9qj9rCrs</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.7749635,41.9419518,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Positano Evening - 6/13/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=gao2K_RfK8E"><img src="https://img.youtube.com/vi/gao2K_RfK8E/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/gao2K_RfK8E">https://www.youtube.com/embed/gao2K_RfK8E</a><br><br>Map of the Walk - https://www.google.com/maps/d/u/0/edit?mid=1vEGk_lZOt17WG6u8A2gu_hKKKMv2COhs&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/gao2K_RfK8E</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.4852387,40.6280647,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capri - 6/26/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=32yElDRWJPQ"><img src="https://img.youtube.com/vi/32yElDRWJPQ/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/32yElDRWJPQ">https://www.youtube.com/embed/32yElDRWJPQ</a><br><br>Map of the Walk - https://www.google.com/maps/d/u/0/edit?mid=1-ZB9VR00ee6dJAt5H3-mwNQqqYi6ptQJ&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/32yElDRWJPQ</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2386614,40.5562997,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capri Evening - 6/26/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=Mtdo0QGj_N0"><img src="https://img.youtube.com/vi/Mtdo0QGj_N0/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/Mtdo0QGj_N0">https://www.youtube.com/embed/Mtdo0QGj_N0</a><br><br>Map of the Walk - https://shorturl.at/kquwG ]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/Mtdo0QGj_N0</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2420387,40.5502662,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rome Evening -7/3/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=PrkU8ECRxZ8"><img src="https://img.youtube.com/vi/PrkU8ECRxZ8/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/PrkU8ECRxZ8">https://www.youtube.com/embed/PrkU8ECRxZ8</a><br><br>Map of the Walk: https://www.google.com/maps/d/u/0/edit?mid=154yzADm7vY-e06NMUkeCsbW4-g29yUKB&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/PrkU8ECRxZ8</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.4835366,41.9008118,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Trastevere Evening - 7/4/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=ZIiOwKETKA8"><img src="https://img.youtube.com/vi/ZIiOwKETKA8/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/ZIiOwKETKA8">https://www.youtube.com/embed/ZIiOwKETKA8</a><br><br>Map of the Walk - https://www.google.com/maps/d/u/0/edit?mid=1-r7eTZ8swFQuXbPeBuiqKtPKCHTbiscn&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/ZIiOwKETKA8</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.4700565,41.8895508,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Amalfi Coast Boat Ride - 7/22/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=j4WmTagG3Ss"><img src="https://img.youtube.com/vi/j4WmTagG3Ss/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/j4WmTagG3Ss">https://www.youtube.com/embed/j4WmTagG3Ss</a><br><br>Map of the Tour - https://shorturl.at/aegtG ]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/j4WmTagG3Ss</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.5261765,40.6030601,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Alberobello - 7/29/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=xqGIgebjBgs"><img src="https://img.youtube.com/vi/xqGIgebjBgs/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/xqGIgebjBgs">https://www.youtube.com/embed/xqGIgebjBgs</a><br><br>Map of the Walk: https://www.google.com/maps/d/u/0/edit?mid=1Dd5K-rthJJqdGunjKkZ3ewPhg6d0PmLD&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/xqGIgebjBgs</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            17.2373373,40.7827265,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Gallipoli - 7/30/2021</name>
+        <description><![CDATA[Map of the Walk: https://www.google.com/maps/d/u/0/edit?mid=1wTov-M2svmxEKB7-soeBeXAWrwY5VBV3&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <Point>
+          <coordinates>
+            17.9746437,40.0555342,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Otranto - 7/31/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=SWDsHlHmnY4"><img src="https://img.youtube.com/vi/SWDsHlHmnY4/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/SWDsHlHmnY4">https://www.youtube.com/embed/SWDsHlHmnY4</a><br><br>Map of the Walk: https://www.google.com/maps/d/u/0/edit?mid=1uk1JRqbuUDtxdh04xUr-ag3aMrHYdzRv&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/SWDsHlHmnY4</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            18.4908012,40.1468229,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lecce Evening - 7/31/2021 </name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=f0sA1xhKAEQ"><img src="https://img.youtube.com/vi/f0sA1xhKAEQ/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/f0sA1xhKAEQ">https://www.youtube.com/embed/f0sA1xhKAEQ</a><br><br>Map of the Walk: https://www.google.com/maps/d/u/0/edit?mid=1EZhW_9lHiUrMA4mMumWZXn2DnieRKTSM&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/f0sA1xhKAEQ</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            18.1722848,40.3531438,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Civita di Bagnoregio - 8/2/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=vQBaN2kBrbk"><img src="https://img.youtube.com/vi/vQBaN2kBrbk/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/vQBaN2kBrbk">https://www.youtube.com/embed/vQBaN2kBrbk</a><br><br>Map of the Walk: https://www.google.com/maps/d/u/0/edit?mid=1XZbhYEHx-Hl-45ACUZW0VqGMuYVK-f38&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/vQBaN2kBrbk</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.10914,42.6260894,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>San Gimignano - 8/3/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=cRR35KGuWJI"><img src="https://img.youtube.com/vi/cRR35KGuWJI/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/cRR35KGuWJI">https://www.youtube.com/embed/cRR35KGuWJI</a><br><br>Map of the Walk - https://www.google.com/maps/d/edit?mid=1Gpu_F81mOewtnjFop7xXqaHKcBLZXCY6&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/cRR35KGuWJI</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            11.0420409,43.4639593,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Monteriggioni - 8/3/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=50Y2SDBqi0c"><img src="https://img.youtube.com/vi/50Y2SDBqi0c/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/50Y2SDBqi0c">https://www.youtube.com/embed/50Y2SDBqi0c</a><br><br>Map of the Walk - https://www.google.com/maps/d/u/0/edit?mid=1RAoex_n7OmJ3_eouzyMS0JRF2Q0BvS2L&usp=sharing ]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/50Y2SDBqi0c</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            11.2232394,43.3900507,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Volterra - 8/4/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=l4nG1eZBtV4"><img src="https://img.youtube.com/vi/l4nG1eZBtV4/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/l4nG1eZBtV4">https://www.youtube.com/embed/l4nG1eZBtV4</a><br><br>Map of the Walk: https://www.google.com/maps/d/u/0/edit?mid=15Hmf6HCFGDmtxjHnIHKwK6ZIv8u3v_gB&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/l4nG1eZBtV4</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            10.8590845,43.4009751,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sorrento xmas - 12/11/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=rbULD4pmlQs"><img src="https://img.youtube.com/vi/rbULD4pmlQs/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/rbULD4pmlQs">https://www.youtube.com/embed/rbULD4pmlQs</a><br><br>Map of the Walk: https://www.google.com/maps/d/u/0/edit?mid=1KW9OAbA8Eo_Ua4sMxUovtkIv8MpQN0tN&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/rbULD4pmlQs</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.3755463,40.6262118,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Naples xmas 2021 - 12/19/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=QjjBNU88jtk"><img src="https://img.youtube.com/vi/QjjBNU88jtk/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/QjjBNU88jtk">https://www.youtube.com/embed/QjjBNU88jtk</a><br><br>Map of the Walk - https://www.google.com/maps/d/u/0/edit?mid=1a0yYV-kJNUEmYWaMf2CjhzGT_PV9sSKz&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/QjjBNU88jtk</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.2569816,40.849038,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Santa Margherita Ligure 9/7/2025</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=P5ppDvz_sBI"><img src="https://img.youtube.com/vi/P5ppDvz_sBI/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/P5ppDvz_sBI">https://www.youtube.com/embed/P5ppDvz_sBI</a><br><br>]]></description>
+        <styleUrl>#icon-1727-795548</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/P5ppDvz_sBI</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            9.2140499,44.3333014,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Sicily Walking Tours</name>
+      <Placemark>
+        <name>Catania Fish Market - 6/13/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=33SKzgaqrk4"><img src="https://img.youtube.com/vi/33SKzgaqrk4/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/33SKzgaqrk4">https://www.youtube.com/embed/33SKzgaqrk4</a><br><br>Map of the Walk: http://www.shorturl.at/qEQ67]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/33SKzgaqrk4</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            15.086887,37.5018094,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Catania (Day)- 6/13/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=_Q-RLQnZOHM"><img src="https://img.youtube.com/vi/_Q-RLQnZOHM/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/_Q-RLQnZOHM">https://www.youtube.com/embed/_Q-RLQnZOHM</a><br><br>Map of the Walk - https://shorturl.at/jsFHU]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/_Q-RLQnZOHM</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            15.0868376,37.5050238,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Catania (Night) - 6/13/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=Y6X0okAoWwM"><img src="https://img.youtube.com/vi/Y6X0okAoWwM/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/Y6X0okAoWwM">https://www.youtube.com/embed/Y6X0okAoWwM</a><br><br>Map of the Walk: http://www.shorturl.at/qBJ67]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/Y6X0okAoWwM</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            15.0854545,37.5105616,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Taormina - 6/14/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=hM-jmDHNMfI"><img src="https://img.youtube.com/vi/hM-jmDHNMfI/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/hM-jmDHNMfI">https://www.youtube.com/embed/hM-jmDHNMfI</a><br><br>Map of the Walk - https://shorturl.at/ekuJV]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/hM-jmDHNMfI</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            15.28556,37.8515592,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ortigia - 6/15/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=0BkAHkXf1zc"><img src="https://img.youtube.com/vi/0BkAHkXf1zc/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/0BkAHkXf1zc">https://www.youtube.com/embed/0BkAHkXf1zc</a><br><br>Map of the Walk - https://shorturl.at/apABG]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/0BkAHkXf1zc</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            15.2940737,37.0608485,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ragusa - 6/17/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=GVE9W1vr5k0"><img src="https://img.youtube.com/vi/GVE9W1vr5k0/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/GVE9W1vr5k0">https://www.youtube.com/embed/GVE9W1vr5k0</a><br><br>Map of the Walk - https://shorturl.at/mqsJ0]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/GVE9W1vr5k0</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.7408737,36.9257618,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Valley of the Temples - 6/17/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=ddwST22X7Cc"><img src="https://img.youtube.com/vi/ddwST22X7Cc/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/ddwST22X7Cc">https://www.youtube.com/embed/ddwST22X7Cc</a><br><br>Map of the walk: https://shorturl.at/nwE09]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/ddwST22X7Cc</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.5849693,37.2908385,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Trapani - 6/19/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=quj_Vz4JeLQ"><img src="https://img.youtube.com/vi/quj_Vz4JeLQ/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/quj_Vz4JeLQ">https://www.youtube.com/embed/quj_Vz4JeLQ</a><br><br>Map of the walk: https://shorturl.at/cwN47]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/quj_Vz4JeLQ</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.509276,38.0157493,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Palermo Walking Tour - 6/21/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=MTG3VA-m6qk"><img src="https://img.youtube.com/vi/MTG3VA-m6qk/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/MTG3VA-m6qk">https://www.youtube.com/embed/MTG3VA-m6qk</a><br><br>Map of the Walk: https://shorturl.at/rtuxJ]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/MTG3VA-m6qk</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.3651237,38.1101677,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Palermo Evening Walk - 6/21/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=2Xn0NCwLF2k"><img src="https://img.youtube.com/vi/2Xn0NCwLF2k/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/2Xn0NCwLF2k">https://www.youtube.com/embed/2Xn0NCwLF2k</a><br><br>Map of the Walk: http://www.shorturl.at/qCNV2]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/2Xn0NCwLF2k</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.3614398,38.1156678,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Palermo Bike Tour - 6/21/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=Qkc5Xxy4L2g"><img src="https://img.youtube.com/vi/Qkc5Xxy4L2g/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/Qkc5Xxy4L2g">https://www.youtube.com/embed/Qkc5Xxy4L2g</a><br><br>Map of the Walk - https://shorturl.at/koBZ6]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/Qkc5Xxy4L2g</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.3581139,38.1205802,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>San Vito - 6/22/2020</name>
+        <styleUrl>#icon-1727-E65100-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            12.7382866,38.1754179,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Erice - 6/22/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=_dsYp7akVIc"><img src="https://img.youtube.com/vi/_dsYp7akVIc/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/_dsYp7akVIc">https://www.youtube.com/embed/_dsYp7akVIc</a><br><br>Map of the Walk - https://shorturl.at/auvL3]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/_dsYp7akVIc</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            12.5836403,38.0363164,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Corleone - 6/23/2020</name>
+        <styleUrl>#icon-1727-E65100-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            13.3063209,37.8108474,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cefalu - 6/24/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=szfG8qVQEys"><img src="https://img.youtube.com/vi/szfG8qVQEys/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/szfG8qVQEys">https://www.youtube.com/embed/szfG8qVQEys</a><br><br>Map of the Walk: http://www.shorturl.at/kyDMV]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/szfG8qVQEys</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.0194549,38.040094,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tripi - 6/25/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=Cf0Xg5ff0Ow"><img src="https://img.youtube.com/vi/Cf0Xg5ff0Ow/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/Cf0Xg5ff0Ow">https://www.youtube.com/embed/Cf0Xg5ff0Ow</a><br><br>]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/Cf0Xg5ff0Ow</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            15.0985944,38.0485176,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>France Walking Tours</name>
+      <Placemark>
+        <name>Paris Walking Tour</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=ME2zyNBh3JM"><img src="https://img.youtube.com/vi/ME2zyNBh3JM/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/ME2zyNBh3JM">https://www.youtube.com/embed/ME2zyNBh3JM</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/ME2zyNBh3JM</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            2.3343192,48.8614972,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Montmartre - 7/18/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=yqOlY5uBBbo"><img src="https://img.youtube.com/vi/yqOlY5uBBbo/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/yqOlY5uBBbo">https://www.youtube.com/embed/yqOlY5uBBbo</a><br><br>Map of the Walk - https://shorturl.at/dgnFZ]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/yqOlY5uBBbo</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            2.3431098,48.8866799,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Paris (Night) - 7/18/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=1_XzrxXnwMM"><img src="https://img.youtube.com/vi/1_XzrxXnwMM/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/1_XzrxXnwMM">https://www.youtube.com/embed/1_XzrxXnwMM</a><br><br>Map of the Walk - https://shorturl.at/fgqL5]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/1_XzrxXnwMM</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            2.343759,48.8533707,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Paris Highline - 7/19/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=KoORZY4TygU"><img src="https://img.youtube.com/vi/KoORZY4TygU/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/KoORZY4TygU">https://www.youtube.com/embed/KoORZY4TygU</a><br><br>Map of the Walk - https://shorturl.at/euM06]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/KoORZY4TygU</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            2.3716099,48.8493898,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Luxembourg Gardens - 7/19/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=bibZZXvk-UE"><img src="https://img.youtube.com/vi/bibZZXvk-UE/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/bibZZXvk-UE">https://www.youtube.com/embed/bibZZXvk-UE</a><br><br>Map of the Walk - https://shorturl.at/oETZ9 ]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/bibZZXvk-UE</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            2.3372801,48.8469643,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Eiffel Tower - 7/19/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=Lrj8LEZ9FA4"><img src="https://img.youtube.com/vi/Lrj8LEZ9FA4/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/Lrj8LEZ9FA4">https://www.youtube.com/embed/Lrj8LEZ9FA4</a><br><br>]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/Lrj8LEZ9FA4</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            2.2945052,48.8583134,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Paris Catacombs - 7/19/2020</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=PEfRzws5ajk"><img src="https://img.youtube.com/vi/PEfRzws5ajk/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/PEfRzws5ajk">https://www.youtube.com/embed/PEfRzws5ajk</a><br><br>]]></description>
+        <styleUrl>#icon-1727-E65100</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/PEfRzws5ajk</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            2.3323299,48.8338854,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>USA Walking Tours</name>
+      <Placemark>
+        <name>Green Lake - 7/12/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=tIlN1z5fDfA"><img src="https://img.youtube.com/vi/tIlN1z5fDfA/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/tIlN1z5fDfA">https://www.youtube.com/embed/tIlN1z5fDfA</a><br><br>Map: http://www.shorturl.at/dyEN7]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/tIlN1z5fDfA</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -122.3287324,47.6801726,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[San Francisco's Chinatown 8/5/2018]]></name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=Pe93RBoYf_A"><img src="https://img.youtube.com/vi/Pe93RBoYf_A/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/Pe93RBoYf_A">https://www.youtube.com/embed/Pe93RBoYf_A</a><br><br>Map: https://www.shorturl.at/gpuL0]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/Pe93RBoYf_A</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -122.4056636,37.7916553,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>San Francisco Waterfront 8/4/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=iPmptxznctA"><img src="https://img.youtube.com/vi/iPmptxznctA/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/iPmptxznctA">https://www.youtube.com/embed/iPmptxznctA</a><br><br>Map: https://www.shorturl.at/goFO3]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/iPmptxznctA</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -122.4121586,37.8089638,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mt. St. Helens - 8/13/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=Ur-GJEs14dk"><img src="https://img.youtube.com/vi/Ur-GJEs14dk/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/Ur-GJEs14dk">https://www.youtube.com/embed/Ur-GJEs14dk</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/Ur-GJEs14dk</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -122.2267121,46.2770184,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Canada</name>
+      <Placemark>
+        <name>Granville Island - 7/28/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=fyQqc6cZNA8"><img src="https://img.youtube.com/vi/fyQqc6cZNA8/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/fyQqc6cZNA8">https://www.youtube.com/embed/fyQqc6cZNA8</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/fyQqc6cZNA8</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -123.1353561,49.273094,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Stanley Park - 7/29/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=uN7UkfKc-_w"><img src="https://img.youtube.com/vi/uN7UkfKc-_w/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/uN7UkfKc-_w">https://www.youtube.com/embed/uN7UkfKc-_w</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/uN7UkfKc-_w</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -123.1461064,49.303611,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Vancouver - 7/29/2018</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=faUNhaRLpMc"><img src="https://img.youtube.com/vi/faUNhaRLpMc/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/faUNhaRLpMc">https://www.youtube.com/embed/faUNhaRLpMc</a><br><br>]]></description>
+        <styleUrl>#icon-1727-FFEA00</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/faUNhaRLpMc</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -123.1194774,49.2831871,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Egypt</name>
+      <Placemark>
+        <name>Sphinx at 2:30 pm - 1/19/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=W2CR6Mi0b8o"><img src="https://img.youtube.com/vi/W2CR6Mi0b8o/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/W2CR6Mi0b8o">https://www.youtube.com/embed/W2CR6Mi0b8o</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/W2CR6Mi0b8o</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            31.1401948,29.9753755,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Khufu Ship - 1/19/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=JkHTpsrE8Ug"><img src="https://img.youtube.com/vi/JkHTpsrE8Ug/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/JkHTpsrE8Ug">https://www.youtube.com/embed/JkHTpsrE8Ug</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/JkHTpsrE8Ug</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            31.1339921,29.9780519,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pyramids of Giza - 1/20/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=EaQr917lRgI"><img src="https://img.youtube.com/vi/EaQr917lRgI/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/EaQr917lRgI">https://www.youtube.com/embed/EaQr917lRgI</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/EaQr917lRgI</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            31.1328617,29.9772303,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sphinx at 8am - 1/20/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=Pv2T_LXq-Eo"><img src="https://img.youtube.com/vi/Pv2T_LXq-Eo/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/Pv2T_LXq-Eo">https://www.youtube.com/embed/Pv2T_LXq-Eo</a><br><br>]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/Pv2T_LXq-Eo</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            31.1379311,29.9753035,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cairo - 1/20/2019</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=YVYDz_coSfY"><img src="https://img.youtube.com/vi/YVYDz_coSfY/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/YVYDz_coSfY">https://www.youtube.com/embed/YVYDz_coSfY</a><br><br>Map of the Walk - https://shorturl.at/guwNU]]></description>
+        <styleUrl>#icon-1727-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/YVYDz_coSfY</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            31.2626471,30.0474169,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Greece</name>
+      <Placemark>
+        <name>Acropolis - 7/9/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=H0uSTX8xGB8"><img src="https://img.youtube.com/vi/H0uSTX8xGB8/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/H0uSTX8xGB8">https://www.youtube.com/embed/H0uSTX8xGB8</a><br><br>Map of the Walk: https://www.google.com/maps/d/u/0/edit?mid=18N8pB2TvUEHcU9ePNO6mx2qoo3hoXb8B&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/H0uSTX8xGB8</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            23.7264177,37.9714401,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Athens Evening - 7/9/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=wzSy4zE2T0U"><img src="https://img.youtube.com/vi/wzSy4zE2T0U/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/wzSy4zE2T0U">https://www.youtube.com/embed/wzSy4zE2T0U</a><br><br>Map of the Walk: https://shorturl.at/gwyOR]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/wzSy4zE2T0U</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            23.7348404,37.975617,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mykonos - 7/13/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=1ijW90dI9IQ"><img src="https://img.youtube.com/vi/1ijW90dI9IQ/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/1ijW90dI9IQ">https://www.youtube.com/embed/1ijW90dI9IQ</a><br><br>Map of the Walk - https://www.google.com/maps/d/u/0/edit?mid=1MkkZgv_bRxTXpCCAZoitdRvj8OhqmGzy&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/1ijW90dI9IQ</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            25.3294108,37.4498097,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mykonos Evening - 7/13/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=kk_kN2Dnhwg"><img src="https://img.youtube.com/vi/kk_kN2Dnhwg/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/kk_kN2Dnhwg">https://www.youtube.com/embed/kk_kN2Dnhwg</a><br><br>Map of the Walk: https://www.google.com/maps/d/u/0/edit?mid=1Bnv3HZNssXy311rDIbWmDUIMc5kQpMi8&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/kk_kN2Dnhwg</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            25.3269539,37.4475909,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mykonos Night - 7/13/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=CPQviJ5_FiE"><img src="https://img.youtube.com/vi/CPQviJ5_FiE/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/CPQviJ5_FiE">https://www.youtube.com/embed/CPQviJ5_FiE</a><br><br>Map of the Walk - https://www.google.com/maps/d/u/0/edit?mid=1iezoBnjuMZrMeVzL-Xd9h4Utq9x-xOCb&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/CPQviJ5_FiE</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            25.3288744,37.4469691,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Santorini Hike - 7/17/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=cU3XY6Ii8v0"><img src="https://img.youtube.com/vi/cU3XY6Ii8v0/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/cU3XY6Ii8v0">https://www.youtube.com/embed/cU3XY6Ii8v0</a><br><br>Map of the Walk: https://www.google.com/maps/d/u/0/edit?mid=1IPcPkISq7YWQ40hkPZBSXi1FPgtqAG4o&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/cU3XY6Ii8v0</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            25.4181769,36.4320682,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Fira Evening - 7/17/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=umD4BXwJYzc"><img src="https://img.youtube.com/vi/umD4BXwJYzc/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/umD4BXwJYzc">https://www.youtube.com/embed/umD4BXwJYzc</a><br><br>Map of the Walk:  https://www.google.com/maps/d/u/0/edit?mid=1ReGczWac5opROZoOtEvVJHQX8wQhE4c2&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/umD4BXwJYzc</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            25.4316714,36.4166219,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Oia Evening - 7/17/2021</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=2FYIErd7xes"><img src="https://img.youtube.com/vi/2FYIErd7xes/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/2FYIErd7xes">https://www.youtube.com/embed/2FYIErd7xes</a><br><br>Map of the Walk: https://www.google.com/maps/d/u/0/edit?mid=1YkBfye3S4NeHttIuIujGT0ndnFwOVnZB&usp=sharing]]></description>
+        <styleUrl>#icon-1727-000000</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/2FYIErd7xes</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            25.3728749,36.4600541,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Malta</name>
+      <Placemark>
+        <name>Marsaxlokk -5/30/2024</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=VfQtwlVSA04"><img src="https://img.youtube.com/vi/VfQtwlVSA04/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/VfQtwlVSA04">https://www.youtube.com/embed/VfQtwlVSA04</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/VfQtwlVSA04</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.5449698,35.8408087,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mdina 5/27/2024</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=GZ9cl9_4o2k"><img src="https://img.youtube.com/vi/GZ9cl9_4o2k/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/GZ9cl9_4o2k">https://www.youtube.com/embed/GZ9cl9_4o2k</a><br><br>https://youtu.be/GZ9cl9_4o2k]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/GZ9cl9_4o2k</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.4032328,35.8842877,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Valletta Evening 5/28/2024</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=-KIcfT7Vk7I"><img src="https://img.youtube.com/vi/-KIcfT7Vk7I/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/-KIcfT7Vk7I">https://www.youtube.com/embed/-KIcfT7Vk7I</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/-KIcfT7Vk7I</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.5086595,35.8959173,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Valletta Day 5/29/2024</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=LXKcD2zSPMc"><img src="https://img.youtube.com/vi/LXKcD2zSPMc/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/LXKcD2zSPMc">https://www.youtube.com/embed/LXKcD2zSPMc</a><br><br>]]></description>
+        <styleUrl>#icon-1727-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/LXKcD2zSPMc</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.5126254,35.8982565,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Untitled layer</name>
+    </Folder>
+    <Folder>
+      <name>Untitled layer</name>
+    </Folder>
+  </Document>
+</kml>
