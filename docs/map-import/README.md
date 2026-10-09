@@ -10,6 +10,7 @@ Local preview work only. No deployment, domain, DNS, email, Google Sheet or Squa
 - No new individual video or country pages. Watch links use YouTube until a corresponding real internal page exists. Multiple videos sharing a pin remain accessible even beyond the clustering zoom level.
 - Filming dates remain blank for 13 additions without an explicit date in the checked description. Distance and landmark details are not invented. The import does not create timestamp highlights or change the single combined highlights index.
 - Newly encountered members-only Milan video `w--o2nK4xQs` is excluded. Existing master draft/member exclusions remain authoritative. Availability is a snapshot from October 9, not ongoing monitoring.
+- Videos referenced by **441 of the 444 old video-page URLs** now appear in map/search. The three excluded page references are the members-only Milan and Freiburg videos, plus Matera 2019 (`it-0373`), whose existing master draft/unknown status is preserved. Some old URLs duplicate the same video.
 
 ## Sources and review files
 
@@ -41,3 +42,14 @@ The checked sources are cached. Network collection is optional and should not be
 Metadata and route collectors are under `scripts/collect-library-*.cjs`; destination references use `scripts/collect-destination-coordinates.cjs`. `scripts/read-library-route-maps.ps1` parses cached KML with external XML resolution disabled. These scripts fetch public source material only and do not modify remote services.
 
 Full legacy-page content migration and SEO redirects remain separate launch work. A functional map does not preserve an old URL's rankings by itself. See [launch checklist](../launch-checklist.md).
+
+## Verification performed
+
+- Production build passed: 118 generated entries, with no new content routes. Both catalog test scripts passed.
+- Changed application files passed targeted lint with zero errors and two existing image-element warnings. The full-repository lint backlog recorded in the launch audit remains separate.
+- Local production HTTP checks passed for homepage, Tokyo search and the Christmas collection, including expected new video links.
+- Desktop browser: country navigation, cluster cards, exact shared-pin results at zoom 13, direct YouTube URLs, and accuracy labels verified. The worldwide view uses a flat projection so destinations are not hidden on the back of a globe.
+- 390px mobile browser: 420px map height, country selector, Copenhagen popup, Cairo five-tour list, accuracy labels and watch URLs verified; no horizontal page overflow. Country navigation waits until the map finishes loading.
+- Browser console showed no errors during these checks. Viewport override was reset. No physical-device or Lighthouse score is claimed.
+
+Screenshots: [world view](map-world-desktop.jpg), [shared Cairo pin](map-cairo-shared-pin.jpg), [mobile destination popup](map-mobile-destination.jpg), [mobile cluster](map-mobile-cluster.jpg).

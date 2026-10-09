@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useRef, useState, type ReactNode } from "react";
+import { useMemo, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 import MapboxMap, {
   Layer,
@@ -142,6 +142,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
     ], { padding: 65, maxZoom: 11, duration: 1000 });
   };
   const [mapError, setMapError] = useState(false);
+  const [mapReady, setMapReady] = useState(false);
   const mapboxToken =
     process.env.NEXT_PUBLIC_MAPBOX_TOKEN ??
     process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
@@ -194,8 +195,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
     [countries]
   );
 
-  const handleMapClick = useCallback(
-    (event: { features?: Feature[] }) => {
+  const handleMapClick = (event: { features?: Feature[] }) => {
       const clickedFeature = event.features?.[0];
       if (!clickedFeature) {
         setPopupInfo(null);
@@ -291,9 +291,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
           }
         }
       }
-    },
-    [countryTourArrays, countries]
-  );
+  };
 
   if (!mapboxToken || mapError) {
     return (
@@ -325,12 +323,14 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
             zoom: 4.5,
           }}
           mapStyle="mapbox://styles/mapbox/satellite-streets-v12"
+          projection="mercator"
           mapboxAccessToken={mapboxToken}
           interactiveLayerIds={interactiveLayerIds}
           cooperativeGestures={fitToTours}
           onClick={handleMapClick}
           onError={() => setMapError(true)}
           onLoad={() => {
+            setMapReady(true);
             mapRef.current?.resize();
             if (fitToTours && tours.length) {
               const lngs = tours.map((tour) => tour.longitude);
@@ -394,7 +394,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
       <div className="absolute bottom-4 left-4 max-w-[calc(100%-2rem)] rounded-xl border border-[#d8c7b5] bg-white/95 px-3 py-2 shadow-sm backdrop-blur-sm">
         {countries.length > 6 ? <div className="flex items-center gap-2">
           <label htmlFor="world-map-country" className="sr-only">Explore a country on the map</label>
-          <select id="world-map-country" defaultValue="" onChange={event => exploreCountry(event.target.value)} className="min-h-10 max-w-full rounded-lg border border-[#d8c7b5] bg-white px-3 text-sm text-[#3d3327]">
+          <select id="world-map-country" defaultValue="" disabled={!mapReady} onChange={event => exploreCountry(event.target.value)} className="min-h-10 max-w-full rounded-lg border border-[#d8c7b5] bg-white px-3 text-sm text-[#3d3327] disabled:opacity-60">
             <option value="">All {countries.length} countries</option>
             {countries.map(country => <option key={country.name} value={country.name}>{country.name} ({countryTourArrays[country.name].length})</option>)}
           </select>
@@ -404,6 +404,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
               key={c.name}
               type="button"
               title={`Click to explore ${c.name}`}
+              disabled={!mapReady}
               onClick={() => exploreCountry(c.name)}
               className="flex cursor-pointer items-center gap-1.5 transition hover:opacity-80"
             >
