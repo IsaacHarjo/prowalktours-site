@@ -345,7 +345,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
           projection="globe"
           mapboxAccessToken={mapboxToken}
           interactiveLayerIds={interactiveLayerIds}
-          cooperativeGestures={fitToTours}
+          cooperativeGestures={fitToTours && !globeOverview}
           dragPan={globeOverview ? { maxSpeed: 350, deceleration: 4500 } : true}
           onClick={handleMapClick}
           onError={() => setMapError(true)}
