@@ -1,6 +1,6 @@
 # Prowalk Tours — launch review and remaining work
 
-Reviewed October 9, 2026. **The domain is not ready to switch.** This work updates only the new website repository and its existing Vercel deployment. No DNS, domain, email, or Squarespace configuration has been changed. Redirects below are review candidates, not active rules.
+Reviewed October 9, 2026. **The domain is not ready to switch.** The changes are committed locally in the new website repository. Deployment has not been performed because approval for the Git push was declined; the existing Vercel site is unchanged. No DNS, domain, email, or Squarespace configuration has been changed. Redirects below are review candidates, not active rules.
 
 ## What the comparison found
 
