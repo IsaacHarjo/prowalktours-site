@@ -64,7 +64,7 @@ export default function HomeClient({ videos, mappedTours }: { videos: DiscoveryV
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="relative z-10 py-2 lg:py-6">
             <p className={eyebrow}>The world, at walking pace</p>
-            <h1 className="mt-5 max-w-xl text-4xl font-semibold leading-[1.08] tracking-[-0.035em] sm:text-5xl lg:text-6xl">Explore the world.<br />One walk at a time.</h1>
+            <h1 className="mt-5 max-w-xl text-4xl font-semibold leading-[1.08] tracking-[-0.035em] sm:text-5xl lg:text-6xl">A closer look at places far from home.</h1>
             <p className="mt-6 max-w-lg text-base leading-7 text-[#657069] sm:text-lg sm:leading-8">Wander historic streets, follow the coast, and hear a city come to life. Immersive 4K walking tours, with the sounds of being there.</p>
             <div className="mt-8 max-w-xl">
               <p className="mb-3 text-sm font-semibold">Where would you like to explore?</p>
