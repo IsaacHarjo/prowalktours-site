@@ -106,7 +106,7 @@ export default function HomeClient({ videos, mappedTours }: { videos: DiscoveryV
           </article>}
           <article>
             <Link href="/christmas-markets" className="group relative block aspect-video overflow-hidden rounded-2xl bg-[#e6e7de]">
-              <Image src="/images/homepage/christmas-collection-artwork.png" alt="Christmas collection artwork: illuminated market stalls and a Christmas tree in a European square" fill sizes="(min-width: 768px) 560px, 100vw" className="object-cover transition duration-500 group-hover:scale-[1.025]" />
+              <Image src="/images/homepage/rothenburg-christmas-collection.jpeg" alt="Christmas tree and warmly lit half-timbered buildings in Rothenburg ob der Tauber at dusk" fill sizes="(min-width: 768px) 560px, 100vw" className="object-cover transition duration-500 group-hover:scale-[1.025]" />
               <span className="absolute bottom-4 left-4 rounded-full bg-white px-4 py-2 text-xs font-semibold">The Christmas collection</span>
             </Link>
             <p className={eyebrow + " mt-5"}>Lights, markets & winter evenings</p>
