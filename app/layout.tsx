@@ -10,7 +10,7 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  { label: "Countries", href: "/countries" },
+  { label: "Newest Walk", href: "/#latest-walk" },
   { label: "Walks", href: "/search" },
   { label: "Map", href: "/#world-map" },
   { label: "Christmas Markets", href: "/christmas-markets" },
@@ -31,17 +31,18 @@ const socialLinks = {
 const footerSections = {
   explore: [
     { label: "Christmas Markets", href: "/christmas-markets" },
-    { label: "Countries", href: "/countries" },
-    { label: "Italy", href: "/destinations/italy" },
-    { label: "Campania", href: "/destinations/italy/campania" },
-    { label: "Naples", href: "/destinations/italy/campania/naples" },
+    { label: "Explore", href: "/search" },
+    { label: "Italy", href: "/search?country=Italy" },
+    { label: "Campania", href: "/search?q=Campania" },
+    { label: "Naples", href: "/search?q=Naples" },
   ],
   resources: [
     { label: "About Prowalk Tours", href: "/about" },
     { label: "Contact Us", href: "/contact-us" },
     { label: "Filming Gear", href: "/filming-gear" },
     { label: "Press & Partnerships", href: "/press" },
-    { label: "Support the Walks", href: "/support" },
+    { label: "Support Our Work", href: "/support" },
+    { label: "Become a Sponsor", href: "/sponsor" },
     { label: "Join Us", href: "/join-us" },
     { label: "Licensing", href: "/licensing" },
     { label: "Featured Walk", href: "/videos/naples-daytime-walk-2023" },
