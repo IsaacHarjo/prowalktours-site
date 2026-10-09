@@ -2,6 +2,7 @@
 
 import { useMemo, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
+import MapTourThumbnail from "./MapTourThumbnail";
 import MapboxMap, {
   Layer,
   NavigationControl,
@@ -36,11 +37,6 @@ function formatVideoType(vt: string) {
 function LocationNote({ tour }: { tour: WorldTour }) {
   if (!tour.locationAccuracy || tour.locationAccuracy === "tour-start") return null;
   return <p className="mt-1 text-xs leading-5 text-[#6c5b49]">{tour.locationAccuracy === "original-map-pin" ? "Original tour-map pin · start unconfirmed" : "Approximate destination · not the exact start"}</p>;
-}
-
-function getYoutubeId(url: string) {
-  const m = /(?:youtu\.be\/|[?&]v=|\/embed\/)([A-Za-z0-9_-]{11})/.exec(url);
-  return m ? m[1] : "";
 }
 
 function makeClusterLayer(country: string, color: string): LayerProps {
@@ -161,6 +157,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
     process.env.NEXT_PUBLIC_MAPBOX_TOKEN ??
     process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
 
+  const [popupAnchor, setPopupAnchor] = useState<"top" | "bottom" | "left" | "right" | "top-left" | "top-right" | "bottom-left" | "bottom-right">("left");
   const [popupInfo, setPopupInfo] = useState<WorldTour | null>(null);
   const [clusterInfo, setClusterInfo] = useState<{
     tours: WorldTour[];
@@ -301,6 +298,14 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
             setClusterInfo({ tours: coincident, longitude: selected.longitude, latitude: selected.latitude, clusterId: null, countryName });
           } else {
             setClusterInfo(null);
+            const map = mapRef.current?.getMap();
+            if (map) {
+              const point = map.project([selected.longitude, selected.latitude]);
+              const canvas = map.getCanvas();
+              const side = point.x > canvas.clientWidth / 2 ? "right" : "left";
+              setPopupAnchor(canvas.clientWidth < 500 ? (point.y > canvas.clientHeight / 2 ? "bottom" : "top") : point.y < 180 ? (side === "right" ? "top-right" : "top-left")
+                : point.y > canvas.clientHeight - 180 ? (side === "right" ? "bottom-right" : "bottom-left") : side);
+            }
             setPopupInfo(selected);
           }
         }
@@ -382,12 +387,13 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
             <Popup
               longitude={popupInfo.longitude}
               latitude={popupInfo.latitude}
-              anchor="bottom"
+              anchor={popupAnchor}
               onClose={() => setPopupInfo(null)}
               closeOnClick={false}
               className="world-map-popup"
             >
-              <div className="max-w-[220px] p-1">
+              <div className="max-h-[160px] sm:max-h-[340px] w-[220px] max-w-full overflow-y-auto p-1">
+                <MapTourThumbnail key={popupInfo.tourId} youtubeUrl={popupInfo.youtubeUrl} title={popupInfo.title} className="mb-2 aspect-video w-full rounded-lg" />
                 <p className="text-sm font-semibold text-[#2f261d]">
                   {popupInfo.title}
                 </p>
@@ -488,27 +494,12 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
               </button>}
               <div className="space-y-4">
                 {clusterInfo.tours.map((item) => {
-                  const ytId = getYoutubeId(item.youtubeUrl);
-                  const thumbSrc = ytId
-                    ? `https://img.youtube.com/vi/${ytId}/mqdefault.jpg`
-                    : "";
                   return (
                     <div
                       key={item.tourId}
                       className="rounded-[1rem] border border-[#eadfce] bg-[#fcfaf7] p-3"
                     >
-                      <div className="overflow-hidden rounded-[0.9rem] border border-[#eadfce] bg-white">
-                        {thumbSrc ? (
-                          <img
-                            src={thumbSrc}
-                            alt={item.title}
-                            className="aspect-[16/9] w-full object-cover"
-                            onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; (e.target as HTMLImageElement).parentElement!.classList.add("bg-[#2f261d]"); }}
-                          />
-                        ) : (
-                          <div className="aspect-[16/9] w-full bg-[#2f261d]" />
-                        )}
-                      </div>
+                      <MapTourThumbnail key={item.tourId} youtubeUrl={item.youtubeUrl} title={item.title} className="aspect-video w-full rounded-[0.9rem] border border-[#eadfce]" />
                       <div className="mt-3">
                         <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#9a7a52]">
                           {item.region}
@@ -565,25 +556,12 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
           </div>
           <div className="mt-3 max-h-[300px] space-y-3 overflow-y-auto">
             {clusterInfo.tours.map((item) => {
-              const ytId = getYoutubeId(item.youtubeUrl);
-              const thumbSrc = ytId
-                ? `https://img.youtube.com/vi/${ytId}/mqdefault.jpg`
-                : "";
               return (
                 <div
                   key={item.tourId}
                   className="flex gap-3 rounded-xl border border-[#eadfce] bg-[#fcfaf7] p-2"
                 >
-                  {thumbSrc ? (
-                    <img
-                      src={thumbSrc}
-                      alt={item.title}
-                      className="h-16 w-24 shrink-0 rounded-lg object-cover"
-                      onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-                    />
-                  ) : (
-                    <div className="h-16 w-24 shrink-0 rounded-lg bg-[#2f261d]" />
-                  )}
+                  <MapTourThumbnail key={item.tourId} youtubeUrl={item.youtubeUrl} title={item.title} className="h-16 w-24 shrink-0 rounded-lg" />
                   <div className="min-w-0">
                     <p className="text-sm font-semibold text-[#2f261d] leading-tight">
                       {getDisplayTitle(item.title)}
