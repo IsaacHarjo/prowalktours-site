@@ -117,7 +117,23 @@ export default function HomeClient({ videos, mappedTours }: { videos: DiscoveryV
         </div>
       </section>
 
-      <section className={sectionWidth + " pb-14 lg:pb-20"} aria-labelledby="destinations-heading">
+      <section id="world-map" className="scroll-mt-20 bg-[#edf1ed] py-12 lg:py-16" aria-labelledby="map-heading">
+        <div className={sectionWidth}>
+          <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+            <div><p className={eyebrow}>Follow your curiosity</p><h2 id="map-heading" className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">A world of walks. One map.</h2></div>
+            <p className="max-w-sm text-sm leading-6 text-[#657069]">Spin the globe, zoom into a place, and choose a tour. Your next walk can start anywhere.</p>
+          </div>
+          <div className="mt-7 overflow-hidden rounded-2xl border border-[#d8e0d7] bg-[#10151c]">
+            <WorldMapClient tours={mappedTours} fullWidth fitToTours globeOverview heightClassName="h-[560px] sm:h-[665px]" />
+          </div>
+          <div className="mt-4 flex flex-col justify-between gap-2 text-xs leading-5 text-[#657069] sm:flex-row">
+            <p>{mappedTours.length} tours across {countryCount} countries · Select a pin or numbered group to watch.</p>
+            <p>Approximate destination pins are labeled.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className={sectionWidth + " pt-12 pb-14 lg:pt-16 lg:pb-20"} aria-labelledby="destinations-heading">
         <div className="flex flex-wrap items-end justify-between gap-3 border-t border-[#dddcd2] pt-9">
           <div><p className={eyebrow}>Choose your next stop</p><h2 id="destinations-heading" className="mt-2 text-3xl font-semibold tracking-tight">Places worth getting lost in</h2></div>
           <Link href="/search" className={textLink}>Find a destination →</Link>
@@ -130,22 +146,6 @@ export default function HomeClient({ videos, mappedTours }: { videos: DiscoveryV
             <h3 className="mt-3 text-base font-semibold group-hover:underline">{dest.name}</h3>
             <p className="mt-1 text-xs leading-5 text-[#657069]">{dest.description}</p>
           </Link>)}
-        </div>
-      </section>
-
-      <section id="world-map" className="scroll-mt-20 bg-[#edf1ed] py-12 lg:py-16" aria-labelledby="map-heading">
-        <div className={sectionWidth}>
-          <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-            <div><p className={eyebrow}>Follow your curiosity</p><h2 id="map-heading" className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">A world of walks. One map.</h2></div>
-            <p className="max-w-sm text-sm leading-6 text-[#657069]">Spin the globe, zoom into a place, and choose a tour. Your next walk can start anywhere.</p>
-          </div>
-          <div className="mt-7 overflow-hidden rounded-2xl border border-[#d8e0d7] bg-[#10151c]">
-            <WorldMapClient tours={mappedTours} fullWidth fitToTours globeOverview heightClassName="h-[420px] sm:h-[500px]" />
-          </div>
-          <div className="mt-4 flex flex-col justify-between gap-2 text-xs leading-5 text-[#657069] sm:flex-row">
-            <p>{mappedTours.length} tours across {countryCount} countries · Select a pin or numbered group to watch.</p>
-            <p>Approximate destination pins are labeled.</p>
-          </div>
         </div>
       </section>
 
