@@ -6,6 +6,7 @@ import Image from "next/image";
 import ThumbnailImg from "../components/ThumbnailImg";
 import WorldMapClient from "../components/WorldMapClient";
 import type { DiscoveryVideo, WorldTour } from "../lib/tours/types";
+import type { FeaturedWalk } from "../lib/youtube/latestWalk";
 
 // ─── Top destinations data ───────────────────────────────────────────────────
 
@@ -53,11 +54,8 @@ const sectionWidth = "mx-auto max-w-7xl px-5 sm:px-8 lg:px-10";
 const eyebrow = "text-xs font-semibold uppercase tracking-[0.18em] text-[#607767]";
 const textLink = "inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#176347] underline-offset-4 hover:underline";
 
-export default function HomeClient({ videos, mappedTours }: { videos: DiscoveryVideo[]; mappedTours: WorldTour[] }) {
+export default function HomeClient({ videos, mappedTours, featuredVideo }: { videos: DiscoveryVideo[]; mappedTours: WorldTour[]; featuredVideo?: FeaturedWalk }) {
   const countryCount = new Set(mappedTours.map(tour => tour.country)).size;
-  // Matches the newest-tour feature on prowalktours.com, verified 2026-10-09.
-  // Update this selection when the next tour is published; filming dates are not upload dates.
-  const featuredVideo = videos.find(video => video.youtubeUrl.includes("snBqLG2Piyo"));
   return (
     <div className="bg-[#fcfaf7] text-[#25382f]">
       <section className={sectionWidth + " pt-8 pb-12 sm:pt-12 lg:pb-16"}>
@@ -99,7 +97,7 @@ export default function HomeClient({ videos, mappedTours }: { videos: DiscoveryV
               <ThumbnailImg src={featuredVideo.thumbnail} alt={featuredVideo.siteTitle} className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]" />
               <span className="absolute bottom-4 left-4 rounded-full bg-white px-4 py-2 text-xs font-semibold">Newest walk</span>
             </Link>
-            <p className={eyebrow + " mt-5"}>{featuredVideo.city}, {featuredVideo.country}</p>
+            <p className={eyebrow + " mt-5"}>{[featuredVideo.city, featuredVideo.country].filter(Boolean).join(", ") || "Latest from ProWalk Tours"}</p>
             <h3 className="mt-2 text-2xl font-semibold leading-snug"><Link href={featuredVideo.youtubeUrl} target="_blank" rel="noreferrer" className="hover:underline">{featuredVideo.siteTitle}</Link></h3>
             <p className="mt-3 text-sm leading-7 text-[#657069]">{featuredVideo.shortDescription}</p>
             <Link href={featuredVideo.youtubeUrl} target="_blank" rel="noreferrer" className={textLink + " mt-2"}>Watch on YouTube ↗</Link>
