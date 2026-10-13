@@ -67,9 +67,12 @@ export default function HomeClient({ videos, mappedTours, featuredVideo }: { vid
             <div className="mt-8 max-w-xl">
               <p className="mb-3 text-sm font-semibold">Where would you like to explore?</p>
               <LiveSearchBar videos={videos} />
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Link href="/search" className="inline-flex min-h-11 items-center rounded-full bg-[#176347] px-5 py-3 text-sm font-semibold text-white hover:bg-[#25382f]">Watch Walking Tours</Link>
+                <Link href="/christmas-markets" className="inline-flex min-h-11 items-center rounded-full border border-[#cbd6c8] bg-white px-5 py-3 text-sm font-semibold hover:border-[#176347]">Plan Your Trip →</Link>
+              </div>
               <div className="mt-3 flex flex-wrap gap-x-6">
                 <a href={featuredVideo?.youtubeUrl ?? "https://www.youtube.com/@ProwalkTours/videos"} target="_blank" rel="noreferrer" className={textLink}>Watch the newest walk ↗</a>
-                <Link href="/search" className={textLink}>Browse all walks <span aria-hidden="true">→</span></Link>
                 <Link href="#world-map" className={textLink}>Explore the globe <span aria-hidden="true">↓</span></Link>
               </div>
             </div>
@@ -105,12 +108,12 @@ export default function HomeClient({ videos, mappedTours, featuredVideo }: { vid
           <article>
             <Link href="/christmas-markets" className="group relative block aspect-video overflow-hidden rounded-2xl bg-[#e6e7de]">
               <Image src="/images/homepage/rothenburg-christmas-collection.jpeg" alt="Christmas tree and warmly lit half-timbered buildings in Rothenburg ob der Tauber at dusk" fill sizes="(min-width: 768px) 560px, 100vw" className="object-cover transition duration-500 group-hover:scale-[1.025]" />
-              <span className="absolute bottom-4 left-4 rounded-full bg-white px-4 py-2 text-xs font-semibold">The Christmas collection</span>
+              <span className="absolute bottom-4 left-4 rounded-full bg-white px-4 py-2 text-xs font-semibold">Christmas markets · 2026</span>
             </Link>
             <p className={eyebrow + " mt-5"}>Lights, markets & winter evenings</p>
-            <h3 className="mt-2 text-2xl font-semibold leading-snug"><Link href="/christmas-markets" className="hover:underline">A little Christmas, whenever you like</Link></h3>
-            <p className="mt-3 text-sm leading-7 text-[#657069]">Wander through Europe’s festive squares and market stalls. Explore the collection by destination and discover the journeys behind the films.</p>
-            <Link href="/christmas-markets" className={textLink + " mt-2"}>Explore Christmas markets →</Link>
+            <h3 className="mt-2 text-2xl font-semibold leading-snug"><Link href="/christmas-markets" className="hover:underline">Plan your 2026 European Christmas market trip</Link></h3>
+            <p className="mt-3 text-sm leading-7 text-[#657069]">Start with Colmar’s market dates and our first destination guide. Explore the places, photographs and walking tours from my Christmas journeys.</p>
+            <Link href="/christmas-markets" className={textLink + " mt-2"}>Find your Christmas destination →</Link>
           </article>
         </div>
       </section>

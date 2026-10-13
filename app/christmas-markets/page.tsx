@@ -1,19 +1,23 @@
 import type { Metadata } from "next";
 import { discoveryVideos, worldTours } from "../../lib/tours/server";
-import { buildChristmasCatalog, christmasHero } from "../../lib/christmas/catalog";
+import { buildChristmasCatalog, emptyChristmasFilters } from "../../lib/christmas/catalog";
+import { colmarPhotos } from "../../lib/christmas/colmar-photos";
 import { stringifyJsonLd } from "../../lib/seo/jsonLd";
 import ChristmasMarketsClient from "./ChristmasMarketsClient";
 
 const url = "https://www.prowalktours.com/christmas-markets";
-const title = "European Christmas Markets: Walks & Journey Inspiration | ProWalk Tours";
-const description = "Explore European Christmas markets through Isaac's walking tours. Browse by country and city, discover walks on the map, and explore the journeys behind the films.";
+const title = "European Christmas Markets 2026: Guides & Walking Tours | ProWalk Tours";
+const description = "Plan a Christmas market trip with Isaac's Colmar guide, explore destinations across Europe, and watch the walks and filming journeys behind the photographs.";
 export const metadata: Metadata = {
   title, description, alternates: { canonical: url },
-  openGraph: { title, description, url, images: [{ url: christmasHero.src, alt: christmasHero.alt }] },
+  openGraph: { title, description, url, images: [{ url: colmarPhotos.C157.src, alt: colmarPhotos.C157.alt }] },
 };
 
-export default function ChristmasMarketsPage() {
+export default async function ChristmasMarketsPage({ searchParams }: { searchParams: Promise<{ country?: string | string[]; city?: string | string[] }> }) {
   const walks = buildChristmasCatalog(discoveryVideos, worldTours);
+  const params = await searchParams;
+  const country = typeof params.country === "string" && walks.some(walk => walk.country === params.country) ? params.country : "";
+  const city = typeof params.city === "string" && walks.some(walk => walk.city === params.city && (!country || walk.country === country)) ? params.city : "";
   const ids = new Set(walks.map((walk) => walk.id));
   const points = worldTours.filter((point) => ids.has(point.tourId));
   const structuredData = {
@@ -32,6 +36,6 @@ export default function ChristmasMarketsPage() {
   };
   return <>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(structuredData) }} />
-    <ChristmasMarketsClient walks={walks} points={points} />
+    <ChristmasMarketsClient key={`${country}/${city}`} walks={walks} points={points} initialFilters={{ ...emptyChristmasFilters, country, city }} />
   </>;
 }

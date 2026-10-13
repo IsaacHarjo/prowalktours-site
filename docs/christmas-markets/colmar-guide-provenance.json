@@ -1,0 +1,32 @@
+{
+  "reviewedOn": "2026-10-13",
+  "route": "/christmas-markets/colmar",
+  "status": "local draft for owner review",
+  "content": {
+    "evergreen": "lib/christmas/colmar.ts",
+    "seasonal": "lib/christmas/seasons/colmar-2026.ts",
+    "photos": "lib/christmas/colmar-photos.ts",
+    "template": "components/guides/DestinationGuideClient.tsx"
+  },
+  "photoPolicy": "Approved archive selections were exported to stripped-metadata WebP copies. All 14 source SHA-256 hashes were checked before and after export. Originals, full source paths, hashes and selection notes remain in the external private review folder. Photo years are independent of film years.",
+  "captionSources": [
+    { "file": "Colmar 2023 Night captions.srt", "tourId": "fr-0026", "youtubeId": "NMQ4Sy3e-Ec", "cuesUsed": ["00:05:22,956 (Dominican market)", "00:33:38,701 (Koifhus steps)", "01:25:46,862 (chimney cakes)", "01:26:55,090 (favorite treat)"] },
+    { "file": "Colmar 2023 Day captions.srt", "tourId": "fr-0027", "youtubeId": "kjY8okFmuZo", "cuesUsed": ["00:21:15,561 (Saint-Martin)", "01:32:30,484 (Quai de la Poissonnerie)"] }
+  ],
+  "verificationNotes": [
+    "Official 2026 dates, hours and transport sources are linked next to the relevant facts in the annual data module.",
+    "The separate Gourmet Market period continues into January 2027. It must not be folded into the main market date range.",
+    "The date-specific French Dominican market listing corroborates the main schedule: https://www.tourisme-colmar.com/fr/loisirs-fr/lieux-de-loisirs/parcs-a-themes/F235007623_marche-de-noel-place-des-dominicains-colmar",
+    "Some official individual market pages retain older seasonal details. Do not copy a schedule without checking its year.",
+    "Captions supply historical route and first-person observations; unsupported history, vendor counts and transport estimates were not promoted to current facts.",
+    "The 2025 Basel–Alsace–Freiburg–Strasbourg sequence remains a historical filming route. Hotels, transport legs and realistic daily timing require the owner's trip records.",
+    "No new country pages, hotel endorsements, affiliate booking links or paid itinerary offers were added."
+  ],
+  "nextDestinationWorkflow": [
+    "Select and approve archive photographs, then export web copies while preserving originals.",
+    "Create a DestinationGuide record and a separately sourced GuideSeason record.",
+    "Reference stable public tour IDs and verify caption timestamps against those videos.",
+    "Use a server route for metadata and JSON-LD, then render DestinationGuideClient.",
+    "Run the image/link audit, production build and desktop/mobile preview checks. Publishing requires explicit owner approval."
+  ]
+}

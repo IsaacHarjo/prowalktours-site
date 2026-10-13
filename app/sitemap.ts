@@ -51,6 +51,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/destinations",
     destinationRoutes
   );
+  walkRoutesRecursive(
+    path.join(process.cwd(), "app/christmas-markets"),
+    "/christmas-markets",
+    destinationRoutes
+  );
 
   const allPaths = [
     "/",
@@ -59,7 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...videoSlugs.map((slug) => `/videos/${slug}`),
   ];
 
-  return allPaths.map((route) => ({
+  return [...new Set(allPaths)].map((route) => ({
     url: `${SITE_URL}${route === "/" ? "" : route}`,
   }));
 }

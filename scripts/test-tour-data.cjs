@@ -94,4 +94,26 @@ const csv = '\uFEFFtour_id,slug,country,title,youtube_url,status,latitude,longit
 assert.equal(core.parseTourCsv(csv,'quoted.csv')[0].title,'A, quoted "title"\nsecond line');
 assert.throws(() => core.parseTourCsv('tour_id,slug\n1,test','bad.csv'),/missing/);
 assert.throws(() => core.parseTourCsv(csv+'"unfinished','bad.csv'),/unclosed/);
-console.log('PASS: 561 records; 539 shared map/search tours; 44 Christmas tours; routing, privacy, IDs, categories and validation checks.');
+// Guide references must survive catalogue refreshes and resolve only to public films.
+const { colmarGuide } = load('lib/christmas/colmar.ts');
+const { colmarPhotos } = load('lib/christmas/colmar-photos.ts');
+const { colmar2026 } = load('lib/christmas/seasons/colmar-2026.ts');
+assert.equal(core.youtubeIdFromUrl(data.discoveryVideos.find(w => w.id === 'fr-0026').youtubeUrl), 'NMQ4Sy3e-Ec');
+assert.equal(core.youtubeIdFromUrl(data.discoveryVideos.find(w => w.id === 'fr-0027').youtubeUrl), 'kjY8okFmuZo');
+for (const moment of [...colmarGuide.moments, colmarGuide.fieldNote]) {
+  const walk = christmasWalks.find(w => w.id === moment.tourId);
+  assert(walk, `Missing public guide film: ${moment.tourId}`);
+  assert(moment.seconds >= 0 && moment.seconds < walk.durationSeconds, `Timestamp outside ${walk.slug}`);
+  assert(fs.existsSync(path.join('app/videos', walk.slug, 'page.tsx')));
+  assert.equal(new URL(withWatchTimestamp(walk.watchHref, moment.seconds), 'https://www.prowalktours.com').searchParams.get('t'), String(moment.seconds));
+}
+for (const photo of Object.values(colmarPhotos)) {
+  assert(fs.existsSync(path.join('public', photo.src)), `Missing guide image: ${photo.src}`);
+  assert(fs.statSync(path.join('public', photo.src)).size < 600000, `Unoptimized guide image: ${photo.src}`);
+}
+assert.equal(colmar2026.year, 2026);
+assert.equal(colmar2026.checkedOn, '2026-10-13');
+const sitemap = load('app/sitemap.ts').default();
+assert.equal(sitemap.filter(entry => entry.url.endsWith('/christmas-markets/colmar')).length, 1);
+assert(!sitemap.some(entry => entry.url.includes('home-preview')));
+console.log('PASS: 561 records; 539 shared map/search tours; 44 Christmas tours; Colmar film links, timestamps, photos, sitemap and data validation.');
