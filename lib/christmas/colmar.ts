@@ -9,9 +9,10 @@ export const colmarGuide: DestinationGuide = {
   introduction: "Half-timbered houses, canals and little squares full of light. Explore Colmar through my daytime and evening walks, then use the current market information to plan a visit of your own.",
   hero: photos.C157, mobileHero: photos.C257, featuredTourId: "fr-0026",
   visitEssentials: [
-    { label: "How much time?", value: "Plan an afternoon & evening", text: "Leave time to browse, stop for food and see the lights after dark." },
+    { label: "How much time?", value: "Allow at least 3 hours", text: "Give yourself time to walk through the markets, browse the stalls and stop for food." },
+    { label: "When to visit", value: "Sunset into the evening", text: "It gets more crowded as the day goes on. For me, the atmosphere is best around sunset and into the evening, when the Christmas lights come on." },
     { label: "Arriving by train", value: "Walk from Colmar station", text: "The mapped station approach is about 800 m to join the suggested route." },
-    { label: "Where to start", value: "Champ de Mars & Place Rapp", text: "Start here from the station or Parking Rapp, or join at Place des Dominicains if you’re already in the old town." },
+    { label: "Where to start", value: "The Colmar sign", text: "Start at the Colmar sign in Parc du Champ de Mars, then walk toward the Christmas market at Place des Dominicains." },
   ],
   markets: [
     { name: "Place des Dominicains", text: "Wooden stalls gathered beside the Dominican church. Look up from the stalls to take in the church and the surrounding facades." },
