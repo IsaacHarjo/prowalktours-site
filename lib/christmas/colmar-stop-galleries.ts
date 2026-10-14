@@ -23,7 +23,7 @@ export const colmarStopGalleries: Record<string, GuidePhoto[]> = {
   "petite-venise": [
     {"src":"/images/guides/colmar/colmar-petite-venise-childrens-market-day-2023.webp","alt":"Visitors around the children’s Christmas market and carousel at Petite Venise.","year":2023,"width":1400,"height":788},
     photos.C264,
-    {"src":"/images/guides/colmar/colmar-petite-venise-childrens-decorations-2025.webp","alt":"A teddy bear and colorful Christmas decorations at the children’s market in Petite Venise.","year":2025,"width":1050,"height":1400},
+    {"src":"/images/guides/colmar/colmar-petite-venise-childrens-decorations-2025.webp","alt":"Santa and colorful Christmas decorations at the children’s market in Petite Venise.","year":2025,"width":1050,"height":1400},
   ],
   "gourmet": [
     {"src":"/images/guides/colmar/colmar-gourmet-market-ferris-wheel-2025.webp","alt":"The Ferris wheel beside the Gourmet Market in the Montagne Verte area.","year":2025,"width":1050,"height":1400},
