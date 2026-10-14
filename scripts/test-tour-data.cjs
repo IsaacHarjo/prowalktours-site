@@ -7,6 +7,7 @@ const ts = require('typescript');
 const cache = new Map();
 function load(relativePath) {
   let file = path.resolve(relativePath);
+  if (file.endsWith('.json')) return JSON.parse(fs.readFileSync(file, 'utf8'));
   if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, 'index.ts');
   else if (!file.endsWith('.ts')) file += '.ts';
   if (cache.has(file)) return cache.get(file);
@@ -25,6 +26,30 @@ const data = load('lib/tours/server.ts');
 const { withWatchTimestamp } = load('lib/tours/links.ts');
 const christmas = load('lib/christmas/catalog.ts');
 const christmasWalks = christmas.buildChristmasCatalog(data.discoveryVideos, data.worldTours);
+const orientation = load('lib/christmas/orientation.ts');
+const guideLinks = load('lib/christmas/guide-links.ts');
+const regionTowns = load('lib/christmas/colmar-region-towns.json');
+for (const city of ['Colmar', 'Ribeauvillé', 'Kaysersberg', 'Riquewihr', 'Strasbourg', 'Basel']) {
+  const places = orientation.buildAlsacePlaces(data.worldTours, christmasWalks, city);
+  const stages = orientation.buildOrientationStages(places, city);
+  const focus = places.find(place => place.city === city);
+  const [[west, south], [east, north]] = stages[2].bounds;
+  const mercatorY = lat => Math.log(Math.tan(Math.PI / 4 + lat * Math.PI / 360));
+  assert(Math.abs((west + east) / 2 - focus.longitude) < 1e-9, `${city}: final longitude centers on its own pin`);
+  assert(Math.abs((mercatorY(south) + mercatorY(north)) / 2 - mercatorY(focus.latitude)) < 1e-9, `${city}: final latitude centers visually in Mercator`);
+  assert(stages[2].label.includes(city));
+  assert(fs.existsSync(path.join('app', guideLinks.christmasMarketHref(city), 'page.tsx')));
+  for (const linkedCity of ['Strasbourg', 'Basel']) {
+    const place = places.find(place => place.city === linkedCity);
+    assert(place.marketGuide && !place.external);
+    assert.equal(place.href, linkedCity === city ? '#market-films' : guideLinks.christmasMarketHref(linkedCity));
+  }
+  if (regionTowns.some(town => town.city === city)) {
+    assert.equal(stages[2].outline, 'colmar');
+    assert(regionTowns.every(town => town.longitude >= west && town.longitude <= east && town.latitude >= south && town.latitude <= north), `${city}: retain all ten regional towns`);
+  }
+  assert.equal(places.find(place => place.city === 'Basel').country, 'Switzerland');
+}
 assert.equal(christmasWalks.length, 44);
 assert(!christmasWalks.some(w => ['de-0009', 'de-0018'].includes(w.id)));
 const selectChristmas = (filters) => christmas.filterChristmasWalks(christmasWalks, { ...christmas.emptyChristmasFilters, ...filters });
@@ -134,6 +159,26 @@ for (const stop of colmarMap.stops) {
     assert(walk && moment.seconds >= 0 && moment.seconds < walk.durationSeconds, 'Invalid map video timestamp');
   }
 }
+const { colmarVisitorMap } = load('lib/christmas/colmar-visitor-map.ts');
+const { walkingDistanceKm } = load('lib/guides/visitor-map-types.ts');
+const visitorSource = load('lib/christmas/colmar-visitor-route.json');
+const visitorKml = fs.readFileSync('docs/christmas-markets/routes/colmar-visitor-walk.kml', 'utf8');
+const visitorLines = [...visitorKml.matchAll(/<LineString>[\s\S]*?<coordinates>([\s\S]*?)<\/coordinates>[\s\S]*?<\/LineString>/g)]
+  .map(match => match[1].trim().split(/\s+/).map(point => point.split(',').slice(0, 2).map(Number)));
+assert.deepEqual([colmarVisitorMap.route, colmarVisitorMap.stationApproach], visitorLines, 'Preserve both owner-drawn visitor paths without simplifying or reversing');
+assert.deepEqual(colmarVisitorMap.stationApproach.at(-1), colmarVisitorMap.route[0], 'Station approach must connect to visitor route');
+assert.deepEqual(colmarVisitorMap.stops.filter(stop => stop.category === 'market').map(stop => stop.marketNumber), [1, 2, 3, 4, 5, 6]);
+assert.equal(colmarVisitorMap.stops.filter(stop => stop.category === 'photo').length, 4);
+assert.equal(new Set(colmarVisitorMap.stops.map(stop => stop.id)).size, colmarVisitorMap.stops.length);
+for (const stop of colmarVisitorMap.stops) {
+  assert(visitorSource.points.some(point => JSON.stringify(point.coordinates) === JSON.stringify(stop.coordinates)), `Visitor stop ${stop.id} must retain the owner's coordinates`);
+  if (stop.photo) assert(fs.existsSync(path.join('public', stop.photo.src)));
+  assert(stop.text.length > 0);
+}
+assert(walkingDistanceKm(colmarVisitorMap.route) > 4.8 && walkingDistanceKm(colmarVisitorMap.route) < 5);
+assert(walkingDistanceKm(colmarVisitorMap.stationApproach) > 0.8 && walkingDistanceKm(colmarVisitorMap.stationApproach) < 0.9);
+assert.equal(walkingDistanceKm([[7, 48], [7, 48]]), 0);
+assert(Math.abs(walkingDistanceKm([[0, 0], [0, 1]]) - 111.195) < 0.01);
 const sitemap = load('app/sitemap.ts').default();
 assert.equal(sitemap.filter(entry => entry.url.endsWith('/christmas-markets/colmar')).length, 1);
 assert(!sitemap.some(entry => entry.url.includes('home-preview')));

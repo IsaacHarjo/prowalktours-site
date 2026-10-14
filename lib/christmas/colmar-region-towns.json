@@ -1,0 +1,82 @@
+[
+  {
+    "city": "Ribeauvillé",
+    "longitude": 7.319,
+    "latitude": 48.1948,
+    "communeCode": "68269",
+    "labelSide": "left",
+    "officialHref": "https://www.noel-colmar.com/en/ribeauville-riquewihr/discover/ribeauville-christmas-market"
+  },
+  {
+    "city": "Bergheim",
+    "longitude": 7.362,
+    "latitude": 48.2058,
+    "communeCode": "68028",
+    "labelSide": "right",
+    "officialHref": "https://www.noel-colmar.com/en/ribeauville-riquewihr/discover/bergheim-christmas-market"
+  },
+  {
+    "city": "Riquewihr",
+    "longitude": 7.2997,
+    "latitude": 48.1663,
+    "communeCode": "68277",
+    "labelSide": "right",
+    "officialHref": "https://www.noel-colmar.com/en/ribeauville-riquewihr/discover/riquewihr-christmas-market"
+  },
+  {
+    "city": "Kaysersberg",
+    "longitude": 7.264,
+    "latitude": 48.1389,
+    "communeCode": "68162",
+    "labelSide": "left",
+    "officialHref": "https://www.noel-colmar.com/en/kaysersberg"
+  },
+  {
+    "city": "Turckheim",
+    "longitude": 7.278,
+    "latitude": 48.0874,
+    "communeCode": "68338",
+    "labelSide": "left",
+    "officialHref": "https://www.noel-colmar.com/en/turckheim"
+  },
+  {
+    "city": "Colmar",
+    "longitude": 7.3583,
+    "latitude": 48.0793,
+    "communeCode": "68066",
+    "labelSide": "right",
+    "officialHref": "https://www.noel-colmar.com/en/colmar-the-magic-of-christmas/presentation/six-christmas-markets"
+  },
+  {
+    "city": "Munster",
+    "longitude": 7.1371,
+    "latitude": 48.0414,
+    "communeCode": "68226",
+    "labelSide": "left",
+    "officialHref": "https://www.noel-colmar.com/en/munster/munster-discover/christmas-markets-in-the-munster-valley"
+  },
+  {
+    "city": "Eguisheim",
+    "longitude": 7.3096,
+    "latitude": 48.042,
+    "communeCode": "68078",
+    "labelSide": "right",
+    "officialHref": "https://www.noel-colmar.com/en/eguisheim/discover/the-authentic-christmas-market-in-eguisheim"
+  },
+  {
+    "city": "Neuf-Brisach",
+    "longitude": 7.5303,
+    "latitude": 48.018,
+    "communeCode": "68231",
+    "labelSide": "right",
+    "officialHref": "https://www.noel-colmar.com/en/neuf-brisach/discover/17th-century-village"
+  },
+  {
+    "city": "Rouffach",
+    "longitude": 7.2994,
+    "latitude": 47.9568,
+    "communeCode": "68287",
+    "labelSide": "left",
+    "officialHref": "https://www.noel-colmar.com/en/eguisheim/discover/the-christmas-market-of-rouffach"
+  }
+]

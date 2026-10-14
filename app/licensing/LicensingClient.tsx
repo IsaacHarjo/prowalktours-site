@@ -78,7 +78,7 @@ export default function LicensingClient() {
             </h2>
 
             <p className="mt-4 max-w-3xl text-sm leading-7 text-[#56493a]">
-              Tell us how the footage will be used, how much you need, and where
+              Tell me how you plan to use the footage, how much you need, and where
               it will appear. The more specific you are about usage and
               distribution, the easier it will be to quote the request.
             </p>
@@ -241,7 +241,7 @@ export default function LicensingClient() {
             </div>
 
             <p className="mt-3 text-xs leading-5 text-[#8a7a68]">
-              You will need an email application configured on your device. Opening a draft does not send a message. See our <Link href="/privacy-policy" className="underline">draft Privacy Policy</Link>.
+              You will need an email application configured on your device. Opening a draft does not send a message. See the <Link href="/privacy-policy" className="underline">draft Privacy Policy</Link>.
             </p>
             {prepared && <div className="mt-4">
               <p role="status" className="text-sm leading-7 text-[#56493a]">An email draft was requested. Review and send it in your email application; this website has not sent your inquiry. If your email application did not open or omitted any text, copy the complete inquiry below into a message using Email Instead.</p>

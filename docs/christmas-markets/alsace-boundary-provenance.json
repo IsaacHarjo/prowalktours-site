@@ -1,0 +1,25 @@
+{
+  "retrievedOn": "2026-10-14",
+  "sourceUrl": "https://etalab-datasets.geo.data.gouv.fr/contours-administratifs/latest/geojson/departements-100m.geojson",
+  "datasetPage": "https://www.data.gouv.fr/datasets/contours-administratifs",
+  "sourceSha256": "e236204431730cdfe103efea54497896b874c3451efc663a4d4fdcbc831f9e0b",
+  "license": "ODbL-1.0",
+  "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "output": "public/maps/alsace-boundary.geojson",
+  "method": "Select Bas-Rhin (67) and Haut-Rhin (68). Remove exact reversed shared edges and join the remaining exterior into one counterclockwise polygon. No additional simplification or coordinate rounding.",
+  "generalizationMeters": 100,
+  "sharedEdgesRemoved": 108,
+  "outputPositions": 1463,
+  "bbox": [
+    6.841,
+    47.4203,
+    8.2325,
+    49.0778
+  ],
+  "checks": [
+    "One closed exterior with all non-shared edges retained",
+    "Area equals the sum of both department polygons",
+    "Colmar and Strasbourg inside; Basel outside"
+  ],
+  "presentation": "Green outline and translucent fill in the Alsace overview only. Geographic orientation, not a surveyed boundary. Provider attribution included on the map."
+}

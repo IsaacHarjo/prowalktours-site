@@ -1,0 +1,64 @@
+{
+  "retrievedOn": "2026-10-14",
+  "boundarySource": "https://etalab-datasets.geo.data.gouv.fr/contours-administratifs/latest/geojson/epci-100m.geojson",
+  "boundarySourceSha256": "29a4d4fec3c5c85fa1b182fbad5164d70c8059c7196c5efb6663a949ce5c9e70",
+  "townCoordinatesSource": "https://geo.api.gouv.fr/departements/68/communes?fields=nom,code,codeEpci,mairie&format=json",
+  "townCoordinatesSourceSha256": "defaf40dac9ec90ffbe3f0714147b56211f0de28857798325fe1f5d8096d24cd",
+  "scopeSource": "https://www.tourisme-colmar.com/fr/visiter/presentation/le-pays-de-colmar-l-alsace-essentielle",
+  "scope": "Current six intercommunal areas corresponding to the tourism offices of the Pays de Colmar. Interpretation of the reference tourism map using current government boundaries, not a trace of the reference artwork.",
+  "areas": [
+    {
+      "code": "200066025",
+      "nom": "CC Alsace Rhin Brisach",
+      "kind": "area"
+    },
+    {
+      "code": "246800494",
+      "nom": "CC du Pays de Rouffach, Vignobles et Châteaux",
+      "kind": "area"
+    },
+    {
+      "code": "246800551",
+      "nom": "CC de la Vallée de Kaysersberg",
+      "kind": "area"
+    },
+    {
+      "code": "246800577",
+      "nom": "CC du Pays de Ribeauvillé",
+      "kind": "area"
+    },
+    {
+      "code": "246800585",
+      "nom": "CC de la Vallée de Munster",
+      "kind": "area"
+    },
+    {
+      "code": "246800726",
+      "nom": "CA Colmar Agglomération",
+      "kind": "area"
+    }
+  ],
+  "bbox": [
+    6.9796,
+    47.8245,
+    7.622,
+    48.2649
+  ],
+  "method": "Cancel exact reversed shared edges and assemble the remaining exterior and enclave hole. Preserve all original vertices and the individual area boundaries.",
+  "validation": {
+    "sharedEdgesRemoved": 330,
+    "rings": [
+      431,
+      22
+    ],
+    "areaConserved": true,
+    "allTenTownCentresInside": true
+  },
+  "coordinates": "Town-hall points locate town centres, not surveyed Christmas market entrances. Tour URLs are resolved separately from the public catalog.",
+  "boundaryLicense": "ODbL-1.0",
+  "boundaryLicenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "outputs": [
+    "public/maps/colmar-market-region.geojson",
+    "lib/christmas/colmar-region-towns.json"
+  ]
+}

@@ -41,7 +41,7 @@ const footerSections = {
     { label: "Contact Us", href: "/contact-us" },
     { label: "Filming Gear", href: "/filming-gear" },
     { label: "Press & Partnerships", href: "/press" },
-    { label: "Support Our Work", href: "/support" },
+    { label: "Support the Walks", href: "/support" },
     { label: "Become a Sponsor", href: "/sponsor" },
     { label: "Join Us", href: "/join-us" },
     { label: "Licensing", href: "/licensing" },
