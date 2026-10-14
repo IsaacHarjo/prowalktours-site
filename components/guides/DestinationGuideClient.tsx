@@ -1,11 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import type { DestinationGuide, GuidePhoto, GuideSeason, GuideSource, GuideWalk } from "../../lib/guides/types";
 import { withWatchTimestamp } from "../../lib/tours/links";
 import CompactWalkList from "./CompactWalkList";
+import type { GuideMapData } from "../../lib/guides/map-types";
+
+const GuideRouteMap = dynamic(() => import("./GuideRouteMap"), {
+  ssr: false,
+  loading: () => <div className="mt-8 flex h-[420px] items-center justify-center rounded-2xl bg-[#f5f6f1] text-sm text-[#657069] sm:h-[480px]" role="status">Loading the Colmar map…</div>,
+});
 
 const width = "mx-auto max-w-7xl px-5 sm:px-8 lg:px-10";
 const eyebrow = "text-xs font-semibold uppercase tracking-[0.18em] text-[#607767]";
@@ -24,7 +31,7 @@ function timeLabel(seconds: number) {
   return `${hours ? `${hours}:` : ""}${hours ? String(minutes).padStart(2, "0") : minutes}:${String(seconds % 60).padStart(2, "0")}`;
 }
 
-export default function DestinationGuideClient({ guide, season, walks }: { guide: DestinationGuide; season: GuideSeason; walks: GuideWalk[] }) {
+export default function DestinationGuideClient({ guide, season, walks, mapData }: { guide: DestinationGuide; season: GuideSeason; walks: GuideWalk[]; mapData?: GuideMapData }) {
   const [selectedId, setSelectedId] = useState(guide.featuredTourId);
   const selected = walks.find(walk => walk.id === selectedId) ?? walks[0];
   const checkedDate = new Date(`${season.checkedOn}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
@@ -54,7 +61,7 @@ export default function DestinationGuideClient({ guide, season, walks }: { guide
       </div>
     </section>
 
-    <section id="market-squares" className="scroll-mt-20 border-y border-[#e1e3d9] bg-white" aria-labelledby="markets-heading"><div className={width + " py-14 sm:py-16"}><p className={eyebrow}>Find your bearings</p><h2 id="markets-heading" className="mt-3 text-3xl font-semibold tracking-tight">Six markets, an old town to explore</h2><p className="mt-4 max-w-2xl leading-7 text-[#657069]">Think of the markets as stops along a walk through Colmar. Between them are the streets, shopfronts and canals that give the visit its character.</p><ol className="mt-8 grid gap-x-12 md:grid-cols-2">{guide.markets.map((market, index) => <li key={market.name} className="flex gap-4 border-t border-[#e1e3d9] py-6"><span className="pt-1 font-serif text-xl text-[#947a50]">{String(index + 1).padStart(2, "0")}</span><div><h3 className="text-lg font-semibold">{market.name}</h3><p className="mt-2 text-sm leading-7 text-[#657069]">{market.text}</p></div></li>)}</ol><SourceLink source={guide.marketsSource} /></div></section>
+    <section id="market-squares" className="scroll-mt-20 border-y border-[#e1e3d9] bg-white" aria-labelledby="markets-heading"><div className={width + " py-14 sm:py-16"}><p className={eyebrow}>Find your bearings</p><h2 id="markets-heading" className="mt-3 text-3xl font-semibold tracking-tight">Six markets, an old town to explore</h2><p className="mt-4 max-w-2xl leading-7 text-[#657069]">Think of the markets as stops along a walk through Colmar. Between them are the streets, shopfronts and canals that give the visit its character.</p>{mapData ? <GuideRouteMap data={mapData} markets={guide.markets} walks={walks} year={season.year} /> : <ol className="mt-8 grid gap-x-12 md:grid-cols-2">{guide.markets.map((market, index) => <li key={market.name} className="flex gap-4 border-t border-[#e1e3d9] py-6"><span className="pt-1 font-serif text-xl text-[#947a50]">{String(index + 1).padStart(2, "0")}</span><div><h3 className="text-lg font-semibold">{market.name}</h3><p className="mt-2 text-sm leading-7 text-[#657069]">{market.text}</p></div></li>)}</ol>}<SourceLink source={guide.marketsSource} /></div></section>
 
     <section id="getting-there" className={width + " scroll-mt-20 py-14 sm:py-16"} aria-labelledby="transport-heading"><p className={eyebrow}>Getting there & around</p><h2 id="transport-heading" className="mt-3 text-3xl font-semibold tracking-tight">Arrive in {guide.city}. Then explore.</h2><div className="mt-8 grid gap-8 lg:grid-cols-3">{season.transport.map(item => <article key={item.title} className="border-t border-[#cbd6c8] pt-5"><h3 className="text-xl font-semibold">{item.title}</h3><p className="mt-3 text-sm leading-7 text-[#657069]">{item.text}</p><SourceLink source={item.source} /></article>)}</div></section>
 

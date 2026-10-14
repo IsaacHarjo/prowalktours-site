@@ -113,6 +113,27 @@ for (const photo of Object.values(colmarPhotos)) {
 }
 assert.equal(colmar2026.year, 2026);
 assert.equal(colmar2026.checkedOn, '2026-10-13');
+const { colmarMap } = load('lib/christmas/colmar-map.ts');
+assert.equal(colmarMap.routes.length, 2);
+assert.deepEqual(colmarMap.stops.filter(stop => stop.marketIndex !== undefined).map(stop => stop.marketIndex).sort(), [0, 1, 2, 3, 4, 5]);
+for (const route of colmarMap.routes) {
+  assert(christmasWalks.some(walk => walk.id === route.tourId));
+  const sourceFile = route.tourId === 'fr-0027' ? 'colmar-day-2023' : 'colmar-evening-2023';
+  const sourceXml = fs.readFileSync(`docs/christmas-markets/routes/${sourceFile}.kml`, 'utf8');
+  const sourceCoordinates = sourceXml.match(/<LineString>[\s\S]*?<coordinates>([\s\S]*?)<\/coordinates>/)[1]
+    .trim().split(/\s+/).map(point => point.split(',').slice(0, 2).map(Number));
+  assert.deepEqual(route.coordinates, sourceCoordinates, 'Preserve every original route coordinate, in order');
+  for (const [lng, lat] of [...route.coordinates, ...route.points.map(point => point.coordinates)]) {
+    assert(lng > 7.34 && lng < 7.38 && lat > 48.06 && lat < 48.09, 'Route coordinate outside Colmar');
+  }
+}
+for (const stop of colmarMap.stops) {
+  if (stop.photo) assert(fs.existsSync(path.join('public', stop.photo.src)));
+  for (const moment of stop.moments) {
+    const walk = christmasWalks.find(walk => walk.id === moment.tourId);
+    assert(walk && moment.seconds >= 0 && moment.seconds < walk.durationSeconds, 'Invalid map video timestamp');
+  }
+}
 const sitemap = load('app/sitemap.ts').default();
 assert.equal(sitemap.filter(entry => entry.url.endsWith('/christmas-markets/colmar')).length, 1);
 assert(!sitemap.some(entry => entry.url.includes('home-preview')));

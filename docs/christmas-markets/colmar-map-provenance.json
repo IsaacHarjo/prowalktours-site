@@ -1,0 +1,42 @@
+{
+  "checkedOn": "2026-10-13",
+  "scope": "Local Colmar guide map; no changes to the owner's Google maps or enriched video pages.",
+  "routes": [
+    {
+      "tourId": "fr-0027",
+      "source": "https://www.google.com/maps/d/viewer?mid=1ThIBZmv2HMJhvMrs8Q7U5A-LjW4Mc9c",
+      "cachedExport": "routes/colmar-day-2023.kml",
+      "coordinates": 195,
+      "originalMarkers": 25
+    },
+    {
+      "tourId": "fr-0026",
+      "source": "https://www.google.com/maps/d/viewer?mid=1VbWklQNfAGYODKpJHmPtOTuPM6JPqiM",
+      "cachedExport": "routes/colmar-evening-2023.kml",
+      "coordinates": 186,
+      "originalMarkers": 23
+    }
+  ],
+  "conversion": "scripts/import-colmar-routes.ps1 reads the cached XML with external resolution disabled. Preserves longitude/latitude order, drops unused altitude and produces lib/christmas/colmar-routes.ts. No remote fetch is required to regenerate.",
+  "marketCoordinates": {
+    "dominicains": "Owner's evening route marker 1",
+    "ancienne-douane": "Owner's evening route marker 7",
+    "jeanne-arc": "Owner's evening route marker 9",
+    "petite-venise": "Owner's evening route marker 16 at Place des Six Montagnes Noires, distinct from the canal landmark",
+    "koifhus": {
+      "source": "https://www.noel-colmar.com/en/christmas-agenda/F235007664_handcraft-christmasmarket-at-the-koifhus-colmar-en",
+      "coordinates": [7.3595044429222, 48.075911473952],
+      "method": "Official page's mapService.addmarker coordinates"
+    },
+    "gourmet": {
+      "source": "https://www.tourisme-colmar.com/fr/toutes-les-fiches/F235015379_marche-de-noel-marche-gourmand-colmar",
+      "coordinates": [7.3603054566696, 48.075226387254],
+      "method": "Official page's mapService.addmarker coordinates for current Montagne Verte venue"
+    }
+  },
+  "marketLocationsSource": "https://www.noel-colmar.com/en/colmar-the-magic-of-christmas/presentation/six-christmas-markets",
+  "accuracy": "Pins represent market areas, not surveyed entrances. Koifhus and Ancienne Douane badges have small display offsets to avoid overlap. Route lines are the owner's original mapped paths, not new GPS measurements or current navigation advice.",
+  "timestamps": "Use existing enriched video-detail highlights, except Koifhus evening 2018 seconds from the already-reviewed caption moment. Raw KML labels include minor discrepancies and a Gourmet Market evening timestamp error; those labels are not used for playback.",
+  "photos": "Reuse approved Colmar archive exports with photo years and descriptive alt text; no new image editing or original file changes.",
+  "presentation": "Mapbox light base, cream background, muted water, green daytime / amber evening line, numbered markets, two landmark pins, start/finish labels, zoom/fullscreen, full-route reset, selectable text list and timestamp links. Map provider attribution retained. Missing token/load errors retain the list and original-map fallback. No GPS location request or autoplay."
+}

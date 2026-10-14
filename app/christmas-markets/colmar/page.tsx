@@ -3,6 +3,7 @@ import { discoveryVideos, worldTours } from "../../../lib/tours/server";
 import { youtubeIdFromUrl } from "../../../lib/tours/core";
 import { buildChristmasCatalog } from "../../../lib/christmas/catalog";
 import { colmarGuide } from "../../../lib/christmas/colmar";
+import { colmarMap } from "../../../lib/christmas/colmar-map";
 import { colmar2026 } from "../../../lib/christmas/seasons/colmar-2026";
 import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
 import DestinationGuideClient from "../../../components/guides/DestinationGuideClient";
@@ -29,5 +30,5 @@ export default function ColmarChristmasPage() {
     ] },
     { "@type": "WebPage", name: title, description, url, image: `https://www.prowalktours.com${colmarGuide.hero.src}`, about: { "@type": "Place", name: "Colmar, Alsace, France" }, dateModified: colmar2026.checkedOn },
   ] };
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(structuredData) }} /><DestinationGuideClient guide={colmarGuide} season={colmar2026} walks={walks} /></>;
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(structuredData) }} /><DestinationGuideClient guide={colmarGuide} season={colmar2026} walks={walks} mapData={colmarMap} /></>;
 }
