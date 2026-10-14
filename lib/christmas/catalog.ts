@@ -34,8 +34,8 @@ export const christmasHero = {
 export const christmasJourneys = [
   {
     id: "winter-2022", title: "Budapest to Strasbourg", label: "The 2022 journey",
-    description: "A Christmas filming journey through Budapest, Vienna, Prague and Germany, continuing to Basel and Strasbourg. Several markets on this trip were filmed in snow—a distinctive part of the 2022 archive.",
-    note: "The stop order is supported by my trip records. Individual snowy walks and transport details still need to be checked before this becomes a day-by-day itinerary.",
+    description: "My 2022 trip took me through Budapest, Vienna, Prague and Germany, then on to Basel and Strasbourg. There was snow at several of the markets I filmed that year.",
+    note: "This is the order I visited the towns. I’m still working through my trip notes to add the travel details you’d need to follow the route yourself.",
     stops: [
       { city: "Budapest", country: "Hungary" }, { city: "Vienna", country: "Austria" },
       { city: "Prague", country: "Czech Republic" }, { city: "Dresden", country: "Germany" },
@@ -45,8 +45,8 @@ export const christmasJourneys = [
   },
   {
     id: "germany-alsace-2023", title: "Cologne to Alsace", label: "The 2023 journey",
-    description: "This filming journey connects Cologne and Aachen with Rothenburg ob der Tauber, then continues into Alsace through Strasbourg, Colmar and Riquewihr. I returned to Colmar for another daytime walk after filming in Riquewihr.",
-    note: "This outline follows the recorded filming sequence, including the return to Colmar. Overnight stays and transport connections still need to be checked before adding a day-by-day itinerary.",
+    description: "From Cologne and Aachen, I continued to Rothenburg ob der Tauber, then Strasbourg, Colmar and Riquewihr. After filming in Riquewihr, I returned to Colmar for another daytime walk.",
+    note: "Colmar appears twice because I went back to film there. I’ll add where I stayed and how I traveled between towns as I work through my notes.",
     stops: [
       { city: "Cologne", country: "Germany" }, { city: "Aachen", country: "Germany" },
       { city: "Rothenburg ob der Tauber", country: "Germany" },
@@ -56,8 +56,8 @@ export const christmasJourneys = [
   },
   {
     id: "dresden-esslingen-2024", title: "Dresden, Prague & southern Germany", label: "The 2024 journey",
-    description: "Starting in Dresden, this Christmas filming journey continues to Prague, then through Nuremberg, Munich and Rothenburg ob der Tauber before finishing with Stuttgart and Esslingen.",
-    note: "The filming records establish this sequence of destinations. Overnight bases, travel legs and time spent at each stop remain to be verified for a practical itinerary.",
+    description: "This trip started in Dresden and continued to Prague, Nuremberg, Munich and Rothenburg ob der Tauber. Stuttgart and Esslingen were the last two stops.",
+    note: "The towns are in the order I filmed them. Accommodation, travel connections and time at each stop will follow as I work through my trip notes.",
     stops: [
       { city: "Dresden", country: "Germany" }, { city: "Prague", country: "Czech Republic" },
       { city: "Nuremberg", country: "Germany" }, { city: "Munich", country: "Germany" },
@@ -67,8 +67,8 @@ export const christmasJourneys = [
   },
   {
     id: "basel-alsace-2025", title: "Basel, Alsace & Freiburg", label: "The December 2025 filming route",
-    description: "Arriving in the Basel / EuroAirport area, I filmed Basel and a series of Alsace towns, followed by Freiburg and Strasbourg. These destinations form the starting point for a future regional itinerary.",
-    note: "This sequence follows my filming dates. Travel legs, overnight bases and realistic daily timings are still being verified.",
+    description: "I arrived in the Basel / EuroAirport area and filmed Basel and several Alsace towns, followed by Freiburg and Strasbourg. Watch the walks to help choose which places to include in your own trip.",
+    note: "These stops follow my filming dates. I’m still adding where I stayed, how I got around and how much time to allow for each town.",
     stops: [
       { city: "Basel", country: "Switzerland" }, { city: "Kaysersberg", country: "France" },
       { city: "Ribeauvillé", country: "France" }, { city: "Riquewihr", country: "France" },

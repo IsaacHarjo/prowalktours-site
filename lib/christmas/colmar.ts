@@ -19,7 +19,7 @@ export const colmarGuide: DestinationGuide = {
   marketsSource: { label: "Explore the six markets on Colmar’s official site", href: "https://www.noel-colmar.com/en/colmar-the-magic-of-christmas/presentation/six-christmas-markets" },
   moments: [
     { title: "The stalls beside the church", text: "The evening walk reaches the Dominican church market early in the route. See how the stalls sit against the church before exploring the surrounding lanes.", photo: photos.C188, tourId: "fr-0026", seconds: 323 },
-    { title: "Saint-Martin in daylight", text: "Step away from the stalls to look at the stonework of Saint-Martin. The daytime walk gives this landmark room to breathe between the market squares.", photo: photos.C198, tourId: "fr-0027", seconds: 1275 },
+    { title: "Saint-Martin in daylight", text: "Take a break from the stalls for a closer look at Saint-Martin’s stonework. You can see it in my daytime walk.", photo: photos.C198, tourId: "fr-0027", seconds: 1275 },
     { title: "Around the old customs house", text: "Join the evening walk at the Koïfhus steps, then continue around the old customs house and its market square. Nearby canal bridges offer another view of the decorations.", photo: photos.C254, tourId: "fr-0026", seconds: 2018 },
     { title: "Along the Quai de la Poissonnerie", text: "Return in daylight for a different view of the canals and half-timbered houses. This stretch appears late in the daytime walk.", photo: photos.C147, tourId: "fr-0027", seconds: 5550 },
   ],
@@ -31,9 +31,9 @@ export const colmarGuide: DestinationGuide = {
   gallery: [photos.C236, photos.C205, photos.C080],
   route: {
     title: "Colmar, with more of Alsace around it",
-    text: "My December 2025 filming journey connected Basel with the Alsace villages, Colmar, Freiburg and Strasbourg. Use the stops as ideas for a wider trip, with Colmar as one part of the journey.",
+    text: "On my December 2025 trip, I filmed Basel, several Alsace towns, Freiburg and Strasbourg. If you’re visiting Colmar, these walks can help you decide where else you’d like to go.",
     stops: ["Basel", "Kaysersberg", "Ribeauvillé", "Riquewihr", "Colmar", "Freiburg", "Strasbourg"],
-    note: "This is the historical filming order. It does not yet specify overnight bases, travel connections or how many days to allow; those details will follow the trip notes.",
+    note: "These towns are listed in the order I filmed them. I’m still adding where I stayed, how I traveled between stops and how much time to allow.",
   },
   nearby: [
     { city: "Riquewihr", text: "Continue through the streets of another Alsace village.", href: "/christmas-markets?city=Riquewihr#browse-walks" },
