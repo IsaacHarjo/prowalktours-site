@@ -14,6 +14,7 @@ export type VisitorMapStop = {
   text: string;
   tip?: string;
   photo?: GuidePhoto;
+  photos?: GuidePhoto[];
 };
 export type VisitorMapData = {
   city: string;

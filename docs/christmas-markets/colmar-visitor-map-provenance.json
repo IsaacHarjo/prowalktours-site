@@ -37,5 +37,154 @@
     "height": 1333,
     "bytes": 206920,
     "processing": "HEIC decoded, orientation applied, resized to 1000 pixels wide and exported as WebP. Original file unchanged."
+  },
+  "stopGalleries": {
+    "date": "2026-10-14",
+    "groups": {
+      "dominicains": [
+        "C188",
+        "C007",
+        "C072",
+        "C080"
+      ],
+      "ancienne-douane": [
+        "C254",
+        "C029",
+        "C102",
+        "C105"
+      ],
+      "koifhus": [
+        "C231",
+        "C255",
+        "C256"
+      ],
+      "petite-venise": [
+        "C037",
+        "C264",
+        "C266"
+      ],
+      "gourmet": [
+        "C222"
+      ]
+    },
+    "selections": [
+      {
+        "source": "Owner archive: Colmar/Originals/2023/Petite Venise — Children’s Christmas Market/20231204_144924.jpg",
+        "sourceSha256": "42d36f3634f34becaada6b89876f513dfc6e62f0b576d34ca40eed4a41e5005b",
+        "src": "/images/guides/colmar/colmar-petite-venise-childrens-market-day-2023.webp",
+        "alt": "Visitors around the children’s Christmas market and carousel at Petite Venise.",
+        "year": 2023,
+        "width": 1400,
+        "height": 788,
+        "bytes": 218184
+      },
+      {
+        "source": "Owner archive: Colmar/Originals/2023/Place de l’Ancienne Douane — Christmas Market/20231204_142246.jpg",
+        "sourceSha256": "4fb8f30d09422f455e0d90cae9f067a4894bce0c3cf2269a1b297b2089b20fbe",
+        "src": "/images/guides/colmar/colmar-ancienne-douane-canal-daytime-2023.webp",
+        "alt": "Visitors walking beside the canal and half-timbered houses at Place de l’Ancienne Douane.",
+        "year": 2023,
+        "width": 1400,
+        "height": 788,
+        "bytes": 401508
+      },
+      {
+        "source": "Owner archive: Colmar/Originals/2023/Place de l’Ancienne Douane — Christmas Market/DSC05824.JPG",
+        "sourceSha256": "4755ed963546ae51a44bcf046ccb5e50d47728c2241c646290198acdc32d66fa",
+        "src": "/images/guides/colmar/colmar-ancienne-douane-schwendi-fountain-2023.webp",
+        "alt": "The Schwendi Fountain surrounded by Christmas stalls and half-timbered houses at night.",
+        "year": 2023,
+        "width": 1400,
+        "height": 787,
+        "bytes": 145414
+      },
+      {
+        "source": "Owner archive: Colmar/Originals/2023/Place de l’Ancienne Douane — Christmas Market/DSC05827.JPG",
+        "sourceSha256": "7a856ee97c113b3ec903b25523249b68db7315310a489a4578ff3e216d600ea7",
+        "src": "/images/guides/colmar/colmar-ancienne-douane-koifhus-night-2023.webp",
+        "alt": "The decorated Schwendi Fountain in front of the illuminated Koïfhus at night.",
+        "year": 2023,
+        "width": 1400,
+        "height": 787,
+        "bytes": 166978
+      },
+      {
+        "source": "Owner archive: Colmar/Originals/2023/Place des Dominicains — Christmas Market/20231204_131755.jpg",
+        "sourceSha256": "f31d768bb427de0e23cdc1c3d1df8bf6851ce1e3c6870766f2709d2fb2b48dd2",
+        "src": "/images/guides/colmar/colmar-dominicains-tree-and-stalls-2023.webp",
+        "alt": "A Christmas tree and market stalls beside the Dominican Church in Colmar.",
+        "year": 2023,
+        "width": 1400,
+        "height": 788,
+        "bytes": 430214
+      },
+      {
+        "source": "Owner archive: Colmar/Originals/2023/Place des Dominicains — Christmas Market/20231206_142307.jpg",
+        "sourceSha256": "4766aedef5b76506097e436b7c1b59d3ceeba417a9a55d5e5a341fab8ebc5ac4",
+        "src": "/images/guides/colmar/colmar-dominicains-church-and-chalets-2023.webp",
+        "alt": "Rows of Christmas chalets beneath the tall windows of the Dominican Church.",
+        "year": 2023,
+        "width": 1400,
+        "height": 788,
+        "bytes": 392102
+      },
+      {
+        "source": "Owner archive: Colmar/Originals/2025/Koïfhus/IMG_7574.HEIC",
+        "sourceSha256": "4db07027199234fe0925f199ac12d5bb1f9ce8c4fa5c9b8a46068f40d07c2eb1",
+        "src": "/images/guides/colmar/colmar-koifhus-decorated-balcony-day-2025.webp",
+        "alt": "The Koïfhus exterior with festive figures lining its wooden balcony in daylight.",
+        "year": 2025,
+        "width": 1400,
+        "height": 1050,
+        "bytes": 293272
+      },
+      {
+        "source": "Owner archive: Colmar/Originals/2025/Koïfhus/IMG_7599.HEIC",
+        "sourceSha256": "cc0ac5b3e93d3f3f1a3f1578d3c3b0eabd50d4309a08569f0ef8944e2af3697e",
+        "src": "/images/guides/colmar/colmar-koifhus-decorated-balcony-evening-2025.webp",
+        "alt": "Pink Christmas lighting on the decorated Koïfhus balcony at blue hour.",
+        "year": 2025,
+        "width": 1400,
+        "height": 1050,
+        "bytes": 228828
+      },
+      {
+        "source": "Owner archive: Colmar/Originals/2025/Koïfhus/IMG_7600.HEIC",
+        "sourceSha256": "0f4f22ab1d662ab0c7bd43f046f43d3e4dddf7de40113026e2788d2f524da270",
+        "src": "/images/guides/colmar/colmar-koifhus-illuminated-facade-2025.webp",
+        "alt": "Snowflake projections on the Koïfhus facade beneath its clock and roof.",
+        "year": 2025,
+        "width": 1400,
+        "height": 1050,
+        "bytes": 269370
+      },
+      {
+        "source": "Owner archive: Colmar/Originals/2025/Marché Gourmand — Gourmet Market/IMG_7565.HEIC",
+        "sourceSha256": "35a5a5627cc77d7dd0a98f48b2172ead0c5a647035645ac5cc3edc63569c738f",
+        "src": "/images/guides/colmar/colmar-gourmet-market-ferris-wheel-2025.webp",
+        "alt": "The Ferris wheel beside the Gourmet Market in the Montagne Verte area.",
+        "year": 2025,
+        "width": 1050,
+        "height": 1400,
+        "bytes": 266392
+      },
+      {
+        "source": "Owner archive: Colmar/Originals/2025/Petite Venise — Children’s Christmas Market/IMG_7610.HEIC",
+        "sourceSha256": "8f449f0dc640c421f3791554afe114f5dfeeb81ce20469d29252a4162ff5359b",
+        "src": "/images/guides/colmar/colmar-petite-venise-childrens-decorations-2025.webp",
+        "alt": "A teddy bear and colorful Christmas decorations at the children’s market in Petite Venise.",
+        "year": 2025,
+        "width": 1050,
+        "height": 1400,
+        "bytes": 225298
+      }
+    ],
+    "processing": "Originals unchanged; HEIC decoded locally where needed. Orientation applied, maximum dimension 1400px, WebP quality 82 with metadata stripped. Source SHA-256 checked before and after export.",
+    "notes": [
+      "Four multi-photo market galleries and one single-photo Gourmet Market stop.",
+      "Koïfhus photos show the exterior and entrance, not the indoor craft stalls.",
+      "The Gourmet Market photo shows the adjacent Ferris wheel; the caption identifies it explicitly.",
+      "No labeled Jeanne d’Arc photos found. Existing single-photo landmark stops retained."
+    ]
   }
 }

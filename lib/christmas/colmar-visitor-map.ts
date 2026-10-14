@@ -2,6 +2,7 @@ import type { MapCoordinate } from '../guides/map-types';
 import type { VisitorMapData } from '../guides/visitor-map-types';
 import source from './colmar-visitor-route.json';
 import { colmarPhotos as photos } from './colmar-photos';
+import { colmarStopGalleries } from './colmar-stop-galleries';
 
 // Preserve the owner's visitor-route geometry and pin positions independently
 // of the 2023 filmed routes. Names and descriptions below are editorial copy.
@@ -19,7 +20,7 @@ function line(name: string): MapCoordinate[] {
 export const colmarVisitorMap: VisitorMapData = {
   city: 'Colmar', sourceUrl: source.sourceUrl, importedOn: source.importedOn,
   route: line('Line 3'), stationApproach: line('Walking Route From Train'),
-  stops: [
+  stops: ([
     { id: 'dominicains', name: 'Place des Dominicains — Christmas Market', shortName: 'Dominicains', category: 'market', icon: 'market', marketNumber: 1, coordinates: point('Place des Dominicains'),
       text: 'Christmas decorations and gifts beneath the Dominican Church. Take in the church and surrounding facades as you browse the stalls.', tip: 'A good first market if you are joining the walk from Place Rapp. Return after dark for the illuminated square.', photo: photos.C188 },
     { id: 'ancienne-douane', name: 'Place de l’Ancienne Douane — Christmas Market', shortName: 'Ancienne Douane', category: 'market', icon: 'market', marketNumber: 2, coordinates: point('Place de l’Ancienne Douane'),
@@ -58,5 +59,5 @@ export const colmarVisitorMap: VisitorMapData = {
       text: 'Pause in Place de la Cathédrale to look at the church and surrounding old-town buildings between the market squares.', photo: photos.C198 },
     { id: 'place-rapp', name: 'Place Rapp — Christmas Fair & Rides', shortName: 'Fair & rides', category: 'useful', icon: 'fair', coordinates: point('Place Rapp (Carnival Rides)'),
       text: 'The fairground and rides near Champ de Mars are an extra stop on the approach to the old-town Christmas markets.', tip: 'Allow a little extra time here if you are visiting with children. This fairground is separate from the six main markets.' },
-  ],
+  ] as VisitorMapData['stops']).map(stop => ({ ...stop, photos: colmarStopGalleries[stop.id] })),
 };
