@@ -10,8 +10,26 @@
   },
   "photoPolicy": "Approved archive selections were exported to stripped-metadata WebP copies. All 14 source SHA-256 hashes were checked before and after export. Originals, full source paths, hashes and selection notes remain in the external private review folder. Photo years are independent of film years.",
   "captionSources": [
-    { "file": "Colmar 2023 Night captions.srt", "tourId": "fr-0026", "youtubeId": "NMQ4Sy3e-Ec", "cuesUsed": ["00:05:22,956 (Dominican market)", "00:33:38,701 (Koifhus steps)", "01:25:46,862 (chimney cakes)", "01:26:55,090 (favorite treat)"] },
-    { "file": "Colmar 2023 Day captions.srt", "tourId": "fr-0027", "youtubeId": "kjY8okFmuZo", "cuesUsed": ["00:21:15,561 (Saint-Martin)", "01:32:30,484 (Quai de la Poissonnerie)"] }
+    {
+      "file": "Colmar 2023 Night captions.srt",
+      "tourId": "fr-0026",
+      "youtubeId": "NMQ4Sy3e-Ec",
+      "cuesUsed": [
+        "00:05:22,956 (Dominican market)",
+        "00:33:38,701 (Koifhus steps)",
+        "01:25:46,862 (chimney cakes)",
+        "01:26:55,090 (favorite treat)"
+      ]
+    },
+    {
+      "file": "Colmar 2023 Day captions.srt",
+      "tourId": "fr-0027",
+      "youtubeId": "kjY8okFmuZo",
+      "cuesUsed": [
+        "00:21:15,561 (Saint-Martin)",
+        "01:32:30,484 (Quai de la Poissonnerie)"
+      ]
+    }
   ],
   "verificationNotes": [
     "Official 2026 dates, hours and transport sources are linked next to the relevant facts in the annual data module.",
@@ -20,7 +38,9 @@
     "Some official individual market pages retain older seasonal details. Do not copy a schedule without checking its year.",
     "Captions supply historical route and first-person observations; unsupported history, vendor counts and transport estimates were not promoted to current facts.",
     "The 2025 Basel–Alsace–Freiburg–Strasbourg sequence remains a historical filming route. Hotels, transport legs and realistic daily timing require the owner's trip records.",
-    "No new country pages, hotel endorsements, affiliate booking links or paid itinerary offers were added."
+    "No new country pages, hotel endorsements, affiliate booking links or paid itinerary offers were added.",
+    "2026-10-14: Removed the field-note section and three-photo gallery from the shared guide template at the owner’s request. Original photos remain available in the archive.",
+    "2026-10-14: Moved regional orientation and transport before the visitor walk. Added an optional shared shuttle section; 2026 facts were checked at https://www.noel-colmar.com/en/christmas-shuttles. Line 3 also operates Monday–Thursday; the full Friday–Sunday pass is EUR 17, line 3 weekdays EUR 8, and the lines 4/5 Explorer pass EUR 10. Line 5 is limited to 12–13 December. Ticket sales open 12 November at noon CET, online only. The third-party driver anecdote was not used as the owner’s experience."
   ],
   "nextDestinationWorkflow": [
     "Select and approve archive photographs, then export web copies while preserving originals.",

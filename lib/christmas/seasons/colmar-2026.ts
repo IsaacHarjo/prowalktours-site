@@ -1,4 +1,5 @@
 import type { GuideSeason } from "../../guides/types";
+import { alsaceShuttles2026 } from "./alsace-shuttles-2026";
 
 // Recheck these official sources when changing the year. Never roll dates forward automatically.
 export const colmar2026: GuideSeason = {
@@ -19,7 +20,7 @@ export const colmar2026: GuideSeason = {
   },
   transport: [
     { title: "Arrive by train", text: "Colmar station is at 9 Place de la Gare. Regional trains connect it with Strasbourg, Sélestat, Mulhouse and Basel, among other destinations. Check a connection for your actual travel date, then continue towards the old town on foot or by local bus.", source: { label: "Colmar station & train connections", href: "https://www.sncf-connect.com/gares/colmar/colmar" } },
-    { title: "Continue to the Alsace villages", text: "The 2026 Christmas shuttles run from 27 November to 20 December, with routes and operating days varying by destination. They serve places including Kaysersberg, Riquewihr, Ribeauvillé and Eguisheim. Online ticket sales are announced for 12 November at noon. Check the route timetable before choosing a day.", source: { label: "Official 2026 Christmas shuttles", href: "https://www.noel-colmar.com/fr/navettes-de-noel" } },
     { title: "Move around Colmar", text: "Use TRACE for local bus routes and current service information. Christmas road closures and diversions can affect the final part of your journey; check the operator before setting out.", source: { label: "TRACE local transport", href: "https://www.trace-colmar.fr/" } },
   ],
+  shuttles: alsaceShuttles2026,
 };
