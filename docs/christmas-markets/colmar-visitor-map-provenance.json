@@ -186,5 +186,27 @@
       "The Gourmet Market photo shows the adjacent Ferris wheel; the caption identifies it explicitly.",
       "No labeled Jeanne d’Arc photos found. Existing single-photo landmark stops retained."
     ]
+  },
+  "canalStopsRefresh": {
+    "date": "2026-10-14",
+    "source": "https://www.google.com/maps/d/viewer?mid=13KTfCXf1uPAYeSSCS_CVAnVdeslAWSc",
+    "addedPoints": [
+      {
+        "name": "Boat Rides on Canal",
+        "coordinates": [
+          7.3576326,
+          48.0740743
+        ]
+      },
+      {
+        "name": "Outdoor Restaurant on Canal",
+        "coordinates": [
+          7.3599407,
+          48.0744659
+        ]
+      }
+    ],
+    "kmlSha256": "7bf3f692c06493147f9c1705deddc1c61e3af75579173b3579f7e9e0de50ad08",
+    "verification": "All existing pin coordinates and both route lines match the prior import exactly. Added the two owner-supplied canal stops under Useful stops, with boat and dining icons. No business identity, opening hours, seasonal availability, prices or personal dining/boat experience inferred."
   }
 }

@@ -1,6 +1,9 @@
 {
+  "sourceUrl": "https://www.google.com/maps/d/viewer?mid=13KTfCXf1uPAYeSSCS_CVAnVdeslAWSc",
+  "importedOn": "2026-10-14",
   "lines": [
     {
+      "name": "Line 3",
       "coordinates": [
         [
           7.3536382,
@@ -986,10 +989,10 @@
           7.3543568,
           48.0772608
         ]
-      ],
-      "name": "Line 3"
+      ]
     },
     {
+      "name": "Walking Route From Train",
       "coordinates": [
         [
           7.3471393,
@@ -1087,152 +1090,163 @@
           7.3536382,
           48.0764885
         ]
-      ],
-      "name": "Walking Route From Train"
+      ]
     }
   ],
-  "importedOn": "2026-10-14",
-  "sourceUrl": "https://www.google.com/maps/d/viewer?mid=13KTfCXf1uPAYeSSCS_CVAnVdeslAWSc",
   "points": [
     {
+      "name": "START HERE",
       "coordinates": [
         7.3561297,
         48.0780386
-      ],
-      "name": "START HERE"
+      ]
     },
     {
+      "name": "Train Arrival",
       "coordinates": [
         7.3471187,
         48.0723798
-      ],
-      "name": "Train Arrival"
+      ]
     },
     {
+      "name": "Covered Market",
       "coordinates": [
         7.3597749,
         48.0746244
-      ],
-      "name": "Covered Market"
+      ]
     },
     {
+      "name": "Saint Martin",
       "coordinates": [
         7.3581259,
         48.0774112
-      ],
-      "name": "Saint Martin"
+      ]
     },
     {
+      "name": "Grocery Store",
       "coordinates": [
         7.3567903,
         48.0793198
-      ],
-      "name": "Grocery Store"
+      ]
     },
     {
+      "name": "Colmar Sign",
       "coordinates": [
         7.3529223,
         48.075749
-      ],
-      "name": "Colmar Sign"
+      ]
     },
     {
+      "name": "Maison des Têtes",
       "coordinates": [
         7.3555477,
         48.0786548
-      ],
-      "name": "Maison des Têtes"
+      ]
     },
     {
+      "name": "Petite Venice Photo",
       "coordinates": [
         7.3596459,
         48.0742983
-      ],
-      "name": "Petite Venice Photo"
+      ]
     },
     {
+      "name": "BEST PHOTO LOCATION (Koïfhus)",
       "coordinates": [
         7.3590471,
         48.0759622
-      ],
-      "name": "BEST PHOTO LOCATION (Koïfhus)"
+      ]
     },
     {
+      "name": "Boat Rides on Canal",
+      "coordinates": [
+        7.3576326,
+        48.0740743
+      ]
+    },
+    {
+      "name": "Parking #1 - Place Rapp",
       "coordinates": [
         7.3543112,
         48.0771857
-      ],
-      "name": "Parking #1 - Place Rapp"
+      ]
     },
     {
+      "name": "Parking #2 - Parking St Josse",
       "coordinates": [
         7.3649863,
         48.075605
-      ],
-      "name": "Parking #2 - Parking St Josse"
+      ]
     },
     {
+      "name": "Outdoor Restaurant on Canal",
+      "coordinates": [
+        7.3599407,
+        48.0744659
+      ]
+    },
+    {
+      "name": "Place Rapp (Carnival Rides)",
       "coordinates": [
         7.3539526,
         48.0768433
-      ],
-      "name": "Place Rapp (Carnival Rides)"
+      ]
     },
     {
+      "name": "Place des Dominicains",
       "coordinates": [
         7.356717,
         48.0781204
-      ],
-      "name": "Place des Dominicains"
+      ]
     },
     {
+      "name": "Place des Six Montagnes",
       "coordinates": [
         7.3566214,
         48.0738802
-      ],
-      "name": "Place des Six Montagnes"
+      ]
     },
     {
+      "name": "Place Jeanne d’Arc",
       "coordinates": [
         7.3609884,
         48.0775996
-      ],
-      "name": "Place Jeanne d’Arc"
+      ]
     },
     {
+      "name": "Place des Martyrs de la Résistance",
       "coordinates": [
         7.3571511,
         48.0785363
-      ],
-      "name": "Place des Martyrs de la Résistance"
+      ]
     },
     {
+      "name": "Place de l’Ancienne Douane",
       "coordinates": [
         7.3595176,
         48.0759082
-      ],
-      "name": "Place de l’Ancienne Douane"
+      ]
     },
     {
+      "name": "Koïfhus Indoor Market",
       "coordinates": [
         7.359137,
         48.0759352
-      ],
-      "name": "Koïfhus Indoor Market"
+      ]
     },
     {
+      "name": "Gourmet Market",
       "coordinates": [
         7.3606732,
         48.0750946
-      ],
-      "name": "Gourmet Market"
+      ]
     },
     {
+      "name": "Place du Marché aux Fruits",
       "coordinates": [
         7.3585477,
         48.0756314
-      ],
-      "name": "Place du Marché aux Fruits"
+      ]
     }
   ]
 }

@@ -24,6 +24,7 @@ function StopIcon({ icon }: { icon: VisitorStopIcon }) {
     {icon === 'parking' && <path d="M8 21V3h6a5 5 0 0 1 0 10H8" />}
     {icon === 'basket' && <><path d="m3 10 3 11h12l3-11ZM7 10l5-8 5 8M9 14v3m6-3v3" /></>}
     {icon === 'food' && <><path d="M5 3v7m3-7v7m3-7v7M5 7h6M8 10v11M19 3v18m0-18c-5 4-5 10 0 10" /></>}
+    {icon === 'boat' && <><path d="M3 12h18l-3 6H6ZM7 12V7h10v5M12 7V3M2 21c2-2 3 2 5 0s3 2 5 0 3 2 5 0 3 2 5 0" /></>}
     {icon === 'landmark' && <><path d="m3 9 9-6 9 6ZM3 21h18M5 12v6m7-6v6m7-6v6" /></>}
     {icon === 'fair' && <><circle cx="12" cy="10" r="8" /><path d="m7 22 5-12 5 12M12 2v8m8 0h-8M4 10h8m-5-6 5 6 6-6M6 16l6-6 6 6" /></>}
     {icon === 'start' && <><path d="M6 22V3m0 0h13l-3 5 3 5H6" /></>}
@@ -45,6 +46,8 @@ const markerOffsets: Record<string, { x: number; y: number; className: string }>
   'ancienne-douane': { x: 21, y: -6, className: 'translate-x-[21px] -translate-y-1.5' },
   'photo-canal': { x: -15, y: 13, className: '-translate-x-[15px] translate-y-[13px]' },
   'covered-market': { x: 18, y: -8, className: 'translate-x-[18px] -translate-y-2' },
+  'canal-restaurant': { x: 36, y: 32, className: 'translate-x-9 translate-y-8' },
+  'canal-boats': { x: 24, y: 28, className: 'translate-x-6 translate-y-7' },
   'parking-rapp': { x: -18, y: -17, className: '-translate-x-[18px] -translate-y-[17px]' },
   'place-rapp': { x: 18, y: 13, className: 'translate-x-[18px] translate-y-[13px]' },
   'join-walk': { x: -18, y: -18, className: '-translate-x-[18px] -translate-y-[18px]' },
