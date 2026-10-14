@@ -8,6 +8,11 @@ export const colmarGuide: DestinationGuide = {
   title: "Christmas in Colmar",
   introduction: "Half-timbered houses, canals and little squares full of light. Explore Colmar through my daytime and evening walks, then use the current market information to plan a visit of your own.",
   hero: photos.C157, mobileHero: photos.C257, featuredTourId: "fr-0026",
+  visitEssentials: [
+    { label: "How much time?", value: "Plan an afternoon & evening", text: "Leave time to browse, stop for food and see the lights after dark." },
+    { label: "Arriving by train", value: "Walk from Colmar station", text: "The mapped station approach is about 800 m to join the suggested route." },
+    { label: "Where to start", value: "Champ de Mars & Place Rapp", text: "Start here from the station or Parking Rapp, or join at Place des Dominicains if you’re already in the old town." },
+  ],
   markets: [
     { name: "Place des Dominicains", text: "Wooden stalls gathered beside the Dominican church. Look up from the stalls to take in the church and the surrounding facades." },
     { name: "Place de l’Ancienne Douane", text: "An old-town square around the Schwendi fountain, with the Koïfhus nearby. A useful place to pause between the northern squares and the canals." },

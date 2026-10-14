@@ -36,6 +36,7 @@ export type DestinationGuide = {
   introduction: string;
   hero: GuidePhoto;
   mobileHero: GuidePhoto;
+  visitEssentials?: { label: string; value: string; text: string }[];
   markets: { name: string; text: string }[];
   marketsSource: GuideSource;
   moments: GuideMoment[];
