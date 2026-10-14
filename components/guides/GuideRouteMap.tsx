@@ -24,12 +24,15 @@ export default function GuideRouteMap({ data, markets, walks, year }: {
   const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
   const [attempt, setAttempt] = useState(0);
+  const [mapView, setMapView] = useState<"street" | "satellite">("street");
   const route = data.routes.find(item => item.tourId === routeId) ?? data.routes[0];
   const selected = data.stops.find(stop => stop.id === selectedId) ?? data.stops[0];
   const routeWalk = walks.find(walk => walk.id === route.tourId);
   const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
   const line: Feature<LineString> = { type: "Feature", properties: {}, geometry: { type: "LineString", coordinates: route.coordinates } };
-  const routeColor = route.label === "Evening" ? "#93672e" : "#176347";
+  const routeColor = mapView === "satellite"
+    ? (route.label === "Evening" ? "#ffe39f" : "#b9f3bb")
+    : (route.label === "Evening" ? "#93672e" : "#176347");
   const start = route.points.find(point => /^start/i.test(point.name));
   const end = route.points.find(point => /^end$/i.test(point.name));
   const selectedMarket = selected.marketIndex === undefined ? undefined : markets[selected.marketIndex];
@@ -46,15 +49,19 @@ export default function GuideRouteMap({ data, markets, walks, year }: {
     setSelectedId(stop.id);
     mapRef.current?.easeTo({ center: stop.coordinates, zoom: 16.5, duration: 500 });
   }
-  function handleLoad() {
+  function styleStreetMap() {
+    if (mapView !== "street") return;
     const map = mapRef.current?.getMap();
     if (map) {
-      for (const layer of map.getStyle().layers) {
-        if (layer.type === "background") map.setPaintProperty(layer.id, "background-color", "#f7f5ef");
+      for (const layer of map.getStyle()?.layers ?? []) {
+        if (layer.type === "background" && map.getPaintProperty(layer.id, "background-color") !== "#f7f5ef") map.setPaintProperty(layer.id, "background-color", "#f7f5ef");
       }
-      if (map.getLayer("water")) map.setPaintProperty("water", "fill-color", "#b9d4cd");
-      if (map.getLayer("building")) map.setPaintProperty("building", "fill-color", "#e0ddd2");
+      if (map.getLayer("water") && map.getPaintProperty("water", "fill-color") !== "#b9d4cd") map.setPaintProperty("water", "fill-color", "#b9d4cd");
+      if (map.getLayer("building") && map.getPaintProperty("building", "fill-color") !== "#e0ddd2") map.setPaintProperty("building", "fill-color", "#e0ddd2");
     }
+  }
+  function handleLoad() {
+    styleStreetMap();
     setLoaded(true);
     setFailed(false);
     overview(0);
@@ -75,18 +82,20 @@ export default function GuideRouteMap({ data, markets, walks, year }: {
     <div className="grid overflow-hidden rounded-b-2xl border border-[#dce1d6] lg:grid-cols-[1fr_300px]">
       <div className="min-w-0">
         <div role="region" aria-label="Interactive Colmar market and walking route map" className="relative h-[420px] w-full bg-[#f7f5ef] sm:h-[480px] lg:h-[550px]">
-          {token && <Map key={attempt} ref={mapRef} mapboxAccessToken={token} mapStyle="mapbox://styles/mapbox/light-v11"
+          {token && <Map key={attempt} ref={mapRef} mapboxAccessToken={token}
+            mapStyle={mapView === "satellite" ? "mapbox://styles/mapbox/satellite-streets-v12" : "mapbox://styles/mapbox/light-v11"}
+            styleDiffing={false}
             initialViewState={{ bounds, fitBoundsOptions: { padding: 55 } }}
             minZoom={13} maxZoom={19} maxBounds={[[7.31, 48.04], [7.41, 48.11]]}
-            scrollZoom={false} dragRotate={false} touchPitch={false}
-            onLoad={handleLoad} onError={event => {
+            scrollZoom={true} dragRotate={false} touchPitch={false}
+            onLoad={handleLoad} onStyleData={styleStreetMap} onError={event => {
               console.warn("Guide map could not load:", event.error.message.replace(/access_token=[^&\s]+/g, "access_token=[redacted]"));
               setFailed(true);
             }}>
             <NavigationControl position="top-right" showCompass={false} />
             <FullscreenControl position="top-right" />
             <Source id="guide-walk-route" type="geojson" data={line}>
-              <Layer id="guide-route-halo" type="line" layout={{ "line-join": "round", "line-cap": "round" }} paint={{ "line-color": "#ffffff", "line-width": 7, "line-opacity": 0.95 }} />
+              <Layer id="guide-route-halo" type="line" layout={{ "line-join": "round", "line-cap": "round" }} paint={{ "line-color": mapView === "satellite" ? "#25382f" : "#ffffff", "line-width": 7, "line-opacity": 0.95 }} />
               <Layer id="guide-route-line" type="line" layout={{ "line-join": "round", "line-cap": "round" }} paint={{ "line-color": routeColor, "line-width": 3.5, "line-opacity": 0.9 }} />
             </Source>
             {data.stops.map(stop => <Marker key={stop.id} longitude={stop.coordinates[0]} latitude={stop.coordinates[1]}
@@ -101,6 +110,13 @@ export default function GuideRouteMap({ data, markets, walks, year }: {
             {start && <Marker longitude={start.coordinates[0]} latitude={start.coordinates[1]} anchor="bottom" offset={[0, -21]}><span className="rounded-md border border-white bg-[#25382f] px-2 py-1 text-[10px] font-bold tracking-wide text-white shadow-sm">{end ? "START" : "START / FINISH"}</span></Marker>}
             {end && <Marker longitude={end.coordinates[0]} latitude={end.coordinates[1]} anchor="bottom" offset={[0, -10]}><span className="rounded-md border border-white bg-[#25382f] px-2 py-1 text-[10px] font-bold tracking-wide text-white shadow-sm">FINISH</span></Marker>}
           </Map>}
+          <div role="group" aria-label="Map background" className="absolute left-3 top-3 flex gap-1 rounded-xl border border-[#dce1d6] bg-white p-1 shadow-sm">
+            {(["street", "satellite"] as const).map(view => <button key={view} type="button" aria-pressed={mapView === view}
+              onClick={() => { setMapView(view); setFailed(false); }}
+              className={`min-h-11 rounded-lg px-3 text-sm font-semibold transition-colors ${mapView === view ? "bg-[#25382f] text-white" : "text-[#25382f] hover:bg-[#edf1ed]"}`}>
+              {view === "street" ? "Street" : "Satellite"}
+            </button>)}
+          </div>
           {(!token || failed || !loaded) && <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[#f7f5ef] px-8 text-center">
             <p role="status" className="text-sm text-[#526258]">{!token || failed ? "The interactive map is unavailable. You can still explore the stops and watch links below." : "Loading your walk through Colmar…"}</p>
             {failed && <button type="button" onClick={() => { setFailed(false); setLoaded(false); setAttempt(value => value + 1); }} className="min-h-11 rounded-full border border-[#176347] px-5 text-sm font-semibold text-[#176347]">Try the map again</button>}
@@ -108,8 +124,8 @@ export default function GuideRouteMap({ data, markets, walks, year }: {
           </div>}
         </div>
         <div className="flex flex-wrap items-center justify-between gap-2 border-t border-[#dce1d6] px-5 py-3 text-xs leading-6 text-[#657069]">
-          <span className="flex items-center gap-2"><span aria-hidden="true" className={`h-1 w-7 rounded-full ${route.label === "Evening" ? "bg-[#93672e]" : "bg-[#176347]"}`} />{route.label} filmed route · {route.year}{routeWalk?.durationLabel ? ` · ${routeWalk.durationLabel}` : ""}</span>
-          <span>Drag to explore · Use + / − to zoom</span>
+          <span className="flex items-center gap-2"><span aria-hidden="true" className={`h-1 w-7 rounded-full ${mapView === "satellite" ? (route.label === "Evening" ? "bg-[#ffe39f] ring-1 ring-[#25382f]" : "bg-[#b9f3bb] ring-1 ring-[#25382f]") : (route.label === "Evening" ? "bg-[#93672e]" : "bg-[#176347]")}`} />{route.label} filmed route · {route.year}{routeWalk?.durationLabel ? ` · ${routeWalk.durationLabel}` : ""}</span>
+          <span>Drag to explore · Scroll or use + / − to zoom</span>
         </div>
       </div>
 
