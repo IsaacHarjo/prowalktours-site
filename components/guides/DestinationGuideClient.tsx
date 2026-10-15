@@ -6,7 +6,9 @@ import Link from "next/link";
 import type { DestinationGuide, GuideSeason, GuideSource, GuideWalk, OrientationPlace } from "../../lib/guides/types";
 import ChristmasShuttles from "./ChristmasShuttles";
 import GuideDisclosure from "./GuideDisclosure";
+import GuideSectionHeading from "./GuideSectionHeading";
 import GuideWalkVideos from "./GuideWalkVideos";
+import GuideFaqs from "./GuideFaqs";
 import type { GuideMapData } from "../../lib/guides/map-types";
 import type { VisitorMapData } from "../../lib/guides/visitor-map-types";
 
@@ -44,14 +46,18 @@ export default function DestinationGuideClient({ guide, season, walks, mapData, 
     ["watch-walks", "Watch the walks"],
   ];
 
-  return <div className="bg-[#fcfaf7] text-[#25382f]">
-    <header className={width + " pb-4 pt-5 sm:pb-6"}>
-      <nav aria-label="Breadcrumb" className="mb-5 flex flex-wrap gap-2 text-sm text-[#657069]"><Link href="/" className="hover:underline">Home</Link><span aria-hidden="true">/</span><Link href="/christmas-markets" className="hover:underline">Christmas Markets</Link><span aria-hidden="true">/</span><span aria-current="page">{guide.city}</span></nav>
-      <nav aria-label="In this guide" className={`mb-5 grid grid-cols-2 gap-2 sm:gap-3 ${season.shuttles ? "sm:grid-cols-3 lg:grid-cols-5" : "sm:grid-cols-4"}`}>
+  return <div className="bg-[#fcfaf7] text-[#25382f] [--guide-scroll-offset:10rem]">
+    <div className={width + " pb-2 pt-5"}>
+      <nav aria-label="Breadcrumb" className="flex flex-wrap gap-2 text-sm text-[#657069]"><Link href="/" className="hover:underline">Home</Link><span aria-hidden="true">/</span><Link href="/christmas-markets" className="hover:underline">Christmas Markets</Link><span aria-hidden="true">/</span><span aria-current="page">{guide.city}</span></nav>
+    </div>
+    <nav aria-label="In this guide" className="sticky top-[65px] z-40 border-b border-[#dce1d6] bg-[#fcfaf7]/95 shadow-sm backdrop-blur">
+      <div className={width + ` flex gap-2 overflow-x-auto overscroll-x-contain py-3 sm:gap-3 lg:grid ${season.shuttles ? "lg:grid-cols-5" : "lg:grid-cols-4"}`}>
         {navigation.map(([id, label]) => (
-          <a key={id} href={`#${id}`} className="flex min-h-14 items-center justify-center rounded-xl bg-[#25382f] px-3 py-3 text-center text-base font-semibold leading-6 text-white transition-colors hover:bg-[#176347] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#176347]">{label}</a>
+          <a key={id} href={`#${id}`} className="flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-xl bg-[#25382f] px-4 py-2 text-center text-sm font-semibold leading-6 text-white transition-colors hover:bg-[#176347] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#176347] lg:min-h-14 lg:px-3 lg:py-3 lg:text-base">{label}</a>
         ))}
-      </nav>
+      </div>
+    </nav>
+    <header className={width + " pb-4 pt-5 sm:pb-6"}>
       <div className="relative isolate flex min-h-[460px] items-end overflow-hidden rounded-3xl bg-[#25382f] sm:min-h-[440px] lg:min-h-[520px]">
         <picture className="absolute inset-0">
           <source media="(max-width: 639px)" srcSet={guide.mobileHero.src} />
@@ -66,11 +72,10 @@ export default function DestinationGuideClient({ guide, season, walks, mapData, 
       </div>
     </header>
 
-    <section id="plan-your-visit" className={width + " scroll-mt-20 py-14 sm:py-16"} aria-labelledby="visit-heading">
+    <section id="plan-your-visit" className={width + " scroll-mt-[var(--guide-scroll-offset,5rem)] py-14 sm:py-16"} aria-labelledby="visit-heading">
       <div className="grid gap-9 lg:grid-cols-[1.2fr_0.8fr]">
         <div>
-          <p className={eyebrow}>The season ahead</p>
-          <h2 id="visit-heading" className="mt-3 text-3xl font-semibold tracking-tight">Plan your {season.year} visit</h2>
+          <GuideSectionHeading id="visit-heading" eyebrow="The season ahead" title={`Plan your ${season.year} visit`} icon="planning" />
           <p className="mt-5 text-2xl font-medium leading-9">{season.dates}</p>
           <p className="mt-1 text-sm text-[#657069]">Main Christmas markets</p>
           <dl className="mt-6 max-w-lg divide-y divide-[#dce1d6] border-y border-[#dce1d6]">{season.hours.map(hours => <div key={hours.label} className="flex flex-wrap justify-between gap-3 py-4"><dt className="text-[#657069]">{hours.label}</dt><dd className="font-semibold tabular-nums">{hours.value}</dd></div>)}</dl>
@@ -94,9 +99,8 @@ export default function DestinationGuideClient({ guide, season, walks, mapData, 
       </GuideDisclosure>
     </section>
 
-    <section id="getting-there" className={width + " scroll-mt-20 py-14 sm:py-16"} aria-labelledby="transport-heading">
-      <p className={eyebrow}>Plan the wider trip</p>
-      <h2 id="transport-heading" className="mt-3 text-3xl font-semibold tracking-tight">Where {guide.city} fits in your trip</h2>
+    <section id="getting-there" className={width + " scroll-mt-[var(--guide-scroll-offset,5rem)] py-14 sm:py-16"} aria-labelledby="transport-heading">
+      <GuideSectionHeading id="transport-heading" eyebrow="Plan the wider trip" title={`Where ${guide.city} fits in your trip`} icon="region" />
       <p className="mt-4 max-w-3xl leading-7 text-[#657069]">If you’re visiting several market towns, use this map to see how they fit together. The transport options below can help you decide how to get around.</p>
       {orientationPlaces && <AlsaceOrientation key={guide.city} focusCity={guide.city} places={orientationPlaces} />}
       <GuideDisclosure title={parkingStops.length ? "Train connections, parking & local transport" : "Train connections & local transport"} className="mt-8">
@@ -111,12 +115,12 @@ export default function DestinationGuideClient({ guide, season, walks, mapData, 
 
     {season.shuttles && <ChristmasShuttles service={season.shuttles} />}
 
-    <section id="market-squares" className="scroll-mt-20 border-y border-[#e1e3d9] bg-white" aria-labelledby="markets-heading">
+    <section id="market-squares" className="scroll-mt-[var(--guide-scroll-offset,5rem)] border-y border-[#e1e3d9] bg-white" aria-labelledby="markets-heading">
       <div className={width + " py-14 sm:py-16"}>
-        <p className={eyebrow}>Explore {guide.city} on foot</p>
-        <h2 id="markets-heading" className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight">Suggested route through all six Christmas markets</h2>
+        <GuideSectionHeading id="markets-heading" eyebrow={`Explore ${guide.city} on foot`} title="Suggested route through all six Christmas markets" icon="walking" />
         <p className="mt-4 max-w-3xl leading-7 text-[#657069]">I filmed Colmar’s Christmas markets in 2023 and 2025 and spent a lot of time planning a walk that takes in all six. This is the route I’d recommend, with photo spots, useful stops and tips along the way.</p>
-        <p className="mt-3 max-w-3xl leading-7 text-[#657069]">Open this map in Google Maps to keep the route and stops handy while you’re there.</p>
+        <p className="mt-3 max-w-3xl leading-7 text-[#657069]">Follow the itinerary one stop at a time, or explore all the map stops. Open the map in Google Maps to keep the route handy while you’re there.</p>
+        {Boolean(guide.faq?.length) && <a href="#guide-questions" className={linkClass + " mt-1"}>Questions about {guide.city}? ↓</a>}
         {visitorMapData ? <VisitorRouteMap data={visitorMapData} /> : mapData ? <GuideRouteMap data={mapData} markets={guide.markets} walks={walks} year={season.year} /> : <ol className="mt-8 grid gap-x-12 md:grid-cols-2">{guide.markets.map((market, index) => <li key={market.name} className="flex gap-4 border-t border-[#e1e3d9] py-6"><span className="pt-1 font-serif text-xl text-[#947a50]">{String(index + 1).padStart(2, "0")}</span><div><h3 className="text-lg font-semibold">{market.name}</h3><p className="mt-2 text-sm leading-7 text-[#657069]">{market.text}</p></div></li>)}</ol>}
         <SourceLink source={guide.marketsSource} />
       </div>
@@ -126,13 +130,14 @@ export default function DestinationGuideClient({ guide, season, walks, mapData, 
 
     <GuideWalkVideos city={guide.city} walks={walks} />
 
+    {guide.faq && guide.faq.length > 0 && <GuideFaqs city={guide.city} questions={guide.faq} />}
+
 
 
     <section className={width + " py-14 sm:py-16"} aria-labelledby="nearby-heading">
-      <p className={eyebrow}>Keep exploring</p>
-      <h2 id="nearby-heading" className="mt-3 text-3xl font-semibold tracking-tight">More walks around {guide.region}</h2>
+      <GuideSectionHeading id="nearby-heading" eyebrow="Keep exploring" title={`More walks around ${guide.region}`} icon="explore" />
       <div className="mt-7 grid gap-5 md:grid-cols-3">{guide.nearby.map(place => <Link key={place.city} href={place.href} className="rounded-2xl border border-[#dce1d6] bg-white p-6 hover:border-[#176347]"><h3 className="text-xl font-semibold">{place.city}</h3><p className="mt-3 text-sm leading-7 text-[#657069]">{place.text}</p><span className={linkClass + " mt-3"}>Browse the walks →</span></Link>)}</div>
-      <div id="regional-route" className="mt-8 scroll-mt-20">
+      <div id="regional-route" className="mt-8 scroll-mt-[var(--guide-scroll-offset,5rem)]">
         <GuideDisclosure title="My Christmas filming trip around Alsace">
           <h3 className="text-lg font-semibold">{guide.route.title}</h3>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-[#657069]">{guide.route.text}</p>

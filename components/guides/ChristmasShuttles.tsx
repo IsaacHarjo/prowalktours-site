@@ -1,19 +1,15 @@
 import type { GuideShuttleService } from "../../lib/guides/types";
 import GuideDisclosure from "./GuideDisclosure";
+import GuideSectionHeading from "./GuideSectionHeading";
 
 export default function ChristmasShuttles({ service }: { service: GuideShuttleService }) {
   const checkedDate = new Date(`${service.checkedOn}T12:00:00Z`).toLocaleDateString("en-GB", {
     day: "numeric", month: "long", year: "numeric", timeZone: "UTC",
   });
 
-  return <section id="christmas-shuttles" aria-labelledby="shuttles-heading" className="scroll-mt-20 border-y border-[#dce1d6] bg-[#edf1ed]">
+  return <section id="christmas-shuttles" aria-labelledby="shuttles-heading" className="scroll-mt-[var(--guide-scroll-offset,5rem)] border-y border-[#dce1d6] bg-[#edf1ed]">
     <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-16 lg:px-10">
-      <div className="flex items-center gap-4">
-        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#25382f] text-white">
-          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7"><rect x="4" y="3" width="16" height="16" rx="3" /><path d="M4 11h16M8 19v2m8-2v2M8 15h1m6 0h1M8 6h8" /></svg>
-        </span>
-        <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#607767]">Nearby markets without a car</p><h2 id="shuttles-heading" className="mt-2 text-3xl font-semibold tracking-tight text-[#25382f]">Christmas Shuttles</h2></div>
-      </div>
+      <GuideSectionHeading id="shuttles-heading" eyebrow="Nearby markets without a car" title="Christmas Shuttles" icon="shuttle" />
       <p className="mt-5 max-w-3xl leading-7 text-[#526258]">{service.introduction}</p>
       <div className="mt-6 flex flex-wrap items-center justify-between gap-x-8 gap-y-5">
           <dl className="grid gap-x-10 gap-y-5 sm:grid-cols-2">

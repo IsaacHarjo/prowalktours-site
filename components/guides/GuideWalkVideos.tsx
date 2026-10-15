@@ -4,15 +4,15 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { GuideWalk } from "../../lib/guides/types";
+import GuideSectionHeading from "./GuideSectionHeading";
 
 export default function GuideWalkVideos({ city, walks }: { city: string; walks: GuideWalk[] }) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const orderedWalks = [...walks].sort((a, b) => Number(a.videoType === "evening-walk") - Number(b.videoType === "evening-walk"));
 
-  return <section id="watch-walks" aria-labelledby="watch-heading" className="scroll-mt-20 bg-[#edf1ed]">
+  return <section id="watch-walks" aria-labelledby="watch-heading" className="scroll-mt-[var(--guide-scroll-offset,5rem)] bg-[#edf1ed]">
     <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-16 lg:px-10">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#607767]">Prowalk Tours</p>
-      <h2 id="watch-heading" className="mt-3 text-3xl font-semibold tracking-tight">My {city} walking tours</h2>
+      <GuideSectionHeading id="watch-heading" eyebrow="Prowalk Tours" title={`My ${city} walking tours`} icon="prowalk" />
       <p className="mt-4 max-w-3xl leading-7 text-[#526258]">Walk with me in daylight or after dark. Put on your headphones for the sounds of the streets and markets.</p>
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         {orderedWalks.map(walk => {
