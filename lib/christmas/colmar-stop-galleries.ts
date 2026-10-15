@@ -3,6 +3,12 @@ import { colmarPhotos as photos } from "./colmar-photos";
 
 // Selected from the owner’s named location folders; full provenance is in docs/christmas-markets.
 export const colmarStopGalleries: Record<string, GuidePhoto[]> = {
+  "place-rapp": [
+    {"src":"/images/guides/colmar/colmar-place-rapp-pyramid-night-2025.webp","alt":"The illuminated Christmas pyramid at Place Rapp at night.","year":2025,"width":1050,"height":1400},
+    {"src":"/images/guides/colmar/colmar-place-rapp-fairground-day-2025.webp","alt":"Visitors, rides and Christmas decorations at the Place Rapp fairground.","year":2025,"width":1400,"height":1050},
+    {"src":"/images/guides/colmar/colmar-place-rapp-pyramid-day-2025.webp","alt":"The tall wooden Christmas pyramid at Place Rapp in daylight.","year":2025,"width":1050,"height":1400},
+    {"src":"/images/guides/colmar/colmar-place-rapp-entrance-2025.webp","alt":"The decorated entrance to the Place Rapp Christmas fair beyond the Colmar sign.","year":2025,"width":1400,"height":788},
+  ],
   "dominicains": [
     photos.C188,
     {"src":"/images/guides/colmar/colmar-dominicains-tree-and-stalls-2023.webp","alt":"A Christmas tree and market stalls beside the Dominican Church in Colmar.","year":2023,"width":1400,"height":788},
