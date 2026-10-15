@@ -37,6 +37,7 @@ export const colmarVisitorMap: VisitorMapData = {
     { id: 'gourmet', name: 'Marché Gourmand — Gourmet Market', shortName: 'Gourmet Market', category: 'market', icon: 'market', marketNumber: 6, coordinates: point('Gourmet Market'),
       text: 'Prepared dishes and Alsatian specialties to eat on site or take away in the Montagne Verte area.', tip: 'This is separate from the covered food market. Its season and evening hours differ from the main markets; check the dates section above.' },
     { id: 'photo-koifhus', name: 'Koïfhus Steps — Elevated Photo Spot', shortName: 'Koïfhus photo', category: 'photo', icon: 'camera', coordinates: point('BEST PHOTO LOCATION (Koïfhus)'),
+      video: { libraryId: '780712', videoId: '1e590e9a-61fd-4be6-9887-b8a8168a59dd', title: 'The Koïfhus steps: look back' },
       text: 'My marked viewpoint for the decorated buildings and busy Christmas streets around the Koïfhus.', tip: 'Walk up the Koïfhus steps for the elevated view. This viewpoint involves stairs; leave space for people passing.', photo: photos.C157 },
     { id: 'photo-canal', name: 'Petite Venise — Canal Photo Spot', shortName: 'Canal photo', category: 'photo', icon: 'camera', coordinates: point('Petite Venice Photo'),
       text: 'Pause at my marked canal viewpoint for the half-timbered houses and Christmas decorations along the water.', tip: 'Try this stop in daylight for the building colors, then again as the Christmas lights come on.', photo: photos.C147 },
