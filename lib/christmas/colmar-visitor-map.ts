@@ -24,6 +24,7 @@ export const colmarVisitorMap: VisitorMapData = {
   itinerary: colmarItinerary,
   stops: ([
     { id: 'dominicains', name: 'Place des Dominicains — Christmas Market', shortName: 'Dominicains', category: 'market', icon: 'market', marketNumber: 1, coordinates: point('Place des Dominicains'),
+      video: { libraryId: '780712', videoId: 'bf5a0466-fc37-4b38-918a-0b7af75f080a', title: 'Place des Dominicains & its hidden courtyard' },
       text: 'Christmas decorations and gifts beneath the Dominican Church. Take in the church and surrounding facades as you browse the stalls.', tip: 'A good first market if you are joining the walk from Place Rapp. Return after dark for the illuminated square.', photo: photos.C188 },
     { id: 'ancienne-douane', name: 'Place de l’Ancienne Douane — Christmas Market', shortName: 'Ancienne Douane', category: 'market', icon: 'market', marketNumber: 2, coordinates: point('Place de l’Ancienne Douane'),
       text: 'Chalets around the Schwendi Fountain and canal, with decorations and crafts beside the old customs house.', tip: 'The outdoor market and the indoor Koïfhus market are separate stops close together.', photo: photos.C254 },
@@ -63,6 +64,7 @@ export const colmarVisitorMap: VisitorMapData = {
     { id: 'groceries', name: 'Groceries & Essentials', shortName: 'Groceries', category: 'useful', icon: 'basket', coordinates: point('Grocery Store'),
       text: 'The grocery stop I marked for snacks, water, and everyday supplies near the northern end of the walk.', tip: 'Check the shop’s posted opening hours, especially on Sundays and holidays.' },
     { id: 'saint-martin', name: 'Saint-Martin Church', shortName: 'Saint-Martin', category: 'useful', icon: 'landmark', coordinates: point('Saint Martin'),
+      video: { libraryId: '780712', videoId: '8c651bef-7116-4624-89f9-c3c7b530b34c', title: 'Place de la Cathédrale & Saint-Martin' },
       text: 'Pause in Place de la Cathédrale to look at the church and surrounding old-town buildings between the market squares.', photo: photos.C198 },
     { id: 'place-rapp', name: 'Place Rapp — Christmas Fair & Rides', shortName: 'Fair & rides', category: 'useful', icon: 'fair', coordinates: point('Place Rapp (Carnival Rides)'),
       text: 'The fairground and rides near Champ de Mars are an extra stop on the approach to the old-town Christmas markets.', tip: 'Allow a little extra time here if you are visiting with children. This fairground is separate from the six main markets.' },
