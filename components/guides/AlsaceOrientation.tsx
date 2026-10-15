@@ -38,6 +38,7 @@ export default function AlsaceOrientation({ places, focusCity }: { places: Orien
   const shownPlaces = places.filter(place => current.cities.includes(place.city));
   const selectedPlace = places.find(place => place.city === selectedCity);
   const available = loaded && !failed && !!token;
+  const canExplore = available && !playing && settled;
 
   function updateTownPositions() {
     const map = mapRef.current;
@@ -70,6 +71,8 @@ export default function AlsaceOrientation({ places, focusCity }: { places: Orien
       linear: false,
       essential: false,
       retainPadding: false,
+      bearing: 0,
+      pitch: 0,
     });
   }
 
@@ -136,7 +139,9 @@ export default function AlsaceOrientation({ places, focusCity }: { places: Orien
         <div className="relative h-[400px] bg-[#f7f4eb] sm:h-[460px] lg:h-[520px]" role="region" aria-label={`Animated regional map for ${focusCity}`}>
           {token && <Map ref={mapRef} mapboxAccessToken={token} mapStyle="mapbox://styles/mapbox/light-v11"
             initialViewState={{ bounds: stages[0].bounds, fitBoundsOptions: { padding: 55 } }}
-            interactive={false} scrollZoom={available && !playing && settled} attributionControl={false}
+            dragPan={canExplore} scrollZoom={canExplore} doubleClickZoom={canExplore}
+            touchZoomRotate={canExplore} keyboard={canExplore} boxZoom={canExplore}
+            dragRotate={false} touchPitch={false} attributionControl={false}
             onLoad={() => { styleMap(); setLoaded(true); setLabelContainer(mapRef.current?.getCanvasContainer() ?? null); moveTo(stage, 0); updateTownPositions(); }}
             onMove={updateTownPositions} onResize={() => { mapRef.current?.fitBounds(current.bounds, { padding: 55, duration: 0, retainPadding: false }); updateTownPositions(); }}
             onMoveEnd={() => { setSettled(true); updateTownPositions(); }}
@@ -180,6 +185,6 @@ export default function AlsaceOrientation({ places, focusCity }: { places: Orien
         </div>
       </div>
     </div>
-    <p className="border-t border-[#dce1d6] bg-[#f5f6f1] px-6 py-3 text-xs leading-6 text-[#657069]">Underlined towns open their Christmas market pages. Select another town for official market information. Scroll over the map to zoom after the animation.</p>
+    <p className="border-t border-[#dce1d6] bg-[#f5f6f1] px-6 py-3 text-xs leading-6 text-[#657069]">Underlined towns open their Christmas market pages. Select another town for official market information. After the animation, drag to move or scroll to zoom. Play the overview or choose any of the three views to reset the map.</p>
   </div>;
 }
