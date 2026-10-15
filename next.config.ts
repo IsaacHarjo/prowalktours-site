@@ -7,8 +7,8 @@ const ContentSecurityPolicy = `
   img-src 'self' data: blob: https://i.ytimg.com https://img.youtube.com https://api.qrserver.com https://api.mapbox.com https://*.tiles.mapbox.com https://www.google.com https://maps.gstatic.com https://maps.google.com;
   font-src 'self' https://api.mapbox.com;
   connect-src 'self' https://api.mapbox.com https://*.tiles.mapbox.com https://events.mapbox.com;
-  frame-src https://www.youtube.com https://www.google.com;
-  media-src 'self';
+  frame-src https://www.youtube.com https://www.google.com https://player.mediadelivery.net;
+  media-src 'self' https://vz-76a3e58b-c05.b-cdn.net;
   object-src 'none';
   base-uri 'self';
   form-action 'self';

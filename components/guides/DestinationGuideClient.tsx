@@ -8,6 +8,7 @@ import ChristmasShuttles from "./ChristmasShuttles";
 import GuideDisclosure from "./GuideDisclosure";
 import GuideSectionHeading from "./GuideSectionHeading";
 import GuideWalkVideos from "./GuideWalkVideos";
+import GuideHeroVideo, { type GuideVideoPreview } from "./GuideHeroVideo";
 import GuideFaqs from "./GuideFaqs";
 import type { GuideMapData } from "../../lib/guides/map-types";
 import type { VisitorMapData } from "../../lib/guides/visitor-map-types";
@@ -35,7 +36,7 @@ function SourceLink({ source }: { source: GuideSource }) {
   return <a href={source.href} target="_blank" rel="noreferrer" className={linkClass}>{source.label} ↗</a>;
 }
 
-export default function DestinationGuideClient({ guide, season, walks, mapData, visitorMapData, orientationPlaces }: { guide: DestinationGuide; season: GuideSeason; walks: GuideWalk[]; mapData?: GuideMapData; visitorMapData?: VisitorMapData; orientationPlaces?: OrientationPlace[] }) {
+export default function DestinationGuideClient({ guide, season, walks, mapData, visitorMapData, orientationPlaces, videoPreview }: { guide: DestinationGuide; season: GuideSeason; walks: GuideWalk[]; mapData?: GuideMapData; visitorMapData?: VisitorMapData; orientationPlaces?: OrientationPlace[]; videoPreview?: GuideVideoPreview }) {
   const parkingStops = visitorMapData?.stops.filter(stop => stop.icon === "parking") ?? [];
   const checkedDate = new Date(`${season.checkedOn}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
   const navigation = [
@@ -64,6 +65,7 @@ export default function DestinationGuideClient({ guide, season, walks, mapData, 
           {/* Both compositions are already compressed WebP exports, each under 300 KB. */}
           <Image src={guide.hero.src} alt={`Christmas lights and half-timbered buildings in ${guide.city}`} width={guide.hero.width} height={guide.hero.height} unoptimized loading="eager" fetchPriority="high" className="h-full w-full object-cover" />
         </picture>
+        {videoPreview && <GuideHeroVideo preview={videoPreview} />}
         <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-[#091811]/95 via-[#091811]/35 to-[#091811]/5" />
         <div className="relative max-w-3xl px-6 pb-8 pt-28 sm:p-10 lg:p-12">
           <h1 className="font-serif text-5xl leading-[1.04] tracking-tight text-white sm:text-6xl lg:text-7xl">{guide.title}</h1>

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import StopPhotoGallery from './StopPhotoGallery';
+import StopVideo from './StopVideo';
 import Map, { FullscreenControl, Layer, Marker, NavigationControl, Source, type MapRef } from 'react-map-gl/mapbox';
 import type { Feature, LineString } from 'geojson';
 import type { MapCoordinate } from '../../lib/guides/map-types';
@@ -200,21 +201,21 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
       </div>
       <aside ref={detailRef} tabIndex={-1} aria-label="Selected visitor map stop" className="scroll-mt-[var(--guide-scroll-offset,5rem)] border-t border-[#dce1d6] bg-[#fafbf7] p-5 focus-visible:outline-2 focus-visible:outline-[#176347] sm:p-6 lg:max-h-[640px] lg:overflow-y-auto lg:border-l lg:border-t-0">
         {activeStep ? <>
-          <p role="status" aria-live="polite" aria-atomic="true" className="text-xs font-semibold uppercase tracking-[0.12em] text-[#176347]">Step {stepIndex + 1} of {steps.length} · {activeStep.label}</p>
-          <h3 className="mt-3 text-xl font-semibold leading-7 text-[#25382f]">{activeStep.title}</h3>
-          <p className="mt-3 text-sm leading-7 text-[#526258]">{activeStep.text}</p>
+          <p role="status" aria-live="polite" aria-atomic="true" className="min-h-8 text-xs font-semibold uppercase tracking-[0.12em] text-[#176347]">Step {stepIndex + 1} of {steps.length} · {activeStep.label}</p>
+          <h3 className="mt-3 min-h-[84px] text-xl font-semibold leading-7 text-[#25382f]">{activeStep.title}</h3>
+          {selected.video ? <StopVideo key={selected.id} video={selected.video} /> : <StopPhotoGallery key={selected.id} name={selected.name} photos={selected.photos?.length ? selected.photos : selected.photo ? [selected.photo] : []} />}
           <nav aria-label="Itinerary steps" className="mt-4 grid grid-cols-2 gap-2">
             <button type="button" disabled={stepIndex === 0} onClick={() => selectStep(stepIndex - 1)} className="min-h-11 rounded-lg border border-[#bacbbb] bg-white px-3 py-2 text-sm font-semibold text-[#25382f] hover:bg-[#e6eee3] disabled:cursor-default disabled:opacity-40">← Previous stop</button>
             <button type="button" onClick={() => selectStep(stepIndex === steps.length - 1 ? 0 : stepIndex + 1)} className="min-h-11 rounded-lg bg-[#176347] px-3 py-2 text-sm font-semibold text-white hover:bg-[#25382f]">{stepIndex === steps.length - 1 ? 'Back to the start' : 'Next stop →'}</button>
           </nav>
+          <p className="mt-3 text-sm leading-7 text-[#526258]">{activeStep.text}</p>
           {activeStep.highlights && <div className="mt-5"><h4 className="text-sm font-semibold text-[#25382f]">Look around this stop</h4><ul className="mt-2 list-disc space-y-2 pl-4 text-sm leading-6 text-[#526258]">{activeStep.highlights.map(text => <li key={text}>{text}</li>)}</ul></div>}
           {activeStep.tip && <p className="mt-4 border-l-2 border-[#b26723] pl-4 text-sm leading-6 text-[#65543b]">{activeStep.tip}</p>}
           {activeStep.onward && <div className="mt-4 rounded-xl bg-[#eaf0e8] p-4"><h4 className="text-sm font-semibold text-[#25382f]">Continue the walk</h4><p className="mt-1 text-sm leading-6 text-[#526258]">{activeStep.onward}</p></div>}
-          <div className="mt-5"><StopPhotoGallery key={selected.id} name={selected.name} photos={selected.photos?.length ? selected.photos : selected.photo ? [selected.photo] : []} /></div>
         </> : <>
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#607767]"><Badge stop={selected} />{selected.category === 'market' ? `Market ${selected.marketNumber} of 6` : categories.find(item => item.id === selected.category)?.label}</div>
           <h3 className="mt-4 text-xl font-semibold leading-7 text-[#25382f]">{selected.name}</h3>
-          <StopPhotoGallery key={selected.id} name={selected.name} photos={selected.photos?.length ? selected.photos : selected.photo ? [selected.photo] : []} />
+          {selected.video ? <StopVideo key={selected.id} video={selected.video} /> : <StopPhotoGallery key={selected.id} name={selected.name} photos={selected.photos?.length ? selected.photos : selected.photo ? [selected.photo] : []} />}
           <p className="mt-4 text-sm leading-7 text-[#526258]">{selected.text}</p>
           {selected.tip && <p className="mt-4 border-l-2 border-[#b26723] pl-4 text-sm leading-6 text-[#65543b]">{selected.tip}</p>}
           {steps.length > 0 && <button type="button" onClick={() => selectStep(stepIndex < 0 || selected.category === 'arrival' ? 0 : stepIndex)} className="mt-4 min-h-11 rounded-lg bg-[#176347] px-4 py-2 text-sm font-semibold text-white hover:bg-[#25382f]">{stepIndex < 0 || selected.category === 'arrival' ? 'Start at the Colmar sign →' : 'Follow the itinerary from here →'}</button>}
