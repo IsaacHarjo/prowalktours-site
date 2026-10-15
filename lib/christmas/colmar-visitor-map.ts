@@ -27,6 +27,7 @@ export const colmarVisitorMap: VisitorMapData = {
       video: { libraryId: '780712', videoId: 'bf5a0466-fc37-4b38-918a-0b7af75f080a', title: 'Place des Dominicains & its hidden courtyard' },
       text: 'Christmas decorations and gifts beneath the Dominican Church. Take in the church and surrounding facades as you browse the stalls.', tip: 'A good first market if you are joining the walk from Place Rapp. Return after dark for the illuminated square.', photo: photos.C188 },
     { id: 'ancienne-douane', name: 'Place de l’Ancienne Douane — Christmas Market', shortName: 'Ancienne Douane', category: 'market', icon: 'market', marketNumber: 2, coordinates: point('Place de l’Ancienne Douane'),
+      video: { libraryId: '780712', videoId: 'e60b4ad0-f87b-44ee-83b7-002592c21637', title: 'Place de l’Ancienne Douane & Grand Rue' },
       text: 'Chalets around the Schwendi Fountain and canal, with decorations and crafts beside the old customs house.', tip: 'The outdoor market and the indoor Koïfhus market are separate stops close together.', photo: photos.C254 },
     { id: 'koifhus', name: 'Koïfhus — Indoor Craft Market', shortName: 'Koïfhus', category: 'market', icon: 'market', marketNumber: 3, coordinates: point('Koïfhus Indoor Market'),
       text: 'Step into the historic customs house to browse ceramics, glass, woodwork, jewelry, and other work by local artisans.', tip: 'Look for the indoor craft market as well as the stalls outside.' },
