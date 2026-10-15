@@ -146,6 +146,12 @@ export default function AlsaceOrientation({ places, focusCity }: { places: Orien
             onMoveEnd={() => { setSettled(true); updateTownPositions(); }}
             onError={() => { stop(); setFailed(true); }}>
             <AttributionControl compact />
+            <Source id="france-boundary" type="geojson" data="/maps/france-boundary.geojson"
+              attribution='<a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">France boundary: Natural Earth</a>'>
+              <Layer id="france-region-fill" type="fill" beforeId={labelLayerId} layout={{ visibility: stage === 0 ? "visible" : "none" }} paint={{ "fill-color": "#176347", "fill-opacity": 0.12 }} />
+              <Layer id="france-region-halo" type="line" beforeId={labelLayerId} layout={{ visibility: stage === 0 ? "visible" : "none", "line-join": "round" }} paint={{ "line-color": "#ffffff", "line-width": 6, "line-opacity": 0.9 }} />
+              <Layer id="france-region-border" type="line" beforeId={labelLayerId} layout={{ visibility: stage === 0 ? "visible" : "none", "line-join": "round" }} paint={{ "line-color": "#176347", "line-width": 2.5 }} />
+            </Source>
             <Source id="alsace-boundary" type="geojson" data="/maps/alsace-boundary.geojson"
               attribution='<a href="https://www.data.gouv.fr/datasets/contours-administratifs" target="_blank" rel="noopener noreferrer">Alsace boundary: data.gouv.fr / IGN</a> · <a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noopener noreferrer">ODbL</a>'>
               <Layer id="alsace-region-fill" type="fill" beforeId={labelLayerId} layout={{ visibility: current.outline === "alsace" ? "visible" : "none" }} paint={{ "fill-color": "#176347", "fill-opacity": 0.12 }} />
