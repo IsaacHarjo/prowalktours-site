@@ -2,6 +2,12 @@ import type { ChristmasWalk } from "../christmas/catalog";
 
 export type GuidePhoto = { src: string; alt: string; year: number; width: number; height: number };
 export type GuideSource = { label: string; href: string };
+export type GuideFaq = {
+  question: string;
+  answer: string;
+  items?: { title: string; text: string; source?: GuideSource }[];
+  source?: GuideSource;
+};
 export type OrientationPlace = { city: string; country?: string; longitude: number; latitude: number; href: string; external?: boolean; marketGuide?: boolean; labelSide?: "left" | "right" };
 export type GuideShuttleService = {
   checkedOn: string;
@@ -37,6 +43,7 @@ export type DestinationGuide = {
   hero: GuidePhoto;
   mobileHero: GuidePhoto;
   visitEssentials?: { label: string; value: string; text: string }[];
+  faq?: GuideFaq[];
   markets: { name: string; text: string }[];
   marketsSource: GuideSource;
   moments: GuideMoment[];

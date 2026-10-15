@@ -3,6 +3,7 @@ import type { VisitorMapData } from '../guides/visitor-map-types';
 import source from './colmar-visitor-route.json';
 import { colmarPhotos as photos } from './colmar-photos';
 import { colmarStopGalleries } from './colmar-stop-galleries';
+import { colmarItinerary } from './colmar-itinerary';
 
 // Preserve the owner's visitor-route geometry and pin positions independently
 // of the 2023 filmed routes. Names and descriptions below are editorial copy.
@@ -20,6 +21,7 @@ function line(name: string): MapCoordinate[] {
 export const colmarVisitorMap: VisitorMapData = {
   city: 'Colmar', sourceUrl: source.sourceUrl, importedOn: source.importedOn,
   route: line('Line 3'), stationApproach: line('Walking Route From Train'),
+  itinerary: colmarItinerary,
   stops: ([
     { id: 'dominicains', name: 'Place des Dominicains — Christmas Market', shortName: 'Dominicains', category: 'market', icon: 'market', marketNumber: 1, coordinates: point('Place des Dominicains'),
       text: 'Christmas decorations and gifts beneath the Dominican Church. Take in the church and surrounding facades as you browse the stalls.', tip: 'A good first market if you are joining the walk from Place Rapp. Return after dark for the illuminated square.', photo: photos.C188 },

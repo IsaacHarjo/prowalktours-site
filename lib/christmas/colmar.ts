@@ -1,5 +1,6 @@
 import type { DestinationGuide } from "../guides/types";
 import { colmarPhotos as photos } from "./colmar-photos";
+import { colmarFaq } from "./colmar-faq";
 
 // Moments refer to cues in the owner's 2023 day/evening SRT captions.
 // Photos are from the separately dated archive, not video frame captures.
@@ -8,6 +9,7 @@ export const colmarGuide: DestinationGuide = {
   title: "Christmas in Colmar",
   introduction: "Half-timbered houses, canals and little squares full of light. Explore Colmar through my daytime and evening walks, then use the current market information to plan a visit of your own.",
   hero: photos.C157, mobileHero: photos.C257, featuredTourId: "fr-0026",
+  faq: colmarFaq,
   visitEssentials: [
     { label: "How much time?", value: "Allow at least 3 hours", text: "Give yourself time to walk through the markets, browse the stalls and stop for food." },
     { label: "When to visit", value: "Sunset into the evening", text: "It gets more crowded as the day goes on. For me, the atmosphere is best around sunset and into the evening, when the Christmas lights come on." },

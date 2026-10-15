@@ -16,6 +16,15 @@ export type VisitorMapStop = {
   photo?: GuidePhoto;
   photos?: GuidePhoto[];
 };
+export type VisitorItineraryStep = {
+  stopId: string;
+  title: string;
+  label: string;
+  text: string;
+  highlights?: string[];
+  tip?: string;
+  onward?: string;
+};
 export type VisitorMapData = {
   city: string;
   sourceUrl: string;
@@ -23,6 +32,11 @@ export type VisitorMapData = {
   route: MapCoordinate[];
   stationApproach: MapCoordinate[];
   stops: VisitorMapStop[];
+  itinerary?: {
+    title: string;
+    introduction: string;
+    steps: VisitorItineraryStep[];
+  };
 };
 
 export function walkingDistanceKm(coordinates: MapCoordinate[]) {
