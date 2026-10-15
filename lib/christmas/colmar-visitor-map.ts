@@ -40,6 +40,7 @@ export const colmarVisitorMap: VisitorMapData = {
     { id: 'photo-canal', name: 'Petite Venise — Canal Photo Spot', shortName: 'Canal photo', category: 'photo', icon: 'camera', coordinates: point('Petite Venice Photo'),
       text: 'Pause at my marked canal viewpoint for the half-timbered houses and Christmas decorations along the water.', tip: 'Try this stop in daylight for the building colors, then again as the Christmas lights come on.', photo: photos.C147 },
     { id: 'photo-sign', name: 'Colmar Sign — Champ de Mars Photo Spot', shortName: 'Colmar sign', category: 'photo', icon: 'camera', coordinates: point('Colmar Sign'),
+      video: { libraryId: '780712', videoId: '001e831a-c218-473c-af0d-bc9e87c487e4', title: 'Colmar sign in Parc du Champ de Mars' },
       text: 'The Colmar sign was here in Parc du Champ de Mars during my December 2025 visit. It makes a natural photo stop on the approach from the station or Place Rapp.', tip: 'Seasonal installations can move; this pin records the location from my visit.',
       photo: { src: '/images/guides/colmar/colmar-sign-champ-de-mars-2025.webp', alt: 'Large red COLMAR letters in Parc du Champ de Mars, with Christmas decorations hanging among the trees.', year: 2025, width: 1200, height: 675 } },
     { id: 'photo-maison-des-tetes', name: 'Maison des Têtes — Facade Photo Spot', shortName: 'Maison des Têtes', category: 'photo', icon: 'camera', coordinates: point('Maison des Têtes'),

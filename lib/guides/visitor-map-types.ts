@@ -15,6 +15,7 @@ export type VisitorMapStop = {
   tip?: string;
   photo?: GuidePhoto;
   photos?: GuidePhoto[];
+  video?: { libraryId: string; videoId: string; title: string };
 };
 export type VisitorItineraryStep = {
   stopId: string;
