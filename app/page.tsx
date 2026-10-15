@@ -6,7 +6,11 @@ import { getNewestWalk } from "../lib/youtube/server";
 
 export const revalidate = 900;
 
-export const metadata = pageMetadata("4K Walking Tours & Destination Maps", "Discover immersive Prowalk Tours videos by country, city, landmark, and theme. Explore 4K walks, binaural sound, Christmas markets, and interactive route maps.", "");
+const homeMetadata = pageMetadata("4K Walking Tours & Destination Maps", "Explore through my walks. Plan a journey of your own with 4K walking tours, destination maps, and firsthand travel guides.", "");
+export const metadata = {
+  ...homeMetadata,
+  openGraph: { ...homeMetadata.openGraph, title: "Prowalk Tours — Your first step before you travel." },
+};
 
 export default async function HomePage() {
   const fallback = discoveryVideos.find(video => video.youtubeUrl.includes("snBqLG2Piyo"));

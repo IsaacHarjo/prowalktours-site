@@ -61,9 +61,9 @@ export default function HomeClient({ videos, mappedTours, featuredVideo }: { vid
       <section className={sectionWidth + " pt-8 pb-12 sm:pt-12 lg:pb-16"}>
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="relative z-10 py-2 lg:py-6">
-            <p className={eyebrow}>The world, at walking pace</p>
-            <h1 className="mt-5 max-w-xl text-4xl font-semibold leading-[1.08] tracking-[-0.035em] sm:text-5xl lg:text-6xl">A closer look at places far from home.</h1>
-            <p className="mt-6 max-w-lg text-base leading-7 text-[#657069] sm:text-lg sm:leading-8">Wander historic streets, follow the coast, and hear a city come to life. Immersive 4K walking tours, with the sounds of being there.</p>
+            <p className={eyebrow}>Prowalk Tours</p>
+            <h1 className="mt-5 max-w-xl text-4xl font-semibold leading-[1.08] tracking-[-0.035em] sm:text-5xl lg:text-6xl">Your first step before you travel.</h1>
+            <p className="mt-6 max-w-lg text-base leading-7 text-[#657069] sm:text-lg sm:leading-8">Explore through my walks. Plan a journey of your own.</p>
             <div className="mt-8 max-w-xl">
               <p className="mb-3 text-sm font-semibold">Where would you like to explore?</p>
               <LiveSearchBar videos={videos} />

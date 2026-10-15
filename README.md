@@ -1,3 +1,11 @@
+# Prowalk Tours
+
+**Prowalk Tours — Your first step before you travel.**
+
+Explore through my walks. Plan a journey of your own.
+
+This is the approved brand tagline and supporting line, adopted on 14 October 2026. The homepage, site footer, and future brand introductions use this wording. Destination guides pair firsthand walking footage with practical information and suggested visitor routes.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

@@ -60,7 +60,7 @@ const footerSections = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.prowalktours.com"),
   title: "Prowalk Tours",
-  description: "Immersive walking tours, 360 videos, drone footage, and licensing.",
+  description: "Prowalk Tours — Your first step before you travel. Explore through my walks. Plan a journey of your own.",
 };
 
 function SiteHeader() {
@@ -228,9 +228,11 @@ function SiteFooter() {
             <p className="text-2xl font-bold tracking-[0.16em] text-[#3d3327]">
               PROWALK TOURS
             </p>
-            <p className="mt-3 max-w-sm text-[15px] leading-7 text-[#6e5a45]">
-              Immersive walking tours, city atmosphere, drone footage, and
-              destination storytelling from around the world.
+            <p className="mt-3 max-w-sm text-[15px] font-semibold leading-7 text-[#6e5a45]">
+              Your first step before you travel.
+            </p>
+            <p className="mt-2 max-w-sm text-[15px] leading-7 text-[#6e5a45]">
+              Explore through my walks. Plan a journey of your own.
             </p>
           </div>
 
