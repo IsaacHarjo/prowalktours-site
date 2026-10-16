@@ -11,7 +11,7 @@
     "The owner's START HERE pin is labeled Join the Walk near Dominicains because the actual line begins near Champ de Mars and ends at Parking Rapp.",
     "Four photo viewpoints: Koifhus steps, canal, Colmar sign and Maison des Têtes. Maison des Têtes uses the named 2025 original from the owner archive; the portrait is displayed uncropped.",
     "Station, both car parks, covered food market, groceries, Saint-Martin and Place Rapp fairground retained. Grocery business name and seasonal opening hours are not inferred.",
-    "No WC pin added without a precise verified position and access information.",
+    "WC areas added on 2026-10-16 at the owner request using toilet symbols on page 2 of the official 2026 English market map. Area pins reuse nearby owner landmarks; Place de la Sinn is estimated from the printed map. All seven are explicitly approximate, not verified entrances. Hours, fees and accessibility are unconfirmed.",
     "Distance labels are computed from the owner's route vertices, rounded to 0.1 km. The station approach is additional, not included in the main-walk distance.",
     "Original 2023 filmed routes and individual video pages are unchanged. No external Google map edits or publishing performed."
   ],
@@ -208,5 +208,6 @@
     ],
     "kmlSha256": "7bf3f692c06493147f9c1705deddc1c61e3af75579173b3579f7e9e0de50ad08",
     "verification": "All existing pin coordinates and both route lines match the prior import exactly. Added the two owner-supplied canal stops under Useful stops, with boat and dining icons. No business identity, opening hours, seasonal availability, prices or personal dining/boat experience inferred."
-  }
+  },
+  "wcSource": "https://reservation.tourisme-colmar.com/medias/documents/documentation/documentation-NOEL26P-UK.pdf"
 }

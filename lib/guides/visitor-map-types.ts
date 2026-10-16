@@ -2,7 +2,7 @@ import type { MapCoordinate } from './map-types';
 import type { GuidePhoto } from './types';
 
 export type VisitorStopCategory = 'market' | 'photo' | 'arrival' | 'useful';
-export type VisitorStopIcon = 'market' | 'camera' | 'train' | 'parking' | 'basket' | 'food' | 'boat' | 'landmark' | 'fair' | 'start';
+export type VisitorStopIcon = 'market' | 'camera' | 'train' | 'parking' | 'basket' | 'food' | 'boat' | 'landmark' | 'fair' | 'start' | 'wc';
 export type VisitorMapStop = {
   id: string;
   name: string;
@@ -11,6 +11,8 @@ export type VisitorMapStop = {
   icon: VisitorStopIcon;
   coordinates: MapCoordinate;
   marketNumber?: number;
+  approximateLocation?: boolean;
+  informationUrl?: string;
   text: string;
   tip?: string;
   photo?: GuidePhoto;
