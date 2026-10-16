@@ -29,7 +29,6 @@ const AlsaceOrientation = dynamic(() => import("./AlsaceOrientation"), {
 });
 
 const width = "mx-auto max-w-7xl px-5 sm:px-8 lg:px-10";
-const eyebrow = "text-xs font-semibold uppercase tracking-[0.18em] text-[#607767]";
 const linkClass = "inline-flex min-h-11 items-center text-sm font-semibold text-[#176347] underline underline-offset-4 hover:text-[#25382f]";
 
 function SourceLink({ source }: { source: GuideSource }) {
@@ -40,11 +39,11 @@ export default function DestinationGuideClient({ guide, season, walks, mapData, 
   const parkingStops = visitorMapData?.stops.filter(stop => stop.icon === "parking") ?? [];
   const checkedDate = new Date(`${season.checkedOn}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
   const navigation = [
+    ["market-squares", "Explore the walk"],
     ["plan-your-visit", `${season.year} dates`],
     ["getting-there", "Plan the trip"],
     ...(season.shuttles ? [["christmas-shuttles", "Christmas Shuttles"]] : []),
-    ["market-squares", "Markets & map"],
-    ["watch-walks", "Watch the walks"],
+    ["watch-walks", "Watch my walks"],
   ];
 
   return <div className="bg-[#fcfaf7] text-[#25382f] [--guide-scroll-offset:10rem]">
@@ -74,24 +73,27 @@ export default function DestinationGuideClient({ guide, season, walks, mapData, 
       </div>
     </header>
 
+    <section id="market-squares" className="scroll-mt-[var(--guide-scroll-offset,5rem)] border-y border-[#e1e3d9] bg-white" aria-labelledby="markets-heading">
+      <div className={width + " py-14 sm:py-16"}>
+        <GuideSectionHeading id="markets-heading" eyebrow={`Explore ${guide.city} on foot`} title={`Take a walk through ${guide.city}’s Christmas markets`} icon="walking" />
+        <p className="mt-4 max-w-3xl leading-7 text-[#657069]">I filmed Colmar’s Christmas markets in 2023 and 2025 and spent a lot of time planning a walk that includes all six markets. This is the route I’d recommend, with photo spots, useful stops and tips along the way.</p>
+        <p className="mt-3 max-w-3xl leading-7 text-[#657069]">Start with the first stop below. Watch a short clip, see where you are on the map, then choose Next stop to continue the walk.</p>
+        {guide.visitEssentials && <dl className="mt-6 grid gap-3 sm:grid-cols-3">{guide.visitEssentials.filter(item => item.label !== "Arriving by train").map(item => <div key={item.label} className="rounded-xl bg-[#eaf0e8] px-5 py-4"><dt className="text-xs font-semibold uppercase tracking-wide text-[#526258]">{item.label}</dt><dd className="mt-1 font-semibold">{item.value}</dd></div>)}</dl>}
+        {visitorMapData ? <VisitorRouteMap data={visitorMapData} /> : mapData ? <GuideRouteMap data={mapData} markets={guide.markets} walks={walks} year={season.year} /> : <ol className="mt-8 grid gap-x-12 md:grid-cols-2">{guide.markets.map((market, index) => <li key={market.name} className="flex gap-4 border-t border-[#e1e3d9] py-6"><span className="pt-1 font-serif text-xl text-[#947a50]">{String(index + 1).padStart(2, "0")}</span><div><h3 className="text-lg font-semibold">{market.name}</h3><p className="mt-2 text-sm leading-7 text-[#657069]">{market.text}</p></div></li>)}</ol>}
+        <SourceLink source={guide.marketsSource} />
+      </div>
+    </section>
+
     <section id="plan-your-visit" className={width + " scroll-mt-[var(--guide-scroll-offset,5rem)] py-14 sm:py-16"} aria-labelledby="visit-heading">
-      <div className="grid gap-9 lg:grid-cols-[1.2fr_0.8fr]">
+      <GuideSectionHeading id="visit-heading" eyebrow="The season ahead" title={`${season.year} dates & opening hours`} icon="planning" />
+      <div className="mt-6 grid items-start gap-5 sm:grid-cols-2 sm:gap-10">
         <div>
-          <GuideSectionHeading id="visit-heading" eyebrow="The season ahead" title={`Plan your ${season.year} visit`} icon="planning" />
-          <p className="mt-5 text-2xl font-medium leading-9">{season.dates}</p>
+          <p className="text-2xl font-medium leading-9">{season.dates}</p>
           <p className="mt-1 text-sm text-[#657069]">Main Christmas markets</p>
-          <dl className="mt-6 max-w-lg divide-y divide-[#dce1d6] border-y border-[#dce1d6]">{season.hours.map(hours => <div key={hours.label} className="flex flex-wrap justify-between gap-3 py-4"><dt className="text-[#657069]">{hours.label}</dt><dd className="font-semibold tabular-nums">{hours.value}</dd></div>)}</dl>
           <SourceLink source={season.source} />
-          <p className="mt-2 max-w-lg text-xs leading-6 text-[#657069]">Official information checked <time dateTime={season.checkedOn}>{checkedDate}</time>. Check the organizer’s page before you travel.</p>
+          <p className="mt-2 max-w-lg text-xs leading-6 text-[#657069]">Check the official opening hours before your visit. Last checked <time dateTime={season.checkedOn}>{checkedDate}</time>.</p>
         </div>
-        {guide.visitEssentials && <aside className="self-start rounded-2xl bg-[#eaf0e8] p-6 sm:p-8" aria-label="Visit essentials">
-          <p className={eyebrow}>At a glance</p>
-          <dl className="mt-5 space-y-6">{guide.visitEssentials.map(item => <div key={item.label}>
-            <dt className="text-sm text-[#526258]">{item.label}</dt>
-            <dd className="mt-1"><p className="text-lg font-semibold">{item.value}</p><p className="mt-1 text-sm leading-6 text-[#526258]">{item.text}</p></dd>
-          </div>)}</dl>
-          <a href="#market-squares" className={linkClass + " mt-4"}>See the suggested walking route ↓</a>
-        </aside>}
+        <dl className="divide-y divide-[#dce1d6] border-y border-[#dce1d6]">{season.hours.map(hours => <div key={hours.label} className="flex flex-wrap justify-between gap-3 py-4"><dt className="text-[#657069]">{hours.label}</dt><dd className="font-semibold tabular-nums">{hours.value}</dd></div>)}</dl>
       </div>
       <GuideDisclosure title="Holiday hours & Gourmet Market dates" className="mt-8">
         <div className="grid gap-8 sm:grid-cols-2">
@@ -117,16 +119,7 @@ export default function DestinationGuideClient({ guide, season, walks, mapData, 
 
     {season.shuttles && <ChristmasShuttles service={season.shuttles} />}
 
-    <section id="market-squares" className="scroll-mt-[var(--guide-scroll-offset,5rem)] border-y border-[#e1e3d9] bg-white" aria-labelledby="markets-heading">
-      <div className={width + " py-14 sm:py-16"}>
-        <GuideSectionHeading id="markets-heading" eyebrow={`Explore ${guide.city} on foot`} title="Suggested route through all six Christmas markets" icon="walking" />
-        <p className="mt-4 max-w-3xl leading-7 text-[#657069]">I filmed Colmar’s Christmas markets in 2023 and 2025 and spent a lot of time planning a walk that takes in all six. This is the route I’d recommend, with photo spots, useful stops and tips along the way.</p>
-        <p className="mt-3 max-w-3xl leading-7 text-[#657069]">Follow the itinerary one stop at a time, or explore all the map stops. Open the map in Google Maps to keep the route handy while you’re there.</p>
-        {Boolean(guide.faq?.length) && <a href="#guide-questions" className={linkClass + " mt-1"}>Questions about {guide.city}? ↓</a>}
-        {visitorMapData ? <VisitorRouteMap data={visitorMapData} /> : mapData ? <GuideRouteMap data={mapData} markets={guide.markets} walks={walks} year={season.year} /> : <ol className="mt-8 grid gap-x-12 md:grid-cols-2">{guide.markets.map((market, index) => <li key={market.name} className="flex gap-4 border-t border-[#e1e3d9] py-6"><span className="pt-1 font-serif text-xl text-[#947a50]">{String(index + 1).padStart(2, "0")}</span><div><h3 className="text-lg font-semibold">{market.name}</h3><p className="mt-2 text-sm leading-7 text-[#657069]">{market.text}</p></div></li>)}</ol>}
-        <SourceLink source={guide.marketsSource} />
-      </div>
-    </section>
+
 
 
 
