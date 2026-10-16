@@ -63,7 +63,7 @@ export const colmarVisitorMap: VisitorMapData = {
     { id: 'join-walk', name: 'Join the Walk — Place des Dominicains', shortName: 'Join the walk', category: 'arrival', icon: 'start', coordinates: point('START HERE'),
       text: 'Already in the old town? Join the suggested walk here, near Place des Dominicains.', tip: 'If arriving by train or parking at Place Rapp, the approach through Champ de Mars adds the Colmar sign and fairground first.' },
     { id: 'covered-market', name: 'Marché Couvert — Covered Food Market', shortName: 'Covered market', category: 'useful', icon: 'food', coordinates: point('Covered Market'),
-      video: { libraryId: '780712', videoId: '29dee81b-247b-492e-b83f-7547db31716b', title: 'Marché Couvert & the canal' },
+      video: { libraryId: '780712', videoId: '39a504e7-8bdc-478d-bbc5-1c19963f16c5', title: 'Marché Couvert & the canal' },
       text: 'The covered food market is a useful stop for food and an indoor break near the canal.', tip: 'I marked this as a place to sit and eat indoors. Check the individual food counters’ hours and seating when you visit.' },
     { id: 'canal-boats', name: 'Petite Venise — Canal Boat Rides', shortName: 'Canal boat rides', category: 'useful', icon: 'boat', coordinates: point('Boat Rides on Canal'),
       text: 'This is the boat departure point I marked in Petite Venise. A ride along the canal is an optional stop as you explore this part of town.', tip: 'Check departures and availability before planning your visit around a boat ride.' },
