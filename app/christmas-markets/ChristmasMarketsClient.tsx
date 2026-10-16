@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import ThumbnailImg from "../../components/ThumbnailImg";
+import GuideHeroVideo from "../../components/guides/GuideHeroVideo";
+import { colmarCardPreview } from "../../lib/christmas/colmar-preview";
 import CompactWalkList from "../../components/guides/CompactWalkList";
 import type { WorldTour } from "../../lib/tours/types";
 import { colmarPhotos } from "../../lib/christmas/colmar-photos";
@@ -52,7 +54,16 @@ export default function ChristmasMarketsClient({ walks, points, initialFilters }
       <nav aria-label="Breadcrumb" className="mb-8 text-sm text-[#657069]"><Link href="/" className="hover:underline">Home</Link><span aria-hidden="true"> / </span><span aria-current="page">Christmas Markets</span></nav>
       <div className="grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
         <div><p className={eyebrow}>Europe, one winter walk at a time</p><h1 className="mt-4 font-serif text-5xl leading-[1.06] tracking-tight sm:text-6xl">Christmas Markets</h1><p className="mt-6 text-lg leading-8 text-[#657069]">Explore Europe’s Christmas markets, whether you’re planning a trip or enjoying the sights and sounds from home.</p><p className="mt-4 leading-7 text-[#657069]">I’m Isaac, the person behind ProWalk Tours. These are the Christmas markets I’ve visited and filmed. I’m sharing my walks, photos and trip notes to help you plan your own visit.</p><div className="mt-7 flex flex-wrap gap-4"><a href="#destinations" className={buttonClass}>Choose a destination</a><a href="#browse-walks" className={textLink}>Watch the walks ↓</a></div><p className="mt-6 text-xs leading-6 text-[#657069]">{walks.length} walks · {destinationCount} destinations · {countries.length} countries</p></div>
-        <Link href="/christmas-markets/colmar" className="group overflow-hidden rounded-[1.5rem] border border-[#dce1d6] bg-white"><Image src={colmarPhotos.C157.src} alt={colmarPhotos.C157.alt} width={colmarPhotos.C157.width} height={colmarPhotos.C157.height} unoptimized loading="eager" sizes="(min-width: 1024px) 55vw, 100vw" className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.015]" /><div className="p-6"><p className={eyebrow}>Alsace, France</p><h2 className="mt-2 text-2xl font-semibold">Christmas in Colmar <span aria-hidden="true">→</span></h2><p className="mt-3 text-sm leading-6 text-[#657069]">2026 dates, market squares and ways to arrive, with photographs and two walks through the old town.</p></div></Link>
+        <article className="overflow-hidden rounded-[1.5rem] border border-[#dce1d6] bg-white">
+          <div className="relative aspect-video overflow-hidden">
+            <Image src={colmarPhotos.C157.src} alt={colmarPhotos.C157.alt} fill unoptimized loading="eager" sizes="(min-width: 1024px) 55vw, 100vw" className="object-cover" />
+            <GuideHeroVideo preview={colmarCardPreview} />
+            <Link href="/christmas-markets/colmar" aria-label="Explore Christmas in Colmar" className="absolute inset-0 z-[1] focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-[#176347]" />
+          </div>
+          <Link href="/christmas-markets/colmar" className="block p-6 hover:bg-[#f5f6f1] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[#176347]">
+            <p className={eyebrow}>Alsace, France</p><h2 className="mt-2 text-2xl font-semibold">Christmas in Colmar <span aria-hidden="true">→</span></h2><p className="mt-3 text-sm leading-6 text-[#657069]">Preview the markets through my walks, then plan your visit with 2026 dates, a suggested route and practical stops along the way.</p>
+          </Link>
+        </article>
       </div>
     </section>
 
