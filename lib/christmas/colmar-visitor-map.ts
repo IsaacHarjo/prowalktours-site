@@ -30,6 +30,7 @@ export const colmarVisitorMap: VisitorMapData = {
       video: { libraryId: '780712', videoId: 'e60b4ad0-f87b-44ee-83b7-002592c21637', title: 'Place de l’Ancienne Douane & Grand Rue' },
       text: 'Chalets around the Schwendi Fountain and canal, with decorations and crafts beside the old customs house.', tip: 'The outdoor market and the indoor Koïfhus market are separate stops close together.', photo: photos.C254 },
     { id: 'koifhus', name: 'Koïfhus — Indoor Craft Market', shortName: 'Koïfhus', category: 'market', icon: 'market', marketNumber: 3, coordinates: point('Koïfhus Indoor Market'),
+      video: { libraryId: '780712', videoId: 'ba8540d1-7825-4b1c-97a7-ffbe294bfdb2', title: 'Inside the Koïfhus' },
       text: 'Step into the historic customs house to browse ceramics, glass, woodwork, jewelry, and other work by local artisans.', tip: 'Look for the indoor craft market as well as the stalls outside.' },
     { id: 'jeanne-arc', name: 'Place Jeanne d’Arc — Alsatian Food Market', shortName: 'Jeanne d’Arc', category: 'market', icon: 'market', marketNumber: 4, coordinates: point('Place Jeanne d’Arc'),
       video: { libraryId: '780712', videoId: '82eabbc1-3efe-4ee5-b245-d05a0c5e2625', title: 'Place Jeanne d’Arc' },
