@@ -28,6 +28,14 @@ research, and licensing.
 - Keep quoted material accurate and preserve its source attribution. Proper names in URLs, identifiers, source notes, and structured author data are not narrative copy and should remain intact.
 - Keep verified dates, facts, and practical limitations clear while improving the wording. Copy edits must not change routes, links, media, or behavior.
 
+## Personal Perspective on Destination Pages
+
+- Open destination guides with a concise personal take beneath the hero: why I recommend visiting, what makes the place distinctive, and what I enjoyed while walking there.
+- Apply this pattern to future destinations such as Naples, Paris and Pompeii as well as Christmas market guides. Use `components/guides/DestinationPersonalTake.tsx` where appropriate.
+- Base the assessment on Isaac’s supplied observations or supported material. Never invent his preferences or experiences; gather his take when it is missing.
+- Keep the opening brief on phones and lead naturally into the route, clips or walks. Avoid repeating practical planning facts or adding generic promotional copy.
+- Colmar’s supplied perspective: the whole historic center feels like part of the Christmas experience; the walk between markets matters as much as the stalls, with varied scenery around Saint-Martin, half-timbered houses, narrow lanes and Petite Venise.
+
 ## The Three Jobs of This Website
 1. **Find a video fast** — search by place, landmark, theme
 2. **Research a destination** — browse country → region → city → video

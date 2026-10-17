@@ -10,6 +10,7 @@ import GuideSectionHeading from "./GuideSectionHeading";
 import GuideWalkVideos from "./GuideWalkVideos";
 import GuideHeroVideo, { type GuideVideoPreview } from "./GuideHeroVideo";
 import GuideFaqs from "./GuideFaqs";
+import DestinationPersonalTake from "./DestinationPersonalTake";
 import type { GuideMapData } from "../../lib/guides/map-types";
 import type { VisitorMapData } from "../../lib/guides/visitor-map-types";
 
@@ -72,6 +73,13 @@ export default function DestinationGuideClient({ guide, season, walks, mapData, 
         </div>
       </div>
     </header>
+
+    {guide.slug === "colmar" && <div className={width + " pb-9 pt-5 sm:pb-12 sm:pt-7"}>
+      <DestinationPersonalTake filmingPhoto="/images/isaac/filming-colmar.webp" portrait="/images/isaac/portrait-camera.webp" headingId="why-colmar-heading" title="Why I love Colmar at Christmas" href="#market-squares">
+        <p>What I love about Colmar is that the whole historic center feels like part of the Christmas market. Walking between the squares is just as much a reason to come as the stalls themselves.</p>
+        <p>You go from the beautiful Saint-Martin church to narrow lanes lined with half-timbered houses, then down to the canals in Petite Venise. Each area has its own feel, and there’s something beautiful around every corner. For me, that variety makes Colmar such a fun place to explore on foot.</p>
+      </DestinationPersonalTake>
+    </div>}
 
     <section id="market-squares" className="scroll-mt-[var(--guide-scroll-offset,5rem)] border-y border-[#e1e3d9] bg-white" aria-labelledby="markets-heading">
       <div className={width + " py-14 sm:py-16"}>
