@@ -35,6 +35,10 @@ export type VisitorMapData = {
   importedOn: string;
   route: MapCoordinate[];
   stationApproach: MapCoordinate[];
+  approachLabel?: string;
+  routeDistanceNote?: string;
+  showItineraryTips?: boolean;
+  optionalRoute?: { label: string; coordinates: MapCoordinate[]; stopIds?: string[] };
   stops: VisitorMapStop[];
   itinerary?: {
     title: string;

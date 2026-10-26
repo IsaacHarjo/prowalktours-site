@@ -11,7 +11,7 @@ const mercatorY = (latitude: number) => Math.log(Math.tan(Math.PI / 4 + latitude
 const latitudeFromY = (y: number) => (2 * Math.atan(Math.exp(y)) - Math.PI / 2) * 180 / Math.PI;
 
 export function buildAlsacePlaces(points: WorldTour[], walks: ChristmasWalk[], focusCity: string): OrientationPlace[] {
-  const destinationHref = (city: string) => city === focusCity ? city === "Colmar" ? "#market-squares" : "#market-films" : christmasMarketHref(city);
+  const destinationHref = (city: string) => city === focusCity ? city === "Colmar" ? "#market-squares" : city === "Kaysersberg" ? "#explore" : "#market-films" : christmasMarketHref(city);
   const places: OrientationPlace[] = ["Paris", "Strasbourg", "Basel"].flatMap(city => {
     const tour = points.find(point => point.city === city);
     if (!tour) return [];
@@ -41,7 +41,7 @@ export function buildOrientationStages(places: OrientationPlace[], focusCity: st
   const finalBounds: Bounds = [[focus.longitude - halfWidth, latitudeFromY(focusY - halfHeight)], [focus.longitude + halfWidth, latitudeFromY(focusY + halfHeight)]];
   return [
     { label: "France", title: "Start with the bigger picture", text: `Find ${focusCity} in ${focus.country ?? "France"}, then zoom into the region and its Christmas market towns.`, bounds: [[-5.2, 41.3], [9, 51.2]], cities: ["Paris", focusCity] },
-    { label: "Alsace", title: "Between the Vosges and the Rhine", text: "The green outline shows Alsace in eastern France. Strasbourg lies to the north of Colmar; Basel is farther south, across the Swiss border.", bounds: [[6.841, 47.4203], [8.2325, 49.0778]], cities: ["Strasbourg", "Colmar", "Basel"], outline: "alsace" },
+    { label: "Alsace", title: "Between the Vosges and the Rhine", text: inColmarRegion ? `The green outline shows Alsace in eastern France. Find ${focusCity} between Strasbourg to the north and Basel to the south, across the Swiss border.` : "The green outline shows Alsace in eastern France, with Strasbourg in the north and Basel just across the Swiss border to the south.", bounds: [[6.841, 47.4203], [8.2325, 49.0778]], cities: [...new Set(["Strasbourg", focusCity, "Basel"])], outline: "alsace" },
     { label: `Around ${focusCity}`, title: `${focusCity} and the surrounding area`, text: inColmarRegion ? `Explore the Pays de Colmar with ${focusCity} at the center. The outline connects the vineyard villages, the Munster valley and the Rhine.` : `Take a closer look around ${focusCity}${focus.country === "Switzerland" ? ", Switzerland" : ""}. Use the Alsace view to explore the other market towns.`, bounds: finalBounds, cities: places.filter(place => place.city !== "Paris").map(place => place.city), outline: inColmarRegion ? "colmar" : "alsace" },
   ];
 }

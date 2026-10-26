@@ -37,6 +37,7 @@ export default function AlsaceOrientation({ places, focusCity }: { places: Orien
   const current = stages[stage];
   const shownPlaces = places.filter(place => current.cities.includes(place.city));
   const selectedPlace = places.find(place => place.city === selectedCity);
+  const focusPlace = places.find(place => place.city === focusCity);
   const available = loaded && !failed && !!token;
 
   function updateTownPositions() {
@@ -110,6 +111,20 @@ export default function AlsaceOrientation({ places, focusCity }: { places: Orien
     setLabelLayerId(map.getStyle()?.layers?.find(layer => layer.type === "symbol")?.id);
     for (const layer of map.getStyle()?.layers ?? []) {
       if (layer.type === "background") map.setPaintProperty(layer.id, "background-color", "#f7f4eb");
+      // The basemap chooses larger towns at this zoom. Use our destination's
+      // own label instead, without moving or renaming another town's location.
+      if (layer.type === "symbol" && layer.id.includes("settlement")) {
+        const originalFilter = map.getFilter(layer.id);
+        const destinationFilter: import("mapbox-gl").FilterSpecification = ["all",
+          ["!=", ["get", "name"], focusCity],
+          ["!=", ["get", "name_en"], focusCity],
+          ...(focusCity !== "Colmar" ? [
+            ["!=", ["get", "name"], "Colmar"],
+            ["!=", ["get", "name_en"], "Colmar"],
+          ] : []),
+        ] as import("mapbox-gl").FilterSpecification;
+        map.setFilter(layer.id, originalFilter ? ["all", originalFilter, destinationFilter] : destinationFilter);
+      }
     }
     if (map.getLayer("water")) map.setPaintProperty("water", "fill-color", "#b7d1ca");
     if (map.getLayer("landcover")) map.setPaintProperty("landcover", "fill-opacity", 0.35);
@@ -146,6 +161,15 @@ export default function AlsaceOrientation({ places, focusCity }: { places: Orien
             onMoveEnd={() => { setSettled(true); updateTownPositions(); }}
             onError={() => { stop(); setFailed(true); }}>
             <AttributionControl compact />
+            {focusPlace && <Source id="destination-place-label" type="geojson" data={{ type: "Feature", properties: { name: focusCity }, geometry: { type: "Point", coordinates: [focusPlace.longitude, focusPlace.latitude] } }}>
+              <Layer id="destination-place-label-text" type="symbol" layout={{
+                "text-field": ["get", "name"], "text-size": 12,
+                "text-font": ["DIN Pro Regular", "Arial Unicode MS Regular"],
+                "text-anchor": "top", "text-offset": [0, 0.5],
+                "text-allow-overlap": true,
+                visibility: stage === 0 ? "none" : "visible",
+              }} paint={{ "text-color": "#92999a", "text-halo-color": "#f7f4eb", "text-halo-width": 1 }} />
+            </Source>}
             <Source id="france-boundary" type="geojson" data="/maps/france-boundary.geojson"
               attribution='<a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">France boundary: Natural Earth</a>'>
               <Layer id="france-region-fill" type="fill" beforeId={labelLayerId} layout={{ visibility: stage === 0 ? "visible" : "none" }} paint={{ "fill-color": "#176347", "fill-opacity": 0.12 }} />

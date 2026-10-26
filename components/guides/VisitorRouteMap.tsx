@@ -110,6 +110,9 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
   const distance = walkingDistanceKm(data.route).toFixed(1);
   const stationDistance = walkingDistanceKm(data.stationApproach).toFixed(1);
   const satellite = mapView === 'satellite';
+  const approachLabel = data.approachLabel ?? 'Station approach';
+  const isColmar = data.city === 'Colmar';
+  const [showOptional, setShowOptional] = useState(false);
 
   useEffect(() => {
     detailRef.current?.scrollTo({ top: 0 });
@@ -136,6 +139,7 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
   function selectStop(stop: VisitorMapStop, fromList = false) {
     setMode(steps.some(step => step.stopId === stop.id) ? 'itinerary' : 'explore');
     setSelectedId(stop.id);
+    if (data.optionalRoute?.stopIds?.includes(stop.id)) setShowOptional(true);
     mapRef.current?.easeTo({ center: stop.coordinates, zoom: 16.7, duration: 500 });
     if (isMobile) openSheet();
     if (fromList && !isMobile) {
@@ -188,26 +192,27 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
             <button type="button" onClick={() => selectStep(stepIndex === steps.length - 1 ? 0 : stepIndex + 1)} className="min-h-11 rounded-lg bg-[#176347] px-3 py-2 text-sm font-semibold text-white hover:bg-[#25382f]">{stepIndex === steps.length - 1 ? 'Back to the start' : 'Next stop →'}</button>
           </nav>
           <p className="mt-3 text-sm leading-7 text-[#526258]">{activeStep.text}</p>
+          {data.showItineraryTips && activeStep.tip && <p className="mt-4 border-l-2 border-[#b18b45] pl-4 text-sm leading-6 text-[#65543b]">{activeStep.tip}</p>}
           <GuideDisclosure key={`details-${selected.id}`} title="More about this stop" className="mt-4">
           {activeStep.highlights && <div className="mt-5"><h4 className="text-sm font-semibold text-[#25382f]">Look around this stop</h4><ul className="mt-2 list-disc space-y-2 pl-4 text-sm leading-6 text-[#526258]">{activeStep.highlights.map(text => <li key={text}>{text}</li>)}</ul></div>}
-          {activeStep.tip && <p className="mt-4 border-l-2 border-[#b18b45] pl-4 text-sm leading-6 text-[#65543b]">{activeStep.tip}</p>}
+          {!data.showItineraryTips && activeStep.tip && <p className="mt-4 border-l-2 border-[#b18b45] pl-4 text-sm leading-6 text-[#65543b]">{activeStep.tip}</p>}
           {activeStep.onward && <div className="mt-4 rounded-xl bg-[#eaf0e8] p-4"><h4 className="text-sm font-semibold text-[#25382f]">Continue the walk</h4><p className="mt-1 text-sm leading-6 text-[#526258]">{activeStep.onward}</p></div>}
         <a href={`https://www.google.com/maps/dir/?api=1&destination=${selected.coordinates[1]},${selected.coordinates[0]}&travelmode=walking`} target="_blank" rel="noreferrer" className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-[#176347] underline underline-offset-4">{selected.approximateLocation ? 'Walking directions to this area ↗' : 'Walking directions to this stop ↗'}</a>
           </GuideDisclosure>
         </> : <>
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#607767]"><Badge stop={selected} />{selected.category === 'market' ? `Market ${selected.marketNumber} of 6` : categories.find(item => item.id === selected.category)?.label}</div>
+          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#607767]"><Badge stop={selected} />{selected.category === 'market' ? `Market ${selected.marketNumber} of ${data.stops.filter(stop => stop.category === 'market').length}` : categories.find(item => item.id === selected.category)?.label}</div>
           <h3 className="mt-4 text-xl font-semibold leading-7 text-[#25382f]">{selected.name}</h3>
           {selected.video ? <StopVideo key={selected.id} video={selected.video} /> : <StopPhotoGallery key={selected.id} name={selected.name} photos={selected.photos?.length ? selected.photos : selected.photo ? [selected.photo] : []} />}
           <p className="mt-4 text-sm leading-7 text-[#526258]">{selected.text}</p>
           {selected.informationUrl && <a href={selected.informationUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block text-sm font-semibold text-[#176347] underline underline-offset-4">{selected.informationLabel ?? 'Official 2026 market map'} ↗</a>}
           {selected.tip && <p className="mt-4 border-l-2 border-[#b18b45] pl-4 text-sm leading-6 text-[#65543b]">{selected.tip}</p>}
-          {steps.length > 0 && <button type="button" onClick={() => selectStep(stepIndex < 0 || selected.category === 'arrival' ? 0 : stepIndex)} className="mt-4 min-h-11 rounded-lg bg-[#176347] px-4 py-2 text-sm font-semibold text-white hover:bg-[#25382f]">{stepIndex < 0 || selected.category === 'arrival' ? 'Start at the Colmar sign →' : 'Follow the itinerary from here →'}</button>}
+          {steps.length > 0 && <button type="button" onClick={() => selectStep(stepIndex < 0 || selected.category === 'arrival' ? 0 : stepIndex)} className="mt-4 min-h-11 rounded-lg bg-[#176347] px-4 py-2 text-sm font-semibold text-white hover:bg-[#25382f]">{stepIndex < 0 || selected.category === 'arrival' ? `Start the ${data.city} walk →` : 'Follow the itinerary from here →'}</button>}
         </>}
         {!activeStep && <>
         <a href={`https://www.google.com/maps/dir/?api=1&destination=${selected.coordinates[1]},${selected.coordinates[0]}&travelmode=walking`} target="_blank" rel="noreferrer" className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-[#176347] underline underline-offset-4">{selected.approximateLocation ? 'Walking directions to this area ↗' : 'Walking directions to this stop ↗'}</a>
         </>}
   </>;
-  const arrivalControls = <>
+  const arrivalControls = isColmar ? <>
     <div className="">
       <GuideDisclosure title="Getting to the Colmar sign">
         <p className="mb-4 text-sm leading-6 text-[#526258]">Start at the Colmar sign in Parc du Champ de Mars. From the station, follow the blue line through the park. Choose your arrival point below to see the approach; the walk finishes at Parking Rapp.</p>
@@ -217,19 +222,19 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
       </div>
       </GuideDisclosure>
     </div>
-  </>;
+  </> : null;
 
   return <div className="mt-4 lg:mt-8">
-    <div className="mb-6 hidden lg:block">{arrivalControls}</div>
+    {arrivalControls && <div className="mb-6 hidden lg:block">{arrivalControls}</div>}
     <div className="hidden overflow-hidden rounded-t-2xl lg:block"><ChristmasLights /></div>
     <div className="hidden flex-wrap items-center justify-between gap-4 bg-[#25382f] px-5 py-5 text-white sm:px-6 lg:flex">
-      <div><h3 className="text-xl font-semibold">Your walk through {data.city}</h3><p className="mt-1 text-sm leading-6 text-white/80">About {distance} km · Add {stationDistance} km from the station · Leave time to browse, eat and take photos</p></div>
+      <div><h3 className="text-xl font-semibold">Your walk through {data.city}</h3><p className="mt-1 text-sm leading-6 text-white/80">About {distance} km · {approachLabel}: {stationDistance} km · Leave time to browse, eat and take photos</p></div>
       <a href={data.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 w-full shrink-0 items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#25382f] transition-colors hover:bg-[#eaf0e8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto">Open in Google Maps ↗</a>
     </div>
     <div className="grid overflow-hidden rounded-t-2xl border lg:rounded-none border-[#dce1d6] lg:grid-cols-[minmax(0,1fr)_420px]">
-      <div ref={mapContainerRef} role="region" aria-label="Suggested Colmar walking route map" className="relative h-[480px] min-w-0 scroll-mt-[var(--guide-scroll-offset,5rem)] bg-[#f4f2ec] sm:h-[570px] lg:h-[640px]">
+      <div ref={mapContainerRef} role="region" aria-label={`Suggested ${data.city} walking route map`} className="relative h-[480px] min-w-0 scroll-mt-[var(--guide-scroll-offset,5rem)] bg-[#f4f2ec] sm:h-[570px] lg:h-[640px]">
         {token && <Map key={attempt} ref={mapRef} mapboxAccessToken={token} mapStyle={satellite ? 'mapbox://styles/mapbox/satellite-streets-v12' : 'mapbox://styles/mapbox/light-v11'} styleDiffing={false}
-          initialViewState={{ bounds: boundsFor(data.route), fitBoundsOptions: { padding: 35 } }} minZoom={12} maxZoom={19} maxBounds={[[7.31, 48.04], [7.41, 48.11]]}
+          initialViewState={{ bounds: boundsFor(data.route), fitBoundsOptions: { padding: 35 } }} minZoom={12} maxZoom={19} maxBounds={isColmar ? [[7.31, 48.04], [7.41, 48.11]] : undefined}
           scrollZoom={true} dragRotate={false} touchPitch={false}
           onLoad={() => { setLoaded(true); setFailed(false); styleMap(); overview(0); }} onStyleData={styleMap}
           onError={event => { if (!loaded || /style|unauthorized|forbidden|access token|webgl/i.test(event.error.message)) setFailed(true); }}>
@@ -242,6 +247,7 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
             <Layer id="station-route-halo" type="line" paint={{ 'line-color': satellite ? '#25382f' : '#ffffff', 'line-width': 7 }} />
             <Layer id="station-route-line" type="line" paint={{ 'line-color': satellite ? '#a9dfff' : '#315d87', 'line-width': 3.5, 'line-dasharray': [2, 1.5] }} />
           </Source>
+          {showOptional && data.optionalRoute && <Source id="optional-walk" type="geojson" data={routeFeature(data.optionalRoute.coordinates)}><Layer id="optional-walk-halo" type="line" paint={{ 'line-color': '#ffffff', 'line-width': 6 }} /><Layer id="optional-walk-line" type="line" paint={{ 'line-color': '#842d3f', 'line-width': 3, 'line-dasharray': [2, 1] }} /></Source>}
           {visibleStops.map(stop => {
             const offset = markerOffsets[stop.id];
             const active = selected.id === stop.id;
@@ -272,6 +278,7 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
             </button>)}
           </div>
         </div>
+        {data.optionalRoute && <button type="button" aria-pressed={showOptional} onClick={() => { const next = !showOptional; setShowOptional(next); if (next && data.optionalRoute) mapRef.current?.fitBounds(boundsFor([...data.route, ...data.optionalRoute.coordinates]), {padding: 70, duration: 500, retainPadding: false}); else overview(); }} className={`absolute bottom-24 left-3 z-30 min-h-11 max-w-48 rounded-xl border px-3 py-2 text-left text-xs font-semibold shadow-md lg:bottom-10 ${showOptional ? 'border-[#842d3f] bg-[#842d3f] text-white' : 'border-[#dce1d6] bg-white text-[#842d3f]'}`}>{showOptional ? 'Hide optional route' : `Show ${data.optionalRoute.label.toLowerCase()}`}</button>}
         {steps.length > 0 && <button type="button" onClick={() => selectStep(0)} className="absolute bottom-8 left-1/2 z-30 min-h-11 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#176347] px-5 text-sm font-semibold text-white shadow-lg lg:hidden">Start the walk →</button>}
         {(!token || failed || !loaded) && <div role="status" className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#f4f2ec] p-8 text-center text-sm leading-7 text-[#526258]">
           <p>{!token || failed ? 'The interactive map is unavailable. Explore the stops below or open the route in Google Maps.' : 'Loading your suggested walk…'}</p>
@@ -284,13 +291,13 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
       </aside>
     </div>
     <div className="flex flex-wrap gap-x-6 gap-y-2 rounded-b-2xl border border-t-0 border-[#dce1d6] bg-[#f5f6f1] px-5 py-3 text-xs leading-6 text-[#526258]">
-      <span className="flex items-center gap-2"><span className="h-1 w-7 rounded-full bg-[#176347]" />Suggested walk · {distance} km</span>
-      <span className="flex items-center gap-2"><span className="w-7 border-t-[3px] border-dashed border-[#315d87]" />Station approach · {stationDistance} km</span>
-      <span className="hidden items-center gap-2 lg:flex"><span className="text-[#176347]"><StopIcon icon="market" /></span>Green stall icons mark the six Christmas markets. Follow Next stop for the walking order.</span>
+      <span className="flex items-center gap-2"><span className="h-1 w-7 rounded-full bg-[#176347]" />Suggested walk · {distance} km{data.routeDistanceNote && <span> · {data.routeDistanceNote}</span>}</span>
+      <span className="flex items-center gap-2"><span className="w-7 border-t-[3px] border-dashed border-[#315d87]" />{approachLabel} · {stationDistance} km</span>
+      <span className="hidden items-center gap-2 lg:flex"><span className="text-[#176347]"><StopIcon icon="market" /></span>Green stall icons mark the Christmas markets. Follow Next stop for the walking order.</span>
       <span className="hidden lg:inline">Drag to explore · Scroll or use + / − to zoom</span>
     </div>
     <div className="mt-4 space-y-3 lg:hidden">
-      <p className="text-sm text-[#526258]">Tap a market to watch a clip, or start the suggested walk.</p>
+      <p className="text-sm text-[#526258]">Tap a stop to explore it, or start the suggested walk.</p>
       {arrivalControls}
       <a href={data.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-sm font-semibold text-[#176347] underline underline-offset-4">Open the walking map in Google Maps ↗</a>
     </div>
@@ -311,12 +318,12 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
         </button>
       </li>)}</ol>
     </GuideDisclosure> : <div className="mt-6"><h3 className="text-lg font-semibold text-[#25382f]">{category === 'all' ? 'Choose a stop along the way' : categories.find(item => item.id === category)?.label}</h3>
-      <p className="mt-2 text-sm leading-6 text-[#657069]">Choose a stop to see photos and tips for your visit. Green stall icons identify the six markets; you can join the walk wherever suits your arrival.</p>
+      <p className="mt-2 text-sm leading-6 text-[#657069]">Choose a stop to see photos and tips for your visit. Green stall icons identify the markets; you can join the walk wherever suits your arrival.</p>
       <ul className="mt-4 grid gap-2 sm:grid-cols-2 xl:grid-cols-3">{visibleStops.map(stop => {
         const photoCount = stop.photos?.length || (stop.photo ? 1 : 0);
         return <li key={stop.id}><button type="button" aria-pressed={selected.id === stop.id} onClick={() => selectStop(stop, true)} className={`flex min-h-16 w-full items-center gap-3 rounded-xl border px-3 py-3 text-left text-sm font-semibold ${selected.id === stop.id ? 'border-[#b18b45] bg-[#fbf2dc] text-[#176347]' : 'border-[#e1e3d9] text-[#25382f] hover:bg-[#f5f6f1]'}`}><Badge stop={stop} /><span>{stop.name}{photoCount > 0 && <span className="mt-1 block text-xs font-normal text-[#607767]">{photoCount} {photoCount === 1 ? 'photo' : 'photos'}</span>}</span></button></li>;
       })}</ul>
     </div>}
-    <p className="mt-3 max-w-3xl text-xs leading-6 text-[#657069]">Seasonal displays and access can change. You can find the routes I filmed on the day and evening video pages.</p>
+    <p className="mt-3 max-w-3xl text-xs leading-6 text-[#657069]">Seasonal displays and access can change. You can find the routes I filmed on the full walking-tour pages.</p>
   </div>;
 }
