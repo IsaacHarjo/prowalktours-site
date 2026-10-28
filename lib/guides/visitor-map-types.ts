@@ -18,6 +18,8 @@ export type VisitorMapStop = {
   tip?: string;
   photo?: GuidePhoto;
   photos?: GuidePhoto[];
+  panorama?: { src: string };
+  panoramas?: { src: string; label: string }[];
   video?: { libraryId: string; videoId: string; title: string };
 };
 export type VisitorItineraryStep = {
@@ -38,6 +40,8 @@ export type VisitorMapData = {
   approachLabel?: string;
   routeDistanceNote?: string;
   showItineraryTips?: boolean;
+  defaultToItinerary?: boolean;
+  descriptionBeforeMedia?: boolean;
   optionalRoute?: { label: string; coordinates: MapCoordinate[]; stopIds?: string[] };
   stops: VisitorMapStop[];
   itinerary?: {
