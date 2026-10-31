@@ -16,6 +16,19 @@ export const colmarFaq: GuideFaq[] = [
     source: { label: 'Alsatian food & Christmas specialties', href: 'https://www.noel-colmar.com/en/colmar-the-magic-of-christmas/presentation/gastronomic-specialities' },
   },
   {
+    question: 'What can I do if it’s cold or raining?',
+    answer: 'If you want a break from walking outside, leave time for an indoor visit between the markets. The Toy Museum and Choco-Story are two options to consider, especially if you’re visiting with children. Check opening hours and tickets for your date before heading over.',
+    items: [
+      { title: 'Toy Museum', text: 'An indoor stop focused on toys and games, with collections that span different generations.', source: { label: 'Toy Museum visitor information', href: 'https://museedujouet.colmar.fr/visites/informations-pratiques/' } },
+      { title: 'Choco-Story', text: 'Explore the story of chocolate, with tastings included in the museum visit.', source: { label: 'Choco-Story visitor information', href: 'https://www.choco-story-colmar.fr/' } },
+    ],
+  },
+  {
+    question: 'Is there a nearby evening outing beyond Colmar?',
+    answer: 'Turckheim’s night-watchman walk is an option if you have another evening to spare. A costumed watchman leads the round through town, sharing its history and traditions. For Christmas 2026, departures are at 9pm from the Corps de Garde on Place Turenne, December 1–23 and December 26–30. Check the latest details and arrange your return journey before setting out, especially if you’re relying on public transport.',
+    source: { label: 'Turckheim’s official night-watchman dates & meeting point', href: 'https://turckheim.com/fr/gastronomie-vins/viticulteurs/F235015751_la-ronde-de-lunique-et-authentique-veilleur-de-nuit-pendant-lavent-turckheim' },
+  },
+  {
     question: 'Where is Colmar located?',
     answer: 'Colmar is in Alsace, in northeastern France, near the German border. Use the regional map above to see how Colmar fits into a trip around the nearby Christmas market towns.',
     source: { label: 'Colmar tourist office', href: 'https://www.tourisme-colmar.com/en/visit/colmar-seen-by/bloggers' },

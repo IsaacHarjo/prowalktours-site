@@ -7,7 +7,7 @@ import ChristmasMarketsClient from "./ChristmasMarketsClient";
 
 const url = "https://www.prowalktours.com/christmas-markets";
 const title = "European Christmas Markets 2026: Guides & Walking Tours | ProWalk Tours";
-const description = "Plan your Christmas market trip with my Colmar guide, photos and walking tours from across Europe, plus ideas from my own trips.";
+const description = "Choose a country and explore my Christmas market guides, with practical tips, suggested routes, photos and filmed walks to help plan your visit.";
 export const metadata: Metadata = {
   title, description, alternates: { canonical: url },
   openGraph: { title, description, url, images: [{ url: colmarPhotos.C157.src, alt: colmarPhotos.C157.alt }] },

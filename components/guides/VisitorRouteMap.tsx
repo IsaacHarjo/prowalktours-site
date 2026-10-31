@@ -114,7 +114,8 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
   const satellite = mapView === 'satellite';
   const approachLabel = data.approachLabel ?? 'Station approach';
   const isColmar = data.city === 'Colmar';
-  const [showOptional, setShowOptional] = useState(false);
+  const optionalRoutes = data.optionalRoutes ?? (data.optionalRoute ? [{ ...data.optionalRoute, id: 'optional-walk' }] : []);
+  const [visibleOptionalIds, setVisibleOptionalIds] = useState<string[]>([]);
 
   useEffect(() => {
     detailRef.current?.scrollTo({ top: 0 });
@@ -141,7 +142,8 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
   function selectStop(stop: VisitorMapStop, fromList = false) {
     setMode(steps.some(step => step.stopId === stop.id) ? 'itinerary' : 'explore');
     setSelectedId(stop.id);
-    if (data.optionalRoute?.stopIds?.includes(stop.id)) setShowOptional(true);
+    const matchingRoutes = optionalRoutes.filter(route => route.stopIds?.includes(stop.id));
+    if (matchingRoutes.length) setVisibleOptionalIds(ids => [...new Set([...ids, ...matchingRoutes.map(route => route.id)])]);
     mapRef.current?.easeTo({ center: stop.coordinates, zoom: 16.7, duration: 500 });
     if (isMobile) openSheet();
     if (fromList && !isMobile) {
@@ -255,7 +257,7 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
             <Layer id="station-route-halo" type="line" paint={{ 'line-color': satellite ? '#25382f' : '#ffffff', 'line-width': 7 }} />
             <Layer id="station-route-line" type="line" paint={{ 'line-color': satellite ? '#a9dfff' : '#315d87', 'line-width': 3.5, 'line-dasharray': [2, 1.5] }} />
           </Source>}
-          {showOptional && data.optionalRoute && <Source id="optional-walk" type="geojson" data={routeFeature(data.optionalRoute.coordinates)}><Layer id="optional-walk-halo" type="line" paint={{ 'line-color': '#ffffff', 'line-width': 6 }} /><Layer id="optional-walk-line" type="line" paint={{ 'line-color': '#842d3f', 'line-width': 3, 'line-dasharray': [2, 1] }} /></Source>}
+          {optionalRoutes.filter(route => visibleOptionalIds.includes(route.id)).map(route => <Source key={route.id} id={route.id} type="geojson" data={routeFeature(route.coordinates)}><Layer id={`${route.id}-halo`} type="line" paint={{ 'line-color': '#ffffff', 'line-width': 6 }} /><Layer id={`${route.id}-line`} type="line" paint={{ 'line-color': '#842d3f', 'line-width': 3, 'line-dasharray': [2, 1] }} /></Source>)}
           {visibleStops.map(stop => {
             const offset = markerOffsets[stop.id];
             const active = selected.id === stop.id;
@@ -286,7 +288,15 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
             </button>)}
           </div>
         </div>
-        {data.optionalRoute && <button type="button" aria-pressed={showOptional} onClick={() => { const next = !showOptional; setShowOptional(next); if (next && data.optionalRoute) mapRef.current?.fitBounds(boundsFor([...data.route, ...data.optionalRoute.coordinates]), {padding: 70, duration: 500, retainPadding: false}); else overview(); }} className={`absolute bottom-24 left-3 z-30 min-h-11 max-w-48 rounded-xl border px-3 py-2 text-left text-xs font-semibold shadow-md lg:bottom-10 ${showOptional ? 'border-[#842d3f] bg-[#842d3f] text-white' : 'border-[#dce1d6] bg-white text-[#842d3f]'}`}>{showOptional ? 'Hide optional route' : `Show ${data.optionalRoute.label.toLowerCase()}`}</button>}
+        {optionalRoutes.length > 0 && <div className="absolute bottom-24 left-3 z-30 flex max-w-48 flex-col gap-2 lg:bottom-10">{optionalRoutes.map(route => {
+          const shown = visibleOptionalIds.includes(route.id);
+          return <button key={route.id} type="button" aria-pressed={shown} onClick={() => {
+            const next = shown ? visibleOptionalIds.filter(id => id !== route.id) : [...visibleOptionalIds, route.id];
+            setVisibleOptionalIds(next);
+            if (next.length) mapRef.current?.fitBounds(boundsFor([...data.route, ...optionalRoutes.filter(item => next.includes(item.id)).flatMap(item => item.coordinates)]), { padding: 70, duration: 500, retainPadding: false });
+            else overview();
+          }} className={`min-h-11 rounded-xl border px-3 py-2 text-left text-xs font-semibold shadow-md ${shown ? 'border-[#842d3f] bg-[#842d3f] text-white' : 'border-[#dce1d6] bg-white text-[#842d3f]'}`}>{shown ? `Hide ${route.label.toLowerCase()}` : `Show ${route.label.toLowerCase()}`}</button>;
+        })}</div>}
         {steps.length > 0 && <button type="button" onClick={() => selectStep(0)} className="absolute bottom-8 left-1/2 z-30 min-h-11 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#176347] px-5 text-sm font-semibold text-white shadow-lg lg:hidden">Start the walk →</button>}
         {(!token || failed || !loaded) && <div role="status" className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#f4f2ec] p-8 text-center text-sm leading-7 text-[#526258]">
           <p>{!token || failed ? 'The interactive map is unavailable. Explore the stops below or open the route in Google Maps.' : 'Loading your suggested walk…'}</p>

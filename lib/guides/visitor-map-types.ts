@@ -43,6 +43,7 @@ export type VisitorMapData = {
   defaultToItinerary?: boolean;
   descriptionBeforeMedia?: boolean;
   optionalRoute?: { label: string; coordinates: MapCoordinate[]; stopIds?: string[] };
+  optionalRoutes?: { id: string; label: string; coordinates: MapCoordinate[]; stopIds?: string[] }[];
   stops: VisitorMapStop[];
   itinerary?: {
     title: string;
