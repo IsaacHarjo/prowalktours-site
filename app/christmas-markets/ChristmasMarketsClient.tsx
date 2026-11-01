@@ -23,6 +23,7 @@ type Props = { walks: ChristmasWalk[]; points: WorldTour[]; initialFilters: Chri
 
 export default function ChristmasMarketsClient({ walks, points, initialFilters }: Props) {
   const [filters, setFilters] = useState(initialFilters);
+  const [readyOnly, setReadyOnly] = useState(false);
   const [destinationQuery, setDestinationQuery] = useState("");
   const [selectedCountry, setSelectedCountry] = useState(initialFilters.country);
   const [showWalks, setShowWalks] = useState(Object.values(initialFilters).some(Boolean));
@@ -61,7 +62,7 @@ export default function ChristmasMarketsClient({ walks, points, initialFilters }
     Riquewihr: { href: "/christmas-markets/riquewihr", description: "Look beyond the stalls: step into courtyards, browse Christmas shops and explore around the Dolder.", detail: "Christmas streets, shops & courtyards" },
   };
   const matches = (country: string, city: string, region: string) => normalize(`${country} ${city} ${region}`).includes(normalize(destinationQuery));
-  const hasMatches = walks.some(walk => (!selectedCountry || walk.country === selectedCountry) && matches(walk.country, walk.city, walk.region || "")) || upcomingChristmasDestinations.some(place => (!selectedCountry || place.country === selectedCountry) && matches(place.country, place.city, place.region));
+  const hasMatches = walks.some(walk => (!readyOnly || Boolean(guides[walk.city])) && (!selectedCountry || walk.country === selectedCountry) && matches(walk.country, walk.city, walk.region || "")) || (!readyOnly && upcomingChristmasDestinations.some(place => (!selectedCountry || place.country === selectedCountry) && matches(place.country, place.city, place.region)));
 
   return <div className="bg-[#fcfaf7] text-[#25382f]">
     <section id="destinations" aria-label="Christmas markets by country" className={width + " scroll-mt-24 pb-12"}>
@@ -79,7 +80,8 @@ export default function ChristmasMarketsClient({ walks, points, initialFilters }
         </div>
         <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Quick country selection">{["", ...featuredCountries].map(country => <button key={country} aria-pressed={selectedCountry === country} onClick={() => { setSelectedCountry(country); setDestinationQuery(""); }} className={`min-h-11 rounded-full border px-5 py-2 text-sm font-semibold ${selectedCountry === country ? "border-[#203d32] bg-[#203d32] text-white" : "border-[#cbd6c8] hover:border-[#176347]"}`}>{country || "All countries"}</button>)}</div>
       </div>
-      {!hasMatches && <div role="status" className="py-12"><h2 className="text-2xl font-semibold">No markets match “{destinationQuery}”</h2><p className="mt-3 text-[#657069]">Try a town, region or country, or see all the places I’ve filmed.</p><button onClick={() => { setDestinationQuery(""); setSelectedCountry(""); }} className={buttonClass + " mt-4"}>Show all destinations</button></div>}
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-b border-[#dce1d6] pb-5"><label className="flex min-h-11 cursor-pointer items-center gap-3 text-sm font-semibold"><input type="checkbox" checked={readyOnly} onChange={event => setReadyOnly(event.target.checked)} className="h-5 w-5 accent-[#176347]" />Show ready guides only</label><p className="text-sm text-[#657069]">More guides are on the way. You can watch my published walks now.</p></div>
+      {!hasMatches && <div role="status" className="py-12"><h2 className="text-2xl font-semibold">{readyOnly ? "No ready guides match this selection" : "No markets match this selection"}</h2><p className="mt-3 text-[#657069]">Try a town, region or country, or see all the places I’ve filmed.</p><button onClick={() => { setDestinationQuery(""); setSelectedCountry(""); setReadyOnly(false); }} className={buttonClass + " mt-4"}>Show all destinations</button></div>}
       {directoryCountries.map(country => {
         if (selectedCountry && selectedCountry !== country) return null;
         const countryWalks = walks.filter(walk => walk.country === country);
@@ -87,20 +89,35 @@ export default function ChristmasMarketsClient({ walks, points, initialFilters }
         const places = unique([...countryWalks.map(walk => walk.city), ...upcoming.map(place => place.city)]);
         const preferred = featuredChristmasCities[country] ?? [];
         const ordered = [...preferred.filter(city => places.includes(city)), ...places.filter(city => !preferred.includes(city))];
-        const shown = ordered.filter(city => matches(country, city, countryWalks.find(walk => walk.city === city)?.region || upcoming.find(place => place.city === city)?.region || ""));
+        const shown = ordered.filter(city => (!readyOnly || Boolean(guides[city])) && matches(country, city, countryWalks.find(walk => walk.city === city)?.region || upcoming.find(place => place.city === city)?.region || ""));
         if (!shown.length) return null;
-        const ready = country === "France" ? shown.filter(city => guides[city]) : [];
+        const ready = shown.filter(city => guides[city]);
         const other = shown.filter(city => !ready.includes(city));
         return <section key={country} id={countryId(country)} tabIndex={-1} aria-labelledby={`${countryId(country)}-heading`} className="scroll-mt-24 border-b border-[#dce1d6] py-10 outline-none sm:py-12">
-          <div className="mb-7 flex flex-wrap items-end justify-between gap-3"><div><p className={eyebrow}>{country === "France" ? "Begin in Alsace" : "More places I’ve filmed"}</p><h2 id={`${countryId(country)}-heading`} className="mt-2 font-serif text-4xl">{country}</h2></div><p className="text-sm text-[#657069]">{ready.length ? `${ready.length} ${ready.length === 1 ? "guide" : "guides"} to help plan your visit` : "Explore my walks while I put the guides together"}</p></div>
-          {ready.length > 0 && <div className="grid gap-6 sm:grid-cols-2">{ready.map(city => {
+          <div className="mb-7 flex flex-wrap items-end justify-between gap-3"><div><p className={eyebrow}>{country === "France" ? "Begin in Alsace" : "More places I’ve filmed"}</p><h2 id={`${countryId(country)}-heading`} className="mt-2 font-serif text-4xl">{country}</h2></div><p className="text-sm text-[#657069]">{ready.length ? `${ready.length} ${ready.length === 1 ? "guide" : "guides"} to help plan your visit` : `${shown.length} ${shown.length === 1 ? "destination" : "destinations"}`}</p></div>
+          {country === "France" && <details className="mb-6 rounded-xl border border-[#dce1d6] bg-[#edf1ed] px-5 py-4"><summary className="cursor-pointer font-semibold">Visiting more than one Alsace market?</summary><p className="mt-3 max-w-3xl text-sm leading-7 text-[#526258]">Start with the markets that have fewer opening days. Ribeauvillé is a two-weekend event, and Kaysersberg’s market opens Friday–Sunday on its market weekends. Check the dates in each guide before choosing your travel days. The guides also cover Christmas Shuttles, parking and suggested walks.</p><Link href="/christmas-markets/colmar#christmas-shuttles" className={textLink + " mt-2"}>See the Alsace Christmas Shuttles →</Link></details>}
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{shown.map(city => {
             const guide = guides[city];
-            return <Link key={city} href={guide.href} className="group overflow-hidden rounded-2xl border border-[#dce1d6] bg-white transition hover:border-[#176347] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#176347]">
-              <div className="relative aspect-[16/9] overflow-hidden bg-[#e6e7de]">{city === "Colmar" ? <Image src={colmarPhotos.C258.src} alt={colmarPhotos.C258.alt} width={1400} height={1050} sizes="(min-width: 640px) 50vw, 100vw" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" /> : <ThumbnailImg src={christmasDestinationImages[`${country}/${city}`]} alt={`Christmas in ${city} during my visit`} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />}<span className="absolute bottom-4 left-4 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[#176347]">2026 guide</span></div>
-              <div className="p-5 sm:p-6"><p className="text-xs font-semibold uppercase tracking-wide text-[#657069]">{guide.detail}</p><h3 className="mt-2 text-2xl font-semibold">{city}</h3><p className="mt-3 text-sm leading-7 text-[#526258]">{guide.description}</p><span className={textLink + " mt-3"}>Read the 2026 guide →</span></div>
-            </Link>;
-          })}</div>}
-          {other.length > 0 && <div className={ready.length ? "mt-9" : ""}>{ready.length > 0 && <h3 className="mb-4 text-lg font-semibold">More Christmas walks in {country}</h3>}<div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{other.map(city => { const walk = countryWalks.find(walk => walk.city === city); if (!walk) return <article key={city} className="flex min-h-28 flex-col justify-center rounded-xl border border-[#dce1d6] bg-[#edf1ed] p-5"><h3 className="font-semibold">{city}</h3><p className="mt-1 text-xs leading-5 text-[#657069]">Guide in preparation</p><p className="mt-1 text-sm text-[#526258]">Filmed in {upcoming.find(place => place.city === city)?.filmedYear} · Walk coming soon</p></article>; return <button key={city} type="button" onClick={() => browsePlace(country, city)} className="group flex items-center gap-4 rounded-xl border border-[#dce1d6] bg-white p-3 text-left hover:border-[#176347] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#176347]"><ThumbnailImg src={christmasDestinationImages[`${country}/${city}`] ?? walk.thumbnail} alt={`My Christmas walk in ${city}`} className="h-20 w-24 shrink-0 rounded-lg object-cover" /><span><span className="block font-semibold">{city}</span><span className="mt-1 block text-xs leading-5 text-[#657069]">Guide in preparation</span><span className="mt-1 block text-sm font-semibold text-[#176347]">Watch my walks →</span></span></button>; })}</div></div>}
+            const cityWalks = countryWalks.filter(walk => walk.city === city);
+            const walk = cityWalks[0];
+            const imageSrc = city === "Colmar" ? colmarPhotos.C258.src : christmasDestinationImages[`${country}/${city}`] ?? walk?.thumbnail;
+            const visit = city === "Kaysersberg" || city === "Riquewihr" ? "2 hours to a half-day" : city === "Ribeauvillé" ? "Half-day to a full day" : "";
+            return <article key={city} className="flex flex-col overflow-hidden rounded-2xl border border-[#dce1d6] bg-white">
+              <div className="relative aspect-[16/10] overflow-hidden bg-[#edf1ed]">
+                {imageSrc && <Image src={imageSrc} alt={city === "Colmar" ? colmarPhotos.C258.alt : `Christmas in ${city} during my visit`} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />}
+                <span className={`absolute bottom-3 left-3 rounded-full px-3 py-1.5 text-xs font-semibold ${guide ? "bg-[#176347] text-white" : "bg-white text-[#25382f]"}`}>{guide ? "2026 guide ready" : walk ? "Walking tours available" : "Filmed in 2025"}</span>
+                {guide && <Link href={guide.href} aria-label={`Read the ${city} Christmas market 2026 guide`} className="absolute inset-0 rounded-t-2xl transition-colors hover:bg-black/10 focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-[#176347]" />}
+              </div>
+              <div className="flex flex-1 flex-col p-5">
+                <h3 className="text-2xl font-semibold">{guide ? <Link href={guide.href} className="hover:underline">{city}</Link> : city}</h3>
+                {guide ? <><p className="mt-2 text-sm font-semibold text-[#607767]">{guide.detail}</p><p className="mt-3 text-sm leading-6 text-[#526258]">{guide.description}</p>{visit && <p className="mt-4 text-sm text-[#526258]"><strong>Allow</strong> {visit}</p>}</> : <p className="mt-3 text-sm leading-6 text-[#526258]">{walk ? `${walk.region || country} · ${unique(cityWalks.flatMap(item => item.filmedYear ? [String(item.filmedYear)] : [])).join(" / ")} filmed walks` : "I filmed here in 2025. My walk and market guide are on the way."}</p>}
+                <div className="mt-auto pt-5">
+                  {guide && <Link href={guide.href} className={buttonClass + " w-full"}>Read the 2026 guide →</Link>}
+                  {walk && <button type="button" onClick={() => browsePlace(country, city)} className={textLink + " mt-1 w-full justify-center"}>Watch my {cityWalks.length === 1 ? "walk" : `${cityWalks.length} walks`} <span className="sr-only">in {city}</span> →</button>}
+                </div>
+              </div>
+            </article>;
+          })}</div>
         </section>;
       })}
     </section>
