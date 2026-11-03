@@ -11,7 +11,7 @@ export const upcomingChristmasDestinations = [
 export const christmasDestinationImages: Record<string, string> = {
   "Germany/Freiburg": "/images/homepage/freiburg-christmas-market.jpg",
   "France/Kaysersberg": "/kaysersberg-christmas-market-day-walk-2025/kaysersberg-introduction.webp",
-  "France/Strasbourg": "/strasbourg-christmas-market-evening-walk-2023/highlights/strasbourg-place-kleber.jpg",
+  "France/Strasbourg": "/strasbourg-christmas-guide/le-gruber-blue-hour.webp",
   "France/Ribeauvillé": "/ribeauville-day-walk-2025/guide/hero.webp",
   "France/Riquewihr": "/riquewihr-christmas-guide/hero.webp",
   "Germany/Rothenburg ob der Tauber": "/images/homepage/rothenburg-christmas-collection.jpeg",

@@ -56,6 +56,7 @@ export default function ChristmasMarketsClient({ walks, points, initialFilters }
 
   }
   const guides: Record<string, { href: string; description: string; detail: string }> = {
+    Strasbourg: { href: "/christmas-markets/strasbourg", description: "Explore the cathedral markets, the Grand Sapin and Petite France with my walking route and practical tips.", detail: "Cathedral streets, Christmas markets & canals" },
     Colmar: { href: "/christmas-markets/colmar", description: "Explore the Christmas squares and the changing scenery between them, from Saint-Martin to Petite Venise.", detail: "Several markets, one historic centre" },
     Kaysersberg: { href: "/christmas-markets/kaysersberg", description: "Walk the decorated main street in both directions, with bridges and half-timbered houses along the Weiss.", detail: "A compact village & riverside views" },
     "Ribeauvillé": { href: "/christmas-markets/ribeauville", description: "Costumed performers, food over open fires and courtyard games make this feel like a medieval festival.", detail: "A medieval market on two weekends" },

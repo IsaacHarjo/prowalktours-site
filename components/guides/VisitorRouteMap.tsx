@@ -96,7 +96,8 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const detailRef = useRef<HTMLElement>(null);
   const steps = data.itinerary?.steps ?? [];
-  const mapCategories = data.defaultToItinerary ? [{ id: 'walk' as const, label: 'Walking itinerary' }, ...categories] : categories;
+  const availableCategories = categories.filter(item => item.id === 'all' || data.stops.some(stop => stop.category === item.id));
+  const mapCategories = data.defaultToItinerary ? [{ id: 'walk' as const, label: 'Walking itinerary' }, ...availableCategories] : availableCategories;
   const [mode, setMode] = useState<'itinerary' | 'explore'>(steps.length ? 'itinerary' : 'explore');
   const [selectedId, setSelectedId] = useState(steps[0]?.stopId ?? data.stops[0].id);
   const [category, setCategory] = useState<MapCategory>(data.defaultToItinerary ? 'walk' : 'market');
@@ -288,7 +289,10 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
             </button>)}
           </div>
         </div>
-        {optionalRoutes.length > 0 && <div className="absolute bottom-24 left-3 z-30 flex max-w-48 flex-col gap-2 lg:bottom-10">{optionalRoutes.map(route => {
+        {optionalRoutes.length > 0 && <div className="absolute bottom-24 left-3 z-30 flex max-w-48 flex-col gap-2 lg:bottom-10">
+          <details open={optionalRoutes.length <= 2} className="group/routes">
+            <summary className={optionalRoutes.length <= 2 ? 'hidden' : 'min-h-11 cursor-pointer rounded-xl border border-[#dce1d6] bg-white px-3 py-3 text-xs font-semibold text-[#25382f] shadow-md'}>Routes & arrivals{visibleOptionalIds.length ? ` (${visibleOptionalIds.length} shown)` : ''}</summary>
+            <div className="flex max-h-64 flex-col gap-2 overflow-y-auto pt-2">{optionalRoutes.map(route => {
           const shown = visibleOptionalIds.includes(route.id);
           return <button key={route.id} type="button" aria-pressed={shown} onClick={() => {
             const next = shown ? visibleOptionalIds.filter(id => id !== route.id) : [...visibleOptionalIds, route.id];
@@ -296,7 +300,9 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
             if (next.length) mapRef.current?.fitBounds(boundsFor([...data.route, ...optionalRoutes.filter(item => next.includes(item.id)).flatMap(item => item.coordinates)]), { padding: 70, duration: 500, retainPadding: false });
             else overview();
           }} className={`min-h-11 rounded-xl border px-3 py-2 text-left text-xs font-semibold shadow-md ${shown ? 'border-[#842d3f] bg-[#842d3f] text-white' : 'border-[#dce1d6] bg-white text-[#842d3f]'}`}>{shown ? `Hide ${route.label.toLowerCase()}` : `Show ${route.label.toLowerCase()}`}</button>;
-        })}</div>}
+        })}</div>
+          </details>
+        </div>}
         {steps.length > 0 && <button type="button" onClick={() => selectStep(0)} className="absolute bottom-8 left-1/2 z-30 min-h-11 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#176347] px-5 text-sm font-semibold text-white shadow-lg lg:hidden">Start the walk →</button>}
         {(!token || failed || !loaded) && <div role="status" className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#f4f2ec] p-8 text-center text-sm leading-7 text-[#526258]">
           <p>{!token || failed ? 'The interactive map is unavailable. Explore the stops below or open the route in Google Maps.' : 'Loading your suggested walk…'}</p>
