@@ -9,6 +9,7 @@ export const upcomingChristmasDestinations = [
   { country: "Germany", city: "Freiburg", region: "Baden-Württemberg", filmedYear: 2025 },
 ];
 export const christmasDestinationImages: Record<string, string> = {
+  "Switzerland/Basel": "/basel-christmas-guide/hero.webp",
   "Germany/Freiburg": "/images/homepage/freiburg-christmas-market.jpg",
   "France/Kaysersberg": "/kaysersberg-christmas-market-day-walk-2025/kaysersberg-introduction.webp",
   "France/Strasbourg": "/strasbourg-christmas-guide/le-gruber-blue-hour.webp",

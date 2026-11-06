@@ -1,0 +1,317 @@
+{
+  "barfi": [
+    {
+      "src": "/basel-christmas-guide/stops/barfi-1.webp",
+      "alt": "The illuminated Barfüsserplatz market at night",
+      "year": 2025,
+      "width": 1600,
+      "height": 901
+    },
+    {
+      "src": "/basel-christmas-guide/stops/barfi-2.webp",
+      "alt": "The Christmas pyramid above the market stalls",
+      "year": 2025,
+      "width": 901,
+      "height": 1600
+    },
+    {
+      "src": "/basel-christmas-guide/stops/barfi-3.webp",
+      "alt": "Visitors beside the church and Christmas pyramid",
+      "year": 2025,
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/basel-christmas-guide/stops/barfi-4.webp",
+      "alt": "Snow-covered stall roofs at Barfüsserplatz",
+      "year": 2022,
+      "width": 1600,
+      "height": 901
+    }
+  ],
+  "barfuesserkirche": [
+    {
+      "src": "/basel-christmas-guide/stops/barfuesserkirche-1.webp",
+      "alt": "Market stalls behind Barfüsserkirche",
+      "year": 2025,
+      "width": 1600,
+      "height": 901
+    },
+    {
+      "src": "/basel-christmas-guide/stops/barfuesserkirche-2.webp",
+      "alt": "The moose heads on the Weihnachtsstube",
+      "year": 2025,
+      "width": 1600,
+      "height": 1200
+    },
+    {
+      "src": "/basel-christmas-guide/stops/barfuesserkirche-3.webp",
+      "alt": "Fudge displayed at a market stall",
+      "year": 2025,
+      "width": 900,
+      "height": 1600
+    }
+  ],
+  "tree": [
+    {
+      "src": "/basel-christmas-guide/stops/tree-1.webp",
+      "alt": "The Christmas tree against the Minster towers",
+      "year": 2025,
+      "width": 1600,
+      "height": 901
+    },
+    {
+      "src": "/basel-christmas-guide/stops/tree-2.webp",
+      "alt": "The tree and cathedral square in daylight",
+      "year": 2025,
+      "width": 1600,
+      "height": 901
+    },
+    {
+      "src": "/basel-christmas-guide/stops/tree-3.webp",
+      "alt": "The illuminated tree seen across Münsterplatz",
+      "year": 2022,
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "minster": [
+    {
+      "src": "/basel-christmas-guide/stops/minster-1.webp",
+      "alt": "The illuminated sandstone facade of Basel Minster",
+      "year": 2022,
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/minster-2.webp",
+      "alt": "Visitors in front of Basel Minster",
+      "year": 2025,
+      "width": 1600,
+      "height": 901
+    },
+    {
+      "src": "/basel-christmas-guide/stops/minster-3.webp",
+      "alt": "Carved stonework on the Minster facade",
+      "year": 2025,
+      "width": 1600,
+      "height": 1200
+    }
+  ],
+  "munsterplatz": [
+    {
+      "src": "/basel-christmas-guide/stops/munsterplatz-1.webp",
+      "alt": "Lights above a lane of Münsterplatz market stalls",
+      "year": 2022,
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/munsterplatz-2.webp",
+      "alt": "Visitors browsing the tree-lined market lanes",
+      "year": 2025,
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/munsterplatz-3.webp",
+      "alt": "Salmon cooking beside an open fire",
+      "year": 2025,
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/basel-christmas-guide/stops/munsterplatz-4.webp",
+      "alt": "Meat skewers cooking at the market grill",
+      "year": 2025,
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/munsterplatz-5.webp",
+      "alt": "The carousel beside the cathedral market",
+      "year": 2025,
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "fairytale": [
+    {
+      "src": "/basel-christmas-guide/stops/fairytale-1.webp",
+      "alt": "Visitors sitting around the fire in the Fairy Tale Forest",
+      "year": 2025,
+      "width": 1600,
+      "height": 901
+    },
+    {
+      "src": "/basel-christmas-guide/stops/fairytale-2.webp",
+      "alt": "The illuminated Märchenwald entrance",
+      "year": 2022,
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/fairytale-3.webp",
+      "alt": "Children riding the little train",
+      "year": 2025,
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/fairytale-4.webp",
+      "alt": "Wooden signs pointing to Fairy Tale Forest activities",
+      "year": 2025,
+      "width": 1200,
+      "height": 1600
+    }
+  ],
+  "pfalz": [
+    {
+      "src": "/basel-christmas-guide/stops/pfalz-1.webp",
+      "alt": "The Rhine and Middle Bridge from the Pfalz terrace",
+      "year": 2025,
+      "width": 1600,
+      "height": 1200
+    },
+    {
+      "src": "/basel-christmas-guide/stops/pfalz-2.webp",
+      "alt": "Looking upriver from Cathedral Hill",
+      "year": 2025,
+      "width": 1600,
+      "height": 1200
+    },
+    {
+      "src": "/basel-christmas-guide/stops/pfalz-3.webp",
+      "alt": "Snow along the Rhine during my 2022 visit",
+      "year": 2022,
+      "width": 1600,
+      "height": 901
+    }
+  ],
+  "cloister": [
+    {
+      "src": "/basel-christmas-guide/stops/cloister-1.webp",
+      "alt": "A Gothic cloister window looking into the courtyard",
+      "year": 2025,
+      "width": 1600,
+      "height": 1200
+    },
+    {
+      "src": "/basel-christmas-guide/stops/cloister-2.webp",
+      "alt": "The vaulted passage through the Minster cloister",
+      "year": 2025,
+      "width": 900,
+      "height": 1600
+    },
+    {
+      "src": "/basel-christmas-guide/stops/cloister-3.webp",
+      "alt": "The enclosed courtyard beside the Minster",
+      "year": 2025,
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/basel-christmas-guide/stops/cloister-4.webp",
+      "alt": "Memorials along the cloister wall",
+      "year": 2025,
+      "width": 1600,
+      "height": 1200
+    }
+  ],
+  "freie": [
+    {
+      "src": "/basel-christmas-guide/stops/freie-1.webp",
+      "alt": "Shops and pedestrians along Freie Strasse",
+      "year": 2025,
+      "width": 1200,
+      "height": 1600
+    }
+  ],
+  "marktplatz": [
+    {
+      "src": "/basel-christmas-guide/stops/marktplatz-1.webp",
+      "alt": "The red Rathaus and Christmas tree on Marktplatz",
+      "year": 2025,
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/marktplatz-2.webp",
+      "alt": "Daytime activity on Marktplatz",
+      "year": 2025,
+      "width": 1600,
+      "height": 901
+    },
+    {
+      "src": "/basel-christmas-guide/stops/marktplatz-3.webp",
+      "alt": "The illuminated Marktplatz Christmas tree",
+      "year": 2025,
+      "width": 900,
+      "height": 1600
+    }
+  ],
+  "rathaus": [
+    {
+      "src": "/basel-christmas-guide/stops/rathaus-1.webp",
+      "alt": "The decorated tree in the painted Rathaus courtyard",
+      "year": 2025,
+      "width": 1600,
+      "height": 901
+    },
+    {
+      "src": "/basel-christmas-guide/stops/rathaus-2.webp",
+      "alt": "Stairs leading to the Rathaus courtyard gallery",
+      "year": 2025,
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/basel-christmas-guide/stops/rathaus-3.webp",
+      "alt": "Looking down into the Rathaus courtyard from the gallery",
+      "year": 2025,
+      "width": 1200,
+      "height": 1600
+    }
+  ],
+  "bridge": [
+    {
+      "src": "/basel-christmas-guide/stops/bridge-1.webp",
+      "alt": "Snow beside the walkway on the Middle Bridge",
+      "year": 2022,
+      "width": 1600,
+      "height": 901
+    },
+    {
+      "src": "/basel-christmas-guide/stops/bridge-2.webp",
+      "alt": "The bridge chapel above the Rhine",
+      "year": 2022,
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/basel-christmas-guide/stops/bridge-3.webp",
+      "alt": "The old-town riverfront from the Middle Bridge",
+      "year": 2022,
+      "width": 1600,
+      "height": 901
+    }
+  ],
+  "rheinsprung": [
+    {
+      "src": "/basel-christmas-guide/stops/rheinsprung-1.webp",
+      "alt": "Historic buildings along Augustinergasse in winter",
+      "year": 2022,
+      "width": 1600,
+      "height": 1200
+    }
+  ],
+  "basel-station": [
+    {
+      "src": "/basel-christmas-guide/stops/basel-station-1.webp",
+      "alt": "Platforms at Basel SBB railway station",
+      "year": 2022,
+      "width": 1600,
+      "height": 1600
+    }
+  ]
+}
