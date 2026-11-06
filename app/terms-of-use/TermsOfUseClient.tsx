@@ -1,18 +1,46 @@
 "use client";
+
 import Link from "next/link";
 import InfoPage from "../../components/InfoPage";
 
 export default function TermsOfUseClient() {
-  return <InfoPage draft title="Terms of Use" intro="Proposed terms for the Prowalk Tours website and the independent ProWalk Tours Roku application, operated by Prowalk Tours in the United States.">
-    <section><h2>1. Scope and acceptance</h2><p>These are review drafts, not an effective agreement. The final version will govern use of the new Prowalk Tours website and the ProWalk Tours Roku app once published with an effective date and an appropriate notice or acceptance process. The current Squarespace site and independently operated third-party platforms are outside this draft’s implementation scope.</p><p>The operator’s full legal identity, location, and notice details must be confirmed before finalization. Any separate signed footage license or partnership agreement controls the rights it specifically grants.</p></section>
-    <section><h2>2. Viewing the tours</h2><p>Subject to the final terms and applicable law, we intend to permit personal, noncommercial viewing through the website’s available players and the Roku app. The initial Roku release is planned to be free and will not require a ProWalk Tours viewer account. A Roku device, internet connection, and any account required by Roku remain your responsibility.</p><p>Content availability, resolution, captions, sound, and playback features can vary by title, device, region, and connection. Some YouTube content may have platform or membership restrictions. We may add, update, or remove content and features.</p></section>
-    <section><h2>3. Copyright and footage licensing</h2><p>Videos, photographs, audio, writing, logos, and other material are protected by intellectual property laws and belong to Prowalk Tours or the relevant rights holders. Watching a tour does not grant a right to download, redistribute, rebroadcast, sell, edit, or publicly exhibit it, except as permitted by law or an express license.</p><p>Business displays, television, streaming distribution, advertising, institutional use, and incorporation into another project require appropriate rights. <Link href="/licensing">Contact us about a written footage license</Link>. Nothing in these terms limits uses that applicable law permits without authorization.</p></section>
-    <section><h2>4. Responsible use</h2><p>Do not interfere with the service, bypass technical access restrictions, upload malicious material, impersonate others, or use the service unlawfully. Do not remove rights notices or misrepresent ownership of our work. Automated access must respect applicable law and must not disrupt the site or other viewers.</p></section>
-    <section><h2>5. Travel information and maps</h2><p>Our tours document places at the time of filming. Routes, opening hours, access rules, prices, weather, and conditions may have changed. Maps and descriptions help you explore the films; they are not live navigation, safety advice, or a guarantee of access. Check current local information before visiting, and follow local rules and conditions.</p></section>
-    <section><h2>6. Third-party services</h2><p>Website videos and maps may use YouTube, Google, and Mapbox. External links may lead to social networks, retailers, membership services, or payment providers. Those services have their own terms and privacy practices. Roku’s platform terms also apply to use of its devices and services.</p><p>The independent ProWalk Tours app is operated by Prowalk Tours; it is not represented as a Roku-owned service. Third-party names and marks belong to their respective owners.</p></section>
-    <section><h2>7. Messages, support, and proposals</h2><p>Only send material that you have permission to share. An inquiry, quote request, support payment, or partnership proposal does not itself create a footage license or business agreement. Email links and the licensing tool prepare an email; a message is not sent until you send it through your email application.</p><p>We use information in messages to consider and respond to the request, as explained in the <Link href="/privacy-policy">draft Privacy Policy</Link>. Please send a viewing link rather than confidential production material with an initial inquiry.</p></section>
-    <section><h2>8. Possible future advertising and subscriptions</h2><p>The Roku app may introduce advertising or optional subscriptions in the future. These are not current commitments or an authorization to charge you. Any paid offer will disclose its price, billing period, renewal, cancellation, refund terms, and provider before purchase, with any consent required by law. Existing YouTube or Patreon memberships do not automatically include a future Roku subscription.</p><p>YouTube may show advertising in its embedded player under its own rules even while the initial Roku app is planned as a free service.</p></section>
-    <section><h2>9. Availability and responsibility</h2><p>To the extent applicable law allows, the service is offered as available without a promise of uninterrupted operation or that every description is complete or current. We may suspend access where reasonably necessary to address misuse, security problems, rights issues, or legal requirements.</p><p>No provision is intended to exclude rights or liability that cannot lawfully be excluded, including mandatory consumer protections. Any final warranty exclusions, liability limits, governing-law provisions, and dispute process require legal review. This draft does not impose mandatory arbitration, a class-action waiver, or a chosen court.</p></section>
-    <section><h2>10. Changes and contact</h2><p>The final terms will state an effective date. Material changes will receive appropriate notice and any acceptance required by law.</p><p>For general, licensing, or rights questions, <a href="mailto:info@prowalktours.com?subject=Prowalk%20Tours%20terms%20or%20rights%20inquiry">email Prowalk Tours</a>. For the Roku application, <a href="mailto:roku@prowalktours.com?subject=ProWalk%20Tours%20Roku%20terms%20inquiry">email Roku support</a>. If reporting a rights concern, include the page or video URL and enough information to identify the material and your concern.</p></section>
-  </InfoPage>;
+  return (
+    <InfoPage title="Terms of Use" intro="These terms explain how you can use the Prowalk Tours website, my walking tours, and the information in my guides.">
+      <p className="text-sm">Last updated: November 6, 2026.</p>
+      <section>
+        <h2>Watching and exploring</h2>
+        <p>You are welcome to browse my guides, use the suggested routes to plan your own visits, and watch my tours through the available players for personal, noncommercial viewing. You can share links to the pages and videos.</p>
+        <p>Video availability, picture quality, captions, and playback features may vary by device, connection, and platform. Some linked YouTube videos require a YouTube membership.</p>
+      </section>
+      <section>
+        <h2>Copyright and footage licensing</h2>
+        <p>Videos, photographs, audio, writing, and other material belong to Prowalk Tours or their respective rights holders. Viewing the website does not give you permission to copy, reupload, sell, edit, redistribute, or publicly display that material, except where applicable law or an express license permits it.</p>
+        <p>For use in a production, advertisement, business display, or other project, <Link href="/licensing">contact me about licensing footage</Link>. A separate written license sets out the permitted use. Sending an inquiry or receiving a quote does not itself grant a license. Nothing here limits uses permitted by law without permission.</p>
+      </section>
+      <section>
+        <h2>Travel guides and suggested routes</h2>
+        <p>My videos show places as they were when I filmed them. Market dates, opening hours, prices, transport, access, and local conditions can change. Check the organizer’s or destination’s current information before making plans.</p>
+        <p>Maps and suggested walking routes are planning aids, not live navigation or a guarantee that a route is open, accessible, or suitable for everyone. Follow local signs and rules, and choose a route that suits your needs and the conditions on the day.</p>
+      </section>
+      <section>
+        <h2>Outside services and shopping links</h2>
+        <p>The website uses services including YouTube, Bunny.net, Google My Maps, and Mapbox to show videos and maps. Links may also take you to retailers and other independent websites. Their own terms and privacy policies apply to their services.</p>
+        <p>Some gear links are affiliate links, which means I may earn a commission from qualifying purchases. Product prices, availability, orders, returns, and warranties are handled by the retailer. A gear recommendation is not a guarantee that a product will meet your particular needs.</p>
+      </section>
+      <section>
+        <h2>Messages and responsible use</h2>
+        <p>The contact and licensing forms send your message through Formspree. You can also email me directly. Please send only information you have permission to share, and avoid including sensitive or confidential material in an initial inquiry. The <Link href="/privacy-policy">Privacy Policy</Link> explains how messages and website information are handled.</p>
+        <p>Do not use the website to send spam or malicious material, impersonate someone, bypass access restrictions, or disrupt the website or its visitors.</p>
+      </section>
+      <section>
+        <h2>Availability and changes</h2>
+        <p>I may update or remove content and features. I cannot promise uninterrupted access or that every guide remains complete and current. Nothing in these terms excludes rights or responsibilities that cannot legally be excluded.</p>
+        <p>Changes to these terms will appear on this page with an updated date. Any separate written licensing or partnership agreement governs the matters it covers.</p>
+      </section>
+      <section>
+        <h2>Contact</h2>
+        <p>For questions about these terms, footage rights, or a concern about material on the website, email <a href="mailto:info@prowalktours.com">info@prowalktours.com</a>. Please include the relevant page or video link so I can review it.</p>
+      </section>
+    </InfoPage>
+  );
 }

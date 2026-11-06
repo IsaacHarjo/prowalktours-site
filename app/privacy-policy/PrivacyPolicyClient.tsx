@@ -1,24 +1,61 @@
 "use client";
-import Link from "next/link";
+
 import InfoPage from "../../components/InfoPage";
 
 export default function PrivacyPolicyClient() {
-  return <InfoPage draft title="Privacy Policy" intro="This draft describes the new Prowalk Tours website and the planned independent ProWalk Tours Roku application. Prowalk Tours is based in the United States.">
-    <section><h2>1. Scope and status</h2><p>This draft concerns the new website at prowalktours-site.vercel.app, intended eventually for prowalktours.com, and our Roku application. It does not describe the separate Squarespace implementation currently serving prowalktours.com. The Roku app is in development and is planned to offer free walking tours without a ProWalk Tours viewer account.</p><p>The Roku app’s hosting, analytics, crash reporting, advertising, and other providers have not yet been selected. Its actual data flows must be added before this policy becomes effective. Roku itself may require a platform account; that is separate from a ProWalk Tours account.</p></section>
-    <section><h2>2. Information you provide</h2><p>If you email us, we receive your email address, name if provided, message, and any attachments or project details you choose to send. We use this information to respond, prepare licensing or partnership proposals, and manage related business records.</p><p>When you submit the licensing form, your name, email address, and message are sent to Formspree, which processes the submission and sends an email notification to my inbox. Formspree may also process technical information to operate the form and filter spam. See <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noreferrer">Formspree’s Privacy Policy</a>. We do not currently offer website viewer accounts or an active newsletter signup.</p></section>
-    <section><h2>3. Website hosting, search, and technical information</h2><p>Vercel hosts the new website. Requests can include an IP address, browser or device information, page address, referrer, and request time. Hosting and security systems may process these details to deliver pages, diagnose failures, and prevent abuse. Search terms and filters appear in page URLs and can therefore appear in browser history and hosting logs. Please do not enter sensitive personal information into search.</p><p>No separate Google Analytics, Google Tag Manager, advertising pixel, or Vercel Web Analytics integration was found in the reviewed website code. Hosting logs and third-party embedded services still involve data processing. Dashboard-enabled services and log retention must be confirmed before launch.</p></section>
-    <section><h2>4. Videos, maps, and QR codes</h2><ul>
-      <li><strong>YouTube / Google:</strong> embedded players and thumbnail images connect to Google services. Standard YouTube embeds may use cookies or similar storage, receive technical and viewing information, and show advertising under Google’s policies. Some connections occur when a page loads, before playback.</li>
-      <li><strong>Mapbox:</strong> interactive maps request map tiles, styles, fonts, and service or usage data. Mapbox receives technical request information. Some maps offer a locate-me control; using it requests browser permission to display your location. You can decline or revoke that permission in your browser. The reviewed site has no application endpoint that stores your precise location.</li>
-      <li><strong>Google My Maps:</strong> embedded route maps connect to Google and may use its cookies and services. Opening a full map takes you to Google.</li>
-      <li><strong>QR Server:</strong> route QR-code images are requested from api.qrserver.com. That service receives the public route URL encoded in the image and technical information associated with the request, such as an IP address.</li>
-    </ul><p>See the providers’ notices: <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Google</a>, <a href="https://www.mapbox.com/legal/privacy" target="_blank" rel="noreferrer">Mapbox</a>, <a href="https://vercel.com/legal/privacy-notice" target="_blank" rel="noreferrer">Vercel</a>, and <a href="https://goqr.me/privacy-safety-security/" target="_blank" rel="noreferrer">QR Server / goQR</a>.</p></section>
-    <section><h2>5. Cookies and your choices</h2><p>The reviewed website does not set a first-party advertising or account cookie. Embedded providers may use cookies, local storage, or similar technologies independently. The current site does not offer a consent manager that blocks those services before loading. Consent requirements and the necessary controls must be reviewed before launch in the intended markets.</p><p>You can manage cookies and site permissions in your browser, adjust Google and Roku privacy settings, and choose whether to follow external links. Blocking storage or third-party requests may affect video and map features. Browser settings alone are not a substitute for any consent controls the service is required to provide.</p></section>
-    <section><h2>6. The planned Roku application</h2><p>The initial plan is free viewing without creating a ProWalk Tours account. Free, account-free viewing does not mean that no data is processed: streaming delivery and the Roku platform may process IP addresses, device information, app activity, diagnostics, or viewing information. Which of these ProWalk Tours or its providers receives has not yet been determined.</p><p>Before release, this section must identify the video delivery provider, any device or advertising identifiers accessed, playback history or preferences stored, analytics or crash reports collected, recipients, purposes, retention periods, and available controls. Roku’s own platform processing is described in the <a href="https://docs.roku.com/published/userprivacypolicy" target="_blank" rel="noreferrer">Roku Privacy Policy</a>.</p></section>
-    <section><h2>7. Sharing and external services</h2><p>Information needed to deliver the service or respond to your message may be processed by hosting, email, video, and map providers. We may also need to disclose information to comply with law, protect rights or security, or obtain professional advice. We do not use an inquiry as permission to add you to a marketing list.</p><p>Links to YouTube, Patreon, PayPal, Spotify, social networks, publishers, and retailers take you to independently operated services. Their payment, account, cookie, and privacy practices apply there. The legal classification of any third-party advertising activity as a “sale,” “sharing,” or targeted advertising, and any required opt-out or preference-signal handling, must be assessed before finalizing this policy.</p></section>
-    <section><h2>8. Retention, security, and international processing</h2><p>Our proposed approach is to retain inquiry and licensing records only as needed to respond, perform agreements, meet legal obligations, and resolve disputes, then delete or de-identify them. Exact retention periods and provider settings remain to be confirmed. Reasonable safeguards should protect information, but no website, email system, or transmission can be guaranteed completely secure.</p><p>Prowalk Tours is based in the United States. Providers may process information in other countries. Any legally required international transfer safeguards must be confirmed for the final provider setup.</p></section>
-    <section><h2>9. Privacy requests and children</h2><p>Depending on where you live and the law that applies, you may have rights to access, correct, delete, or receive a copy of personal information, object to or restrict processing, withdraw consent, opt out of certain uses, or complain to a regulator. Contact us to make a request; we may need proportionate verification before disclosing or changing records. Requests concerning another provider’s account or platform data should also be directed to that provider.</p><p>The service is intended for a general audience, not specifically for children under 13. If you believe a child has sent us personal information, contact us so we can investigate and remove it where appropriate. The Roku audience designation must be confirmed before release.</p></section>
-    <section><h2>10. Future advertising, subscriptions, and changes</h2><p>Advertising and subscriptions may be added to the Roku app later. They are not described here as current features. Before introducing them, we will update the policy to identify the providers, data used, payment arrangements, and controls, and obtain any required consent. Material changes will be brought to viewers’ attention as required by applicable law.</p></section>
-    <section><h2>11. Contact</h2><p><a href="mailto:info@prowalktours.com?subject=Website%20privacy%20request">Email a website privacy request</a> or <a href="mailto:roku@prowalktours.com?subject=Roku%20privacy%20request">email a Roku privacy request</a>. The operator’s full legal identity, state, and appropriate mailing contact remain to be confirmed.</p><p>See also the <Link href="/terms-of-use">draft Terms of Use</Link>.</p></section>
-  </InfoPage>;
+  return (
+    <InfoPage title="Privacy Policy" intro="This policy explains how information is handled when you browse my walks and guides or contact me through the Prowalk Tours website.">
+      <p className="text-sm">Last updated: November 6, 2026.</p>
+
+      <section>
+        <h2>Information you send me</h2>
+        <p>When you use my contact or licensing form, I receive your name, email address, message, and topic if you select one. If you email me directly, I also receive any attachments or details you include. I use this information to reply, discuss your request, and manage licensing or other business correspondence. Sending a message does not subscribe you to a marketing list.</p>
+        <p>Formspree processes form submissions and delivers notifications to my Google Workspace email. These providers may process technical information for delivery, security, and spam prevention. Please do not include passwords, payment details, or other sensitive information in a message.</p>
+      </section>
+
+      <section>
+        <h2>Browsing, search, and hosting</h2>
+        <p>Vercel hosts this website. Hosting and security services may process your IP address, browser and device information, requested page, referring page, and request time to deliver the site, troubleshoot problems, and prevent abuse.</p>
+        <p>Search terms and filters appear in the page address, so they may appear in your browser history and server logs. You do not need a Prowalk Tours account to browse the website.</p>
+      </section>
+
+      <section>
+        <h2>Videos, maps, and other services</h2>
+        <p>Some pages connect to outside services to display content. Those services receive technical request information, such as your IP address and browser information. Some connections happen when a page loads, before you play a video.</p>
+        <ul>
+          <li><strong>YouTube / Google:</strong> video players, thumbnails, and Google My Maps route maps. YouTube may process viewing information, use cookies, and show advertising.</li>
+          <li><strong>Bunny.net:</strong> video highlights and clips. Video delivery involves requests to Bunny.net and its delivery network, which may process technical and playback information.</li>
+          <li><strong>Mapbox:</strong> interactive maps and their tiles, styles, and fonts. If you use a map’s location button, your browser asks permission to access your location. You can decline or revoke that permission. The website does not send your precise location to a Prowalk Tours database.</li>
+          <li><strong>QR Server / goQR:</strong> route QR-code images. Requests include the public route link encoded in the image and technical request information.</li>
+        </ul>
+        <p>You can read the providers’ policies here: <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Google</a>, <a href="https://bunny.net/privacy/" target="_blank" rel="noreferrer">Bunny.net</a>, <a href="https://www.mapbox.com/legal/privacy" target="_blank" rel="noreferrer">Mapbox</a>, <a href="https://vercel.com/legal/privacy-notice" target="_blank" rel="noreferrer">Vercel</a>, <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noreferrer">Formspree</a>, and <a href="https://goqr.me/privacy-safety-security/" target="_blank" rel="noreferrer">QR Server / goQR</a>.</p>
+      </section>
+
+      <section>
+        <h2>Cookies and external links</h2>
+        <p>Embedded services may use cookies, local storage, or similar technologies under their own policies, including to collect activity across websites. The website currently does not block all embedded services pending a cookie choice and does not change their loading in response to a browser’s Do Not Track signal.</p>
+        <p>You can manage cookies and permissions in your browser and adjust privacy preferences with those providers. Blocking third-party content may affect videos and maps.</p>
+        <p>Links to Amazon, YouTube, social networks, and other websites take you to services with their own privacy policies. Some shopping links are affiliate links; the retailer may use cookies or similar technology to attribute a purchase, and I may earn a commission.</p>
+      </section>
+
+      <section>
+        <h2>How information is used and kept</h2>
+        <p>I use information to respond to you, provide the website, arrange requested services, and maintain business records. Information may be handled by the hosting, form, email, video, and map services described above, or disclosed when necessary to comply with law or protect rights and security.</p>
+        <p>How long records are needed depends on the request, any resulting agreement, and applicable recordkeeping or legal obligations. Provider logs, backups, and copies are also subject to the providers’ retention practices. You can contact me to request deletion of information you have sent me.</p>
+        <p>Service providers may process information in the United States and other countries. No website or email service can guarantee complete security.</p>
+      </section>
+
+      <section>
+        <h2>Your choices and privacy requests</h2>
+        <p>To ask about your information or request access, correction, or deletion, email <a href="mailto:info@prowalktours.com?subject=Website%20privacy%20request">info@prowalktours.com</a>. I may need to verify your identity before providing or changing records. Some information may need to be retained for legal obligations or existing agreements.</p>
+        <p>Depending on the law that applies to you, you may also have rights to receive a copy of your information, object to or restrict its use, withdraw consent where processing relies on it, or complain to a privacy regulator. Requests about your Google, Amazon, or other third-party accounts should go directly to those providers.</p>
+      </section>
+
+      <section>
+        <h2>Children and policy updates</h2>
+        <p>This website is for a general audience and is not directed at children under 13. If you believe a child has sent personal information through the site, please contact me so I can investigate and arrange appropriate removal.</p>
+        <p>I will update this page when the website’s practices change and revise the date above. Where required, I will provide additional notice of material changes.</p>
+      </section>
+    </InfoPage>
+  );
 }

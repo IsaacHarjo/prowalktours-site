@@ -15,37 +15,37 @@ const topDestinations = [
     name: "Naples & Campania",
     description: "Browse Naples walks",
     href: "/search?q=Naples",
-    img: "/images/homepage/naples-campania.jpg",
+    img: "/images/homepage/naples-selected.webp",
   },
   {
     name: "Venice",
     description: "Browse Venice walks",
     href: "/search?q=Venice",
-    img: "/images/homepage/venice.jpg",
+    img: "/images/homepage/venice-selected.webp",
   },
   {
     name: "Amalfi Coast",
     description: "Browse coastal walks",
     href: "/search?q=Amalfi",
-    img: "/images/homepage/amalfi-coast.jpg",
+    img: "/images/homepage/amalfi-selected.webp",
   },
   {
     name: "French Riviera",
     description: "Explore Riviera walks",
     href: "/search?q=Riviera",
-    img: "/images/homepage/french-riviera.jpg",
+    img: "/images/homepage/riviera-selected.webp",
   },
   {
     name: "Rome",
     description: "Browse Rome walks",
     href: "/search?q=Rome",
-    img: "/images/homepage/rome.jpg",
+    img: "/images/homepage/rome-selected.webp",
   },
   {
     name: "Paris",
     description: "Explore Paris walks",
     href: "/search?q=Paris",
-    img: "/images/homepage/paris.jpg",
+    img: "/images/homepage/paris-selected.webp",
   },
 ];
 
@@ -58,37 +58,18 @@ export default function HomeClient({ videos, mappedTours, featuredVideo }: { vid
   const countryCount = new Set(mappedTours.map(tour => tour.country)).size;
   return (
     <div className="bg-[#fcfaf7] text-[#25382f]">
-      <section className={sectionWidth + " pt-8 pb-12 sm:pt-12 lg:pb-16"}>
-        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-          <div className="relative z-10 py-2 lg:py-6">
-            <p className={eyebrow}>Prowalk Tours</p>
-            <h1 className="mt-5 max-w-xl text-4xl font-semibold leading-[1.08] tracking-[-0.035em] sm:text-5xl lg:text-6xl">Your first step before you travel.</h1>
-            <p className="mt-6 max-w-lg text-base leading-7 text-[#657069] sm:text-lg sm:leading-8">Explore through my walks. Plan a journey of your own.</p>
-            <div className="mt-8 max-w-xl">
-              <p className="mb-3 text-sm font-semibold">Where would you like to explore?</p>
-              <LiveSearchBar videos={videos} />
-              <div className="mt-5 flex flex-wrap gap-3">
-                <Link href="/search" className="inline-flex min-h-11 items-center rounded-full bg-[#176347] px-5 py-3 text-sm font-semibold text-white hover:bg-[#25382f]">Watch Walking Tours</Link>
-                <Link href="/christmas-markets" className="inline-flex min-h-11 items-center rounded-full border border-[#cbd6c8] bg-white px-5 py-3 text-sm font-semibold hover:border-[#176347]">Plan Your Trip →</Link>
-              </div>
-              <div className="mt-3 flex flex-wrap gap-x-6">
-                <a href={featuredVideo?.youtubeUrl ?? "https://www.youtube.com/@ProwalkTours/videos"} target="_blank" rel="noreferrer" className={textLink}>Watch the newest walk ↗</a>
-                <Link href="#world-map" className={textLink}>Explore the globe <span aria-hidden="true">↓</span></Link>
-              </div>
-            </div>
-            <p className="mt-6 text-xs leading-6 tracking-wide text-[#657069]">{mappedTours.length} tours · {countryCount} countries · 4K video & binaural audio</p>
+      <section className={sectionWidth + " pb-5 pt-10 sm:pt-14 lg:pt-16"}>
+        <div className="relative z-10">
+          <p className={eyebrow}>Prowalk Tours</p>
+          <h1 className="mt-4 text-4xl font-semibold leading-[1.08] tracking-[-0.035em] sm:text-5xl lg:text-6xl">Your first step before you travel.</h1>
+          <p className="mt-5 text-base leading-7 text-[#657069] sm:text-lg">Explore through my walks. Plan a journey of your own.</p>
+          <div className="mt-7 max-w-3xl">
+            <p className="mb-3 text-sm font-semibold">Where would you like to explore?</p>
+            <LiveSearchBar videos={videos} />
           </div>
-          <Link href="/search?q=Naples" className="group relative block h-[280px] overflow-hidden rounded-[1.5rem] sm:h-[380px] lg:h-[510px]" aria-label="Browse Naples walking tours">
-            <Image src="/images/homepage/hero.jpg" alt="Fishing boats on the Bay of Naples with Mount Vesuvius beyond" fill priority sizes="(min-width: 1024px) 560px, 100vw" className="object-cover transition duration-700 group-hover:scale-[1.025]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <div className="absolute inset-x-6 bottom-6 flex items-end justify-between text-white">
-              <div><p className="text-xs uppercase tracking-[0.16em] text-white/80">Through the lens</p><p className="mt-2 text-xl font-semibold">Naples, Italy</p></div>
-              <span aria-hidden="true" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/60 text-xl">↗</span>
-            </div>
-          </Link>
+          <p className="mt-4 text-xs leading-6 tracking-wide text-[#657069]">{mappedTours.length} tours · {countryCount} countries · 4K video & binaural audio</p>
         </div>
       </section>
-
       <section className={sectionWidth + " scroll-mt-20 py-10 lg:py-14"} aria-labelledby="featured-heading" id="latest-walk">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <div><p className={eyebrow}>Start watching</p><h2 id="featured-heading" className="mt-2 text-3xl font-semibold tracking-tight">Your next walk starts here</h2></div>
@@ -139,10 +120,10 @@ export default function HomeClient({ videos, mappedTours, featuredVideo }: { vid
           <div><p className={eyebrow}>Choose your next stop</p><h2 id="destinations-heading" className="mt-2 text-3xl font-semibold tracking-tight">Places worth getting lost in</h2></div>
           <Link href="/search" className={textLink}>Find a destination →</Link>
         </div>
-        <div className="mt-7 grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 lg:grid-cols-6 lg:gap-5">
+        <div className="mt-7 grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 lg:gap-6">
           {topDestinations.map(dest => <Link key={dest.name} href={dest.href} className="group block min-w-0">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#e6e7de]">
-              <Image src={dest.img} alt={dest.name} fill sizes="(min-width: 1024px) 190px, (min-width: 640px) 30vw, 45vw" className="object-cover transition duration-500 group-hover:scale-105" />
+            <div className="relative aspect-video overflow-hidden rounded-xl bg-[#e6e7de]">
+              <Image src={dest.img} alt={dest.name} fill unoptimized className="object-cover" />
             </div>
             <h3 className="mt-3 text-base font-semibold group-hover:underline">{dest.name}</h3>
             <p className="mt-1 text-xs leading-5 text-[#657069]">{dest.description}</p>
@@ -156,8 +137,8 @@ export default function HomeClient({ videos, mappedTours, featuredVideo }: { vid
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {[
             { title: "License footage", text: "Use footage from my walks in television, film, commercial projects, or public spaces.", href: "/licensing", action: "Explore licensing" },
-            { title: "Become a sponsor", text: "Connect your brand with viewers who love travel and discovery. Let’s discuss a partnership that adds value to their experience.", href: "/sponsor", action: "Discuss a partnership" },
-            { title: "Support the walks", text: "Help make the next walk possible through YouTube membership, Patreon, or a one-time contribution through PayPal.", href: "/support", action: "Choose how to support" },
+            { title: "Become a sponsor", text: "Connect your brand with viewers who love travel and discovery. Let’s discuss a partnership that adds value to their experience.", href: "/contact-us?topic=sponsorship", action: "Discuss a partnership" },
+            { title: "Get in touch", text: "Have a question about a walk, a destination suggestion, or a message to share? Send me a note.", href: "/contact-us", action: "Contact me" },
           ].map(item => <Link key={item.href} href={item.href} className="group flex flex-col rounded-2xl border border-[#d8e0d7] bg-white p-7 transition hover:border-[#176347] hover:shadow-sm">
             <h3 className="text-xl font-semibold">{item.title}</h3>
             <p className="mt-4 flex-1 text-sm leading-7 text-[#657069]">{item.text}</p>
@@ -169,7 +150,7 @@ export default function HomeClient({ videos, mappedTours, featuredVideo }: { vid
       <section className="bg-[#25382f] text-white">
         <div className={sectionWidth + " grid gap-10 py-12 lg:grid-cols-[1.4fr_1fr] lg:gap-20 lg:py-16"}>
           <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#c0d3c5]">Behind the walks</p><h2 className="mt-3 text-3xl font-semibold tracking-tight">The atmosphere is the story.</h2><p className="mt-4 max-w-xl text-base leading-7 text-[#d1dcd4]">Prowalk Tours brings you closer to a place through its streets, everyday moments, and binaural sound. Put on your headphones and come along. New walks arrive on YouTube every Saturday.</p><Link href="/about" className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold underline underline-offset-4">About Prowalk Tours →</Link></div>
-          <div className="border-t border-white/20 pt-8 lg:border-t-0 lg:border-l lg:pl-10 lg:pt-0"><h3 className="text-xl font-semibold">Behind the camera</h3><p className="mt-3 text-sm leading-7 text-[#d1dcd4]">See the camera and audio equipment I use, or get in touch about filming walks for Prowalk Tours.</p><div className="mt-4 flex flex-wrap gap-5"><Link href="/filming-gear" className="inline-flex min-h-11 items-center text-sm font-semibold underline underline-offset-4">My filming gear →</Link><a href="https://www.amazon.com/shop/prowalktours" target="_blank" rel="sponsored noopener noreferrer" className="inline-flex min-h-11 items-center text-sm font-semibold underline underline-offset-4">My Amazon storefront ↗</a><Link href="/join-us" className="inline-flex min-h-11 items-center text-sm font-semibold underline underline-offset-4">Join the team →</Link></div><p className="mt-3 text-xs leading-5 text-[#d1dcd4]">As an Amazon Associate I earn from qualifying purchases.</p></div>
+          <div className="border-t border-white/20 pt-8 lg:border-t-0 lg:border-l lg:pl-10 lg:pt-0"><h3 className="text-xl font-semibold">Behind the camera</h3><p className="mt-3 text-sm leading-7 text-[#d1dcd4]">See the camera and audio equipment I use to film my walks.</p><div className="mt-4 flex flex-wrap gap-5"><Link href="/filming-gear" className="inline-flex min-h-11 items-center text-sm font-semibold underline underline-offset-4">My filming gear →</Link><a href="https://www.amazon.com/shop/prowalktours" target="_blank" rel="sponsored noopener noreferrer" className="inline-flex min-h-11 items-center text-sm font-semibold underline underline-offset-4">My Amazon storefront ↗</a></div><p className="mt-3 text-xs leading-5 text-[#d1dcd4]">As an Amazon Associate I earn from qualifying purchases.</p></div>
         </div>
         <div className="border-t border-white/15"><div className={sectionWidth + " flex flex-wrap items-center justify-between gap-3 py-5 text-xs leading-6 text-[#d1dcd4]"}><p>Featured in The Wall Street Journal · Distribution through Janson Media</p><Link href="/press" className="underline underline-offset-4">Press & partnerships →</Link></div></div>
       </section>

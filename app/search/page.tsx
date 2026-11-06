@@ -144,6 +144,9 @@ export default async function SearchPage({
   const isGeographicQuery = videos.some((video) =>
     matchesGeographicMetadata(query, video)
   );
+  const isExactDestinationQuery = Boolean(query) && videos.some((video) =>
+    [video.city, video.region, video.country].some(value => normalizeSearchText(value) === normalizeSearchText(query))
+  );
 
   // Group highlight hits by slug
   const matchingHitsBySlug = query
@@ -169,12 +172,21 @@ export default async function SearchPage({
 
           if (!matchesSelectedFilters) return false;
           if (!query) return true;
+          if (isExactDestinationQuery) return matchesGeographicMetadata(query, video);
 
           return (
             matchesBroadMetadata(query, video) ||
             matchesLandmarks(query, video) ||
             Boolean(matchingHitsBySlug[video.slug]?.length)
           );
+        })
+        .sort((a, b) => {
+          if (!isExactDestinationQuery && !selectedCity) return 0;
+          // Lead destination browsing with full walks, not short shop visits.
+          // This is editorial ordering, not a claim about YouTube popularity.
+          const mainWalk = (video: (typeof videos)[number]) =>
+            /walk/i.test(video.videoType) && video.durationSeconds >= 1800 ? 1 : 0;
+          return mainWalk(b) - mainWalk(a) || b.durationSeconds - a.durationSeconds;
         })
         .map((video) => {
           // RULE 1: Geographic queries stay card-only.

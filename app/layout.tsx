@@ -10,13 +10,13 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  { label: "Newest Walk", href: "/#latest-walk" },
-  { label: "Walks", href: "/search" },
+  { label: "Watch the Walks", href: "/search" },
   { label: "Map", href: "/#world-map" },
   { label: "Christmas Markets", href: "/christmas-markets" },
+  { label: "Filming Gear", href: "/filming-gear" },
   { label: "Licensing", href: "/licensing" },
   { label: "About", href: "/about" },
-  { label: "Press", href: "/press" },
+  { label: "Contact", href: "/contact-us" },
 ];
 
 const socialLinks = {
@@ -41,9 +41,6 @@ const footerSections = {
     { label: "Contact Us", href: "/contact-us" },
     { label: "Filming Gear", href: "/filming-gear" },
     { label: "Press & Partnerships", href: "/press" },
-    { label: "Support the Walks", href: "/support" },
-    { label: "Become a Sponsor", href: "/sponsor" },
-    { label: "Join Us", href: "/join-us" },
     { label: "Licensing", href: "/licensing" },
     { label: "Featured Walk", href: "/videos/naples-daytime-walk-2023" },
     { label: "YouTube Channel", href: socialLinks.youtube },
@@ -66,7 +63,7 @@ export const metadata: Metadata = {
 function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-[#d8c7b5] bg-white/95 backdrop-blur">
-      <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-center px-4 xl:grid xl:grid-cols-[1.22fr_auto_1fr] xl:pl-4 xl:pr-10">
+      <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-center px-4 xl:grid xl:grid-cols-[auto_1fr] 2xl:grid-cols-[auto_1fr_auto] xl:pl-4 xl:pr-10">
         {/* Mobile: centered logo */}
         <div className="xl:justify-self-start">
           <Link
@@ -86,7 +83,7 @@ function SiteHeader() {
         </div>
 
         <nav className="hidden justify-self-center xl:block">
-          <ul className="flex items-center gap-4 whitespace-nowrap text-[15px] font-semibold text-[#5c4c33] 2xl:gap-6 2xl:text-[17px]">
+          <ul className="flex items-center gap-4 whitespace-nowrap text-[15px] font-semibold text-[#5c4c33] 2xl:gap-6 2xl:text-[15px]">
             {navItems.map((item) => (
               <li key={item.label}>
                 <Link
@@ -105,7 +102,7 @@ function SiteHeader() {
           <MobileNav items={navItems} />
         </div>
 
-        <div className="hidden items-center justify-self-end gap-3 text-[#5c4c33] xl:flex">
+        <div className="hidden items-center justify-self-end gap-3 text-[#5c4c33] 2xl:flex">
           <a
             href={socialLinks.facebook}
             target="_blank"
@@ -300,7 +297,7 @@ function SiteFooter() {
 
         <div className="mt-8 border-t border-[#dccbb7] pt-4 text-sm text-[#7c6b59]">
           <p>© 2026 Prowalk Tours. All rights reserved.</p>
-          <nav aria-label="Legal" className="mt-3 flex flex-wrap gap-x-6 gap-y-3"><Link href="/privacy-policy" className="underline underline-offset-4">Privacy Policy (draft)</Link><Link href="/terms-of-use" className="underline underline-offset-4">Terms of Use (draft)</Link><Link href="/contact-us#roku" className="underline underline-offset-4">Roku inquiries</Link></nav>
+          <nav aria-label="Legal" className="mt-3 flex flex-wrap gap-x-6 gap-y-3"><Link href="/privacy-policy" className="underline underline-offset-4">Privacy Policy</Link><Link href="/terms-of-use" className="underline underline-offset-4">Terms of Use</Link></nav>
         </div>
       </div>
     </footer>
