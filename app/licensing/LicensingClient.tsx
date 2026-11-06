@@ -1,253 +1,77 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function LicensingClient() {
-  const [prepared, setPrepared] = useState("");
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const submitting = useRef(false);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const fields = new FormData(e.currentTarget);
-    const body = [...fields.entries()].map(([name, value]) => name + ": " + String(value)).join("\n\n");
-    window.location.href = "mailto:info@prowalktours.com?subject=" + encodeURIComponent("Prowalk Tours licensing inquiry") + "&body=" + encodeURIComponent(body);
-    setPrepared(body);
+    if (submitting.current) return;
+    const form = e.currentTarget;
+    const fields = new FormData(form);
+    submitting.current = true;
+    setStatus("sending");
+    try {
+      const response = await fetch("https://formspree.io/f/xljjkrry", {
+        method: "POST", body: fields,
+        headers: { Accept: "application/json" },
+        signal: AbortSignal.timeout(30000),
+      });
+      if (!response.ok) throw new Error("Submission failed");
+      form.reset();
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    } finally {
+      submitting.current = false;
+    }
   };
 
+  const fieldClass = "w-full rounded-lg border border-[#cbd3cc] bg-white px-4 py-3 text-base text-[#243b32] outline-none transition focus:border-[#245c49] focus:ring-2 focus:ring-[#245c49]/20";
+
   return (
-    <div className="min-h-screen bg-[#fcfaf6] text-[#3d3327]">
-      <section className="border-b border-[#d8c7b5] bg-gradient-to-br from-[#f4e6bc] via-[#fcfaf6] to-[#e7f1f8]">
-        <div className="mx-auto max-w-6xl px-6 py-14 lg:px-10 lg:py-16">
-          <Link
-            href="/"
-            className="inline-flex items-center rounded-full border border-[#cdb7a0] bg-white px-3 py-1 text-sm font-medium text-[#5c4c33] shadow-sm transition hover:bg-[#fff8ef]"
-          >
-            ← Back to Prowalk Tours
-          </Link>
-
-          <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
-                Prowalk Tours Licensing
-              </p>
-
-              <h1 className="mt-3 text-4xl font-bold tracking-tight text-[#3d3327] sm:text-5xl">
-                License footage from Prowalk Tours
-              </h1>
-
-              <p className="mt-6 max-w-2xl text-base leading-8 text-[#56493a]">
-                Request footage for documentaries, television, editorial,
-                travel campaigns, websites, institutional use, and commercial
-                projects. If you need footage from a specific city, route,
-                landmark, or atmosphere, prepare an email below describing what
-                you are looking for.
-              </p>
-
-              <p className="mt-4 max-w-2xl text-base leading-8 text-[#56493a]">
-                Licensing fees vary based on usage type, clip length,
-                distribution, territory, and term. Please provide as much
-                detail as possible so an accurate quote can be prepared.
-              </p>
-              <p className="mt-4 text-base leading-8 text-[#56493a]">Clean footage without titles or captions and custom edits may be available by agreement. For ambient displays, include your organization, number of locations, display environment, and desired destinations.</p>
-            </div>
-
-            <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-[#d8c7b5] shadow-sm">
-              <Image
-                src="/naples/waterfront.jpg"
-                alt="Boats on the Naples waterfront"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
+    <div className="bg-[#fcfaf6] text-[#243b32]">
+      <section className="mx-auto grid max-w-6xl gap-8 px-4 py-8 sm:px-6 md:grid-cols-2 md:gap-12 md:py-12 lg:px-10">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">License my footage</h1>
+          <div className="relative mt-6 aspect-[16/9] overflow-hidden rounded-xl">
+            <Image src="/naples/waterfront.jpg" alt="Boats on the Naples waterfront" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" priority />
           </div>
+          <p className="mt-6 text-base leading-7 text-[#526359]">
+            Interested in using footage from my walks? Send me a quick message about what you’re looking for, and I’ll get back to you about availability and pricing.
+          </p>
+          <p className="mt-3 text-sm leading-6 text-[#526359]">You can include a video link or destination if you have one in mind.</p>
         </div>
-      </section>
 
-      <section
-        id="license-form"
-        className="mx-auto max-w-5xl px-6 py-14 lg:px-10"
-      >
-        <div className="rounded-[2rem] border border-[#d8c7b5] bg-white p-7 shadow-sm lg:p-8">
-          <div className="mb-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
-              Licensing Inquiry
-            </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight">
-              Request a license quote
-            </h2>
-
-            <p className="mt-4 max-w-3xl text-sm leading-7 text-[#56493a]">
-              Tell me how you plan to use the footage, how much you need, and where
-              it will appear. The more specific you are about usage and
-              distribution, the easier it will be to quote the request.
-            </p>
-          </div>
-
-          <p className="mb-6 rounded-xl bg-[#fcfaf6] p-4 text-sm leading-7 text-[#56493a]">This tool opens an email draft in your email application. Review and send it there. Nothing is submitted to a website form service.</p>
-          <form onSubmit={handleSubmit}>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div>
-                <label htmlFor="licensing-1" className="mb-1.5 block text-sm font-semibold text-[#5c4c33]">Name (required)</label>
-                <input id="licensing-1" name="Name" required
-                  type="text"
-                  className="w-full rounded-xl border border-[#d8c7b5] bg-[#fcfaf6] px-4 py-2.5 text-sm outline-none transition focus:border-[#167fd5]"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="licensing-2" className="mb-1.5 block text-sm font-semibold text-[#5c4c33]">Company</label>
-                <input id="licensing-2" name="Company"
-                  type="text"
-                  className="w-full rounded-xl border border-[#d8c7b5] bg-[#fcfaf6] px-4 py-2.5 text-sm outline-none transition focus:border-[#167fd5]"
-                />
-              </div>
-
-              <div className="sm:col-span-2">
-                <label htmlFor="licensing-3" className="mb-1.5 block text-sm font-semibold text-[#5c4c33]">Email (required)</label>
-                <input id="licensing-3" name="Email" required
-                  type="email"
-                  className="w-full rounded-xl border border-[#d8c7b5] bg-[#fcfaf6] px-4 py-2.5 text-sm outline-none transition focus:border-[#167fd5]"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="licensing-4" className="mb-1.5 block text-sm font-semibold text-[#5c4c33]">Project Type</label>
-                <input id="licensing-4" name="Project Type"
-                  type="text"
-                  placeholder="Documentary, TV, web, commercial..."
-                  className="w-full rounded-xl border border-[#d8c7b5] bg-[#fcfaf6] px-4 py-2.5 text-sm outline-none transition focus:border-[#167fd5]"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="licensing-5" className="mb-1.5 block text-sm font-semibold text-[#5c4c33]">Usage Type</label>
-                <select id="licensing-5" name="Usage Type" className="w-full rounded-xl border border-[#d8c7b5] bg-[#fcfaf6] px-4 py-2.5 text-sm outline-none transition focus:border-[#167fd5]">
-                  <option>Commercial</option>
-                  <option>Editorial / News</option>
-                  <option>Documentary / TV</option>
-                  <option>Travel / Website</option>
-                  <option>Internal / Institutional</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="licensing-6" className="mb-1.5 block text-sm font-semibold text-[#5c4c33]">Requested Clip Length</label>
-                <select id="licensing-6" name="Requested Clip Length" className="w-full rounded-xl border border-[#d8c7b5] bg-[#fcfaf6] px-4 py-2.5 text-sm outline-none transition focus:border-[#167fd5]">
-                  <option>10 seconds or less</option>
-                  <option>11–30 seconds</option>
-                  <option>31–60 seconds</option>
-                  <option>60+ seconds</option>
-                  <option>Multiple clips</option>
-                  <option>Not sure yet</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="licensing-7" className="mb-1.5 block text-sm font-semibold text-[#5c4c33]">Number of Clips Needed</label>
-                <select id="licensing-7" name="Number of Clips Needed" className="w-full rounded-xl border border-[#d8c7b5] bg-[#fcfaf6] px-4 py-2.5 text-sm outline-none transition focus:border-[#167fd5]">
-                  <option>1 clip</option>
-                  <option>2–5 clips</option>
-                  <option>6+ clips</option>
-                  <option>Extended footage / sequence</option>
-                  <option>Not sure yet</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="licensing-8" className="mb-1.5 block text-sm font-semibold text-[#5c4c33]">Distribution</label>
-                <select id="licensing-8" name="Distribution" className="w-full rounded-xl border border-[#d8c7b5] bg-[#fcfaf6] px-4 py-2.5 text-sm outline-none transition focus:border-[#167fd5]">
-                  <option>Internal only</option>
-                  <option>Web / Social</option>
-                  <option>Broadcast TV</option>
-                  <option>Streaming platform</option>
-                  <option>In-house / facility use</option>
-                  <option>International / foreign network</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="licensing-9" className="mb-1.5 block text-sm font-semibold text-[#5c4c33]">Territory</label>
-                <select id="licensing-9" name="Territory" className="w-full rounded-xl border border-[#d8c7b5] bg-[#fcfaf6] px-4 py-2.5 text-sm outline-none transition focus:border-[#167fd5]">
-                  <option>Local / Regional</option>
-                  <option>National</option>
-                  <option>Worldwide</option>
-                  <option>Not sure yet</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="licensing-10" className="mb-1.5 block text-sm font-semibold text-[#5c4c33]">License Term</label>
-                <select id="licensing-10" name="License Term" className="w-full rounded-xl border border-[#d8c7b5] bg-[#fcfaf6] px-4 py-2.5 text-sm outline-none transition focus:border-[#167fd5]">
-                  <option>One-time use</option>
-                  <option>1 year</option>
-                  <option>3 years</option>
-                  <option>Perpetual</option>
-                  <option>Not sure yet</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="licensing-11" className="mb-1.5 block text-sm font-semibold text-[#5c4c33]">Exclusive or Non-Exclusive</label>
-                <select id="licensing-11" name="Exclusive or Non-Exclusive" className="w-full rounded-xl border border-[#d8c7b5] bg-[#fcfaf6] px-4 py-2.5 text-sm outline-none transition focus:border-[#167fd5]">
-                  <option>Non-exclusive</option>
-                  <option>Exclusive</option>
-                  <option>Not sure yet</option>
-                </select>
-              </div>
-
-              <div className="sm:col-span-2">
-                <label htmlFor="licensing-12" className="mb-1.5 block text-sm font-semibold text-[#5c4c33]">Deadline</label>
-                <input id="licensing-12" name="Deadline"
-                  type="text"
-                  placeholder="Date or timeframe"
-                  className="w-full rounded-xl border border-[#d8c7b5] bg-[#fcfaf6] px-4 py-2.5 text-sm outline-none transition focus:border-[#167fd5]"
-                />
-              </div>
-
-              <div className="sm:col-span-2">
-                <label htmlFor="licensing-13" className="mb-1.5 block text-sm font-semibold text-[#5c4c33]">Footage Needed (required)</label>
-                <input id="licensing-13" name="Footage Needed" required
-                  type="text"
-                  placeholder="City, route, landmark, neighborhood, mood, or specific clip"
-                  className="w-full rounded-xl border border-[#d8c7b5] bg-[#fcfaf6] px-4 py-2.5 text-sm outline-none transition focus:border-[#167fd5]"
-                />
-              </div>
-
-              <div className="sm:col-span-2">
-                <label htmlFor="licensing-14" className="mb-1.5 block text-sm font-semibold text-[#5c4c33]">Intended Use / Notes</label>
-                <textarea id="licensing-14" name="Intended Use / Notes"
-                  rows={5}
-                  className="w-full rounded-xl border border-[#d8c7b5] bg-[#fcfaf6] px-4 py-2.5 text-sm outline-none transition focus:border-[#167fd5]"
-                />
-              </div>
+        <div id="license-form" className="scroll-mt-24 md:pt-1">
+          <h2 className="text-xl font-semibold">Get in touch</h2>
+          <form onSubmit={handleSubmit} aria-busy={status === "sending"} className="mt-6 space-y-5">
+            <input type="hidden" name="_subject" value="Prowalk Tours licensing inquiry" />
+            <fieldset disabled={status === "sending"} className="space-y-5">
+            <legend className="sr-only">Licensing inquiry</legend>
+            <div>
+              <label htmlFor="licensing-name" className="mb-2 block text-sm font-semibold">First name <strong className="text-xs font-bold">(required)</strong></label>
+              <input id="licensing-name" name="name" autoComplete="given-name" required maxLength={100} type="text" className={fieldClass} />
             </div>
-
-            <div className="mt-6 flex flex-wrap gap-3">
-              <button
-                type="submit"
-                className="rounded-2xl bg-[#167fd5] px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#09679e]"
-              >
-                Prepare Email Inquiry
-              </button>
-              <a
-                href="mailto:info@prowalktours.com?subject=Prowalk%20Tours%20licensing%20inquiry"
-                className="rounded-2xl border border-[#9a735a] bg-white px-5 py-3 text-sm font-semibold text-[#9a735a] shadow-sm transition hover:bg-[#fbf4ef]"
-              >
-                Email Instead
-              </a>
+            <div>
+              <label htmlFor="licensing-email" className="mb-2 block text-sm font-semibold">Email <strong className="text-xs font-bold">(required)</strong></label>
+              <input id="licensing-email" name="email" autoComplete="email" required type="email" className={fieldClass} />
             </div>
-
-            <p className="mt-3 text-xs leading-5 text-[#8a7a68]">
-              You will need an email application configured on your device. Opening a draft does not send a message. See the <Link href="/privacy-policy" className="underline">draft Privacy Policy</Link>.
-            </p>
-            {prepared && <div className="mt-4">
-              <p role="status" className="text-sm leading-7 text-[#56493a]">An email draft was requested. Review and send it in your email application; this website has not sent your inquiry. If your email application did not open or omitted any text, copy the complete inquiry below into a message using Email Instead.</p>
-              <label htmlFor="prepared-inquiry" className="mt-3 block text-sm font-semibold text-[#5c4c33]">Your prepared inquiry</label>
-              <textarea id="prepared-inquiry" value={prepared} readOnly rows={8} className="mt-2 w-full rounded-xl border border-[#d8c7b5] bg-[#fcfaf6] p-4 text-sm" />
-            </div>}
+            <div>
+              <label htmlFor="licensing-message" className="mb-2 block text-sm font-semibold">Message <strong className="text-xs font-bold">(required)</strong></label>
+              <textarea id="licensing-message" name="message" required maxLength={10000} rows={5} className={fieldClass + " resize-y"} />
+            </div>
+            <div>
+              <button type="submit" disabled={status === "sending"} className="rounded-lg bg-[#245c49] px-6 py-3 text-sm font-semibold text-white transition disabled:cursor-wait disabled:opacity-60 hover:bg-[#193f33] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#245c49]">{status === "sending" ? "Sending…" : "Send message"}</button>
+              <p className="mt-1 text-sm leading-6 text-[#526359]">Or email me at <a href="mailto:info@prowalktours.com" className="font-medium underline underline-offset-4">info@prowalktours.com</a>.</p>
+            </div>
+            </fieldset>
+            <div aria-live="polite" aria-atomic="true">
+              {status === "success" && <p role="status" className="rounded-lg bg-[#eaf2eb] p-4 text-sm leading-6">Thanks! Your inquiry has been submitted. I’ll get back to you by email.</p>}
+              {status === "error" && <p role="alert" className="rounded-lg border border-red-200 bg-red-50 p-4 text-sm leading-6 text-red-800">I couldn’t confirm your submission. Your message is still here—please try again, or email info@prowalktours.com.</p>}
+            </div>
           </form>
         </div>
       </section>
