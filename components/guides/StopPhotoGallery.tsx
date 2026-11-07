@@ -47,7 +47,7 @@ export default function StopPhotoGallery({ photos, name }: { photos: GuidePhoto[
   function controls() {
     return <div className="mt-2 flex items-center justify-between gap-2">
       {available.length > 1 && <button type="button" aria-label="Previous photo" onClick={() => advance(-1)} className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#bdcbbd] bg-white text-xl text-[#25382f] hover:bg-[#e6eee3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#176347]">←</button>}
-      <p role="status" aria-live="polite" aria-atomic="true" className="flex-1 text-center text-xs leading-6 text-[#526258]">{photo && <>Photo {activeIndex + 1} of {available.length} · {photo.year}</>}</p>
+      <p role="status" aria-live="polite" aria-atomic="true" className="flex-1 text-center text-xs leading-6 text-[#526258]">{photo && <>Photo {activeIndex + 1} of {available.length}{photo.year ? ` · ${photo.year}` : ""}</>}</p>
       {available.length > 1 && <button type="button" aria-label="Next photo" onClick={() => advance(1)} className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#bdcbbd] bg-white text-xl text-[#25382f] hover:bg-[#e6eee3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#176347]">→</button>}
     </div>;
   }

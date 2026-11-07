@@ -1,6 +1,6 @@
 import type { ChristmasWalk } from "../christmas/catalog";
 
-export type GuidePhoto = { src: string; alt: string; year: number; width: number; height: number };
+export type GuidePhoto = { src: string; alt: string; year?: number; width: number; height: number };
 export type GuideSource = { label: string; href: string };
 export type GuideFaq = {
   question: string;

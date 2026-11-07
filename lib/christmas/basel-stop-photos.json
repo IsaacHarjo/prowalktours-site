@@ -1,168 +1,200 @@
 {
   "barfi": [
     {
-      "src": "/basel-christmas-guide/stops/barfi-1.webp",
-      "alt": "The illuminated Barfüsserplatz market at night",
-      "year": 2025,
+      "src": "/basel-christmas-guide/stops/barfi-1-3b062b0f25.webp",
+      "alt": "A Dinnete food stall and snow-covered market roofs at Barfüsserplatz",
       "width": 1600,
       "height": 901
     },
     {
-      "src": "/basel-christmas-guide/stops/barfi-2.webp",
-      "alt": "The Christmas pyramid above the market stalls",
-      "year": 2025,
-      "width": 901,
-      "height": 1600
-    },
-    {
-      "src": "/basel-christmas-guide/stops/barfi-3.webp",
-      "alt": "Visitors beside the church and Christmas pyramid",
-      "year": 2025,
-      "width": 1200,
-      "height": 1600
-    },
-    {
-      "src": "/basel-christmas-guide/stops/barfi-4.webp",
-      "alt": "Snow-covered stall roofs at Barfüsserplatz",
-      "year": 2022,
+      "src": "/basel-christmas-guide/stops/barfi-2-d9ad87e15c.webp",
+      "alt": "Illuminated stalls and visitors at Barfüsserplatz Christmas Market at night",
       "width": 1600,
       "height": 901
+    },
+    {
+      "src": "/basel-christmas-guide/stops/barfi-3-7bac4267a5.webp",
+      "alt": "Visitors gathered for Glühwein beside the Christmas pyramid",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/barfi-4-395331daeb.webp",
+      "alt": "A market lane lined with decorated stalls beside Barfüsserkirche",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/barfi-5-11c59c2a22.webp",
+      "alt": "The Christmas pyramid and busy stalls at Barfüsserplatz",
+      "width": 1600,
+      "height": 900
     }
   ],
   "barfuesserkirche": [
     {
-      "src": "/basel-christmas-guide/stops/barfuesserkirche-1.webp",
-      "alt": "Market stalls behind Barfüsserkirche",
-      "year": 2025,
+      "src": "/basel-christmas-guide/stops/barfuesserkirche-1-a130abbb16.webp",
+      "alt": "Visitors browsing the bakery and Glühwein stalls beside Barfüsserkirche",
       "width": 1600,
       "height": 901
     },
     {
-      "src": "/basel-christmas-guide/stops/barfuesserkirche-2.webp",
-      "alt": "The moose heads on the Weihnachtsstube",
-      "year": 2025,
-      "width": 1600,
-      "height": 1200
+      "src": "/basel-christmas-guide/stops/barfuesserkirche-2-07c303518a.webp",
+      "alt": "Two moose heads wearing Santa hats on the Weihnachtsstube chalet",
+      "width": 1448,
+      "height": 1086
     },
     {
-      "src": "/basel-christmas-guide/stops/barfuesserkirche-3.webp",
-      "alt": "Fudge displayed at a market stall",
-      "year": 2025,
-      "width": 900,
-      "height": 1600
+      "src": "/basel-christmas-guide/stops/barfuesserkirche-3-f98dc95bb7.webp",
+      "alt": "Visitors enjoying the market beside the Berliner bakery stall",
+      "width": 1600,
+      "height": 901
+    },
+    {
+      "src": "/basel-christmas-guide/stops/barfuesserkirche-4-f602d24091.webp",
+      "alt": "Close-up of a Santa figure with a curling white beard",
+      "width": 1086,
+      "height": 1448
+    },
+    {
+      "src": "/basel-christmas-guide/stops/barfuesserkirche-5-4a65234ef8.webp",
+      "alt": "Colourful wooden nutcrackers and Christmas figures on display",
+      "width": 1086,
+      "height": 1448
     }
   ],
   "tree": [
     {
-      "src": "/basel-christmas-guide/stops/tree-1.webp",
-      "alt": "The Christmas tree against the Minster towers",
-      "year": 2025,
+      "src": "/basel-christmas-guide/stops/tree-1-5c417f58e3.webp",
+      "alt": "The illuminated Christmas tree and visitors on Münsterplatz",
       "width": 1600,
       "height": 901
     },
     {
-      "src": "/basel-christmas-guide/stops/tree-2.webp",
-      "alt": "The tree and cathedral square in daylight",
-      "year": 2025,
+      "src": "/basel-christmas-guide/stops/tree-2-73f1327007.webp",
+      "alt": "Christmas ornaments and lights beneath the Minster towers",
       "width": 1600,
       "height": 901
     },
     {
-      "src": "/basel-christmas-guide/stops/tree-3.webp",
-      "alt": "The illuminated tree seen across Münsterplatz",
-      "year": 2022,
+      "src": "/basel-christmas-guide/stops/tree-3-9bb5a78d1c.webp",
+      "alt": "Basel Minster and the Christmas tree above the evening crowds",
+      "width": 1600,
+      "height": 901
+    },
+    {
+      "src": "/basel-christmas-guide/stops/tree-4-37495b9a14.webp",
+      "alt": "The glowing Christmas tree amid snow-covered buildings on Münsterplatz",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/tree-5-c346a75cf9.webp",
+      "alt": "Basel Minster and the illuminated Christmas tree on a snowy evening",
       "width": 1600,
       "height": 900
     }
   ],
   "minster": [
     {
-      "src": "/basel-christmas-guide/stops/minster-1.webp",
-      "alt": "The illuminated sandstone facade of Basel Minster",
-      "year": 2022,
+      "src": "/basel-christmas-guide/stops/minster-1-df0cad5e01.webp",
+      "alt": "The illuminated sandstone façade and twin towers of Basel Minster at night",
       "width": 1600,
       "height": 900
     },
     {
-      "src": "/basel-christmas-guide/stops/minster-2.webp",
-      "alt": "Visitors in front of Basel Minster",
-      "year": 2025,
+      "src": "/basel-christmas-guide/stops/minster-2-d54daba4f5.webp",
+      "alt": "Visitors gathered outside the decorated entrance to Basel Minster",
       "width": 1600,
-      "height": 901
+      "height": 900
     },
     {
-      "src": "/basel-christmas-guide/stops/minster-3.webp",
-      "alt": "Carved stonework on the Minster facade",
-      "year": 2025,
-      "width": 1600,
-      "height": 1200
+      "src": "/basel-christmas-guide/stops/minster-3-3b0542fd40.webp",
+      "alt": "Basel Minster and its twin spires seen across Münsterplatz in daylight",
+      "width": 1086,
+      "height": 1448
     }
   ],
   "munsterplatz": [
     {
-      "src": "/basel-christmas-guide/stops/munsterplatz-1.webp",
-      "alt": "Lights above a lane of Münsterplatz market stalls",
-      "year": 2022,
-      "width": 1600,
-      "height": 900
-    },
-    {
-      "src": "/basel-christmas-guide/stops/munsterplatz-2.webp",
-      "alt": "Visitors browsing the tree-lined market lanes",
-      "year": 2025,
-      "width": 1600,
-      "height": 900
-    },
-    {
-      "src": "/basel-christmas-guide/stops/munsterplatz-3.webp",
-      "alt": "Salmon cooking beside an open fire",
-      "year": 2025,
-      "width": 1200,
-      "height": 1600
-    },
-    {
-      "src": "/basel-christmas-guide/stops/munsterplatz-4.webp",
-      "alt": "Meat skewers cooking at the market grill",
-      "year": 2025,
-      "width": 1600,
-      "height": 900
-    },
-    {
-      "src": "/basel-christmas-guide/stops/munsterplatz-5.webp",
-      "alt": "The carousel beside the cathedral market",
-      "year": 2025,
-      "width": 1600,
-      "height": 900
-    }
-  ],
-  "fairytale": [
-    {
-      "src": "/basel-christmas-guide/stops/fairytale-1.webp",
-      "alt": "Visitors sitting around the fire in the Fairy Tale Forest",
-      "year": 2025,
+      "src": "/basel-christmas-guide/stops/munsterplatz-1-5ea00e3725.webp",
+      "alt": "Visitors gathered outside the Feuerstube beside the illuminated Christmas tree and carousel",
       "width": 1600,
       "height": 901
     },
     {
-      "src": "/basel-christmas-guide/stops/fairytale-2.webp",
-      "alt": "The illuminated Märchenwald entrance",
-      "year": 2022,
+      "src": "/basel-christmas-guide/stops/munsterplatz-2-a1ab74e7ee.webp",
+      "alt": "A decorated Glühwein stall with an open fire and visitors ordering drinks",
       "width": 1600,
       "height": 900
     },
     {
-      "src": "/basel-christmas-guide/stops/fairytale-3.webp",
-      "alt": "Children riding the little train",
-      "year": 2025,
+      "src": "/basel-christmas-guide/stops/munsterplatz-3-78959fc232.webp",
+      "alt": "Snow-covered buildings and market stalls on Münsterplatz",
       "width": 1600,
       "height": 900
     },
     {
-      "src": "/basel-christmas-guide/stops/fairytale-4.webp",
-      "alt": "Wooden signs pointing to Fairy Tale Forest activities",
-      "year": 2025,
-      "width": 1200,
-      "height": 1600
+      "src": "/basel-christmas-guide/stops/munsterplatz-4-d13d736f2f.webp",
+      "alt": "Visitors browsing snowy market stalls beneath star-shaped lights",
+      "width": 1600,
+      "height": 901
+    },
+    {
+      "src": "/basel-christmas-guide/stops/munsterplatz-5-088907b4ef.webp",
+      "alt": "A busy lane of decorated stalls beside Basel Minster",
+      "width": 1600,
+      "height": 899
+    },
+    {
+      "src": "/basel-christmas-guide/stops/munsterplatz-6-791bf52b67.webp",
+      "alt": "Visitors gathered between food stalls beneath the Minster’s patterned roof",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/munsterplatz-7-d3ae3a3107.webp",
+      "alt": "The illuminated carousel and a food stall beside Basel Minster",
+      "width": 1600,
+      "height": 899
+    }
+  ],
+  "fairytale": [
+    {
+      "src": "/basel-christmas-guide/stops/fairytale-1-08fdf17999.webp",
+      "alt": "Visitors entering the snowy Märchenwald with Basel Minster in the background",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/fairytale-2-0b26967ba8.webp",
+      "alt": "Visitors gathered around a brightly lit drinks stall on a snowy evening",
+      "width": 1600,
+      "height": 899
+    },
+    {
+      "src": "/basel-christmas-guide/stops/fairytale-3-ef24565c33.webp",
+      "alt": "Visitors sitting on wooden benches around the Fairy Tale Forest fire",
+      "width": 1600,
+      "height": 901
+    },
+    {
+      "src": "/basel-christmas-guide/stops/fairytale-4-18357d3f9c.webp",
+      "alt": "The illuminated Märchenwald entrance framed by snow-covered fir trees",
+      "width": 1600,
+      "height": 899
+    },
+    {
+      "src": "/basel-christmas-guide/stops/fairytale-5-a9a7cd4e4c.webp",
+      "alt": "A fireside gathering beneath Christmas lights in the Fairy Tale Forest",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/fairytale-6-5112108203.webp",
+      "alt": "Children and adults riding the little train through the Märchenwald",
+      "width": 1600,
+      "height": 899
     }
   ],
   "pfalz": [
@@ -312,6 +344,32 @@
       "year": 2022,
       "width": 1600,
       "height": 1600
+    }
+  ],
+  "start": [
+    {
+      "src": "/basel-christmas-guide/stops/start-1.webp",
+      "alt": "Christmas market stalls and the pyramid in front of Barfüsserkirche",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/start-2.webp",
+      "alt": "Green trams beside the decorated buildings at Barfüsserplatz",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/start-3.webp",
+      "alt": "Visitors and trams crossing Barfüsserplatz beside the market",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/start-4.webp",
+      "alt": "A green tram approaching the square beside a colourful mural",
+      "width": 1600,
+      "height": 900
     }
   ]
 }
