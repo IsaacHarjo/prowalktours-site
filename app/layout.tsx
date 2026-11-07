@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import MobileNav from "../components/MobileNav";
+import SiteAnalytics from "../components/SiteAnalytics";
 import "./globals.css";
 
 type NavItem = {
@@ -316,6 +317,7 @@ export default function RootLayout({
         <SiteHeader />
         <main id="main-content">{children}</main>
         <SiteFooter />
+        <SiteAnalytics />
       </body>
     </html>
   );

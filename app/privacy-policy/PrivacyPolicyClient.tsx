@@ -5,7 +5,7 @@ import InfoPage from "../../components/InfoPage";
 export default function PrivacyPolicyClient() {
   return (
     <InfoPage title="Privacy Policy" intro="This policy explains how information is handled when you browse my walks and guides or contact me through the Prowalk Tours website.">
-      <p className="text-sm">Last updated: November 6, 2026.</p>
+      <p className="text-sm">Last updated: November 7, 2026.</p>
 
       <section>
         <h2>Information you send me</h2>
@@ -17,6 +17,12 @@ export default function PrivacyPolicyClient() {
         <h2>Browsing, search, and hosting</h2>
         <p>Vercel hosts this website. Hosting and security services may process your IP address, browser and device information, requested page, referring page, and request time to deliver the site, troubleshoot problems, and prevent abuse.</p>
         <p>Search terms and filters appear in the page address, so they may appear in your browser history and server logs. You do not need a Prowalk Tours account to browse the website.</p>
+      </section>
+
+      <section>
+        <h2>Website analytics</h2>
+        <p>I use Vercel Web Analytics to understand which pages people visit, where visitors come from, and which browsers and devices they use. These aggregate statistics help me improve the walks and guides on the site. Vercel Web Analytics does not use cookies to identify visitors, and its visitor identifiers expire after 24 hours.</p>
+        <p>I remove query parameters and page fragments from page addresses before sending them to analytics, so your search text is not included in those addresses. Contact form names, email addresses, and messages are not sent as analytics events. You can read more about <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noreferrer">Vercel Web Analytics and privacy</a>.</p>
       </section>
 
       <section>
