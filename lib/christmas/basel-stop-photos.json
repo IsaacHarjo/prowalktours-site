@@ -199,25 +199,28 @@
   ],
   "pfalz": [
     {
-      "src": "/basel-christmas-guide/stops/pfalz-1.webp",
-      "alt": "The Rhine and Middle Bridge from the Pfalz terrace",
-      "year": 2025,
+      "src": "/basel-christmas-guide/stops/pfalz-1-f361e88296.webp",
+      "alt": "People playing pétanque beneath the trees on the Pfalz terrace beside Basel Minster",
       "width": 1600,
-      "height": 1200
+      "height": 900
     },
     {
-      "src": "/basel-christmas-guide/stops/pfalz-2.webp",
-      "alt": "Looking upriver from Cathedral Hill",
-      "year": 2025,
+      "src": "/basel-christmas-guide/stops/pfalz-2-453a9b70ae.webp",
+      "alt": "The Rhine, Middle Bridge and snow-covered riverfront seen from the Pfalz terrace",
       "width": 1600,
-      "height": 1200
+      "height": 900
     },
     {
-      "src": "/basel-christmas-guide/stops/pfalz-3.webp",
-      "alt": "Snow along the Rhine during my 2022 visit",
-      "year": 2022,
+      "src": "/basel-christmas-guide/stops/pfalz-3-d808b808ca.webp",
+      "alt": "Visitors relaxing on benches and looking over the Rhine beside Basel Minster",
       "width": 1600,
-      "height": 901
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/pfalz-4-55221ec69e.webp",
+      "alt": "Moss-covered branches framing the sandstone walls of Basel Minster",
+      "width": 1600,
+      "height": 900
     }
   ],
   "cloister": [
