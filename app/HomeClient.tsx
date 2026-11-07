@@ -56,6 +56,8 @@ const textLink = "inline-flex min-h-11 items-center gap-2 text-sm font-semibold 
 
 export default function HomeClient({ videos, mappedTours, featuredVideo }: { videos: DiscoveryVideo[]; mappedTours: WorldTour[]; featuredVideo?: FeaturedWalk }) {
   const countryCount = new Set(mappedTours.map(tour => tour.country)).size;
+  const featuredBaselGuide = featuredVideo
+    && new URL(featuredVideo.youtubeUrl).searchParams.get("v") === "uH54xuhW6U4";
   return (
     <div className="bg-[#fcfaf7] text-[#25382f]">
       <section className={sectionWidth + " pb-5 pt-10 sm:pt-14 lg:pt-16"}>
@@ -84,7 +86,10 @@ export default function HomeClient({ videos, mappedTours, featuredVideo }: { vid
             <p className={eyebrow + " mt-5"}>{[featuredVideo.city, featuredVideo.country].filter(Boolean).join(", ") || "Latest from ProWalk Tours"}</p>
             <h3 className="mt-2 text-2xl font-semibold leading-snug"><Link href={featuredVideo.youtubeUrl} target="_blank" rel="noreferrer" className="hover:underline">{featuredVideo.siteTitle}</Link></h3>
             <p className="mt-3 text-sm leading-7 text-[#657069]">{featuredVideo.shortDescription}</p>
-            <Link href={featuredVideo.youtubeUrl} target="_blank" rel="noreferrer" className={textLink + " mt-2"}>Watch on YouTube ↗</Link>
+            <div className="mt-4 flex flex-col items-start gap-1">
+              {featuredBaselGuide && <Link href="/christmas-markets/basel" className="inline-flex min-h-11 items-center rounded-full bg-[#176347] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#104a34]">Read the 2026 Basel guide →</Link>}
+              <Link href={featuredVideo.youtubeUrl} target="_blank" rel="noreferrer" className={textLink}>Watch on YouTube ↗</Link>
+            </div>
           </article>}
           <article>
             <Link href="/christmas-markets" className="group relative block aspect-video overflow-hidden rounded-2xl bg-[#e6e7de]">
