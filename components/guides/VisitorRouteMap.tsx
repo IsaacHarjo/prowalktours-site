@@ -191,11 +191,11 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
         {activeStep ? <>
           <p role="status" aria-live="polite" aria-atomic="true" className="lg:min-h-8 text-xs font-semibold uppercase tracking-[0.12em] text-[#176347]">Step {stepIndex + 1} of {steps.length} · {activeStep.label}</p>
           <h3 className="mb-4 mt-3 text-xl font-semibold leading-7 text-[#25382f]">{activeStep.title}</h3>
-          {data.descriptionBeforeMedia && <p className="mb-4 text-sm leading-7 text-[#526258]">{activeStep.text}</p>}
           <nav aria-label="Itinerary steps" className="mt-4 grid grid-cols-2 gap-2">
             <button type="button" disabled={stepIndex === 0} onClick={() => selectStep(stepIndex - 1)} className="min-h-11 rounded-lg border border-[#bacbbb] bg-white px-3 py-2 text-sm font-semibold text-[#25382f] hover:bg-[#e6eee3] disabled:cursor-default disabled:opacity-40">← Previous stop</button>
             <button type="button" onClick={() => selectStep(stepIndex === steps.length - 1 ? 0 : stepIndex + 1)} className="min-h-11 rounded-lg bg-[#176347] px-3 py-2 text-sm font-semibold text-white hover:bg-[#25382f]">{stepIndex === steps.length - 1 ? 'Back to the start' : 'Next stop →'}</button>
           </nav>
+          {data.descriptionBeforeMedia && <p className="mb-4 mt-4 text-sm leading-7 text-[#526258]">{activeStep.text}</p>}
           {selected.video ? <StopVideo key={selected.id} video={selected.video} poster={selected.photo?.src} /> : <StopPhotoGallery key={selected.id} name={selected.name} photos={selected.photos?.length ? selected.photos : selected.photo ? [selected.photo] : []} />}
           {(selected.panoramas?.length || selected.panorama) && <StopPanoramas key={`panorama-${selected.id}`} name={selected.shortName} photos={selected.panoramas?.length ? selected.panoramas : [{ src: selected.panorama!.src, label: "Look around" }]} />}
 

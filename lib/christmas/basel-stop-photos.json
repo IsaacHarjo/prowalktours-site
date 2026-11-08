@@ -225,87 +225,172 @@
   ],
   "cloister": [
     {
-      "src": "/basel-christmas-guide/stops/cloister-1.webp",
-      "alt": "A Gothic cloister window looking into the courtyard",
-      "year": 2025,
-      "width": 1600,
-      "height": 1200
-    },
-    {
-      "src": "/basel-christmas-guide/stops/cloister-2.webp",
-      "alt": "The vaulted passage through the Minster cloister",
-      "year": 2025,
-      "width": 900,
-      "height": 1600
-    },
-    {
-      "src": "/basel-christmas-guide/stops/cloister-3.webp",
-      "alt": "The enclosed courtyard beside the Minster",
-      "year": 2025,
-      "width": 1200,
-      "height": 1600
-    },
-    {
-      "src": "/basel-christmas-guide/stops/cloister-4.webp",
-      "alt": "Memorials along the cloister wall",
-      "year": 2025,
-      "width": 1600,
-      "height": 1200
-    }
-  ],
-  "freie": [
-    {
-      "src": "/basel-christmas-guide/stops/freie-1.webp",
-      "alt": "Shops and pedestrians along Freie Strasse",
-      "year": 2025,
-      "width": 1200,
-      "height": 1600
-    }
-  ],
-  "marktplatz": [
-    {
-      "src": "/basel-christmas-guide/stops/marktplatz-1.webp",
-      "alt": "The red Rathaus and Christmas tree on Marktplatz",
-      "year": 2025,
+      "src": "/basel-christmas-guide/stops/cloister-1-5d1f6aec99.webp",
+      "alt": "Stone arches and ornate memorial plaques in the Minster cloister",
       "width": 1600,
       "height": 900
     },
     {
-      "src": "/basel-christmas-guide/stops/marktplatz-2.webp",
-      "alt": "Daytime activity on Marktplatz",
-      "year": 2025,
+      "src": "/basel-christmas-guide/stops/cloister-2-493913dc11.webp",
+      "alt": "Carved sandstone memorials on the cloister wall",
       "width": 1600,
-      "height": 901
+      "height": 900
     },
     {
-      "src": "/basel-christmas-guide/stops/marktplatz-3.webp",
-      "alt": "The illuminated Marktplatz Christmas tree",
-      "year": 2025,
-      "width": 900,
-      "height": 1600
+      "src": "/basel-christmas-guide/stops/cloister-3-ab243596f3.webp",
+      "alt": "Gothic windows and columns along the Minster cloister passage",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/cloister-4-5398c95ad7.webp",
+      "alt": "Close-up of a hooded skeletal sculpture holding a bowl",
+      "width": 1448,
+      "height": 1086
+    }
+  ],
+  "freie": [
+    {
+      "src": "/basel-christmas-guide/stops/freie-1-b11c34545c.webp",
+      "alt": "Arches of Christmas lights above shoppers on Freie Strasse at dusk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/freie-2-04cf5763de.webp",
+      "alt": "Shoppers walking along Freie Strasse beneath Christmas decorations in daylight",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/freie-3-6244cb82e8.webp",
+      "alt": "The Lindt shop on Freie Strasse decorated with red baubles and greenery",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/freie-4-edc09e799e.webp",
+      "alt": "An ornate painted façade and balcony above Freie Strasse at dusk",
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "marktplatz": [
+    {
+      "src": "/basel-christmas-guide/stops/marktplatz-1-65131ffc5d.webp",
+      "alt": "Basel’s red Rathaus beside the illuminated Christmas tree at night",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/marktplatz-2-61b3b6b014.webp",
+      "alt": "Trams and pedestrians on Marktplatz beneath festive lights at dusk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/marktplatz-3-163851d407.webp",
+      "alt": "The Christmas tree and Rathaus overlooking Marktplatz at dusk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/marktplatz-4-57a117ffaa.webp",
+      "alt": "The painted red façade and ornate clock of Basel’s Rathaus",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/marktplatz-5-329b489395.webp",
+      "alt": "Historic buildings and Christmas lights around Marktplatz at blue hour",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/marktplatz-6-de4c5e1afb.webp",
+      "alt": "Visitors and trams beside the brightly lit Marktplatz Christmas tree",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/marktplatz-7-13d50fd160.webp",
+      "alt": "Daytime market stalls and a green tram on Marktplatz",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/marktplatz-8-6d7282c02c.webp",
+      "alt": "Produce stalls in front of Basel’s red Rathaus",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/marktplatz-9-58d8ea4958.webp",
+      "alt": "Flower and produce stalls beneath the Marktplatz Christmas tree",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/marktplatz-10-44ab7a6461.webp",
+      "alt": "Visitors eating and resting at outdoor tables on Marktplatz",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/marktplatz-11-25508d46d5.webp",
+      "alt": "A piadina food stall and visitors on Marktplatz",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/marktplatz-12-29d706dee9.webp",
+      "alt": "Street food stalls and visitors on Marktplatz in Basel",
+      "width": 1600,
+      "height": 900
     }
   ],
   "rathaus": [
     {
-      "src": "/basel-christmas-guide/stops/rathaus-1.webp",
-      "alt": "The decorated tree in the painted Rathaus courtyard",
-      "year": 2025,
+      "src": "/basel-christmas-guide/stops/rathaus-1-c109bd9fe7.webp",
+      "alt": "The illuminated Christmas tree framed by painted arches in the Rathaus courtyard",
       "width": 1600,
       "height": 901
     },
     {
-      "src": "/basel-christmas-guide/stops/rathaus-2.webp",
-      "alt": "Stairs leading to the Rathaus courtyard gallery",
-      "year": 2025,
-      "width": 1200,
-      "height": 1600
+      "src": "/basel-christmas-guide/stops/rathaus-2-e32dc715ec.webp",
+      "alt": "A gilded statue beside the courtyard staircase and Christmas tree",
+      "width": 1600,
+      "height": 900
     },
     {
-      "src": "/basel-christmas-guide/stops/rathaus-3.webp",
-      "alt": "Looking down into the Rathaus courtyard from the gallery",
-      "year": 2025,
-      "width": 1200,
-      "height": 1600
+      "src": "/basel-christmas-guide/stops/rathaus-3-e7b423523a.webp",
+      "alt": "Painted scenes and carved stonework along the Rathaus courtyard gallery",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/rathaus-4-a8c47d9481.webp",
+      "alt": "Visitors beneath the painted arches, viewed from the courtyard staircase",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/rathaus-5-e34d3b0c04.webp",
+      "alt": "Visitors gathered beneath the Rathaus murals beside the Christmas tree",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/rathaus-6-b9616a24e1.webp",
+      "alt": "The Christmas tree and gilded statue in the Rathaus courtyard",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/rathaus-7-204ae40305.webp",
+      "alt": "Visitors gathered in the decorated Rathaus courtyard",
+      "width": 1600,
+      "height": 900
     }
   ],
   "bridge": [
