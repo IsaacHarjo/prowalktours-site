@@ -395,34 +395,78 @@
   ],
   "bridge": [
     {
-      "src": "/basel-christmas-guide/stops/bridge-1.webp",
-      "alt": "Snow beside the walkway on the Middle Bridge",
-      "year": 2022,
+      "src": "/basel-christmas-guide/stops/bridge-1-d8e7b2abae.webp",
+      "alt": "Visitors crossing the snow-covered Middle Bridge beneath Christmas lights",
       "width": 1600,
       "height": 901
     },
     {
-      "src": "/basel-christmas-guide/stops/bridge-2.webp",
-      "alt": "The bridge chapel above the Rhine",
-      "year": 2022,
-      "width": 1200,
-      "height": 1600
+      "src": "/basel-christmas-guide/stops/bridge-2-64054e1e91.webp",
+      "alt": "The Rhine and snowy riverbanks viewed from the Middle Bridge",
+      "width": 1600,
+      "height": 900
     },
     {
-      "src": "/basel-christmas-guide/stops/bridge-3.webp",
-      "alt": "The old-town riverfront from the Middle Bridge",
-      "year": 2022,
+      "src": "/basel-christmas-guide/stops/bridge-3-509140c28e.webp",
+      "alt": "Visitors on the Middle Bridge beneath glowing Christmas lights at night",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/bridge-4-39fb9b0ca5.webp",
+      "alt": "A boat on the Rhine beside the illuminated old-town riverfront",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/bridge-5-6607dbcab8.webp",
+      "alt": "Snow-covered old-town rooftops and the Minster across the Rhine",
       "width": 1600,
       "height": 901
     }
   ],
   "rheinsprung": [
     {
-      "src": "/basel-christmas-guide/stops/rheinsprung-1.webp",
-      "alt": "Historic buildings along Augustinergasse in winter",
-      "year": 2022,
+      "src": "/basel-christmas-guide/stops/rheinsprung-1-166080fdd6.webp",
+      "alt": "Snow along the cobbled street between historic old-town buildings",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "src": "/basel-christmas-guide/stops/rheinsprung-2-79abbf1656.webp",
+      "alt": "A red-and-white half-timbered building along the old-town walk at blue hour",
       "width": 1600,
-      "height": 1200
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/rheinsprung-3-48d04a391e.webp",
+      "alt": "Riverside benches overlooking the illuminated city across the Rhine",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/rheinsprung-4-017e25c75b.webp",
+      "alt": "Christmas lights on the Middle Bridge reflected in the Rhine",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/rheinsprung-5-ed3a7798d0.webp",
+      "alt": "Visitors walking beside a stone wall and historic buildings at dusk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/rheinsprung-6-eb73d9c6e5.webp",
+      "alt": "A glowing star above visitors on a cobbled old-town street",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/basel-christmas-guide/stops/rheinsprung-7-a8970cea9d.webp",
+      "alt": "The Minster tower rising above an old-town street at blue hour",
+      "width": 1600,
+      "height": 900
     }
   ],
   "basel-station": [

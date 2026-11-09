@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import legacyVideoRedirects from "./lib/legacy-video-redirects.json";
 
 const ContentSecurityPolicy = `
   default-src 'self';
@@ -48,6 +49,11 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    // Exact video matches from the saved Squarespace inventory. YouTube
+    // fallbacks are temporary so future on-site walk pages can replace them.
+    return legacyVideoRedirects;
+  },
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "i.ytimg.com" },
