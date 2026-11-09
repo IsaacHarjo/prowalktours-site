@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
+import { track } from "@vercel/analytics";
 
 const destinations = [
   { name: "Venice", detail: "Canals, bridges & quiet lanes", query: "Venice", image: "venice" },
@@ -34,7 +35,7 @@ export default function SearchDiscovery() {
         </div>
       </div>
       <div ref={rail} id="search-destinations" className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-5">
-        {destinations.map(place => <Link key={place.query} href={`/search?q=${encodeURIComponent(place.query)}`} className="group w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-[#e0e5dc] bg-white focus-visible:outline-2 focus-visible:outline-offset-2 sm:w-[45%] lg:w-[31%]">
+        {destinations.map(place => <Link key={place.query} href={`/search?q=${encodeURIComponent(place.query)}`} onClick={() => track("Search discovery click", { kind: "destination", label: place.name })} className="group w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-[#e0e5dc] bg-white focus-visible:outline-2 focus-visible:outline-offset-2 sm:w-[45%] lg:w-[31%]">
           <div className="relative aspect-[16/11] overflow-hidden">
             <Image src={`/images/homepage/${place.image}-selected.webp`} alt={place.name} fill unoptimized sizes="(min-width: 1024px) 350px, (min-width: 640px) 45vw, 82vw" className="object-cover" />
           </div>
@@ -62,8 +63,14 @@ export default function SearchDiscovery() {
           ["Italy", "/search?country=Italy"],
           ["USA", "/search?country=USA"],
           ["Hiking tours", "/search?type=hike"],
-        ].map(([label, href]) => <Link key={href} href={href} className="inline-flex min-h-11 items-center gap-4 rounded-full border border-[#cbd7c7] bg-white px-5 py-2 text-sm font-medium text-[#25382f] hover:border-[#176347] hover:text-[#176347]">{label}<span aria-hidden="true">→</span></Link>)}
+        ].map(([label, href]) => <Link key={href} href={href} onClick={() => track("Search discovery click", { kind: "pill", label })} className="inline-flex min-h-11 items-center gap-4 rounded-full border border-[#cbd7c7] bg-white px-5 py-2 text-sm font-medium text-[#25382f] hover:border-[#176347] hover:text-[#176347]">{label}<span aria-hidden="true">→</span></Link>)}
       </div>
+    </section>
+
+    <section aria-labelledby="italy-question-heading" className="rounded-2xl border border-[#d9e1d5] bg-white p-6 sm:p-8">
+      <h2 id="italy-question-heading" className="text-xl font-semibold text-[#25382f]">Thinking about your first trip to Italy?</h2>
+      <p className="mt-2 max-w-2xl text-sm leading-6 text-[#526258]">Not sure where to go or how to plan your time? Send me a question. I’ll share suggestions based on my travels when I can.</p>
+      <Link href="/ask-about-italy" className="mt-5 inline-flex min-h-11 items-center rounded-full bg-[#245c49] px-5 py-3 text-sm font-semibold text-white hover:bg-[#193f33] focus-visible:outline-2 focus-visible:outline-offset-4">Ask me about Italy →</Link>
     </section>
 
     <Link href="/christmas-markets" className="group grid overflow-hidden rounded-2xl bg-[#25382f] text-white sm:grid-cols-2">

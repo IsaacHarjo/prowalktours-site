@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
-export default function InquiryForm({kind, initialTopic = ""}: {kind: "licensing" | "contact"; initialTopic?: string}) {
+export default function InquiryForm({kind, initialTopic = ""}: {kind: "licensing" | "contact" | "italy"; initialTopic?: string}) {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const submitting = useRef(false);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -30,9 +30,9 @@ export default function InquiryForm({kind, initialTopic = ""}: {kind: "licensing
   const fieldClass = "w-full rounded-lg border border-[#cbd3cc] bg-white px-4 py-3 text-base text-[#243b32] outline-none transition focus:border-[#245c49] focus:ring-2 focus:ring-[#245c49]/20";
 
 return (          <form onSubmit={handleSubmit} aria-busy={status === "sending"} className="mt-6 space-y-5">
-            <input type="hidden" name="_subject" value={kind === "licensing" ? "Prowalk Tours licensing inquiry" : "Prowalk Tours contact"} />
+            <input type="hidden" name="_subject" value={kind === "italy" ? "Prowalk Tours Italy trip question" : kind === "licensing" ? "Prowalk Tours licensing inquiry" : "Prowalk Tours contact"} />
             <fieldset disabled={status === "sending"} className="space-y-5">
-            <legend className="sr-only">{kind === "licensing" ? "Licensing inquiry" : "Contact message"}</legend>
+            <legend className="sr-only">{kind === "italy" ? "Italy trip question" : kind === "licensing" ? "Licensing inquiry" : "Contact message"}</legend>
             <div>
               <label htmlFor={kind + "-name"} className="mb-2 block text-sm font-semibold">First name <strong className="text-xs font-bold">(required)</strong></label>
               <input id={kind + "-name"} name="name" autoComplete="given-name" required maxLength={100} type="text" className={fieldClass} />
@@ -52,16 +52,21 @@ return (          <form onSubmit={handleSubmit} aria-busy={status === "sending"}
               </select>
             </div>}
             <div>
-              <label htmlFor={kind + "-message"} className="mb-2 block text-sm font-semibold">Message <strong className="text-xs font-bold">(required)</strong></label>
+              <label htmlFor={kind + "-message"} className="mb-2 block text-sm font-semibold">{kind === "italy" ? "Your question" : "Message"} <strong className="text-xs font-bold">(required)</strong></label>
               <textarea id={kind + "-message"} name="message" required maxLength={10000} rows={5} className={fieldClass + " resize-y"} />
             </div>
+            {kind === "italy" && <div>
+              <label htmlFor="italy-trip-details" className="mb-2 block text-sm font-semibold">Trip details <span className="font-normal">(optional)</span></label>
+              <p id="italy-trip-details-help" className="mb-2 text-sm leading-6 text-[#526359]">When might you travel, how many days do you have, and who’s coming? Share your interests, approximate budget or preferred pace if you know them. It’s fine to be unsure.</p>
+              <textarea id="italy-trip-details" name="trip_details" aria-describedby="italy-trip-details-help" maxLength={5000} rows={4} className={fieldClass + " resize-y"} />
+            </div>}
             <div>
-              <button type="submit" disabled={status === "sending"} className="rounded-lg bg-[#245c49] px-6 py-3 text-sm font-semibold text-white transition disabled:cursor-wait disabled:opacity-60 hover:bg-[#193f33] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#245c49]">{status === "sending" ? "Sending…" : "Send message"}</button>
+              <button type="submit" disabled={status === "sending"} className="rounded-lg bg-[#245c49] px-6 py-3 text-sm font-semibold text-white transition disabled:cursor-wait disabled:opacity-60 hover:bg-[#193f33] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#245c49]">{status === "sending" ? "Sending…" : kind === "italy" ? "Send my question" : "Send message"}</button>
               <p className="mt-1 text-sm leading-6 text-[#526359]">Or email me at <a href="mailto:info@prowalktours.com" className="font-medium underline underline-offset-4">info@prowalktours.com</a>.</p>
             </div>
             </fieldset>
             <div aria-live="polite" aria-atomic="true">
-              {status === "success" && <p role="status" className="rounded-lg bg-[#eaf2eb] p-4 text-sm leading-6">{kind === "licensing" ? "Thanks! Your inquiry has been submitted. I’ll get back to you by email." : "Thanks! Your message has been submitted."}</p>}
+              {status === "success" && <p role="status" className="rounded-lg bg-[#eaf2eb] p-4 text-sm leading-6">{kind === "italy" ? "Thanks! Your Italy question has been submitted. If I can help, I’ll reply by email." : kind === "licensing" ? "Thanks! Your inquiry has been submitted. I’ll get back to you by email." : "Thanks! Your message has been submitted."}</p>}
               {status === "error" && <p role="alert" className="rounded-lg border border-red-200 bg-red-50 p-4 text-sm leading-6 text-red-800">I couldn’t confirm your submission. Your message is still here—please try again, or email info@prowalktours.com.</p>}
             </div>
           </form>);

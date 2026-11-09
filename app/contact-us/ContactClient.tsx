@@ -7,6 +7,7 @@ export default function ContactClient({initialTopic = ""}: {initialTopic?: strin
  <p className="mt-6 text-base leading-7 text-[#526359]">Have a question about a walk, want to share a message, or have an idea for working together? Send me a note.</p>
  <p className="mt-4 text-sm leading-6 text-[#526359]">If you’re writing about a walk, a video link or destination helps. For a sponsorship or partnership, tell me a little about your brand and idea.</p>
  <p className="mt-6 text-sm leading-6">Looking to use my footage? <Link href="/licensing" className="font-semibold underline underline-offset-4">Visit footage licensing.</Link></p>
+ <p className="mt-4 text-sm leading-6">Planning a trip and not sure where to start? <Link href="/ask-about-italy" className="font-semibold underline underline-offset-4">Ask me about Italy.</Link></p>
  </div><div><h2 className="text-xl font-semibold">Send a message</h2><InquiryForm kind="contact" initialTopic={initialTopic} /></div>
  </section></div>;
 }

@@ -5,11 +5,11 @@ import InfoPage from "../../components/InfoPage";
 export default function PrivacyPolicyClient() {
   return (
     <InfoPage title="Privacy Policy" intro="This policy explains how information is handled when you browse my walks and guides or contact me through the Prowalk Tours website.">
-      <p className="text-sm">Last updated: November 7, 2026.</p>
+      <p className="text-sm">Last updated: November 9, 2026.</p>
 
       <section>
         <h2>Information you send me</h2>
-        <p>When you use my contact or licensing form, I receive your name, email address, message, and topic if you select one. If you email me directly, I also receive any attachments or details you include. I use this information to reply, discuss your request, and manage licensing or other business correspondence. Sending a message does not subscribe you to a marketing list.</p>
+        <p>When you use my contact, licensing, or Italy questions form, I receive your name, email address, message, and any optional topic or trip details you provide. If you email me directly, I also receive any attachments or details you include. I use this information to reply, discuss your request, and manage correspondence. I may use common travel questions to improve my guides after removing names, contact details, and other identifying details. Sending a message does not subscribe you to a marketing list.</p>
         <p>Formspree processes form submissions and delivers notifications to my Google Workspace email. These providers may process technical information for delivery, security, and spam prevention. Please do not include passwords, payment details, or other sensitive information in a message.</p>
       </section>
 
@@ -22,6 +22,7 @@ export default function PrivacyPolicyClient() {
       <section>
         <h2>Website analytics</h2>
         <p>I use Vercel Web Analytics to understand which pages people visit, where visitors come from, and which browsers and devices they use. These aggregate statistics help me improve the walks and guides on the site. Vercel Web Analytics does not use cookies to identify visitors, and its visitor identifiers expire after 24 hours.</p>
+        <p>I also count clicks on the destination cards and suggested-search buttons on the search page. These events contain the preset label, such as Venice or Hiking tours, and whether it was a destination card or a suggestion button. They do not include text you type into the search box.</p>
         <p>I remove query parameters and page fragments from page addresses before sending them to analytics, so your search text is not included in those addresses. Contact form names, email addresses, and messages are not sent as analytics events. You can read more about <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noreferrer">Vercel Web Analytics and privacy</a>.</p>
       </section>
 

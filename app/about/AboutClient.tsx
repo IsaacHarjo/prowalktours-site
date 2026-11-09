@@ -49,12 +49,30 @@ export default function AboutClient() {
     <section className="grid items-start gap-8 md:grid-cols-[1fr_280px]">
       <div><h2>How it all started</h2>
         <p>Ciao, I’m Isaac Harjo, aka Ike. My family and I moved to Italy in 2014 after I got a job with DoDEA as a high school math teacher. The idea for Prowalk Tours came from my uncle Knut: he wanted a video of Naples to watch while walking on his treadmill.</p>
-        <p>I filmed that first Naples walk on February 11, 2017, and shared it on YouTube three days later. The channel grew from that simple idea into an archive of walks around the world.</p>
+        <p>I filmed that first <a href="https://youtu.be/ljudH28fomA" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">Naples walk on February 11, 2017</a>, and shared it on YouTube three days later. The channel grew from that simple idea into an archive of walks around the world.</p>
+        <p>It took 145 days for that first video to reach 2,000 views. By July 9, 2017, I had just four videos on the channel: Naples, Pompeii, the Spanish Quarter, and the Path of the Gods. At the end of my first year, I had 1,284 subscribers.</p>
         <p>The archive includes daytime and evening walks, Christmas markets, cycling, drone footage, and 360° experiences. Browse by <Link href="/countries">country</Link>, search for a <Link href="/search">landmark</Link>, or explore the <Link href="/#world-map">tour map</Link>.</p>
         <p>Since 2017, my walks have received nearly 200 million views on YouTube, with viewers spending a combined almost 11,000 years watching. Those are lifetime totals as of November 2026.</p>
         <p>Thank you for watching, sharing your memories, suggesting new places, and supporting the next walk.</p>
       </div>
       <Image src="/images/about/isaac-harjo.jpg" alt="A photo of me in front of the Colosseum in Rome" width={1000} height={1000} className="h-auto w-full rounded-3xl" sizes="(max-width: 767px) 100vw, 280px" />
+    </section>
+    <section aria-labelledby="channel-names">
+      <h2 id="channel-names">The name changed along the way</h2>
+      <p>I started the channel as Prowalks, later changed it to Prowalks Walking Tours, and finally settled on Prowalk Tours. Here are the three logos from those stages.</p>
+      <ol className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-3">
+        {[
+          { name: "Prowalks", image: "prowalks.jpg", stage: "The original name" },
+          { name: "Prowalks Walking Tours", image: "prowalks-walking-tours.jpg", stage: "The next chapter" },
+          { name: "Prowalk Tours", image: "prowalk-tours.png", stage: "The name today" },
+        ].map(({ name, image, stage }) => <li key={name} className="rounded-2xl border border-[#dce2d9] bg-white p-5 text-center">
+          <div className="relative mx-auto h-36 w-36">
+            <Image src={`/images/about/channel-history/${image}`} alt={`My ${name} channel logo`} fill sizes="144px" className="object-contain" />
+          </div>
+          <h3 className="mt-4 text-base">{name}</h3>
+          <p className="text-sm text-[#6e5a45]">{stage}</p>
+        </li>)}
+      </ol>
     </section>
     <section aria-labelledby="filming-through-the-years">
       <h2 id="filming-through-the-years">My filming setup through the years</h2>
