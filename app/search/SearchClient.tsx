@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import SearchDiscovery from "../../components/SearchDiscovery";
 import SearchFilterBar from "../../components/SearchFilterBar";
 import { withWatchTimestamp } from "../../lib/tours/links";
 import type { DiscoveryVideo } from "../../lib/tours/types";
@@ -45,19 +46,20 @@ export default function SearchClient({videos, query, selectedCountry, selectedRe
   return (
     <div className="min-h-screen bg-[#fcfaf6] text-[#3d3327]">
       <section className="border-b border-[#d8c7b5] bg-gradient-to-br from-[#f4e6bc] via-[#fcfaf6] to-[#e7f1f8]">
-        <div className="mx-auto max-w-6xl px-6 py-14 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-6xl px-5 py-9 sm:px-6 lg:px-10 lg:py-12">
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
-            Site Search
+            Watch the walks
           </p>
           <h1 className="mt-3 text-4xl font-bold tracking-tight text-[#3d3327] sm:text-5xl">
-            Search walks and destinations
+            Find your next walk
           </h1>
           <p className="mt-6 max-w-3xl text-base leading-8 text-[#56493a]">
-            Search by city, country, landmark, neighborhood, or theme to find
-            the right walk faster.
+            Explore through my walks. Search for a place you love, or discover somewhere new.
           </p>
 
           <SearchFilterBar
+            key={[query, selectedCountry, selectedRegion, selectedCity, selectedType].join("|")}
+            collapsibleFilters
             videos={videos}
             initialQuery={query}
             initialCountry={selectedCountry}
@@ -65,28 +67,16 @@ export default function SearchClient({videos, query, selectedCountry, selectedRe
             initialCity={selectedCity}
             initialType={selectedType}
             action="/search"
-            placeholder="Search by keyword"
+            placeholder="Try Venice, Christmas markets, or the Eiffel Tower"
             submitLabel="Search"
             variant="page"
           />
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-12 lg:px-10 lg:py-14">
+      <section className="mx-auto max-w-6xl px-5 py-9 sm:px-6 lg:px-10 lg:py-12">
         {!hasActiveFilters ? (
-          <div className="rounded-[2rem] border border-[#d8c7b5] bg-white p-8 shadow-sm">
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">
-              Start Searching
-            </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#3d3327]">
-              Find walks by place or subject
-            </h2>
-            <p className="mt-4 max-w-3xl text-base leading-8 text-[#56493a]">
-              Try a city like Naples, a country like Italy, a landmark like
-              Castel d&apos;Ovo, or a theme like waterfront, markets, or
-              historic center.
-            </p>
-          </div>
+          <SearchDiscovery />
         ) : results.length === 0 ? (
           <div className="rounded-[2rem] border border-[#d8c7b5] bg-white p-8 shadow-sm">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">

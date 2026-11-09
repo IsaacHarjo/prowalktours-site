@@ -122,7 +122,7 @@ const matchesFilterValue = (
 export default async function SearchPage({
   searchParams,
 }: {
-  searchParams?: Promise<SearchParams> | SearchParams;
+  searchParams?: Promise<SearchParams>;
 }) {
   const resolvedSearchParams = await Promise.resolve(searchParams);
   const query = normalizeQueryValue(resolvedSearchParams?.q).trim();

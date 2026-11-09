@@ -17,6 +17,7 @@ type SearchFilterBarProps = {
   variant?: "page" | "hero";
   hideFiltersOnMobile?: boolean;
   hideSearchInput?: boolean;
+  collapsibleFilters?: boolean;
 };
 
 const uniqueSorted = (values: Array<string | undefined>) =>
@@ -45,7 +46,9 @@ export default function SearchFilterBar({
   variant = "page",
   hideFiltersOnMobile = false,
   hideSearchInput = false,
+  collapsibleFilters = false,
 }: SearchFilterBarProps) {
+  const [filtersOpen, setFiltersOpen] = useState(Boolean(initialCountry || initialRegion || initialCity || initialType));
   const [query, setQuery] = useState(initialQuery);
   const [selectedCountry, setSelectedCountry] = useState(initialCountry);
   const [selectedRegion, setSelectedRegion] = useState(initialRegion);
@@ -151,6 +154,7 @@ export default function SearchFilterBar({
           </span>
           <input
             type="text"
+            aria-label="Search walks by place or subject"
             name="q"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
@@ -163,7 +167,8 @@ export default function SearchFilterBar({
         </button>
       </div>}
 
-      <div className={`${hideSearchInput ? "" : "mt-3 "}grid gap-3 md:grid-cols-2 xl:grid-cols-4${hideFiltersOnMobile ? " hidden lg:grid" : ""}`}>
+      {collapsibleFilters && <button type="button" aria-expanded={filtersOpen} onClick={() => setFiltersOpen(open => !open)} className="mt-2 inline-flex min-h-11 items-center gap-2 px-3 text-sm font-semibold text-[#176347]">{filtersOpen ? "−" : "+"} Filter by country, region or walk type</button>}
+      <div className={`${collapsibleFilters && !filtersOpen ? "hidden" : `${hideSearchInput ? "" : "mt-3 "}grid gap-3 md:grid-cols-2 xl:grid-cols-4${hideFiltersOnMobile ? " hidden lg:grid" : ""}`}`}>
         <select
           name="country"
           value={selectedCountry}
