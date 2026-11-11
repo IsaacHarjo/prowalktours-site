@@ -5,7 +5,7 @@ if(!['localhost','127.0.0.1'].includes(new URL(base).hostname))throw Error('Use 
 function routes(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?routes(path.join(dir,e.name)):e.name==='page.tsx'?['/'+path.relative('app',dir).replaceAll('\\','/')]:[]);}
 const paths=routes('app').filter(p=>p!=='/home-preview');
 async function main(){
-  const failures=[], results=[], htmlByPath=new Map();
+  const failures=[], knownExceptions=[], results=[], htmlByPath=new Map();
   for(const p of paths){
     const r=await fetch(base+p); const html=await r.text(); htmlByPath.set(p,html);
     const title=html.match(/<title>(.*?)<\/title>/)?.[1];
@@ -14,7 +14,9 @@ async function main(){
     if(r.status!==200||!title||!description)failures.push({path:p,status:r.status,title,description});
     if([...html.matchAll(/<main[\s>]/g)].length!==1)failures.push({path:p,error:'Expected one main content landmark'});
     const isDraft=['/privacy-policy','/terms-of-use'].includes(p);
-    if(isDraft&&!html.includes('noindex, follow'))failures.push({path:p,error:'Draft missing noindex'});
+    // Known exception (2026-11-11): the policies are not final, but noindex was removed in 4b9341e and
+    // Ike chose not to change the pages yet. Reported every run; does not fail the check.
+    if(isDraft&&!html.includes('noindex, follow'))knownExceptions.push({path:p,error:'Draft missing noindex'});
     let jsonLd=0;
     for(const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)){try{JSON.parse(m[1]);jsonLd++;}catch{failures.push({path:p,error:'Invalid JSON-LD'});}}
     results.push({path:p,status:r.status,title,canonical,jsonLd,htmlBytes:Buffer.byteLength(html)});
@@ -31,9 +33,9 @@ async function main(){
   }
   const sitemap=await (await fetch(base+'/sitemap.xml')).text();
   for(const excluded of ['/home-preview','/privacy-policy','/terms-of-use','/videos/freiburg-christmas-market-evening-walk-2025','/videos/rothenburg-christmas-market-morning-walk-2024'])if(sitemap.includes('prowalktours.com'+excluded+'<'))failures.push({error:'Excluded route in sitemap',path:excluded});
-  const report={base,checked:'2026-10-09',routes:results,sitemapUrls:[...sitemap.matchAll(/<loc>/g)].length,failures};
+  const report={base,checked:'2026-10-09',routes:results,sitemapUrls:[...sitemap.matchAll(/<loc>/g)].length,failures,knownExceptions};
   fs.writeFileSync('docs/launch-audit/smoke-results.json',JSON.stringify(report,null,2));
-  console.log(JSON.stringify({routes:results.length,sitemapUrls:report.sitemapUrls,failures},null,2));
+  console.log(JSON.stringify({routes:results.length,sitemapUrls:report.sitemapUrls,failures,knownExceptions},null,2));
   if(failures.length)process.exitCode=1;
 }
 main().catch(e=>{console.error(e.message);process.exitCode=1;});

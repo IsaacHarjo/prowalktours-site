@@ -209,5 +209,21 @@
     "kmlSha256": "7bf3f692c06493147f9c1705deddc1c61e3af75579173b3579f7e9e0de50ad08",
     "verification": "All existing pin coordinates and both route lines match the prior import exactly. Added the two owner-supplied canal stops under Useful stops, with boat and dining icons. No business identity, opening hours, seasonal availability, prices or personal dining/boat experience inferred."
   },
-  "wcSource": "https://reservation.tourisme-colmar.com/medias/documents/documentation/documentation-NOEL26P-UK.pdf"
+  "wcSource": "https://reservation.tourisme-colmar.com/medias/documents/documentation/documentation-NOEL26P-UK.pdf",
+  "additionalStops": [
+    {
+      "id": "tourist-office",
+      "coordinates": [7.3555553, 48.0802198],
+      "source": "https://www.tourisme-colmar.com/fr/info-contact",
+      "checkedOn": "2026-11-11",
+      "note": "Owner took this pin from the tourist office website. The office is listed at Place Unterlinden, 68000 Colmar; the coordinates match the office destination in all three Google Maps directions links on that page."
+    },
+    {
+      "id": "wc-sinn",
+      "coordinates": [7.3571, 48.0797],
+      "source": "https://reservation.tourisme-colmar.com/medias/documents/documentation/documentation-NOEL26P-UK.pdf",
+      "checkedOn": "2026-10-16",
+      "note": "Estimated from the toilet symbol on page 2 of the official 2026 English market map. Approximate, not a verified entrance."
+    }
+  ]
 }

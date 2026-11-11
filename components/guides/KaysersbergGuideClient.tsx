@@ -28,7 +28,7 @@ export default function KaysersbergGuideClient({ hero, walks, orientationPlaces 
     const youtubeId = youtubeIdFromUrl(walk.youtubeUrl);
     return youtubeId ? [{ ...walk, youtubeId }] : [];
   });
-  return <main className="bg-[#fcfaf7] text-[#25382f] [--guide-scroll-offset:10rem]">
+  return <div className="bg-[#fcfaf7] text-[#25382f] [--guide-scroll-offset:10rem]">
     <div className={width + " py-5"}><nav aria-label="Breadcrumb" className="flex gap-2 text-sm text-[#657069]"><Link href="/">Home</Link><span>/</span><Link href="/christmas-markets">Christmas Markets</Link><span>/</span><span aria-current="page">Kaysersberg</span></nav></div>
     <nav aria-label="In this guide" className="sticky top-[65px] z-40 border-b border-[#dce1d6] bg-[#fcfaf7]/95 shadow-sm backdrop-blur"><div className={width + " flex gap-2 overflow-x-auto overscroll-x-contain py-3 sm:gap-3 lg:grid lg:grid-cols-5"}>{[["explore", "Explore the walk"], ["dates", "2026 dates"], ["getting-there", "Plan the trip"], ["christmas-shuttles", "Christmas Shuttles"], ["watch-walks", "Watch my walks"]].map(([id, title]) => <a key={id} href={`#${id}`} className="flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-xl bg-[#25382f] px-4 py-2 text-center text-sm font-semibold leading-6 text-white transition-colors hover:bg-[#176347] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#176347] lg:min-h-14 lg:px-3 lg:py-3 lg:text-base">{title}</a>)}</div></nav>
     <header className={width + " pt-5"}><div className="relative isolate flex min-h-[420px] items-end overflow-hidden rounded-3xl bg-[#25382f] lg:min-h-[520px]"><Image src={hero} alt="Kaysersberg at Christmas, from my walking tour" fill priority sizes="(min-width: 1280px) 1200px, 100vw" className="object-cover" /><GuideHeroVideo preview={{ src: "https://vz-76a3e58b-c05.b-cdn.net/ef13d3b9-3f41-42e5-b2e8-8350d79a5ac5/play_1080p.mp4" }} /><div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/20 to-transparent" /><div className="relative max-w-3xl p-6 text-white sm:p-10"><p className="text-xs font-semibold uppercase tracking-[0.2em]">Alsace, France</p><h1 className="mt-3 font-serif text-5xl sm:text-7xl">Christmas in Kaysersberg</h1><p className="mt-5 max-w-xl leading-7">Explore the Christmas market, old-town streets and fortified bridge through my walks, then plan a visit of your own.</p></div></div></header>
@@ -104,10 +104,9 @@ export default function KaysersbergGuideClient({ hero, walks, orientationPlaces 
           <p className="mt-3 max-w-3xl text-sm leading-7 text-[#657069]">I filmed Kaysersberg on 12 December 2025, spending most of the day exploring and recording the town. It was part of a wider Christmas trip through Alsace, with stops in Switzerland and Germany too. These walks can help you decide where else you’d like to go.</p>
           <ol className="mt-5 flex flex-wrap gap-3" aria-label="December 2025 filming route">{["Basel", "Kaysersberg", "Ribeauvillé", "Riquewihr", "Colmar", "Freiburg", "Strasbourg"].map((stop, index) => <li key={stop} className="flex items-center gap-3">{index > 0 && <span aria-hidden="true" className="text-[#657069]">→</span>}<span className={`rounded-full border px-4 py-2 text-sm ${stop === "Kaysersberg" ? "border-[#25382f] bg-[#25382f] font-semibold text-white" : "border-[#dce1d6]"}`}>{stop}</span></li>)}</ol>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-[#657069]">This is the order I filmed the towns, rather than a route you need to follow. Pick the places that appeal to you and leave time to enjoy each one.</p>
-          <Link href="/christmas-markets#journeys" className={linkStyle + " mt-3"}>See my other Christmas trips →</Link>
         </GuideDisclosure>
       </div>
       <div className="mt-10 flex flex-wrap justify-between gap-4 border-t border-[#dce1d6] pt-5"><Link href="/christmas-markets" className={linkStyle}>← All Christmas destinations</Link><Link href="/licensing" className={linkStyle}>License footage from the walks →</Link></div>
     </section>
-  </main>;
+  </div>;
 }

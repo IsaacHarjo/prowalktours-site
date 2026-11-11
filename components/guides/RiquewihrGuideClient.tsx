@@ -24,7 +24,7 @@ const photoBase = '/riquewihr-christmas-guide';
 
 export default function RiquewihrGuideClient({ walks, orientationPlaces }: { walks: ChristmasWalk[]; orientationPlaces: OrientationPlace[] }) {
   const videoWalks = walks.flatMap(walk => { const youtubeId = youtubeIdFromUrl(walk.youtubeUrl); return youtubeId ? [{ ...walk, youtubeId }] : []; });
-  return <main className="bg-[#fcfaf7] text-[#25382f] [--guide-scroll-offset:10rem]">
+  return <div className="bg-[#fcfaf7] text-[#25382f] [--guide-scroll-offset:10rem]">
     <div className={width + ' py-5'}><nav aria-label="Breadcrumb" className="flex flex-wrap gap-2 text-sm text-[#657069]"><Link href="/">Home</Link><span>/</span><Link href="/christmas-markets">Christmas Markets</Link><span>/</span><span aria-current="page">Riquewihr</span></nav></div>
     <nav aria-label="In this guide" className="sticky top-[65px] z-40 border-b border-[#dce1d6] bg-[#fcfaf7]/95 shadow-sm backdrop-blur"><div className={width + ' flex gap-2 overflow-x-auto overscroll-x-contain py-3 sm:gap-3 lg:grid lg:grid-cols-5'}>{[['explore', 'Explore the walk'], ['dates', '2026 dates'], ['getting-there', 'Plan the trip'], ['christmas-shuttles', 'Christmas Shuttles'], ['watch-walks', 'Watch my walks']].map(([id, title]) => <a key={id} href={`#${id}`} className="flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-xl bg-[#25382f] px-4 py-2 text-center text-sm font-semibold leading-6 text-white transition-colors hover:bg-[#176347] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#176347] lg:min-h-14 lg:px-3 lg:py-3 lg:text-base">{title}</a>)}</div></nav>
     <header className={width + ' pt-5'}><div className="relative isolate flex min-h-[420px] items-end overflow-hidden rounded-3xl bg-[#25382f] lg:min-h-[520px]">
@@ -82,5 +82,5 @@ export default function RiquewihrGuideClient({ walks, orientationPlaces }: { wal
       <div className="mt-8"><GuideDisclosure title="My Christmas visits to Riquewihr"><p className="max-w-3xl text-sm leading-7 text-[#526258]">I filmed daytime and evening walks in 2023, then returned on 14 December 2025 for a short morning walk, a daytime walk, a 360° walk and an evening walk. I arrived around 8:45am, filmed the quiet streets before opening and went back through town as the lights came on. I also flew my drone, returning the next morning for clearer weather before heading to Colmar. The photos and tips in this guide come from those visits.</p></GuideDisclosure></div>
       <div className="mt-10 flex flex-wrap justify-between gap-4 border-t border-[#dce1d6] pt-5"><Link href="/christmas-markets" className={linkStyle}>← All Christmas destinations</Link><Link href="/licensing" className={linkStyle}>License footage from the walks →</Link></div>
     </section>
-  </main>;
+  </div>;
 }

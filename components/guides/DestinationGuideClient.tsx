@@ -148,7 +148,6 @@ export default function DestinationGuideClient({ guide, season, walks, mapData, 
           <p className="mt-3 max-w-3xl text-sm leading-7 text-[#657069]">{guide.route.text}</p>
           <ol className="mt-5 flex flex-wrap gap-3" aria-label="December 2025 filming route">{guide.route.stops.map((stop, index) => <li key={stop} className="flex items-center gap-3">{index > 0 && <span aria-hidden="true" className="text-[#657069]">→</span>}<span className={`rounded-full border px-4 py-2 text-sm ${stop === guide.city ? "border-[#25382f] bg-[#25382f] font-semibold text-white" : "border-[#dce1d6]"}`}>{stop}</span></li>)}</ol>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-[#657069]">{guide.route.note}</p>
-          <Link href="/christmas-markets#journeys" className={linkClass + " mt-3"}>See my other Christmas trips →</Link>
         </GuideDisclosure>
       </div>
       <div className="mt-10 flex flex-wrap justify-between gap-4 border-t border-[#dce1d6] pt-5"><Link href="/christmas-markets" className={linkClass}>← All Christmas destinations</Link><Link href="/licensing" className={linkClass}>License footage from the walks →</Link></div>

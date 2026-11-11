@@ -42,7 +42,7 @@ for (const city of ['Colmar', 'Ribeauvillé', 'Kaysersberg', 'Riquewihr', 'Stras
   for (const linkedCity of ['Strasbourg', 'Basel']) {
     const place = places.find(place => place.city === linkedCity);
     assert(place.marketGuide && !place.external);
-    assert.equal(place.href, linkedCity === city ? '#market-films' : guideLinks.christmasMarketHref(linkedCity));
+    assert.equal(place.href, linkedCity === city ? '#explore' : guideLinks.christmasMarketHref(linkedCity));
   }
   if (regionTowns.some(town => town.city === city)) {
     assert.equal(stages[2].outline, 'colmar');
@@ -170,8 +170,12 @@ assert.deepEqual(colmarVisitorMap.stationApproach.at(-1), colmarVisitorMap.route
 assert.deepEqual(colmarVisitorMap.stops.filter(stop => stop.category === 'market').map(stop => stop.marketNumber), [1, 2, 3, 4, 5, 6]);
 assert.equal(colmarVisitorMap.stops.filter(stop => stop.category === 'photo').length, 4);
 assert.equal(new Set(colmarVisitorMap.stops.map(stop => stop.id)).size, colmarVisitorMap.stops.length);
+// Stops come from the owner's map, or are listed with a documented source in the provenance file.
+const { additionalStops } = load('docs/christmas-markets/colmar-visitor-map-provenance.json');
 for (const stop of colmarVisitorMap.stops) {
-  assert(visitorSource.points.some(point => JSON.stringify(point.coordinates) === JSON.stringify(stop.coordinates)), `Visitor stop ${stop.id} must retain the owner's coordinates`);
+  const fromOwnerMap = visitorSource.points.some(point => JSON.stringify(point.coordinates) === JSON.stringify(stop.coordinates));
+  const documented = additionalStops.find(entry => entry.id === stop.id);
+  assert(fromOwnerMap || (documented?.source && JSON.stringify(documented.coordinates) === JSON.stringify(stop.coordinates)), `Visitor stop ${stop.id} must retain the owner's coordinates or have a documented source`);
   if (stop.photo) assert(fs.existsSync(path.join('public', stop.photo.src)));
   assert(stop.text.length > 0);
 }
