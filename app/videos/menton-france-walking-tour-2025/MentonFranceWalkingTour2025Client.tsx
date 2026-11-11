@@ -693,7 +693,7 @@ export default function MentonFranceWalkingTour2025Page() {
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-8 text-[#56493a]">
                 Get updates when new walks, night tours, 360 videos, and
-                destination pages go live on ProWalk Tours.
+                destination pages go live on Prowalk Tours.
               </p>
               <p className="mt-3 text-sm text-[#8a7a68]">
                 Occasional updates only. Unsubscribe anytime.
@@ -704,7 +704,7 @@ export default function MentonFranceWalkingTour2025Page() {
                 rel="noreferrer"
                 className="mt-6 inline-flex items-center justify-center rounded-full bg-[#d52b1e] px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#b82217]"
               >
-                Join the Journey - Subscribe to ProWalk Tours
+                Join the Journey - Subscribe to Prowalk Tours
               </a>
             </div>
 

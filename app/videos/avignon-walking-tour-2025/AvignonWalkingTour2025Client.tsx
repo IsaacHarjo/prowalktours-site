@@ -507,7 +507,7 @@ export default function AvignonWalkingTour2025Client() {
                 rel="noreferrer"
                 className="mt-6 inline-flex items-center justify-center rounded-full bg-[#d52b1e] px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#b82217]"
               >
-                Join the Journey - Subscribe to ProWalk Tours
+                Join the Journey - Subscribe to Prowalk Tours
               </a>
             </div>
 

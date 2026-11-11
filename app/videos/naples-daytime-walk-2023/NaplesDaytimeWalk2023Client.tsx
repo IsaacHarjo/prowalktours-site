@@ -457,7 +457,7 @@ const scrollToRelatedTours = () => {
         {isRatingsOpen ? (
           <div className="absolute left-0 top-full z-20 mt-3 w-[min(22rem,calc(100vw-3rem))] rounded-[1.5rem] border border-[#d8c7b5] bg-white/95 p-4 shadow-xl backdrop-blur-sm">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#9a735a]">
-              ProWalk Rating
+              Prowalk Rating
             </p>
             <div className="mt-3 space-y-3">
               {proRatings.map((rating) => (
@@ -549,7 +549,7 @@ const scrollToRelatedTours = () => {
             rel="noreferrer"
             className="inline-flex w-full items-center justify-center rounded-2xl bg-[#d52b1e] px-6 py-4 text-center text-base font-bold text-white shadow-lg transition hover:bg-[#b82217] sm:w-auto"
           >
-            Join the Journey — Subscribe to ProWalk Tours
+            Join the Journey — Subscribe to Prowalk Tours
           </a>
         </div>
       </section>
@@ -929,7 +929,7 @@ const scrollToRelatedTours = () => {
           rel="noreferrer"
           className="mt-6 inline-flex items-center justify-center rounded-full bg-[#d52b1e] px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#b82217]"
         >
-          Join the Journey — Subscribe to ProWalk Tours
+          Join the Journey — Subscribe to Prowalk Tours
         </a>
       </div>
 

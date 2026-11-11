@@ -8,12 +8,12 @@ const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/destinations/germany/christmas-markets`;
 
 export const metadata: Metadata = {
-  title: "Germany Christmas Market Walking Tours | ProWalk Tours",
+  title: "Germany Christmas Market Walking Tours | Prowalk Tours",
   description:
     "Germany Christmas market walks in 4K: Nuremberg, Dresden, Rothenburg, Cologne, Stuttgart, Munich, Aachen, Esslingen, and Freiburg.",
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: "Germany Christmas Market Walking Tours | ProWalk Tours",
+    title: "Germany Christmas Market Walking Tours | Prowalk Tours",
     description:
       "Germany Christmas market walks in 4K: Nuremberg, Dresden, Rothenburg, Cologne, Stuttgart, Munich, Aachen, Esslingen, and Freiburg.",
     url: pageUrl,

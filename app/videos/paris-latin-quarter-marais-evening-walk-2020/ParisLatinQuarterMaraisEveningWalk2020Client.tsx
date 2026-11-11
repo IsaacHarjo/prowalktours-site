@@ -692,7 +692,7 @@ export default function ParisLatinQuarterMaraisEveningWalk2020Client() {
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-8 text-[#56493a]">
                 Get updates when new France tours, destination pages, and
-                long-form videos go live on ProWalk Tours.
+                long-form videos go live on Prowalk Tours.
               </p>
               <p className="mt-3 text-sm text-[#8a7a68]">
                 Occasional updates only. Unsubscribe anytime.
@@ -703,7 +703,7 @@ export default function ParisLatinQuarterMaraisEveningWalk2020Client() {
                 rel="noreferrer"
                 className="mt-6 inline-flex items-center justify-center rounded-full bg-[#d52b1e] px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#b82217]"
               >
-                Join the Journey - Subscribe to ProWalk Tours
+                Join the Journey - Subscribe to Prowalk Tours
               </a>
             </div>
 

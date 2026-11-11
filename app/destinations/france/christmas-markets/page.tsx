@@ -8,12 +8,12 @@ const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/destinations/france/christmas-markets`;
 
 export const metadata: Metadata = {
-  title: "France Christmas Market Walking Tours | ProWalk Tours",
+  title: "France Christmas Market Walking Tours | Prowalk Tours",
   description:
     "Alsace Christmas market walks in 4K: Strasbourg, Colmar, Riquewihr, Kaysersberg, and Ribeauvillé. Day and evening tours through decorated old towns.",
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: "France Christmas Market Walking Tours | ProWalk Tours",
+    title: "France Christmas Market Walking Tours | Prowalk Tours",
     description:
       "Alsace Christmas market walks in 4K: Strasbourg, Colmar, Riquewihr, Kaysersberg, and Ribeauvillé. Day and evening tours through decorated old towns.",
     url: pageUrl,

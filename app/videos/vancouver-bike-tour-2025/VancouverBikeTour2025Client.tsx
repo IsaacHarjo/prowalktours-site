@@ -388,9 +388,9 @@ export default function VancouverBikeTour2025Client() {
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">Stay Connected</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#3d3327]">Don&apos;t miss the next walk</h2>
-              <p className="mt-4 max-w-2xl text-base leading-8 text-[#56493a]">Get updates when new walks, night tours, 360 videos, and destination pages go live on ProWalk Tours.</p>
+              <p className="mt-4 max-w-2xl text-base leading-8 text-[#56493a]">Get updates when new walks, night tours, 360 videos, and destination pages go live on Prowalk Tours.</p>
               <p className="mt-3 text-sm text-[#8a7a68]">Occasional updates only. Unsubscribe anytime.</p>
-              <a href="https://www.youtube.com/@ProWalkTours?sub_confirmation=1" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center justify-center rounded-full bg-[#d52b1e] px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#b82217]">Join the Journey - Subscribe to ProWalk Tours</a>
+              <a href="https://www.youtube.com/@ProWalkTours?sub_confirmation=1" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center justify-center rounded-full bg-[#d52b1e] px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#b82217]">Join the Journey - Subscribe to Prowalk Tours</a>
             </div>
             <StayConnected />
           </div>

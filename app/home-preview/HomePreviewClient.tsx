@@ -14,13 +14,13 @@ type Props = {
 const services = [
   {
     number: "01",
-    title: "ProWalk Approved Stays",
+    title: "Prowalk Approved Stays",
     subtitle: "Find the right place to stay.",
     description: "Places I’ve stayed in or visited, with notes about the neighborhood and what to know before you book.",
   },
   {
     number: "02",
-    title: "ProWalk Tours & Guides",
+    title: "Prowalk Tours & Guides",
     subtitle: "Meet the people who know the place.",
     description: "Discover local tours, private guides, and drivers to help you explore. I’ll make it clear which recommendations come from my own experience and which are partner listings.",
   },
@@ -52,7 +52,7 @@ export default function HomePreviewClient({ videos, tours }: Props) {
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
         <div className="mx-auto max-w-7xl px-5 py-14 sm:px-10 sm:py-20 lg:py-24">
           <div className="flex items-center gap-4">
-            <Image src="/logo/Prowalk Logo2.png" alt="ProWalk Tours" width={96} height={96} className="h-20 w-20 rounded-full bg-white object-contain sm:h-24 sm:w-24" priority />
+            <Image src="/logo/Prowalk Logo2.png" alt="Prowalk Tours" width={96} height={96} className="h-20 w-20 rounded-full bg-white object-contain sm:h-24 sm:w-24" priority />
             <p className="max-w-48 text-xs font-semibold uppercase leading-6 tracking-[0.2em] text-white">See the place.<br />Know the journey.</p>
           </div>
           <h1 className="mt-7 max-w-3xl font-serif text-4xl leading-tight text-white sm:text-6xl lg:text-7xl">Your next journey<br />starts with a walk.</h1>

@@ -83,7 +83,7 @@ export default function HomeClient({ videos, mappedTours, featuredVideo }: { vid
               <ThumbnailImg src={featuredVideo.thumbnail} alt={featuredVideo.siteTitle} className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]" />
               <span className="absolute bottom-4 left-4 rounded-full bg-white px-4 py-2 text-xs font-semibold">Newest walk</span>
             </Link>
-            <p className={eyebrow + " mt-5"}>{[featuredVideo.city, featuredVideo.country].filter(Boolean).join(", ") || "Latest from ProWalk Tours"}</p>
+            <p className={eyebrow + " mt-5"}>{[featuredVideo.city, featuredVideo.country].filter(Boolean).join(", ") || "Latest from Prowalk Tours"}</p>
             <h3 className="mt-2 text-2xl font-semibold leading-snug"><Link href={featuredVideo.youtubeUrl} target="_blank" rel="noreferrer" className="hover:underline">{featuredVideo.siteTitle}</Link></h3>
             <p className="mt-3 text-sm leading-7 text-[#657069]">{featuredVideo.shortDescription}</p>
             <div className="mt-4 flex flex-col items-start gap-1">

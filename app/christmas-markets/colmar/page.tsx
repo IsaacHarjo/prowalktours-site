@@ -11,7 +11,7 @@ import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
 import DestinationGuideClient from "../../../components/guides/DestinationGuideClient";
 
 const url = "https://www.prowalktours.com/christmas-markets/colmar";
-const title = "Colmar Christmas Markets 2026: Dates, Guide & Walking Tours | ProWalk Tours";
+const title = "Colmar Christmas Markets 2026: Dates, Guide & Walking Tours | Prowalk Tours";
 const description = "Plan your Colmar Christmas market visit with my suggested walking route, photo spots, 2026 market dates, transport information, and day and evening videos.";
 export const metadata: Metadata = {
   title, description, alternates: { canonical: url },

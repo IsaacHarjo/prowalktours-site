@@ -26,7 +26,7 @@ function marketContent(city: PreviewMarketCity) {
 
 export function marketPreviewMetadata(city: PreviewMarketCity): Metadata {
   const { hero, url } = marketContent(city);
-  const title = `${city} Christmas Market & Walking Tours | ProWalk Tours`;
+  const title = `${city} Christmas Market & Walking Tours | Prowalk Tours`;
   const description = city === "Riquewihr" ? "Explore Riquewihr’s Christmas streets and courtyards with my suggested walking route, 360° photos, day and evening tours, 2026 dates and practical tips." : city === "Ribeauvillé" ? "Explore Ribeauvillé’s medieval Christmas market through my day and 360° walks, with a suggested route, 2026 dates, Christmas Shuttles and tips from my visit." : city === "Kaysersberg" ? "Explore Kaysersberg at Christmas through my day and 360° walks, with 2026 market weekends and nearby Alsace towns." : `Explore Christmas in ${city} through my walking tours and a map of nearby market towns. A guide to planning your visit is on the way.`;
   return {
     title, description, alternates: { canonical: url },
