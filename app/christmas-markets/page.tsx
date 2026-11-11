@@ -6,7 +6,7 @@ import { stringifyJsonLd } from "../../lib/seo/jsonLd";
 import ChristmasMarketsClient from "./ChristmasMarketsClient";
 
 const url = "https://www.prowalktours.com/christmas-markets";
-const title = "European Christmas Markets 2026: Guides & Walking Tours | ProWalk Tours";
+const title = "European Christmas Markets 2026: Guides & Walking Tours | Prowalk Tours";
 const description = "Choose a country and explore my Christmas market guides, with practical tips, suggested routes, photos and filmed walks to help plan your visit.";
 export const metadata: Metadata = {
   title, description, alternates: { canonical: url },

@@ -119,6 +119,13 @@ const matchesFilterValue = (
   return (videoValue ?? "") === selectedValue;
 };
 
+// Some Sheet rows spell regions in lowercase ("lazio"), so match regions
+// without regard to case.
+const matchesRegionValue = (
+  videoValue: string | undefined,
+  selectedValue: string
+) => matchesFilterValue(videoValue?.toLowerCase(), selectedValue.toLowerCase());
+
 export default async function SearchPage({
   searchParams,
 }: {
@@ -166,7 +173,7 @@ export default async function SearchPage({
         .filter((video) => {
           const matchesSelectedFilters =
             matchesFilterValue(video.country, selectedCountry) &&
-            matchesFilterValue(video.region, selectedRegion) &&
+            matchesRegionValue(video.region, selectedRegion) &&
             matchesFilterValue(video.city, selectedCity) &&
             matchesFilterValue(video.videoType, selectedType);
 

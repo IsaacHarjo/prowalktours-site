@@ -8,14 +8,14 @@ const siteUrl = "https://www.prowalktours.com";
 const pageUrl = `${siteUrl}/destinations/france/paris`;
 
 export const metadata: Metadata = {
-  title: "Paris, France Walking Tours | ProWalk Tours",
+  title: "Paris, France Walking Tours | Prowalk Tours",
   description:
     "Paris walking tours in 4K: evening city walks, the Latin Quarter, the Marais, and the Paris Catacombs. Long-form, immersive, no commentary.",
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-    title: "Paris, France Walking Tours | ProWalk Tours",
+    title: "Paris, France Walking Tours | Prowalk Tours",
     description:
       "Paris walking tours in 4K: evening city walks, the Latin Quarter, the Marais, and the Paris Catacombs. Long-form, immersive, no commentary.",
     url: pageUrl,

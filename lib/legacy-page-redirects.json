@@ -1,0 +1,242 @@
+[
+  {
+    "source": "/home",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/join",
+    "destination": "/about",
+    "permanent": true
+  },
+  {
+    "source": "/drone",
+    "destination": "/search?type=drone-tour",
+    "permanent": false
+  },
+  {
+    "source": "/find-a-walk",
+    "destination": "/search",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)",
+    "destination": "/search",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:archive(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)",
+    "destination": "/search",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(italy)",
+    "destination": "/destinations/italy",
+    "permanent": true
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(amalfi-coast|campania|campania-region)",
+    "destination": "/destinations/italy/campania",
+    "permanent": true
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(naples)",
+    "destination": "/destinations/italy/campania/naples",
+    "permanent": true
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(paris)",
+    "destination": "/destinations/france/paris",
+    "permanent": true
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(canada)",
+    "destination": "/destinations/canada",
+    "permanent": true
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(croatia)",
+    "destination": "/destinations/croatia",
+    "permanent": true
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(egypt)",
+    "destination": "/destinations/egypt",
+    "permanent": true
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(greece)",
+    "destination": "/destinations/greece",
+    "permanent": true
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(japan)",
+    "destination": "/destinations/japan",
+    "permanent": true
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(jordan)",
+    "destination": "/destinations/jordan",
+    "permanent": true
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(turkey|istanbul)",
+    "destination": "/destinations/turkey",
+    "permanent": true
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(lisbon)",
+    "destination": "/destinations/portugal",
+    "permanent": true
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(usa|new-york)",
+    "destination": "/destinations/usa",
+    "permanent": true
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(australia|sydney)",
+    "destination": "/destinations/australia",
+    "permanent": true
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(rio-de-janeiro)",
+    "destination": "/destinations/brazil",
+    "permanent": true
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(christmas-market)",
+    "destination": "/christmas-markets",
+    "permanent": true
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(rome)",
+    "destination": "/search?country=Italy&region=Lazio&city=Rome",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(venice)",
+    "destination": "/search?country=Italy&region=Veneto&city=Venice",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(florence)",
+    "destination": "/search?country=Italy&region=Tuscany&city=Florence",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(capri)",
+    "destination": "/search?country=Italy&region=Campania&city=Capri",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(ischia)",
+    "destination": "/search?country=Italy&region=Campania&city=Ischia",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(pompeii)",
+    "destination": "/search?country=Italy&region=Campania&city=Pompeii",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(lazio|lazio-region)",
+    "destination": "/search?country=Italy&region=Lazio",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(tuscany)",
+    "destination": "/search?country=Italy&region=Tuscany",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(veneto-region)",
+    "destination": "/search?country=Italy&region=Veneto",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(sicily)",
+    "destination": "/search?country=Italy&region=Sicily",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(sardinia)",
+    "destination": "/search?country=Italy&region=Sardinia",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(apulia)",
+    "destination": "/search?country=Italy&region=Puglia",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(italian-riviera)",
+    "destination": "/search?country=Italy&region=Liguria",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(lake-como)",
+    "destination": "/search?country=Italy&region=Lombardy",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(drone|drone-footage)",
+    "destination": "/search?type=drone-tour",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(bike-tour|biking)",
+    "destination": "/search?type=bike-tour",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(boat-tour)",
+    "destination": "/search?type=boat-tour",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(hike|hikes)",
+    "destination": "/search?type=hike",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(360)",
+    "destination": "/search?type=360-tour",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(evening-walk|evening-walks|night-walks)",
+    "destination": "/search?type=evening-walk",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(beaches|beach-walks)",
+    "destination": "/search?q=beach",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(churches)",
+    "destination": "/search?q=church",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(islands)",
+    "destination": "/search?q=island",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(ruins)",
+    "destination": "/search?q=ruins",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(unesco-world-heritage-site)",
+    "destination": "/search",
+    "permanent": false
+  },
+  {
+    "source": "/:year(2017|2018|2019|2020|2021|2022|2023|2024|2025|2026)/:tag(map-video|still-scenes)",
+    "destination": "/search",
+    "permanent": false
+  }
+]

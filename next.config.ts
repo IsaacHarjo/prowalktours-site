@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import legacyVideoRedirects from "./lib/legacy-video-redirects.json";
+import legacyPageRedirects from "./lib/legacy-page-redirects.json";
 
 const ContentSecurityPolicy = `
   default-src 'self';
@@ -50,9 +51,12 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   async redirects() {
-    // Exact video matches from the saved Squarespace inventory. YouTube
-    // fallbacks are temporary so future on-site walk pages can replace them.
-    return legacyVideoRedirects;
+    // Exact video matches from the saved Squarespace inventory. Internal
+    // /videos/ pages are permanent; YouTube fallbacks are temporary so future
+    // on-site walk pages can replace them.
+    // Squarespace year archives, year/tag listings and retired pages:
+    // permanent to a destination or guide page, temporary to a search link.
+    return [...legacyVideoRedirects, ...legacyPageRedirects];
   },
   images: {
     remotePatterns: [

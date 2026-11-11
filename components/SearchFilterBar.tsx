@@ -33,6 +33,22 @@ const matchesValue = (value: string | undefined, selectedValue: string) => {
   return (value ?? "") === selectedValue;
 };
 
+// Some Sheet rows spell regions in lowercase ("lazio"): list each region once,
+// preferring the capitalized spelling, and match regions without regard to case.
+const uniqueRegions = (values: Array<string | undefined>) => {
+  const byKey = new Map<string, string>();
+  for (const value of values) {
+    if (!value) continue;
+    const key = value.toLowerCase();
+    const current = byKey.get(key);
+    if (!current || (current === key && value !== key)) byKey.set(key, value);
+  }
+  return uniqueSorted([...byKey.values()]);
+};
+
+const matchesRegion = (value: string | undefined, selectedValue: string) =>
+  matchesValue(value?.toLowerCase(), selectedValue.toLowerCase());
+
 export default function SearchFilterBar({
   videos,
   initialQuery = "",
@@ -63,7 +79,7 @@ export default function SearchFilterBar({
   const regionOptions = useMemo(
     () =>
       selectedCountry
-        ? uniqueSorted(
+        ? uniqueRegions(
             videos
               .filter((video) => matchesValue(video.country, selectedCountry))
               .map((video) => video.region)
@@ -72,9 +88,10 @@ export default function SearchFilterBar({
     [selectedCountry, videos]
   );
 
-  const safeSelectedRegion = regionOptions.includes(selectedRegion)
-    ? selectedRegion
-    : "";
+  const safeSelectedRegion =
+    regionOptions.find(
+      (region) => region.toLowerCase() === selectedRegion.toLowerCase()
+    ) ?? "";
 
   const cityOptions = useMemo(
     () =>
@@ -84,7 +101,7 @@ export default function SearchFilterBar({
               .filter(
                 (video) =>
                   matchesValue(video.country, selectedCountry) &&
-                  matchesValue(video.region, safeSelectedRegion)
+                  matchesRegion(video.region, safeSelectedRegion)
               )
               .map((video) => video.city)
           )
@@ -104,7 +121,7 @@ export default function SearchFilterBar({
               .filter(
                 (video) =>
                   matchesValue(video.country, selectedCountry) &&
-                  matchesValue(video.region, safeSelectedRegion) &&
+                  matchesRegion(video.region, safeSelectedRegion) &&
                   matchesValue(video.city, safeSelectedCity)
               )
               .map((video) => video.videoType)
