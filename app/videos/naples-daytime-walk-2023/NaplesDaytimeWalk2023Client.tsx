@@ -837,7 +837,9 @@ const scrollToRelatedTours = () => {
           </a>
 
           <a
-            href="/destinations/italy/campania/naples"
+            href="https://www.youtube.com/watch?v=jJk5e2Gsyy4"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group rounded-[1.5rem] border border-[#d8c7b5] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg"
           >
             <div className="mb-4 overflow-hidden rounded-[1rem] border border-[#eadfce]">
@@ -856,7 +858,7 @@ const scrollToRelatedTours = () => {
               street-level exploration.
             </p>
             <p className="mt-4 text-sm font-semibold text-[#167fd5]">
-              View tour →
+              Watch on YouTube →
             </p>
           </a>
 
@@ -877,7 +879,7 @@ const scrollToRelatedTours = () => {
           </a>
 
           <a
-            href="/destinations/italy/campania/naples"
+            href="/videos/naples-bike-tour-2020"
             className="group rounded-[1.5rem] border border-[#d8c7b5] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg"
           >
             <div className="mb-4 overflow-hidden rounded-[1rem] border border-[#eadfce]">
