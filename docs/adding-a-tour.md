@@ -330,6 +330,14 @@ Behaviour:
 - 16:9 or wider. Displayed at up to 1200px wide on the page and in OG
   metadata.
 
+### Destination card image (optional)
+
+- Path: `public/images/cards/[slug]-card.jpg`, 16:9, about 1280px wide.
+  Resize before committing; keep full-resolution sources out of the repo.
+- `next.config.ts` lists this folder on every build and dev start, so
+  `CardImage` uses the file automatically. Tours without one show their
+  fallback (usually the YouTube thumbnail).
+
 ### Highlight images
 
 Two workflows, pick per tour:

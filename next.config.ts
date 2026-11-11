@@ -1,3 +1,5 @@
+import { readdirSync } from "node:fs";
+import path from "node:path";
 import type { NextConfig } from "next";
 import legacyVideoRedirects from "./lib/legacy-video-redirects.json";
 import legacyPageRedirects from "./lib/legacy-page-redirects.json";
@@ -49,7 +51,20 @@ const securityHeaders = [
   },
 ];
 
+// Tour slugs with a local card image (public/images/cards/<slug>-card.jpg).
+// Read whenever the config loads (every build and dev start) and inlined for
+// components/CardImage.tsx, so cards without a file go straight to their
+// fallback instead of requesting a missing file. Adding a card needs no code
+// change.
+const cardImageSlugs = readdirSync(path.join(process.cwd(), "public", "images", "cards"))
+  .filter((file) => file.endsWith("-card.jpg"))
+  .map((file) => file.slice(0, -"-card.jpg".length))
+  .sort();
+
 const nextConfig: NextConfig = {
+  env: {
+    CARD_IMAGE_SLUGS: cardImageSlugs.join(","),
+  },
   async redirects() {
     // Exact video matches from the saved Squarespace inventory. Internal
     // /videos/ pages are permanent; YouTube fallbacks are temporary so future
