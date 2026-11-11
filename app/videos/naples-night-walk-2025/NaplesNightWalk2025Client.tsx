@@ -635,30 +635,30 @@ export default function NaplesNightWalk2025Page() {
           specialty tours from the city.
         </p>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <a
-            href="/destinations/italy/campania/naples"
+            href="/videos/naples-daytime-walk-2023"
             className="group rounded-[1.5rem] border border-[#d8c7b5] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg"
           >
             <div className="mb-4 overflow-hidden rounded-[1rem] border border-[#eadfce]">
               <img
-                src="https://i.ytimg.com/vi/Cv1zIRhxvHU/maxresdefault.jpg"
-                alt="Naples Night Walk video thumbnail"
+                src="https://i.ytimg.com/vi/990AqbKb18c/maxresdefault.jpg"
+                alt="Naples Daytime Walk video thumbnail"
                 className="aspect-video w-full object-cover"
                 loading="lazy"
                 onError={(event) => {
                   const image = event.currentTarget;
                   image.onerror = null;
-                  image.src = "https://i.ytimg.com/vi/Cv1zIRhxvHU/hqdefault.jpg";
+                  image.src = "https://i.ytimg.com/vi/990AqbKb18c/hqdefault.jpg";
                 }}
               />
             </div>
             <p className="text-sm font-semibold text-[#3d3327]">
-              Naples Night Walk
+              Naples Daytime Walk
             </p>
             <p className="mt-2 text-sm leading-7 text-[#6e5a45]">
-              Explore Naples after dark with evening atmosphere, lit streets,
-              and neighborhood energy.
+              Walk Naples by day through the historic city center,
+              Spaccanapoli, Piazza del Plebiscito, and sweeping bay views.
             </p>
             <p className="mt-4 text-sm font-semibold text-[#167fd5]">
               View tour -&gt;
@@ -688,22 +688,6 @@ export default function NaplesNightWalk2025Page() {
             </p>
             <p className="mt-4 text-sm font-semibold text-[#167fd5]">
               Watch on YouTube -&gt;
-            </p>
-          </a>
-
-          <a
-            href="/destinations/italy/campania/naples"
-            className="group rounded-[1.5rem] border border-[#d8c7b5] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg"
-          >
-            <p className="text-sm font-semibold text-[#3d3327]">
-              Naples Drone Tour
-            </p>
-            <p className="mt-2 text-sm leading-7 text-[#6e5a45]">
-              See Naples from above with cinematic aerial views of the city,
-              bay, and waterfront.
-            </p>
-            <p className="mt-4 text-sm font-semibold text-[#167fd5]">
-              View tour -&gt;
             </p>
           </a>
 
