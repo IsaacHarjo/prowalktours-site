@@ -5,7 +5,7 @@ const highlightImageSrc = (filename: string) => `${highlightImageBasePath}/${fil
 
 export const rothenburgChristmasMarketMorningWalk2024Detail: VideoDetailRecord = {
   slug: "rothenburg-christmas-market-morning-walk-2024",
-  heroEyebrow: "France Walk",
+  heroEyebrow: "Germany Walk",
   heroTitle: "Rothenburg ob der Tauber, Germany Christmas Market Morning Walk (2024)",
   heroSubtitle: "Marktplatz, Kathe Wohlfahrt Car, Obere Schmiedgasse Street, Plönlein, Siebersturm",
   heroDescription: "2024 starting at 8:55 AM just outside my hotel",

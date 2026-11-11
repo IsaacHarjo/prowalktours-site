@@ -5,7 +5,7 @@ const highlightImageSrc = (filename: string) => `${highlightImageBasePath}/${fil
 
 export const rothenburgChristmasMarketEveningWalk2024Detail: VideoDetailRecord = {
   slug: "rothenburg-christmas-market-evening-walk-2024",
-  heroEyebrow: "France Walk",
+  heroEyebrow: "Germany Walk",
   heroTitle: "Rothenburg ob der Tauber, Germany Christmas Market Evening Walk (2024)",
   heroSubtitle: "Intro and Map, Marktplatz Christmas Market, Anneliese Friese STORE, Teddyland STORE, Kathe Wohlfahrt- Christmas Market STORE",
   heroDescription: "This is an evening tour through the city and Christmas Markets of Rothenburg ob der Tauber.",

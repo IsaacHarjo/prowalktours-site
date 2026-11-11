@@ -5,7 +5,7 @@ const highlightImageSrc = (filename: string) => `${highlightImageBasePath}/${fil
 
 export const esslingenChristmasMarketDayWalk2024Detail: VideoDetailRecord = {
   slug: "esslingen-christmas-market-day-walk-2024",
-  heroEyebrow: "France Walk",
+  heroEyebrow: "Germany Walk",
   heroTitle: "Esslingen, Germany Christmas Market Day Walk (2024)",
   heroSubtitle: "Intro and Map, Schelz Tower, St. Dionys Town Church (Outside), Christmas Market at Marktplatz, Children's Medieval Market",
   heroDescription: "This is a tour through the medieval Christmas Markets in Esslingen.",

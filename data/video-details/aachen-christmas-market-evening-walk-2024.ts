@@ -5,7 +5,7 @@ const highlightImageSrc = (filename: string) => `${highlightImageBasePath}/${fil
 
 export const aachenChristmasMarketEveningWalk2024Detail: VideoDetailRecord = {
   slug: "aachen-christmas-market-evening-walk-2024",
-  heroEyebrow: "France Walk",
+  heroEyebrow: "Germany Walk",
   heroTitle: "Aachen, Germany Christmas Market Evening Walk (2024)",
   heroSubtitle: "Intro and Map, Katschhof, Marktplatz am Rathaus, Karlsbrunnen Fountain, Katschhof",
   heroDescription: "This is an evening walking tour around the Christmas Markets in Aachen.",

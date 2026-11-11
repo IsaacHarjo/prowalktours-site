@@ -5,7 +5,7 @@ const highlightImageSrc = (filename: string) => `${highlightImageBasePath}/${fil
 
 export const nurembergChristmasMarketDayWalk2024Detail: VideoDetailRecord = {
   slug: "nuremberg-christmas-market-day-walk-2024",
-  heroEyebrow: "France Walk",
+  heroEyebrow: "Germany Walk",
   heroTitle: "Nuremberg, Germany Christmas Market Day Walk (2024)",
   heroSubtitle: "Fleischbr\u00fccke (Bridge), Hauptmarkt Christmas Market, Sch\u00f6ner Brunnen, Original Regional Market, St. Sebaldus Church",
   heroDescription: "\ud83c\udde9\ud83c\uddea Experience the Daytime Magic of the N\u00fcrnberger Christkindlesmarkt!",

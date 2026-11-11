@@ -91,8 +91,8 @@ export default function CologneChristmasMarketDayWalk2023Client() {
               </div>
             </div>
             <div className="hidden shrink-0 items-center gap-2 rounded-full border border-[#8f735c] bg-[#4a3c2f] px-3 py-1.5 text-sm font-semibold text-white/90 md:flex">
-              <div className="h-4 w-6 overflow-hidden rounded-[2px] border border-white/20"><div className="grid h-full grid-cols-3"><div className="bg-[#0055a4]" /><div className="bg-white" /><div className="bg-[#ef4135]" /></div></div>
-              <span>France</span>
+              <div className="h-4 w-6 overflow-hidden rounded-[2px] border border-white/20"><div className="grid h-full grid-rows-3"><div className="bg-black" /><div className="bg-[#dd0000]" /><div className="bg-[#ffce00]" /></div></div>
+              <span>Germany</span>
             </div>
           </nav>
         </section>
@@ -184,8 +184,8 @@ export default function CologneChristmasMarketDayWalk2023Client() {
 
       <section id="related-tours" ref={relatedToursRef} className="scroll-mt-32 mx-auto max-w-6xl px-6 pb-16 lg:px-10">
         <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">Related Tours</p>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#3d3327]">Explore more from France</h2>
-        <p className="mt-4 max-w-3xl text-base leading-8 text-[#56493a]">Continue exploring with more walks and tours from France.</p>
+        <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#3d3327]">Explore more from Germany</h2>
+        <p className="mt-4 max-w-3xl text-base leading-8 text-[#56493a]">Continue exploring with more walks and tours from Germany.</p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {relatedTours.map((tour) => (<a key={tour.href} href={tour.href} className="group rounded-[1.5rem] border border-[#d8c7b5] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#167fd5] hover:shadow-lg"><div className="mb-4 overflow-hidden rounded-[1rem] border border-[#eadfce]"><img src={tour.imageSrc} alt={tour.imageAlt} className="aspect-video w-full object-cover" loading="lazy" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; (e.target as HTMLImageElement).parentElement!.classList.add("bg-gradient-to-br", "from-[#2f261d]", "to-[#4a3c2f]"); }} /></div><p className="text-sm font-semibold text-[#3d3327]">{tour.title}</p><p className="mt-2 text-sm leading-7 text-[#6e5a45]">{tour.description}</p><p className="mt-4 text-sm font-semibold text-[#167fd5]">View tour &rarr;</p></a>))}
         </div>
@@ -197,7 +197,7 @@ export default function CologneChristmasMarketDayWalk2023Client() {
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a735a]">Stay Connected</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#3d3327]">Don&apos;t miss the next tour</h2>
-              <p className="mt-4 max-w-2xl text-base leading-8 text-[#56493a]">Get updates when new France tours, destination pages, and long-form videos go live on ProWalk Tours.</p>
+              <p className="mt-4 max-w-2xl text-base leading-8 text-[#56493a]">Get updates when new Germany tours, destination pages, and long-form videos go live on ProWalk Tours.</p>
               <p className="mt-3 text-sm text-[#8a7a68]">Occasional updates only. Unsubscribe anytime.</p>
               <a href="https://www.youtube.com/@ProWalkTours?sub_confirmation=1" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center justify-center rounded-full bg-[#d52b1e] px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#b82217]">Join the Journey - Subscribe to ProWalk Tours</a>
             </div>

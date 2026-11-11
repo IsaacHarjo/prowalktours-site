@@ -5,7 +5,7 @@ const highlightImageSrc = (filename: string) => `${highlightImageBasePath}/${fil
 
 export const munichChristmasMarketEveningWalk2024Detail: VideoDetailRecord = {
   slug: "munich-christmas-market-evening-walk-2024",
-  heroEyebrow: "France Walk",
+  heroEyebrow: "Germany Walk",
   heroTitle: "Munich, Germany Christmas Market Evening Walk (2024)",
   heroSubtitle: "Intro and Map, Karlsplatz Ice Skating, Karlstor, Neuhauser Street, Marienplatz (M\u00fcnchner Christkindlmarkt)",
   heroDescription: "This is an evening tour through the Christmas Markets in Munich.",

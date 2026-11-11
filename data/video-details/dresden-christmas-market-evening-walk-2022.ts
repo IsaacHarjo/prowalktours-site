@@ -5,7 +5,7 @@ const highlightImageSrc = (filename: string) => `${highlightImageBasePath}/${fil
 
 export const dresdenChristmasMarketEveningWalk2022Detail: VideoDetailRecord = {
   slug: "dresden-christmas-market-evening-walk-2022",
-  heroEyebrow: "France Walk",
+  heroEyebrow: "Germany Walk",
   heroTitle: "Dresden, Germany Christmas Market Evening Walk (2022)",
   heroSubtitle: "Altmarket Square, Romantischer Weihnachtsmarkt, Neumarkt, Bruhl's Terrace, Augustus Bridge",
   heroDescription: "This is an evening tour around the Christmas Market's in Dresden",

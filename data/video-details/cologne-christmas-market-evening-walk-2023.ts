@@ -5,7 +5,7 @@ const highlightImageSrc = (filename: string) => `${highlightImageBasePath}/${fil
 
 export const cologneChristmasMarketEveningWalk2023Detail: VideoDetailRecord = {
   slug: "cologne-christmas-market-evening-walk-2023",
-  heroEyebrow: "France Walk",
+  heroEyebrow: "Germany Walk",
   heroTitle: "Cologne, Germany Christmas Market Evening Walk (2023)",
   heroSubtitle: "Intro and Map, Cologne Cathedral, Cathedral Christmas Market, Heinzelm\u00e4nnchen Fountain, Heinzels Winter Fairytale (Alter Markt)",
   heroDescription: "This is an evening walk through the Christmas markets in Cologne.",

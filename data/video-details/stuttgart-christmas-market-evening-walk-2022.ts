@@ -5,7 +5,7 @@ const highlightImageSrc = (filename: string) => `${highlightImageBasePath}/${fil
 
 export const stuttgartChristmasMarketEveningWalk2022Detail: VideoDetailRecord = {
   slug: "stuttgart-christmas-market-evening-walk-2022",
-  heroEyebrow: "France Walk",
+  heroEyebrow: "Germany Walk",
   heroTitle: "Stuttgart, Germany Christmas Market Evening Walk (2022)",
   heroSubtitle: "Intro and Map, Schlossplatz, Christmas Market Entrance, Schillerplatz, Old Castle",
   heroDescription: "This is an evening tour through the Christmas Markets of Stuttgart.",
