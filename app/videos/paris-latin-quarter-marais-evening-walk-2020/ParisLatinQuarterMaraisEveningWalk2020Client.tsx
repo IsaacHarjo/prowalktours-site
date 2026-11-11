@@ -70,7 +70,7 @@ const relatedTours: RelatedTour[] = [
     href: "/videos/paris-evening-walk-2022",
     description:
       "A broader Paris evening route covering Notre-Dame, the Eiffel Tower, the Louvre, and a late-night bike ride through central Paris.",
-    imageSrc: "/paris-evening-walk-2022/paris-evening-walk-placeholder-hero.svg",
+    imageSrc: "/paris-evening-walk-2022/hero.jpg",
     imageAlt: "Paris evening walk 2022 preview",
   },
   {

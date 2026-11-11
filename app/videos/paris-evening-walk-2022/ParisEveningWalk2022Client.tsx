@@ -36,7 +36,7 @@ export default function ParisEveningWalk2022Client() {
   const fullMapUrl = "https://www.google.com/maps/d/edit?mid=17nTBGojUSBQ_vVo5LBLRrM1koOz5AM8&usp=sharing";
   const fullMapEmbedUrl = "https://www.google.com/maps/d/u/0/embed?mid=17nTBGojUSBQ_vVo5LBLRrM1koOz5AM8";
   const fullMapQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(fullMapUrl)}`;
-  const heroImagePath = "/paris-evening-walk-2022/paris-evening-walk-placeholder-hero.svg";
+  const heroImagePath = "/paris-evening-walk-2022/hero.jpg";
   const formattedFilmingDate = parisVideo?.filmingDates[0]
     ? new Date(`${parisVideo.filmingDates[0]}T12:00:00`).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" })
     : "Saturday, July 23, 2022";
@@ -54,7 +54,7 @@ export default function ParisEveningWalk2022Client() {
   ];
   const highlights = parisEveningWalk2022Detail.highlights;
   const relatedTours = [
-    { title: "France Destination Hub", href: "/destinations/france", description: "Browse France by region and continue into more city walks as the collection grows.", imageSrc: heroImagePath, imageAlt: "Paris evening walk placeholder preview" },
+    { title: "France Destination Hub", href: "/destinations/france", description: "Browse France by region and continue into more city walks as the collection grows.", imageSrc: heroImagePath, imageAlt: "The Louvre pyramid at night on my Paris evening walk" },
     { title: "Avignon Walking Tour", href: "/videos/avignon-walking-tour-2025", description: "Continue exploring France with a long-form walk through Avignon's historic center and papal landmarks.", imageSrc: "/avignon-walking-tour-2025/avignon-hero-image.png", imageAlt: "Avignon walking tour preview" },
     { title: "Antibes Walking Tour", href: "/videos/antibes-daytime-walk-2025", description: "Switch from Paris to the French Riviera with another long-form France walking tour.", imageSrc: "/antibes-daytime-walk-2025/antibes-hero-image.jpg", imageAlt: "Antibes walking tour preview" },
   ];
@@ -231,7 +231,7 @@ export default function ParisEveningWalk2022Client() {
               <div className="relative aspect-[4/3] w-full">
                 <img
                   src={heroImagePath}
-                  alt="Paris evening walk placeholder hero image"
+                  alt="The Louvre pyramid lit up at night on my Paris evening walk"
                   className="h-full w-full object-cover"
                   loading="eager"
                 />

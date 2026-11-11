@@ -62,7 +62,7 @@ const relatedTours = [
     href: "/videos/paris-evening-walk-2022",
     description:
       "Continue in Paris with a broader evening route through major landmarks and neighborhood streets above ground.",
-    imageSrc: "/paris-evening-walk-2022/paris-evening-walk-placeholder-hero.svg",
+    imageSrc: "/paris-evening-walk-2022/hero.jpg",
     imageAlt: "Paris evening walk preview",
   },
   {

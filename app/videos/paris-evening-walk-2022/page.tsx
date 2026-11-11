@@ -10,10 +10,9 @@ const pageUrl = `${siteUrl}/videos/paris-evening-walk-2022`;
 const videoRecord = franceVideos.find(
   (video) => video.slug === "paris-evening-walk-2022"
 );
-// No real hero exists for this page yet (the on-page hero is still the SVG
-// placeholder), so share cards and JSON-LD use the YouTube thumbnail.
-const ogImageUrl =
-  videoRecord?.thumbnail ?? "https://i.ytimg.com/vi/fKgP6JGAM_A/maxresdefault.jpg";
+const heroImagePath = "/paris-evening-walk-2022/hero.jpg";
+const heroImageAlt = "The Louvre pyramid lit up at night on my Paris evening walk";
+const ogImageUrl = `${siteUrl}${heroImagePath}`;
 const metadataTitle = "Paris, France Evening Walk (2022)";
 const metadataDescription =
   "Paris evening walk in 4K: Saint-Michel, Notre-Dame, the Marais, Bastille, Eiffel Tower, the Louvre, Pont Neuf, and the Panth\u00e9on. Long-form, Paris, France.";
@@ -60,7 +59,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: ogImageUrl,
-        alt: "Paris, France Evening Walk (2022) video thumbnail",
+        alt: heroImageAlt,
       },
     ],
   },
