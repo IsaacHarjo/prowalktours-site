@@ -14,7 +14,7 @@ const breadcrumbs = [
 export default function NaplesClient() {
   const quickFacts = [
     "20+ Naples videos",
-    "Day, night, drone, 360, bike, waterfront, churches, and more",
+    "Day, night, 360, bike, waterfront, churches, and more",
     "Campania, Italy",
   ];
 
@@ -59,7 +59,7 @@ export default function NaplesClient() {
       meta: "Lead featured walk",
       tags: ["Day Walk", "Historic Center", "Waterfront", "Long Walk"],
       imageSrc: "/naples/hero.jpg",
-      alt: "Naples skyline and bay view",
+      alt: "Pulcinella figure in a black half-mask outside a Naples shop, beside tambourines painted with the Bay of Naples",
       href: "/videos/naples-daytime-walk-2023",
     },
     {
@@ -83,7 +83,7 @@ export default function NaplesClient() {
   const gallery = [
     {
       src: "/naples/hero.jpg",
-      alt: "Naples skyline and bay",
+      alt: "Pulcinella figure in a black half-mask outside a Naples shop, beside tambourines painted with the Bay of Naples",
     },
     {
       src: "/naples/waterfront.jpg",
@@ -144,7 +144,7 @@ export default function NaplesClient() {
               </h1>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-700">
                 Discover walking tours, waterfront views, historic streets,
-                churches, castles, markets, drone footage, and more from
+                churches, castles, markets, and more from
                 Naples, Italy.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -183,7 +183,7 @@ export default function NaplesClient() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem]">
                 <Image
                   src="/naples/hero.jpg"
-                  alt="Naples skyline and bay view"
+                  alt="Pulcinella figure in a black half-mask outside a Naples shop, beside tambourines painted with the Bay of Naples"
                   fill
                   className="object-cover"
                   priority
