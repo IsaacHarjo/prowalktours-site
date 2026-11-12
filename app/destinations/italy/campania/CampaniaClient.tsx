@@ -227,6 +227,11 @@ const breadcrumbs = [
   { label: "Campania" },
 ];
 
+// Sections that still show placeholder text stay hidden until Ike supplies
+// real content: Featured Walks, the Plan Your Trip intro, Travel Resources
+// and Featured Local Services. Set to true once they are written.
+const showPendingSections = false;
+
 export default function CampaniaClient() {
   return (
     <div className="bg-[#fcfaf7] text-[#2f261d]">
@@ -430,6 +435,7 @@ export default function CampaniaClient() {
       </section>
 
 
+      {showPendingSections && (
       <section className="mx-auto max-w-7xl px-6 py-2 lg:px-10">
         <div className="rounded-3xl border border-[#eadfce] bg-white p-8 shadow-sm">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
@@ -468,6 +474,7 @@ export default function CampaniaClient() {
           </div>
         </div>
       </section>
+      )}
 
 
       <section
@@ -481,11 +488,13 @@ export default function CampaniaClient() {
           <h2 className="mt-3 text-3xl font-bold text-[#2f261d]">
             Use Campania as a travel-planning hub
           </h2>
+          {showPendingSections && (
           <p className="mt-3 max-w-4xl text-[17px] leading-8 text-[#6c5b49]">
             This section can grow into one of the most useful parts of the site:
             practical trip planning, transport guidance, key places to visit,
             and local services for travelers heading to Campania.
           </p>
+          )}
         </div>
 
 
@@ -527,6 +536,7 @@ export default function CampaniaClient() {
 
       <section className="mx-auto max-w-7xl px-6 py-2 lg:px-10">
         <div className="grid gap-6 xl:grid-cols-2">
+          {showPendingSections && (
           <div className="rounded-3xl border border-[#eadfce] bg-white p-8 shadow-sm">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
               Travel Resources
@@ -567,6 +577,7 @@ export default function CampaniaClient() {
               )}
             </div>
           </div>
+          )}
 
 
           <div className="rounded-3xl border border-[#eadfce] bg-white p-8 shadow-sm">
@@ -588,6 +599,7 @@ export default function CampaniaClient() {
       </section>
 
 
+      {showPendingSections && (
       <section className="mx-auto max-w-7xl px-6 py-14 lg:px-10">
         <div className="rounded-3xl border border-[#eadfce] bg-white p-8 shadow-sm">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
@@ -655,6 +667,7 @@ export default function CampaniaClient() {
           </div>
         </div>
       </section>
+      )}
     </div>
   );
 }

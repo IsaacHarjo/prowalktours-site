@@ -79,8 +79,8 @@ export default function ProvenceClient() {
           </h1>
           <p className="mt-5 max-w-4xl text-[18px] leading-8 text-[#6c5b49]">
             Browse Prowalk Tours videos across Provence, beginning with Avignon
-            and expanding over time to more historic cities in southern France
-            including Nimes and Arles. Discover featured destinations and
+            and Arles and expanding over time to more historic cities in
+            southern France, including Nimes. Discover featured destinations and
             follow new Provence walking tours as they are added.
           </p>
 

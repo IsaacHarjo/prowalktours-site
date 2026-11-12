@@ -33,6 +33,7 @@ export default function NaplesClient() {
         "Experience Naples after dark with glowing alleys, nightlife, and atmospheric city scenes.",
       imageSrc: "/naples/night-walks.jpg",
       alt: "Atmospheric Naples evening alley",
+      href: "/videos/naples-night-walk-2025",
     },
     {
       title: "Biking Naples",
@@ -59,6 +60,7 @@ export default function NaplesClient() {
       tags: ["Day Walk", "Historic Center", "Waterfront", "Long Walk"],
       imageSrc: "/naples/hero.jpg",
       alt: "Naples skyline and bay view",
+      href: "/videos/naples-daytime-walk-2023",
     },
     {
       title: "Best Naples Waterfront Walk",
@@ -66,6 +68,7 @@ export default function NaplesClient() {
       tags: ["Waterfront", "Vesuvius Views", "Castel dell’Ovo"],
       imageSrc: "/naples/waterfront.jpg",
       alt: "Naples waterfront and boats",
+      href: "/videos/naples-daytime-walk-2023",
     },
     {
       title: "Best Naples Night Walk",
@@ -73,6 +76,7 @@ export default function NaplesClient() {
       tags: ["Night", "Spanish Quarter", "Historic Streets"],
       imageSrc: "/naples/night-walks.jpg",
       alt: "Naples night atmosphere",
+      href: "/videos/naples-night-walk-2025",
     },
   ];
 
@@ -150,12 +154,18 @@ export default function NaplesClient() {
 >
   Featured Naples Walk
 </a>
-                <button className="rounded-2xl border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-900">
+                <Link
+                  href="/search?q=Naples"
+                  className="rounded-2xl border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-900"
+                >
                   Browse Naples Videos
-                </button>
-                <button className="rounded-2xl border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-900">
+                </Link>
+                <Link
+                  href="/licensing#license-form"
+                  className="rounded-2xl border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-900"
+                >
                   License Naples Footage
-                </button>
+                </Link>
               </div>
               <div className="mt-8 grid gap-3 sm:grid-cols-3">
                 {quickFacts.map((fact) => (
@@ -209,8 +219,8 @@ export default function NaplesClient() {
               Naples is one of the most layered and visually rich cities in
               Italy, with a mix of historic streets, religious landmarks,
               markets, waterfront scenery, castles, neighborhoods full of
-              character, and sweeping views of Mount Vesuvius. Prowalk Tours
-              has explored Naples in many different ways, from long daytime
+              character, and sweeping views of Mount Vesuvius. I&apos;ve
+              explored Naples in many different ways, from long daytime
               walks and evening strolls to Christmas scenes, church visits,
               drone footage, bike rides, and immersive 360 videos.
             </p>
@@ -294,9 +304,12 @@ export default function NaplesClient() {
                 Featured Naples videos
               </h2>
             </div>
-            <button className="hidden rounded-2xl border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-zinc-900 md:block">
+            <Link
+              href="/search?q=Naples"
+              className="hidden rounded-2xl border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-zinc-900 md:block"
+            >
               Browse all Naples videos
-            </button>
+            </Link>
           </div>
 
           <div className="mt-8 grid gap-5 lg:grid-cols-3">
@@ -329,12 +342,12 @@ export default function NaplesClient() {
                     </span>
                   ))}
                 </div>
-                <a
-  href="/videos/naples-daytime-walk-2023"
-  className="mt-5 inline-block rounded-2xl bg-zinc-900 px-4 py-3 text-sm font-semibold text-white"
->
-  Open video page
-</a>
+                <Link
+                  href={video.href}
+                  className="mt-5 inline-block rounded-2xl bg-zinc-900 px-4 py-3 text-sm font-semibold text-white"
+                >
+                  Open video page
+                </Link>
               </div>
             ))}
           </div>
@@ -381,18 +394,24 @@ export default function NaplesClient() {
             </h2>
             <p className="mt-5 leading-8 text-zinc-300">
               Looking to license footage of Naples for television, documentary,
-              travel, news, websites, or commercial projects? Prowalk Tours may
-              have licensed footage available featuring Naples streets,
+              travel, news, websites, or commercial projects? I may have
+              footage available to license, featuring Naples streets,
               churches, castles, markets, waterfront scenes, Mount Vesuvius
               views, drone imagery, and long-form walking tours.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <button className="rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-zinc-900">
+              <Link
+                href="/licensing#license-form"
+                className="rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-zinc-900"
+              >
                 License Naples Footage
-              </button>
-              <button className="rounded-2xl border border-zinc-700 px-5 py-3 text-sm font-semibold text-white">
-                Contact Prowalk Tours
-              </button>
+              </Link>
+              <Link
+                href="/contact-us"
+                className="rounded-2xl border border-zinc-700 px-5 py-3 text-sm font-semibold text-white"
+              >
+                Contact me
+              </Link>
             </div>
             <div className="mt-8 rounded-[1.5rem] border border-zinc-800 bg-zinc-950/60 p-5 text-sm text-zinc-400">
               Additional Naples aerials, waterfront imagery, and city scenes
