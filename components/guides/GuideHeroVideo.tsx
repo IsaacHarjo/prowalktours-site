@@ -4,6 +4,12 @@ import { useEffect, useRef, useState } from "react";
 
 export type GuideVideoPreview = { src: string };
 
+// Phones get Bunny's 480p rendition (about 10–15 MB) instead of the 1080p
+// file (about 40–60 MB). Every preview has both renditions on Bunny.
+function sourceForViewport(src: string) {
+  return window.matchMedia("(max-width: 639px)").matches ? src.replace(/\/play_1080p\.mp4$/, "/play_480p.mp4") : src;
+}
+
 export default function GuideHeroVideo({ preview }: { preview: GuideVideoPreview }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
@@ -16,7 +22,7 @@ export default function GuideHeroVideo({ preview }: { preview: GuideVideoPreview
     const update = () => {
       if (preference.matches) video.pause();
       else {
-        video.src = preview.src;
+        video.src = sourceForViewport(preview.src);
         void video.play().catch(() => setPlaying(false));
       }
     };
@@ -39,7 +45,7 @@ export default function GuideHeroVideo({ preview }: { preview: GuideVideoPreview
       if (!video) return;
       if (playing) video.pause();
       else {
-        if (!video.getAttribute("src")) video.src = preview.src;
+        if (!video.getAttribute("src")) video.src = sourceForViewport(preview.src);
         void video.play().catch(() => setPlaying(false));
       }
     }} className="absolute right-4 top-4 z-10 min-h-11 rounded-full border border-white/60 bg-black/60 px-4 py-2 text-sm font-semibold text-white hover:bg-black/80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">

@@ -1,4 +1,8 @@
+import CheckedNote from "./CheckedNote";
 import GuideSectionHeading from "./GuideSectionHeading";
+
+// Date the official shuttle and park-and-ride pages were last checked.
+const checkedOn = "2026-11-11";
 
 const linkStyle = "inline-flex min-h-11 items-center text-sm font-semibold text-[#176347] underline underline-offset-4";
 
@@ -17,7 +21,8 @@ export default function KaysersbergShuttles() {
             <div><dt className="font-semibold">Day ticket</dt><dd>€17 for unlimited travel across the network; under-12s ride free but still need a booked free ticket. Tickets are sold online.</dd></div>
           </dl>
           <p className="mt-4 text-sm leading-6 text-[#526258]">Board in Colmar at the train station. Ticket sales open 12 November 2026 at noon (CET). Check your last bus before heading into the market.</p>
-          <div className="mt-3 flex flex-wrap gap-x-5"><a href="https://noel-colmar.com/en/christmas-shuttles" target="_blank" rel="noreferrer" className={linkStyle}>Timetables & bus stops ↗</a><a href="https://billetterie.l-k.fr/" target="_blank" rel="noreferrer" className={linkStyle}>Shuttle tickets ↗</a></div>
+          <div className="mt-3 flex flex-wrap gap-x-5"><a href="https://noel-colmar.com/en/christmas-shuttles" target="_blank" rel="noreferrer" className={linkStyle}>Timetables & bus stops ↗</a><a href="https://billetterie.l-k.fr/navette-de-noel/" target="_blank" rel="noreferrer" className={linkStyle}>Shuttle tickets ↗</a></div>
+          <CheckedNote on={checkedOn} />
         </article>
         <article className="rounded-2xl border border-[#dce1d6] bg-[#fcfaf7] p-6">
           <h3 className="text-xl font-semibold">Driving? Use the park-and-ride</h3>
@@ -26,6 +31,7 @@ export default function KaysersbergShuttles() {
           <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6"><li>Hinteralspach–Mauffrey</li><li>DS Smith, 77 route de Lapoutroie</li><li>Carrefour Contact, 63 route de Lapoutroie</li></ul>
           <p className="mt-4 text-sm leading-7">Buses run every 15 minutes, 10am–8:30pm, to Place Gouraud at the upper end of the town centre.</p><p className="mt-4 text-sm leading-7"><strong>Driving on Friday?</strong> The local park-and-ride shuttle only runs on Saturdays and Sundays. Look for the regular car parks at Porte Basse, Schweitzer or Place Gouraud, and allow extra time to find a space. From Place Gouraud, you can join my walk near the medieval gate and bridge.</p>
           <a href="https://www.noel-colmar.com/en/kaysersberg/practical#navette" target="_blank" rel="noreferrer" className={linkStyle + " mt-3"}>Parking & local shuttle details ↗</a>
+          <CheckedNote on={checkedOn} />
         </article>
       </div>
     </div>

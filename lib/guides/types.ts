@@ -7,6 +7,8 @@ export type GuideFaq = {
   answer: string;
   items?: { title: string; text: string; source?: GuideSource }[];
   source?: GuideSource;
+  /** ISO date the dated facts in this answer were last checked on the source. */
+  checkedOn?: string;
 };
 export type OrientationPlace = { city: string; country?: string; longitude: number; latitude: number; href: string; external?: boolean; marketGuide?: boolean; labelSide?: "left" | "right" };
 export type GuideShuttleService = {
@@ -28,8 +30,9 @@ export type GuideSeason = {
   hours: { label: string; value: string }[];
   exceptions: string;
   source: GuideSource;
-  extraMarket: { title: string; dates: string; hours: string; source: GuideSource };
-  transport: { title: string; text: string; source: GuideSource }[];
+  extraMarket: { title: string; dates: string; hours: string; source: GuideSource; checkedOn: string };
+  /** checkedOn is omitted only when the official page could not be read. */
+  transport: { title: string; text: string; source: GuideSource; checkedOn?: string }[];
   shuttles?: GuideShuttleService;
 };
 export type GuideMoment = { title: string; text: string; photo: GuidePhoto; tourId: string; seconds: number };

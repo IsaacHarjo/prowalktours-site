@@ -1,12 +1,9 @@
 import type { GuideShuttleService } from "../../lib/guides/types";
+import CheckedNote from "./CheckedNote";
 import GuideDisclosure from "./GuideDisclosure";
 import GuideSectionHeading from "./GuideSectionHeading";
 
 export default function ChristmasShuttles({ service }: { service: GuideShuttleService }) {
-  const checkedDate = new Date(`${service.checkedOn}T12:00:00Z`).toLocaleDateString("en-GB", {
-    day: "numeric", month: "long", year: "numeric", timeZone: "UTC",
-  });
-
   return <section id="christmas-shuttles" aria-labelledby="shuttles-heading" className="scroll-mt-[var(--guide-scroll-offset,5rem)] border-y border-[#dce1d6] bg-[#edf1ed]">
     <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-16 lg:px-10">
       <GuideSectionHeading id="shuttles-heading" eyebrow="Nearby markets without a car" title="Christmas Shuttles" icon="shuttle" />
@@ -18,6 +15,7 @@ export default function ChristmasShuttles({ service }: { service: GuideShuttleSe
           </dl>
           <a href={service.source.href} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#176347] px-5 py-3 text-center text-sm font-semibold leading-6 text-white hover:bg-[#25382f] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#176347]">{service.source.label} ↗</a>
       </div>
+      <CheckedNote on={service.checkedOn} label="Official shuttle information checked" className="mt-3" />
       <GuideDisclosure title="Shuttle routes, fares & ticket details" className="mt-6">
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
         <div>
@@ -27,7 +25,6 @@ export default function ChristmasShuttles({ service }: { service: GuideShuttleSe
           </dl>
           <p className="mt-3 text-sm leading-6 text-[#526258]">{service.children}</p>
           <p className="mt-4 text-sm leading-7 text-[#526258]">{service.booking}</p>
-          <p className="mt-3 text-xs leading-6 text-[#657069]">Official information checked <time dateTime={service.checkedOn}>{checkedDate}</time>.</p>
         </div>
         <div>
           <h3 className="text-lg font-semibold">Routes & operating days</h3>

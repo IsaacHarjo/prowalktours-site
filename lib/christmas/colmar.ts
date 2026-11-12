@@ -41,11 +41,14 @@ export const colmarGuide: DestinationGuide = {
     title: "Colmar, with more of Alsace around it",
     text: "On my December 2025 trip, I filmed Basel, several Alsace towns, Freiburg and Strasbourg. If you’re visiting Colmar, these walks can help you decide where else you’d like to go.",
     stops: ["Basel", "Kaysersberg", "Ribeauvillé", "Riquewihr", "Colmar", "Freiburg", "Strasbourg"],
-    note: "These towns are listed in the order I filmed them. I’m still adding where I stayed, how I traveled between stops and how much time to allow.",
+    // Hidden until Ike supplies the content: "I’m still adding where I stayed,
+    // how I traveled between stops and how much time to allow."
+    note: "These towns are listed in the order I filmed them.",
   },
   nearby: [
-    { city: "Riquewihr", text: "Continue through the streets of another Alsace village.", href: "/christmas-markets?city=Riquewihr#browse-walks" },
-    { city: "Strasbourg", text: "Explore a larger city’s Christmas squares and lights.", href: "/christmas-markets?city=Strasbourg#browse-walks" },
-    { city: "Kaysersberg & Ribeauvillé", text: "See more of the villages from the filming route.", href: "/christmas-markets?country=France#browse-walks" },
+    { city: "Kaysersberg", text: "Walk through the old town, around the market and along the Weiss.", href: "/christmas-markets/kaysersberg" },
+    { city: "Ribeauvillé", text: "A medieval Christmas market on two weekends.", href: "/christmas-markets/ribeauville" },
+    { city: "Riquewihr", text: "Continue through the streets of another Alsace village.", href: "/christmas-markets/riquewihr" },
+    { city: "Strasbourg", text: "Explore a larger city’s Christmas squares and lights.", href: "/christmas-markets/strasbourg" },
   ],
 };

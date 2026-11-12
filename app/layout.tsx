@@ -242,7 +242,7 @@ function SiteFooter() {
             <ul className="mt-3 space-y-2 text-[15px] leading-7 text-[#5c4c33]">
               {footerSections.explore.map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className="transition hover:text-[#167fd5]">
+                  <Link href={item.href} className="inline-flex min-h-6 items-center transition hover:text-[#167fd5]">
                     {item.label}
                   </Link>
                 </li>
@@ -262,12 +262,12 @@ function SiteFooter() {
                       href={item.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="transition hover:text-[#167fd5]"
+                      className="inline-flex min-h-6 items-center transition hover:text-[#167fd5]"
                     >
                       {item.label}
                     </a>
                   ) : (
-                    <Link href={item.href} className="transition hover:text-[#167fd5]">
+                    <Link href={item.href} className="inline-flex min-h-6 items-center transition hover:text-[#167fd5]">
                       {item.label}
                     </Link>
                   )}
@@ -287,7 +287,7 @@ function SiteFooter() {
                     href={item.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="transition hover:text-[#167fd5]"
+                    className="inline-flex min-h-6 items-center transition hover:text-[#167fd5]"
                   >
                     {item.label}
                   </a>
@@ -299,7 +299,7 @@ function SiteFooter() {
 
         <div className="mt-8 border-t border-[#dccbb7] pt-4 text-sm text-[#7c6b59]">
           <p>© 2026 Prowalk Tours. All rights reserved.</p>
-          <nav aria-label="Legal" className="mt-3 flex flex-wrap gap-x-6 gap-y-3"><Link href="/privacy-policy" className="underline underline-offset-4">Privacy Policy</Link><Link href="/terms-of-use" className="underline underline-offset-4">Terms of Use</Link></nav>
+          <nav aria-label="Legal" className="mt-3 flex flex-wrap gap-x-6 gap-y-3"><Link href="/privacy-policy" className="inline-flex min-h-6 items-center underline underline-offset-4">Privacy Policy</Link><Link href="/terms-of-use" className="inline-flex min-h-6 items-center underline underline-offset-4">Terms of Use</Link></nav>
         </div>
       </div>
     </footer>

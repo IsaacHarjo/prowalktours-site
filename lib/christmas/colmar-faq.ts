@@ -25,8 +25,9 @@ export const colmarFaq: GuideFaq[] = [
   },
   {
     question: 'Is there a nearby evening outing beyond Colmar?',
-    answer: 'Turckheim’s night-watchman walk is an option if you have another evening to spare. A costumed watchman leads the round through town, sharing its history and traditions. For Christmas 2026, departures are at 9pm from the Corps de Garde on Place Turenne, December 1–23 and December 26–30. Check the latest details and arrange your return journey before setting out, especially if you’re relying on public transport.',
+    answer: 'Turckheim’s night-watchman walk is an option if you have another evening to spare. A costumed watchman leads the round through town, sharing its history and traditions. For Christmas 2026, departures are at 9pm from the Corps de Garde on Place Turenne, 1–23 December and 26–30 December. Check the latest details and arrange your return journey before setting out, especially if you’re relying on public transport.',
     source: { label: 'Turckheim’s official night-watchman dates & meeting point', href: 'https://turckheim.com/fr/gastronomie-vins/viticulteurs/F235015751_la-ronde-de-lunique-et-authentique-veilleur-de-nuit-pendant-lavent-turckheim' },
+    checkedOn: '2026-11-11',
   },
   {
     question: 'Where is Colmar located?',

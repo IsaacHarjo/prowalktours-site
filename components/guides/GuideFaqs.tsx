@@ -1,4 +1,5 @@
 import type { GuideFaq } from '../../lib/guides/types';
+import CheckedNote from './CheckedNote';
 import GuideDisclosure from './GuideDisclosure';
 import GuideSectionHeading from './GuideSectionHeading';
 
@@ -16,6 +17,7 @@ export default function GuideFaqs({ city, questions }: { city: string; questions
           {item.source && <a href={item.source.href} target="_blank" rel="noreferrer" className={sourceClass}>{item.source.label} ↗</a>}
         </li>)}</ul>}
         {question.source && <a href={question.source.href} target="_blank" rel="noreferrer" className={sourceClass + ' mt-2'}>{question.source.label} ↗</a>}
+        {question.checkedOn && <CheckedNote on={question.checkedOn} />}
       </GuideDisclosure>)}
     </div>
   </section>;

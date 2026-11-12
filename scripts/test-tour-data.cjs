@@ -137,7 +137,8 @@ for (const photo of Object.values(colmarPhotos)) {
   assert(fs.statSync(path.join('public', photo.src)).size < 600000, `Unoptimized guide image: ${photo.src}`);
 }
 assert.equal(colmar2026.year, 2026);
-assert.equal(colmar2026.checkedOn, '2026-10-13');
+// Rechecked against the official Colmar pages on 11 November 2026.
+assert.equal(colmar2026.checkedOn, '2026-11-11');
 const { colmarMap } = load('lib/christmas/colmar-map.ts');
 assert.equal(colmarMap.routes.length, 2);
 assert.deepEqual(colmarMap.stops.filter(stop => stop.marketIndex !== undefined).map(stop => stop.marketIndex).sort(), [0, 1, 2, 3, 4, 5]);

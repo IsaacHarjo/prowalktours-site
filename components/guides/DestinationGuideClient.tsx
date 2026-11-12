@@ -4,6 +4,8 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import type { DestinationGuide, GuideSeason, GuideSource, GuideWalk, OrientationPlace } from "../../lib/guides/types";
+import CheckedNote from "./CheckedNote";
+import GuideNavFade, { crumbClass, navScrollPad } from "./GuideNavFade";
 import ChristmasShuttles from "./ChristmasShuttles";
 import GuideDisclosure from "./GuideDisclosure";
 import GuideSectionHeading from "./GuideSectionHeading";
@@ -49,14 +51,15 @@ export default function DestinationGuideClient({ guide, season, walks, mapData, 
 
   return <div className="bg-[#fcfaf7] text-[#25382f] [--guide-scroll-offset:10rem]">
     <div className={width + " pb-2 pt-5"}>
-      <nav aria-label="Breadcrumb" className="flex flex-wrap gap-2 text-sm text-[#657069]"><Link href="/" className="hover:underline">Home</Link><span aria-hidden="true">/</span><Link href="/christmas-markets" className="hover:underline">Christmas Markets</Link><span aria-hidden="true">/</span><span aria-current="page">{guide.city}</span></nav>
+      <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-[#657069]"><Link href="/" className={crumbClass}>Home</Link><span aria-hidden="true">/</span><Link href="/christmas-markets" className={crumbClass}>Christmas Markets</Link><span aria-hidden="true">/</span><span aria-current="page">{guide.city}</span></nav>
     </div>
     <nav aria-label="In this guide" className="sticky top-[65px] z-40 border-b border-[#dce1d6] bg-[#fcfaf7]/95 shadow-sm backdrop-blur">
-      <div className={width + ` flex gap-2 overflow-x-auto overscroll-x-contain py-3 sm:gap-3 lg:grid ${season.shuttles ? "lg:grid-cols-5" : "lg:grid-cols-4"}`}>
+      <div className={width + ` ${navScrollPad} flex gap-2 overflow-x-auto overscroll-x-contain py-3 sm:gap-3 lg:grid ${season.shuttles ? "lg:grid-cols-5" : "lg:grid-cols-4"}`}>
         {navigation.map(([id, label]) => (
           <a key={id} href={`#${id}`} className="flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-xl bg-[#25382f] px-4 py-2 text-center text-sm font-semibold leading-6 text-white transition-colors hover:bg-[#176347] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#176347] lg:min-h-14 lg:px-3 lg:py-3 lg:text-base">{label}</a>
         ))}
       </div>
+      <GuideNavFade />
     </nav>
     <header className={width + " pb-4 pt-5 sm:pb-6"}>
       <div className="relative isolate flex min-h-[460px] items-end overflow-hidden rounded-3xl bg-[#25382f] sm:min-h-[440px] lg:min-h-[520px]">
@@ -108,7 +111,7 @@ export default function DestinationGuideClient({ guide, season, walks, mapData, 
       <GuideDisclosure title="Holiday hours & Gourmet Market dates" className="mt-8">
         <div className="grid gap-8 sm:grid-cols-2">
           <div><h3 className="font-semibold">Christmas holiday hours</h3><p className="mt-3 text-sm leading-7 text-[#657069]">{season.exceptions}</p></div>
-          <div><h3 className="font-semibold">{season.extraMarket.title}</h3><p className="mt-3 text-sm font-semibold leading-7">{season.extraMarket.dates}</p><p className="mt-2 text-sm leading-7 text-[#657069]">{season.extraMarket.hours}</p><SourceLink source={season.extraMarket.source} /></div>
+          <div><h3 className="font-semibold">{season.extraMarket.title}</h3><p className="mt-3 text-sm font-semibold leading-7">{season.extraMarket.dates}</p><p className="mt-2 text-sm leading-7 text-[#657069]">{season.extraMarket.hours}</p><SourceLink source={season.extraMarket.source} /><CheckedNote on={season.extraMarket.checkedOn} /></div>
         </div>
       </GuideDisclosure>
     </section>
@@ -118,7 +121,7 @@ export default function DestinationGuideClient({ guide, season, walks, mapData, 
       <p className="mt-4 max-w-3xl leading-7 text-[#657069]">If you’re visiting several market towns, use this map to see how they fit together. The transport options below can help you decide how to get around.</p>
       {orientationPlaces && <AlsaceOrientation key={guide.city} focusCity={guide.city} places={orientationPlaces} />}
       <GuideDisclosure title={parkingStops.length ? "Train connections, parking & local transport" : "Train connections & local transport"} className="mt-8">
-        <div className="grid gap-8 sm:grid-cols-2">{season.transport.map(item => <article key={item.title}><h3 className="text-lg font-semibold">{item.title}</h3><p className="mt-3 text-sm leading-7 text-[#657069]">{item.text}</p><SourceLink source={item.source} /></article>)}</div>
+        <div className="grid gap-8 sm:grid-cols-2">{season.transport.map(item => <article key={item.title}><h3 className="text-lg font-semibold">{item.title}</h3><p className="mt-3 text-sm leading-7 text-[#657069]">{item.text}</p><SourceLink source={item.source} />{item.checkedOn && <CheckedNote on={item.checkedOn} />}</article>)}</div>
         {parkingStops.length > 0 && <div className="mt-6 border-t border-[#dce1d6] pt-6">
           <h3 className="text-lg font-semibold">Parking near the walk</h3>
           <div className="mt-4 grid gap-6 sm:grid-cols-2">{parkingStops.map(stop => <article key={stop.id}><h4 className="font-semibold">{stop.shortName}</h4><p className="mt-2 text-sm leading-7 text-[#657069]">{stop.text}</p>{stop.tip && <p className="mt-2 text-sm leading-7 text-[#657069]">{stop.tip}</p>}</article>)}</div>
@@ -141,7 +144,7 @@ export default function DestinationGuideClient({ guide, season, walks, mapData, 
 
     <section className={width + " py-14 sm:py-16"} aria-labelledby="nearby-heading">
       <GuideSectionHeading id="nearby-heading" eyebrow="Keep exploring" title={`More walks around ${guide.region}`} icon="explore" />
-      <div className="mt-7 grid gap-5 md:grid-cols-3">{guide.nearby.map(place => <Link key={place.city} href={place.href} className="rounded-2xl border border-[#dce1d6] bg-white p-6 hover:border-[#176347]"><h3 className="text-xl font-semibold">{place.city}</h3><p className="mt-3 text-sm leading-7 text-[#657069]">{place.text}</p><span className={linkClass + " mt-3"}>Browse the walks →</span></Link>)}</div>
+      <div className="mt-7 grid gap-5 md:grid-cols-2 xl:grid-cols-4">{guide.nearby.map(place => <Link key={place.city} href={place.href} className="rounded-2xl border border-[#dce1d6] bg-white p-6 hover:border-[#176347]"><h3 className="text-xl font-semibold">{place.city}</h3><p className="mt-3 text-sm leading-7 text-[#657069]">{place.text}</p><span className={linkClass + " mt-3"}>Read the 2026 guide →</span></Link>)}</div>
       <div id="regional-route" className="mt-8 scroll-mt-[var(--guide-scroll-offset,5rem)]">
         <GuideDisclosure title="My Christmas filming trip around Alsace">
           <h3 className="text-lg font-semibold">{guide.route.title}</h3>

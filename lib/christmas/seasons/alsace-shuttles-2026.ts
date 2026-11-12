@@ -2,15 +2,15 @@ import type { GuideShuttleService } from "../../guides/types";
 
 // Shared by Alsace destination guides. Recheck the official page for each season.
 export const alsaceShuttles2026: GuideShuttleService = {
-  checkedOn: "2026-10-14",
+  checkedOn: "2026-11-11",
   introduction: "The Christmas Shuttles connect Colmar with nearby market towns, so you can visit without driving between them. Most routes run only on weekends (Friday–Sunday). The Eguisheim shuttle (line 3) is the exception, with daily service during the shuttle season.",
   dates: "27 November – 20 December 2026",
   departure: "Colmar train station",
-  booking: "Online sales open 12 November 2026 at noon (CET). Tickets are not sold at bus stops.",
+  booking: "Online sales open 12 November 2026 at noon (CET). Tickets are limited, and more go on sale three days before each travel date. Tickets are not sold at bus stops.",
   fares: [
     { label: "Friday–Sunday", value: "€17 day pass · all lines" },
     { label: "Monday–Thursday", value: "€8 · Eguisheim, line 3 only" },
-    { label: "Explorer pass", value: "€10 · lines 4 & 5 only, on operating days" },
+    { label: "Explorer pass", value: "€10 · lines 4 & 5 only, Friday–Sunday" },
   ],
   children: "Under 12s travel free, but still need a booked ticket.",
   routes: [

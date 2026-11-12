@@ -15,11 +15,15 @@ import GuideSectionHeading from "./GuideSectionHeading";
 import PanoramaPhoto from "./PanoramaPhoto";
 import KaysersbergShuttles from "./KaysersbergShuttles";
 import DestinationPersonalTake from "./DestinationPersonalTake";
+import CheckedNote from "./CheckedNote";
+import GuideNavFade, { crumbClass, navScrollPad } from "./GuideNavFade";
 import { kaysersbergVisitorMap } from "../../lib/christmas/kaysersberg-visitor-map";
 
 const AlsaceOrientation = dynamic(() => import("./AlsaceOrientation"), { ssr: false });
 const VisitorRouteMap = dynamic(() => import("./VisitorRouteMap"), { ssr: false });
-const officialUrl = "https://www.kaysersberg.com/en/visit/an-authentic-christmas-in-the-kaysersberg-valley-in-alsace/";
+// Date the official market dates page was last checked.
+const checkedOn = "2026-11-11";
+const officialUrl ="https://www.kaysersberg.com/en/visit/an-authentic-christmas-in-the-kaysersberg-valley-in-alsace/";
 const width = "mx-auto max-w-7xl px-5 sm:px-8 lg:px-10";
 const linkStyle = "inline-flex min-h-11 items-center font-semibold text-[#176347] underline underline-offset-4";
 
@@ -29,8 +33,8 @@ export default function KaysersbergGuideClient({ hero, walks, orientationPlaces 
     return youtubeId ? [{ ...walk, youtubeId }] : [];
   });
   return <div className="bg-[#fcfaf7] text-[#25382f] [--guide-scroll-offset:10rem]">
-    <div className={width + " py-5"}><nav aria-label="Breadcrumb" className="flex gap-2 text-sm text-[#657069]"><Link href="/">Home</Link><span>/</span><Link href="/christmas-markets">Christmas Markets</Link><span>/</span><span aria-current="page">Kaysersberg</span></nav></div>
-    <nav aria-label="In this guide" className="sticky top-[65px] z-40 border-b border-[#dce1d6] bg-[#fcfaf7]/95 shadow-sm backdrop-blur"><div className={width + " flex gap-2 overflow-x-auto overscroll-x-contain py-3 sm:gap-3 lg:grid lg:grid-cols-5"}>{[["explore", "Explore the walk"], ["dates", "2026 dates"], ["getting-there", "Plan the trip"], ["christmas-shuttles", "Christmas Shuttles"], ["watch-walks", "Watch my walks"]].map(([id, title]) => <a key={id} href={`#${id}`} className="flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-xl bg-[#25382f] px-4 py-2 text-center text-sm font-semibold leading-6 text-white transition-colors hover:bg-[#176347] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#176347] lg:min-h-14 lg:px-3 lg:py-3 lg:text-base">{title}</a>)}</div></nav>
+    <div className={width + " py-5"}><nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-[#657069]"><Link href="/" className={crumbClass}>Home</Link><span aria-hidden="true">/</span><Link href="/christmas-markets" className={crumbClass}>Christmas Markets</Link><span aria-hidden="true">/</span><span aria-current="page">Kaysersberg</span></nav></div>
+    <nav aria-label="In this guide" className="sticky top-[65px] z-40 border-b border-[#dce1d6] bg-[#fcfaf7]/95 shadow-sm backdrop-blur"><div className={width + ` ${navScrollPad} flex gap-2 overflow-x-auto overscroll-x-contain py-3 sm:gap-3 lg:grid lg:grid-cols-5`}>{[["explore", "Explore the walk"], ["dates", "2026 dates"], ["getting-there", "Plan the trip"], ["christmas-shuttles", "Christmas Shuttles"], ["watch-walks", "Watch my walks"]].map(([id, title]) => <a key={id} href={`#${id}`} className="flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-xl bg-[#25382f] px-4 py-2 text-center text-sm font-semibold leading-6 text-white transition-colors hover:bg-[#176347] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#176347] lg:min-h-14 lg:px-3 lg:py-3 lg:text-base">{title}</a>)}</div><GuideNavFade /></nav>
     <header className={width + " pt-5"}><div className="relative isolate flex min-h-[420px] items-end overflow-hidden rounded-3xl bg-[#25382f] lg:min-h-[520px]"><Image src={hero} alt="Kaysersberg at Christmas, from my walking tour" fill priority sizes="(min-width: 1280px) 1200px, 100vw" className="object-cover" /><GuideHeroVideo preview={{ src: "https://vz-76a3e58b-c05.b-cdn.net/ef13d3b9-3f41-42e5-b2e8-8350d79a5ac5/play_1080p.mp4" }} /><div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/20 to-transparent" /><div className="relative max-w-3xl p-6 text-white sm:p-10"><p className="text-xs font-semibold uppercase tracking-[0.2em]">Alsace, France</p><h1 className="mt-3 font-serif text-5xl sm:text-7xl">Christmas in Kaysersberg</h1><p className="mt-5 max-w-xl leading-7">Explore the Christmas market, old-town streets and fortified bridge through my walks, then plan a visit of your own.</p></div></div></header>
     <div className={width + " pb-9 pt-5 sm:pb-12 sm:pt-7"}>
       <DestinationPersonalTake portrait="/images/isaac/portrait-camera.webp" filmingPhoto="/kaysersberg-christmas-market-day-walk-2025/kaysersberg-introduction.webp" photoAlt="Half-timbered houses, Christmas lights and a decorated tree in Kaysersberg" headingId="why-kaysersberg" title="Why I love Kaysersberg at Christmas" href="#explore">
@@ -85,6 +89,7 @@ export default function KaysersbergGuideClient({ hero, walks, orientationPlaces 
         <p className="mt-6 max-w-3xl text-sm leading-7 text-[#526258]"><strong className="text-[#25382f]">My timing tip:</strong> I’d aim for around 2–5pm, so you can see the town in daylight and stay as the Christmas lights come on. I spent most of the day here filming on 12 December 2025, but you don’t need a whole day just to enjoy the market. Two hours to a half-day leaves room to explore at your own pace.</p>
         <p className="mt-4 max-w-3xl text-sm leading-7 text-[#526258]"><strong className="text-[#25382f]">Also in 2026:</strong> The Christmas exhibition’s theme is “Memories of our childhood winters.” Look at the official visitor information below if you’d like to include it in your visit.</p>
         <div className="mt-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-1"><p className="max-w-2xl text-sm leading-6 text-[#526258]">These dates cover the main Christmas market; other events may have different hours.</p><a href={officialUrl} target="_blank" rel="noreferrer" className={linkStyle + " text-sm"}>Official dates & visitor information ↗</a></div>
+        <CheckedNote on={checkedOn} label="Dates, hours and exhibition theme checked" />
       </div>
     </section>
     <section id="getting-there" aria-labelledby="trip-heading" className={width + " scroll-mt-40 py-12"}><GuideSectionHeading id="trip-heading" eyebrow="Plan the wider trip" title="Where Kaysersberg fits in your trip" icon="region" /><p className="mt-4 max-w-3xl leading-7 text-[#526258]">Use the map to see Kaysersberg alongside Colmar and the other Alsace market towns.</p><AlsaceOrientation focusCity="Kaysersberg" places={orientationPlaces} /></section>
@@ -93,10 +98,11 @@ export default function KaysersbergGuideClient({ hero, walks, orientationPlaces 
     <GuideFaqs city="Kaysersberg" questions={kaysersbergFaq} />
     <section className={width + " py-14 sm:py-16"} aria-labelledby="nearby-heading">
       <GuideSectionHeading id="nearby-heading" eyebrow="Keep exploring" title="More walks around Alsace" icon="explore" />
-      <div className="mt-7 grid gap-5 md:grid-cols-3">{[
+      <div className="mt-7 grid gap-5 md:grid-cols-2 xl:grid-cols-4">{[
         { city: "Colmar", text: "Follow my walk through the six Christmas markets and the streets between them.", href: "/christmas-markets/colmar", label: "Explore Colmar" },
-        { city: "Riquewihr", text: "Take a look around another Alsace village through my Christmas walks.", href: "/christmas-markets?city=Riquewihr#browse-walks", label: "Browse the walks" },
-        { city: "Strasbourg", text: "Explore a larger city’s Christmas squares and lights with me.", href: "/christmas-markets?city=Strasbourg#browse-walks", label: "Browse the walks" },
+        { city: "Ribeauvillé", text: "A medieval Christmas market on two weekends.", href: "/christmas-markets/ribeauville", label: "Explore Ribeauvillé" },
+        { city: "Riquewihr", text: "Take a look around another Alsace village through my Christmas walks.", href: "/christmas-markets/riquewihr", label: "Explore Riquewihr" },
+        { city: "Strasbourg", text: "Explore a larger city’s Christmas squares and lights with me.", href: "/christmas-markets/strasbourg", label: "Explore Strasbourg" },
       ].map(place => <Link key={place.city} href={place.href} className="rounded-2xl border border-[#dce1d6] bg-white p-6 hover:border-[#176347]"><h3 className="text-xl font-semibold">{place.city}</h3><p className="mt-3 text-sm leading-7 text-[#657069]">{place.text}</p><span className={linkStyle + " mt-3"}>{place.label} →</span></Link>)}</div>
       <div id="regional-route" className="mt-8 scroll-mt-[var(--guide-scroll-offset,5rem)]">
         <GuideDisclosure title="My Christmas filming trip around Alsace">
