@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import HeaderScrollBehavior from "../components/HeaderScrollBehavior";
 import MobileNav from "../components/MobileNav";
 import SiteAnalytics from "../components/SiteAnalytics";
 import "./globals.css";
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
 
 function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-[#d8c7b5] bg-white/95 backdrop-blur">
+    <header data-site-header className="sticky top-0 z-50 border-b border-[#d8c7b5] bg-white/95 backdrop-blur transition-transform duration-200 motion-reduce:transition-none max-md:[html[data-header-hidden]_&]:-translate-y-full">
       <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-center px-4 xl:grid xl:grid-cols-[auto_1fr] 2xl:grid-cols-[auto_1fr_auto] xl:pl-4 xl:pr-10">
         {/* Mobile: centered logo */}
         <div className="xl:justify-self-start">
@@ -319,6 +320,7 @@ export default function RootLayout({
         <main id="main-content">{children}</main>
         <SiteFooter />
         <SiteAnalytics />
+        <HeaderScrollBehavior />
       </body>
     </html>
   );

@@ -28,3 +28,24 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Phones: the site header slides away while scrolling down
+   (components/HeaderScrollBehavior.tsx). Bars pinned beneath it (top-16 on
+   walk pages, top-[65px] on Christmas guides) move up to the top of the
+   screen while it is hidden. */
+@media (max-width: 767px) {
+  .sticky.top-16,
+  .sticky.top-\[65px\] {
+    transition: top 200ms ease;
+  }
+  html[data-header-hidden] .sticky.top-16,
+  html[data-header-hidden] .sticky.top-\[65px\] {
+    top: 0;
+  }
+}
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  .sticky.top-16,
+  .sticky.top-\[65px\] {
+    transition: none;
+  }
+}
