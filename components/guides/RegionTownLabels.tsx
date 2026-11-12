@@ -8,11 +8,13 @@ export type RegionMapFrame = {
   points: { place: OrientationPlace; x: number; y: number }[];
 };
 
-export default function RegionTownLabels({ frame, focusCity, selectedCity, onSelect }: {
+export default function RegionTownLabels({ frame, focusCity, selectedCity, onSelect, linkAll = false }: {
   frame: RegionMapFrame;
   focusCity: string;
   selectedCity: string;
   onSelect: (city: string) => void;
+  /** Every label links to its place (guide or walks), not only market guides. */
+  linkAll?: boolean;
 }) {
   const { width, height } = frame;
   if (!width || !height) return null;
@@ -85,15 +87,20 @@ export default function RegionTownLabels({ frame, focusCity, selectedCity, onSel
     {labels.map(({ place, labelX, labelY }) => {
       const selected = selectedCity === place.city;
       const focused = place.city === focusCity;
+      // Long names don't fit the pill: show the town's own name ("Rothenburg"
+      // for "Rothenburg ob der Tauber"); the link and tooltip keep the full one.
+      const shown = place.city.length > 15 ? place.city.split(" ")[0] : place.city;
       const content = <>
+        <title>{place.city}</title>
         <rect x={labelX - 3} y={labelY - 22} width={pillWidth + 6} height="44" rx="12" className="fill-transparent stroke-transparent group-focus-visible:stroke-[#176347]" strokeWidth="2" />
         <rect x={labelX} y={labelY - 16} width={pillWidth} height="32" rx="16" strokeWidth={selected ? 2 : 1}
           className={focused ? "fill-[#176347] stroke-white" : selected ? "fill-[#f4e4bc] stroke-[#176347]" : "fill-white stroke-[#c3d1c5] group-hover:fill-[#f4e4bc]"} />
         <text x={labelX + pillWidth / 2} y={labelY} textAnchor="middle" dominantBaseline="central"
-          className={`font-sans text-[11px] font-semibold sm:text-xs ${place.marketGuide ? "underline" : ""} ${focused ? "fill-white" : "fill-[#25382f]"}`}>{place.city}</text>
+          className={`font-sans text-[11px] font-semibold sm:text-xs ${place.marketGuide ? "underline" : ""} ${focused ? "fill-white" : "fill-[#25382f]"}`}>{shown}</text>
       </>;
-      return place.marketGuide
-        ? <a key={place.city} href={place.href} tabIndex={0} aria-label={`${place.city} Christmas market`} onClick={() => onSelect(place.city)} className="pointer-events-auto group cursor-pointer outline-none">{content}</a>
+      const linkLabel = !linkAll ? `${place.city} Christmas market` : focused ? `${place.city}: you are here` : place.marketGuide ? `Read my ${place.city} guide` : `Watch my ${place.city} walks`;
+      return place.marketGuide || linkAll
+        ? <a key={place.city} href={place.href} tabIndex={0} aria-label={linkLabel} onClick={() => onSelect(place.city)} className="pointer-events-auto group cursor-pointer outline-none">{content}</a>
         : <g key={place.city} role="button" tabIndex={0} aria-label={`Select ${place.city}`} aria-pressed={selected}
           onClick={() => onSelect(place.city)}
           onKeyDown={event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); onSelect(place.city); } }}
