@@ -48,7 +48,7 @@ export default function Page() {
     thumbnailUrl: ["https://i.ytimg.com/vi/9AD44Xk2Jkg/maxresdefault.jpg", ogImageUrl],
     embedUrl: "https://www.youtube.com/embed/9AD44Xk2Jkg",
     contentUrl: "https://www.youtube.com/watch?v=9AD44Xk2Jkg",
-    uploadDate: "2024-12-12",
+    uploadDate: "2024-12-11",
     duration: "PT2H11M50S",
     url: pageUrl,
       hasPart: buildVideoClips({

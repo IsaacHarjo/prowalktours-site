@@ -65,7 +65,7 @@ export const nurembergGuide: StandardGuide = {
   ],
   visits: {
     title: "My visits to Nuremberg at Christmas",
-    text: "I filmed a daytime and an evening walk on 14 December 2022, then returned for an evening walk on 11 December 2024 and a daytime walk on 12 December 2024.",
+    text: "I filmed a daytime and an evening walk on 14 December 2022, then returned and filmed both again on 11 December 2024.",
   },
   nearby: [
     { city: "Rothenburg ob der Tauber", text: "My daytime and evening walks through Rothenburg’s Christmas market.", href: "/christmas-markets?city=Rothenburg%20ob%20der%20Tauber#browse-walks", label: "Watch the walks" },

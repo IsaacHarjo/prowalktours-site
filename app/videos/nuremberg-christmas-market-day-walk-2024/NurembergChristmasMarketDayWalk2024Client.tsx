@@ -27,7 +27,7 @@ const relatedTours = [
 export default function NurembergChristmasMarketDayWalk2024Client() {
   const formattedFilmingDate = video?.filmingDates[0]
     ? new Date(`${video.filmingDates[0]}T12:00:00`).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" })
-    : "Thursday, December 12, 2024";
+    : "Wednesday, December 11, 2024";
 
   const topRowStats = [
     { icon: "\ud83d\udcc5", label: "Date", value: formattedFilmingDate },

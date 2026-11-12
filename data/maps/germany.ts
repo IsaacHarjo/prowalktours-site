@@ -673,7 +673,7 @@ export const germanyMapFeatures: ExploreMapFeature[] = [
     "slug": "nuremberg-christmas-market-day-walk-2024",
     "videoType": "day-walk",
     "themes": [],
-    "filmedDateIso": "2024-12-12",
+    "filmedDateIso": "2024-12-11",
     "filmedYear": 2024,
     "youtubeUrl": "https://youtu.be/9AD44Xk2Jkg",
     "mapUrl": "https://www.google.com/maps/d/edit?mid=1_Fvtk_Zt_Tbh-gSxuoRYGJjV4Oxaj3Y&usp=sharing",

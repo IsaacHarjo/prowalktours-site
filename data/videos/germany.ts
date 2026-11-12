@@ -673,7 +673,7 @@ export const germanyVideos: VideoCatalogRecord[] = [
     country: "Germany",
     region: "Bavaria",
     city: "Nuremberg",
-    filmingDates: ["2024-12-12"],
+    filmingDates: ["2024-12-11"],
     filmingMonthYear: "December 2024",
     durationLabel: "2:11:50",
     durationSeconds: 7910,
