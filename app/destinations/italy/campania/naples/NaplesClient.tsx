@@ -188,16 +188,6 @@ export default function NaplesClient() {
                   className="object-cover"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
-                <div className="absolute bottom-0 left-0 p-6 text-white">
-                  <p className="text-xs uppercase tracking-[0.2em] text-white/80">
-                    Featured destination image
-                  </p>
-                  <p className="mt-2 text-2xl font-semibold">Naples</p>
-                  <p className="mt-2 max-w-sm text-sm text-white/90">
-                    A broad city-and-bay view for the Naples destination hub.
-                  </p>
-                </div>
               </div>
             </div>
           </div>
@@ -265,10 +255,12 @@ export default function NaplesClient() {
                   <p className="mt-3 text-sm leading-7 text-zinc-600">
                     {category.description}
                   </p>
-                  <div className="mt-5 inline-flex items-center text-sm font-semibold text-zinc-900">
-                    View category
-                    <span className="ml-2">→</span>
-                  </div>
+                  {category.href ? (
+                    <div className="mt-5 inline-flex items-center text-sm font-semibold text-zinc-900">
+                      View category
+                      <span className="ml-2">→</span>
+                    </div>
+                  ) : null}
                 </div>
               </>
             );
