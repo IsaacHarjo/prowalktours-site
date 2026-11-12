@@ -8,7 +8,7 @@ import { germanyMapFeatures } from "../../../data/maps/germany";
 const destinations = [
   {
     name: "Christmas Markets",
-    href: "/destinations/germany/christmas-markets",
+    href: "/christmas-markets?country=Germany",
     status: "Available now",
     description:
       "Nuremberg, Dresden, Rothenburg ob der Tauber, Cologne, Stuttgart, Munich, Aachen, Esslingen, and Freiburg — day and evening walks through Germany's Christmas markets.",

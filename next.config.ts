@@ -76,6 +76,10 @@ const nextConfig: NextConfig = {
     // cached permanent redirect pointing the other way.
     return [
       { source: "/destinations", destination: "/countries", permanent: false },
+      // /christmas-markets is the single Christmas hub; these older hand-built
+      // country lists were retired in its favour.
+      { source: "/destinations/france/christmas-markets", destination: "/christmas-markets?country=France", permanent: true },
+      { source: "/destinations/germany/christmas-markets", destination: "/christmas-markets?country=Germany", permanent: true },
       ...legacyVideoRedirects,
       ...legacyPageRedirects,
     ];
