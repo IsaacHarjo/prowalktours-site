@@ -26,7 +26,7 @@
   {"country":"Austria","region":"Vienna","city":"Vienna","wiki":"Vienna","ids":["H5A5hTFeO2Q"]},
   {"country":"Australia","region":"New South Wales","city":"Sydney","wiki":"Sydney","ids":["yLYMciwOtFo","dK3ih5op1F8","vvMisvTuGYk"]},
   {"country":"USA","region":"New York","city":"New York City","wiki":"Manhattan","ids":["cC4bENl16sE","0AU9_H47w7k","2q6yYGmSlYs","cRBidaJ0RyQ","Pyf2P1iWXmM"]},
-  {"country":"Australia","region":"New South Wales","city":"Manly","wiki":"Manly, New South Wales","ids":["as_sE5rT1bg","RWme3NYEJlU"]},
+  {"country":"Australia","region":"New South Wales","city":"Sydney","location":"Manly","wiki":"Manly, New South Wales","ids":["as_sE5rT1bg","RWme3NYEJlU"]},
   {"country":"Italy","region":"Lombardy","city":"Milan","wiki":"Milan","ids":["w--o2nK4xQs"]},
   {"country":"Brazil","region":"Rio de Janeiro","city":"Rio de Janeiro","wiki":"Rio de Janeiro","ids":["2l0gZVcdVsU","TfvheIZa5yg","VoNPdO9RJKM","bmDS1pN0wo4","5DbFbdxPSsA","m93jjXoHAMQ","m4pT1j2-c-s"]},
   {"country":"Turkey","region":"Istanbul","city":"Istanbul","wiki":"Istanbul","ids":["7CIVORlqt3Y","f64-pIZdqNU","8cas-1E6Spw","09yi1wNAntw"]},
