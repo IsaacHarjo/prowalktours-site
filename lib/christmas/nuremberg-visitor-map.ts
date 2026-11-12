@@ -85,6 +85,7 @@ export const nurembergVisitorMap: VisitorMapData = {
   sourceUrl: source.walks.find(walk => walk.key === 'day2024')!.sourceUrl,
   importedOn: source.importedOn,
   route: route('day2024').flat(),
+  routeKind: 'filmed',
   routeLabel: 'The route I filmed in 2024',
   routeTitle: 'The route I filmed through Nuremberg',
   stationApproach: [],

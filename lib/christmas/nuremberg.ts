@@ -46,11 +46,13 @@ export const nurembergGuide: StandardGuide = {
     { title: "Nürnberg Card", text: "The Nürnberg Card includes free travel on public transport. The market’s website and the city tourism site describe the covered area slightly differently, so check it for your journey.", source: publicTransport, checkedOn },
   ],
   walksIntroduction: "Watch my daytime and evening walks from 2022 and 2024. Put on your headphones for the sounds of the streets and markets.",
+  // Captions name the place only where it is certain from the photo itself.
+  // The sign and bauble photos have no GPS; their places await Ike.
   gallery: [
-    photo("hauptmarkt-snow", "Snow-covered Christmas market stalls on Hauptmarkt in front of the Frauenkirche, 2022", 2022),
-    photo("schoner-brunnen", "The Schöner Brunnen fountain beside the Christmas market, with the Frauenkirche behind, 2022", 2022),
-    photo("henkersteg-snow", "The covered Henkersteg bridge and stone arches over the Pegnitz after snowfall, 2022", 2022),
-    photo("handwerkerhof-gate", "The arched entrance to the Handwerkerhof framed by two Christmas trees covered in lights, 2024", 2024),
+    { ...photo("hauptmarkt-snow", "Snow-covered Christmas market stalls on Hauptmarkt in front of the Frauenkirche, 2022", 2022), caption: "Hauptmarkt and the Frauenkirche" },
+    { ...photo("schoner-brunnen", "The Schöner Brunnen fountain beside the Christmas market, with the Frauenkirche behind, 2022", 2022), caption: "Schöner Brunnen, Hauptmarkt" },
+    { ...photo("henkersteg-snow", "The covered Henkersteg bridge and stone arches over the Pegnitz after snowfall, 2022", 2022), caption: "Henkersteg over the Pegnitz" },
+    { ...photo("handwerkerhof-gate", "The arched entrance to the Handwerkerhof framed by two Christmas trees covered in lights, 2024", 2024), caption: "Handwerkerhof entrance" },
     photo("christkindlesmarkt-sign", "An illuminated Christkindlesmarkt sign with an angel hanging over a shopping street at night, 2024", 2024),
     photo("painted-bauble", "A hand-painted Christmas bauble with a snowy village scene at a market stall, 2024", 2024),
   ],

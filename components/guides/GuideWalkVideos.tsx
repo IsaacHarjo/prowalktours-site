@@ -46,9 +46,12 @@ export default function GuideWalkVideos({ city, walks, introduction = "Walk with
                 <h3 className="text-xl font-semibold">{label}</h3>
                 <p className="text-sm text-[#657069]">{[walk.filmedYear ? `Filmed in ${walk.filmedYear}` : null, walk.durationLabel].filter(Boolean).join(" · ")}</p>
               </div>
-              <Link href={walk.watchHref} target={walk.watchDestinationType === "youtube" ? "_blank" : undefined} rel={walk.watchDestinationType === "youtube" ? "noreferrer" : undefined} className="mt-2 inline-flex min-h-11 items-center text-sm font-semibold text-[#176347] underline underline-offset-4 hover:text-[#25382f]">
+              {/* The accessible name says which walk the link opens, without hidden
+                  text that can show up when styles are missing or text is copied. */}
+              <Link href={walk.watchHref} target={walk.watchDestinationType === "youtube" ? "_blank" : undefined} rel={walk.watchDestinationType === "youtube" ? "noreferrer" : undefined}
+                aria-label={`${walk.watchDestinationType === "youtube" ? "Watch on YouTube, opens in a new tab" : "Full walk, highlights and route"}: ${label}${walk.filmedYear ? `, filmed in ${walk.filmedYear}` : ""}`}
+                className="mt-2 inline-flex min-h-11 items-center text-sm font-semibold text-[#176347] underline underline-offset-4 hover:text-[#25382f]">
                 {walk.watchDestinationType === "youtube" ? "Watch on YouTube ↗" : "Full walk, highlights & route →"}
-                <span className="sr-only"> — {label}</span>
               </Link>
             </div>
           </article>;

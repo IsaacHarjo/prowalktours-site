@@ -38,6 +38,8 @@ export type VisitorMapData = {
   sourceUrl: string;
   importedOn: string;
   route: MapCoordinate[];
+  /** "filmed": the route I walked on camera, not a planned visitor route. Changes the map's wording. */
+  routeKind?: 'suggested' | 'filmed';
   /** Legend label for the main line; defaults to "Suggested walk". */
   routeLabel?: string;
   /** Heading above the map; defaults to "Your walk through {city}". */

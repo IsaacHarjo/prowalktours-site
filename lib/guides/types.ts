@@ -1,6 +1,7 @@
 import type { ChristmasWalk } from "../christmas/catalog";
 
-export type GuidePhoto = { src: string; alt: string; year?: number; width: number; height: number };
+/** caption names the place shown; galleries add the year. Leave it out if the place isn't confirmed. */
+export type GuidePhoto = { src: string; alt: string; year?: number; width: number; height: number; caption?: string };
 export type GuideSource = { label: string; href: string };
 export type GuideFaq = {
   question: string;

@@ -78,7 +78,7 @@ export default function StandardGuideClient({ guide, walks, visitorMapData, orie
 
     <section id="explore" aria-labelledby="explore-heading" className="scroll-mt-[var(--guide-scroll-offset,5rem)] border-y border-[#e1e3d9] bg-white">
       <div className={width + " py-14 sm:py-16"}>
-        <GuideSectionHeading id="explore-heading" eyebrow={`Explore ${guide.city} on foot`} title={`Take a walk through ${guide.city}’s Christmas market`} icon="walking" />
+        <GuideSectionHeading id="explore-heading" eyebrow={`Explore ${guide.city} on foot`} title={visitorMapData.routeKind === "filmed" ? `Follow the route I filmed through ${guide.city}` : `Take a walk through ${guide.city}’s Christmas market`} icon="walking" />
         <p className="mt-4 max-w-3xl leading-7 text-[#657069]">{guide.routeIntroduction}</p>
         <dl className="mt-6 grid gap-3 sm:grid-cols-3">{[...guide.glance, ...(guide.tips ?? [])].map(item => <div key={item.label} className="rounded-xl bg-[#eaf0e8] px-5 py-4"><dt className="text-xs font-semibold uppercase tracking-wide text-[#526258]">{item.label}</dt><dd className="mt-1 font-semibold">{item.value}</dd></div>)}</dl>
         <VisitorRouteMap data={visitorMapData} />
@@ -115,7 +115,7 @@ export default function StandardGuideClient({ guide, walks, visitorMapData, orie
       <GuideSectionHeading id="photos-heading" eyebrow="From my visits" title={`${guide.city} at Christmas in photos`} icon="explore" />
       <ul className="mt-7 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">{guide.gallery.map(item => <li key={item.src}>
         <figure><Image src={item.src} alt={item.alt} width={item.width} height={item.height} sizes="(min-width: 1024px) 33vw, 50vw" className="aspect-[16/10] w-full rounded-xl object-cover" />
-          {item.year && <figcaption className="mt-1 text-xs text-[#657069]">Photographed in {item.year}</figcaption>}</figure>
+          {(item.caption || item.year) && <figcaption className="mt-1 text-xs text-[#657069]">{[item.caption, item.year].filter(Boolean).join(", ")}</figcaption>}</figure>
       </li>)}</ul>
     </section>}
 
