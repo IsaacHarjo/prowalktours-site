@@ -7,7 +7,7 @@ import StopPhotoGallery from './StopPhotoGallery';
 import StopVideo from './StopVideo';
 import StopPanoramas from './StopPanoramas';
 import Map, { FullscreenControl, Layer, Marker, NavigationControl, Source, type MapRef } from 'react-map-gl/mapbox';
-import type { Feature, LineString } from 'geojson';
+import type { Feature, LineString, MultiLineString } from 'geojson';
 import type { MapCoordinate } from '../../lib/guides/map-types';
 import { walkingDistanceKm, type VisitorMapData, type VisitorMapStop, type VisitorStopCategory, type VisitorStopIcon } from '../../lib/guides/visitor-map-types';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -73,6 +73,18 @@ function boundsFor(coordinates: MapCoordinate[]): [MapCoordinate, MapCoordinate]
 }
 function routeFeature(coordinates: MapCoordinate[]): Feature<LineString> {
   return { type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates } };
+}
+
+function segmentsFeature(segments: MapCoordinate[][]): Feature<MultiLineString> {
+  return { type: 'Feature', properties: {}, geometry: { type: 'MultiLineString', coordinates: segments } };
+}
+
+function WatchLinks({ stop }: { stop: VisitorMapStop }) {
+  if (!stop.watch?.length) return null;
+  return <div className="mt-4">
+    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#607767]">Watch this spot</p>
+    <ul className="mt-1 flex flex-wrap gap-x-4">{stop.watch.map(item => <li key={item.href}><a href={item.href} className="inline-flex min-h-11 items-center text-sm font-semibold text-[#176347] underline underline-offset-4">{item.label} →</a></li>)}</ul>
+  </div>;
 }
 
 function subscribeToMobile(callback: () => void) {
@@ -200,7 +212,7 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
           {(selected.panoramas?.length || selected.panorama) && <StopPanoramas key={`panorama-${selected.id}`} name={selected.shortName} photos={selected.panoramas?.length ? selected.panoramas : [{ src: selected.panorama!.src, label: "Look around" }]} />}
 
           {!data.descriptionBeforeMedia && <p className="mt-3 text-sm leading-7 text-[#526258]">{activeStep.text}</p>}
-          {selected.informationUrl && <a href={selected.informationUrl} className="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-[#176347] underline underline-offset-4">{selected.informationLabel ?? 'More information'} →</a>}
+          <WatchLinks stop={selected} />{selected.informationUrl && <a href={selected.informationUrl} className="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-[#176347] underline underline-offset-4">{selected.informationLabel ?? 'More information'} →</a>}
           {data.showItineraryTips && activeStep.tip && <p className="mt-4 border-l-2 border-[#b18b45] pl-4 text-sm leading-6 text-[#65543b]">{activeStep.tip}</p>}
           {(activeStep.highlights?.length || (!data.showItineraryTips && activeStep.tip) || activeStep.onward) ? <GuideDisclosure key={`details-${selected.id}`} title="More about this stop" className="mt-4">
           {activeStep.highlights && <div className="mt-5"><h4 className="text-sm font-semibold text-[#25382f]">Look around this stop</h4><ul className="mt-2 list-disc space-y-2 pl-4 text-sm leading-6 text-[#526258]">{activeStep.highlights.map(text => <li key={text}>{text}</li>)}</ul></div>}
@@ -215,7 +227,7 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
           {selected.video ? <StopVideo key={selected.id} video={selected.video} poster={selected.photo?.src} /> : <StopPhotoGallery key={selected.id} name={selected.name} photos={selected.photos?.length ? selected.photos : selected.photo ? [selected.photo] : []} />}
           {(selected.panoramas?.length || selected.panorama) && <StopPanoramas key={`panorama-${selected.id}`} name={selected.shortName} photos={selected.panoramas?.length ? selected.panoramas : [{ src: selected.panorama!.src, label: "Look around" }]} />}
           <p className="mt-4 text-sm leading-7 text-[#526258]">{selected.text}</p>
-          {selected.informationUrl && <a href={selected.informationUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block text-sm font-semibold text-[#176347] underline underline-offset-4">{selected.informationLabel ?? 'Official 2026 market map'} ↗</a>}
+          <WatchLinks stop={selected} />{selected.informationUrl && <a href={selected.informationUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block text-sm font-semibold text-[#176347] underline underline-offset-4">{selected.informationLabel ?? 'Official 2026 market map'} ↗</a>}
           {selected.tip && <p className="mt-4 border-l-2 border-[#b18b45] pl-4 text-sm leading-6 text-[#65543b]">{selected.tip}</p>}
           {steps.length > 0 && <button type="button" onClick={() => selectStep(stepIndex < 0 || selected.category === 'arrival' ? 0 : stepIndex)} className="mt-4 min-h-11 rounded-lg bg-[#176347] px-4 py-2 text-sm font-semibold text-white hover:bg-[#25382f]">{stepIndex < 0 || selected.category === 'arrival' ? `Start the ${data.city} walk →` : 'Follow the itinerary from here →'}</button>}
         </>}
@@ -239,11 +251,11 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
     {arrivalControls && <div className="mb-6 hidden lg:block">{arrivalControls}</div>}
     <div className="hidden overflow-hidden rounded-t-2xl lg:block"><ChristmasLights /></div>
     <div className="hidden flex-wrap items-center justify-between gap-4 bg-[#25382f] px-5 py-5 text-white sm:px-6 lg:flex">
-      <div><h3 className="text-xl font-semibold">Your walk through {data.city}</h3><p className="mt-1 text-sm leading-6 text-white/80">About {distance} km{data.stationApproach.length > 1 ? ` · ${approachLabel}: ${stationDistance} km` : data.routeDistanceNote ? ` · ${data.routeDistanceNote}` : ''} · Leave time to browse, eat and take photos</p></div>
+      <div><h3 className="text-xl font-semibold">{data.routeTitle ?? `Your walk through ${data.city}`}</h3><p className="mt-1 text-sm leading-6 text-white/80">About {distance} km{data.stationApproach.length > 1 ? ` · ${approachLabel}: ${stationDistance} km` : data.routeDistanceNote ? ` · ${data.routeDistanceNote}` : ''} · Leave time to browse, eat and take photos</p></div>
       <a href={data.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 w-full shrink-0 items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#25382f] transition-colors hover:bg-[#eaf0e8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto">Open in Google Maps ↗</a>
     </div>
     <div className="grid overflow-hidden rounded-t-2xl border lg:rounded-none border-[#dce1d6] lg:grid-cols-[minmax(0,1fr)_420px]">
-      <div ref={mapContainerRef} role="region" aria-label={`Suggested ${data.city} walking route map`} className="relative h-[480px] min-w-0 scroll-mt-[var(--guide-scroll-offset,5rem)] bg-[#f4f2ec] sm:h-[570px] lg:h-[640px]">
+      <div ref={mapContainerRef} role="region" aria-label={data.routeTitle ? `${data.routeTitle} map` : `Suggested ${data.city} walking route map`} className="relative h-[480px] min-w-0 scroll-mt-[var(--guide-scroll-offset,5rem)] bg-[#f4f2ec] sm:h-[570px] lg:h-[640px]">
         {token && <Map key={attempt} ref={mapRef} mapboxAccessToken={token} mapStyle={satellite ? 'mapbox://styles/mapbox/satellite-streets-v12' : 'mapbox://styles/mapbox/light-v11'} styleDiffing={false}
           initialViewState={{ bounds: boundsFor(data.route), fitBoundsOptions: { padding: 35 } }} minZoom={12} maxZoom={19} maxBounds={isColmar ? [[7.31, 48.04], [7.41, 48.11]] : undefined}
           scrollZoom={true} dragRotate={false} touchPitch={false}
@@ -258,7 +270,7 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
             <Layer id="station-route-halo" type="line" paint={{ 'line-color': satellite ? '#25382f' : '#ffffff', 'line-width': 7 }} />
             <Layer id="station-route-line" type="line" paint={{ 'line-color': satellite ? '#a9dfff' : '#315d87', 'line-width': 3.5, 'line-dasharray': [2, 1.5] }} />
           </Source>}
-          {optionalRoutes.filter(route => visibleOptionalIds.includes(route.id)).map(route => <Source key={route.id} id={route.id} type="geojson" data={routeFeature(route.coordinates)}><Layer id={`${route.id}-halo`} type="line" paint={{ 'line-color': '#ffffff', 'line-width': 6 }} /><Layer id={`${route.id}-line`} type="line" paint={{ 'line-color': '#842d3f', 'line-width': 3, 'line-dasharray': [2, 1] }} /></Source>)}
+          {optionalRoutes.filter(route => visibleOptionalIds.includes(route.id)).map(route => <Source key={route.id} id={route.id} type="geojson" data={route.segments ? segmentsFeature(route.segments) : routeFeature(route.coordinates)}><Layer id={`${route.id}-halo`} type="line" paint={{ 'line-color': '#ffffff', 'line-width': 6 }} /><Layer id={`${route.id}-line`} type="line" paint={{ 'line-color': '#842d3f', 'line-width': 3, 'line-dasharray': [2, 1] }} /></Source>)}
           {visibleStops.map(stop => {
             const offset = markerOffsets[stop.id];
             const active = selected.id === stop.id;
@@ -315,7 +327,7 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
       </aside>
     </div>
     <div className="flex flex-wrap gap-x-6 gap-y-2 rounded-b-2xl border border-t-0 border-[#dce1d6] bg-[#f5f6f1] px-5 py-3 text-xs leading-6 text-[#526258]">
-      <span className="flex items-center gap-2"><span className="h-1 w-7 rounded-full bg-[#176347]" />Suggested walk · {distance} km{data.routeDistanceNote && <span> · {data.routeDistanceNote}</span>}</span>
+      <span className="flex items-center gap-2"><span className="h-1 w-7 rounded-full bg-[#176347]" />{data.routeLabel ?? "Suggested walk"} · {distance} km{data.routeDistanceNote && <span> · {data.routeDistanceNote}</span>}</span>
       {data.stationApproach.length > 1 && <span className="flex items-center gap-2"><span className="w-7 border-t-[3px] border-dashed border-[#315d87]" />{approachLabel} · {stationDistance} km</span>}
       <span className="hidden items-center gap-2 lg:flex"><span className="text-[#176347]"><StopIcon icon="market" /></span>Green stall icons mark the Christmas markets. Follow Next stop for the walking order.</span>
       <span className="hidden lg:inline">Drag to explore · Scroll or use + / − to zoom</span>

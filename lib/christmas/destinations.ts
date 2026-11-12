@@ -16,6 +16,6 @@ export const christmasDestinationImages: Record<string, string> = {
   "France/Ribeauvillé": "/ribeauville-day-walk-2025/guide/hero.webp",
   "France/Riquewihr": "/riquewihr-christmas-guide/hero.webp",
   "Germany/Rothenburg ob der Tauber": "/images/homepage/rothenburg-christmas-collection.jpeg",
-  "Germany/Nuremberg": "/nuremberg-christmas-market-evening-walk-2022/highlights/nuremberg-hauptmarkt-christkindlesmarkt.jpg",
+  "Germany/Nuremberg": "/nuremberg-christmas-guide/card.webp",
   "Germany/Dresden": "/dresden-christmas-market-evening-walk-2022/highlights/dresden-altmarket-square.jpg",
 };

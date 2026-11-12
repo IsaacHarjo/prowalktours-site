@@ -61,6 +61,7 @@ export default function ChristmasMarketsClient({ walks, points, initialFilters }
     Colmar: { href: "/christmas-markets/colmar", description: "Explore the Christmas squares and the changing scenery between them, from Saint-Martin to Petite Venise.", detail: "Several markets, one historic centre" },
     Kaysersberg: { href: "/christmas-markets/kaysersberg", description: "Walk the decorated main street in both directions, with bridges and half-timbered houses along the Weiss.", detail: "A compact village & riverside views" },
     "Ribeauvillé": { href: "/christmas-markets/ribeauville", description: "Costumed performers, food over open fires and courtyard games make this feel like a medieval festival.", detail: "A medieval market on two weekends" },
+    Nuremberg: { href: "/christmas-markets/nuremberg", description: "Follow the route I filmed past the Hauptmarkt stalls, the Sister Cities and Children’s markets, and along the Pegnitz.", detail: "Hauptmarkt, river bridges & old town" },
     Riquewihr: { href: "/christmas-markets/riquewihr", description: "Look beyond the stalls: step into courtyards, browse Christmas shops and explore around the Dolder.", detail: "Christmas streets, shops & courtyards" },
   };
   const matches = (country: string, city: string, region: string) => normalize(`${country} ${city} ${region}`).includes(normalize(destinationQuery));

@@ -21,6 +21,8 @@ export type VisitorMapStop = {
   panorama?: { src: string };
   panoramas?: { src: string; label: string }[];
   video?: { libraryId: string; videoId: string; title: string };
+  /** Links to the moment this stop appears in each walk (?t= seeks, never autoplays). */
+  watch?: { label: string; href: string }[];
 };
 export type VisitorItineraryStep = {
   stopId: string;
@@ -36,6 +38,10 @@ export type VisitorMapData = {
   sourceUrl: string;
   importedOn: string;
   route: MapCoordinate[];
+  /** Legend label for the main line; defaults to "Suggested walk". */
+  routeLabel?: string;
+  /** Heading above the map; defaults to "Your walk through {city}". */
+  routeTitle?: string;
   stationApproach: MapCoordinate[];
   approachLabel?: string;
   routeDistanceNote?: string;
@@ -43,7 +49,8 @@ export type VisitorMapData = {
   defaultToItinerary?: boolean;
   descriptionBeforeMedia?: boolean;
   optionalRoute?: { label: string; coordinates: MapCoordinate[]; stopIds?: string[] };
-  optionalRoutes?: { id: string; label: string; coordinates: MapCoordinate[]; stopIds?: string[] }[];
+  /** segments draws separate lines (e.g. a walk filmed in two parts); coordinates is then all points, for bounds. */
+  optionalRoutes?: { id: string; label: string; coordinates: MapCoordinate[]; segments?: MapCoordinate[][]; stopIds?: string[] }[];
   stops: VisitorMapStop[];
   itinerary?: {
     title: string;
