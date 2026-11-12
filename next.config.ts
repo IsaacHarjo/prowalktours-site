@@ -71,7 +71,14 @@ const nextConfig: NextConfig = {
     // on-site walk pages can replace them.
     // Squarespace year archives, year/tag listings and retired pages:
     // permanent to a destination or guide page, temporary to a search link.
-    return [...legacyVideoRedirects, ...legacyPageRedirects];
+    // /destinations has no index page; /countries is the destination index.
+    // Temporary so the index can move to /destinations later without a
+    // cached permanent redirect pointing the other way.
+    return [
+      { source: "/destinations", destination: "/countries", permanent: false },
+      ...legacyVideoRedirects,
+      ...legacyPageRedirects,
+    ];
   },
   images: {
     remotePatterns: [

@@ -44,7 +44,7 @@ const topDestinations = [
   {
     name: "Paris",
     description: "Explore Paris walks",
-    href: "/search?q=Paris",
+    href: "/destinations/france/paris",
     img: "/images/homepage/paris-selected.webp",
   },
 ];
