@@ -5,7 +5,12 @@ export type GuidePhoto = { src: string; alt: string; year?: number; width: numbe
 export type GuideSource = { label: string; href: string };
 export type GuideFaq = {
   question: string;
+  /** Paragraphs are separated by a blank line ("\n\n"). */
   answer: string;
+  /** "mine": Ike's own advice, labelled as such. "official": taken from official pages. */
+  kind?: "mine" | "official";
+  /** Official details shown after Ike's answer, visibly separate from it. */
+  official?: { label: string; text: string; sources: GuideSource[]; checkedOn: string };
   items?: { title: string; text: string; source?: GuideSource }[];
   source?: GuideSource;
   /** ISO date the dated facts in this answer were last checked on the source. */

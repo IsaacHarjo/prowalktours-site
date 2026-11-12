@@ -26,7 +26,7 @@ export type StandardGuide = {
   mobileHero: GuidePhoto;
   cardPhoto: GuidePhoto;
   /** "Why I love …": hidden until Ike writes it. */
-  personalTake?: { title: string; paragraphs: string[]; filmingPhoto: string; photoAlt: string };
+  personalTake?: { title: string; paragraphs: string[]; filmingPhoto?: string; photoAlt?: string };
   /** Ike's timing and visiting tips: hidden until Ike writes them. */
   tips?: { label: string; value: string }[];
   routeIntroduction: string;
