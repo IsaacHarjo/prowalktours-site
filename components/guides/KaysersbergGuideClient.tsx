@@ -47,11 +47,11 @@ export default function KaysersbergGuideClient({ hero, walks, orientationPlaces 
       <GuideSectionHeading id="explore-heading" eyebrow="Explore Kaysersberg on foot" title="Take a walk through Kaysersberg’s Christmas market" icon="walking" />
       <p className="mt-4 hidden max-w-3xl leading-7 text-[#657069] lg:block">I filmed Kaysersberg in 2025. This walk takes you through the old town, around the market and along the Weiss, with an optional climb to the castle.</p>
       <p className="mt-3 text-sm leading-6 text-[#657069] lg:text-base lg:leading-7">Start with the first stop below. Choose Next stop to continue the walk, or select a place on the map.</p>
-      <p className="mt-3 text-xs leading-6 text-[#526258] lg:hidden">2 hours to a half-day · Friday–Sunday on market weekends · Start near the Colmar Christmas Shuttle</p>
+      <p className="mt-3 text-xs leading-6 text-[#526258] lg:hidden">2 hours to a half-day · Friday–Sunday on market weekends · Start at the eastern end of Rue du Général de Gaulle</p>
       <dl className="mt-6 hidden gap-3 lg:grid lg:grid-cols-3">{[
         { label: "How much time", value: "2 hours to a half-day" },
         { label: "When to visit", value: "Friday–Sunday on market weekends" },
-        { label: "Where to start", value: "Entrance near the Colmar Christmas Shuttle" },
+        { label: "Where to start", value: "Eastern end of Rue du Général de Gaulle" },
       ].map(item => <div key={item.label} className="rounded-xl bg-[#eaf0e8] px-5 py-4"><dt className="text-xs font-semibold uppercase tracking-wide text-[#526258]">{item.label}</dt><dd className="mt-1 font-semibold">{item.value}</dd></div>)}</dl>
       <VisitorRouteMap data={kaysersbergVisitorMap} />
       <PanoramaPhoto src="/kaysersberg-christmas-market-day-walk-2025/kaysersberg-christmas-market-360.jpg" poster="/kaysersberg-christmas-market-day-walk-2025/kaysersberg-360-preview.webp" />

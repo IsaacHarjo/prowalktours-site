@@ -17,16 +17,16 @@ export default function KaysersbergShuttles() {
           <h3 className="text-xl font-semibold">From Colmar & the other markets</h3>
           <p className="mt-3 text-sm leading-7">Lines 1 and 2 connect Colmar, Kaysersberg, Riquewihr and Ribeauvillé in opposite directions. They run Friday–Sunday, 27 November–20 December 2026: hourly on Fridays and every 30 minutes at weekends.</p>
           <dl className="mt-4 space-y-3 text-sm leading-6">
-            <div><dt className="font-semibold">Kaysersberg stop</dt><dd>Route de Kientzheim, beside the Hiltenfinck garage.</dd></div>
+            <div><dt className="font-semibold">Kaysersberg stop</dt><dd>Parking de la 5e DB in Kientzheim, about a 15–20 minute walk from the centre along the Wine Route path. There is no park-and-ride at this stop.</dd></div>
             <div><dt className="font-semibold">Day ticket</dt><dd>€17 for unlimited travel across the network; under-12s ride free but still need a booked free ticket. Tickets are sold online.</dd></div>
           </dl>
           <p className="mt-4 text-sm leading-6 text-[#526258]">Board in Colmar at the train station. Ticket sales open 12 November 2026 at noon (CET). Check your last bus before heading into the market.</p>
-          <div className="mt-3 flex flex-wrap gap-x-5"><a href="https://noel-colmar.com/en/christmas-shuttles" target="_blank" rel="noreferrer" className={linkStyle}>Timetables & bus stops ↗</a><a href="https://billetterie.l-k.fr/navette-de-noel/" target="_blank" rel="noreferrer" className={linkStyle}>Shuttle tickets ↗</a></div>
+          <div className="mt-3 flex flex-wrap gap-x-5"><a href="https://www.noel-colmar.com/fr/navettes-de-noel" target="_blank" rel="noreferrer" className={linkStyle}>Official timetable & stops ↗</a><a href="https://billetterie.l-k.fr/navette-de-noel/" target="_blank" rel="noreferrer" className={linkStyle}>Shuttle tickets ↗</a></div>
           <CheckedNote on={checkedOn} />
         </article>
         <article className="rounded-2xl border border-[#dce1d6] bg-[#fcfaf7] p-6">
           <h3 className="text-xl font-semibold">Driving? Use the park-and-ride</h3>
-          <p className="mt-3 text-sm leading-7">This local shuttle brings you into Place Gouraud at the other end of town from the Christmas Shuttles arriving from Colmar.</p>
+          <p className="mt-3 text-sm leading-7">This local shuttle brings you into Place Gouraud, at the upper end of the town centre.</p>
           <p className="mt-3 text-sm leading-7">On market Saturdays and Sundays, parking costs €4 per vehicle and the shuttle into town is free.</p>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6"><li>Hinteralspach–Mauffrey</li><li>DS Smith, 77 route de Lapoutroie</li><li>Carrefour Contact, 63 route de Lapoutroie</li></ul>
           <p className="mt-4 text-sm leading-7">Buses run every 15 minutes, 10am–8:30pm, to Place Gouraud at the upper end of the town centre.</p><p className="mt-4 text-sm leading-7"><strong>Driving on Friday?</strong> The local park-and-ride shuttle only runs on Saturdays and Sundays. Look for the regular car parks at Porte Basse, Schweitzer or Place Gouraud, and allow extra time to find a space. From Place Gouraud, you can join my walk near the medieval gate and bridge.</p>

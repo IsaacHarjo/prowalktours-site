@@ -19,7 +19,7 @@ export const kaysersbergFaq: GuideFaq[] = [
   },
   {
     question: 'Do both shuttle services arrive at the same place?',
-    answer: 'No. The Christmas Shuttles from Colmar arrive on the Route de Kientzheim side, near the start of my suggested walk. The local park-and-ride shuttle arrives at Place Gouraud, at the other end of town. From there, join the walk around the medieval gate and bridge—you don’t need to cross the whole town just to start at stop 1.',
+    answer: 'No. The Christmas Shuttles from Colmar stop at the Parking de la 5e DB in Kientzheim, about a 15–20 minute walk from the centre along the Wine Route path; there is no park-and-ride at that stop. The local park-and-ride shuttle arrives at Place Gouraud, at the upper end of town. From there, join the walk around the medieval gate and bridge—you don’t need to cross the whole town just to start at stop 1.',
   },
   {
     question: 'Is the Christmas market open every day?',
