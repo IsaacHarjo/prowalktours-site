@@ -1,4 +1,5 @@
 import importedRoute from './riquewihr-route.json';
+import stopPhotos from './riquewihr-stop-photos.json';
 import type { MapCoordinate } from '../guides/map-types';
 import type { GuidePhoto } from '../guides/types';
 import type { VisitorMapData, VisitorMapStop } from '../guides/visitor-map-types';
@@ -15,11 +16,11 @@ const walkStops: WalkStop[] = [
   { id: 'riquewihr-start', source: '1 - Start of the Walk', name: 'Town hall: start the walk', category: 'photo', icon: 'start',
     text: 'Start beneath the Hôtel de Ville arch at the lower end of town. From here, Rue du Général de Gaulle leads uphill through the decorated streets to the Dolder. I saved the main Christmas market beside the town hall for the end, so the walk brings you back here.',
     tip: 'Short on time? Walk up the main street to the Upper Gate and come back. The courtyard and side-street stops are there if you have longer.',
-    photo: photo('town-hall', 'The decorated town hall arch before the crowds arrived'), onward: 'Pass through the arch and follow the main street uphill.' },
+    photos: stopPhotos['riquewihr-start'], onward: 'Pass through the arch and follow the main street uphill.' },
   { id: 'riquewihr-main-street', source: '2. Rue du Genearl de Gaulle', name: 'Rue du Général de Gaulle: the Christmas street', shortName: 'The Christmas street', category: 'photo', icon: 'camera',
     text: 'For me, this street is the heart of a Christmas visit to Riquewihr. Look above the shop windows at the half-timbered houses, then take your time with the bakeries, cheese shops and little passages. In 2025 I kept ducking into shops and cellars to show more than the street outside.',
     tip: 'Walk it in both directions. By midday it was packed, but just a street or two away I found much more room.',
-    photo: photo('main-street', 'Half-timbered houses and Christmas decorations along my walk', 2023, 1920, 1080) },
+    photos: stopPhotos['riquewihr-main-street'] },
   { id: 'riquewihr-ecurie', source: "Restaurant L'Ecurie", name: 'L’Écurie: a courtyard detour', category: 'market', icon: 'food',
     text: 'Step off the main street into L’Écurie’s courtyard. I found food, shops and Christmas decorations tucked inside. These little detours are a big part of what I enjoyed here; it is easy to walk past an entrance without realising what is behind it.',
     tip: 'Courtyards and businesses keep their own hours. Explore when open and leave room for people coming through.' },
