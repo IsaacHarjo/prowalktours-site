@@ -50,21 +50,21 @@ for (const city of ['Colmar', 'Ribeauvillé', 'Kaysersberg', 'Riquewihr', 'Stras
   }
   assert.equal(places.find(place => place.city === 'Basel').country, 'Switzerland');
 }
-assert.equal(christmasWalks.length, 44);
+assert.equal(christmasWalks.length, 45);
 assert(!christmasWalks.some(w => ['de-0009', 'de-0018'].includes(w.id)));
 const selectChristmas = (filters) => christmas.filterChristmasWalks(christmasWalks, { ...christmas.emptyChristmasFilters, ...filters });
-assert.equal(selectChristmas({ country: 'France' }).length, 12);
+assert.equal(selectChristmas({ country: 'France' }).length, 13);
 assert.equal(selectChristmas({ country: 'Germany', region: 'Bavaria', year: '2022' }).length, 2);
 assert.equal(selectChristmas({ query: 'ribeauville' }).length, 2, 'Accent-insensitive destination search');
 assert.equal(selectChristmas({ country: 'Italy', city: 'Colmar' }).length, 0);
 assert.equal(selectChristmas({ query: 'no-such-market-zzzz' }).length, 0);
-assert.equal(christmas.buildChristmasCatalog(data.discoveryVideos, []).length, 44, 'Missing coordinates must not remove searchable Christmas walks');
+assert.equal(christmas.buildChristmasCatalog(data.discoveryVideos, []).length, 45, 'Missing coordinates must not remove searchable Christmas walks');
 assert.equal(christmas.buildChristmasCatalog(data.discoveryVideos, []).find(w => w.id === 'hu-0002').filmedYear, null, 'An unverified filming date stays unknown');
 assert(fs.existsSync(path.join('public', christmas.christmasHero.src)));
 assert.equal(data.tours.length, 561, 'Review this baseline when importing new tours');
-assert.equal(data.publicTours.length, 539);
+assert.equal(data.publicTours.length, 540);
 assert.deepEqual(new Set(data.worldTours.map(t => t.tourId)), new Set(data.discoveryVideos.map(v => v.id)));
-assert.equal(data.publicTours.filter(t => t.themes.includes('christmas-market')).length, 44);
+assert.equal(data.publicTours.filter(t => t.themes.includes('christmas-market')).length, 45);
 assert.equal(data.tours.find(t => t.tourId === 'de-0009').youtubeAvailability, 'members-only');
 assert.equal(data.tours.find(t => t.tourId === 'de-0018').youtubeAvailability, 'members-only');
 assert(!data.discoveryVideos.some(v => ['de-0009', 'de-0018', 'it-0373'].includes(v.id)));
@@ -185,6 +185,12 @@ assert(walkingDistanceKm(colmarVisitorMap.stationApproach) > 0.8 && walkingDista
 assert.equal(walkingDistanceKm([[7, 48], [7, 48]]), 0);
 assert(Math.abs(walkingDistanceKm([[0, 0], [0, 1]]) - 111.195) < 0.01);
 const sitemap = load('app/sitemap.ts').default();
+const riquewihrPath = '/videos/riquewihr-christmas-market-day-walk-2025';
+assert.equal(data.discoveryVideos.find(t => t.id === 'fr-0040').watchHref, riquewihrPath);
+assert.equal(data.worldTours.find(t => t.tourId === 'fr-0040').watchHref, riquewihrPath);
+assert.equal(load('data/maps/france.ts').franceMapFeatures.find(t => t.tourId === 'fr-0040').href, riquewihrPath);
+assert.equal(data.searchHits.filter(h => h.tour_id === 'fr-0040').length, 38);
+assert.equal(sitemap.filter(entry => entry.url.endsWith(riquewihrPath)).length, 1);
 assert.equal(sitemap.filter(entry => entry.url.endsWith('/christmas-markets/colmar')).length, 1);
 assert(!sitemap.some(entry => entry.url.includes('home-preview')));
-console.log('PASS: 561 records; 539 shared map/search tours; 44 Christmas tours; Colmar film links, timestamps, photos, sitemap and data validation.');
+console.log('PASS: 561 records; 540 shared map/search tours; 45 Christmas tours; Colmar film links, timestamps, photos, sitemap and data validation.');

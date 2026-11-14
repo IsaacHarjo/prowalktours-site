@@ -1863,5 +1863,43 @@ export const franceMapFeatures: ExploreMapFeature[] = [
     "thumbnailPath": null,
     "href": "/videos/strasbourg-christmas-market-evening-walk-2022",
     "thumbnailSrc": "https://i.ytimg.com/vi/llOvsepGHZI/maxresdefault.jpg"
-  }
+  },
+  {
+    "tourId": "fr-0040",
+    "country": "France",
+    "region": "Alsace (Grand Est)",
+    "city": "Riquewihr",
+    "location": "Christmas Market",
+    "title": "Riquewihr, France Christmas Market Day Walk (2025)",
+    "slug": "riquewihr-christmas-market-day-walk-2025",
+    "videoType": "day-walk",
+    "themes": [
+      "historic-center",
+      "old-town"
+    ],
+    "filmedDateIso": "2025-12-14",
+    "filmedYear": 2025,
+    "youtubeUrl": "https://youtu.be/yWwK6emeRqY",
+    "mapUrl": "https://www.google.com/maps/d/viewer?mid=1TFxrWeINaINN3J5zSxFJ3Rbd2XtYovI",
+    "latitude": 48.1666083,
+    "longitude": 7.3001135,
+    "durationLabel": "2:00:44",
+    "durationSeconds": 7244,
+    "descriptionShort": "I spent two hours ducking into shops, wine cellars and courtyards in Riquewihr. I climb the main street to the Dolder, step inside its museum, follow the quieter lanes along the walls and finish at the Christmas market beside the town hall.",
+    "descriptionLong": "I spent two hours ducking into shops, wine cellars and courtyards in Riquewihr. I climb the main street to the Dolder, step inside its museum, follow the quieter lanes along the walls and finish at the Christmas market beside the town hall.",
+    "landmarks": [
+      "Hôtel de Ville; Dolder; La Cour des Nobles; La Cour Gourmande; Féerie de Noël; Christmas Market"
+    ],
+    "keywords": [
+      "Riquewihr",
+      "Alsace (Grand Est)",
+      "France",
+      "day walk",
+      "Christmas Market"
+    ],
+    "status": "ready",
+    "thumbnailPath": "/riquewihr-christmas-guide/hero.webp",
+    "href": "/videos/riquewihr-christmas-market-day-walk-2025",
+    "thumbnailSrc": "/riquewihr-christmas-guide/hero.webp"
+  },
 ];

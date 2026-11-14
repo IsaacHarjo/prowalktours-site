@@ -1911,5 +1911,42 @@ export const franceVideos: VideoCatalogRecord[] = [
     videoType: "evening walk",
     visibility: "public",
     highlights: [],
-  }
+  },
+  {
+    "id": "riquewihr-christmas-market-day-walk-2025",
+    "slug": "riquewihr-christmas-market-day-walk-2025",
+    "siteTitle": "Riquewihr, France Christmas Market Day Walk (2025)",
+    "youtubeTitle": "Riquewihr, France Christmas Market Day Walk (2025)",
+    "youtubeUrl": "https://youtu.be/yWwK6emeRqY",
+    "thumbnail": "/riquewihr-christmas-guide/hero.webp",
+    "country": "France",
+    "region": "Alsace (Grand Est)",
+    "city": "Riquewihr",
+    "filmingDates": [
+      "2025-12-14"
+    ],
+    "filmingMonthYear": "December 2025",
+    "durationLabel": "2:00:44",
+    "durationSeconds": 7244,
+    "weather": "51 F / 11 C",
+    "shortDescription": "I spent two hours ducking into shops, wine cellars and courtyards in Riquewihr. I climb the main street to the Dolder, step inside its museum, follow the quieter lanes along the walls and finish at the Christmas market beside the town hall.",
+    "keywords": [
+      "Riquewihr",
+      "Alsace (Grand Est)",
+      "France",
+      "day walk",
+      "Christmas Market"
+    ],
+    "landmarks": [
+      "Hôtel de Ville; Dolder; La Cour des Nobles; La Cour Gourmande; Féerie de Noël; Christmas Market"
+    ],
+    "themes": [
+      "Christmas Markets",
+      "Historic Centers & Old Towns"
+    ],
+    "timeOfDay": "daytime",
+    "videoType": "day walk",
+    "visibility": "public",
+    "highlights": []
+  },
 ];
