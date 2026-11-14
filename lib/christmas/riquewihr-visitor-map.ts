@@ -1,7 +1,6 @@
 import importedRoute from './riquewihr-route.json';
 import stopPhotos from './riquewihr-stop-photos.json';
 import type { MapCoordinate } from '../guides/map-types';
-import type { GuidePhoto } from '../guides/types';
 import type { VisitorMapData, VisitorMapStop } from '../guides/visitor-map-types';
 
 const base = '/riquewihr-christmas-guide';
@@ -10,7 +9,6 @@ function coordinates(name: string): MapCoordinate[] {
   if (!feature) throw new Error(`Missing Riquewihr map feature: ${name}`);
   return feature.coordinates.map(point => [point[0], point[1]]);
 }
-const photo = (file: string, alt: string, year = 2025, width = 1920, height = 1081): GuidePhoto => ({ src: `${base}/${file}.webp`, alt, year, width, height });
 type WalkStop = Omit<VisitorMapStop, 'coordinates' | 'shortName'> & { source: string; shortName?: string; onward?: string };
 const walkStops: WalkStop[] = [
   { id: 'riquewihr-start', source: '1 - Start of the Walk', name: 'Town hall: start the walk', category: 'photo', icon: 'start',
@@ -54,17 +52,17 @@ const walkStops: WalkStop[] = [
   { id: 'riquewihr-upper-gate', source: '5. La Porte Haute', name: 'The Upper Gate & town walls', category: 'photo', icon: 'landmark',
     text: 'Continue beyond the Dolder to La Porte Haute, also called the Obertor. Looking back from outside helps you see Riquewihr as a fortified town, with gates and walls enclosing the streets you have just walked through.',
     tip: 'The map has two optional extras: the outer wall walk and the climb for a view over town. The wall route includes steps; save the hill walk for daylight and suitable weather.',
-    photo: photo('upper-gate', 'The stone Upper Gate viewed from outside the town', 2025, 810, 1440), onward: 'Return through the gate toward the Dolder for the Christmas shop, then continue back down through town.' },
-  { id: 'riquewihr-feerie', source: 'Féerie De Noël', name: 'Féerie de Noël: inside the Christmas shop', category: 'market', icon: 'basket',
+    photos: stopPhotos['riquewihr-upper-gate'], onward: 'Return through the gate toward the Dolder for the Christmas shop, then continue back down through town.' },
+  { id: 'riquewihr-feerie', photos: stopPhotos['riquewihr-feerie'], source: 'Féerie De Noël', name: 'Féerie de Noël: inside the Christmas shop', category: 'market', icon: 'basket',
     text: 'I came back to this Christmas shop before its 10am opening in 2025 and there was already a small queue. Inside, I spent about fifteen minutes filming the decorations. If you enjoy Christmas ornaments, allow some time here rather than just looking at the windows.',
     tip: 'Opening times are separate from the market. My 10am visit describes that day in 2025; check the shop’s hours when planning.' },
-  { id: 'riquewihr-protestant', source: '6. Sainte-Marguerite Protestant Church', name: 'Sainte-Marguerite Protestant Church', category: 'photo', icon: 'landmark',
+  { id: 'riquewihr-protestant', photos: stopPhotos['riquewihr-protestant'], source: '6. Sainte-Marguerite Protestant Church', name: 'Sainte-Marguerite Protestant Church', category: 'photo', icon: 'landmark',
     text: 'Leave the busy main street for the Protestant church and the surrounding lanes. I stepped inside during my 2025 walk. It made a short, quieter pause between the shops and courtyards.',
     tip: 'There are two Sainte-Marguerite churches on this walk. This is the Protestant church; the Catholic church is farther across town. Enter only when open to visitors and respect services.' },
-  { id: 'riquewihr-catholic', source: '7. Sainte-Marguerite Catholic Church', name: 'Sainte-Marguerite Catholic Church', category: 'photo', icon: 'landmark',
+  { id: 'riquewihr-catholic', photos: stopPhotos['riquewihr-catholic'], source: '7. Sainte-Marguerite Catholic Church', name: 'Sainte-Marguerite Catholic Church', category: 'photo', icon: 'landmark',
     text: 'This stop takes you away from the main shopping street to the Catholic church on the other side of town. Use the surrounding lanes for a slower look at Riquewihr before returning to the market beside the town hall.',
     tip: 'The route includes the exterior. An indoor visit depends on opening times and services.' },
-  { id: 'riquewihr-market', source: '8. Christmas Market', name: 'The Christmas market: finish beside the town hall', shortName: 'Christmas market', category: 'market', icon: 'market',
+  { id: 'riquewihr-market', photos: stopPhotos['riquewihr-market'], source: '8. Christmas Market', name: 'The Christmas market: finish beside the town hall', shortName: 'Christmas market', category: 'market', icon: 'market',
     text: 'I saved the main market at Place Fernand Zeyer, beside the town hall, for the end of my 2025 daytime walk. After exploring the town, take your time with the stalls and something to eat. You are now close to where you started.',
     tip: 'The stalls are only one part of the visit. If you arrived here first, use the town hall arch to begin the walk through the streets and courtyards.', onward: 'Return to the town hall arch to complete the loop.' },
 ];

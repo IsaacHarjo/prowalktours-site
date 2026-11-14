@@ -198,5 +198,105 @@
       "width": 1600,
       "height": 900
     }
+  ],
+  "riquewihr-upper-gate": [
+    {
+      "src": "/riquewihr-christmas-guide/stops/upper-gate-1.webp",
+      "alt": "The stone gatehouse and Christmas trees on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/upper-gate-2.webp",
+      "alt": "Half-timbered buildings beside the walls on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/upper-gate-3.webp",
+      "alt": "The path beside the stone walls and half-timbered buildings on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "riquewihr-market": [
+    {
+      "src": "/riquewihr-christmas-guide/stops/christmas-market-1.webp",
+      "alt": "The Christmas tree and market stalls on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/christmas-market-2.webp",
+      "alt": "Decorated Christmas trees beside the market stalls on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/christmas-market-3.webp",
+      "alt": "A chestnut seller at the Christmas market on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/christmas-market-4.webp",
+      "alt": "Visitors walking between Christmas market stalls on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/christmas-market-5.webp",
+      "alt": "Bags of colourful sweets at the Christmas market on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "riquewihr-feerie": [
+    {
+      "src": "/riquewihr-christmas-guide/stops/feerie-1.webp",
+      "alt": "The Christmas village display inside Feerie de Noel on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/feerie-2.webp",
+      "alt": "Colourful Christmas ornaments inside the shop on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/feerie-3.webp",
+      "alt": "Wooden musician ornaments inside the Christmas shop on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "riquewihr-protestant": [
+    {
+      "src": "/riquewihr-christmas-guide/stops/protestant-1.webp",
+      "alt": "The Protestant church exterior on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/protestant-2.webp",
+      "alt": "The organ and Christmas tree inside the Protestant church on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "riquewihr-catholic": [
+    {
+      "src": "/riquewihr-christmas-guide/stops/catholic-1.webp",
+      "alt": "The Catholic church exterior on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/catholic-2.webp",
+      "alt": "The altar and Christmas tree inside the Catholic church on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    }
   ]
 }
