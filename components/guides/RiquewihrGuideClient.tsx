@@ -11,6 +11,7 @@ import { riquewihrDayWalk2025YoutubeId } from '../../lib/christmas/riquewihr-ext
 import DestinationPersonalTake from './DestinationPersonalTake';
 import GuideSectionHeading from './GuideSectionHeading';
 import GuideWalkVideos from './GuideWalkVideos';
+import GuideHeroVideo from './GuideHeroVideo';
 import GuideFaqs from './GuideFaqs';
 import GuideDisclosure from './GuideDisclosure';
 import CheckedNote from './CheckedNote';
@@ -34,6 +35,7 @@ export default function RiquewihrGuideClient({ walks, orientationPlaces }: { wal
     <nav aria-label="In this guide" className="sticky top-[65px] z-40 border-b border-[#dce1d6] bg-[#fcfaf7]/95 shadow-sm backdrop-blur"><div className={`${width} ${navScrollPad} flex gap-2 overflow-x-auto overscroll-x-contain py-3 sm:gap-3 lg:grid lg:grid-cols-5`}>{[['explore', 'Explore the walk'], ['dates', '2026 dates'], ['getting-there', 'Plan the trip'], ['christmas-shuttles', 'Christmas Shuttles'], ['watch-walks', 'Watch my walks']].map(([id, title]) => <a key={id} href={`#${id}`} className="flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-xl bg-[#25382f] px-4 py-2 text-center text-sm font-semibold leading-6 text-white transition-colors hover:bg-[#176347] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#176347] lg:min-h-14 lg:px-3 lg:py-3 lg:text-base">{title}</a>)}</div><GuideNavFade /></nav>
     <header className={width + ' pt-5'}><div className="relative isolate flex min-h-[420px] items-end overflow-hidden rounded-3xl bg-[#25382f] lg:min-h-[520px]">
       <Image src={`${photoBase}/hero.webp`} alt="The Dolder tower and decorated half-timbered houses on my Christmas walk in Riquewihr" fill priority sizes="(min-width: 1280px) 1200px, 100vw" className="object-cover" />
+      <GuideHeroVideo preview={{ src: 'https://vz-76a3e58b-c05.b-cdn.net/b5a88470-7e9f-4c5c-87c5-866c1d6c6cf5/play_1080p.mp4' }} />
       <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/20 to-transparent" /><div className="relative max-w-3xl p-6 text-white sm:p-10"><p className="text-xs font-semibold uppercase tracking-[0.2em]">Alsace, France · Christmas streets & courtyards</p><h1 className="mt-3 font-serif text-5xl sm:text-7xl">Christmas in Riquewihr</h1><p className="mt-5 max-w-xl leading-7">Walk through the decorated streets, step into the courtyards and see the town from the Dolder. Then plan a visit of your own.</p><a href="#explore" className="mt-5 inline-flex min-h-12 items-center gap-3 rounded-full border border-white/70 bg-black/60 px-5 py-3 font-semibold text-white hover:bg-black/80">Explore the walk ↓</a></div>
     </div></header>
     <div className={width + ' pb-9 pt-5 sm:pb-12 sm:pt-7'}><DestinationPersonalTake portrait="/images/isaac/portrait-camera.webp" filmingPhoto={`${photoBase}/filming.webp`} photoAlt="Out filming in Riquewihr during my 2023 Christmas visit" headingId="why-riquewihr" title="Why I love Riquewihr at Christmas" href="#explore">
