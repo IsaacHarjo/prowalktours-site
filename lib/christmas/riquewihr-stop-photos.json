@@ -50,5 +50,37 @@
       "width": 1448,
       "height": 1086
     }
+  ],
+  "riquewihr-nobles": [
+    {
+      "src": "/riquewihr-christmas-guide/stops/cour-des-nobles-1.webp",
+      "alt": "Bottles displayed at a decorated drinks stall in La Cour des Nobles",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/cour-des-nobles-2.webp",
+      "alt": "Visitors gathered around food stalls and standing tables in the courtyard",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/cour-des-nobles-3.webp",
+      "alt": "Christmas market visitors beneath colourful half-timbered façades",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/cour-des-nobles-4.webp",
+      "alt": "A gold-decorated archway connecting the busy Christmas courtyard and street",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/cour-des-nobles-5.webp",
+      "alt": "Visitors beside a Christmas stall in the lane at La Cour des Nobles",
+      "width": 1600,
+      "height": 900
+    }
   ]
 }

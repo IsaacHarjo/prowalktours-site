@@ -25,6 +25,7 @@ const walkStops: WalkStop[] = [
     text: 'Step off the main street into L’Écurie’s courtyard. I found food, shops and Christmas decorations tucked inside. These little detours are a big part of what I enjoyed here; it is easy to walk past an entrance without realising what is behind it.',
     tip: 'Courtyards and businesses keep their own hours. Explore when open and leave room for people coming through.' },
   { id: 'riquewihr-nobles', source: 'La Cour des Nobles', name: 'La Cour des Nobles', category: 'market', icon: 'food',
+    photos: stopPhotos['riquewihr-nobles'],
     text: 'Another courtyard worth stepping into as you work your way uphill. I walked through here during my 2025 visit, looking around the food and shops before returning to the main street. Give yourself permission to wander a little instead of treating the route as a checklist.' },
   { id: 'riquewihr-gourmande', source: 'La Cour Gourmande', name: 'La Cour Gourmande: a place to sit', category: 'market', icon: 'food',
     text: 'This food courtyard is a useful place to remember when you want a break. When I visited in 2025, there was indoor seating at the back as well as the food stalls. Look through the courtyard before deciding where to stop.',
