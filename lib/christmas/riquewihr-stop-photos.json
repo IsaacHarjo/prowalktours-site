@@ -82,5 +82,25 @@
       "width": 1600,
       "height": 900
     }
+  ],
+  "riquewihr-gourmande": [
+    {
+      "src": "/riquewihr-christmas-guide/stops/cour-gourmande-1.webp",
+      "alt": "The garland-covered entrance to La Cour Gourmande on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/cour-gourmande-2.webp",
+      "alt": "Bottles displayed at a drinks stall inside La Cour Gourmande",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/cour-gourmande-3.webp",
+      "alt": "Indoor tables and benches beneath Christmas lights at La Cour Gourmande",
+      "width": 1600,
+      "height": 900
+    }
   ]
 }

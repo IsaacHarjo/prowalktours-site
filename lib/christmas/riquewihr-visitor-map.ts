@@ -28,6 +28,7 @@ const walkStops: WalkStop[] = [
     photos: stopPhotos['riquewihr-nobles'],
     text: 'Another courtyard worth stepping into as you work your way uphill. I walked through here during my 2025 visit, looking around the food and shops before returning to the main street. Give yourself permission to wander a little instead of treating the route as a checklist.' },
   { id: 'riquewihr-gourmande', source: 'La Cour Gourmande', name: 'La Cour Gourmande: a place to sit', category: 'market', icon: 'food',
+    photos: stopPhotos['riquewihr-gourmande'],
     text: 'This food courtyard is a useful place to remember when you want a break. When I visited in 2025, there was indoor seating at the back as well as the food stalls. Look through the courtyard before deciding where to stop.',
     tip: 'The seating I found was part of the food courtyard. Check what is available during your visit, especially at busy meal times.' },
   { id: 'riquewihr-dime', source: 'La Dime', name: 'La Dîme courtyard', category: 'market', icon: 'food',
