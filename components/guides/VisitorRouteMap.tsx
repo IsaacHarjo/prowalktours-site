@@ -343,7 +343,7 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
       {arrivalControls}
       <a href={data.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-sm font-semibold text-[#176347] underline underline-offset-4">{filmed ? 'Open the route in Google Maps ↗' : 'Open the walking map in Google Maps ↗'}</a>
     </div>
-    <dialog ref={sheetRef} aria-label="Selected walking stop" onClose={() => setSheetOpen(false)} className="fixed inset-x-0 bottom-0 top-auto z-50 m-0 max-h-[85dvh] w-full max-w-none overflow-y-auto overscroll-contain rounded-t-3xl border-0 bg-[#fafbf7] p-5 pb-8 text-[#25382f] shadow-2xl backdrop:bg-black/35 motion-safe:transition-transform motion-safe:duration-300 starting:translate-y-full">
+    <dialog ref={sheetRef} aria-label="Selected walking stop" onClose={event => { if (event.target === event.currentTarget) setSheetOpen(false); }} className="fixed inset-x-0 bottom-0 top-auto z-50 m-0 max-h-[85dvh] w-full max-w-none overflow-y-auto overscroll-contain rounded-t-3xl border-0 bg-[#fafbf7] p-5 pb-8 text-[#25382f] shadow-2xl backdrop:bg-black/35 motion-safe:transition-transform motion-safe:duration-300 starting:translate-y-full">
       <div className="sticky -top-5 z-10 -mx-5 -mt-5 mb-3 flex justify-end border-b border-[#dce1d6] bg-[#fafbf7] px-4 py-2">
         <button type="button" autoFocus onClick={() => sheetRef.current?.close()} className="min-h-11 rounded-lg px-3 text-sm font-semibold text-[#176347]">Back to map ✕</button>
       </div>

@@ -38,10 +38,10 @@ export default function StopPhotoGallery({ photos, name }: { photos: GuidePhoto[
     if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.5) advance(dx < 0 ? 1 : -1);
   }
   function imageFrame(large = false) {
-    return photo ? <div className={`relative touch-pan-y overflow-hidden rounded-xl bg-[#e9eae3] ${large ? 'h-[min(62dvh,680px)]' : 'aspect-video'}`}
+    return photo ? <div className={`relative touch-pan-y overflow-hidden rounded-xl ${large ? '' : 'aspect-video bg-[#e9eae3]'}`}
       onPointerDown={startSwipe} onPointerUp={endSwipe} onPointerCancel={() => { gesture.current = null; }}>
-      <Image key={photo.src} src={photo.src} alt={photo.alt} fill sizes={large ? '(min-width: 1024px) 960px, 92vw' : '(min-width: 1024px) 272px, 90vw'}
-        className={`select-none ${large ? 'object-contain' : 'object-cover'}`} draggable={false} onError={() => setFailed(previous => previous.includes(photo.src) ? previous : [...previous, photo.src])} />
+      <Image key={photo.src} src={photo.src} alt={photo.alt} fill={!large} width={large ? photo.width ?? 1920 : undefined} height={large ? photo.height ?? 1080 : undefined} sizes={large ? '(min-width: 1024px) 960px, 92vw' : '(min-width: 1024px) 272px, 90vw'}
+        className={`select-none ${large ? 'mx-auto h-auto max-h-[min(62dvh,680px)] w-auto max-w-full rounded-xl object-contain' : 'object-cover'}`} draggable={false} onError={() => setFailed(previous => previous.includes(photo.src) ? previous : [...previous, photo.src])} />
     </div> : <p className="rounded-xl bg-[#edf1ed] p-5 text-sm leading-6 text-[#526258]">These photos couldn’t load. You can still explore this stop on the map.</p>;
   }
   function controls() {
