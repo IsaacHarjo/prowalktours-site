@@ -1,0 +1,288 @@
+{
+  "slug": "riquewihr-christmas-market-day-walk-2025",
+  "tourId": "fr-0040",
+  "youtubeId": "yWwK6emeRqY",
+  "title": "Riquewihr Christmas Market Day Walk (2025)",
+  "youtubeTitle": "Riquewihr, France Christmas Market | Inside the Shops, Cellars & Courtyards | 4K 🎄",
+  "filmedDate": "2025-12-14",
+  "startTime": "12:55 PM",
+  "durationSeconds": 7244,
+  "durationLabel": "2:00:44",
+  "distanceMiles": 2,
+  "distanceKm": 3.2,
+  "weather": "Foggy · 11°C / 51°F",
+  "youtubeUploadDate": "2026-11-12T16:50:15-08:00",
+  "mapUrl": "https://www.google.com/maps/d/viewer?mid=1TFxrWeINaINN3J5zSxFJ3Rbd2XtYovI",
+  "hero": "/riquewihr-christmas-guide/hero.webp",
+  "heroAlt": "The Dolder and decorated half-timbered houses on my Riquewihr Christmas walk",
+  "description": "I spent two hours ducking into shops, wine cellars and courtyards in Riquewihr. I climb the main street to the Dolder, step inside its museum, follow the quieter lanes along the walls and finish at the Christmas market beside the town hall.",
+  "chapters": [
+    {
+      "title": "Intro",
+      "timeLabel": "0:00",
+      "seconds": 0
+    },
+    {
+      "title": "Walk Begins at the Hôtel de Ville",
+      "timeLabel": "0:55",
+      "seconds": 55,
+      "photo": {
+        "src": "/riquewihr-christmas-guide/stops/town-hall-1.webp",
+        "alt": "The decorated Hôtel de Ville arch at the start of my Riquewihr walk",
+        "width": 1600,
+        "height": 900
+      },
+      "description": "I begin outside the town hall at 12:55 PM, then pass through the arch into the old town."
+    },
+    {
+      "title": "Marktbrunnen Fountain",
+      "timeLabel": "1:43",
+      "seconds": 103
+    },
+    {
+      "title": "Domaine Jung Gustave & Fils Wine Cellar",
+      "timeLabel": "6:21",
+      "seconds": 381
+    },
+    {
+      "title": "La Cave à Fromages",
+      "timeLabel": "8:33",
+      "seconds": 513
+    },
+    {
+      "title": "L'Écurie Courtyard",
+      "timeLabel": "12:05",
+      "seconds": 725,
+      "photo": {
+        "src": "/riquewihr-christmas-guide/stops/ecurie-1.webp",
+        "alt": "Visitors and food stalls in the decorated L’Écurie courtyard on my Riquewihr walk",
+        "width": 1600,
+        "height": 900
+      },
+      "description": "I step off the main street into L’Écurie’s decorated courtyard, with food stalls tucked inside."
+    },
+    {
+      "title": "Fortwenger Gingerbread",
+      "timeLabel": "14:10",
+      "seconds": 850
+    },
+    {
+      "title": "Le Comptoir des Authentics",
+      "timeLabel": "17:43",
+      "seconds": 1063
+    },
+    {
+      "title": "Rue de la Couronne",
+      "timeLabel": "21:12",
+      "seconds": 1272
+    },
+    {
+      "title": "Maison Dissler",
+      "timeLabel": "22:51",
+      "seconds": 1371
+    },
+    {
+      "title": "Kouglopf & Cie",
+      "timeLabel": "25:20",
+      "seconds": 1520
+    },
+    {
+      "title": "Rue de la 1ère Armée & Cour de Strasbourg",
+      "timeLabel": "26:58",
+      "seconds": 1618
+    },
+    {
+      "title": "Famille Hugel",
+      "timeLabel": "29:47",
+      "seconds": 1787
+    },
+    {
+      "title": "Sainte-Marguerite Protestant Church",
+      "timeLabel": "31:39",
+      "seconds": 1899,
+      "photo": {
+        "src": "/riquewihr-christmas-guide/stops/protestant-2.webp",
+        "alt": "The organ and Christmas tree inside the Protestant church on my Riquewihr walk",
+        "width": 1600,
+        "height": 900
+      },
+      "description": "I step inside the Protestant church for a quieter pause away from the main street."
+    },
+    {
+      "title": "Monument aux Morts",
+      "timeLabel": "32:43",
+      "seconds": 1963
+    },
+    {
+      "title": "Maison Zimmer Wine Cellar",
+      "timeLabel": "34:57",
+      "seconds": 2097
+    },
+    {
+      "title": "La Cour des Nobles",
+      "timeLabel": "36:21",
+      "seconds": 2181,
+      "photo": {
+        "src": "/riquewihr-christmas-guide/stops/cour-des-nobles-1.webp",
+        "alt": "Bottles displayed at a decorated drinks stall in La Cour des Nobles",
+        "width": 1600,
+        "height": 900
+      },
+      "description": "I cross from the wine cellar to La Cour des Nobles and explore another decorated courtyard."
+    },
+    {
+      "title": "La Cour Gourmande",
+      "timeLabel": "41:21",
+      "seconds": 2481,
+      "photo": {
+        "src": "/riquewihr-christmas-guide/stops/cour-gourmande-1.webp",
+        "alt": "The garland-covered entrance to La Cour Gourmande on my Riquewihr walk",
+        "width": 1600,
+        "height": 900
+      },
+      "description": "I found food stalls and an indoor seating area at the back of this courtyard."
+    },
+    {
+      "title": "La Nougaterie de Riquewihr",
+      "timeLabel": "46:12",
+      "seconds": 2772
+    },
+    {
+      "title": "La Dîme",
+      "timeLabel": "48:23",
+      "seconds": 2903,
+      "photo": {
+        "src": "/riquewihr-christmas-guide/stops/la-dime-1.webp",
+        "alt": "The restaurant arch and a festive stall in La Dîme courtyard on my Riquewihr walk",
+        "width": 1600,
+        "height": 900
+      },
+      "description": "I take a short look into La Dîme before continuing to the Dolder square."
+    },
+    {
+      "title": "Dolder Tower Square",
+      "timeLabel": "51:20",
+      "seconds": 3080,
+      "photo": {
+        "src": "/riquewihr-christmas-guide/stops/dolder-1.webp",
+        "alt": "The Dolder and decorated half-timbered houses around the busy square",
+        "width": 1600,
+        "height": 900
+      },
+      "description": "I reach the Dolder square after exploring the shops and courtyards on the way uphill."
+    },
+    {
+      "title": "Dolder Museum",
+      "timeLabel": "53:03",
+      "seconds": 3183
+    },
+    {
+      "title": "View from the Dolder",
+      "timeLabel": "55:12",
+      "seconds": 3312
+    },
+    {
+      "title": "Rue des Juifs",
+      "timeLabel": "1:00:13",
+      "seconds": 3613
+    },
+    {
+      "title": "Thieves' Tower (Tour des Voleurs)",
+      "timeLabel": "1:01:05",
+      "seconds": 3665,
+      "photo": {
+        "src": "/riquewihr-christmas-guide/stops/thieves-tower-1.webp",
+        "alt": "The moss-covered well beside the Tour des Voleurs museum entrance on my Riquewihr walk",
+        "width": 1600,
+        "height": 900
+      },
+      "description": "I visit the Thieves’ Tower from outside. I did not go into its museum on this walk."
+    },
+    {
+      "title": "Fontaine de la Sinne",
+      "timeLabel": "1:02:25",
+      "seconds": 3745
+    },
+    {
+      "title": "Upper Gate (Obertor)",
+      "timeLabel": "1:03:37",
+      "seconds": 3817,
+      "photo": {
+        "src": "/riquewihr-christmas-guide/stops/upper-gate-1.webp",
+        "alt": "The stone gatehouse and Christmas trees on my Riquewihr walk",
+        "width": 1600,
+        "height": 900
+      },
+      "description": "I pass through the Upper Gate for a look at the town’s outer walls."
+    },
+    {
+      "title": "Along the Medieval Walls",
+      "timeLabel": "1:04:41",
+      "seconds": 3881
+    },
+    {
+      "title": "Old Wine Press",
+      "timeLabel": "1:05:52",
+      "seconds": 3952
+    },
+    {
+      "title": "Rue des Remparts",
+      "timeLabel": "1:06:19",
+      "seconds": 3979
+    },
+    {
+      "title": "Féerie de Noël Christmas Store",
+      "timeLabel": "1:11:16",
+      "seconds": 4276,
+      "photo": {
+        "src": "/riquewihr-christmas-guide/stops/feerie-1.webp",
+        "alt": "The Christmas village display inside Feerie de Noel on my Riquewihr walk",
+        "width": 1600,
+        "height": 900
+      },
+      "description": "This part of the video uses the footage I filmed after waiting for the Christmas shop to open at 10 AM."
+    },
+    {
+      "title": "La Maison des Légendes",
+      "timeLabel": "1:25:20",
+      "seconds": 5120
+    },
+    {
+      "title": "Les Cachotteries de Charlotte",
+      "timeLabel": "1:31:20",
+      "seconds": 5480
+    },
+    {
+      "title": "Rue des Écuries",
+      "timeLabel": "1:39:52",
+      "seconds": 5992
+    },
+    {
+      "title": "Indoor Market Hall",
+      "timeLabel": "1:41:03",
+      "seconds": 6063
+    },
+    {
+      "title": "Christmas Market at Place Fernand Zeyer",
+      "timeLabel": "1:44:40",
+      "seconds": 6280,
+      "photo": {
+        "src": "/riquewihr-christmas-guide/stops/christmas-market-1.webp",
+        "alt": "The Christmas tree and market stalls on my Riquewihr walk",
+        "width": 1600,
+        "height": 900
+      },
+      "description": "I saved the main Christmas market beside the town hall for the end of my walk."
+    },
+    {
+      "title": "Back Through the Hôtel de Ville",
+      "timeLabel": "1:59:11",
+      "seconds": 7151
+    },
+    {
+      "title": "Merry Christmas!",
+      "timeLabel": "2:00:10",
+      "seconds": 7210
+    }
+  ]
+}

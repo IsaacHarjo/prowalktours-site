@@ -36,8 +36,8 @@ const extraWalks: { showOnGuide: boolean; walk: ChristmasWalk }[] = [
       videoType: "day-walk",
       visibility: "public",
       highlights: [],
-      watchHref: `https://www.youtube.com/watch?v=${riquewihrDayWalk2025YoutubeId}`,
-      watchDestinationType: "youtube",
+      watchHref: "/videos/riquewihr-christmas-market-day-walk-2025",
+      watchDestinationType: "internal-page",
     },
   },
 ];
