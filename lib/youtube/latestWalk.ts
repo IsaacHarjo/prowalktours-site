@@ -19,8 +19,9 @@ function decodeXml(value: string): string {
 }
 
 // Only read entries from the channel's public feed, never a supplied video URL
-// or playlist (which could contain unlisted videos). Title matching identifies
-// walks; it is not a duration-based Shorts classifier.
+// or playlist (which could contain unlisted videos). No "walk" keyword is
+// required. Explicit Shorts/trailer labels are excluded; the feed does not
+// provide duration, so this is not a duration-based Shorts classifier.
 export function latestWalkFromFeed(xml: string, now = Date.now()): FeaturedWalk | null {
   const candidates = [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].flatMap(([, entry]) => {
     const field = (tag: string) => decodeXml(entry.match(new RegExp(`<${tag}>([\\s\\S]*?)<\\/${tag}>`))?.[1] ?? "").trim();
@@ -29,7 +30,7 @@ export function latestWalkFromFeed(xml: string, now = Date.now()): FeaturedWalk 
     const published = Date.parse(field("published"));
     if (field("yt:channelId") !== PROWALK_CHANNEL_ID || !/^[\w-]{11}$/.test(id)
       || !Number.isFinite(published) || published > now
-      || !/\bwalk(?:ing)?\b/i.test(title) || /#shorts?\b|\b(?:trailer|teaser)\b/i.test(title)) return [];
+      || !title || /#shorts?\b|\b(?:trailer|teaser)\b/i.test(title)) return [];
     const intro = field("media:description").split(/\r?\n\s*\r?\n/)[0].replace(/\s+/g, " ");
     return [{ published, video: {
       youtubeUrl: `https://www.youtube.com/watch?v=${id}`,

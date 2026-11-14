@@ -12,7 +12,13 @@ assert.equal(latestWalkFromFeed(feed).shortDescription, 'A walk & a view.');
 assert.equal(latestWalkFromFeed(`<feed>${old}${newest}</feed>`).siteTitle, 'New walk & sights', 'Use publication dates, not XML order');
 assert.equal(latestWalkFromFeed('<feed></feed>'), null);
 assert.equal(latestWalkFromFeed(entry('bad', 'Walking tour', '2025-01-01')), null);
-assert.equal(latestWalkFromFeed(entry('valid000001', 'Channel announcement', '2025-01-01')), null);
+const riquewihr = entry('yWwK6emeRqY', 'Riquewihr, France Christmas Market | Inside the Shops, Cellars &amp; Courtyards | 4K 🎄', '2026-11-14T14:00:03Z');
+const afterPublication = Date.parse('2026-11-14T15:00:00Z');
+assert.equal(latestWalkFromFeed(`<feed>${newest}${riquewihr}</feed>`, afterPublication).youtubeUrl, 'https://www.youtube.com/watch?v=yWwK6emeRqY', 'Newest public video does not need walk in its title');
+assert.equal(latestWalkFromFeed(entry('valid000001', 'Channel announcement', '2025-01-01')).siteTitle, 'Channel announcement');
+for (const title of ['', '   ', 'Riquewihr #shorts', 'Riquewihr trailer', 'Riquewihr teaser']) {
+  assert.equal(latestWalkFromFeed(entry('valid000001', title, '2025-01-01')), null);
+}
 assert.equal(latestWalkFromFeed(entry('valid000001', 'Walking tour', 'invalid')), null);
 (async () => {
   const originalFetch = global.fetch;

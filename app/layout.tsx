@@ -13,7 +13,6 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { label: "Watch the Walks", href: "/search" },
-  { label: "Destinations", href: "/countries" },
   { label: "Map", href: "/#world-map" },
   { label: "Christmas Markets", href: "/christmas-markets" },
   { label: "Filming Gear", href: "/filming-gear" },
