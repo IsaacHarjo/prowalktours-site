@@ -190,5 +190,13 @@
       "width": 1600,
       "height": 900
     }
+  ],
+  "riquewihr-thieves": [
+    {
+      "src": "/riquewihr-christmas-guide/stops/thieves-tower-1.webp",
+      "alt": "The moss-covered well beside the Tour des Voleurs museum entrance on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    }
   ]
 }

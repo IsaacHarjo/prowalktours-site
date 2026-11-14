@@ -47,6 +47,7 @@ const walkStops: WalkStop[] = [
       { src: `${base}/dolder-360-5.jpg`, label: 'Looking toward the tower' },
     ], onward: 'Take Rue des Juifs for the short detour to the Thieves’ Tower, then return toward the Dolder.' },
   { id: 'riquewihr-thieves', source: '4. Thieves Tower', name: 'Tour des Voleurs: the Thieves’ Tower', category: 'photo', icon: 'landmark',
+    photos: stopPhotos['riquewihr-thieves'],
     text: 'I walked to the Thieves’ Tower but did not go inside, and I wish I had. The museum combines the old defensive tower and prison with a winegrower’s house. It would add a different side of Riquewihr to a day spent among the Christmas decorations.',
     tip: 'The museum includes a historic torture chamber and displays about punishment. Consider that if you are visiting with children, and check current opening times.',
     informationUrl: 'https://musee-riquewihr.fr/', informationLabel: 'Riquewihr museums' },
