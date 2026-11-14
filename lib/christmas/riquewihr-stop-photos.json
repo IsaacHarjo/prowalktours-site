@@ -102,5 +102,19 @@
       "width": 1600,
       "height": 900
     }
+  ],
+  "riquewihr-dime": [
+    {
+      "src": "/riquewihr-christmas-guide/stops/la-dime-1.webp",
+      "alt": "The restaurant arch and a festive stall in La Dîme courtyard on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/la-dime-2.webp",
+      "alt": "Visitors seated beneath red-and-white striped awnings in La Dîme courtyard",
+      "width": 1600,
+      "height": 900
+    }
   ]
 }

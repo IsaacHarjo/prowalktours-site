@@ -32,6 +32,7 @@ const walkStops: WalkStop[] = [
     text: 'This food courtyard is a useful place to remember when you want a break. When I visited in 2025, there was indoor seating at the back as well as the food stalls. Look through the courtyard before deciding where to stop.',
     tip: 'The seating I found was part of the food courtyard. Check what is available during your visit, especially at busy meal times.' },
   { id: 'riquewihr-dime', source: 'La Dime', name: 'La Dîme courtyard', category: 'market', icon: 'food',
+    photos: stopPhotos['riquewihr-dime'],
     text: 'I took a short look into this courtyard just before reaching the Dolder square. It is another reason to slow down near the top of the main street: there is more to explore than the tower itself.', onward: 'Continue to the square below the Dolder and the Fontaine de la Sinne.' },
   { id: 'riquewihr-dolder', source: '3. Dolder Tower and Square', name: 'The Dolder, fountain & tower views', shortName: 'Dolder & fountain square', category: 'photo', icon: 'landmark',
     text: 'This is one of the places I kept photographing: the Dolder above the street, the colourful houses and the Fontaine de la Sinne. I also went into the tower museum in 2025. I was the only visitor upstairs, and it felt remarkably quiet after the crowded street below. The view through the window was a highlight.',
