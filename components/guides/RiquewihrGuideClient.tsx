@@ -7,6 +7,7 @@ import type { ChristmasWalk } from '../../lib/christmas/catalog';
 import type { OrientationPlace } from '../../lib/guides/types';
 import { youtubeIdFromUrl } from '../../lib/tours/core';
 import { riquewihrVisitorMap } from '../../lib/christmas/riquewihr-visitor-map';
+import { riquewihrDayWalk2025YoutubeId } from '../../lib/christmas/riquewihr-extra-walks';
 import DestinationPersonalTake from './DestinationPersonalTake';
 import GuideSectionHeading from './GuideSectionHeading';
 import GuideWalkVideos from './GuideWalkVideos';
@@ -72,7 +73,9 @@ export default function RiquewihrGuideClient({ walks, orientationPlaces }: { wal
       <p className="mt-5 max-w-3xl text-sm leading-7 text-[#526258]">For Monday–Thursday visits, check the regular <a href="https://fluo.grandest.fr/" target="_blank" rel="noreferrer" className="font-semibold text-[#176347] underline underline-offset-4">Fluo</a> bus between Colmar and Riquewihr. The official practical page lists it as line 816, but Fluo renumbered its Haut-Rhin lines in September 2026, so confirm the current line number. If driving, the Arriving filter on my map shows parking locations near the start; follow current event signs for access and availability.</p><CheckedNote on={checkedOn} label="2026 transport information checked" className="mt-2" />
     </div></section>
 
-    <GuideWalkVideos city="Riquewihr" walks={videoWalks} introduction="See Riquewihr in daylight or after dark through my two published 2023 walks. Put on your headphones for the sounds of the streets and markets. The suggested route above also draws on my return visit in 2025." />
+    <GuideWalkVideos city="Riquewihr" walks={videoWalks} introduction={videoWalks.some(walk => walk.youtubeId === riquewihrDayWalk2025YoutubeId)
+      ? "See Riquewihr in daylight or after dark through my 2023 walks, then step inside the shops, cellars and courtyards on my 2025 daytime walk. Put on your headphones for the sounds of the streets and markets."
+      : "See Riquewihr in daylight or after dark through my two published 2023 walks. Put on your headphones for the sounds of the streets and markets. The suggested route above also draws on my return visit in 2025."} />
     <GuideFaqs city="Riquewihr" questions={[
       { question: 'Is the Christmas market open during the week?', answer: 'Yes. The 2026 market runs daily from 27 November to 20 December. The Colmar Christmas Shuttles run Friday–Sunday, so check regular transport if you visit on another day.', source: { label: 'Official market dates', href: official } },
       { question: 'How long should I allow?', answer: 'I’d allow two hours to half a day. You can walk up the main street and back fairly quickly, but that misses much of what I enjoyed: looking into the courtyards, browsing shops and spending time in the Dolder museum. Add longer for a meal or the optional walks.' },

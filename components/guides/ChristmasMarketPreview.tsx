@@ -5,6 +5,7 @@ import { discoveryVideos, worldTours } from "../../lib/tours/server";
 import { buildChristmasCatalog } from "../../lib/christmas/catalog";
 import { christmasMarketHref } from "../../lib/christmas/guide-links";
 import { buildAlsacePlaces } from "../../lib/christmas/orientation";
+import { withRiquewihrExtraWalks } from "../../lib/christmas/riquewihr-extra-walks";
 import { stringifyJsonLd } from "../../lib/seo/jsonLd";
 import KaysersbergGuideClient from "./KaysersbergGuideClient";
 import RibeauvilleGuideClient from "./RibeauvilleGuideClient";
@@ -16,7 +17,8 @@ const siteUrl = "https://www.prowalktours.com";
 
 function marketContent(city: PreviewMarketCity) {
   const allWalks = buildChristmasCatalog(discoveryVideos, worldTours);
-  const walks = allWalks.filter(walk => walk.city === city);
+  const cityWalks = allWalks.filter(walk => walk.city === city);
+  const walks = city === "Riquewihr" ? withRiquewihrExtraWalks(cityWalks) : cityWalks;
   const featured = walks.find(walk => walk.videoType === "day-walk") ?? walks[0];
   if (!featured) throw new Error(`Missing Christmas walks for ${city}`);
   const localHero = `/${featured.slug}/hero.jpg`;
