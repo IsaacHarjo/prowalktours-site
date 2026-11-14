@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import ThumbnailImg from "../../components/ThumbnailImg";
+import { readyChristmasGuides as guides } from "../../lib/christmas/ready-guides";
 import CompactWalkList from "../../components/guides/CompactWalkList";
 import type { WorldTour } from "../../lib/tours/types";
 import { colmarPhotos } from "../../lib/christmas/colmar-photos";
@@ -55,15 +55,6 @@ export default function ChristmasMarketsClient({ walks, points, initialFilters }
     document.getElementById("browse-walks")?.scrollIntoView({ behavior: "smooth" });
 
   }
-  const guides: Record<string, { href: string; description: string; detail: string }> = {
-    Basel: { href: "/christmas-markets/basel", description: "Spend an afternoon and evening between the cathedral markets, Town Hall courtyard and Rhine with my walking route and 360° photos.", detail: "Cathedral lights, market stalls & Rhine views" },
-    Strasbourg: { href: "/christmas-markets/strasbourg", description: "Explore the cathedral markets, the Grand Sapin and Petite France with my walking route and practical tips.", detail: "Cathedral streets, Christmas markets & canals" },
-    Colmar: { href: "/christmas-markets/colmar", description: "Explore the Christmas squares and the changing scenery between them, from Saint-Martin to Petite Venise.", detail: "Several markets, one historic centre" },
-    Kaysersberg: { href: "/christmas-markets/kaysersberg", description: "Walk the decorated main street in both directions, with bridges and half-timbered houses along the Weiss.", detail: "A compact village & riverside views" },
-    "Ribeauvillé": { href: "/christmas-markets/ribeauville", description: "Costumed performers, food over open fires and courtyard games make this feel like a medieval festival.", detail: "A medieval market on two weekends" },
-    Nuremberg: { href: "/christmas-markets/nuremberg", description: "Follow the route I filmed past the Hauptmarkt stalls, the Sister Cities and Children’s markets, and along the Pegnitz.", detail: "Hauptmarkt, river bridges & old town" },
-    Riquewihr: { href: "/christmas-markets/riquewihr", description: "Look beyond the stalls: step into courtyards, browse Christmas shops and explore around the Dolder.", detail: "Christmas streets, shops & courtyards" },
-  };
   const matches = (country: string, city: string, region: string) => normalize(`${country} ${city} ${region}`).includes(normalize(destinationQuery));
   const hasMatches = walks.some(walk => (!readyOnly || Boolean(guides[walk.city])) && (!selectedCountry || walk.country === selectedCountry) && matches(walk.country, walk.city, walk.region || "")) || (!readyOnly && upcomingChristmasDestinations.some(place => (!selectedCountry || place.country === selectedCountry) && matches(place.country, place.city, place.region)));
 
@@ -95,7 +86,6 @@ export default function ChristmasMarketsClient({ walks, points, initialFilters }
         const shown = ordered.filter(city => (!readyOnly || Boolean(guides[city])) && matches(country, city, countryWalks.find(walk => walk.city === city)?.region || upcoming.find(place => place.city === city)?.region || ""));
         if (!shown.length) return null;
         const ready = shown.filter(city => guides[city]);
-        const other = shown.filter(city => !ready.includes(city));
         return <section key={country} id={countryId(country)} tabIndex={-1} aria-labelledby={`${countryId(country)}-heading`} className="scroll-mt-24 border-b border-[#dce1d6] py-10 outline-none sm:py-12">
           <div className="mb-7 flex flex-wrap items-end justify-between gap-3"><div><p className={eyebrow}>{country === "France" ? "Begin in Alsace" : "More places I’ve filmed"}</p><h2 id={`${countryId(country)}-heading`} className="mt-2 font-serif text-4xl">{country}</h2></div><p className="text-sm text-[#657069]">{ready.length ? `${ready.length} ${ready.length === 1 ? "guide" : "guides"} to help plan your visit` : `${shown.length} ${shown.length === 1 ? "destination" : "destinations"}`}</p></div>
           {country === "France" && <details className="mb-6 rounded-xl border border-[#dce1d6] bg-[#edf1ed] px-5 py-4"><summary className="cursor-pointer font-semibold">Visiting more than one Alsace market?</summary><p className="mt-3 max-w-3xl text-sm leading-7 text-[#526258]">Start with the markets that have fewer opening days. Ribeauvillé is a two-weekend event, and Kaysersberg’s market opens Friday–Sunday on its market weekends. Check the dates in each guide before choosing your travel days. The guides also cover Christmas Shuttles, parking and suggested walks.</p><Link href="/christmas-markets/colmar#christmas-shuttles" className={textLink + " mt-2"}>See the Alsace Christmas Shuttles →</Link></details>}

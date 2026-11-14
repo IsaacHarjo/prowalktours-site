@@ -7,6 +7,7 @@ import ThumbnailImg from "../components/ThumbnailImg";
 import WorldMapClient from "../components/WorldMapClient";
 import type { DiscoveryVideo, WorldTour } from "../lib/tours/types";
 import type { FeaturedWalk } from "../lib/youtube/latestWalk";
+import type { FeaturedGuide } from "../lib/youtube/featuredGuide";
 
 // ─── Top destinations data ───────────────────────────────────────────────────
 
@@ -54,10 +55,8 @@ const sectionWidth = "mx-auto max-w-7xl px-5 sm:px-8 lg:px-10";
 const eyebrow = "text-xs font-semibold uppercase tracking-[0.18em] text-[#607767]";
 const textLink = "inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#176347] underline-offset-4 hover:underline";
 
-export default function HomeClient({ videos, mappedTours, featuredVideo }: { videos: DiscoveryVideo[]; mappedTours: WorldTour[]; featuredVideo?: FeaturedWalk }) {
+export default function HomeClient({ videos, mappedTours, featuredVideo, featuredGuide }: { videos: DiscoveryVideo[]; mappedTours: WorldTour[]; featuredVideo?: FeaturedWalk; featuredGuide?: FeaturedGuide }) {
   const countryCount = new Set(mappedTours.map(tour => tour.country)).size;
-  const featuredBaselGuide = featuredVideo
-    && new URL(featuredVideo.youtubeUrl).searchParams.get("v") === "uH54xuhW6U4";
   return (
     <div className="bg-[#fcfaf7] text-[#25382f]">
       <section className={sectionWidth + " pb-5 pt-10 sm:pt-14 lg:pt-16"}>
@@ -87,7 +86,7 @@ export default function HomeClient({ videos, mappedTours, featuredVideo }: { vid
             <h3 className="mt-2 text-2xl font-semibold leading-snug"><Link href={featuredVideo.youtubeUrl} target="_blank" rel="noreferrer" className="hover:underline">{featuredVideo.siteTitle}</Link></h3>
             <p className="mt-3 text-sm leading-7 text-[#657069]">{featuredVideo.shortDescription}</p>
             <div className="mt-4 flex flex-col items-start gap-1">
-              {featuredBaselGuide && <Link href="/christmas-markets/basel" className="inline-flex min-h-11 items-center rounded-full bg-[#176347] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#104a34]">Read the 2026 Basel guide →</Link>}
+              {featuredGuide && <Link href={featuredGuide.href} className="inline-flex min-h-11 items-center rounded-full bg-[#176347] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#104a34]">{featuredGuide.label}</Link>}
               <Link href={featuredVideo.youtubeUrl} target="_blank" rel="noreferrer" className={textLink}>Watch on YouTube ↗</Link>
             </div>
           </article>}

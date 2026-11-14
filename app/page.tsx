@@ -1,5 +1,7 @@
 import HomeClient from "./HomeClient";
-import { discoveryVideos, worldTours } from "../lib/tours/server";
+import { discoveryVideos, worldTours, tours } from "../lib/tours/server";
+import { guideForFeaturedVideo } from "../lib/youtube/featuredGuide";
+import { baselWalks } from "../lib/christmas/basel";
 import { pageMetadata } from "../lib/seo/pageMetadata";
 import PageJsonLd from "../components/PageJsonLd";
 import { getNewestWalk } from "../lib/youtube/server";
@@ -15,5 +17,6 @@ export const metadata = {
 export default async function HomePage() {
   const fallback = discoveryVideos.find(video => video.youtubeUrl.includes("snBqLG2Piyo"));
   const featuredVideo = await getNewestWalk(fallback);
-  return <><PageJsonLd title="Home" pathname="" /><HomeClient videos={discoveryVideos} mappedTours={worldTours} featuredVideo={featuredVideo} /></>;
+  const featuredGuide = guideForFeaturedVideo(featuredVideo?.youtubeUrl, [...tours, ...baselWalks]);
+  return <><PageJsonLd title="Home" pathname="" /><HomeClient videos={discoveryVideos} mappedTours={worldTours} featuredVideo={featuredVideo} featuredGuide={featuredGuide} /></>;
 }
