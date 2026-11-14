@@ -116,5 +116,79 @@
       "width": 1600,
       "height": 900
     }
+  ],
+  "riquewihr-dolder": [
+    {
+      "src": "/riquewihr-christmas-guide/stops/dolder-1.webp",
+      "alt": "The Dolder and decorated half-timbered houses around the busy square",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/dolder-2.webp",
+      "alt": "Christmas decorations across the colourful façade of Le Médiéval",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/dolder-3.webp",
+      "alt": "Visitors gathered beside the fountain and decorated houses in the Dolder square",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/dolder-4.webp",
+      "alt": "The Fontaine de la Sinne with Christmas decorations around its basin",
+      "width": 1086,
+      "height": 1448
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/dolder-5.webp",
+      "alt": "The Dolder clock tower and its stone gateway",
+      "width": 901,
+      "height": 1600
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/dolder-6.webp",
+      "alt": "The painted medieval scene on the façade of Le Médiéval",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/dolder-7.webp",
+      "alt": "A view through the Dolder arch toward the Christmas crowds and half-timbered houses",
+      "width": 1086,
+      "height": 1448
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/dolder-8.webp",
+      "alt": "Visitors passing beneath the stone arch into the decorated square",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/dolder-9.webp",
+      "alt": "An elevated view of the Dolder square and surrounding rooftops",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/dolder-10.webp",
+      "alt": "The Dolder rising above the half-timbered houses and tiled roofs",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/dolder-11.webp",
+      "alt": "An elevated view of Christmas crowds between colourful half-timbered houses",
+      "width": 1600,
+      "height": 901
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/dolder-12.webp",
+      "alt": "The Dolder and Le Médiéval across the cobbled square",
+      "width": 1600,
+      "height": 900
+    }
   ]
 }

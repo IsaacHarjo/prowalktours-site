@@ -38,7 +38,7 @@ const walkStops: WalkStop[] = [
     text: 'This is one of the places I kept photographing: the Dolder above the street, the colourful houses and the Fontaine de la Sinne. I also went into the tower museum in 2025. I was the only visitor upstairs, and it felt remarkably quiet after the crowded street below. The view through the window was a highlight.',
     tip: 'The museum has steep stairs and a separate admission charge. Its displays explain the town’s walls, defences and the life of the watchman. Check opening times before counting on a visit.',
     informationUrl: 'https://musee-riquewihr.fr/en/dolder-museum/', informationLabel: 'Dolder Museum information',
-    photos: [photo('dolder', 'The Dolder and its square during my quiet morning walk'), photo('tower-view', 'My view over the square and rooftops from the Dolder window')],
+    photos: stopPhotos['riquewihr-dolder'],
     panoramas: [
       { src: `${base}/dolder-360-1.jpg`, label: 'From the tower window' },
       { src: `${base}/dolder-360-2.jpg`, label: 'Below the Dolder' },
