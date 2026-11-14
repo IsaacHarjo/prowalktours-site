@@ -19,7 +19,7 @@ const walkStops: WalkStop[] = [
     text: 'For me, this street is the heart of a Christmas visit to Riquewihr. Look above the shop windows at the half-timbered houses, then take your time with the bakeries, cheese shops and little passages. In 2025 I kept ducking into shops and cellars to show more than the street outside.',
     tip: 'Walk it in both directions. By midday it was packed, but just a street or two away I found much more room.',
     photos: stopPhotos['riquewihr-main-street'] },
-  { id: 'riquewihr-ecurie', source: "Restaurant L'Ecurie", name: 'L’Écurie: a courtyard detour', category: 'market', icon: 'food',
+  { id: 'riquewihr-ecurie', photos: stopPhotos['riquewihr-ecurie'], source: "Restaurant L'Ecurie", name: 'L’Écurie: a courtyard detour', category: 'market', icon: 'food',
     text: 'Step off the main street into L’Écurie’s courtyard. I found food, shops and Christmas decorations tucked inside. These little detours are a big part of what I enjoyed here; it is easy to walk past an entrance without realising what is behind it.',
     tip: 'Courtyards and businesses keep their own hours. Explore when open and leave room for people coming through.' },
   { id: 'riquewihr-nobles', source: 'La Cour des Nobles', name: 'La Cour des Nobles', category: 'market', icon: 'food',

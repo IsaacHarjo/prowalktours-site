@@ -298,5 +298,19 @@
       "width": 1600,
       "height": 900
     }
+  ],
+  "riquewihr-ecurie": [
+    {
+      "src": "/riquewihr-christmas-guide/stops/ecurie-1.webp",
+      "alt": "Visitors and food stalls in the decorated L’Écurie courtyard on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/riquewihr-christmas-guide/stops/ecurie-2.webp",
+      "alt": "A food stall beside the stone wall in L’Écurie’s courtyard on my Riquewihr walk",
+      "width": 1600,
+      "height": 900
+    }
   ]
 }
