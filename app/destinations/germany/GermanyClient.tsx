@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 import ExploreVideoMap from "../../../components/ExploreVideoMap";
-import { germanyMapFeatures } from "../../../data/maps/germany";
+import type { ExploreMapFeature } from "../../../data/maps/types";
 
 const destinations = [
   {
@@ -21,7 +22,7 @@ const breadcrumbs = [
   { label: "Germany" },
 ];
 
-export default function GermanyClient() {
+export default function GermanyClient({ children, mapFeatures }: { children: ReactNode; mapFeatures: ExploreMapFeature[] }) {
   return (
     <div className="bg-[#fcfaf7] text-[#2f261d]">
       <section className="border-b border-[#eadfce] bg-white">
@@ -51,7 +52,7 @@ export default function GermanyClient() {
             Germany
           </h1>
           <p className="mt-5 max-w-3xl text-[18px] leading-8 text-[#6c5b49]">
-            Browse Germany&apos;s Christmas market walking tours across 9 cities —
+            Browse my Christmas market walking tours across Germany —
             day and evening walks through decorated old towns, cathedral squares,
             medieval markets, and festive stalls.
           </p>
@@ -63,6 +64,7 @@ export default function GermanyClient() {
             >
               Explore the Map
             </a>
+            <a href="#walks" className="inline-flex items-center justify-center rounded-full border border-[#d8c7b5] bg-white px-6 py-3 text-base font-semibold text-[#3d3327] transition hover:bg-[#f8f3ec]">Browse my walks</a>
             <Link
               href="/countries"
               className="inline-flex items-center justify-center rounded-full border border-[#d8c7b5] bg-white px-6 py-3 text-base font-semibold text-[#3d3327] transition hover:bg-[#f8f3ec]"
@@ -89,7 +91,7 @@ export default function GermanyClient() {
           <div className="mt-6">
             <ExploreVideoMap
               countryName="Germany"
-              features={germanyMapFeatures}
+              features={mapFeatures}
               initialViewState={{
                 longitude: 10.4515,
                 latitude: 51.1657,
@@ -99,7 +101,9 @@ export default function GermanyClient() {
           </div>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+        {children}
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {destinations.map((destination) => (
             <Link
               key={destination.name}
