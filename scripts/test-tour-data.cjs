@@ -23,6 +23,12 @@ function load(relativePath) {
 
 const core = load('lib/tours/core.ts');
 const data = load('lib/tours/server.ts');
+const rawSearchHits = load('data/search-hits/france.ts').allSearchHits;
+for (const slug of ['riquewihr-christmas-market-360-tour-2025', 'strasbourg-christmas-market-360-tour-2025', 'strasbourg-christmas-market-evening-walk-2025']) {
+  const detail = load(`data/video-details/${slug}.json`);
+  const hits = rawSearchHits.filter(hit => hit.tour_id === detail.tourId);
+  assert.deepEqual(hits.map(hit => [hit.seconds, hit.highlight_title]), detail.chapters.map(chapter => [chapter.seconds, chapter.title]), `${detail.tourId}: every chapter must survive the CSV search parser, including drafts`);
+}
 const { withWatchTimestamp } = load('lib/tours/links.ts');
 const christmas = load('lib/christmas/catalog.ts');
 const christmasWalks = christmas.buildChristmasCatalog(data.discoveryVideos, data.worldTours);

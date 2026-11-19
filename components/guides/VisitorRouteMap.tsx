@@ -265,8 +265,10 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
         {token && <Map key={attempt} ref={mapRef} mapboxAccessToken={token} mapStyle={satellite ? 'mapbox://styles/mapbox/satellite-streets-v12' : 'mapbox://styles/mapbox/light-v11'} styleDiffing={false}
           initialViewState={{ bounds: boundsFor(data.route), fitBoundsOptions: { padding: 35 } }} minZoom={12} maxZoom={19} maxBounds={isColmar ? [[7.31, 48.04], [7.41, 48.11]] : undefined}
           scrollZoom={true} dragRotate={false} touchPitch={false}
-          onLoad={() => { setLoaded(true); setFailed(false); styleMap(); overview(0); }} onStyleData={styleMap}
-          onError={event => { if (!loaded || /style|unauthorized|forbidden|access token|webgl/i.test(event.error.message)) setFailed(true); }}>
+          // Mapbox can fire load after a basemap source fails. Do not clear that
+          // failure just because our local route and markers finished loading.
+          onLoad={() => { setLoaded(true); styleMap(); overview(0); }} onStyleData={styleMap}
+          onError={event => { if (!loaded || /style|unauthorized|forbidden|\b40[13]\b|access token|webgl/i.test(event.error.message)) setFailed(true); }}>
           <NavigationControl position="top-right" showCompass={false} /><FullscreenControl position="top-right" />
           <Source id="visitor-route" type="geojson" data={routeFeature(data.route)}>
             <Layer id="visitor-route-halo" type="line" layout={{ 'line-join': 'round', 'line-cap': 'round' }} paint={{ 'line-color': satellite ? '#25382f' : '#ffffff', 'line-width': 7 }} />
@@ -322,7 +324,7 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
           </details>
         </div>}
         {steps.length > 0 && <button type="button" onClick={() => selectStep(0)} className="absolute bottom-8 left-1/2 z-30 min-h-11 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#176347] px-5 text-sm font-semibold text-white shadow-lg lg:hidden">{filmed ? 'Follow the route →' : 'Start the walk →'}</button>}
-        {(!token || failed || !loaded) && <div role="status" className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#f4f2ec] p-8 text-center text-sm leading-7 text-[#526258]">
+        {(!token || failed || !loaded) && <div role="status" className="absolute inset-0 z-40 flex flex-col items-center justify-center gap-4 bg-[#f4f2ec] p-8 text-center text-sm leading-7 text-[#526258]">
           <p>{!token || failed ? 'The interactive map is unavailable. Explore the stops below or open the route in Google Maps.' : filmed ? 'Loading the route I filmed…' : 'Loading your suggested walk…'}</p>
           {failed && <button type="button" onClick={() => { setFailed(false); setLoaded(false); setAttempt(value => value + 1); }} className="min-h-11 rounded-full border border-[#176347] px-5 font-semibold">Try again</button>}
           {(!token || failed) && <a href={data.sourceUrl} target="_blank" rel="noreferrer" className="underline underline-offset-4">{filmed ? 'Open the route in Google Maps ↗' : 'Open the visitor route ↗'}</a>}

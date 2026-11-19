@@ -11,6 +11,11 @@ export type ImmersiveWalk = {
   hero: string; heroAlt: string; guideHref: string;
   chapters: { seconds: number; title: string }[];
 };
+function timeLabel(seconds: number) {
+  const minutes = Math.floor(seconds / 60);
+  const tail = String(seconds % 60).padStart(2, '0');
+  return minutes < 60 ? `${minutes}:${tail}` : `${Math.floor(minutes / 60)}:${String(minutes % 60).padStart(2, '0')}:${tail}`;
+}
 export default function ImmersiveWalkClient({ tour }: { tour: ImmersiveWalk }) {
   const filmedDate = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(tour.filmedDate));
   const initial = useInitialVideoStartTime();
@@ -38,7 +43,7 @@ export default function ImmersiveWalkClient({ tour }: { tour: ImmersiveWalk }) {
       <a href={`https://www.youtube.com/watch?v=${tour.youtubeId}&t=${start}s`} className="mt-4 inline-flex min-h-11 items-center font-semibold text-[#176347] underline">Open in YouTube ↗</a>
     </section>
     <section className="py-6"><h2 className="font-serif text-3xl">Chapters</h2>
-      <ol className="mt-5 grid gap-3 sm:grid-cols-2">{tour.chapters.map(chapter => <li key={chapter.seconds}><button onClick={() => seek(chapter.seconds)} className="flex min-h-12 w-full gap-3 rounded-xl border border-[#ded8ca] p-4 text-left hover:bg-[#edf2eb]"><span className="font-mono text-[#176347]">{Math.floor(chapter.seconds / 60)}:{String(chapter.seconds % 60).padStart(2, '0')}</span><span>{chapter.title}</span></button></li>)}</ol>
+      <ol className="mt-5 grid gap-3 sm:grid-cols-2">{tour.chapters.map(chapter => <li key={chapter.seconds}><button onClick={() => seek(chapter.seconds)} className="flex min-h-12 w-full gap-3 rounded-xl border border-[#ded8ca] p-4 text-left hover:bg-[#edf2eb]"><span className="shrink-0 font-mono text-[#176347]">{timeLabel(chapter.seconds)}</span><span>{chapter.title}</span></button></li>)}</ol>
     </section>
     <Link href={tour.guideHref} className="my-8 inline-flex min-h-11 items-center rounded-full bg-[#176347] px-6 py-3 font-semibold text-white">Read my {tour.city} guide →</Link>
   </div>;
