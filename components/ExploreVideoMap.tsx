@@ -630,6 +630,7 @@ export default function ExploreVideoMap({
               mapStyle={mapStyle}
               mapboxAccessToken={mapboxToken}
               interactiveLayerIds={["clusters", "unclustered-point"]}
+              cooperativeGestures={true}
               onClick={handleMapClick}
               style={{ width: "100%", height: "100%" }}
             >
