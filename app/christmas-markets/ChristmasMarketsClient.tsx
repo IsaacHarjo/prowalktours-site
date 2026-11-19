@@ -10,6 +10,7 @@ import type { WorldTour } from "../../lib/tours/types";
 import { colmarPhotos } from "../../lib/christmas/colmar-photos";
 import { featuredChristmasCities, christmasDestinationImages, upcomingChristmasDestinations } from "../../lib/christmas/destinations";
 import { emptyChristmasFilters, filterChristmasWalks, type ChristmasWalk, type ChristmasFilters } from "../../lib/christmas/catalog";
+import { hubMarketSeasons, hubSeasonCheckedOn, hubSeasonYear } from "../../lib/christmas/seasons/hub-2026";
 
 const WorldMap = dynamic(() => import("../../components/WorldMapClient"), { ssr: false, loading: () => <div className="flex h-[420px] items-center justify-center rounded-2xl bg-[#edf1ed] sm:h-[480px]" role="status">Loading the Christmas walk map…</div> });
 const width = "mx-auto max-w-7xl px-5 sm:px-8 lg:px-10";
@@ -26,6 +27,7 @@ export default function ChristmasMarketsClient({ walks, points, initialFilters }
   const [readyOnly, setReadyOnly] = useState(false);
   const [destinationQuery, setDestinationQuery] = useState("");
   const [selectedCountry, setSelectedCountry] = useState(initialFilters.country);
+  const [showDestinationFilters, setShowDestinationFilters] = useState(false);
   const [showWalks, setShowWalks] = useState(Object.values(initialFilters).some(Boolean));
   const [showMap, setShowMap] = useState(false);
   const [visibleCount, setVisibleCount] = useState(8);
@@ -53,28 +55,38 @@ export default function ChristmasMarketsClient({ walks, points, initialFilters }
     setShowWalks(true);
     updateFilters({ ...emptyChristmasFilters, country, city });
     document.getElementById("browse-walks")?.scrollIntoView({ behavior: "smooth" });
-
+    document.getElementById("walks-heading")?.focus({ preventScroll: true });
   }
   const matches = (country: string, city: string, region: string) => normalize(`${country} ${city} ${region}`).includes(normalize(destinationQuery));
+  const matchingDestinations = new Set([
+    ...walks.filter(walk => (!readyOnly || Boolean(guides[walk.city])) && (!selectedCountry || walk.country === selectedCountry) && matches(walk.country, walk.city, walk.region || "")).map(walk => `${walk.country}/${walk.city}`),
+    ...upcomingChristmasDestinations.filter(place => !readyOnly && (!selectedCountry || place.country === selectedCountry) && matches(place.country, place.city, place.region)).map(place => `${place.country}/${place.city}`),
+  ]).size;
   const hasMatches = walks.some(walk => (!readyOnly || Boolean(guides[walk.city])) && (!selectedCountry || walk.country === selectedCountry) && matches(walk.country, walk.city, walk.region || "")) || (!readyOnly && upcomingChristmasDestinations.some(place => (!selectedCountry || place.country === selectedCountry) && matches(place.country, place.city, place.region)));
 
   return <div className="bg-[#fcfaf7] text-[#25382f]">
     <section id="destinations" aria-label="Christmas markets by country" className={width + " scroll-mt-24 pb-12"}>
-      <div className="pb-3 pt-12 sm:pt-16">
-        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+      <div className="pb-3 pt-6 sm:pt-16">
+        <div className="flex flex-col justify-between gap-3 md:flex-row md:items-end">
           <div>
-            <h1 className="font-serif text-4xl sm:text-5xl">Find your next Christmas market</h1>
-            <p className="mt-4 max-w-2xl leading-7 text-[#526258]">Choose a country, find a market and plan a visit of your own. My guides bring together practical tips, suggested routes and the walks I filmed along the way.</p>
+            <h1 className="font-serif text-3xl sm:text-5xl">Find your next Christmas market</h1>
+            <p className="mt-3 max-w-2xl leading-7 text-[#526258]">Choose a country, check the dates and explore my guides and filmed walks.</p>
           </div>
           <a href="#browse-walks" onClick={() => setShowWalks(true)} className={textLink + " shrink-0"}>Just here to watch? ↓</a>
         </div>
-        <div className="mt-7 grid gap-4 rounded-2xl border border-[#dce1d6] bg-white p-4 sm:grid-cols-[1fr_1.6fr] sm:p-5">
-          <label className={labelClass}>Pick a country<select className={inputClass} value={selectedCountry} onChange={event => { setSelectedCountry(event.target.value); setDestinationQuery(""); }}><option value="">All countries</option>{directoryCountries.map(country => <option key={country}>{country}</option>)}</select></label>
-          <label className={labelClass}>Find a market<input type="search" className={inputClass} placeholder="Try Alsace, Colmar or Germany" value={destinationQuery} onChange={event => { setDestinationQuery(event.target.value); setSelectedCountry(""); }} /></label>
+        <div className="mt-4 grid grid-cols-[1fr_auto] items-end gap-3 sm:grid-cols-[1fr_1.6fr] sm:items-start sm:gap-4">
+          <label className={labelClass}>Pick a country<select className={inputClass} value={selectedCountry} onChange={event => setSelectedCountry(event.target.value)}><option value="">All countries</option>{directoryCountries.map(country => <option key={country}>{country}</option>)}</select></label>
+          <button type="button" aria-expanded={showDestinationFilters} aria-controls="destination-filters" onClick={() => setShowDestinationFilters(!showDestinationFilters)} className="min-h-11 rounded-xl border border-[#cbd6c8] px-4 py-2 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#176347] sm:hidden">Filters{destinationQuery || readyOnly ? " (active)" : ""} {showDestinationFilters ? "−" : "+"}</button>
+          <div id="destination-filters" className={`${showDestinationFilters ? "grid" : "hidden"} col-span-2 gap-3 sm:col-span-1 sm:grid`}>
+            <label className={labelClass}>Find a market<input type="search" className={inputClass} placeholder="Try Alsace or Colmar" value={destinationQuery} onChange={event => setDestinationQuery(event.target.value)} /></label>
+            <label className="flex min-h-11 cursor-pointer items-center gap-3 text-sm font-semibold"><input type="checkbox" checked={readyOnly} onChange={event => setReadyOnly(event.target.checked)} className="h-5 w-5 accent-[#176347]" />Show ready guides only</label>
+          </div>
         </div>
-        <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Quick country selection">{["", ...featuredCountries].map(country => <button key={country} aria-pressed={selectedCountry === country} onClick={() => { setSelectedCountry(country); setDestinationQuery(""); }} className={`min-h-11 rounded-full border px-5 py-2 text-sm font-semibold ${selectedCountry === country ? "border-[#203d32] bg-[#203d32] text-white" : "border-[#cbd6c8] hover:border-[#176347]"}`}>{country || "All countries"}</button>)}</div>
+        <div className="mt-2 flex min-h-11 flex-wrap items-center justify-between gap-2 border-b border-[#dce1d6] pb-2">
+          <p role="status" aria-atomic="true" className="text-sm text-[#526258]">{matchingDestinations} {matchingDestinations === 1 ? "market destination" : "market destinations"}{readyOnly ? " with ready guides" : ""}{destinationQuery && ` matching “${destinationQuery}”`}</p>
+          {(selectedCountry || destinationQuery || readyOnly) && <button type="button" onClick={() => { setSelectedCountry(""); setDestinationQuery(""); setReadyOnly(false); }} className={textLink}>Clear filters</button>}
+        </div>
       </div>
-      <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-b border-[#dce1d6] pb-5"><label className="flex min-h-11 cursor-pointer items-center gap-3 text-sm font-semibold"><input type="checkbox" checked={readyOnly} onChange={event => setReadyOnly(event.target.checked)} className="h-5 w-5 accent-[#176347]" />Show ready guides only</label><p className="text-sm text-[#657069]">More guides are on the way. You can watch my published walks now.</p></div>
       {!hasMatches && <div role="status" className="py-12"><h2 className="text-2xl font-semibold">{readyOnly ? "No ready guides match this selection" : "No markets match this selection"}</h2><p className="mt-3 text-[#657069]">Try a town, region or country, or see all the places I’ve filmed.</p><button onClick={() => { setDestinationQuery(""); setSelectedCountry(""); setReadyOnly(false); }} className={buttonClass + " mt-4"}>Show all destinations</button></div>}
       {directoryCountries.map(country => {
         if (selectedCountry && selectedCountry !== country) return null;
@@ -86,15 +98,16 @@ export default function ChristmasMarketsClient({ walks, points, initialFilters }
         const shown = ordered.filter(city => (!readyOnly || Boolean(guides[city])) && matches(country, city, countryWalks.find(walk => walk.city === city)?.region || upcoming.find(place => place.city === city)?.region || ""));
         if (!shown.length) return null;
         const ready = shown.filter(city => guides[city]);
-        return <section key={country} id={countryId(country)} tabIndex={-1} aria-labelledby={`${countryId(country)}-heading`} className="scroll-mt-24 border-b border-[#dce1d6] py-10 outline-none sm:py-12">
-          <div className="mb-7 flex flex-wrap items-end justify-between gap-3"><div><p className={eyebrow}>{country === "France" ? "Begin in Alsace" : "More places I’ve filmed"}</p><h2 id={`${countryId(country)}-heading`} className="mt-2 font-serif text-4xl">{country}</h2></div><p className="text-sm text-[#657069]">{ready.length ? `${ready.length} ${ready.length === 1 ? "guide" : "guides"} to help plan your visit` : `${shown.length} ${shown.length === 1 ? "destination" : "destinations"}`}</p></div>
+        return <section key={country} id={countryId(country)} tabIndex={-1} aria-labelledby={`${countryId(country)}-heading`} className="scroll-mt-24 border-b border-[#dce1d6] py-6 outline-none sm:py-12">
+          <div className="mb-4 flex flex-wrap items-end justify-between gap-3 sm:mb-7"><div><p className={eyebrow}>{country === "France" ? "Begin in Alsace" : "More places I’ve filmed"}</p><h2 id={`${countryId(country)}-heading`} className="mt-2 font-serif text-4xl">{country}</h2></div><p className="text-sm text-[#657069]">{ready.length ? `${ready.length} ${ready.length === 1 ? "guide" : "guides"} to help plan your visit` : `${shown.length} ${shown.length === 1 ? "destination" : "destinations"}`}</p></div>
           {country === "France" && <details className="mb-6 rounded-xl border border-[#dce1d6] bg-[#edf1ed] px-5 py-4"><summary className="cursor-pointer font-semibold">Visiting more than one Alsace market?</summary><p className="mt-3 max-w-3xl text-sm leading-7 text-[#526258]">Start with the markets that have fewer opening days. Ribeauvillé is a two-weekend event, and Kaysersberg’s market opens Friday–Sunday on its market weekends. Check the dates in each guide before choosing your travel days. The guides also cover Christmas Shuttles, parking and suggested walks.</p><Link href="/christmas-markets/colmar#christmas-shuttles" className={textLink + " mt-2"}>See the Alsace Christmas Shuttles →</Link></details>}
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{shown.map(city => {
             const guide = guides[city];
+            const season = hubMarketSeasons[`${country}/${city}`];
             const cityWalks = countryWalks.filter(walk => walk.city === city);
             const walk = cityWalks[0];
             const imageSrc = city === "Colmar" ? colmarPhotos.C258.src : christmasDestinationImages[`${country}/${city}`] ?? walk?.thumbnail;
-            const visit = city === "Kaysersberg" || city === "Riquewihr" ? "2 hours to a half-day" : city === "Ribeauvillé" ? "Half-day to a full day" : "";
+            const visit = city === "Kaysersberg" || city === "Riquewihr" ? "2 hours to a half-day" : city === "Ribeauvillé" ? "half-day to a full day" : "";
             return <article key={city} className="flex flex-col overflow-hidden rounded-2xl border border-[#dce1d6] bg-white">
               <div className="relative aspect-[16/10] overflow-hidden bg-[#edf1ed]">
                 {imageSrc && <Image src={imageSrc} alt={city === "Colmar" ? colmarPhotos.C258.alt : `Christmas in ${city} during my visit`} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />}
@@ -103,9 +116,14 @@ export default function ChristmasMarketsClient({ walks, points, initialFilters }
               </div>
               <div className="flex flex-1 flex-col p-5">
                 <h3 className="text-2xl font-semibold">{guide ? <Link href={guide.href} className="hover:underline">{city}</Link> : city}</h3>
+                {season ? <div className="mt-3 rounded-xl bg-[#edf1ed] px-3 py-2 text-sm leading-6">
+                  <p className="font-semibold">{season.dates}</p><p className="text-[#526258]">{season.market}</p>
+                  {season.note && <p className="mt-1 text-[#526258]">{season.note}</p>}
+                  <a href={season.source} target="_blank" rel="noreferrer" aria-label={`Official ${hubSeasonYear} dates for ${season.market} in ${city} (opens in a new tab)`} className={textLink}>Official dates ↗</a>
+                </div> : <p className="mt-3 text-sm leading-6 text-[#526258]">I haven’t verified the 2026 market dates here yet.</p>}
                 {guide ? <><p className="mt-2 text-sm font-semibold text-[#607767]">{guide.detail}</p><p className="mt-3 text-sm leading-6 text-[#526258]">{guide.description}</p>{visit && <p className="mt-4 text-sm text-[#526258]"><strong>Allow</strong> {visit}</p>}</> : <p className="mt-3 text-sm leading-6 text-[#526258]">{walk ? `${walk.region || country} · ${unique(cityWalks.flatMap(item => item.filmedYear ? [String(item.filmedYear)] : [])).join(" / ")} filmed walks` : "I filmed here in 2025. My walk and market guide are on the way."}</p>}
                 <div className="mt-auto pt-5">
-                  {guide && <Link href={guide.href} className={buttonClass + " w-full"}>Read the 2026 guide →</Link>}
+                  {guide && <Link href={guide.href} className={buttonClass + " w-full"}>Read the 2026 guide <span className="sr-only">to {city}</span> →</Link>}
                   {walk && <button type="button" onClick={() => browsePlace(country, city)} className={textLink + " mt-1 w-full justify-center"}>Watch my {cityWalks.length === 1 ? "walk" : `${cityWalks.length} walks`} <span className="sr-only">in {city}</span> →</button>}
                 </div>
               </div>
@@ -113,9 +131,10 @@ export default function ChristmasMarketsClient({ walks, points, initialFilters }
           })}</div>
         </section>;
       })}
+      <p className="mt-6 text-sm leading-6 text-[#526258]">I checked the linked official dates on <time dateTime={hubSeasonCheckedOn}>19 November 2026</time>. Dates apply to the named markets; check the official page for opening hours and any changes before travelling. My photos and walks show earlier visits.</p>
     </section>
 
-    <section id="browse-walks" aria-labelledby="walks-heading" className="scroll-mt-20 border-y border-[#dce1d6] bg-white"><div className={width + " py-14 sm:py-16"}><p className={eyebrow}>Come along for a walk</p><h2 id="walks-heading" className="mt-3 text-3xl font-semibold tracking-tight">Just want to explore from home?</h2><p className="mt-4 max-w-2xl leading-7 text-[#657069]">Put on your headphones and join me in the Christmas streets. Browse my published walks by place, year or landmark.</p><button type="button" aria-expanded={showWalks} aria-controls="walk-catalogue" onClick={() => setShowWalks(!showWalks)} className={buttonClass + " mt-5"}>{showWalks ? "Close the walk browser ↑" : "Browse all Christmas walks ↓"}</button><div id="walk-catalogue" hidden={!showWalks}>
+    <section id="browse-walks" aria-labelledby="walks-heading" className="scroll-mt-20 border-y border-[#dce1d6] bg-white"><div className={width + " py-14 sm:py-16"}><p className={eyebrow}>Come along for a walk</p><h2 id="walks-heading" tabIndex={-1} className="mt-3 text-3xl font-semibold tracking-tight">Just want to explore from home?</h2><p className="mt-4 max-w-2xl leading-7 text-[#657069]">Put on your headphones and join me in the Christmas streets. Browse my published walks by place, year or landmark.</p><button type="button" aria-expanded={showWalks} aria-controls="walk-catalogue" onClick={() => setShowWalks(!showWalks)} className={buttonClass + " mt-5"}>{showWalks ? "Close the walk browser ↑" : "Browse all Christmas walks ↓"}</button><div id="walk-catalogue" hidden={!showWalks}>
       <div className="mt-7 rounded-2xl bg-[#f1f3ed] p-4 sm:p-6"><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <label className={labelClass}>Country<select id="christmas-country" className={inputClass} value={filters.country} onChange={event => updateFilters({ ...filters, country: event.target.value, region: "", city: "" })}><option value="">All countries</option>{countries.map(value => <option key={value}>{value}</option>)}</select></label>
         <label className={labelClass}>Region<select className={inputClass} value={filters.region} onChange={event => updateFilters({ ...filters, region: event.target.value, city: "" })}><option value="">All regions</option>{regions.map(value => <option key={value}>{value}</option>)}</select></label>

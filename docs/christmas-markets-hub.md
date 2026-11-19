@@ -16,6 +16,27 @@ keeps its previous initial view and country legend. A map failure leaves the wal
 list available. The hero uses an existing Strasbourg frame; tour thumbnails and
 links come from the catalog. No video detail pages or enriched highlights change.
 
+## Destination cards and seasonal dates
+
+The destination directory has one country selector. Search and the ready-guide
+checkbox are collapsible on mobile and visible on desktop; all three filters
+combine. The result count announces changes, and Clear filters resets the whole
+directory selection. The separate filmed-walk browser retains its own filters.
+
+`lib/christmas/seasons/hub-2026.ts` stores verified official market dates, the
+specific market covered, exceptions and source links for 21 destinations. Naples
+and Sorrento explicitly remain unverified; do not infer current dates from filming
+years. These editorial dates are not tour data and do not belong in the master
+tour Sheet. Recheck sources before changing the season. Weekend-only schedules
+must stay explicit, and city-wide cards must identify which market the dates cover.
+
+Hub card images have alt text; image-overlay links have accessible names. The
+walk list deliberately hides duplicate thumbnail links from assistive technology
+and keyboard navigation, with the adjacent named title link providing access.
+Do not count those decorative thumbnails as missing accessible text. Card guide
+buttons include the city in their accessible names. Watch buttons move focus to
+the walk-browser heading as well as scrolling there.
+
 ## Historical journeys
 
 The editorial journey records in `lib/christmas/catalog.ts` are separate from tour
