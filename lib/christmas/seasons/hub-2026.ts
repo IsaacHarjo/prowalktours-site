@@ -24,7 +24,7 @@ export const hubMarketSeasons: Record<string, HubMarketSeason> = {
   "Austria/Vienna": { dates: "13 Nov–26 Dec 2026", market: "Rathausplatz Christmas market", note: "Other Vienna markets have separate dates.", source: "https://www.wien.info/en/now-on/christmas/christmas-markets-342664" },
   "Czechia/Prague": { dates: "28 Nov 2026–6 Jan 2027", market: "Old Town & Wenceslas Square markets", source: "https://prague.eu/en/christmas-markets" },
   "Denmark/Copenhagen": { dates: "13 Nov 2026–3 Jan 2027", market: "Christmas in Tivoli", note: "Ticketed entry. Other Copenhagen markets have separate dates.", source: "https://www.tivoli.dk/en/opening-hours-and-seasons/christmas-in-tivoli" },
-  "Hungary/Budapest": { dates: "13 Nov 2026–1 Jan 2027", market: "Advent Basilica, Szent István Square", note: "Other Budapest markets have separate dates.", source: "https://adventbazilika.hu/en/opening-hours" },
+  "Hungary/Budapest": { dates: "13 Nov 2026–1 Jan 2027", market: "Advent Basilica, Szent István Square", note: "Other Budapest markets have separate dates.", source: "https://adventbazilika.hu/en/" },
   "Italy/Limatola Castle": { dates: "6–8, 13–15 & 20–22 Nov · 26 Nov–13 Dec 2026", market: "Cadeaux al Castello", note: "Selected November weekends, then daily from 26 Nov. Ticketed entry.", source: "https://cadeauxalcastello.it/" },
   "Norway/Oslo": { dates: "7 Nov 2026–3 Jan 2027", market: "Jul i Vinterland, Spikersuppa", note: "Closed 24 Dec.", source: "https://www.julivinterland.no/info/hva-er-apningstidene-pa-jul-i-vinterland" },
 };
