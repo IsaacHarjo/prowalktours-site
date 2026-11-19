@@ -526,7 +526,7 @@ export default function WorldMapClient({ tours, fullWidth, heightClassName, fitT
                             tour={item}
                             className="inline-flex w-full items-center justify-center rounded-full bg-[#167fd5] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0f6db9]"
                           >
-                            Watch 4K Walk
+                            Watch video
                           </WorldTourWatchLink>
                         </div>
                       </div>

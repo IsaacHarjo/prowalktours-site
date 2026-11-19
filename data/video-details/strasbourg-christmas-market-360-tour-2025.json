@@ -1,0 +1,116 @@
+{
+  "tourId": "fr-0050",
+  "slug": "strasbourg-christmas-market-360-tour-2025",
+  "city": "Strasbourg",
+  "title": "Strasbourg Christmas Market 360° Walk (2025)",
+  "youtubeId": "RC7r0g-DQxo",
+  "youtubeTitle": "Strasbourg Christmas Market in 360° VR 🎄 Cathedral, Place Kléber & the Grand Sapin | France",
+  "youtubeUploadDate": "2026-11-19",
+  "description": "Join my 360° walk through Strasbourg’s Christmas streets and markets. Choose where to look as I explore the cathedral streets and Place Kléber with its Grand Sapin.",
+  "filmedDate": "2025-12-17",
+  "startTime": "2:37 PM",
+  "durationSeconds": 2793,
+  "durationLabel": "46:33",
+  "hero": "/strasbourg-christmas-market-360-tour-2025/hero.jpg",
+  "heroAlt": "My view of the Grand Sapin in Place Kléber during my 2025 Strasbourg 360° walk",
+  "guideHref": "/christmas-markets/strasbourg",
+  "chapterVerification": "Reviewed a frame two seconds after every supplied chapter against the local master on 2026-11-19. Timings identify the approach or location, not frame-exact scene boundaries.",
+  "chapters": [
+    {
+      "seconds": 0,
+      "title": "Walk Begins at Place Gutenberg"
+    },
+    {
+      "seconds": 75,
+      "title": "Rue Mercière"
+    },
+    {
+      "seconds": 125,
+      "title": "Cathedral Christmas Market"
+    },
+    {
+      "seconds": 210,
+      "title": "Rue du Maroquin"
+    },
+    {
+      "seconds": 355,
+      "title": "Place du Marché-aux-Cochons-de-Lait"
+    },
+    {
+      "seconds": 490,
+      "title": "Along the Ill River"
+    },
+    {
+      "seconds": 525,
+      "title": "Batorama Boats"
+    },
+    {
+      "seconds": 560,
+      "title": "Le Quai des Délices Market"
+    },
+    {
+      "seconds": 615,
+      "title": "Palais Rohan"
+    },
+    {
+      "seconds": 705,
+      "title": "Market at Place du Château"
+    },
+    {
+      "seconds": 910,
+      "title": "The Carousel"
+    },
+    {
+      "seconds": 1010,
+      "title": "Cathedral West Front"
+    },
+    {
+      "seconds": 1120,
+      "title": "Maison Kammerzell"
+    },
+    {
+      "seconds": 1190,
+      "title": "Rue des Orfèvres"
+    },
+    {
+      "seconds": 1295,
+      "title": "Passage toward Place du Marché Neuf"
+    },
+    {
+      "seconds": 1345,
+      "title": "Carré d'Or Market at Place du Temple Neuf"
+    },
+    {
+      "seconds": 1415,
+      "title": "Temple Neuf"
+    },
+    {
+      "seconds": 1445,
+      "title": "Toward Place Broglie"
+    },
+    {
+      "seconds": 1595,
+      "title": "Place Broglie Market"
+    },
+    {
+      "seconds": 2000,
+      "title": "Toward Place Kléber"
+    },
+    {
+      "seconds": 2170,
+      "title": "Place Kléber & the Grand Sapin"
+    },
+    {
+      "seconds": 2425,
+      "title": "Kléber Statue"
+    },
+    {
+      "seconds": 2555,
+      "title": "Rue des Grandes Arcades"
+    },
+    {
+      "seconds": 2710,
+      "title": "Back at Place Gutenberg"
+    }
+  ]
+}

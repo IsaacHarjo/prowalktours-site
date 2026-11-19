@@ -8,7 +8,7 @@ import GuideSectionHeading from "./GuideSectionHeading";
 
 export default function GuideWalkVideos({ city, walks, introduction = "Walk with me in daylight or after dark. Put on your headphones for the sounds of the streets and markets." }: { city: string; walks: GuideWalk[]; introduction?: string }) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
-  const orderedWalks = [...walks].sort((a, b) => Number(a.videoType !== "day-walk") - Number(b.videoType !== "day-walk"));
+  const orderedWalks = [...walks].sort((a, b) => (b.filmedYear ?? 0) - (a.filmedYear ?? 0) || Number(a.videoType !== "day-walk") - Number(b.videoType !== "day-walk"));
 
   return <section id="watch-walks" aria-labelledby="watch-heading" className="scroll-mt-[var(--guide-scroll-offset,5rem)] bg-[#edf1ed]">
     <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-16 lg:px-10">
@@ -16,7 +16,7 @@ export default function GuideWalkVideos({ city, walks, introduction = "Walk with
       <p className="mt-4 max-w-3xl leading-7 text-[#526258]">{introduction}</p>
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         {orderedWalks.map(walk => {
-          const label = walk.videoType === "360-tour" ? "360° walk" : walk.videoType === "evening-walk" ? "Evening walk" : "Daytime walk";
+          const label = walk.videoType === "360-tour" ? "360° walk" : walk.videoType === "evening-walk" ? "Evening walk" : walk.slug.includes('morning') ? "Morning walk" : "Daytime walk";
           const isSelected = walk.id === selectedId;
           return <article key={walk.id} className="min-w-0 overflow-hidden rounded-2xl border border-[#dce1d6] bg-white">
             {isSelected ? <iframe

@@ -75,7 +75,9 @@ export default function RiquewihrGuideClient({ walks, orientationPlaces }: { wal
       <p className="mt-5 max-w-3xl text-sm leading-7 text-[#526258]">For Monday–Thursday visits, check the regular <a href="https://fluo.grandest.fr/" target="_blank" rel="noreferrer" className="font-semibold text-[#176347] underline underline-offset-4">Fluo</a> bus between Colmar and Riquewihr. The official practical page lists it as line 816, but Fluo renumbered its Haut-Rhin lines in September 2026, so confirm the current line number. If driving, the Arriving filter on my map shows parking locations near the start; follow current event signs for access and availability.</p><CheckedNote on={checkedOn} label="2026 transport information checked" className="mt-2" />
     </div></section>
 
-    <GuideWalkVideos city="Riquewihr" walks={videoWalks} introduction={videoWalks.some(walk => walk.youtubeId === riquewihrDayWalk2025YoutubeId)
+    <GuideWalkVideos city="Riquewihr" walks={videoWalks} introduction={videoWalks.some(walk => walk.id === 'fr-0042')
+      ? `Start with my quiet morning walk before the market opens, then step into shops, cellars and courtyards on my 2025 daytime walk.${videoWalks.some(walk => walk.id === 'fr-0039') ? ' You can also choose where to look on my 360° walk.' : ''} My earlier walks show Riquewihr in daylight and after dark. Put on your headphones for the sounds of the streets and markets.`
+      : videoWalks.some(walk => walk.youtubeId === riquewihrDayWalk2025YoutubeId)
       ? "See Riquewihr in daylight or after dark through my 2023 walks, then step inside the shops, cellars and courtyards on my 2025 daytime walk. Put on your headphones for the sounds of the streets and markets."
       : "See Riquewihr in daylight or after dark through my two published 2023 walks. Put on your headphones for the sounds of the streets and markets. The suggested route above also draws on my return visit in 2025."} />
     <GuideFaqs city="Riquewihr" questions={[

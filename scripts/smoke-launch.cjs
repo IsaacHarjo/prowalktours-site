@@ -4,10 +4,20 @@ const base=process.argv[2]||'http://localhost:3001';
 if(!['localhost','127.0.0.1'].includes(new URL(base).hostname))throw Error('Use a local preview for this check.');
 function routes(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?routes(path.join(dir,e.name)):e.name==='page.tsx'?['/'+path.relative('app',dir).replaceAll('\\','/')]:[]);}
 const paths=routes('app').filter(p=>p!=='/home-preview');
+const guardedDrafts = new Set([
+  '/videos/riquewihr-christmas-market-360-tour-2025',
+  '/videos/strasbourg-christmas-market-360-tour-2025',
+  '/videos/strasbourg-christmas-market-evening-walk-2025',
+]);
 async function main(){
   const failures=[], knownExceptions=[], results=[], htmlByPath=new Map();
   for(const p of paths){
     const r=await fetch(base+p); const html=await r.text(); htmlByPath.set(p,html);
+    if (guardedDrafts.has(p) && r.status === 404) {
+      if (/GSAA6r5Di7k|RC7r0g-DQxo|vZZaZuAQZtg/.test(html)) failures.push({path:p,error:'Draft upload leaked'});
+      results.push({path:p,status:404,guardedDraft:true});
+      continue;
+    }
     const title=html.match(/<title>(.*?)<\/title>/)?.[1];
     const description=html.match(/<meta name="description" content="([^"]*)"/ )?.[1];
     const canonical=html.match(/<link rel="canonical" href="([^"]*)"/ )?.[1];
@@ -27,14 +37,15 @@ async function main(){
     for(const href of hrefs){
       if(!href.startsWith('/')&&!href.startsWith('#'))continue;
       const u=new URL(href,base+p);
-      if(!known.has(u.pathname)){failures.push({path:p,brokenLink:href});continue;}
+      if(!known.has(u.pathname)||results.some(result=>result.path===u.pathname&&result.guardedDraft)){failures.push({path:p,brokenLink:href});continue;}
       if(u.hash){const target=htmlByPath.get(u.pathname);if(target&&!target.includes('id="'+decodeURIComponent(u.hash.slice(1))+'"'))failures.push({path:p,missingAnchor:href});}
     }
   }
   const sitemap=await (await fetch(base+'/sitemap.xml')).text();
+  for (const result of results.filter(result=>result.guardedDraft)) if (sitemap.includes('prowalktours.com'+result.path+'<')) failures.push({path:result.path,error:'Guarded draft in sitemap'});
   for(const excluded of ['/home-preview','/privacy-policy','/terms-of-use','/videos/freiburg-christmas-market-evening-walk-2025','/videos/rothenburg-christmas-market-morning-walk-2024'])if(sitemap.includes('prowalktours.com'+excluded+'<'))failures.push({error:'Excluded route in sitemap',path:excluded});
   const report={base,checked:'2026-10-09',routes:results,sitemapUrls:[...sitemap.matchAll(/<loc>/g)].length,failures,knownExceptions};
-  fs.writeFileSync('docs/launch-audit/smoke-results.json',JSON.stringify(report,null,2));
+  fs.writeFileSync(process.argv[3] || 'docs/launch-audit/smoke-results.json',JSON.stringify(report,null,2));
   console.log(JSON.stringify({routes:results.length,sitemapUrls:report.sitemapUrls,failures,knownExceptions},null,2));
   if(failures.length)process.exitCode=1;
 }

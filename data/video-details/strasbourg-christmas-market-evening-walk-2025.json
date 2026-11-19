@@ -1,0 +1,234 @@
+{
+  "tourId": "fr-0046",
+  "slug": "strasbourg-christmas-market-evening-walk-2025",
+  "title": "Strasbourg Christmas Market Evening Walk (2025)",
+  "youtubeTitle": "Strasbourg Christmas Market at Night 🎄 4K HDR Walking Tour",
+  "youtubeId": "vZZaZuAQZtg",
+  "filmedDate": "2025-12-17",
+  "startTime": "3:48 PM",
+  "durationSeconds": 6420,
+  "durationLabel": "1:47:00",
+  "youtubeUploadDate": "2026-11-19",
+  "description": "I started this walk at 3:48 PM and followed Strasbourg’s Christmas markets from the cathedral and the Ill River to the Grand Sapin light and music show at Place Kléber. From there, I continued into Petite France, past the canals and locks, and through the market at Place Saint-Thomas.",
+  "hero": "/strasbourg-christmas-market-evening-walk-2025/hero.jpg",
+  "heroAlt": "Illuminated angels above Rue Mercière with Strasbourg Cathedral ahead during my evening walk",
+  "mapUrl": "https://www.google.com/maps/d/viewer?mid=1wxmUsxnrWV3rBwUoxkR2LXSHqQdYrb0",
+  "guideHref": "/christmas-markets/strasbourg",
+  "chapters": [
+    {
+      "title": "Intro and Map",
+      "seconds": 0,
+      "timeLabel": "0:00"
+    },
+    {
+      "title": "Walk Begins at Place Gutenberg",
+      "seconds": 59,
+      "timeLabel": "0:59"
+    },
+    {
+      "title": "Rue Mercière",
+      "seconds": 123,
+      "timeLabel": "2:03"
+    },
+    {
+      "title": "Cathedral Christmas Market",
+      "seconds": 320,
+      "timeLabel": "5:20"
+    },
+    {
+      "title": "Rue du Maroquin",
+      "seconds": 463,
+      "timeLabel": "7:43"
+    },
+    {
+      "title": "Place du Marché-aux-Cochons-de-Lait",
+      "seconds": 648,
+      "timeLabel": "10:48"
+    },
+    {
+      "title": "Along the Ill River",
+      "seconds": 766,
+      "timeLabel": "12:46"
+    },
+    {
+      "title": "Le Quai des Délices Market",
+      "seconds": 910,
+      "timeLabel": "15:10"
+    },
+    {
+      "title": "Pont Sainte-Madeleine",
+      "seconds": 1023,
+      "timeLabel": "17:03"
+    },
+    {
+      "title": "Place du Marché-aux-Poissons",
+      "seconds": 1161,
+      "timeLabel": "19:21"
+    },
+    {
+      "title": "Back Through Rue du Maroquin",
+      "seconds": 1291,
+      "timeLabel": "21:31"
+    },
+    {
+      "title": "Cathedral Tower View",
+      "seconds": 1478,
+      "timeLabel": "24:38"
+    },
+    {
+      "title": "Market at Place du Château",
+      "seconds": 1510,
+      "timeLabel": "25:10"
+    },
+    {
+      "title": "Petit Train",
+      "seconds": 1828,
+      "timeLabel": "30:28"
+    },
+    {
+      "title": "Käthe Wohlfahrt Christmas Shop",
+      "seconds": 1898,
+      "timeLabel": "31:38"
+    },
+    {
+      "title": "The Carousel",
+      "seconds": 1974,
+      "timeLabel": "32:54"
+    },
+    {
+      "title": "North Side of the Cathedral",
+      "seconds": 2146,
+      "timeLabel": "35:46"
+    },
+    {
+      "title": "Maison Kammerzell",
+      "seconds": 2506,
+      "timeLabel": "41:46"
+    },
+    {
+      "title": "Rue des Orfèvres",
+      "seconds": 2580,
+      "timeLabel": "43:00"
+    },
+    {
+      "title": "Rue du Chaudron",
+      "seconds": 2668,
+      "timeLabel": "44:28"
+    },
+    {
+      "title": "Carré d'Or Market at Place du Temple Neuf",
+      "seconds": 2862,
+      "timeLabel": "47:42"
+    },
+    {
+      "title": "Pâtisserie Christian",
+      "seconds": 3013,
+      "timeLabel": "50:13"
+    },
+    {
+      "title": "Place Kléber & the Grand Sapin",
+      "seconds": 3125,
+      "timeLabel": "52:05"
+    },
+    {
+      "title": "Light & Music Show",
+      "seconds": 3464,
+      "timeLabel": "57:44"
+    },
+    {
+      "title": "Rue des Grandes Arcades",
+      "seconds": 3716,
+      "timeLabel": "1:01:56"
+    },
+    {
+      "title": "Place Gutenberg",
+      "seconds": 3920,
+      "timeLabel": "1:05:20"
+    },
+    {
+      "title": "Rue Gutenberg to Petite France",
+      "seconds": 3951,
+      "timeLabel": "1:05:51"
+    },
+    {
+      "title": "Grand'Rue",
+      "seconds": 4063,
+      "timeLabel": "1:07:43"
+    },
+    {
+      "title": "Rue du Fossé-des-Tanneurs",
+      "seconds": 4269,
+      "timeLabel": "1:11:09"
+    },
+    {
+      "title": "Petite France Market at Place Benjamin Zix",
+      "seconds": 4315,
+      "timeLabel": "1:11:55"
+    },
+    {
+      "title": "Maison des Tanneurs",
+      "seconds": 4439,
+      "timeLabel": "1:13:59"
+    },
+    {
+      "title": "Pont du Faisan",
+      "seconds": 4602,
+      "timeLabel": "1:16:42"
+    },
+    {
+      "title": "Village de l'Avent & Local Producers Market",
+      "seconds": 4666,
+      "timeLabel": "1:17:46"
+    },
+    {
+      "title": "Choir on the Advent Stage",
+      "seconds": 4834,
+      "timeLabel": "1:20:34"
+    },
+    {
+      "title": "Pont Saint-Martin",
+      "seconds": 5214,
+      "timeLabel": "1:26:54"
+    },
+    {
+      "title": "Waterside Path & the Locks",
+      "seconds": 5352,
+      "timeLabel": "1:29:12"
+    },
+    {
+      "title": "Passerelle des Anciennes-Glacières",
+      "seconds": 5413,
+      "timeLabel": "1:30:13"
+    },
+    {
+      "title": "Back to Place Benjamin Zix",
+      "seconds": 5583,
+      "timeLabel": "1:33:03"
+    },
+    {
+      "title": "Place Saint-Thomas Market",
+      "seconds": 5798,
+      "timeLabel": "1:36:38"
+    },
+    {
+      "title": "Rue des Serruriers",
+      "seconds": 5975,
+      "timeLabel": "1:39:35"
+    },
+    {
+      "title": "Place Gutenberg",
+      "seconds": 6199,
+      "timeLabel": "1:43:19"
+    },
+    {
+      "title": "Rue Mercière & the Cathedral",
+      "seconds": 6240,
+      "timeLabel": "1:44:00"
+    },
+    {
+      "title": "Merry Christmas!",
+      "seconds": 6390,
+      "timeLabel": "1:46:30"
+    }
+  ]
+}

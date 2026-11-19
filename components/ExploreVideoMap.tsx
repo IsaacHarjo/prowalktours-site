@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useMemo, useRef, useState } from "react";
 import MapboxMap, {
@@ -191,7 +191,7 @@ function DesktopOverlayPanel({
                   }
                   className="inline-flex items-center justify-center rounded-full bg-[#167fd5] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0f6db9]"
                 >
-                  Watch 4K Walk
+                  Watch video
                 </a>
                 {selectedFeature.mapUrl ? (
                   <a
@@ -289,7 +289,7 @@ function DesktopOverlayPanel({
                           }
                           className="inline-flex items-center justify-center rounded-full bg-[#167fd5] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0f6db9]"
                         >
-                          Watch 4K Walk
+                          Watch video
                         </a>
                         {item.mapUrl ? (
                           <a

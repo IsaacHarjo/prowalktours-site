@@ -38,6 +38,11 @@ const markets = [
 
 export default function StrasbourgGuideClient({ walks, orientationPlaces }: { walks: ChristmasWalk[]; orientationPlaces: OrientationPlace[] }) {
   const videoWalks = walks.flatMap(walk => { const youtubeId = youtubeIdFromUrl(walk.youtubeUrl); return youtubeId ? [{ ...walk, youtubeId }] : []; });
+  const hasEvening2025 = walks.some(walk => walk.id === 'fr-0046');
+  const has360 = walks.some(walk => walk.slug === 'strasbourg-christmas-market-360-tour-2025');
+  const videoIntroduction = hasEvening2025
+    ? `Explore Strasbourg with me in daylight, after dark${has360 ? ' and in 360°' : ''}. My 2025 evening walk follows the Christmas lights through the cathedral streets, Place Kléber and Petite France. You can also revisit my earlier walks, including the snowy 2022 visit. Put on your headphones for the sounds of the streets and markets.`
+    : 'See Strasbourg in daylight and after dark through my published 2022 and 2023 walks. The snowy 2022 visit is still a favourite of mine. Put on your headphones for the sounds of the streets and markets; the suggested route above also draws on my return in 2025.';
   return <div className="bg-[#fcfaf7] text-[#25382f] [--guide-scroll-offset:10rem]">
     <div className={width + ' py-5'}><nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-[#657069]"><Link href="/" className={crumbClass}>Home</Link><span aria-hidden="true">/</span><Link href="/christmas-markets" className={crumbClass}>Christmas Markets</Link><span aria-hidden="true">/</span><span aria-current="page">Strasbourg</span></nav></div>
     <nav aria-label="In this guide" className="sticky top-[65px] z-40 border-b border-[#dce1d6] bg-[#fcfaf7]/95 shadow-sm backdrop-blur"><div className={`${width} ${navScrollPad} flex gap-2 overflow-x-auto overscroll-x-contain py-3 sm:gap-3 lg:grid lg:grid-cols-5`}>{[['explore', 'Explore the walk'], ['dates', '2026 dates'], ['getting-there', 'Plan the trip'], ['transport', 'Trams & parking'], ['watch-walks', 'Watch my walks']].map(([id, title]) => <a key={id} href={`#${id}`} className="flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-xl bg-[#25382f] px-4 py-2 text-center text-sm font-semibold leading-6 text-white transition-colors hover:bg-[#176347] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#176347] lg:min-h-14 lg:px-3 lg:py-3 lg:text-base">{title}</a>)}</div><GuideNavFade /></nav>
@@ -88,7 +93,7 @@ export default function StrasbourgGuideClient({ walks, orientationPlaces }: { wa
       <p className="mt-5 max-w-3xl text-sm leading-7 text-[#526258]">The Grande Île has Christmas traffic controls. Follow current access instructions and on-site signs. Use the live CTS planner for your travel date rather than assuming the normal network map shows every available stop.</p>
     </div></section>
 
-    <GuideWalkVideos city="Strasbourg" walks={videoWalks} introduction="See Strasbourg in daylight and after dark through my published 2022 and 2023 walks. The snowy 2022 visit is still a favourite of mine. Put on your headphones for the sounds of the streets and markets; the suggested route above also draws on my return in 2025." />
+    <GuideWalkVideos city="Strasbourg" walks={videoWalks} introduction={videoIntroduction} />
     <GuideFaqs city="Strasbourg" questions={[
       { question: 'How many Christmas markets are there?', answer: 'The official website groups them into eight markets across eleven locations. Some names cover more than one square, so the walking map includes each square name to make the stops easier to recognise.', source: { label: 'Official market locations', href: `${official}markets` } },
       { question: 'Do I need to follow the whole route?', answer: 'No. I have drawn a loop so you can join at Gutenberg, Kléber or near Pont du Corbeau. For a shorter visit, I would focus on the cathedral streets, the tree on Place Kléber and Petite France, leaving out Broglie and the optional extensions.' },

@@ -1949,4 +1949,50 @@ export const franceVideos: VideoCatalogRecord[] = [
     "visibility": "public",
     "highlights": []
   },
+  {
+  "id": "riquewihr-morning-walk-2025",
+  "slug": "riquewihr-morning-walk-2025",
+  "siteTitle": "Riquewihr, France Christmas Market Morning Walk (2025)",
+  "youtubeTitle": "Riquewihr, France Christmas Market Morning Walk (2025)",
+  "youtubeUrl": "https://youtu.be/IPcbjNY3kPk",
+  "thumbnail": "https://i.ytimg.com/vi/IPcbjNY3kPk/hqdefault.jpg",
+  "country": "France",
+  "region": "Alsace (Grand Est)",
+  "city": "Riquewihr",
+  "filmingDates": [
+    "2025-12-14"
+  ],
+  "filmingMonthYear": "December 2025",
+  "durationLabel": "19:48",
+  "durationSeconds": 1188,
+  "weather": "49 F / 10 C",
+  "shortDescription": "I filmed this morning walk through Riquewihr before the Christmas market opened, following the main street to the Dolder, the medieval walls and the square by the Féerie de Noël Christmas shop.",
+  "keywords": [
+    "Riquewihr",
+    "Alsace (Grand Est)",
+    "France",
+    "day walk",
+    "Christmas Market"
+  ],
+  "landmarks": [
+    "Hôtel de Ville & Place Voltaire",
+    "Rue du Général de Gaulle",
+    "Dolder Tower Square",
+    "Fontaine de la Sinne",
+    "Upper Gate (Obertor)",
+    "Along the Medieval Walls",
+    "Old Wine Press",
+    "Rue des Remparts",
+    "The Dolder from Outside",
+    "Line for the Féerie de Noël"
+  ],
+  "themes": [
+    "Christmas Markets",
+    "Historic Centers & Old Towns"
+  ],
+  "timeOfDay": "daytime",
+  "videoType": "day walk",
+  "visibility": "public",
+  "highlights": []
+},
 ];

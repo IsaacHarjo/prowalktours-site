@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import RelatedPublicWalks from '../../../components/RelatedPublicWalks';
 import Riquewihr2025Client from './Riquewihr2025Client';
 import { riquewihr2025Tour as tour, riquewihrChristmasMarketDayWalk2025Detail as detail } from '../../../data/video-details/riquewihr-christmas-market-day-walk-2025';
 import { stringifyJsonLd } from '../../../lib/seo/jsonLd';
@@ -30,5 +31,5 @@ export default function Page() {
       },
     ],
   };
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(structuredData) }} /><Riquewihr2025Client /></>;
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(structuredData) }} /><Riquewihr2025Client /><RelatedPublicWalks city="Riquewihr" excludeSlug={tour.slug} /></>;
 }

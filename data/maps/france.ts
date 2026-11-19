@@ -1902,4 +1902,51 @@ export const franceMapFeatures: ExploreMapFeature[] = [
     "href": "/videos/riquewihr-christmas-market-day-walk-2025",
     "thumbnailSrc": "/riquewihr-christmas-guide/hero.webp"
   },
+  {
+  "tourId": "fr-0042",
+  "country": "France",
+  "region": "Alsace (Grand Est)",
+  "city": "Riquewihr",
+  "location": "Christmas Market",
+  "title": "Riquewihr, France Christmas Market Morning Walk (2025)",
+  "slug": "riquewihr-morning-walk-2025",
+  "videoType": "day-walk",
+  "themes": [
+    "historic-center",
+    "old-town"
+  ],
+  "filmedDateIso": "2025-12-14",
+  "filmedYear": 2025,
+  "youtubeUrl": "https://youtu.be/IPcbjNY3kPk",
+  "mapUrl": "https://www.google.com/maps/d/viewer?mid=1hepWRWc4ihQqbWB77XoMwodVktEjcoA",
+  "latitude": 48.1668614,
+  "longitude": 7.297566,
+  "durationLabel": "19:48",
+  "durationSeconds": 1188,
+  "descriptionShort": "I filmed this morning walk through Riquewihr before the Christmas market opened, following the main street to the Dolder, the medieval walls and the square by the Féerie de Noël Christmas shop.",
+  "descriptionLong": "I filmed this morning walk through Riquewihr before the Christmas market opened, following the main street to the Dolder, the medieval walls and the square by the Féerie de Noël Christmas shop.",
+  "landmarks": [
+    "Hôtel de Ville & Place Voltaire",
+    "Rue du Général de Gaulle",
+    "Dolder Tower Square",
+    "Fontaine de la Sinne",
+    "Upper Gate (Obertor)",
+    "Along the Medieval Walls",
+    "Old Wine Press",
+    "Rue des Remparts",
+    "The Dolder from Outside",
+    "Line for the Féerie de Noël"
+  ],
+  "keywords": [
+    "Riquewihr",
+    "Alsace (Grand Est)",
+    "France",
+    "day walk",
+    "Christmas Market"
+  ],
+  "status": "ready",
+  "thumbnailPath": "https://i.ytimg.com/vi/IPcbjNY3kPk/hqdefault.jpg",
+  "href": "https://youtu.be/IPcbjNY3kPk",
+  "thumbnailSrc": "https://i.ytimg.com/vi/IPcbjNY3kPk/hqdefault.jpg"
+},
 ];
