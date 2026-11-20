@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 import ExploreVideoMap from "../../../components/ExploreVideoMap";
-import { franceMapFeatures } from "../../../data/maps/france";
+import type { ExploreMapFeature } from "../../../data/maps/types";
 
 const destinations = [
   {
@@ -42,7 +43,7 @@ const breadcrumbs = [
   { label: "France" },
 ];
 
-export default function FranceClient() {
+export default function FranceClient({ children, mapFeatures }: { children: ReactNode; mapFeatures: ExploreMapFeature[] }) {
   return (
     <div className="bg-[#fcfaf7] text-[#2f261d]">
       <section className="border-b border-[#eadfce] bg-white">
@@ -84,10 +85,14 @@ export default function FranceClient() {
             Browse France by destination hub, then expand into cities, regions,
             seasonal travel pages, and individual walking tours as they go live.
           </p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a href="#map" className="inline-flex items-center justify-center rounded-full bg-[#167fd5] px-6 py-3 text-base font-semibold text-white hover:bg-[#0f6db9]">Explore the Map</a>
+            <a href="#walks" className="inline-flex items-center justify-center rounded-full border border-[#d8c7b5] bg-white px-6 py-3 text-base font-semibold text-[#3d3327] hover:bg-[#f8f3ec]">Browse my walks</a>
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-10">
+      <section id="map" className="mx-auto max-w-7xl scroll-mt-24 px-4 py-14 sm:px-6 lg:px-10">
         <div className="mb-8">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9a7a52]">
             Interactive France Map
@@ -103,7 +108,7 @@ export default function FranceClient() {
           <div className="mt-6">
             <ExploreVideoMap
               countryName="France"
-              features={franceMapFeatures}
+              features={mapFeatures}
               initialViewState={{
                 longitude: 2.3522,
                 latitude: 46.6,
@@ -113,7 +118,9 @@ export default function FranceClient() {
           </div>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+        {children}
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {destinations.map((destination) =>
             destination.href ? (
               <Link
