@@ -346,5 +346,107 @@
       "width": 1600,
       "height": 900
     }
+  ],
+  "louise-weiss": [
+    {
+      "src": "/strasbourg-christmas-guide/stops/louise-weiss-1.webp",
+      "alt": "Visitors walking through the snow towards the market on my Petite France route",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/louise-weiss-2.webp",
+      "alt": "A snow-covered waterside path beside the houses in Petite France",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/louise-weiss-3.webp",
+      "alt": "Christmas lights above a snowy canal path at night",
+      "width": 1600,
+      "height": 899
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/louise-weiss-4.webp",
+      "alt": "Visitors beneath hanging lights and purple-lit trees",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/louise-weiss-5.webp",
+      "alt": "Decorated wooden stalls at the local producers’ Christmas market",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/louise-weiss-6.webp",
+      "alt": "The market path beneath Christmas lights and purple-lit trees",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/louise-weiss-7.webp",
+      "alt": "Christmas decorations on the façade of L’Ami Schutz",
+      "width": 1600,
+      "height": 899
+    }
+  ],
+  "saint-martin": [
+    {
+      "src": "/strasbourg-christmas-guide/stops/saint-martin-1.webp",
+      "alt": "Snow-dusted half-timbered houses reflected in the canal at night",
+      "width": 1600,
+      "height": 899
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/saint-martin-2.webp",
+      "alt": "Au Pont Saint-Martin and blue lights reflected in the water",
+      "width": 1600,
+      "height": 899
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/saint-martin-3.webp",
+      "alt": "Christmas decorations outside Au Pont Saint-Martin",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/saint-martin-4.webp",
+      "alt": "Canal reflections and illuminated buildings along my waterside route",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/saint-martin-5.webp",
+      "alt": "Half-timbered houses and their reflections in Petite France at blue hour",
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "saint-thomas": [
+    {
+      "src": "/strasbourg-christmas-guide/stops/saint-thomas-1.webp",
+      "alt": "Saint-Thomas church and the Christmas market square at night",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/saint-thomas-2.webp",
+      "alt": "Visitors passing the decorated entrance to Le Bouclier d’Or",
+      "width": 1600,
+      "height": 899
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/saint-thomas-3.webp",
+      "alt": "Browsing the illuminated market stalls beside Saint-Thomas church",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/saint-thomas-4.webp",
+      "alt": "A smiling vendor behind large pans at a Christmas food stall",
+      "width": 1600,
+      "height": 900
+    }
   ]
 }
