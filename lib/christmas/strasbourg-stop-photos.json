@@ -108,5 +108,103 @@
       "width": 1600,
       "height": 900
     }
+  ],
+  "rohan": [
+    {
+      "src": "/strasbourg-christmas-guide/stops/rohan-1.webp",
+      "alt": "Christmas stalls along my route beside the Palais Rohan gates",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/rohan-2.webp",
+      "alt": "A decorated food stall at the riverside Christmas market",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/rohan-3.webp",
+      "alt": "Looking across the Ill from the market at Terrasse Rohan",
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "poissons": [
+    {
+      "src": "/strasbourg-christmas-guide/stops/poissons-1.webp",
+      "alt": "Walking between Christmas stalls at Place du Marché-aux-Poissons",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/poissons-2.webp",
+      "alt": "A warmly lit food stall at the Christmas market",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/poissons-3.webp",
+      "alt": "Visitors gathered around barrel tables beside the market stalls",
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "cochons": [
+    {
+      "src": "/strasbourg-christmas-guide/stops/cochons-1.webp",
+      "alt": "Half-timbered houses around Place du Marché-aux-Cochons-de-Lait on my walk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/cochons-2.webp",
+      "alt": "Teddy bears decorating a tall façade along my Strasbourg route",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/cochons-3.webp",
+      "alt": "Christmas decorations and lights outside Au Vieux Strasbourg",
+      "width": 1600,
+      "height": 899
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/cochons-4.webp",
+      "alt": "The decorated street outside Au Vieux Strasbourg at blue hour",
+      "width": 1600,
+      "height": 899
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/cochons-5.webp",
+      "alt": "Le Gruber and the Christmas lights along Rue du Maroquin at dusk",
+      "width": 1600,
+      "height": 899
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/cochons-6.webp",
+      "alt": "Decorated façades along Rue du Maroquin in daylight",
+      "width": 1086,
+      "height": 1448
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/cochons-7.webp",
+      "alt": "Christmas garlands and red ornaments on the façade of Le Gruber",
+      "width": 1086,
+      "height": 1448
+    }
+  ],
+  "broglie": [
+    {
+      "src": "/strasbourg-christmas-guide/stops/broglie-1.webp",
+      "alt": "The illuminated Christkindelsmärik entrance at Place Broglie",
+      "width": 1600,
+      "height": 899
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/broglie-2.webp",
+      "alt": "Looking along the Christmas stalls towards the opera on Place Broglie",
+      "width": 1600,
+      "height": 900
+    }
   ]
 }
