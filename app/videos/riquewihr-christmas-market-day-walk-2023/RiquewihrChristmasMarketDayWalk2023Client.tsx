@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import PlanYourVisit from "../../../components/PlanYourVisit";
 import { useEffect, useRef, useState } from "react";
 import LongFormWalkPage, { LongFormWalkStatsRow } from "../../../components/LongFormWalkPage";
 import MapSection from "../../../components/MapSection";
@@ -109,6 +110,7 @@ export default function RiquewihrChristmasMarketDayWalk2023Client() {
               <h1 className="mt-3 text-4xl font-bold tracking-tight text-[#3d3327] sm:text-5xl">{detail.heroTitle}</h1>
               <p className="mt-3 text-xl text-[#6e5a45]">{detail.heroSubtitle}</p>
               <p className="mt-6 max-w-3xl text-base leading-8 text-[#56493a]">{detail.heroDescription}</p>
+              <PlanYourVisit city={video?.city} themes={video?.themes} />
               <div className="mt-8 space-y-4 border-y border-[#d8c7b5]/80 py-4 text-[#3d3327]"><LongFormWalkStatsRow stats={topRowStats} /></div>
             </div>
             <div className="relative hidden overflow-hidden rounded-[2rem] border border-[#d8c7b5] bg-white shadow-sm lg:block"><div className="relative aspect-[4/3] w-full"><img src={heroImagePath} alt={detail.heroTitle} className="h-full w-full object-cover" loading="eager" /></div></div>

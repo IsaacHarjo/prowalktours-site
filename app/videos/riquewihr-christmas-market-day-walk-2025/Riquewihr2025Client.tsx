@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import PlanYourVisit from '../../../components/PlanYourVisit';
+import { franceVideos } from '../../../data/videos/france';
 import dynamic from 'next/dynamic';
 import { useRef, useState } from 'react';
 import LongFormWalkPage, { LongFormWalkStatsRow } from '../../../components/LongFormWalkPage';
@@ -51,6 +53,7 @@ export default function Riquewihr2025Client() {
       <h1 className="mt-3 max-w-4xl font-serif text-4xl leading-tight sm:text-5xl">{tour.title}</h1>
       <p className="mt-4 text-xl text-[#6e5a45]">{detail.heroSubtitle}</p>
       <p className="mt-5 max-w-3xl text-base leading-8 text-[#56493a]">{tour.description}</p>
+    <PlanYourVisit city={franceVideos.find(video => video.slug === tour.slug)?.city} themes={franceVideos.find(video => video.slug === tour.slug)?.themes} />
       <div className="mt-7"><LongFormWalkStatsRow stats={[
         { icon: '📅', label: 'Filmed', value: filmedDate },
         { icon: '🕐', label: 'Start', value: tour.startTime },

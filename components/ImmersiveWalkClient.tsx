@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import PlanYourVisit from './PlanYourVisit';
 import { useRef, useState } from 'react';
 import { useInitialVideoStartTime } from '../lib/hooks/useInitialVideoStartTime';
 
@@ -34,6 +35,7 @@ export default function ImmersiveWalkClient({ tour }: { tour: ImmersiveWalk }) {
     <p className="font-semibold uppercase tracking-widest text-[#176347]">360° walk · Filmed in 2025</p>
     <h1 className="mt-3 font-serif text-4xl leading-tight sm:text-5xl">{tour.title}</h1>
     <p className="mt-6 max-w-3xl leading-8">{tour.description}</p>
+    <PlanYourVisit city={tour.city} themes={["christmas-market"]} />
     <p className="mt-5 text-sm">Filmed {filmedDate} · Start {tour.startTime} · {tour.durationLabel}</p>
     <Image src={tour.hero} alt={tour.heroAlt} width={1920} height={1080} priority sizes="(min-width: 1152px) 1088px, 100vw" className="mt-8 aspect-video w-full rounded-2xl object-cover" />
     <section id="watch" ref={player} className="scroll-mt-24 py-10">
