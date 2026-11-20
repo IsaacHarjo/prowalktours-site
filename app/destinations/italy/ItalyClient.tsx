@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 import ExploreVideoMap from "../../../components/ExploreVideoMap";
-import { italyMapFeatures } from "../../../data/maps/italy";
+import type { ExploreMapFeature } from "../../../data/maps/types";
 
 const regions = [
   {
@@ -98,7 +99,7 @@ const breadcrumbs = [
   { label: "Italy" },
 ];
 
-export default function ItalyClient() {
+export default function ItalyClient({ children, mapFeatures }: { children: ReactNode; mapFeatures: ExploreMapFeature[] }) {
   return (
     <div className="bg-[#fcfaf7] text-[#2f261d]">
       <section className="border-b border-[#eadfce] bg-white">
@@ -140,6 +141,10 @@ export default function ItalyClient() {
             individual walks. Some regions already have filmed videos, while
             dedicated region pages are still being built.
           </p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a href="#tour-map" className="inline-flex items-center justify-center rounded-full bg-[#167fd5] px-6 py-3 text-base font-semibold text-white hover:bg-[#0f6db9]">Explore the Map</a>
+            <a href="#walks" className="inline-flex items-center justify-center rounded-full border border-[#d8c7b5] bg-white px-6 py-3 text-base font-semibold text-[#3d3327] hover:bg-[#f8f3ec]">Browse my walks</a>
+          </div>
         </div>
       </section>
 
@@ -159,7 +164,7 @@ export default function ItalyClient() {
           <div className="mt-6">
             <ExploreVideoMap
               countryName="Italy"
-              features={italyMapFeatures}
+              features={mapFeatures}
               initialViewState={{
                 longitude: 12.5674,
                 latitude: 41.8719,
@@ -169,7 +174,9 @@ export default function ItalyClient() {
           </div>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+        {children}
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {regions.map((region) =>
             region.href !== "#" ? (
               <Link
