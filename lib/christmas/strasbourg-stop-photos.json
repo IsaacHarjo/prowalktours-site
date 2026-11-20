@@ -1,0 +1,112 @@
+{
+  "gutenberg": [
+    {
+      "src": "/strasbourg-christmas-guide/stops/gutenberg-1.webp",
+      "alt": "Decorated façades and Christmas garlands on my route through Place Gutenberg",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/gutenberg-2.webp",
+      "alt": "The cathedral tower rising above the buildings around Place Gutenberg",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/gutenberg-3.webp",
+      "alt": "The Gutenberg statue and snow-dusted square on my Strasbourg route",
+      "width": 1086,
+      "height": 1448
+    }
+  ],
+  "merciere": [
+    {
+      "src": "/strasbourg-christmas-guide/stops/merciere-1.webp",
+      "alt": "Half-timbered houses and the cathedral along my Rue Mercière approach",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/merciere-2.webp",
+      "alt": "Christmas lights above the crowds on Rue Mercière",
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "cathedral": [
+    {
+      "src": "/strasbourg-christmas-guide/stops/cathedral-1.webp",
+      "alt": "Christmas stalls alongside the cathedral on my Strasbourg route",
+      "width": 1600,
+      "height": 901
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/cathedral-2.webp",
+      "alt": "Decorated wooden stalls beneath the cathedral façade",
+      "width": 1600,
+      "height": 901
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/cathedral-3.webp",
+      "alt": "Colourful miniature Christmas houses displayed at a market stall",
+      "width": 1600,
+      "height": 901
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/cathedral-4.webp",
+      "alt": "The cathedral façade above the snowy Christmas market",
+      "width": 1600,
+      "height": 899
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/cathedral-5.webp",
+      "alt": "Maison Kammerzell and the Christmas market lit up at dusk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/cathedral-6.webp",
+      "alt": "Looking up at the cathedral façade from the square",
+      "width": 901,
+      "height": 1600
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/cathedral-7.webp",
+      "alt": "The carved timber façade of Maison Kammerzell beside the cathedral",
+      "width": 901,
+      "height": 1600
+    }
+  ],
+  "chateau": [
+    {
+      "src": "/strasbourg-christmas-guide/stops/chateau-1.webp",
+      "alt": "Christmas stalls and the cathedral seen from Place du Château",
+      "width": 1600,
+      "height": 1200
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/chateau-2.webp",
+      "alt": "Looking up at the cathedral from Place du Château",
+      "width": 1600,
+      "height": 1200
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/chateau-3.webp",
+      "alt": "The carousel and market stalls beside the cathedral",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/chateau-4.webp",
+      "alt": "Lit Christmas stalls beneath the cathedral walls",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/chateau-5.webp",
+      "alt": "Decorated wooden market huts on Place du Château",
+      "width": 1600,
+      "height": 900
+    }
+  ]
+}
