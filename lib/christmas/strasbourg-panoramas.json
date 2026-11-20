@@ -1,0 +1,130 @@
+[
+  {
+    "id": "cathedral-market",
+    "name": "Cathedral markets",
+    "poster": "/strasbourg-christmas-guide/panoramas/cathedral-market-preview.webp",
+    "photos": [
+      {
+        "src": "/strasbourg-christmas-guide/panoramas/cathedral-market-1.jpg",
+        "label": "View 1"
+      },
+      {
+        "src": "/strasbourg-christmas-guide/panoramas/cathedral-market-2.jpg",
+        "label": "View 2"
+      },
+      {
+        "src": "/strasbourg-christmas-guide/panoramas/cathedral-market-3.jpg",
+        "label": "View 3"
+      },
+      {
+        "src": "/strasbourg-christmas-guide/panoramas/cathedral-market-4.jpg",
+        "label": "View 4"
+      },
+      {
+        "src": "/strasbourg-christmas-guide/panoramas/cathedral-market-5.jpg",
+        "label": "View 5"
+      }
+    ]
+  },
+  {
+    "id": "cathedral",
+    "name": "Inside the cathedral",
+    "poster": "/strasbourg-christmas-guide/panoramas/cathedral-preview.webp",
+    "photos": [
+      {
+        "src": "/strasbourg-christmas-guide/panoramas/cathedral-1.jpg",
+        "label": "View 1"
+      },
+      {
+        "src": "/strasbourg-christmas-guide/panoramas/cathedral-2.jpg",
+        "label": "View 2"
+      },
+      {
+        "src": "/strasbourg-christmas-guide/panoramas/cathedral-3.jpg",
+        "label": "View 3"
+      },
+      {
+        "src": "/strasbourg-christmas-guide/panoramas/cathedral-4.jpg",
+        "label": "View 4"
+      }
+    ]
+  },
+  {
+    "id": "clock",
+    "name": "Astronomical clock",
+    "poster": "/strasbourg-christmas-guide/panoramas/clock-preview.webp",
+    "photos": [
+      {
+        "src": "/strasbourg-christmas-guide/panoramas/clock-1.jpg",
+        "label": "View 1"
+      },
+      {
+        "src": "/strasbourg-christmas-guide/panoramas/clock-2.jpg",
+        "label": "View 2"
+      }
+    ]
+  },
+  {
+    "id": "broglie",
+    "name": "Place Broglie",
+    "poster": "/strasbourg-christmas-guide/panoramas/broglie-preview.webp",
+    "photos": [
+      {
+        "src": "/strasbourg-christmas-guide/panoramas/broglie-1.jpg",
+        "label": "View 1"
+      }
+    ]
+  },
+  {
+    "id": "kleber",
+    "name": "Place Kléber",
+    "poster": "/strasbourg-christmas-guide/panoramas/kleber-preview.webp",
+    "photos": [
+      {
+        "src": "/strasbourg-christmas-guide/panoramas/kleber-1.jpg",
+        "label": "View 1"
+      }
+    ]
+  },
+  {
+    "id": "merciere",
+    "name": "Rue Mercière",
+    "poster": "/strasbourg-christmas-guide/panoramas/merciere-preview.webp",
+    "photos": [
+      {
+        "src": "/strasbourg-christmas-guide/panoramas/merciere-1.jpg",
+        "label": "View 1"
+      }
+    ]
+  },
+  {
+    "id": "decorated-square",
+    "name": "Place du Marché-aux-Cochons-de-Lait",
+    "poster": "/strasbourg-christmas-guide/panoramas/decorated-square-preview.webp",
+    "photos": [
+      {
+        "src": "/strasbourg-christmas-guide/panoramas/decorated-square-1.jpg",
+        "label": "View 1"
+      },
+      {
+        "src": "/strasbourg-christmas-guide/panoramas/decorated-square-2.jpg",
+        "label": "View 2"
+      }
+    ]
+  },
+  {
+    "id": "christmas-shop",
+    "name": "Inside the Christmas shop",
+    "poster": "/strasbourg-christmas-guide/panoramas/christmas-shop-preview.webp",
+    "photos": [
+      {
+        "src": "/strasbourg-christmas-guide/panoramas/christmas-shop-1.jpg",
+        "label": "View 1"
+      },
+      {
+        "src": "/strasbourg-christmas-guide/panoramas/christmas-shop-2.jpg",
+        "label": "View 2"
+      }
+    ]
+  }
+]
