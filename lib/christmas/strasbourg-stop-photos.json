@@ -191,6 +191,24 @@
       "alt": "Christmas garlands and red ornaments on the façade of Le Gruber",
       "width": 1086,
       "height": 1448
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/cochons-8.webp",
+      "alt": "A restaurant courtyard with outdoor tables along my Strasbourg walk",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/cochons-9.webp",
+      "alt": "A Christmas tree and ornaments beside a restaurant entrance",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/cochons-10.webp",
+      "alt": "Teddy bears and red ornaments decorating a Strasbourg façade",
+      "width": 1600,
+      "height": 900
     }
   ],
   "broglie": [
@@ -203,6 +221,128 @@
     {
       "src": "/strasbourg-christmas-guide/stops/broglie-2.webp",
       "alt": "Looking along the Christmas stalls towards the opera on Place Broglie",
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "kleber": [
+    {
+      "src": "/strasbourg-christmas-guide/stops/kleber-1.webp",
+      "alt": "Christmas decorations and the Strasbourg Capitale de Noël sign at Place Kléber",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/kleber-2.webp",
+      "alt": "The illuminated Grand Sapin seen along my approach to Place Kléber",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/kleber-3.webp",
+      "alt": "The Grand Sapin and surrounding market at blue hour",
+      "width": 1600,
+      "height": 899
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/kleber-4.webp",
+      "alt": "Christmas stalls below the tree at Place Kléber in the evening",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/kleber-5.webp",
+      "alt": "Visitors browsing the illuminated market at Place Kléber",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/kleber-6.webp",
+      "alt": "The tall Christmas tree above the crowds in Place Kléber",
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "temple-neuf": [
+    {
+      "src": "/strasbourg-christmas-guide/stops/temple-neuf-1.webp",
+      "alt": "A decorated bakery stall at the Carré d’Or Christmas market",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/temple-neuf-2.webp",
+      "alt": "The street beside Temple Neuf along my Strasbourg route",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/temple-neuf-3.webp",
+      "alt": "A vendor and wrapped treats at a Christmas market stall",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/temple-neuf-4.webp",
+      "alt": "Looking up at the façade of Temple Neuf",
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "grand-rue": [
+    {
+      "src": "/strasbourg-christmas-guide/stops/grand-rue-1.webp",
+      "alt": "Petite France lettering and Christmas lights above the street",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/grand-rue-2.webp",
+      "alt": "A person dressed as Santa beside snowy tram tracks",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/grand-rue-3.webp",
+      "alt": "Restaurants and Christmas lights along my route towards Petite France",
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "benjamin-zix": [
+    {
+      "src": "/strasbourg-christmas-guide/stops/benjamin-zix-1.webp",
+      "alt": "A snow-dusted half-timbered house beside the canal in Petite France",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/benjamin-zix-2.webp",
+      "alt": "Snow along the canal banks and houses in Petite France",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/benjamin-zix-3.webp",
+      "alt": "Half-timbered houses reflected in the canal under festive lights",
+      "width": 1600,
+      "height": 899
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/benjamin-zix-4.webp",
+      "alt": "Christmas market crowds beneath the half-timbered houses at night",
+      "width": 1600,
+      "height": 899
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/benjamin-zix-5.webp",
+      "alt": "Walking between Christmas stalls in Petite France at blue hour",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/strasbourg-christmas-guide/stops/benjamin-zix-6.webp",
+      "alt": "Christmas stalls and golden star decorations in Place Benjamin Zix",
       "width": 1600,
       "height": 900
     }
