@@ -7,9 +7,10 @@ import { franceMapFeatures } from "../../../data/maps/france";
 import type { ExploreMapFeature } from "../../../data/maps/types";
 
 const publicWalks = new Map(discoveryVideos.filter(walk => walk.country === "France").map(walk => [walk.id, walk]));
-const mapFeatures = franceMapFeatures.filter(feature => publicWalks.has(feature.tourId)).map(feature => ({
+const mapFeatures: ExploreMapFeature[] = franceMapFeatures.filter(feature => publicWalks.has(feature.tourId)).map(feature => ({
   ...feature,
   href: publicWalks.get(feature.tourId)!.watchHref,
+  watchHref: publicWalks.get(feature.tourId)!.watchHref,
 }));
 // Include public additions that have coordinates but are not in the older map export.
 for (const point of worldTours.filter(point => point.country === "France" && !mapFeatures.some(feature => feature.tourId === point.tourId))) {
@@ -22,7 +23,7 @@ for (const point of worldTours.filter(point => point.country === "France" && !ma
     durationLabel: walk.durationLabel, durationSeconds: walk.durationSeconds,
     descriptionShort: walk.shortDescription, descriptionLong: walk.shortDescription,
     landmarks: walk.landmarks, keywords: walk.keywords, status: "published",
-    thumbnailPath: null, thumbnailSrc: walk.thumbnail, href: walk.watchHref,
+    thumbnailPath: null, thumbnailSrc: walk.thumbnail, href: walk.watchHref, watchHref: walk.watchHref,
   };
   mapFeatures.push(feature);
 }

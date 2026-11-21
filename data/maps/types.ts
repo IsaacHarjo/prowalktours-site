@@ -47,6 +47,8 @@ export type ExploreMapFeature = {
   status: string;
   thumbnailPath: string | null;
   href: string;
+  /** Destination resolved by the server's published-tour collection. */
+  watchHref?: string;
   thumbnailSrc: string;
 };
 

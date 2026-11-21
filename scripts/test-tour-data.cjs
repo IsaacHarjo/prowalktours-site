@@ -23,6 +23,17 @@ function load(relativePath) {
 
 const core = load('lib/tours/core.ts');
 const data = load('lib/tours/server.ts');
+const mapLinks = load('data/maps/filters.ts');
+for (const id of ['fr-0046', 'fr-0050']) {
+  const walk = data.discoveryVideos.find(walk => walk.id === id);
+  assert(walk, `${id}: released Strasbourg walk remains discoverable`);
+  const feature = { tourId: id, slug: walk.slug, youtubeUrl: walk.youtubeUrl, watchHref: walk.watchHref };
+  assert.equal(mapLinks.getMapWatchHref(feature), `/videos/${walk.slug}`);
+  assert.equal(mapLinks.getMapWatchDestinationType(feature), 'internal-page');
+}
+const externalMapFeature = { tourId: 'external-only', slug: 'external-only', youtubeUrl: 'https://www.youtube.com/watch?v=example', watchHref: 'https://www.youtube.com/watch?v=example' };
+assert.equal(mapLinks.getMapWatchHref(externalMapFeature), externalMapFeature.youtubeUrl);
+assert.equal(mapLinks.getMapWatchDestinationType(externalMapFeature), 'youtube');
 const rawSearchHits = load('data/search-hits/france.ts').allSearchHits;
 for (const slug of ['riquewihr-christmas-market-360-tour-2025', 'strasbourg-christmas-market-360-tour-2025', 'strasbourg-christmas-market-evening-walk-2025']) {
   const detail = load(`data/video-details/${slug}.json`);

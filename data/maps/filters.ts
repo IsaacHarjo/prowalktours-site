@@ -221,6 +221,7 @@ export function getVideoWatchHref(slug: string, youtubeUrl: string, seconds?: nu
 }
 
 export function hasInternalMapWatchPage(feature: ExploreMapFeature) {
+  if (feature.watchHref) return feature.watchHref.startsWith("/videos/");
   return (
     Boolean(INTERNAL_WALK_PAGE_BY_TOUR_ID[feature.tourId]) ||
     hasLiveInternalVideoPage(feature.slug)
@@ -234,6 +235,7 @@ export function getMapWatchDestinationType(
 }
 
 export function getMapWatchHref(feature: ExploreMapFeature) {
+  if (feature.watchHref) return feature.watchHref;
   if (INTERNAL_WALK_PAGE_BY_TOUR_ID[feature.tourId]) {
     return INTERNAL_WALK_PAGE_BY_TOUR_ID[feature.tourId];
   }
