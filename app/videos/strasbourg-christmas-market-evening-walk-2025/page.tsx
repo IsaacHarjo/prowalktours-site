@@ -2,21 +2,26 @@ import type { Metadata } from 'next';
 import Strasbourg2025Client from './Strasbourg2025Client';
 import tour from '../../../data/video-details/strasbourg-christmas-market-evening-walk-2025.json';
 import { stringifyJsonLd } from '../../../lib/seo/jsonLd';
-import { publicTours } from '../../../lib/tours/server';
+import { getReleasedTours } from '../../../lib/tours/server';
 import { notFound } from 'next/navigation';
 import RelatedPublicWalks from '../../../components/RelatedPublicWalks';
 
 const site = 'https://www.prowalktours.com';
 const url = `${site}/videos/${tour.slug}`;
-const isPublic = publicTours.some(record => record.tourId === tour.tourId);
-export const metadata: Metadata = {
+export const dynamic = 'force-dynamic';
+const isReleased = () => getReleasedTours().some(record => record.tourId === tour.tourId && record.youtubeId === tour.youtubeId);
+export function generateMetadata(): Metadata {
+  const isPublic = isReleased();
+  return {
   title: tour.title, description: tour.description,
   alternates: { canonical: url }, robots: { index: isPublic, follow: true },
   openGraph: { title: tour.title, description: tour.description, url,
     images: [{ url: `${site}${tour.hero}`, alt: tour.heroAlt }] },
 };
+}
 
 export default function Page() {
+  const isPublic = isReleased();
   // Draft previews are local development only; production never renders the upload.
   if (!isPublic && process.env.NODE_ENV !== 'development') notFound();
   const structuredData = { '@context': 'https://schema.org', '@graph': [

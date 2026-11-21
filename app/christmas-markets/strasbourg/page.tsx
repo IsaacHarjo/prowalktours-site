@@ -2,8 +2,10 @@ import type { Metadata } from 'next';
 import StrasbourgGuideClient from '../../../components/guides/StrasbourgGuideClient';
 import { buildChristmasCatalog } from '../../../lib/christmas/catalog';
 import { buildAlsacePlaces } from '../../../lib/christmas/orientation';
-import { discoveryVideos, worldTours } from '../../../lib/tours/server';
+import { getReleasedDiscoveryVideos, worldTours } from '../../../lib/tours/server';
 import { stringifyJsonLd } from '../../../lib/seo/jsonLd';
+
+export const dynamic = 'force-dynamic';
 
 const url = 'https://www.prowalktours.com/christmas-markets/strasbourg';
 const title = 'Strasbourg Christmas Market 2026 Guide & Walking Route | Prowalk Tours';
@@ -14,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 export default function StrasbourgPage() {
-  const allWalks = buildChristmasCatalog(discoveryVideos, worldTours);
+  const allWalks = buildChristmasCatalog(getReleasedDiscoveryVideos(), worldTours);
   const walks = allWalks.filter(walk => walk.city === 'Strasbourg');
   const structuredData = { '@context': 'https://schema.org', '@graph': [
     { '@type': 'BreadcrumbList', itemListElement: [

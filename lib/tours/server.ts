@@ -5,7 +5,8 @@ import { videos as editorialVideos } from "../../data/videos";
 import { allSearchHits } from "../../data/search-hits/france";
 import { tourCountries } from "./countries";
 import { buildTours, isPublicTour, parseTourCsv, pendingLibraryRows } from "./core";
-import type { DiscoveryVideo, WorldTour } from "./types";
+import { applyScheduledRelease } from "./scheduled-releases";
+import type { TourRecord, DiscoveryVideo, WorldTour } from "./types";
 
 const sourceDirectory = path.join(process.cwd(), "data", "maps");
 const pageDirectory = path.join(process.cwd(), "app", "videos");
@@ -34,7 +35,7 @@ export const searchHits = allSearchHits.flatMap((hit) => {
 });
 
 // Explicit projection prevents production notes and draft records reaching clients.
-export const discoveryVideos: DiscoveryVideo[] = publicTours.map((tour) => ({
+export function toDiscoveryVideo(tour: TourRecord): DiscoveryVideo { return {
   id: tour.tourId, slug: tour.slug, siteTitle: tour.siteTitle, youtubeTitle: tour.youtubeTitle,
   youtubeUrl: tour.youtubeUrl, thumbnail: tour.thumbnail, country: tour.country,
   region: tour.region, city: tour.city, filmingDates: tour.filmingDates,
@@ -44,7 +45,15 @@ export const discoveryVideos: DiscoveryVideo[] = publicTours.map((tour) => ({
   themes: tour.themes, timeOfDay: tour.timeOfDay, videoType: tour.videoType,
   visibility: tour.visibility, highlights: [],
   watchHref: tour.watchHref, watchDestinationType: tour.watchDestinationType,
-}));
+}; }
+export const discoveryVideos: DiscoveryVideo[] = publicTours.map(toDiscoveryVideo);
+
+export function getReleasedTours(now = Date.now()) {
+  return tours.map(tour => applyScheduledRelease(tour, now)).filter(isPublicTour);
+}
+export function getReleasedDiscoveryVideos(now = Date.now()) {
+  return getReleasedTours(now).map(toDiscoveryVideo);
+}
 
 export const worldTours: WorldTour[] = publicTours.flatMap((tour) => {
   if (tour.latitude === null || tour.longitude === null) return [];

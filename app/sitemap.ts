@@ -2,7 +2,9 @@ import { existsSync, readdirSync } from "node:fs";
 import path from "node:path";
 
 import type { MetadataRoute } from "next";
-import { publicTours } from "../lib/tours/server";
+import { getReleasedTours } from "../lib/tours/server";
+
+export const dynamic = 'force-dynamic';
 
 const SITE_URL = "https://www.prowalktours.com";
 
@@ -39,7 +41,7 @@ function walkRoutesRecursive(
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const publicSlugs = new Set(publicTours.map((tour) => tour.slug));
+  const publicSlugs = new Set(getReleasedTours().map((tour) => tour.slug));
   const videoSlugs = listDirectRouteSlugs("videos").filter((slug) => publicSlugs.has(slug));
   const topLevelRoutes = listDirectRouteSlugs("")
     .filter((slug) => !EXCLUDED_TOP_LEVEL.has(slug))
