@@ -56,19 +56,19 @@ for (const city of ['Colmar', 'Ribeauvillé', 'Kaysersberg', 'Riquewihr', 'Stras
   }
   assert.equal(places.find(place => place.city === 'Basel').country, 'Switzerland');
 }
-assert.equal(christmasWalks.length, 46);
+assert.equal(christmasWalks.length, 48);
 assert(!christmasWalks.some(w => ['de-0009', 'de-0018'].includes(w.id)));
 const selectChristmas = (filters) => christmas.filterChristmasWalks(christmasWalks, { ...christmas.emptyChristmasFilters, ...filters });
-assert.equal(selectChristmas({ country: 'France' }).length, 14);
+assert.equal(selectChristmas({ country: 'France' }).length, 16);
 assert.equal(selectChristmas({ country: 'Germany', region: 'Bavaria', year: '2022' }).length, 2);
 assert.equal(selectChristmas({ query: 'ribeauville' }).length, 2, 'Accent-insensitive destination search');
 assert.equal(selectChristmas({ country: 'Italy', city: 'Colmar' }).length, 0);
 assert.equal(selectChristmas({ query: 'no-such-market-zzzz' }).length, 0);
-assert.equal(christmas.buildChristmasCatalog(data.discoveryVideos, []).length, 46, 'Missing coordinates must not remove searchable Christmas walks');
+assert.equal(christmas.buildChristmasCatalog(data.discoveryVideos, []).length, 48, 'Missing coordinates must not remove searchable Christmas walks');
 assert.equal(christmas.buildChristmasCatalog(data.discoveryVideos, []).find(w => w.id === 'hu-0002').filmedYear, null, 'An unverified filming date stays unknown');
 assert(fs.existsSync(path.join('public', christmas.christmasHero.src)));
 assert.equal(data.tours.length, 562, 'Review this baseline when importing new tours');
-assert.equal(data.publicTours.length, 541);
+assert.equal(data.publicTours.length, 543);
 const morning = data.publicTours.find(t => t.tourId === 'fr-0042');
 assert.equal(morning.youtubeId, 'IPcbjNY3kPk');
 assert.equal(morning.durationSeconds, 1188);
@@ -79,22 +79,29 @@ assert(!data.discoveryVideos.some(t => t.id === 'fr-0039'));
 assert.equal(data.tours.find(t => t.tourId === 'fr-0039').youtubeId, 'GSAA6r5Di7k');
 assert.equal(data.tours.find(t => t.tourId === 'fr-0049').youtubeId, '0rMD65mzHng', 'Preserve the imported Antibes identity');
 assert.equal(data.tours.find(t => t.tourId === 'fr-0050').youtubeId, 'RC7r0g-DQxo');
-assert(!data.discoveryVideos.some(t => t.id === 'fr-0050'));
+assert(data.discoveryVideos.some(t => t.id === 'fr-0050'));
+for (const id of ['fr-0046', 'fr-0050']) {
+ const tour = data.publicTours.find(t => t.tourId === id);
+ assert(tour && tour.watchHref === '/videos/' + tour.slug);
+ assert(data.worldTours.some(t => t.tourId === id && t.watchHref === tour.watchHref));
+}
+assert.equal(data.tours.find(t => t.tourId === 'fr-0050').latitude, 48.5812029);
+assert.equal(data.tours.find(t => t.tourId === 'fr-0050').longitude, 7.748515);
 for (const [city, id, count] of [['riquewihr', 'fr-0039', 26], ['strasbourg', 'fr-0050', 24]]) {
   const draft = load(`data/video-details/${city}-christmas-market-360-tour-2025.json`);
   assert.equal(draft.tourId, id);
   assert.equal(draft.chapters.length, count);
   assert(draft.chapters.every((c, i, chapters) => c.seconds >= 0 && c.seconds < draft.durationSeconds && (!i || c.seconds > chapters[i - 1].seconds)));
-  assert(!data.searchHits.some(hit => hit.tour_id === id));
+  assert.equal(data.searchHits.filter(hit => hit.tour_id === id).length, id === 'fr-0050' ? 24 : 0);
   assert(fs.existsSync(path.join('public', draft.hero)));
 }
 assert.deepEqual(new Set(data.worldTours.map(t => t.tourId)), new Set(data.discoveryVideos.map(v => v.id)));
-assert.equal(data.publicTours.filter(t => t.themes.includes('christmas-market')).length, 46);
+assert.equal(data.publicTours.filter(t => t.themes.includes('christmas-market')).length, 48);
 assert.equal(data.tours.find(t => t.tourId === 'de-0009').youtubeAvailability, 'members-only');
 assert.equal(data.tours.find(t => t.tourId === 'de-0018').youtubeAvailability, 'members-only');
 assert(!data.discoveryVideos.some(v => ['de-0009', 'de-0018', 'it-0373'].includes(v.id)));
 // Strasbourg launch: retain the permanent identity and corrected upload, while
-// the unlisted draft and its chapters stay out of every public projection.
+// the public walk and its chapters now enter every public projection.
 const strasbourgLaunch = load('data/video-details/strasbourg-christmas-market-evening-walk-2025.json');
 const strasbourgRecord = data.tours.find(t => t.tourId === strasbourgLaunch.tourId);
 assert.equal(strasbourgRecord.youtubeId, 'vZZaZuAQZtg');
@@ -238,4 +245,4 @@ assert.equal(data.searchHits.filter(h => h.tour_id === 'fr-0040').length, 38);
 assert.equal(sitemap.filter(entry => entry.url.endsWith(riquewihrPath)).length, 1);
 assert.equal(sitemap.filter(entry => entry.url.endsWith('/christmas-markets/colmar')).length, 1);
 assert(!sitemap.some(entry => entry.url.includes('home-preview')));
-console.log('PASS: 562 records; 541 shared map/search tours; 46 Christmas tours; Colmar film links, timestamps, photos, sitemap and data validation.');
+console.log('PASS: 562 records; 543 shared map/search tours; 48 Christmas tours; Colmar film links, timestamps, photos, sitemap and data validation.');

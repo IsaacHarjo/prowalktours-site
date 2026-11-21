@@ -41,7 +41,7 @@ for (const now of [at - 1, at, at + 1, at + 86400000]) {
 }
 for (const release of releases) {
  const record = data.tours.find(t => t.tourId === release.tourId);
- assert(record && record.sourceStatus === 'draft', 'Sheet export remains untouched');
+ assert(record && record.sourceStatus === 'ready', 'Public Strasbourg exports are ready');
  const readyEarly = { ...record, sourceStatus: 'ready', youtubeAvailability: 'public' };
  assert.equal(applyScheduledRelease(readyEarly, at - 1).sourceStatus, 'draft');
  const mismatch = { ...record, youtubeId: 'different' };
