@@ -1,0 +1,57 @@
+name: Save new Colmar walks
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-colmar-uploads
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.repository == 'IsaacHarjo/prowalktours-site' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - run: npm ci
+      - name: Check discovery and archive behavior
+        run: node scripts/test-colmar-uploads.cjs
+      - name: Discover public full-length Colmar uploads
+        run: node scripts/sync-colmar-uploads.cjs
+      - name: Check whether the archive changed
+        id: changes
+        run: |
+          if git diff --quiet -- data/youtube/colmar-uploads.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Validate before committing
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          node scripts/test-newest-walk.cjs
+          node scripts/test-tour-data.cjs
+          npm run build
+      - name: Save only the verified upload archive
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/youtube/colmar-uploads.json
+          git diff --cached --check
+          git commit -m "Save newly discovered full-length Colmar walks"
+          # A concurrent main update rejects this push safely. The next run
+          # starts from fresh main and rediscovers anything not yet saved.
+          git push origin HEAD:main

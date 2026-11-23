@@ -9,6 +9,9 @@ export type FeaturedWalk = {
   country?: string;
 };
 
+export type FeedWalk = FeaturedWalk & { publishedAt: string };
+export type VerifiedFeedWalk = FeedWalk & { durationSeconds: number };
+
 function decodeXml(value: string): string {
   return value.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1").replace(/&(#x[\da-f]+|#\d+|amp|lt|gt|quot|apos);/gi, (match, entity: string) => {
     const named: Record<string, string> = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'" };
@@ -22,7 +25,7 @@ function decodeXml(value: string): string {
 // or playlist (which could contain unlisted videos). No "walk" keyword is
 // required. These are only candidates: callers must verify duration before
 // displaying one, since unlabeled Shorts also appear in the public feed.
-export function walkCandidatesFromFeed(xml: string, now = Date.now()): FeaturedWalk[] {
+export function walkCandidatesFromFeed(xml: string, now = Date.now()): FeedWalk[] {
   const candidates = [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].flatMap(([, entry]) => {
     const field = (tag: string) => decodeXml(entry.match(new RegExp(`<${tag}>([\\s\\S]*?)<\\/${tag}>`))?.[1] ?? "").trim();
     const id = field("yt:videoId");
@@ -33,6 +36,7 @@ export function walkCandidatesFromFeed(xml: string, now = Date.now()): FeaturedW
       || !title || /#shorts?\b|\b(?:trailer|teaser)\b/i.test(title)) return [];
     const intro = field("media:description").split(/\r?\n\s*\r?\n/)[0].replace(/\s+/g, " ");
     return [{ published, video: {
+      publishedAt: new Date(published).toISOString(),
       youtubeUrl: `https://www.youtube.com/watch?v=${id}`,
       thumbnail: `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
       siteTitle: title,

@@ -72,3 +72,39 @@ Country maps and hand-curated destination/Christmas pages still use their existi
 datasets. Individual video page content and publication URLs remain intact. Migrating
 those consumers and creating the Christmas hub are subsequent steps; no bulk page
 generation, raw footage import, or full CMS migration is part of this change.
+
+## Automatic Colmar guide uploads
+
+The Colmar guide combines public full-length Colmar Christmas tours from the
+shared catalog with uploads discovered in Prowalk Tours' public YouTube feed.
+The guide revalidates every 15 minutes on traffic. Discovery requires `Colmar`
+as a whole word in the title and a verified duration over 180 seconds. It ignores
+description-only mentions, labeled Shorts/trailers, future publication dates,
+other channels and unverifiable videos. YouTube players still require a click.
+
+`data/youtube/colmar-uploads.json` preserves discovered public upload metadata
+after it leaves YouTube's rolling feed. It is not a master tour export: it does
+not invent tour IDs, filming dates, maps, highlights, or internal video routes.
+Google Sheets remains the source for those enriched tour records. Cards join by
+YouTube ID and prefer the catalog's internal tour link when one becomes available.
+New uploads use their real titles and clearly labeled publication dates.
+
+`.github/workflows/sync-colmar-uploads.yml` checks every six hours (at minute 17)
+and can also be run manually in GitHub Actions. It uses the repository's built-in
+token, verifies new durations, and saves only the archive when it changes, after
+tests and a production build pass. These commits follow the normal Vercel Git
+deployment path. A failed fetch never empties the archive; a concurrent main
+update rejects the push rather than overwriting anyone's work. No extra API key
+is needed. Publishing the workflow to `main` activates this background work.
+
+Check the first Actions run and its Vercel deployment when enabling this feature.
+Scheduled runs can be delayed by GitHub; public-repository schedules may be
+disabled after 60 days without repository activity. Keep the job enabled in
+Actions. The live feed still supplies recent videos if an archive run is delayed.
+
+Validation: `node scripts/test-colmar-uploads.cjs`,
+`node scripts/test-newest-walk.cjs`, `node scripts/test-tour-data.cjs`, and
+`npm run build`. `node scripts/sync-colmar-uploads.cjs --dry-run` checks current
+public discovery without changing the archive. To intentionally remove a saved
+video, edit this separate archive; if it is still public in the feed, discovery
+will add it again. Removing a catalog record alone does not remove an archive entry.

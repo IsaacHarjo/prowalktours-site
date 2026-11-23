@@ -9,6 +9,10 @@ import { colmarVisitorMap } from "../../../lib/christmas/colmar-visitor-map";
 import { colmar2026 } from "../../../lib/christmas/seasons/colmar-2026";
 import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
 import DestinationGuideClient from "../../../components/guides/DestinationGuideClient";
+import { getColmarWalks } from "../../../lib/youtube/server";
+import { isFullLengthWalk } from "../../../lib/youtube/latestWalk";
+
+export const revalidate = 900;
 
 const url = "https://www.prowalktours.com/christmas-markets/colmar";
 const title = "Colmar Christmas Markets 2026: Dates, Guide & Walking Tours | Prowalk Tours";
@@ -18,11 +22,11 @@ export const metadata: Metadata = {
   openGraph: { title, description, url, images: [{ url: colmarGuide.hero.src, width: colmarGuide.hero.width, height: colmarGuide.hero.height, alt: colmarGuide.hero.alt }] },
 };
 
-export default function ColmarChristmasPage() {
+export default async function ColmarChristmasPage() {
   const christmasWalks = buildChristmasCatalog(discoveryVideos, worldTours);
   const orientationPlaces = buildAlsacePlaces(worldTours, christmasWalks, "Colmar");
-  const ids = new Set([colmarGuide.featuredTourId, ...colmarGuide.moments.map(moment => moment.tourId), colmarGuide.fieldNote.tourId]);
-  const walks = christmasWalks.filter(walk => ids.has(walk.id)).flatMap(walk => {
+  const uploads = await getColmarWalks(discoveryVideos);
+  const walks = christmasWalks.filter(walk => walk.city === "Colmar" && isFullLengthWalk(walk.durationSeconds)).flatMap(walk => {
     const youtubeId = youtubeIdFromUrl(walk.youtubeUrl);
     return youtubeId ? [{ ...walk, youtubeId }] : [];
   });
@@ -34,5 +38,5 @@ export default function ColmarChristmasPage() {
     ] },
     { "@type": "WebPage", name: title, description, url, image: `https://www.prowalktours.com${colmarGuide.hero.src}`, about: { "@type": "Place", name: "Colmar, Alsace, France" }, dateModified: colmar2026.checkedOn },
   ] };
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(structuredData) }} /><DestinationGuideClient guide={colmarGuide} season={colmar2026} walks={walks} visitorMapData={colmarVisitorMap} orientationPlaces={orientationPlaces} videoPreview={colmarPreview} /></>;
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(structuredData) }} /><DestinationGuideClient guide={colmarGuide} season={colmar2026} walks={walks} uploads={uploads} visitorMapData={colmarVisitorMap} orientationPlaces={orientationPlaces} videoPreview={colmarPreview} /></>;
 }

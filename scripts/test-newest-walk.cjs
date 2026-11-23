@@ -5,13 +5,13 @@ const latestWalkFromFeed = (xml, now) => walkCandidatesFromFeed(xml, now)[0] ?? 
 // Exercise selection and network failures outside Next's request/cache runtime.
 const nextCache = require('next/cache');
 const originalCache = nextCache.unstable_cache;
-let getNewestWalk;
+let getNewestWalk, getRecentColmarWalks;
 try {
   nextCache.unstable_cache = (fn, keys, options) => {
     assert.equal(options.revalidate, 900);
     return fn;
   };
-  ({ getNewestWalk } = load('lib/youtube/server.ts'));
+  ({ getNewestWalk, getRecentColmarWalks } = load('lib/youtube/server.ts'));
 } finally { nextCache.unstable_cache = originalCache; }
 const entry = (id, title, date, channel = PROWALK_CHANNEL_ID) => `<entry><yt:videoId>${id}</yt:videoId><yt:channelId>${channel}</yt:channelId><title>${title}</title><published>${date}</published><media:description>A walk &amp; a view.\n\nOther information</media:description></entry>`;
 const old = entry('oldwalk0001', 'Old walking tour', '2025-01-01');
@@ -82,6 +82,10 @@ assert.equal(isFullLengthWalk(181), true);
     assert(!requests.some(url => url.includes('watch?v=oldwalk0001')), 'Do not fetch metadata for older walks once a catalog walk qualifies');
     feedXml = `<feed>${entry('colmar00001', 'Colmar Christmas Market', '2026-11-23')}${strasbourg}</feed>`;
     assert.equal((await getNewestWalk(fallback, [fallback])).youtubeUrl, 'https://www.youtube.com/watch?v=colmar00001', 'New full-length uploads work before catalog import');
+    const colmarUploads = await getRecentColmarWalks([fallback]);
+    assert.deepEqual(colmarUploads.map(walk => walk.youtubeUrl), ['https://www.youtube.com/watch?v=colmar00001']);
+    assert.equal(colmarUploads[0].durationSeconds, 6420);
+    assert.equal(colmarUploads[0].publishedAt, '2026-11-23T00:00:00.000Z');
     feedXml = `<feed>${entry('colmar00001', 'Colmar Christmas Market', '2099-11-28')}${strasbourg}</feed>`;
     assert.equal((await getNewestWalk(fallback, [fallback])).youtubeUrl, 'https://www.youtube.com/watch?v=vZZaZuAQZtg', 'Future releases remain excluded');
     feedXml = `<feed>${entry('HkTYQYNNIpQ', 'Unlabeled Short', '2026-11-23')}</feed>`;
@@ -90,6 +94,7 @@ assert.equal(isFullLengthWalk(181), true);
     assert.equal(await getNewestWalk(fallback), fallback);
     global.fetch = async () => { throw new Error('offline'); };
     assert.equal(await getNewestWalk(fallback), fallback);
+    assert.deepEqual(await getRecentColmarWalks(), [], 'Feed failure leaves catalog and saved Colmar uploads available');
     global.fetch = async () => ({ ok: true, text: async () => '<feed></feed>' });
     assert.equal(await getNewestWalk(fallback), fallback);
     assert.equal(await getNewestWalk({ ...fallback, durationSeconds: 180 }), undefined, 'Never use a Short as fallback');

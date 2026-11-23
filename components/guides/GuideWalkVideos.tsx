@@ -4,11 +4,13 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { GuideWalk } from "../../lib/guides/types";
+import type { VerifiedFeedWalk } from "../../lib/youtube/latestWalk";
+import { guideVideoCards } from "../../lib/youtube/guideWalks";
 import GuideSectionHeading from "./GuideSectionHeading";
 
-export default function GuideWalkVideos({ city, walks, introduction = "Walk with me in daylight or after dark. Put on your headphones for the sounds of the streets and markets." }: { city: string; walks: GuideWalk[]; introduction?: string }) {
+export default function GuideWalkVideos({ city, walks, uploads = [], introduction = "Walk with me in daylight or after dark. Put on your headphones for the sounds of the streets and markets." }: { city: string; walks: GuideWalk[]; uploads?: VerifiedFeedWalk[]; introduction?: string }) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
-  const orderedWalks = [...walks].sort((a, b) => (b.filmedYear ?? 0) - (a.filmedYear ?? 0) || Number(a.videoType !== "day-walk") - Number(b.videoType !== "day-walk"));
+  const orderedWalks = guideVideoCards(walks, uploads);
 
   return <section id="watch-walks" aria-labelledby="watch-heading" className="scroll-mt-[var(--guide-scroll-offset,5rem)] bg-[#edf1ed]">
     <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-16 lg:px-10">
@@ -16,11 +18,11 @@ export default function GuideWalkVideos({ city, walks, introduction = "Walk with
       <p className="mt-4 max-w-3xl leading-7 text-[#526258]">{introduction}</p>
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         {orderedWalks.map(walk => {
-          const label = walk.videoType === "360-tour" ? "360° walk" : walk.videoType === "evening-walk" ? "Evening walk" : walk.slug.includes('morning') ? "Morning walk" : "Daytime walk";
-          const isSelected = walk.id === selectedId;
-          return <article key={walk.id} className="min-w-0 overflow-hidden rounded-2xl border border-[#dce1d6] bg-white">
+          const label = walk.label;
+          const isSelected = walk.youtubeId === selectedId;
+          return <article key={walk.youtubeId} className="min-w-0 overflow-hidden rounded-2xl border border-[#dce1d6] bg-white">
             {isSelected ? <iframe
-              key={walk.id}
+              key={walk.youtubeId}
               src={`https://www.youtube.com/embed/${walk.youtubeId}?rel=0`}
               title={`${label} — ${walk.siteTitle}`}
               allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -29,8 +31,8 @@ export default function GuideWalkVideos({ city, walks, introduction = "Walk with
               className="aspect-video w-full border-0 bg-[#25382f]"
             /> : <button
               type="button"
-              onClick={() => setSelectedId(walk.id)}
-              aria-label={`Open ${label.toLowerCase()} player${walk.filmedYear ? `, filmed in ${walk.filmedYear}` : ""}`}
+              onClick={() => setSelectedId(walk.youtubeId)}
+              aria-label={`Open ${label} player${walk.context ? `, ${walk.context.toLowerCase()}` : ""}`}
               className="group/video relative block aspect-video w-full overflow-hidden bg-[#25382f] text-white focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-[#dcbf7c]"
             >
               <Image src={walk.thumbnail} alt="" fill sizes="(min-width: 1280px) 588px, (min-width: 768px) 46vw, 100vw" className="object-cover transition-transform duration-500 group-hover/video:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none" />
@@ -44,12 +46,12 @@ export default function GuideWalkVideos({ city, walks, introduction = "Walk with
             <div className="px-5 py-5 sm:px-6">
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
                 <h3 className="text-xl font-semibold">{label}</h3>
-                <p className="text-sm text-[#657069]">{[walk.filmedYear ? `Filmed in ${walk.filmedYear}` : null, walk.durationLabel].filter(Boolean).join(" · ")}</p>
+                <p className="text-sm text-[#657069]">{[walk.context, walk.durationLabel].filter(Boolean).join(" · ")}</p>
               </div>
               {/* The accessible name says which walk the link opens, without hidden
                   text that can show up when styles are missing or text is copied. */}
               <Link href={walk.watchHref} target={walk.watchDestinationType === "youtube" ? "_blank" : undefined} rel={walk.watchDestinationType === "youtube" ? "noreferrer" : undefined}
-                aria-label={`${walk.watchDestinationType === "youtube" ? "Watch on YouTube, opens in a new tab" : "Full walk, highlights and route"}: ${label}${walk.filmedYear ? `, filmed in ${walk.filmedYear}` : ""}`}
+                aria-label={`${walk.watchDestinationType === "youtube" ? "Watch on YouTube, opens in a new tab" : "Full walk, highlights and route"}: ${label}${walk.context ? `, ${walk.context.toLowerCase()}` : ""}`}
                 className="mt-2 inline-flex min-h-11 items-center text-sm font-semibold text-[#176347] underline underline-offset-4 hover:text-[#25382f]">
                 {walk.watchDestinationType === "youtube" ? "Watch on YouTube ↗" : "Full walk, highlights & route →"}
               </Link>

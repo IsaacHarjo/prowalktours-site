@@ -15,6 +15,7 @@ import GuideFaqs from "./GuideFaqs";
 import DestinationPersonalTake from "./DestinationPersonalTake";
 import type { GuideMapData } from "../../lib/guides/map-types";
 import type { VisitorMapData } from "../../lib/guides/visitor-map-types";
+import type { VerifiedFeedWalk } from "../../lib/youtube/latestWalk";
 
 const GuideRouteMap = dynamic(() => import("./GuideRouteMap"), {
   ssr: false,
@@ -38,7 +39,7 @@ function SourceLink({ source }: { source: GuideSource }) {
   return <a href={source.href} target="_blank" rel="noreferrer" className={linkClass}>{source.label} ↗</a>;
 }
 
-export default function DestinationGuideClient({ guide, season, walks, mapData, visitorMapData, orientationPlaces, videoPreview }: { guide: DestinationGuide; season: GuideSeason; walks: GuideWalk[]; mapData?: GuideMapData; visitorMapData?: VisitorMapData; orientationPlaces?: OrientationPlace[]; videoPreview?: GuideVideoPreview }) {
+export default function DestinationGuideClient({ guide, season, walks, uploads, mapData, visitorMapData, orientationPlaces, videoPreview }: { guide: DestinationGuide; season: GuideSeason; walks: GuideWalk[]; uploads?: VerifiedFeedWalk[]; mapData?: GuideMapData; visitorMapData?: VisitorMapData; orientationPlaces?: OrientationPlace[]; videoPreview?: GuideVideoPreview }) {
   const parkingStops = visitorMapData?.stops.filter(stop => stop.icon === "parking") ?? [];
   const checkedDate = new Date(`${season.checkedOn}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
   const navigation = [
@@ -146,7 +147,7 @@ export default function DestinationGuideClient({ guide, season, walks, mapData, 
 
 
 
-    <GuideWalkVideos city={guide.city} walks={walks} />
+    <GuideWalkVideos city={guide.city} walks={walks} uploads={uploads} />
 
     {guide.faq && guide.faq.length > 0 && <GuideFaqs city={guide.city} questions={guide.faq} />}
 
