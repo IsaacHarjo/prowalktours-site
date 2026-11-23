@@ -214,7 +214,8 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
             <button type="button" onClick={() => selectStep(stepIndex === steps.length - 1 ? 0 : stepIndex + 1)} className="min-h-11 rounded-lg bg-[#176347] px-3 py-2 text-sm font-semibold text-white hover:bg-[#25382f]">{stepIndex === steps.length - 1 ? 'Back to the start' : 'Next stop →'}</button>
           </nav>
           {data.descriptionBeforeMedia && <p className="mb-4 mt-4 text-sm leading-7 text-[#526258]">{activeStep.text}</p>}
-          {selected.video ? <StopVideo key={selected.id} video={selected.video} poster={selected.photo?.src} /> : <StopPhotoGallery key={selected.id} name={selected.name} photos={selected.photos?.length ? selected.photos : selected.photo ? [selected.photo] : []} />}
+          {selected.video && <StopVideo key={`video-${selected.id}`} video={selected.video} poster={selected.photos?.[0]?.src ?? selected.photo?.src} />}
+          <StopPhotoGallery key={`photos-${selected.id}`} name={selected.name} photos={selected.photos?.length ? selected.photos : selected.photo ? [selected.photo] : []} />
           {(selected.panoramas?.length || selected.panorama) && <StopPanoramas key={`panorama-${selected.id}`} name={selected.shortName} photos={selected.panoramas?.length ? selected.panoramas : [{ src: selected.panorama!.src, label: "Look around" }]} />}
 
           {!data.descriptionBeforeMedia && <p className="mt-3 text-sm leading-7 text-[#526258]">{activeStep.text}</p>}
@@ -230,7 +231,8 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
         </> : <>
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#607767]"><Badge stop={selected} />{selected.category === 'market' ? `Market ${selected.marketNumber} of ${data.stops.filter(stop => stop.category === 'market').length}` : labelledCategories.find(item => item.id === selected.category)?.label}</div>
           <h3 className="mt-4 text-xl font-semibold leading-7 text-[#25382f]">{selected.name}</h3>
-          {selected.video ? <StopVideo key={selected.id} video={selected.video} poster={selected.photo?.src} /> : <StopPhotoGallery key={selected.id} name={selected.name} photos={selected.photos?.length ? selected.photos : selected.photo ? [selected.photo] : []} />}
+          {selected.video && <StopVideo key={`video-${selected.id}`} video={selected.video} poster={selected.photos?.[0]?.src ?? selected.photo?.src} />}
+          <StopPhotoGallery key={`photos-${selected.id}`} name={selected.name} photos={selected.photos?.length ? selected.photos : selected.photo ? [selected.photo] : []} />
           {(selected.panoramas?.length || selected.panorama) && <StopPanoramas key={`panorama-${selected.id}`} name={selected.shortName} photos={selected.panoramas?.length ? selected.panoramas : [{ src: selected.panorama!.src, label: "Look around" }]} />}
           <p className="mt-4 text-sm leading-7 text-[#526258]">{selected.text}</p>
           <WatchLinks stop={selected} />{selected.informationUrl && <a href={selected.informationUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block text-sm font-semibold text-[#176347] underline underline-offset-4">{selected.informationLabel ?? 'Official 2026 market map'} ↗</a>}

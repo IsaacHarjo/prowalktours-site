@@ -84,6 +84,16 @@ export default function DestinationGuideClient({ guide, season, walks, mapData, 
       </DestinationPersonalTake>
     </div>}
 
+    {guide.slug === "colmar" && <section className={width + " pb-10 sm:pb-14"} aria-labelledby="colmar-photos-heading">
+      <h2 id="colmar-photos-heading" className="text-2xl font-semibold">A few views from my Colmar visits</h2>
+      <div className="mt-5 grid grid-cols-2 gap-4 lg:grid-cols-4">{guide.moments.map(moment => <figure key={moment.title}>
+        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+          <Image src={moment.photo.src} alt={moment.photo.alt} fill sizes="(min-width: 1280px) 288px, (min-width: 1024px) 23vw, 45vw" className="object-cover" />
+        </div>
+        <figcaption className="mt-3 text-sm font-semibold leading-6">{moment.title}</figcaption>
+      </figure>)}</div>
+    </section>}
+
     <section id="market-squares" className="scroll-mt-[var(--guide-scroll-offset,5rem)] border-y border-[#e1e3d9] bg-white" aria-labelledby="markets-heading">
       <div className={width + " py-14 sm:py-16"}>
         <GuideSectionHeading id="markets-heading" eyebrow={`Explore ${guide.city} on foot`} title={`Take a walk through ${guide.city}’s Christmas markets`} icon="walking" />

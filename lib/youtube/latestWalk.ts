@@ -20,9 +20,9 @@ function decodeXml(value: string): string {
 
 // Only read entries from the channel's public feed, never a supplied video URL
 // or playlist (which could contain unlisted videos). No "walk" keyword is
-// required. Explicit Shorts/trailer labels are excluded; the feed does not
-// provide duration, so this is not a duration-based Shorts classifier.
-export function latestWalkFromFeed(xml: string, now = Date.now()): FeaturedWalk | null {
+// required. These are only candidates: callers must verify duration before
+// displaying one, since unlabeled Shorts also appear in the public feed.
+export function walkCandidatesFromFeed(xml: string, now = Date.now()): FeaturedWalk[] {
   const candidates = [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].flatMap(([, entry]) => {
     const field = (tag: string) => decodeXml(entry.match(new RegExp(`<${tag}>([\\s\\S]*?)<\\/${tag}>`))?.[1] ?? "").trim();
     const id = field("yt:videoId");
@@ -39,5 +39,41 @@ export function latestWalkFromFeed(xml: string, now = Date.now()): FeaturedWalk 
       shortDescription: intro.length > 320 ? `${intro.slice(0, 317).replace(/\s+\S*$/, "")}…` : intro,
     } }];
   });
-  return candidates.sort((a, b) => b.published - a.published)[0]?.video ?? null;
+  return candidates.sort((a, b) => b.published - a.published).map(candidate => candidate.video);
+}
+
+// Shorts can be up to three minutes. Unknown durations fail closed.
+export function isFullLengthWalk(duration: number): boolean {
+  return Number.isFinite(duration) && duration > 180;
+}
+
+// Read JSON, never execute YouTube's scripts. Scope duration to the requested
+// video and our channel, not related videos or ads elsewhere in the HTML.
+export function durationFromWatchPage(html: string, videoId: string): number | null {
+  const assignment = /\bytInitialPlayerResponse\s*=\s*\{/.exec(html);
+  if (!assignment) return null;
+  const start = assignment.index + assignment[0].length - 1;
+  let depth = 0;
+  let quoted = false;
+  let escaped = false;
+  for (let i = start; i < html.length; i++) {
+    const char = html[i];
+    if (quoted) {
+      if (escaped) escaped = false;
+      else if (char === "\\") escaped = true;
+      else if (char === '"') quoted = false;
+    } else if (char === '"') quoted = true;
+    else if (char === "{") depth++;
+    else if (char === "}" && --depth === 0) {
+      try {
+        const player = JSON.parse(html.slice(start, i + 1));
+        const details = player.videoDetails;
+        if (player.playabilityStatus?.status !== "OK" || details?.videoId !== videoId
+          || details.channelId !== PROWALK_CHANNEL_ID || details.isLive || details.isUpcoming) return null;
+        const duration = Number(details.lengthSeconds);
+        return Number.isFinite(duration) && duration > 0 ? duration : null;
+      } catch { return null; }
+    }
+  }
+  return null;
 }

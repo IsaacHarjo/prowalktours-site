@@ -15,8 +15,8 @@ export const metadata = {
 };
 
 export default async function HomePage() {
-  const fallback = discoveryVideos.find(video => video.youtubeUrl.includes("snBqLG2Piyo"));
-  const featuredVideo = await getNewestWalk(fallback);
+  const fallback = discoveryVideos.find(video => video.youtubeUrl.includes("vZZaZuAQZtg"));
+  const featuredVideo = await getNewestWalk(fallback, discoveryVideos);
   const featuredGuide = guideForFeaturedVideo(featuredVideo?.youtubeUrl, [...tours, ...baselWalks]);
   return <><PageJsonLd title="Home" pathname="" /><HomeClient videos={discoveryVideos} mappedTours={worldTours} featuredVideo={featuredVideo} featuredGuide={featuredGuide} /></>;
 }

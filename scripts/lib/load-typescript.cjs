@@ -4,6 +4,7 @@ const ts = require('typescript');
 const cache = new Map();
 module.exports = function load(relativePath) {
   let file = path.resolve(relativePath);
+  if (file.endsWith('.json')) return JSON.parse(fs.readFileSync(file, 'utf8'));
   if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, 'index.ts');
   else if (!file.endsWith('.ts')) file += '.ts';
   if (cache.has(file)) return cache.get(file);
