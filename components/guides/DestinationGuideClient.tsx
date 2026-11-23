@@ -13,6 +13,7 @@ import GuideWalkVideos from "./GuideWalkVideos";
 import GuideHeroVideo, { type GuideVideoPreview } from "./GuideHeroVideo";
 import GuideFaqs from "./GuideFaqs";
 import DestinationPersonalTake from "./DestinationPersonalTake";
+import GuidePhotoCarousel from "./GuidePhotoCarousel";
 import type { GuideMapData } from "../../lib/guides/map-types";
 import type { VisitorMapData } from "../../lib/guides/visitor-map-types";
 import type { VerifiedFeedWalk } from "../../lib/youtube/latestWalk";
@@ -87,12 +88,7 @@ export default function DestinationGuideClient({ guide, season, walks, uploads, 
 
     {guide.slug === "colmar" && <section className={width + " pb-10 sm:pb-14"} aria-labelledby="colmar-photos-heading">
       <h2 id="colmar-photos-heading" className="text-2xl font-semibold">A few views from my Colmar visits</h2>
-      <div className="mt-5 grid grid-cols-2 gap-4 lg:grid-cols-4">{guide.moments.map(moment => <figure key={moment.title}>
-        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-          <Image src={moment.photo.src} alt={moment.photo.alt} fill sizes="(min-width: 1280px) 288px, (min-width: 1024px) 23vw, 45vw" className="object-cover" />
-        </div>
-        <figcaption className="mt-3 text-sm font-semibold leading-6">{moment.title}</figcaption>
-      </figure>)}</div>
+      <GuidePhotoCarousel stops={visitorMapData?.stops ?? []} />
     </section>}
 
     <section id="market-squares" className="scroll-mt-[var(--guide-scroll-offset,5rem)] border-y border-[#e1e3d9] bg-white" aria-labelledby="markets-heading">
@@ -103,7 +99,7 @@ export default function DestinationGuideClient({ guide, season, walks, uploads, 
         <p className="mt-3 hidden max-w-3xl leading-7 text-[#657069] lg:block">Start with the first stop below. Watch a short clip, see where you are on the map, then choose Next stop to continue the walk.</p>
         <p className="mt-3 text-xs leading-6 text-[#526258] lg:hidden">Allow at least 3 hours · Best around sunset · Start at the Colmar sign</p>
         {guide.visitEssentials && <dl className="mt-6 hidden gap-3 lg:grid lg:grid-cols-3">{guide.visitEssentials.filter(item => item.label !== "Arriving by train").map(item => <div key={item.label} className="rounded-xl bg-[#eaf0e8] px-5 py-4"><dt className="text-xs font-semibold uppercase tracking-wide text-[#526258]">{item.label}</dt><dd className="mt-1 font-semibold">{item.value}</dd></div>)}</dl>}
-        {visitorMapData ? <VisitorRouteMap data={visitorMapData} /> : mapData ? <GuideRouteMap data={mapData} markets={guide.markets} walks={walks} year={season.year} /> : <ol className="mt-8 grid gap-x-12 md:grid-cols-2">{guide.markets.map((market, index) => <li key={market.name} className="flex gap-4 border-t border-[#e1e3d9] py-6"><span className="pt-1 font-serif text-xl text-[#947a50]">{String(index + 1).padStart(2, "0")}</span><div><h3 className="text-lg font-semibold">{market.name}</h3><p className="mt-2 text-sm leading-7 text-[#657069]">{market.text}</p></div></li>)}</ol>}
+        {visitorMapData ? <VisitorRouteMap data={visitorMapData} showPhotos={guide.slug !== "colmar"} /> : mapData ? <GuideRouteMap data={mapData} markets={guide.markets} walks={walks} year={season.year} /> : <ol className="mt-8 grid gap-x-12 md:grid-cols-2">{guide.markets.map((market, index) => <li key={market.name} className="flex gap-4 border-t border-[#e1e3d9] py-6"><span className="pt-1 font-serif text-xl text-[#947a50]">{String(index + 1).padStart(2, "0")}</span><div><h3 className="text-lg font-semibold">{market.name}</h3><p className="mt-2 text-sm leading-7 text-[#657069]">{market.text}</p></div></li>)}</ol>}
         <SourceLink source={guide.marketsSource} />
       </div>
     </section>

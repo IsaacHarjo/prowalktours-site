@@ -95,7 +95,7 @@ function subscribeToMobile(callback: () => void) {
 const getMobileSnapshot = () => window.matchMedia('(max-width: 1023px)').matches;
 const getServerSnapshot = () => false;
 
-export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
+export default function VisitorRouteMap({ data, showPhotos = true }: { data: VisitorMapData; showPhotos?: boolean }) {
   const isMobile = useSyncExternalStore(subscribeToMobile, getMobileSnapshot, getServerSnapshot);
   const sheetRef = useRef<HTMLDialogElement>(null);
   const [sheetOpen, setSheetOpen] = useState(false);
@@ -215,7 +215,7 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
           </nav>
           {data.descriptionBeforeMedia && <p className="mb-4 mt-4 text-sm leading-7 text-[#526258]">{activeStep.text}</p>}
           {selected.video && <StopVideo key={`video-${selected.id}`} video={selected.video} poster={selected.photos?.[0]?.src ?? selected.photo?.src} />}
-          <StopPhotoGallery key={`photos-${selected.id}`} name={selected.name} photos={selected.photos?.length ? selected.photos : selected.photo ? [selected.photo] : []} />
+          {showPhotos && <StopPhotoGallery key={`photos-${selected.id}`} name={selected.name} photos={selected.photos?.length ? selected.photos : selected.photo ? [selected.photo] : []} />}
           {(selected.panoramas?.length || selected.panorama) && <StopPanoramas key={`panorama-${selected.id}`} name={selected.shortName} photos={selected.panoramas?.length ? selected.panoramas : [{ src: selected.panorama!.src, label: "Look around" }]} />}
 
           {!data.descriptionBeforeMedia && <p className="mt-3 text-sm leading-7 text-[#526258]">{activeStep.text}</p>}
@@ -232,7 +232,7 @@ export default function VisitorRouteMap({ data }: { data: VisitorMapData }) {
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#607767]"><Badge stop={selected} />{selected.category === 'market' ? `Market ${selected.marketNumber} of ${data.stops.filter(stop => stop.category === 'market').length}` : labelledCategories.find(item => item.id === selected.category)?.label}</div>
           <h3 className="mt-4 text-xl font-semibold leading-7 text-[#25382f]">{selected.name}</h3>
           {selected.video && <StopVideo key={`video-${selected.id}`} video={selected.video} poster={selected.photos?.[0]?.src ?? selected.photo?.src} />}
-          <StopPhotoGallery key={`photos-${selected.id}`} name={selected.name} photos={selected.photos?.length ? selected.photos : selected.photo ? [selected.photo] : []} />
+          {showPhotos && <StopPhotoGallery key={`photos-${selected.id}`} name={selected.name} photos={selected.photos?.length ? selected.photos : selected.photo ? [selected.photo] : []} />}
           {(selected.panoramas?.length || selected.panorama) && <StopPanoramas key={`panorama-${selected.id}`} name={selected.shortName} photos={selected.panoramas?.length ? selected.panoramas : [{ src: selected.panorama!.src, label: "Look around" }]} />}
           <p className="mt-4 text-sm leading-7 text-[#526258]">{selected.text}</p>
           <WatchLinks stop={selected} />{selected.informationUrl && <a href={selected.informationUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block text-sm font-semibold text-[#176347] underline underline-offset-4">{selected.informationLabel ?? 'Official 2026 market map'} ↗</a>}
