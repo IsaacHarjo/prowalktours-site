@@ -3,6 +3,13 @@ import type { GuideFaq } from '../guides/types';
 // Background checked against the linked tourism-office and museum sources on 14 October 2026.
 export const colmarFaq: GuideFaq[] = [
   {
+    question: 'Is there a Christmas light show in Colmar?',
+    kind: 'official',
+    answer: 'For an optional evening stop, the Unterlinden Museum’s cloister hosts “Once Upon a Night” from 25 November 2026 to 3 January 2027. The show lasts about 10 minutes, with screenings every 15 minutes from 17:00 to 18:30.\n\nThere are no shows on Tuesdays, 24, 25 or 31 December, or 1 January. From 16:00, admission is €8 for ages 12 and over and free for children under 12; the ticket includes the museum until 19:00 and that day’s screenings. Check the museum’s schedule before planning your evening around it.',
+    source: { label: 'Unterlinden light show: dates, tickets & closures', href: 'https://www.musee-unterlinden.com/de/spectacle-son-et-lumiere-once-upon-a-night-dans-le-cloitre-du-musee-unterlinden/' },
+    checkedOn: '2026-11-23',
+  },
+  {
     question: 'Does the walk include steps or indoor passages?',
     answer: 'The elevated Koïfhus photo spot involves stairs; you can enjoy the view from street level too. The Monoprix shopping passage and indoor markets depend on opening hours. If a passage is closed, use the surrounding streets. This is a suggested sightseeing walk, and I have not assessed the full route for step-free access.',
   },

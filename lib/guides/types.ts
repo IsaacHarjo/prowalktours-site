@@ -37,6 +37,8 @@ export type GuideSeason = {
   exceptions: string;
   source: GuideSource;
   extraMarket: { title: string; dates: string; hours: string; source: GuideSource; checkedOn: string };
+  crowdForecast?: { text: string; source: GuideSource; checkedOn: string };
+  officialMap?: { text: string; source: GuideSource; checkedOn: string };
   /** checkedOn is omitted only when the official page could not be read. */
   transport: { title: string; text: string; source: GuideSource; checkedOn?: string }[];
   shuttles?: GuideShuttleService;

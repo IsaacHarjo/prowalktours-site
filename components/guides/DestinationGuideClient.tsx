@@ -100,8 +100,10 @@ export default function DestinationGuideClient({ guide, season, walks, uploads, 
         <p className="mt-3 hidden max-w-3xl leading-7 text-[#657069] lg:block">Start with the first stop below. Watch a short clip, see where you are on the map, then choose Next stop to continue the walk.</p>
         <p className="mt-3 text-xs leading-6 text-[#526258] lg:hidden">Allow at least 3 hours · Best around sunset · Start at the Colmar sign</p>
         {guide.visitEssentials && <dl className="mt-6 hidden gap-3 lg:grid lg:grid-cols-3">{guide.visitEssentials.filter(item => item.label !== "Arriving by train").map(item => <div key={item.label} className="rounded-xl bg-[#eaf0e8] px-5 py-4"><dt className="text-xs font-semibold uppercase tracking-wide text-[#526258]">{item.label}</dt><dd className="mt-1 font-semibold">{item.value}</dd></div>)}</dl>}
+        {season.crowdForecast && <div className="mt-4 max-w-3xl"><p className="text-sm leading-7 text-[#657069]">{season.crowdForecast.text}</p><SourceLink source={season.crowdForecast.source} /></div>}
         {visitorMapData ? <VisitorRouteMap data={visitorMapData} showPhotos={guide.slug !== "colmar"} /> : mapData ? <GuideRouteMap data={mapData} markets={guide.markets} walks={walks} year={season.year} /> : <ol className="mt-8 grid gap-x-12 md:grid-cols-2">{guide.markets.map((market, index) => <li key={market.name} className="flex gap-4 border-t border-[#e1e3d9] py-6"><span className="pt-1 font-serif text-xl text-[#947a50]">{String(index + 1).padStart(2, "0")}</span><div><h3 className="text-lg font-semibold">{market.name}</h3><p className="mt-2 text-sm leading-7 text-[#657069]">{market.text}</p></div></li>)}</ol>}
         <SourceLink source={guide.marketsSource} />
+        {season.officialMap && <aside className="mt-4 rounded-xl border border-[#dce1d6] bg-[#f5f6f1] p-5" aria-label="Official downloadable map"><SourceLink source={season.officialMap.source} /><p className="mt-1 max-w-3xl text-sm leading-7 text-[#657069]">{season.officialMap.text}</p></aside>}
       </div>
     </section>
 
@@ -116,11 +118,11 @@ export default function DestinationGuideClient({ guide, season, walks, uploads, 
         </div>
         <dl className="divide-y divide-[#dce1d6] border-y border-[#dce1d6]">{season.hours.map(hours => <div key={hours.label} className="flex flex-wrap justify-between gap-3 py-4"><dt className="text-[#657069]">{hours.label}</dt><dd className="font-semibold tabular-nums">{hours.value}</dd></div>)}</dl>
       </div>
-      <GuideDisclosure title="Holiday hours & Gourmet Market dates" className="mt-8">
-        <div className="grid gap-8 sm:grid-cols-2">
-          <div><h3 className="font-semibold">Christmas holiday hours</h3><p className="mt-3 text-sm leading-7 text-[#657069]">{season.exceptions}</p></div>
-          <div><h3 className="font-semibold">{season.extraMarket.title}</h3><p className="mt-3 text-sm font-semibold leading-7">{season.extraMarket.dates}</p><p className="mt-2 text-sm leading-7 text-[#657069]">{season.extraMarket.hours}</p><SourceLink source={season.extraMarket.source} /><CheckedNote on={season.extraMarket.checkedOn} /></div>
-        </div>
+      <aside className="mt-8 rounded-xl border border-[#dce1d6] bg-[#f5f6f1] p-5 sm:p-6" aria-labelledby="extended-season-heading">
+        <h3 id="extended-season-heading" className="text-lg font-semibold">{season.extraMarket.title}</h3><p className="mt-3 text-sm font-semibold leading-7">{season.extraMarket.dates}</p><p className="mt-2 max-w-3xl text-sm leading-7 text-[#657069]">{season.extraMarket.hours}</p><SourceLink source={season.extraMarket.source} /><CheckedNote on={season.extraMarket.checkedOn} />
+      </aside>
+      <GuideDisclosure title="Christmas holiday hours" className="mt-5">
+        <p className="text-sm leading-7 text-[#657069]">{season.exceptions}</p>
       </GuideDisclosure>
     </section>
 
