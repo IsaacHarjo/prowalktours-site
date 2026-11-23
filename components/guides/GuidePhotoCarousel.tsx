@@ -2,18 +2,11 @@
 
 import Image from "next/image";
 import { useId, useRef } from "react";
-import type { VisitorMapStop } from "../../lib/guides/visitor-map-types";
+import type { GuidePhoto } from "../../lib/guides/types";
 
-export default function GuidePhotoCarousel({ stops }: { stops: VisitorMapStop[] }) {
+export default function GuidePhotoCarousel({ photos }: { photos: GuidePhoto[] }) {
   const rail = useRef<HTMLUListElement>(null);
   const railId = useId();
-  const seen = new Set<string>();
-  const photos = stops.flatMap(stop => (stop.photos?.length ? stop.photos : stop.photo ? [stop.photo] : [])
-    .filter(photo => {
-      if (seen.has(photo.src)) return false;
-      seen.add(photo.src);
-      return true;
-    }).map(photo => ({ ...photo, caption: stop.shortName })));
 
   function advance(direction: -1 | 1) {
     const list = rail.current;
@@ -28,17 +21,17 @@ export default function GuidePhotoCarousel({ stops }: { stops: VisitorMapStop[] 
 
   if (!photos.length) return null;
 
-  return <div role="region" aria-label="Photos from my Colmar stops" aria-roledescription="carousel" className="relative mt-5"
+  return <div role="region" aria-label="Photos from my Colmar visits" aria-roledescription="carousel" className="relative mt-5"
     onKeyDown={event => {
       if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
       event.preventDefault();
       advance(event.key === "ArrowLeft" ? -1 : 1);
     }}>
-    <ul ref={rail} id={railId} tabIndex={0} aria-label="Colmar stop photos" className="flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain rounded-2xl pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#176347]">
+    <ul ref={rail} id={railId} tabIndex={0} aria-label="Colmar photos" className="flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain rounded-2xl pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#176347]">
       {photos.map((photo, index) => <li key={photo.src} className="min-w-0 shrink-0 basis-full snap-start sm:basis-[calc((100%-1rem)/2)] lg:basis-[calc((100%-3rem)/4)]" aria-label={`Photo ${index + 1} of ${photos.length}`}>
         <figure>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#edf1ed]">
-            <Image src={photo.src} alt={photo.alt} fill sizes="(min-width: 1280px) 288px, (min-width: 1024px) 23vw, (min-width: 640px) 45vw, 90vw" className="object-cover" />
+          <div className="relative aspect-video overflow-hidden rounded-2xl bg-[#edf1ed]">
+            <Image src={photo.src} alt={photo.alt} fill sizes="(min-width: 1280px) 288px, (min-width: 1024px) 23vw, (min-width: 640px) 45vw, 90vw" className="object-contain" />
           </div>
           <figcaption className="mt-3 text-sm font-semibold leading-6">{photo.caption}</figcaption>
         </figure>

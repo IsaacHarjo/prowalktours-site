@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 
-export default function DestinationPersonalTake({ headingId, title, href, portrait, filmingPhoto, photoAlt = "Me holding my camera beside the canal in Colmar at Christmas", children }: { headingId: string; title: string; href: string; portrait?: string; filmingPhoto?: string; photoAlt?: string; children: ReactNode }) {
+export default function DestinationPersonalTake({ headingId, title, href, portrait, filmingPhoto, photoAlt = "Me holding my camera beside the canal in Colmar at Christmas", photoCaption, photoOrientation = "landscape", children }: { headingId: string; title: string; href: string; portrait?: string; filmingPhoto?: string; photoAlt?: string; photoCaption?: string; photoOrientation?: "landscape" | "portrait"; children: ReactNode }) {
   return <section aria-labelledby={headingId} className={`grid items-center gap-6 border-l-2 border-[#b18b45] pl-5 sm:gap-8 sm:pl-7 ${filmingPhoto ? "lg:grid-cols-[minmax(0,1fr)_340px]" : "max-w-4xl"}`}>
     <div>
     <div className="flex items-center gap-4">
@@ -13,6 +13,9 @@ export default function DestinationPersonalTake({ headingId, title, href, portra
     <div className="mt-4 space-y-3 text-base leading-7 text-[#526258]">{children}</div>
     <a href={href} className="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-[#176347] underline underline-offset-4 hover:text-[#25382f]">Let me show you around →</a>
     </div>
-    {filmingPhoto && <Image src={filmingPhoto} alt={photoAlt} width={1200} height={675} sizes="(min-width: 1024px) 340px, (min-width: 640px) 480px, 100vw" className="aspect-video w-full max-w-[480px] rounded-2xl object-cover lg:max-w-none" />}
+    {filmingPhoto && <figure className="w-full max-w-[480px] lg:max-w-none">
+      <Image src={filmingPhoto} alt={photoAlt} width={1200} height={photoOrientation === "portrait" ? 1600 : 675} sizes="(min-width: 1024px) 340px, (min-width: 640px) 480px, 100vw" className={`${photoOrientation === "portrait" ? "aspect-[3/4]" : "aspect-video"} w-full rounded-2xl object-cover`} />
+      {photoCaption && <figcaption className="mt-3 text-sm leading-6 text-[#526258]">{photoCaption}</figcaption>}
+    </figure>}
   </section>;
 }

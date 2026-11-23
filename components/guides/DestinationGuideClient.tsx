@@ -14,6 +14,7 @@ import GuideHeroVideo, { type GuideVideoPreview } from "./GuideHeroVideo";
 import GuideFaqs from "./GuideFaqs";
 import DestinationPersonalTake from "./DestinationPersonalTake";
 import GuidePhotoCarousel from "./GuidePhotoCarousel";
+import { colmarCarouselPhotos, colmarMarketPortrait } from "../../lib/christmas/colmar-carousel-photos";
 import type { GuideMapData } from "../../lib/guides/map-types";
 import type { VisitorMapData } from "../../lib/guides/visitor-map-types";
 import type { VerifiedFeedWalk } from "../../lib/youtube/latestWalk";
@@ -80,7 +81,7 @@ export default function DestinationGuideClient({ guide, season, walks, uploads, 
     </header>
 
     {guide.slug === "colmar" && <div className={width + " pb-9 pt-5 sm:pb-12 sm:pt-7"}>
-      <DestinationPersonalTake filmingPhoto="/images/isaac/filming-colmar.webp" portrait="/images/isaac/portrait-camera.webp" headingId="why-colmar-heading" title="Why I love Colmar at Christmas" href="#market-squares">
+      <DestinationPersonalTake filmingPhoto={colmarMarketPortrait.src} photoAlt={colmarMarketPortrait.alt} photoCaption={colmarMarketPortrait.caption} photoOrientation="portrait" portrait="/images/isaac/portrait-camera.webp" headingId="why-colmar-heading" title="Why I love Colmar at Christmas" href="#market-squares">
         <p>What I love about Colmar is that the whole historic center feels like part of the Christmas market. Walking between the squares is just as much a reason to come as the stalls themselves.</p>
         <p>You go from the beautiful Saint-Martin church to narrow lanes lined with half-timbered houses, then down to the canals in Petite Venise. Each area has its own feel, and there’s something beautiful around every corner. For me, that variety makes Colmar such a fun place to explore on foot.</p>
       </DestinationPersonalTake>
@@ -88,7 +89,7 @@ export default function DestinationGuideClient({ guide, season, walks, uploads, 
 
     {guide.slug === "colmar" && <section className={width + " pb-10 sm:pb-14"} aria-labelledby="colmar-photos-heading">
       <h2 id="colmar-photos-heading" className="text-2xl font-semibold">A few views from my Colmar visits</h2>
-      <GuidePhotoCarousel stops={visitorMapData?.stops ?? []} />
+      <GuidePhotoCarousel photos={colmarCarouselPhotos} />
     </section>}
 
     <section id="market-squares" className="scroll-mt-[var(--guide-scroll-offset,5rem)] border-y border-[#e1e3d9] bg-white" aria-labelledby="markets-heading">

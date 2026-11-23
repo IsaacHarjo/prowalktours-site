@@ -1,0 +1,75 @@
+{
+  "selectedOn": "2026-11-23",
+  "selection": [
+    {
+      "source": "Colmar Sign0.jpg",
+      "output": "/images/guides/colmar/colmar-carousel-sign-2025.webp",
+      "caption": "The Colmar sign",
+      "enhanced": false
+    },
+    {
+      "source": "20231206_142255.jpg",
+      "output": "/images/guides/colmar/colmar-carousel-dominicains-day-1-2023.webp",
+      "caption": "Christmas at Place des Dominicains",
+      "enhanced": false
+    },
+    {
+      "source": "20231206_142322.jpg",
+      "output": "/images/guides/colmar/colmar-carousel-dominicains-day-2-2023.webp",
+      "caption": "Around the Christmas tree",
+      "enhanced": false
+    },
+    {
+      "source": "DSC05803.JPG",
+      "output": "/images/guides/colmar/colmar-carousel-dominicains-night-2023.webp",
+      "caption": "Evening at Place des Dominicains",
+      "enhanced": true
+    },
+    {
+      "source": "Place de la Cathédrale 2023_1.jpg",
+      "output": "/images/guides/colmar/colmar-carousel-cathedral-1-2023.webp",
+      "caption": "Place de la Cathédrale",
+      "enhanced": false
+    },
+    {
+      "source": "Place de la Cathédrale 2023_2.jpg",
+      "output": "/images/guides/colmar/colmar-carousel-cathedral-2-2023.webp",
+      "caption": "Saint-Martin at Christmas",
+      "enhanced": false
+    },
+    {
+      "source": "IMG_7541.HEIC",
+      "output": "/images/guides/colmar/colmar-carousel-koifhus-day-2025.webp",
+      "caption": "The view from the Koïfhus steps",
+      "enhanced": true
+    },
+    {
+      "source": "IMG_7602.HEIC",
+      "output": "/images/guides/colmar/colmar-carousel-koifhus-lights-2025.webp",
+      "caption": "Christmas lights by the Koïfhus",
+      "enhanced": true
+    },
+    {
+      "source": "20251215_171402.jpg",
+      "output": "/images/guides/colmar/colmar-carousel-koifhus-evening-2025.webp",
+      "caption": "Blue hour from the Koïfhus steps",
+      "enhanced": true
+    },
+    {
+      "source": "20251215_151914.jpg",
+      "output": "/images/guides/colmar/colmar-carousel-petite-venise-2025.webp",
+      "caption": "Petite Venise canal view",
+      "enhanced": false
+    }
+  ],
+  "portrait": {
+    "source": "20251215_135836.jpg",
+    "output": "/images/guides/colmar/colmar-marshmallow-break-2025.webp",
+    "enhanced": true
+  },
+  "processing": {
+    "originals": "Unchanged. Six unedited selections exported with orientation applied and metadata stripped. HEIC edit inputs decoded locally using FFmpeg.",
+    "enhancements": "Five separate edits using the built-in image generation/editing tool, then WebP exports. Prompts requested natural color and clarity only, preserving composition, people, architecture, signs and objects. Generated photo edits may differ in fine details; originals remain available.",
+    "prompt": "Edit this exact original travel photo only for subtle natural color correction and clarity. Gently lift shadows and improve clarity, retaining the original daylight, nighttime or blue-hour atmosphere. Preserve full composition, aspect ratio, architecture, every person, all signs and text, decorations and objects. No added or removed details, reconstruction, replacement, stylization, fake HDR or cropping. For the portrait, preserve exact identity, expression, skin texture, hands, marshmallow, camera and gimbal."
+  }
+}
