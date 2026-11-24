@@ -130,6 +130,15 @@ export default function DestinationGuideClient({ guide, season, walks, uploads, 
       <GuideSectionHeading id="transport-heading" eyebrow="Plan the wider trip" title={`Where ${guide.city} fits in your trip`} icon="region" />
       <p className="mt-4 max-w-3xl leading-7 text-[#657069]">If you’re visiting several market towns, use this map to see how they fit together. The transport options below can help you decide how to get around.</p>
       {orientationPlaces && <AlsaceOrientation key={guide.city} focusCity={guide.city} places={orientationPlaces} />}
+      {guide.tripPlanning && <section aria-labelledby="arrival-advice-heading" className="mt-10">
+        <h3 id="arrival-advice-heading" className="text-2xl font-semibold">Getting to {guide.city}</h3>
+        <div className="mt-6 grid gap-x-10 gap-y-7 sm:grid-cols-2">{guide.tripPlanning.arrival.map(item => <article key={item.title}>
+          <h4 className="text-lg font-semibold">{item.title}</h4>
+          <div className="mt-3 space-y-3 text-sm leading-7 text-[#657069]">{item.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>
+          {item.sources && <div className="mt-2 flex flex-wrap gap-x-5">{item.sources.map(source => <SourceLink key={source.href} source={source} />)}</div>}
+          {item.checkedOn && <CheckedNote on={item.checkedOn} />}
+        </article>)}</div>
+      </section>}
       <GuideDisclosure title={parkingStops.length ? "Train connections, parking & local transport" : "Train connections & local transport"} className="mt-8">
         <div className="grid gap-8 sm:grid-cols-2">{season.transport.map(item => <article key={item.title}><h3 className="text-lg font-semibold">{item.title}</h3><p className="mt-3 text-sm leading-7 text-[#657069]">{item.text}</p><SourceLink source={item.source} />{item.checkedOn && <CheckedNote on={item.checkedOn} />}</article>)}</div>
         {parkingStops.length > 0 && <div className="mt-6 border-t border-[#dce1d6] pt-6">
@@ -138,6 +147,19 @@ export default function DestinationGuideClient({ guide, season, walks, uploads, 
           <a href="#market-squares" className={linkClass + " mt-3"}>Find these stops on the walking map ↓</a>
         </div>}
       </GuideDisclosure>
+      {guide.tripPlanning && <section id="where-to-stay" aria-labelledby="stay-advice-heading" className="mt-10 scroll-mt-[var(--guide-scroll-offset,5rem)]">
+        <h3 id="stay-advice-heading" className="text-2xl font-semibold">Where to stay</h3>
+        <div className="mt-6 grid gap-x-10 gap-y-7 sm:grid-cols-2">{guide.tripPlanning.stays.map(item => <article key={item.title}>
+          <h4 className="text-lg font-semibold">{item.title}</h4>
+          <div className="mt-3 space-y-3 text-sm leading-7 text-[#657069]">{item.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>
+          {item.sources && <div className="mt-2 flex flex-wrap gap-x-5">{item.sources.map(source => <SourceLink key={source.href} source={source} />)}</div>}
+        </article>)}</div>
+        <aside className="mt-6 rounded-xl border border-[#dce1d6] bg-[#f5f6f1] p-5">
+          <h4 className="font-semibold">My tip for a weekend trip</h4>
+          <p className="mt-2 max-w-3xl text-sm leading-7 text-[#657069]">{guide.tripPlanning.tip}</p>
+          {season.shuttles && <a href="#christmas-shuttles" className={linkClass + " mt-2"}>Plan a day on the Christmas Shuttles ↓</a>}
+        </aside>
+      </section>}
     </section>
 
     {season.shuttles && <ChristmasShuttles service={season.shuttles} />}

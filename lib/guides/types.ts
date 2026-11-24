@@ -44,6 +44,11 @@ export type GuideSeason = {
   shuttles?: GuideShuttleService;
 };
 export type GuideMoment = { title: string; text: string; photo: GuidePhoto; tourId: string; seconds: number };
+export type GuideTripPlanning = {
+  arrival: { title: string; paragraphs: string[]; sources?: GuideSource[]; checkedOn?: string }[];
+  stays: { title: string; paragraphs: string[]; sources?: GuideSource[] }[];
+  tip: string;
+};
 export type DestinationGuide = {
   slug: string;
   city: string;
@@ -55,6 +60,7 @@ export type DestinationGuide = {
   mobileHero: GuidePhoto;
   visitEssentials?: { label: string; value: string; text: string }[];
   faq?: GuideFaq[];
+  tripPlanning?: GuideTripPlanning;
   markets: { name: string; text: string }[];
   marketsSource: GuideSource;
   moments: GuideMoment[];
