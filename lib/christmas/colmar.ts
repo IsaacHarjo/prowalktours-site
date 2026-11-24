@@ -19,12 +19,12 @@ export const colmarGuide: DestinationGuide = {
     { label: "Where to start", value: "The Colmar sign", text: "Start at the Colmar sign in Parc du Champ de Mars, then walk toward the Christmas market at Place des Dominicains." },
   ],
   markets: [
-    { name: "Place des Dominicains", text: "Wooden stalls gathered beside the Dominican church. Look up from the stalls to take in the church and the surrounding facades." },
-    { name: "Place de l’Ancienne Douane", text: "An old-town square around the Schwendi fountain, with the Koïfhus nearby. A useful place to pause between the northern squares and the canals." },
-    { name: "Koïfhus", text: "The former customs house hosts an indoor market focused on crafts. Pair it with the stalls outside on Place de l’Ancienne Douane." },
-    { name: "Place Jeanne d’Arc", text: "A market with a focus on regional food and Alsatian products, tucked among the old town’s buildings." },
-    { name: "Petite Venise", text: "The family-oriented market at Place des Six Montagnes Noires, near the canals and half-timbered houses of Little Venice." },
-    { name: "The Gourmet Market", text: "A place to sit down for food at Montagne Verte. Its opening period and evening hours differ from the main markets; see the separate schedule above." },
+    { name: "Place des Dominicains", text: "Christmas decorations and wooden chalets beneath the Dominican church’s stained-glass windows." },
+    { name: "Place de l’Ancienne Douane", text: "Gifts and decorations around the Schwendi fountain and beside the canal." },
+    { name: "Koïfhus", text: "Indoor artisan crafts in the old customs house, including pottery, glass and jewellery." },
+    { name: "Place Jeanne d’Arc", text: "Alsatian food and local products, from wine and charcuterie to Christmas biscuits." },
+    { name: "Petite Venise", text: "The children’s market at Place des Six Montagnes Noires, with a carousel and Santa’s giant letterbox." },
+    { name: "The Gourmet Market", text: "Chef-prepared dishes and a place to sit down for a meal at Montagne Verte." },
   ],
   marketsSource: { label: "Explore the six markets on Colmar’s official site", href: "https://www.noel-colmar.com/en/colmar-the-magic-of-christmas/presentation/six-christmas-markets" },
   moments: [

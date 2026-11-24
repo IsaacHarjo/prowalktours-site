@@ -99,6 +99,13 @@ export default function DestinationGuideClient({ guide, season, walks, uploads, 
         <p className="mt-4 hidden max-w-3xl leading-7 text-[#657069] lg:block">I filmed Colmar’s Christmas markets in 2023 and 2025 and spent a lot of time planning a walk that includes all six markets. This is the route I’d recommend, with photo spots, useful stops and tips along the way.</p>
         <p className="mt-3 hidden max-w-3xl leading-7 text-[#657069] lg:block">Start with the first stop below. Watch a short clip, see where you are on the map, then choose Next stop to continue the walk.</p>
         <p className="mt-3 text-xs leading-6 text-[#526258] lg:hidden">Allow at least 3 hours · Best around sunset · Start at the Colmar sign</p>
+        {guide.slug === "colmar" && <section aria-labelledby="market-overview-heading" className="mt-6">
+          <h3 id="market-overview-heading" className="text-lg font-semibold">The six markets at a glance</h3>
+          <dl className="mt-3 grid gap-x-10 gap-y-3 text-sm leading-6 sm:grid-cols-2">{guide.markets.map(market => <div key={market.name}>
+            <dt className="font-semibold">{market.name}</dt>
+            <dd className="text-[#657069]">{market.text}</dd>
+          </div>)}</dl>
+        </section>}
         {guide.visitEssentials && <dl className="mt-6 hidden gap-3 lg:grid lg:grid-cols-3">{guide.visitEssentials.filter(item => item.label !== "Arriving by train").map(item => <div key={item.label} className="rounded-xl bg-[#eaf0e8] px-5 py-4"><dt className="text-xs font-semibold uppercase tracking-wide text-[#526258]">{item.label}</dt><dd className="mt-1 font-semibold">{item.value}</dd></div>)}</dl>}
         {season.crowdForecast && <div className="mt-4 max-w-3xl"><p className="text-sm leading-7 text-[#657069]">{season.crowdForecast.text}</p><SourceLink source={season.crowdForecast.source} /></div>}
         {visitorMapData ? <VisitorRouteMap data={visitorMapData} showPhotos={guide.slug !== "colmar"} /> : mapData ? <GuideRouteMap data={mapData} markets={guide.markets} walks={walks} year={season.year} /> : <ol className="mt-8 grid gap-x-12 md:grid-cols-2">{guide.markets.map((market, index) => <li key={market.name} className="flex gap-4 border-t border-[#e1e3d9] py-6"><span className="pt-1 font-serif text-xl text-[#947a50]">{String(index + 1).padStart(2, "0")}</span><div><h3 className="text-lg font-semibold">{market.name}</h3><p className="mt-2 text-sm leading-7 text-[#657069]">{market.text}</p></div></li>)}</ol>}
