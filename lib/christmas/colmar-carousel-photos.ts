@@ -1,4 +1,5 @@
 import type { GuidePhoto } from "../guides/types";
+import { colmarStopGalleries } from "./colmar-stop-galleries";
 
 // Owner-selected originals, in the requested order. Independent of the map stop galleries.
 export const colmarCarouselPhotos: GuidePhoto[] = [
@@ -82,6 +83,25 @@ export const colmarCarouselPhotos: GuidePhoto[] = [
     "width": 1600,
     "height": 901
   }
+];
+
+// One view for each market, in the same order as colmarGuide.markets.
+// Keep the owner's original ten-photo selection above for future galleries.
+export const colmarMarketPhotos: GuidePhoto[] = [
+  colmarCarouselPhotos[1],
+  colmarStopGalleries["ancienne-douane"][2],
+  colmarStopGalleries.koifhus[1],
+  {
+    src: "/colmar-christmas-market-evening-walk-2023/highlights/colmar-christmas-market-3-place-jeanne-d-arc.jpg",
+    alt: "Visitors browsing illuminated wooden stalls at Place Jeanne d’Arc at blue hour.",
+    year: 2023, width: 1280, height: 720,
+  },
+  colmarStopGalleries["petite-venise"][0],
+  {
+    src: "/colmar-christmas-market-evening-walk-2023/highlights/colmar-gourmet-market.jpg",
+    alt: "The Gourmet Market entrance beside the illuminated Ferris wheel at night.",
+    year: 2023, width: 1280, height: 720,
+  },
 ];
 
 export const colmarMarketPortrait: GuidePhoto = {
