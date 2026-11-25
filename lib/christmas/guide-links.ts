@@ -7,6 +7,7 @@ export function christmasMarketHref(city: string): string | undefined {
     case "Strasbourg": return "/christmas-markets/strasbourg";
     case "Basel": return "/christmas-markets/basel";
     case "Nuremberg": return "/christmas-markets/nuremberg";
+    case "Freiburg": return "/christmas-markets/freiburg";
     default: return undefined;
   }
 }
