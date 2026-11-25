@@ -28,6 +28,19 @@ before the page is live. Keep the guide URL unchanged as its content develops.
 
 ## Next additions
 
+Source follow-up, 25 November: reviewed Isaac's four suggested links (official
+Christmas market site, visit.freiburg.de/en/christmas-in-freiburg,
+ultimatechristmasmarkets.com/germany/freiburg-christmas-market/ and the 2015
+greekstreet.me Freiburg farmers-market article). Added three compact expandable
+planning sections with public source links: regular Münstermarkt hours/layout
+and cash, food pointers, and family activities/evening lights. Current facts
+verified with the organizer, tourism office and
+https://muenstermarkt.freiburg.de/service/allgemeine-informationen.
+The old blog is background only; no borrowed personal food recommendations.
+Avoided inconsistent stall counts (tourism page says 13 extra Sunday stalls;
+organizer says 15) and third-party blanket accessibility/dietary claims.
+The original QR and guide URL are unchanged.
+
 - Sunday release planned for 29 November 2026. Obtain the final public video URL
   and revised timeline. The old members upload, now unlisted, is 4bQoSIwQHZM;
   it is intentionally absent from the new guide. No automatic Freiburg upload

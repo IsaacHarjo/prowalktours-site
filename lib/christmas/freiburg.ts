@@ -25,6 +25,37 @@ export const freiburgGuide = {
     directions: "https://weihnachtsmarkt.freiburg.de/en/directions",
     trains: "https://www.bahn.de/en",
   },
+  visitDetails: [
+    {
+      title: "Catch the daytime Münstermarkt",
+      paragraphs: [
+        "The regular market around the cathedral was one of my favourite parts of this visit. To include it in your day, come Monday–Friday between 07:30 and 13:30, or Saturday between 07:30 and 14:00. These are its regular hours; it closes on Sundays and public holidays. Check the market’s own site for holiday exceptions.",
+        "For the mix I enjoyed, allow time for Münsterplatz before exploring the Christmas stalls. Regional produce sellers occupy the north side of the square, crafts are on the south side, and flower stalls sit near the cathedral’s main entrance. Bring some cash for stalls that don’t accept cards.",
+      ],
+      links: [
+        { label: "Münstermarkt hours & practical information", href: "https://muenstermarkt.freiburg.de/service/allgemeine-informationen" },
+        { label: "Official guide to the cathedral market", href: "https://visit.freiburg.de/en/muenstermarkt-cathedral-market-1" },
+      ],
+    },
+    {
+      title: "Food to look out for",
+      paragraphs: [
+        "For a few local food pointers, I’ve linked Freiburg’s own guides below. They highlight the Lange Rote sausage and Stefan’s cheesecake at the Münstermarkt. At the Christmas market, look for roasted chestnuts, Glühwein and Dampfnudeln—warm steamed dumplings served with vanilla sauce or plum compote. The tourism office also lists raclette in Colombipark.",
+      ],
+      links: [
+        { label: "Christmas market food guide", href: "https://weihnachtsmarkt.freiburg.de/en/delicacies" },
+        { label: "Freiburg’s Christmas tips", href: "https://visit.freiburg.de/en/christmas-in-freiburg" },
+      ],
+    },
+    {
+      title: "Children’s activities & evening lights",
+      paragraphs: [
+        "If you’re visiting with children, the organizer lists biscuit baking at Kartoffelmarkt from 14:00, with registration at the bakery. St. Nicholas visits Rathausplatz on 6 December at 17:00. I’ve linked the current programme for prices and details.",
+        "My walk finishes at Colombipark, where the organizer highlights the illuminated photo spot in front of the Colombischlössle. For a quieter pause, St. Martin’s Church on Rathausplatz offers music, words and silence at 17:30 daily from 1 December during Advent.",
+      ],
+      links: [{ label: "Official activities & Christmas lights", href: "https://weihnachtsmarkt.freiburg.de/en/highlights" }],
+    },
+  ],
   stops: [
     { name: "Turmstraße", subtitle: "Tower Street", text: "I started my walk among the Christmas stalls on Turmstraße, then returned here toward the end of the route." },
     { name: "Rathausplatz", subtitle: "Town Hall Square", text: "My walk continues into the Christmas market on Rathausplatz before heading along Franziskanerstraße." },

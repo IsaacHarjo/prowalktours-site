@@ -90,6 +90,17 @@ export default function FreiburgChristmasPage() {
         </section>
         <section id="getting-there" aria-labelledby="planning-heading" className="mt-12 scroll-mt-24 border-t border-[#dce1d6] pt-9">
           <h2 id="planning-heading" className="font-serif text-3xl">Plan your visit</h2>
+          <div className="mt-5 space-y-3">
+            {guide.visitDetails.map(detail => <details key={detail.title} className="group rounded-2xl border border-[#dce1d6] bg-white">
+              <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-2xl px-5 py-4 font-semibold hover:bg-[#edf1e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#176347] [&::-webkit-details-marker]:hidden">
+                {detail.title}<span aria-hidden="true" className="shrink-0 text-xl text-[#176347] group-open:rotate-45">+</span>
+              </summary>
+              <div className="space-y-3 px-5 pb-5 text-sm leading-7 text-[#526258]">
+                {detail.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+                <div className="flex flex-wrap gap-x-5">{detail.links.map(link => <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center font-semibold text-[#176347] underline underline-offset-4">{link.label} ↗</a>)}</div>
+              </div>
+            </details>)}
+          </div>
           <div className="mt-5 grid gap-7 md:grid-cols-2">
             <div><h3 className="text-lg font-semibold">Getting to Freiburg</h3>
               <p className="mt-3 text-sm leading-7 text-[#526258]">Freiburg is on the Frankfurt–Karlsruhe–Basel rail corridor. I’ve linked the rail planner for current connections and the organizer’s arrival guide for parking and Park & Ride information.</p>
