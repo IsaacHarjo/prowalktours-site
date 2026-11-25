@@ -1,0 +1,52 @@
+{
+  "selectedOn": "2026-11-25",
+  "retained": "/images/guides/colmar/colmar-carousel-dominicains-day-1-2023.webp",
+  "processing": "Owner-prepared JPEGs exported to WebP at up to 1600 px wide, with orientation applied and metadata stripped. No crop or creative adjustments. Originals unchanged.",
+  "selection": [
+    {
+      "market": "ancienne-douane",
+      "source": "Place de l’Ancienne Douane0.jpg",
+      "sourceSha256": "6ffbbffbf250447c11f8eb87d26477167552bfbea40b726782a9e0995bbdb24d",
+      "output": "/images/guides/colmar/colmar-market-ancienne-douane-selected.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 411346
+    },
+    {
+      "market": "koifhus",
+      "source": "Koifus0.jpg",
+      "sourceSha256": "ac4ce720faf49a4a65efe9c24e5b3ec32a778abac506f99c1e6f38bc4424d40e",
+      "output": "/images/guides/colmar/colmar-market-koifhus-selected.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 528470
+    },
+    {
+      "market": "jeanne-arc",
+      "source": "Place Jeanne d’Arc0.jpg",
+      "sourceSha256": "9d58d14e40e30f0a7cb6a28e9a4fe6066959a0fd54e5d598109aa69c8278a3a6",
+      "output": "/images/guides/colmar/colmar-market-jeanne-arc-selected.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 629522
+    },
+    {
+      "market": "petite-venise",
+      "source": "Petite Venise.jpg",
+      "sourceSha256": "4d3a58399b906e6777e7b872b970344484ff9839153082fbf4fdec5c65978d6f",
+      "output": "/images/guides/colmar/colmar-market-petite-venise-selected.webp",
+      "width": 1600,
+      "height": 901,
+      "bytes": 432620
+    },
+    {
+      "market": "gourmet",
+      "source": "The Gourmet Market0.jpg",
+      "sourceSha256": "513651c2867fe8c8905063c17bf3019425d68336f831ad585e396e957876abac",
+      "output": "/images/guides/colmar/colmar-market-gourmet-selected.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 323736
+    }
+  ]
+}

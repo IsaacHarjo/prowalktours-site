@@ -1,5 +1,4 @@
 import type { GuidePhoto } from "../guides/types";
-import { colmarStopGalleries } from "./colmar-stop-galleries";
 
 // Owner-selected originals, in the requested order. Independent of the map stop galleries.
 export const colmarCarouselPhotos: GuidePhoto[] = [
@@ -87,20 +86,34 @@ export const colmarCarouselPhotos: GuidePhoto[] = [
 
 // One view for each market, in the same order as colmarGuide.markets.
 // Keep the owner's original ten-photo selection above for future galleries.
+// Replacement selections supplied 25 November 2026; source hashes are in
+// docs/christmas-markets/colmar-market-photo-selection.json.
 export const colmarMarketPhotos: GuidePhoto[] = [
   colmarCarouselPhotos[1],
-  colmarStopGalleries["ancienne-douane"][2],
-  colmarStopGalleries.koifhus[1],
   {
-    src: "/colmar-christmas-market-evening-walk-2023/highlights/colmar-christmas-market-3-place-jeanne-d-arc.jpg",
-    alt: "Visitors browsing illuminated wooden stalls at Place Jeanne d’Arc at blue hour.",
-    year: 2023, width: 1280, height: 720,
+    src: "/images/guides/colmar/colmar-market-ancienne-douane-selected.webp",
+    alt: "Christmas stalls and visitors around the decorated Schwendi Fountain at Place de l’Ancienne Douane in daylight.",
+    width: 1600, height: 900,
   },
-  colmarStopGalleries["petite-venise"][0],
   {
-    src: "/colmar-christmas-market-evening-walk-2023/highlights/colmar-gourmet-market.jpg",
-    alt: "The Gourmet Market entrance beside the illuminated Ferris wheel at night.",
-    year: 2023, width: 1280, height: 720,
+    src: "/images/guides/colmar/colmar-market-koifhus-selected.webp",
+    alt: "Decorated half-timbered houses and market streets viewed from the Koïfhus steps in daylight.",
+    width: 1600, height: 900,
+  },
+  {
+    src: "/images/guides/colmar/colmar-market-jeanne-arc-selected.webp",
+    alt: "Visitors browsing wooden stalls beneath illuminated trees at Place Jeanne d’Arc at blue hour.",
+    width: 1600, height: 900,
+  },
+  {
+    src: "/images/guides/colmar/colmar-market-petite-venise-selected.webp",
+    alt: "Christmas decorations and half-timbered houses beside the Petite Venise canal, with a boat and the Ferris wheel beyond the bridge.",
+    width: 1600, height: 901,
+  },
+  {
+    src: "/images/guides/colmar/colmar-market-gourmet-selected.webp",
+    alt: "The Ferris wheel beside the Gourmet Market at Montagne Verte in daylight.",
+    width: 1600, height: 900,
   },
 ];
 
