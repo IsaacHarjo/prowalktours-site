@@ -60,9 +60,9 @@ export default function ChristmasMarketsClient({ walks, points, initialFilters }
   const matches = (country: string, city: string, region: string) => normalize(`${country} ${city} ${region}`).includes(normalize(destinationQuery));
   const matchingDestinations = new Set([
     ...walks.filter(walk => (!readyOnly || Boolean(guides[walk.city])) && (!selectedCountry || walk.country === selectedCountry) && matches(walk.country, walk.city, walk.region || "")).map(walk => `${walk.country}/${walk.city}`),
-    ...upcomingChristmasDestinations.filter(place => !readyOnly && (!selectedCountry || place.country === selectedCountry) && matches(place.country, place.city, place.region)).map(place => `${place.country}/${place.city}`),
+    ...upcomingChristmasDestinations.filter(place => (!readyOnly || Boolean(guides[place.city])) && (!selectedCountry || place.country === selectedCountry) && matches(place.country, place.city, place.region)).map(place => `${place.country}/${place.city}`),
   ]).size;
-  const hasMatches = walks.some(walk => (!readyOnly || Boolean(guides[walk.city])) && (!selectedCountry || walk.country === selectedCountry) && matches(walk.country, walk.city, walk.region || "")) || (!readyOnly && upcomingChristmasDestinations.some(place => (!selectedCountry || place.country === selectedCountry) && matches(place.country, place.city, place.region)));
+  const hasMatches = walks.some(walk => (!readyOnly || Boolean(guides[walk.city])) && (!selectedCountry || walk.country === selectedCountry) && matches(walk.country, walk.city, walk.region || "")) || upcomingChristmasDestinations.some(place => (!readyOnly || Boolean(guides[place.city])) && (!selectedCountry || place.country === selectedCountry) && matches(place.country, place.city, place.region));
 
   return <div className="bg-[#fcfaf7] text-[#25382f]">
     <section id="destinations" aria-label="Christmas markets by country" className={width + " scroll-mt-24 pb-12"}>

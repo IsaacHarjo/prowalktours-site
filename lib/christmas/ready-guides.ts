@@ -6,5 +6,6 @@ export const readyChristmasGuides: Record<string, { href: string; description: s
     Kaysersberg: { href: "/christmas-markets/kaysersberg", description: "Walk the decorated main street in both directions, with bridges and half-timbered houses along the Weiss.", detail: "A compact village & riverside views" },
     "Ribeauvillé": { href: "/christmas-markets/ribeauville", description: "Costumed performers, food over open fires and courtyard games make this feel like a medieval festival.", detail: "A medieval market on two weekends" },
     Nuremberg: { href: "/christmas-markets/nuremberg", description: "Follow the route I filmed past the Hauptmarkt stalls, the Sister Cities and Children’s markets, and along the Pegnitz.", detail: "Hauptmarkt, river bridges & old town" },
+    Freiburg: { href: "/christmas-markets/freiburg", description: "Explore the Christmas stalls and the daytime Münstermarkt with my filmed route, 2026 opening hours and tips from my visit.", detail: "Old Town markets & Black Forest character" },
     Riquewihr: { href: "/christmas-markets/riquewihr", description: "Look beyond the stalls: step into courtyards, browse Christmas shops and explore around the Dolder.", detail: "Christmas streets, shops & courtyards" },
   };
