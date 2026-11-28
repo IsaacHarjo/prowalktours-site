@@ -3,16 +3,14 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const load = require('./lib/load-typescript.cjs');
-const { PROWALK_CHANNEL_ID, durationFromWatchPage } = load('lib/youtube/latestWalk.ts');
+const { durationFromWatchPage } = load('lib/youtube/latestWalk.ts');
+const { fetchPublicFeed } = load('lib/youtube/publicFeed.ts');
 const { colmarUploadsFromFeed, mergeColmarUploads, validateColmarArchive } = load('lib/youtube/colmarWalks.ts');
 
 async function syncColmarUploads({ archivePath = path.resolve('data/youtube/colmar-uploads.json'), fetcher = fetch, dryRun = false, now = Date.now() } = {}) {
   const original = fs.readFileSync(archivePath, 'utf8');
   const saved = validateColmarArchive(JSON.parse(original), now);
-  const response = await fetcher(`https://www.youtube.com/feeds/videos.xml?channel_id=${PROWALK_CHANNEL_ID}`, { signal: AbortSignal.timeout(15000) });
-  if (!response.ok) throw new Error(`Public channel feed returned HTTP ${response.status}`);
-  const xml = await response.text();
-  if (!/<feed[\s>]/.test(xml) || !xml.includes(`<yt:channelId>${PROWALK_CHANNEL_ID}</yt:channelId>`)) throw new Error('Unexpected public channel feed');
+  const xml = await fetchPublicFeed(fetcher);
   const incoming = await colmarUploadsFromFeed(xml, async id => {
     const existing = saved.find(walk => walk.youtubeUrl.endsWith(`v=${id}`));
     if (existing) return existing.durationSeconds;

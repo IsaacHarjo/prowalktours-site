@@ -72,6 +72,13 @@ async function main() {
     const reads = metadataReads;
     assert.equal((await syncColmarUploads({archivePath, fetcher, now})).changed, false, 'Repeated discovery is idempotent');
     assert.equal(metadataReads, reads, 'Reuse already verified duration for saved public feed entries');
+    let feedAttempts = 0;
+    const transientFetcher = async url => {
+      if (!new URL(url).searchParams.has('v') && ++feedAttempts < 3) return { ok: false, status: 503 };
+      return fetcher(url);
+    };
+    assert.equal((await syncColmarUploads({archivePath, fetcher: transientFetcher, now})).changed, false);
+    assert.equal(feedAttempts, 3, 'Retry temporary YouTube 503 responses before failing the sync');
     feedXml = feed(entry('other000001', 'Strasbourg Christmas Market'));
     assert.equal((await syncColmarUploads({archivePath, fetcher, now})).total, 1);
     assert.equal(fs.readFileSync(archivePath, 'utf8'), saved);

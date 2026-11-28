@@ -2,7 +2,7 @@ name: Save new Colmar walks
 
 on:
   schedule:
-    - cron: '17 */6 * * *'
+    - cron: '17 * * * *'
   workflow_dispatch:
 
 permissions:

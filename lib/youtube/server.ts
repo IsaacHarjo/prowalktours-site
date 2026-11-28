@@ -1,6 +1,7 @@
 import "server-only";
 import { unstable_cache } from "next/cache";
-import { durationFromWatchPage, isFullLengthWalk, walkCandidatesFromFeed, PROWALK_CHANNEL_ID, type FeaturedWalk, type FeedWalk, type VerifiedFeedWalk } from "./latestWalk";
+import { durationFromWatchPage, isFullLengthWalk, walkCandidatesFromFeed, type FeaturedWalk, type FeedWalk, type VerifiedFeedWalk } from "./latestWalk";
+import { fetchPublicFeed } from "./publicFeed";
 import savedColmarUploads from "../../data/youtube/colmar-uploads.json";
 import { colmarUploadsFromFeed, mergeColmarUploads, validateColmarArchive } from "./colmarWalks";
 
@@ -19,12 +20,7 @@ const getVideoDuration = unstable_cache(async (id: string): Promise<number | nul
 }, ["youtube-walk-duration-v1"], { revalidate: 900 });
 
 async function getPublicFeedXml(): Promise<string> {
-  const response = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${PROWALK_CHANNEL_ID}`, {
-    next: { revalidate: 900 },
-    signal: AbortSignal.timeout(8000),
-  });
-  if (!response.ok) throw new Error("YouTube feed unavailable");
-  return response.text();
+  return fetchPublicFeed(fetch, { next: { revalidate: 900 } });
 }
 
 function catalogDuration(id: string, catalog: CatalogWalk[]): number | undefined {
@@ -50,13 +46,18 @@ export async function getColmarWalks(catalog: CatalogWalk[] = []): Promise<Verif
   return mergeColmarUploads(validateColmarArchive(savedColmarUploads), await getRecentColmarWalks(catalog));
 }
 
-export async function getNewestWalk(fallback?: CatalogWalk, catalog: CatalogWalk[] = []): Promise<FeaturedWalk | undefined> {
+export async function getNewestWalk(fallback?: CatalogWalk, catalog: CatalogWalk[] = [], archive: VerifiedFeedWalk[] = validateColmarArchive(savedColmarUploads)): Promise<FeaturedWalk | undefined> {
+  const saved = validateColmarArchive(archive).slice().sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
   const safeFallback = fallback && isFullLengthWalk(fallback.durationSeconds) ? fallback : undefined;
   try {
-    const candidates: FeedWalk[] = walkCandidatesFromFeed(await getPublicFeedXml());
+    // A previously verified public upload survives a stale feed or a blocked
+    // watch-page request. Newer verified uploads can still replace it normally.
+    const candidates: FeedWalk[] = [...new Map([...saved, ...walkCandidatesFromFeed(await getPublicFeedXml())]
+      .map(walk => [walk.youtubeUrl, walk])).values()]
+      .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
     const knownDurations = candidates.map(candidate => {
       const id = new URL(candidate.youtubeUrl).searchParams.get("v")!;
-      return catalogDuration(id, catalog);
+      return catalogDuration(id, [...saved, ...catalog]);
     });
     // Once a catalog walk qualifies, older entries cannot win the selection.
     const firstKnownWalk = knownDurations.findIndex(duration => duration !== undefined && isFullLengthWalk(duration));
@@ -74,7 +75,7 @@ export async function getNewestWalk(fallback?: CatalogWalk, catalog: CatalogWalk
     if (!newest) throw new Error("No verified full-length walk in YouTube feed");
     return newest;
   } catch {
-    console.warn("Newest walk: using the curated fallback because no full-length public video could be verified.");
-    return safeFallback;
+    console.warn("Newest walk: using saved public uploads or the curated fallback because live discovery is unavailable.");
+    return saved[0] ?? safeFallback;
   }
 }
