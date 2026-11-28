@@ -1,4 +1,4 @@
-name: Save new Colmar walks
+name: Save new Colmar and Freiburg walks
 
 on:
   schedule:
@@ -27,13 +27,21 @@ jobs:
           package-manager-cache: false
       - run: npm ci
       - name: Check discovery and archive behavior
-        run: node scripts/test-colmar-uploads.cjs
+        run: |
+          node scripts/test-colmar-uploads.cjs
+          node scripts/test-freiburg-uploads.cjs
       - name: Discover public full-length Colmar uploads
+        id: colmar
+        continue-on-error: true
         run: node scripts/sync-colmar-uploads.cjs
+      - name: Discover public full-length Freiburg uploads
+        id: freiburg
+        continue-on-error: true
+        run: node scripts/sync-freiburg-uploads.cjs
       - name: Check whether the archive changed
         id: changes
         run: |
-          if git diff --quiet -- data/youtube/colmar-uploads.json; then
+          if git diff --quiet -- data/youtube/colmar-uploads.json data/youtube/freiburg-uploads.json; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -49,9 +57,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- data/youtube/colmar-uploads.json
+          git add -- data/youtube/colmar-uploads.json data/youtube/freiburg-uploads.json
           git diff --cached --check
-          git commit -m "Save newly discovered full-length Colmar walks"
+          git commit -m "Save newly discovered full-length guide walks"
           # A concurrent main update rejects this push safely. The next run
           # starts from fresh main and rediscovers anything not yet saved.
           git push origin HEAD:main
+      - name: Report any failed discovery after saving successful discoveries
+        if: steps.colmar.outcome == 'failure' || steps.freiburg.outcome == 'failure'
+        run: exit 1

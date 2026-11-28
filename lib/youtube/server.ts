@@ -3,7 +3,9 @@ import { unstable_cache } from "next/cache";
 import { durationFromWatchPage, isFullLengthWalk, walkCandidatesFromFeed, type FeaturedWalk, type FeedWalk, type VerifiedFeedWalk } from "./latestWalk";
 import { fetchPublicFeed } from "./publicFeed";
 import savedColmarUploads from "../../data/youtube/colmar-uploads.json";
+import savedFreiburgUploads from "../../data/youtube/freiburg-uploads.json";
 import { colmarUploadsFromFeed, mergeColmarUploads, validateColmarArchive } from "./colmarWalks";
+import { discoverFreiburgRelease, freiburgUploadsFromFeed, isFreiburgUpload, mergeFreiburgUploads, validateFreiburgArchive } from "./freiburgWalks";
 
 type CatalogWalk = FeaturedWalk & { durationSeconds: number };
 
@@ -46,13 +48,37 @@ export async function getColmarWalks(catalog: CatalogWalk[] = []): Promise<Verif
   return mergeColmarUploads(validateColmarArchive(savedColmarUploads), await getRecentColmarWalks(catalog));
 }
 
-export async function getNewestWalk(fallback?: CatalogWalk, catalog: CatalogWalk[] = [], archive: VerifiedFeedWalk[] = validateColmarArchive(savedColmarUploads)): Promise<FeaturedWalk | undefined> {
-  const saved = validateColmarArchive(archive).slice().sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+const getFreiburgRelease = unstable_cache(async () => {
+  try { return await discoverFreiburgRelease(); }
+  catch { return []; }
+}, ["freiburg-public-release-v1"], { revalidate: 900 });
+
+export async function getFreiburgWalks(catalog: CatalogWalk[] = [], archive: VerifiedFeedWalk[] = validateFreiburgArchive(savedFreiburgUploads)): Promise<VerifiedFeedWalk[]> {
+  const saved = validateFreiburgArchive(archive);
+  const [release, recent] = await Promise.all([
+    getFreiburgRelease(),
+    (async () => {
+      try {
+        return await freiburgUploadsFromFeed(await getPublicFeedXml(), async id => {
+          const known = catalogDuration(id, [...saved, ...catalog]);
+          return known !== undefined && known > 0 ? known : getVideoDuration(id);
+        });
+      } catch { return []; }
+    })(),
+  ]);
+  return mergeFreiburgUploads(saved, [...recent, ...release]);
+}
+
+export async function getNewestWalk(fallback?: CatalogWalk, catalog: CatalogWalk[] = [], archive?: VerifiedFeedWalk[]): Promise<FeaturedWalk | undefined> {
+  const saved = archive
+    ? [...validateColmarArchive(archive.filter(walk => !isFreiburgUpload(walk))), ...validateFreiburgArchive(archive.filter(isFreiburgUpload))]
+    : [...validateColmarArchive(savedColmarUploads), ...validateFreiburgArchive(savedFreiburgUploads), ...await getFreiburgRelease()];
+  saved.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
   const safeFallback = fallback && isFullLengthWalk(fallback.durationSeconds) ? fallback : undefined;
   try {
     // A previously verified public upload survives a stale feed or a blocked
     // watch-page request. Newer verified uploads can still replace it normally.
-    const candidates: FeedWalk[] = [...new Map([...saved, ...walkCandidatesFromFeed(await getPublicFeedXml())]
+    const candidates: FeedWalk[] = [...new Map([...walkCandidatesFromFeed(await getPublicFeedXml()), ...saved]
       .map(walk => [walk.youtubeUrl, walk])).values()]
       .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
     const knownDurations = candidates.map(candidate => {

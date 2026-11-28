@@ -53,7 +53,7 @@ export function isFullLengthWalk(duration: number): boolean {
 
 // Read JSON, never execute YouTube's scripts. Scope duration to the requested
 // video and our channel, not related videos or ads elsewhere in the HTML.
-export function durationFromWatchPage(html: string, videoId: string): number | null {
+function playerFromWatchPage(html: string) {
   const assignment = /\bytInitialPlayerResponse\s*=\s*\{/.exec(html);
   if (!assignment) return null;
   const start = assignment.index + assignment[0].length - 1;
@@ -70,14 +70,41 @@ export function durationFromWatchPage(html: string, videoId: string): number | n
     else if (char === "{") depth++;
     else if (char === "}" && --depth === 0) {
       try {
-        const player = JSON.parse(html.slice(start, i + 1));
-        const details = player.videoDetails;
-        if (player.playabilityStatus?.status !== "OK" || details?.videoId !== videoId
-          || details.channelId !== PROWALK_CHANNEL_ID || details.isLive || details.isUpcoming) return null;
-        const duration = Number(details.lengthSeconds);
-        return Number.isFinite(duration) && duration > 0 ? duration : null;
+        return JSON.parse(html.slice(start, i + 1));
       } catch { return null; }
     }
   }
   return null;
+}
+
+export function durationFromWatchPage(html: string, videoId: string): number | null {
+  const player = playerFromWatchPage(html);
+  const details = player?.videoDetails;
+  if (player?.playabilityStatus?.status !== "OK" || details?.videoId !== videoId
+    || details.channelId !== PROWALK_CHANNEL_ID || details.isLive || details.isUpcoming) return null;
+  const duration = Number(details.lengthSeconds);
+  return Number.isFinite(duration) && duration > 0 ? duration : null;
+}
+
+// Only for an explicitly supplied release URL. A date alone never publishes a
+// video: require public (not unlisted/private), playable, full-length metadata.
+// Members-first releases can retain their original upload date on YouTube.
+export function publicReleaseFromWatchPage(html: string, videoId: string, releaseDate: string, now = Date.now()): VerifiedFeedWalk | null {
+  const player = playerFromWatchPage(html);
+  const details = player?.videoDetails;
+  const durationSeconds = durationFromWatchPage(html, videoId);
+  if (!Number.isFinite(Date.parse(releaseDate)) || Date.parse(releaseDate) > now
+    || player?.microformat?.playerMicroformatRenderer?.isUnlisted !== false
+    || details?.isPrivate !== false || durationSeconds === null || !isFullLengthWalk(durationSeconds)
+    || typeof details.title !== "string" || !details.title.trim()
+    || /#shorts?\b|\b(?:trailer|teaser)\b/i.test(details.title)) return null;
+  const intro = String(details.shortDescription ?? "").split(/\r?\n\s*\r?\n/)[0].replace(/\s+/g, " ").trim();
+  return {
+    youtubeUrl: `https://www.youtube.com/watch?v=${videoId}`,
+    thumbnail: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
+    siteTitle: details.title.trim(),
+    shortDescription: intro.length > 320 ? `${intro.slice(0, 317).replace(/\s+\S*$/, "")}…` : intro,
+    publishedAt: releaseDate,
+    durationSeconds,
+  };
 }

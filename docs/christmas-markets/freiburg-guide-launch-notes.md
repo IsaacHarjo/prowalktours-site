@@ -41,10 +41,17 @@ Avoided inconsistent stall counts (tourism page says 13 extra Sunday stalls;
 organizer says 15) and third-party blanket accessibility/dietary claims.
 The original QR and guide URL are unchanged.
 
-- Sunday release planned for 29 November 2026. Obtain the final public video URL
-  and revised timeline. The old members upload, now unlisted, is 4bQoSIwQHZM;
-  it is intentionally absent from the new guide. No automatic Freiburg upload
-  discovery or publication schedule has been added in this change.
+- Release moved to Wednesday, 2 December 2026. Final URL:
+  https://youtu.be/kC1fwYj8HgI. The old unlisted upload, 4bQoSIwQHZM, is excluded.
+  The new upload was members-only when checked on 28 November and reports an
+  earlier members publication date. The exact-release check requires public,
+  playable, full-length metadata and uses Isaac's public release date for ordering.
+  It does not change YouTube visibility or publish merely because the date arrives.
+  The homepage and guide refresh every 15 minutes, subject to cache revalidation
+  and YouTube availability. The hourly GitHub archive job saves verified Freiburg
+  uploads permanently alongside Colmar; job scheduling can be delayed by GitHub.
+  Future full-length Freiburg uploads are discovered by title in the public feed.
+  Obtain the revised timeline before adding chapter links.
 - Filmed map supplied by Isaac:
   https://www.google.com/maps/d/viewer?mid=1cow1Bl-XUxiBNkB8w78b4uhOkR5MGWM
 - Suggested-route map is still blank and not linked on the public guide:

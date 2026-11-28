@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import DestinationPersonalTake from "../../../components/guides/DestinationPersonalTake";
+import GuideWalkVideos from "../../../components/guides/GuideWalkVideos";
+import { getFreiburgWalks } from "../../../lib/youtube/server";
+import { discoveryVideos } from "../../../lib/tours/server";
 import { freiburgGuide as guide } from "../../../lib/christmas/freiburg";
 import { stringifyJsonLd } from "../../../lib/seo/jsonLd";
 
@@ -15,7 +18,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function FreiburgChristmasPage() {
+export const revalidate = 900;
+
+export default async function FreiburgChristmasPage() {
+  const uploads = await getFreiburgWalks(discoveryVideos);
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -47,7 +53,7 @@ export default function FreiburgChristmasPage() {
           </div>
         </header>
         <nav aria-label="On this page" className="my-6 flex flex-wrap gap-2">
-          {[["#my-visit", "My visit"], ["#dates", "Dates & hours"], ["#my-walk", "Explore my walk"], ["#getting-there", "Plan your visit"]].map(([href, label]) => <a key={href} href={href} className="inline-flex min-h-11 items-center rounded-full border border-[#cbd5ca] bg-white px-5 py-2 text-sm font-semibold hover:bg-[#edf1e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#176347]">{label}</a>)}
+          {[["#my-visit", "My visit"], ["#dates", "Dates & hours"], ["#my-walk", "Explore my walk"], ...(uploads.length ? [["#watch-walks", "Watch my walks"]] : []), ["#getting-there", "Plan your visit"]].map(([href, label]) => <a key={href} href={href} className="inline-flex min-h-11 items-center rounded-full border border-[#cbd5ca] bg-white px-5 py-2 text-sm font-semibold hover:bg-[#edf1e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#176347]">{label}</a>)}
         </nav>
         <div id="my-visit" className="mt-10 scroll-mt-24">
           <DestinationPersonalTake headingId="my-visit-heading" title="Why I enjoyed Christmas in Freiburg" href="#my-walk">
@@ -88,6 +94,9 @@ export default function FreiburgChristmasPage() {
           </ol>
           <p className="mt-5 max-w-3xl text-sm leading-7 text-[#526258]">For this year’s complete stall locations, toilets and accessible tables, I’ve linked the organizer’s map above. It also marks the extra Christmas stalls on Kaiser-Joseph-Straße that open on Advent Sundays.</p>
         </section>
+        {uploads.length > 0 && <div className="mt-12 overflow-hidden rounded-3xl">
+          <GuideWalkVideos city="Freiburg" walks={[]} uploads={uploads} introduction="Come along through Freiburg’s market squares and Old Town. Put on your headphones for the sounds of the streets and markets." />
+        </div>}
         <section id="getting-there" aria-labelledby="planning-heading" className="mt-12 scroll-mt-24 border-t border-[#dce1d6] pt-9">
           <h2 id="planning-heading" className="font-serif text-3xl">Plan your visit</h2>
           <div className="mt-5 space-y-3">
